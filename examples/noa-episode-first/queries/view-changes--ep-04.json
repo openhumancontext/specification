@@ -1,0 +1,38 @@
+{
+  "query": "view-changes",
+  "context": {
+    "id": "urn:ohc:example:noa:context",
+    "version": "2026-10-09.4"
+  },
+  "episode": "ep-04",
+  "episodeChain": [
+    "ep-04",
+    "ep-01"
+  ],
+  "readings": [
+    {
+      "id": "in-01",
+      "stance": "retrospective",
+      "heldDuring": {
+        "from": "2026-06-20",
+        "until": "2026-09-26"
+      }
+    },
+    {
+      "id": "in-03",
+      "stance": "revision",
+      "heldDuring": {
+        "from": "2026-09-26"
+      },
+      "supersedes": "in-01"
+    }
+  ],
+  "changes": [
+    {
+      "at": "2026-09-26",
+      "from": "in-01",
+      "to": "in-03"
+    }
+  ],
+  "synthetic": true
+}

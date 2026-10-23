@@ -1,0 +1,12 @@
+Result as-nz95: Openness, Conscientiousness, Extraversion, Agreeableness, Neuroticism / Negative Emotionality
+1 it fits · 2 parts fit · 3 not sure · 4 I dispute it · 5 it doesn't fit · 6 later: 2
+   1 Openness
+   2 Conscientiousness
+   3 Extraversion
+   4 Agreeableness
+   5 Neuroticism / Negative Emotionality
+Which scales fit? (numbers, comma-separated): 1,2,4,5
+Which do not fit? (numbers; Enter for none — the others stay not said): 3
+Your words about it (optional): I am quieter in groups than this says.
+A sentence for your agent about how to work with you (optional): When you lay out options, show me the evidence behind each one.
+Keep it with this result? [Y/n] y

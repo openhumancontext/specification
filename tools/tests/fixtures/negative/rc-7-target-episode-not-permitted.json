@@ -1,0 +1,15 @@
+{
+  "description": "A recall cue targeting an Episode whose recall is not permitted.",
+  "expect": [
+    "RC-7"
+  ],
+  "form": "single",
+  "patches": [
+    {
+      "op": "set",
+      "target": "episodes",
+      "path": "/@ep-02/recall",
+      "value": "not-permitted"
+    }
+  ]
+}

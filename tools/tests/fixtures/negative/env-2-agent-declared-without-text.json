@@ -1,0 +1,26 @@
+{
+  "description": "An agent's absence claim labelled declared (R-O2 heuristic).",
+  "expect": [
+    "ENV-2"
+  ],
+  "form": "single",
+  "patches": [
+    {
+      "op": "add",
+      "target": "claims",
+      "path": "",
+      "value": {
+        "id": "c-07",
+        "facet": "interest",
+        "absence": {
+          "code": "not-asked"
+        },
+        "origin": "declared",
+        "assertedBy": "a-01",
+        "recordedBy": "subject",
+        "recordedAt": "2026-09-07T08:00:00Z",
+        "synthetic": true
+      }
+    }
+  ]
+}

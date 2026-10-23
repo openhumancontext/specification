@@ -1,0 +1,226 @@
+{
+  "format": "ohc.catalog",
+  "id": "urn:ohc:catalog:modules",
+  "version": "0.2.0",
+  "specVersion": "0.1.0-draft",
+  "title": {
+    "en": "Modules",
+    "ru": "Модули"
+  },
+  "description": {
+    "en": "Module ids. A context lists every non-core module it uses in `conformance.modules` (R-M1). A conforming reader may ignore experimental records.",
+    "ru": "Идентификаторы модулей. Контекст перечисляет каждый используемый модуль, кроме ядра, в `conformance.modules` (R-M1). Соответствующий стандарту читатель может игнорировать экспериментальные записи."
+  },
+  "closed": true,
+  "codes": [
+    {
+      "code": "core",
+      "label": {
+        "en": "Core",
+        "ru": "Ядро"
+      },
+      "definition": {
+        "en": "Context, Subject, Party, Claim, Relation, Source, Episode, Interpretation, Tension, Review, Proposal, Tombstone; status axes, time model, absence codes, disclosure and layer rules.",
+        "ru": "Context, Subject, Party, Claim, Relation, Source, Episode, Interpretation, Tension, Review, Proposal, Tombstone; оси статуса, модель времени, коды отсутствия, раскрытие и правила слоёв."
+      },
+      "maturity": "normative-draft",
+      "kinds": [
+        "Context",
+        "Subject",
+        "Party",
+        "Claim",
+        "Relation",
+        "Source",
+        "Episode",
+        "Interpretation",
+        "Tension",
+        "Review",
+        "Proposal",
+        "Tombstone"
+      ]
+    },
+    {
+      "code": "governance",
+      "label": {
+        "en": "Governance",
+        "ru": "Управление доступом"
+      },
+      "definition": {
+        "en": "Grant, Event, Projection and ContextLock; grant evaluation, step-up, erasure, consumer and holder obligations. Required at L2.",
+        "ru": "Grant, Event, Projection и ContextLock; проверка разрешений, усиленное подтверждение, удаление, обязательства потребителей и держателей. Обязателен на уровне L2."
+      },
+      "maturity": "normative-draft",
+      "kinds": [
+        "Grant",
+        "Event",
+        "Projection",
+        "ContextLock"
+      ]
+    },
+    {
+      "code": "lenses",
+      "label": {
+        "en": "Lenses",
+        "ru": "Линзы"
+      },
+      "definition": {
+        "en": "Registry documents Lens, Instrument, Mapping and Playbook; per-person LensAdoption, AssessmentRecord and ModelView. Catalog entries are experimental.",
+        "ru": "Реестровые документы Lens, Instrument, Mapping и Playbook; личные LensAdoption, AssessmentRecord и ModelView. Записи каталога экспериментальны."
+      },
+      "maturity": "normative-draft",
+      "kinds": [
+        "Lens",
+        "Instrument",
+        "Mapping",
+        "Playbook",
+        "LensAdoption",
+        "AssessmentRecord",
+        "ModelView"
+      ]
+    },
+    {
+      "code": "instrument-import",
+      "label": {
+        "en": "Instrument import",
+        "ru": "Перенос результатов методик"
+      },
+      "definition": {
+        "en": "Imported results: AssessmentRecords a person brings from an instrument report, checked against the instrument's `import` block (INSTRUMENT-IMPORT.md). Requires `lenses`.",
+        "ru": "Перенесённые результаты: записи AssessmentRecord, которые человек приносит из отчёта методики, проверяются по блоку `import` методики (INSTRUMENT-IMPORT.md). Требует модуля `lenses`."
+      },
+      "maturity": "normative-draft",
+      "kinds": [],
+      "notes": "Adds no kind; it adds rules (IMP-1…IMP-5, INS-1) for AssessmentRecords whose `importedFrom.system` is an instrument id."
+    },
+    {
+      "code": "practices",
+      "label": {
+        "en": "Practices",
+        "ru": "Практики"
+      },
+      "definition": {
+        "en": "Practice and Outcome.",
+        "ru": "Practice и Outcome."
+      },
+      "maturity": "normative-draft",
+      "kinds": [
+        "Practice",
+        "Outcome"
+      ]
+    },
+    {
+      "code": "patterns",
+      "label": {
+        "en": "Patterns",
+        "ru": "Паттерны"
+      },
+      "definition": {
+        "en": "Pattern.",
+        "ru": "Pattern."
+      },
+      "maturity": "experimental",
+      "kinds": [
+        "Pattern"
+      ]
+    },
+    {
+      "code": "recall",
+      "label": {
+        "en": "Recall",
+        "ru": "Возвращение опыта"
+      },
+      "definition": {
+        "en": "RecallCue.",
+        "ru": "RecallCue."
+      },
+      "maturity": "experimental",
+      "kinds": [
+        "RecallCue"
+      ]
+    },
+    {
+      "code": "inner-system",
+      "label": {
+        "en": "Inner system",
+        "ru": "Внутренняя система"
+      },
+      "definition": {
+        "en": "Part, the held-by relation and part-to-part relations.",
+        "ru": "Part, связь held-by и связи между частями."
+      },
+      "maturity": "experimental",
+      "kinds": [
+        "Part"
+      ]
+    },
+    {
+      "code": "health-ref",
+      "label": {
+        "en": "Health pointers",
+        "ru": "Медицинские указатели"
+      },
+      "definition": {
+        "en": "HealthRef (FHIR pointer only).",
+        "ru": "HealthRef (только указатель FHIR)."
+      },
+      "maturity": "experimental",
+      "kinds": [
+        "HealthRef"
+      ]
+    },
+    {
+      "code": "exchange",
+      "label": {
+        "en": "Exchange",
+        "ru": "Обмен"
+      },
+      "definition": {
+        "en": "The 16 exchange message formats.",
+        "ru": "16 форматов сообщений обмена."
+      },
+      "maturity": "experimental",
+      "kinds": []
+    },
+    {
+      "code": "binding.gum",
+      "label": {
+        "en": "GUM binding",
+        "ru": "Привязка к GUM"
+      },
+      "definition": {
+        "en": "GUM import and export.",
+        "ru": "Импорт из GUM и выгрузка в GUM."
+      },
+      "maturity": "normative-draft",
+      "kinds": [],
+      "notes": "Normative-draft for anyone claiming GUM compatibility."
+    },
+    {
+      "code": "binding.ode",
+      "label": {
+        "en": "ODE binding",
+        "ru": "Привязка к ODE"
+      },
+      "definition": {
+        "en": "The Tier 0 binding to Open Digital Employee.",
+        "ru": "Привязка уровня Tier 0 к Open Digital Employee."
+      },
+      "maturity": "normative-draft",
+      "kinds": [],
+      "notes": "Normative-draft for anyone claiming ODE binding."
+    },
+    {
+      "code": "binding.mcp",
+      "label": {
+        "en": "MCP binding",
+        "ru": "Привязка к MCP"
+      },
+      "definition": {
+        "en": "The MCP tool surface, including the gumcp-compatible tool.",
+        "ru": "Набор инструментов MCP, включая инструмент, совместимый с gumcp."
+      },
+      "maturity": "experimental",
+      "kinds": []
+    }
+  ]
+}

@@ -1,0 +1,139 @@
+{
+  "format": "ohc.playbook",
+  "specVersion": "0.1.0-draft",
+  "id": "urn:ohc:playbook:cbt-basic",
+  "version": "0.1.0",
+  "name": {
+    "en": "Cognitive-behavioural lens: basic ways of working",
+    "ru": "Когнитивно-поведенческая линза: базовые способы работы"
+  },
+  "lenses": [
+    "urn:ohc:lens:cbt"
+  ],
+  "author": "OHC editors",
+  "sources": [],
+  "licence": "Apache-2.0",
+  "situations": [
+    {
+      "id": "under-strain",
+      "when": {
+        "en": "Under strain: tired, pressed or overloaded.",
+        "ru": "Под нагрузкой: усталость, давление или перегрузка."
+      },
+      "use": {
+        "en": [
+          "Ask what is happening and what went through their mind.",
+          "Offer the thought record as one option: situation, thought, feeling, action, alternative.",
+          "Let them fill it in their own words."
+        ],
+        "ru": [
+          "Спросите, что происходит и что пронеслось в голове.",
+          "Предложите запись мыслей как один из вариантов: ситуация, мысль, чувство, действие, альтернатива.",
+          "Пусть человек заполнит её своими словами."
+        ]
+      },
+      "toolkit": [
+        "cbt.thought-record"
+      ],
+      "results": [
+        "cbt/situation",
+        "cbt/automatic-thought",
+        "cbt/emotion",
+        "cbt/behavior",
+        "cbt/alternative-thought"
+      ],
+      "watchFor": {
+        "en": "Do not label distortions, and do not present this as therapy.",
+        "ru": "Не навешивайте ярлыки искажений и не выдавайте это за терапию."
+      }
+    },
+    {
+      "id": "after-setback",
+      "when": {
+        "en": "After a setback.",
+        "ru": "После неудачи."
+      },
+      "use": {
+        "en": [
+          "Ask what happened, in their words.",
+          "Ask what they expected, and what they told themselves afterwards.",
+          "If they want, offer the thought record and ask what else could be true."
+        ],
+        "ru": [
+          "Спросите, что произошло, — словами человека.",
+          "Спросите, чего человек ожидал и что сказал себе потом.",
+          "Если человек хочет, предложите запись мыслей и спросите, что ещё может быть правдой."
+        ]
+      },
+      "toolkit": [
+        "cbt.thought-record"
+      ],
+      "results": [
+        "cbt/automatic-thought",
+        "cbt/alternative-thought"
+      ],
+      "watchFor": {
+        "en": "Do not argue them out of their view.",
+        "ru": "Не переубеждайте человека."
+      }
+    },
+    {
+      "id": "hard-conversation",
+      "when": {
+        "en": "Preparing a hard conversation.",
+        "ru": "Подготовка к трудному разговору."
+      },
+      "use": {
+        "en": [
+          "Ask what they expect will happen.",
+          "Ask what else could be true.",
+          "Ask what they want to do, whatever the other person does."
+        ],
+        "ru": [
+          "Спросите, чего человек ожидает от разговора.",
+          "Спросите, что ещё может быть правдой.",
+          "Спросите, что человек хочет сделать, как бы ни поступил собеседник."
+        ]
+      },
+      "toolkit": [
+        "cbt.thought-record"
+      ],
+      "results": [
+        "cbt/automatic-thought",
+        "cbt/alternative-thought"
+      ],
+      "watchFor": {
+        "en": "Do not label distortions, and do not present this as therapy.",
+        "ru": "Не навешивайте ярлыки искажений и не выдавайте это за терапию."
+      }
+    },
+    {
+      "id": "choose-between-options",
+      "when": {
+        "en": "Choosing between options.",
+        "ru": "Выбор между вариантами."
+      },
+      "use": {
+        "en": [
+          "Lay out the options, in their words.",
+          "For the option that worries them, ask what thought comes up and what else could be true.",
+          "Leave the choice to them."
+        ],
+        "ru": [
+          "Разложите варианты словами человека.",
+          "Для варианта, который тревожит, спросите, какая мысль возникает и что ещё может быть правдой.",
+          "Оставьте выбор человеку."
+        ]
+      },
+      "toolkit": [],
+      "results": [
+        "cbt/automatic-thought",
+        "cbt/alternative-thought"
+      ],
+      "watchFor": {
+        "en": "Do not label distortions, and do not present this as therapy.",
+        "ru": "Не навешивайте ярлыки искажений и не выдавайте это за терапию."
+      }
+    }
+  ]
+}

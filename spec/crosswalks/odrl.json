@@ -1,0 +1,382 @@
+[
+  {
+    "format": "ohc.mapping",
+    "specVersion": "0.1.0-draft",
+    "id": "urn:ohc:mapping:ohc.grant--odrl.Agreement--odrl-2.2",
+    "version": "0.1.0",
+    "bridgeKind": "ohc-standard",
+    "from": {
+      "standard": "OHC 0.1.0-draft",
+      "concept": "the Grant"
+    },
+    "to": {
+      "standard": "W3C ODRL Information Model 2.2 (Recommendation, 15 February 2018)",
+      "concept": "odrl:Agreement (uid = grant id)"
+    },
+    "relation": "corresponds",
+    "scope": "Informative crosswalk between formats; never a conversion of a person's data without the person's grant",
+    "notIdentity": true,
+    "chainable": false,
+    "rowStatus": "accepted",
+    "evidenceGrade": "F",
+    "reviewedAt": "2026-10-09"
+  },
+  {
+    "format": "ohc.mapping",
+    "specVersion": "0.1.0-draft",
+    "id": "urn:ohc:mapping:ohc.grantor-grantee--odrl.assigner-assignee--odrl-2.2",
+    "version": "0.1.0",
+    "bridgeKind": "ohc-standard",
+    "from": {
+      "standard": "OHC 0.1.0-draft",
+      "concept": "grantor / grantee"
+    },
+    "to": {
+      "standard": "W3C ODRL Information Model 2.2 (Recommendation, 15 February 2018)",
+      "concept": "odrl:assigner (the subject alias) / odrl:assignee"
+    },
+    "relation": "corresponds",
+    "scope": "Informative crosswalk between formats; never a conversion of a person's data without the person's grant",
+    "notIdentity": true,
+    "chainable": false,
+    "rowStatus": "accepted",
+    "evidenceGrade": "F",
+    "reviewedAt": "2026-10-09"
+  },
+  {
+    "format": "ohc.mapping",
+    "specVersion": "0.1.0-draft",
+    "id": "urn:ohc:mapping:ohc.scope--odrl.target--odrl-2.2",
+    "version": "0.1.0",
+    "bridgeKind": "ohc-standard",
+    "from": {
+      "standard": "OHC 0.1.0-draft",
+      "concept": "scope"
+    },
+    "to": {
+      "standard": "W3C ODRL Information Model 2.2 (Recommendation, 15 February 2018)",
+      "concept": "odrl:target, an odrl:AssetCollection with odrl:refinement per selector field"
+    },
+    "relation": "corresponds",
+    "scope": "Informative crosswalk between formats; never a conversion of a person's data without the person's grant",
+    "notIdentity": true,
+    "chainable": false,
+    "rowStatus": "accepted-with-loss",
+    "lost": "Selector semantics (AND across fields, OR within a field) need refinements per field.",
+    "evidenceGrade": "F",
+    "reviewedAt": "2026-10-09"
+  },
+  {
+    "format": "ohc.mapping",
+    "specVersion": "0.1.0-draft",
+    "id": "urn:ohc:mapping:ohc.action-read--odrl.read--odrl-2.2",
+    "version": "0.1.0",
+    "bridgeKind": "ohc-standard",
+    "from": {
+      "standard": "OHC 0.1.0-draft",
+      "concept": "action read"
+    },
+    "to": {
+      "standard": "W3C ODRL Information Model 2.2 (Recommendation, 15 February 2018)",
+      "concept": "permission odrl:read"
+    },
+    "relation": "corresponds",
+    "scope": "Informative crosswalk between formats; never a conversion of a person's data without the person's grant",
+    "notIdentity": true,
+    "chainable": false,
+    "rowStatus": "accepted",
+    "evidenceGrade": "F",
+    "reviewedAt": "2026-10-09"
+  },
+  {
+    "format": "ohc.mapping",
+    "specVersion": "0.1.0-draft",
+    "id": "urn:ohc:mapping:ohc.action-suggest-write--ohc.suggest-write--odrl-2.2",
+    "version": "0.1.0",
+    "bridgeKind": "ohc-standard",
+    "from": {
+      "standard": "OHC 0.1.0-draft",
+      "concept": "actions suggest / write"
+    },
+    "to": {
+      "standard": "W3C ODRL Information Model 2.2 (Recommendation, 15 February 2018)",
+      "concept": "permission ohc:suggest / ohc:write"
+    },
+    "relation": "corresponds",
+    "scope": "Informative crosswalk between formats; never a conversion of a person's data without the person's grant",
+    "notIdentity": true,
+    "chainable": false,
+    "rowStatus": "accepted-with-loss",
+    "lost": "Uses an OHC-defined ODRL action or duty with a provisional IRI.",
+    "evidenceGrade": "F",
+    "reviewedAt": "2026-10-09"
+  },
+  {
+    "format": "ohc.mapping",
+    "specVersion": "0.1.0-draft",
+    "id": "urn:ohc:mapping:ohc.action-infer--ohc.infer--odrl-2.2",
+    "version": "0.1.0",
+    "bridgeKind": "ohc-standard",
+    "from": {
+      "standard": "OHC 0.1.0-draft",
+      "concept": "action infer"
+    },
+    "to": {
+      "standard": "W3C ODRL Information Model 2.2 (Recommendation, 15 February 2018)",
+      "concept": "permission ohc:infer"
+    },
+    "relation": "corresponds",
+    "scope": "Informative crosswalk between formats; never a conversion of a person's data without the person's grant",
+    "notIdentity": true,
+    "chainable": false,
+    "rowStatus": "accepted-with-loss",
+    "lost": "Uses an OHC-defined ODRL action or duty with a provisional IRI.",
+    "evidenceGrade": "F",
+    "reviewedAt": "2026-10-09"
+  },
+  {
+    "format": "ohc.mapping",
+    "specVersion": "0.1.0-draft",
+    "id": "urn:ohc:mapping:ohc.action-cite-excerpt--ohc.citeExcerpt--odrl-2.2",
+    "version": "0.1.0",
+    "bridgeKind": "ohc-standard",
+    "from": {
+      "standard": "OHC 0.1.0-draft",
+      "concept": "action cite-excerpt"
+    },
+    "to": {
+      "standard": "W3C ODRL Information Model 2.2 (Recommendation, 15 February 2018)",
+      "concept": "permission ohc:citeExcerpt"
+    },
+    "relation": "corresponds",
+    "scope": "Informative crosswalk between formats; never a conversion of a person's data without the person's grant",
+    "notIdentity": true,
+    "chainable": false,
+    "rowStatus": "accepted-with-loss",
+    "lost": "Uses an OHC-defined ODRL action or duty with a provisional IRI.",
+    "evidenceGrade": "F",
+    "reviewedAt": "2026-10-09"
+  },
+  {
+    "format": "ohc.mapping",
+    "specVersion": "0.1.0-draft",
+    "id": "urn:ohc:mapping:ohc.action-open-verbatim--ohc.openVerbatim--odrl-2.2",
+    "version": "0.1.0",
+    "bridgeKind": "ohc-standard",
+    "from": {
+      "standard": "OHC 0.1.0-draft",
+      "concept": "action open-verbatim"
+    },
+    "to": {
+      "standard": "W3C ODRL Information Model 2.2 (Recommendation, 15 February 2018)",
+      "concept": "permission ohc:openVerbatim with duty ohc:stepUp"
+    },
+    "relation": "corresponds",
+    "scope": "Informative crosswalk between formats; never a conversion of a person's data without the person's grant",
+    "notIdentity": true,
+    "chainable": false,
+    "rowStatus": "accepted-with-loss",
+    "lost": "Uses an OHC-defined ODRL action or duty with a provisional IRI.",
+    "evidenceGrade": "F",
+    "reviewedAt": "2026-10-09"
+  },
+  {
+    "format": "ohc.mapping",
+    "specVersion": "0.1.0-draft",
+    "id": "urn:ohc:mapping:ohc.action-export--odrl.distribute--odrl-2.2",
+    "version": "0.1.0",
+    "bridgeKind": "ohc-standard",
+    "from": {
+      "standard": "OHC 0.1.0-draft",
+      "concept": "action export"
+    },
+    "to": {
+      "standard": "W3C ODRL Information Model 2.2 (Recommendation, 15 February 2018)",
+      "concept": "permission odrl:distribute, constrained to the named recipient"
+    },
+    "relation": "corresponds",
+    "scope": "Informative crosswalk between formats; never a conversion of a person's data without the person's grant",
+    "notIdentity": true,
+    "chainable": false,
+    "rowStatus": "accepted",
+    "evidenceGrade": "F",
+    "reviewedAt": "2026-10-09"
+  },
+  {
+    "format": "ohc.mapping",
+    "specVersion": "0.1.0-draft",
+    "id": "urn:ohc:mapping:ohc.purposes--odrl.purpose--odrl-2.2",
+    "version": "0.1.0",
+    "bridgeKind": "ohc-standard",
+    "from": {
+      "standard": "OHC 0.1.0-draft",
+      "concept": "purposes"
+    },
+    "to": {
+      "standard": "W3C ODRL Information Model 2.2 (Recommendation, 15 February 2018)",
+      "concept": "constraint odrl:purpose odrl:isAnyOf"
+    },
+    "relation": "corresponds",
+    "scope": "Informative crosswalk between formats; never a conversion of a person's data without the person's grant",
+    "notIdentity": true,
+    "chainable": false,
+    "rowStatus": "accepted",
+    "evidenceGrade": "F",
+    "reviewedAt": "2026-10-09"
+  },
+  {
+    "format": "ohc.mapping",
+    "specVersion": "0.1.0-draft",
+    "id": "urn:ohc:mapping:ohc.expires-at--odrl.dateTime--odrl-2.2",
+    "version": "0.1.0",
+    "bridgeKind": "ohc-standard",
+    "from": {
+      "standard": "OHC 0.1.0-draft",
+      "concept": "constraints.expiresAt"
+    },
+    "to": {
+      "standard": "W3C ODRL Information Model 2.2 (Recommendation, 15 February 2018)",
+      "concept": "constraint odrl:dateTime odrl:lt"
+    },
+    "relation": "corresponds",
+    "scope": "Informative crosswalk between formats; never a conversion of a person's data without the person's grant",
+    "notIdentity": true,
+    "chainable": false,
+    "rowStatus": "accepted",
+    "evidenceGrade": "F",
+    "reviewedAt": "2026-10-09"
+  },
+  {
+    "format": "ohc.mapping",
+    "specVersion": "0.1.0-draft",
+    "id": "urn:ohc:mapping:ohc.max-uses--odrl.count--odrl-2.2",
+    "version": "0.1.0",
+    "bridgeKind": "ohc-standard",
+    "from": {
+      "standard": "OHC 0.1.0-draft",
+      "concept": "constraints.maxUses"
+    },
+    "to": {
+      "standard": "W3C ODRL Information Model 2.2 (Recommendation, 15 February 2018)",
+      "concept": "constraint odrl:count odrl:lteq"
+    },
+    "relation": "corresponds",
+    "scope": "Informative crosswalk between formats; never a conversion of a person's data without the person's grant",
+    "notIdentity": true,
+    "chainable": false,
+    "rowStatus": "accepted",
+    "evidenceGrade": "F",
+    "reviewedAt": "2026-10-09"
+  },
+  {
+    "format": "ohc.mapping",
+    "specVersion": "0.1.0-draft",
+    "id": "urn:ohc:mapping:ohc.forwarding--odrl.prohibition-distribute--odrl-2.2",
+    "version": "0.1.0",
+    "bridgeKind": "ohc-standard",
+    "from": {
+      "standard": "OHC 0.1.0-draft",
+      "concept": "constraints.forwarding false"
+    },
+    "to": {
+      "standard": "W3C ODRL Information Model 2.2 (Recommendation, 15 February 2018)",
+      "concept": "prohibition odrl:distribute"
+    },
+    "relation": "corresponds",
+    "scope": "Informative crosswalk between formats; never a conversion of a person's data without the person's grant",
+    "notIdentity": true,
+    "chainable": false,
+    "rowStatus": "accepted",
+    "evidenceGrade": "F",
+    "reviewedAt": "2026-10-09"
+  },
+  {
+    "format": "ohc.mapping",
+    "specVersion": "0.1.0-draft",
+    "id": "urn:ohc:mapping:ohc.handling--ohc.prohibitions--odrl-2.2",
+    "version": "0.1.0",
+    "bridgeKind": "ohc-standard",
+    "from": {
+      "standard": "OHC 0.1.0-draft",
+      "concept": "handling no-quote / no-quote-back / no-infer / no-leverage"
+    },
+    "to": {
+      "standard": "W3C ODRL Information Model 2.2 (Recommendation, 15 February 2018)",
+      "concept": "prohibitions ohc:quote / ohc:quoteBack / ohc:infer / ohc:leverage"
+    },
+    "relation": "corresponds",
+    "scope": "Informative crosswalk between formats; never a conversion of a person's data without the person's grant",
+    "notIdentity": true,
+    "chainable": false,
+    "rowStatus": "accepted-with-loss",
+    "lost": "Uses an OHC-defined ODRL action or duty with a provisional IRI.",
+    "evidenceGrade": "F",
+    "reviewedAt": "2026-10-09"
+  },
+  {
+    "format": "ohc.mapping",
+    "specVersion": "0.1.0-draft",
+    "id": "urn:ohc:mapping:ohc.revocation-erasure--odrl.delete--odrl-2.2",
+    "version": "0.1.0",
+    "bridgeKind": "ohc-standard",
+    "from": {
+      "standard": "OHC 0.1.0-draft",
+      "concept": "revocation and erasure notices"
+    },
+    "to": {
+      "standard": "W3C ODRL Information Model 2.2 (Recommendation, 15 February 2018)",
+      "concept": "duty odrl:delete (by purgeBy)"
+    },
+    "relation": "corresponds",
+    "scope": "Informative crosswalk between formats; never a conversion of a person's data without the person's grant",
+    "notIdentity": true,
+    "chainable": false,
+    "rowStatus": "accepted",
+    "evidenceGrade": "F",
+    "reviewedAt": "2026-10-09"
+  },
+  {
+    "format": "ohc.mapping",
+    "specVersion": "0.1.0-draft",
+    "id": "urn:ohc:mapping:ohc.effect-deny--odrl.prohibition--odrl-2.2",
+    "version": "0.1.0",
+    "bridgeKind": "ohc-standard",
+    "from": {
+      "standard": "OHC 0.1.0-draft",
+      "concept": "effect deny"
+    },
+    "to": {
+      "standard": "W3C ODRL Information Model 2.2 (Recommendation, 15 February 2018)",
+      "concept": "odrl:prohibition on the target"
+    },
+    "relation": "corresponds",
+    "scope": "Informative crosswalk between formats; never a conversion of a person's data without the person's grant",
+    "notIdentity": true,
+    "chainable": false,
+    "rowStatus": "accepted",
+    "evidenceGrade": "F",
+    "reviewedAt": "2026-10-09"
+  },
+  {
+    "format": "ohc.mapping",
+    "specVersion": "0.1.0-draft",
+    "id": "urn:ohc:mapping:ohc.grant-status--dpv.hasConsentStatus--odrl-2.2",
+    "version": "0.1.0",
+    "bridgeKind": "ohc-standard",
+    "from": {
+      "standard": "OHC 0.1.0-draft",
+      "concept": "Grant status (computed)"
+    },
+    "to": {
+      "standard": "W3C ODRL Information Model 2.2 (Recommendation, 15 February 2018)",
+      "concept": "dpv:hasConsentStatus"
+    },
+    "relation": "corresponds",
+    "scope": "Informative crosswalk between formats; never a conversion of a person's data without the person's grant",
+    "notIdentity": true,
+    "chainable": false,
+    "rowStatus": "accepted",
+    "evidenceGrade": "F",
+    "reviewedAt": "2026-10-09"
+  }
+]

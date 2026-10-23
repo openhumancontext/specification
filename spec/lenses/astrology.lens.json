@@ -1,0 +1,181 @@
+{
+  "format": "ohc.lens",
+  "specVersion": "0.1.0-draft",
+  "id": "urn:ohc:lens:astrology",
+  "version": "0.2.0",
+  "name": {
+    "en": "Astrology (as a self-description frame)",
+    "ru": "Астрология (как рамка самоописания)"
+  },
+  "descriptorStatus": "draft",
+  "kind": "self-description-frame",
+  "summary": {
+    "en": "A symbolic language some people use to describe their experience. In OHC it makes no claim to empirical validity, and its results are frame-relative.",
+    "ru": "Символический язык, которым некоторые люди описывают свой опыт. В OHC он не претендует на эмпирическую обоснованность, а его результаты относятся только к этой рамке."
+  },
+  "variants": [
+    {
+      "id": "western-tropical",
+      "note": "Western tropical zodiac"
+    },
+    {
+      "id": "vedic-sidereal",
+      "note": "Vedic sidereal zodiac"
+    }
+  ],
+  "constructs": [
+    {
+      "id": "astrology/placement",
+      "label": {
+        "en": "Placement (frame attribute)",
+        "ru": "Положение (атрибут рамки)"
+      }
+    },
+    {
+      "id": "astrology/aspect",
+      "label": {
+        "en": "Aspect (frame attribute)",
+        "ru": "Аспект (атрибут рамки)"
+      }
+    }
+  ],
+  "mentalModel": {
+    "assumptions": [
+      "the frame is meaningful to the person who chose it",
+      "the frame makes no empirical claim in OHC",
+      "every result is frame-relative"
+    ],
+    "stance": "symbolic and person-chosen",
+    "howChangeHappens": "Not addressed by OHC; the person decides how the frame is used.",
+    "agentPosture": {
+      "do": [
+        "use the person's own words"
+      ],
+      "dont": [
+        "treat frame attributes as facts about the person",
+        "present a frame attribute, or anything read from it, as an empirical trait or a prediction"
+      ]
+    },
+    "doesNotClaim": [
+      "empirical validity",
+      "predictions about the person",
+      "anything about compatibility with other people"
+    ],
+    "summary": "A chart computed from birth data offers symbols the person may find meaningful for describing their experience.",
+    "unitOfAnalysis": "the person's own use of the chart's symbols",
+    "attendsTo": [
+      "how the person uses the language",
+      "what it helps the person put into words"
+    ],
+    "languageGuidance": "Use the frame's language only as the person's chosen language; never present it as fact or prediction.",
+    "exploratoryQuestions": [
+      "How does this language help you describe your experience?"
+    ],
+    "helperMustNot": [
+      "map chart attributes to any empirical construct"
+    ],
+    "riskNotes": [
+      "Birth date, time and place identify a person",
+      "Frames tied to spiritual practice may reveal beliefs"
+    ]
+  },
+  "toolkit": [
+    {
+      "id": "astrology.chart",
+      "name": "Chart from birth data",
+      "kind": "instrument-use",
+      "description": "A chart computed from birth data, with the engine and its version recorded.",
+      "facilitation": "self",
+      "requiresPractitioner": false,
+      "agentMayOffer": true,
+      "nonClinical": true,
+      "produces": "AssessmentRecord",
+      "cautions": [
+        "Birth data is category birth-data",
+        "Results are frame-relative"
+      ]
+    }
+  ],
+  "representations": [
+    {
+      "id": "astrology.chart",
+      "kind": "chart",
+      "resultType": "frame-attributes",
+      "description": "Placements and aspects as frame attributes, with the engine and version used."
+    }
+  ],
+  "instruments": [],
+  "adoption": {
+    "routes": [
+      "self-chosen",
+      "imported",
+      "inherited-from-practice",
+      "agent-suggested"
+    ],
+    "suggestionRequires": [
+      "the person brought up the frame themselves"
+    ],
+    "inheritanceRoles": [
+      "other"
+    ]
+  },
+  "evidence": {
+    "measurementTier": "T5",
+    "practiceTier": {
+      "clinicianDelivered": "not-assessed",
+      "selfGuided": "not-assessed",
+      "agentOffered": "not-assessed"
+    },
+    "ontologicalStatus": "symbolic-frame",
+    "citations": [
+      {
+        "ref": "doi:10.1038/318419a0",
+        "grade": "F2",
+        "note": "Carlson 1985, Nature 318:419: chance-level matching in a double-blind test"
+      }
+    ],
+    "reviewedAt": "2026-10-09"
+  },
+  "supports": [
+    "self-description in a symbolic language the person chose"
+  ],
+  "doesNotEstablish": [
+    "any trait, state or behaviour of the person",
+    "predictions",
+    "compatibility with other people"
+  ],
+  "ip": {
+    "conceptStatus": "free-concept",
+    "marks": [],
+    "itemsLicence": "not applicable",
+    "scoring": "public",
+    "restrictions": [
+      "inputs are category birth-data",
+      "every result is frame-relative"
+    ],
+    "registryListing": "ok",
+    "legalReviewNeeded": true
+  },
+  "useLimits": {
+    "crossLensMapping": "not-allowed"
+  },
+  "defaults": {
+    "sensitivity": "special",
+    "categories": [
+      "birth-data"
+    ],
+    "reviewAfter": "on-change"
+  },
+  "mappings": [
+    "urn:ohc:mapping:astrology--any"
+  ],
+  "playbooks": [
+    "urn:ohc:playbook:astrology-basic"
+  ],
+  "sources": [
+    "Carlson 1985"
+  ],
+  "descriptorAuthors": [
+    "OHC editors"
+  ]
+}

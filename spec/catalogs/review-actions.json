@@ -1,0 +1,510 @@
+{
+  "format": "ohc.catalog",
+  "id": "urn:ohc:catalog:review-actions",
+  "version": "0.1.0",
+  "specVersion": "0.1.0-draft",
+  "title": {
+    "en": "Review actions",
+    "ru": "Действия решений по записям"
+  },
+  "description": {
+    "en": "The single mechanism for every status change. In `targets`, `content` means any content record, `proposed` a record whose admission is proposed and `contested` a contested record. In `allowedActors`, `steward` means a steward within scope and `asserter` the record's `assertedBy`. Replay applies Reviews by `recordedAt`, then file order; each axis takes the last applicable action; `retract` is terminal.",
+    "ru": "Единый механизм любого изменения статуса. В `targets` значение `content` означает любую содержательную запись, `proposed` — запись в статусе «предложено», `contested` — оспоренную запись. В `allowedActors` значение `steward` означает доверенное лицо в пределах полномочий, `asserter` — автора записи (`assertedBy`). При воспроизведении решения применяются по `recordedAt`, затем по порядку в файле; каждая ось берёт последнее применимое действие; `retract` окончателен."
+  },
+  "closed": true,
+  "codes": [
+    {
+      "code": "endorse",
+      "label": {
+        "en": "Endorse",
+        "ru": "Подтвердить"
+      },
+      "definition": {
+        "en": "Endorsement becomes `endorsed`. Implies `admit` on a proposed record.",
+        "ru": "Позиция становится `endorsed`. Для предложенной записи подразумевает `admit`."
+      },
+      "targets": [
+        "content"
+      ],
+      "allowedActors": [
+        "subject",
+        "steward"
+      ],
+      "implies": [
+        "admit"
+      ],
+      "notes": "A steward only within scope, never on special-tier or inner-system records."
+    },
+    {
+      "code": "partially-endorse",
+      "label": {
+        "en": "Partly endorse",
+        "ru": "Подтвердить частично"
+      },
+      "definition": {
+        "en": "Endorsement becomes `partial`, with `endorsedPart`. Implies `admit` on a proposed record.",
+        "ru": "Позиция становится `partial`, с `endorsedPart`. Для предложенной записи подразумевает `admit`."
+      },
+      "targets": [
+        "content"
+      ],
+      "allowedActors": [
+        "subject",
+        "steward"
+      ],
+      "implies": [
+        "admit"
+      ],
+      "notes": "A steward only within scope, never on special-tier or inner-system records."
+    },
+    {
+      "code": "reject",
+      "label": {
+        "en": "Reject",
+        "ru": "Отклонить"
+      },
+      "definition": {
+        "en": "Endorsement becomes `rejected`. Implies `decline` on a proposed record unless the subject later admits it. On a Practice it gives `not-for-me`.",
+        "ru": "Позиция становится `rejected`. Для предложенной записи подразумевает `decline`, если человек позже её не примет. Для практики даёт статус `not-for-me`."
+      },
+      "targets": [
+        "content"
+      ],
+      "allowedActors": [
+        "subject",
+        "steward"
+      ],
+      "implies": [
+        "decline"
+      ],
+      "notes": "A steward only within scope, never on special-tier or inner-system records."
+    },
+    {
+      "code": "contest",
+      "label": {
+        "en": "Contest",
+        "ru": "Оспорить"
+      },
+      "definition": {
+        "en": "Sets `contested`. Implies `admit` on a proposed record. The record and its evidence stay.",
+        "ru": "Устанавливает признак `contested`. Для предложенной записи подразумевает `admit`. Запись и её свидетельства остаются."
+      },
+      "targets": [
+        "content"
+      ],
+      "allowedActors": [
+        "subject",
+        "steward"
+      ],
+      "implies": [
+        "admit"
+      ],
+      "notes": "A steward only within scope, never on special-tier or inner-system records."
+    },
+    {
+      "code": "withdraw-contest",
+      "label": {
+        "en": "Withdraw contest",
+        "ru": "Снять оспаривание"
+      },
+      "definition": {
+        "en": "Clears `contested`.",
+        "ru": "Снимает признак `contested`."
+      },
+      "targets": [
+        "contested"
+      ],
+      "allowedActors": [
+        "subject",
+        "steward"
+      ]
+    },
+    {
+      "code": "resolve-contest",
+      "label": {
+        "en": "Resolve contest",
+        "ru": "Закрыть оспаривание"
+      },
+      "definition": {
+        "en": "Clears `contested`, with a note.",
+        "ru": "Снимает признак `contested`, с примечанием."
+      },
+      "targets": [
+        "contested"
+      ],
+      "allowedActors": [
+        "subject"
+      ]
+    },
+    {
+      "code": "lock",
+      "label": {
+        "en": "Lock",
+        "ru": "Закрепить"
+      },
+      "definition": {
+        "en": "Sets `locked`.",
+        "ru": "Устанавливает признак `locked`."
+      },
+      "targets": [
+        "content"
+      ],
+      "allowedActors": [
+        "subject"
+      ]
+    },
+    {
+      "code": "unlock",
+      "label": {
+        "en": "Unlock",
+        "ru": "Снять закрепление"
+      },
+      "definition": {
+        "en": "Clears `locked`.",
+        "ru": "Снимает признак `locked`."
+      },
+      "targets": [
+        "content"
+      ],
+      "allowedActors": [
+        "subject"
+      ]
+    },
+    {
+      "code": "confirm-current",
+      "label": {
+        "en": "Confirm current",
+        "ru": "Подтвердить актуальность"
+      },
+      "definition": {
+        "en": "Sets the last confirmation time used by the freshness algorithm.",
+        "ru": "Задаёт время последнего подтверждения для алгоритма свежести."
+      },
+      "targets": [
+        "Claim",
+        "AssessmentRecord",
+        "LensAdoption",
+        "Practice"
+      ],
+      "allowedActors": [
+        "subject",
+        "steward"
+      ]
+    },
+    {
+      "code": "mark-not-current",
+      "label": {
+        "en": "Mark not current",
+        "ru": "Отметить как неактуальное"
+      },
+      "definition": {
+        "en": "Freshness becomes `expired`; for an Interpretation it closes `heldDuring`.",
+        "ru": "Свежесть становится `expired`; для интерпретации закрывает `heldDuring`."
+      },
+      "targets": [
+        "Claim",
+        "AssessmentRecord",
+        "LensAdoption",
+        "Practice",
+        "Interpretation"
+      ],
+      "allowedActors": [
+        "subject",
+        "steward"
+      ]
+    },
+    {
+      "code": "admit",
+      "label": {
+        "en": "Admit",
+        "ru": "Принять"
+      },
+      "definition": {
+        "en": "Admission becomes `active`.",
+        "ru": "Принятие становится `active`."
+      },
+      "targets": [
+        "proposed"
+      ],
+      "allowedActors": [
+        "subject",
+        "holder"
+      ],
+      "notes": "The holder only under the admission policy of R-A1."
+    },
+    {
+      "code": "decline",
+      "label": {
+        "en": "Decline",
+        "ru": "Не принимать"
+      },
+      "definition": {
+        "en": "Admission becomes `declined`.",
+        "ru": "Принятие становится `declined`."
+      },
+      "targets": [
+        "proposed"
+      ],
+      "allowedActors": [
+        "subject",
+        "holder"
+      ],
+      "notes": "The holder only under the admission policy of R-A1."
+    },
+    {
+      "code": "retract",
+      "label": {
+        "en": "Retract",
+        "ru": "Отозвать"
+      },
+      "definition": {
+        "en": "Admission becomes `retracted`. Terminal.",
+        "ru": "Принятие становится `retracted`. Окончательно."
+      },
+      "targets": [
+        "content"
+      ],
+      "allowedActors": [
+        "asserter",
+        "subject"
+      ]
+    },
+    {
+      "code": "reassess",
+      "label": {
+        "en": "Reassess",
+        "ru": "Пересмотреть статус"
+      },
+      "definition": {
+        "en": "Epistemic status becomes the value given in `epistemic`.",
+        "ru": "Эпистемический статус становится значением из `epistemic`."
+      },
+      "targets": [
+        "content"
+      ],
+      "allowedActors": [
+        "asserter",
+        "subject"
+      ]
+    },
+    {
+      "code": "restrict",
+      "label": {
+        "en": "Restrict",
+        "ru": "Ограничить"
+      },
+      "definition": {
+        "en": "Raises the tier, adds handling or categories, or narrows recall.",
+        "ru": "Повышает уровень, добавляет ограничения обращения или категории, сужает возвращение опыта."
+      },
+      "targets": [
+        "content"
+      ],
+      "allowedActors": [
+        "subject",
+        "steward",
+        "holder"
+      ],
+      "notes": "The holder only for quarantine (R-X3) and third-party protection."
+    },
+    {
+      "code": "relax",
+      "label": {
+        "en": "Relax",
+        "ru": "Ослабить"
+      },
+      "definition": {
+        "en": "Lowers the tier, removes handling, sets audience `grantees`, or widens recall. Subject only.",
+        "ru": "Понижает уровень, снимает ограничения обращения, задаёт круг `grantees` или расширяет возвращение опыта. Только сам человек."
+      },
+      "targets": [
+        "content"
+      ],
+      "allowedActors": [
+        "subject"
+      ]
+    },
+    {
+      "code": "redact",
+      "label": {
+        "en": "Redact",
+        "ru": "Скрыть фрагменты"
+      },
+      "definition": {
+        "en": "Adds release-time redactions to a Source.",
+        "ru": "Добавляет к источнику фрагменты, скрываемые при раскрытии."
+      },
+      "targets": [
+        "Source"
+      ],
+      "allowedActors": [
+        "subject",
+        "holder"
+      ],
+      "notes": "The holder only for third-party protection."
+    },
+    {
+      "code": "pause",
+      "label": {
+        "en": "Pause",
+        "ru": "Приостановить"
+      },
+      "definition": {
+        "en": "Lifecycle status becomes paused.",
+        "ru": "Статус жизненного цикла — приостановлено."
+      },
+      "targets": [
+        "LensAdoption",
+        "RecallCue",
+        "Practice"
+      ],
+      "allowedActors": [
+        "subject"
+      ]
+    },
+    {
+      "code": "resume",
+      "label": {
+        "en": "Resume",
+        "ru": "Возобновить"
+      },
+      "definition": {
+        "en": "Lifecycle status becomes active (in use for a Practice).",
+        "ru": "Статус жизненного цикла — действует (для практики — используется)."
+      },
+      "targets": [
+        "LensAdoption",
+        "RecallCue",
+        "Practice"
+      ],
+      "allowedActors": [
+        "subject"
+      ]
+    },
+    {
+      "code": "retire",
+      "label": {
+        "en": "Retire",
+        "ru": "Вывести из употребления"
+      },
+      "definition": {
+        "en": "Lifecycle status becomes retired.",
+        "ru": "Статус жизненного цикла — выведено из употребления."
+      },
+      "targets": [
+        "LensAdoption",
+        "RecallCue",
+        "Practice"
+      ],
+      "allowedActors": [
+        "subject"
+      ]
+    },
+    {
+      "code": "acknowledge",
+      "label": {
+        "en": "Acknowledge",
+        "ru": "Признать"
+      },
+      "definition": {
+        "en": "Tension status becomes acknowledged.",
+        "ru": "Статус напряжения — признано."
+      },
+      "targets": [
+        "Tension"
+      ],
+      "allowedActors": [
+        "subject"
+      ]
+    },
+    {
+      "code": "explore",
+      "label": {
+        "en": "Explore",
+        "ru": "Исследовать"
+      },
+      "definition": {
+        "en": "Tension status becomes exploring.",
+        "ru": "Статус напряжения — исследуется."
+      },
+      "targets": [
+        "Tension"
+      ],
+      "allowedActors": [
+        "subject"
+      ]
+    },
+    {
+      "code": "hold-as-is",
+      "label": {
+        "en": "Hold as is",
+        "ru": "Оставить как есть"
+      },
+      "definition": {
+        "en": "Tension status becomes held as is.",
+        "ru": "Статус напряжения — удерживается как есть."
+      },
+      "targets": [
+        "Tension"
+      ],
+      "allowedActors": [
+        "subject"
+      ]
+    },
+    {
+      "code": "resolve",
+      "label": {
+        "en": "Resolve",
+        "ru": "Разрешить"
+      },
+      "definition": {
+        "en": "Tension status becomes resolved (T1).",
+        "ru": "Статус напряжения — разрешено (T1)."
+      },
+      "targets": [
+        "Tension"
+      ],
+      "allowedActors": [
+        "subject",
+        "holder"
+      ],
+      "notes": "The holder only when `whoDecides` is `holder-policy` (T2)."
+    },
+    {
+      "code": "withdraw-grant",
+      "label": {
+        "en": "Withdraw grant",
+        "ru": "Отозвать разрешение"
+      },
+      "definition": {
+        "en": "Grant status becomes `withdrawn`.",
+        "ru": "Статус разрешения — `withdrawn`."
+      },
+      "targets": [
+        "Grant"
+      ],
+      "allowedActors": [
+        "subject",
+        "steward"
+      ],
+      "notes": "A steward only as the grantor, within scope."
+    },
+    {
+      "code": "revoke-grant",
+      "label": {
+        "en": "Revoke grant",
+        "ru": "Аннулировать разрешение"
+      },
+      "definition": {
+        "en": "Grant status becomes `revoked` (for security or misuse).",
+        "ru": "Статус разрешения — `revoked` (из соображений безопасности или при злоупотреблении)."
+      },
+      "targets": [
+        "Grant"
+      ],
+      "allowedActors": [
+        "holder"
+      ]
+    }
+  ]
+}

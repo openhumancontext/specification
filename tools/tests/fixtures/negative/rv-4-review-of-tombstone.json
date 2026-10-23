@@ -1,0 +1,34 @@
+{
+  "description": "A Review that targets a tombstoned id.",
+  "expect": [
+    "RV-4"
+  ],
+  "form": "single",
+  "patches": [
+    {
+      "op": "set",
+      "target": "interpretations",
+      "path": "/@in-01",
+      "value": {
+        "kind": "Tombstone",
+        "id": "in-01",
+        "erasedKind": "Interpretation",
+        "erasedAt": "2026-09-07T08:00:00Z",
+        "erasedBy": "subject",
+        "reason": "subject-request"
+      }
+    },
+    {
+      "op": "add",
+      "target": "reviews",
+      "path": "",
+      "value": {
+        "id": "rv-09",
+        "target": "in-01",
+        "action": "lock",
+        "by": "subject",
+        "recordedAt": "2026-09-08T08:00:00Z"
+      }
+    }
+  ]
+}

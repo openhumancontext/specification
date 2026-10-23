@@ -1,0 +1,22 @@
+{
+  "description": "An agent resolves the person's Tension.",
+  "expect": [
+    "T1"
+  ],
+  "form": "single",
+  "patches": [
+    {
+      "op": "add",
+      "target": "reviews",
+      "path": "",
+      "value": {
+        "id": "rv-09",
+        "target": "t-01",
+        "action": "resolve",
+        "by": "a-01",
+        "underGrant": "g-01",
+        "recordedAt": "2026-09-08T08:00:00Z"
+      }
+    }
+  ]
+}

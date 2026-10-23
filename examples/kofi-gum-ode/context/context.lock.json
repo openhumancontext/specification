@@ -1,0 +1,22 @@
+{
+  "format": "ohc.lock",
+  "specVersion": "0.1.0-draft",
+  "context": {
+    "id": "urn:ohc:example:kofi:context",
+    "version": "2026-10-09.3"
+  },
+  "algorithm": "sha256",
+  "files": {
+    "context.json": "sha256:e385e9868b89f166d0679317a27d8499deb7c01526a0ec4b4293ddda7669e485",
+    "events.jsonl": "sha256:b8143a6016214393b37ff5c28f869a5674f5085fea18ef0a4233259538518fff",
+    "projections/prj-0012.json": "sha256:2531b83b7d79a7608e07d44131cca4505f3d65286c41d73ccc69ca8ce7559c0b",
+    "records/assessments.jsonl": "sha256:8e3995092e698f66ef0a34ec8aa3dbb8c44841d1563582c21bc8b56754c82b6d",
+    "records/claims.jsonl": "sha256:d4fc67959e4f9d0ed0242a08aeef258a92a9faca6ef6ab2b58d5eb17f400cd88",
+    "records/grants.jsonl": "sha256:7415217fca1e6dab7ba201e56b7c40a9cb0b4bf316c4a36bf4b88d31d30c8260",
+    "records/lens-adoptions.jsonl": "sha256:47d62f42f66bcdfbca7593a3ec5f5fcb8e721b5d92812711ce4fbfd033d325e9",
+    "records/proposals.jsonl": "sha256:cdfdef1243ace3185b55c5f09cd6ad5e7b1596c378deaa257a9cced9a03f60d3",
+    "records/reviews.jsonl": "sha256:ce8fb360a7403dc3e06d77c5244809ff072970e1e75be4937bc45433ff86823a",
+    "records/sources.jsonl": "sha256:1c3cb2f088997745050ab1973d9d93bb08884d107a5a20678682abd7259c41db"
+  },
+  "createdAt": "2026-10-09T09:05:00Z"
+}

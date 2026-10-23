@@ -1,0 +1,32 @@
+{
+  "description": "A steward with basis guardianship (R-C4).",
+  "expect": [
+    "CX-7"
+  ],
+  "form": "single",
+  "patches": [
+    {
+      "op": "set",
+      "target": "manifest",
+      "path": "/stewards",
+      "value": [
+        {
+          "party": "p-01",
+          "scope": {
+            "actions": [
+              "confirm-current"
+            ]
+          },
+          "basis": "guardianship",
+          "validFrom": "2026-09-01T00:00:00Z",
+          "validUntil": "2026-12-01T00:00:00Z",
+          "expressedBy": {
+            "actor": "subject",
+            "at": "2026-09-01T00:00:00Z",
+            "channel": "in-person"
+          }
+        }
+      ]
+    }
+  ]
+}

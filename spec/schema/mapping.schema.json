@@ -1,0 +1,182 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:ohc:schema:mapping:0.1.0-draft",
+  "title": "OHC Mapping registry record",
+  "description": "One shape for every bridge: lens to lens, OHC to ODE, OHC to other standards. A mapping is a cited, population-level link, never an identity, never an alias and never chained (M-1 to M-3). Module lenses.",
+  "type": "object",
+  "required": [
+    "format",
+    "specVersion",
+    "id",
+    "version",
+    "bridgeKind",
+    "from",
+    "to",
+    "relation",
+    "scope",
+    "notIdentity",
+    "chainable",
+    "rowStatus",
+    "evidenceGrade",
+    "reviewedAt"
+  ],
+  "properties": {
+    "format": {
+      "const": "ohc.mapping"
+    },
+    "specVersion": {
+      "const": "0.1.0-draft"
+    },
+    "id": {
+      "type": "string",
+      "pattern": "^urn:ohc:mapping:[^\\s]+$"
+    },
+    "version": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/SemVer"
+    },
+    "bridgeKind": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/mapping.bridge-kinds"
+    },
+    "from": {
+      "$ref": "#/$defs/End"
+    },
+    "to": {
+      "$ref": "#/$defs/End"
+    },
+    "relation": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/mapping.relations"
+    },
+    "statistic": {
+      "type": "object",
+      "properties": {
+        "r": {
+          "type": "number",
+          "minimum": -1,
+          "maximum": 1
+        },
+        "n": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "sample": {
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+        }
+      },
+      "additionalProperties": false,
+      "minProperties": 1
+    },
+    "source": {
+      "description": "A citation; required for correlates.",
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+    },
+    "scope": {
+      "description": "For lens bridges always \"population-level only; never for converting one person's result\".",
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+    },
+    "notIdentity": {
+      "const": true
+    },
+    "chainable": {
+      "const": false
+    },
+    "rowStatus": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/mapping.row-status"
+    },
+    "lost": {
+      "description": "Required for accepted-with-loss.",
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+    },
+    "forbiddenUse": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+    },
+    "reopenWhen": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+    },
+    "evidenceGrade": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/mapping.evidence-grades"
+    },
+    "reviewedAt": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Date"
+    }
+  },
+  "additionalProperties": false,
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "relation": {
+            "const": "correlates"
+          }
+        },
+        "required": [
+          "relation"
+        ]
+      },
+      "then": {
+        "required": [
+          "statistic",
+          "source"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "rowStatus": {
+            "const": "accepted-with-loss"
+          }
+        },
+        "required": [
+          "rowStatus"
+        ]
+      },
+      "then": {
+        "required": [
+          "lost"
+        ]
+      }
+    }
+  ],
+  "$defs": {
+    "End": {
+      "type": "object",
+      "description": "One end of a bridge.",
+      "properties": {
+        "lens": {
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/URI"
+        },
+        "construct": {
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+        },
+        "instrument": {
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+        },
+        "standard": {
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+        },
+        "concept": {
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+        },
+        "pin": {
+          "type": "object",
+          "properties": {
+            "tag": {
+              "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+            },
+            "commit": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{7,40}$"
+            },
+            "sha256": {
+              "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Sha256Hex"
+            }
+          },
+          "additionalProperties": false,
+          "minProperties": 1
+        }
+      },
+      "additionalProperties": false,
+      "minProperties": 1
+    }
+  }
+}

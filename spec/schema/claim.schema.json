@@ -1,0 +1,248 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:ohc:schema:claim:0.1.0-draft",
+  "title": "OHC Claim",
+  "description": "One statement about the person in the present tense of its validity interval, or an explicit absence. A Claim never carries an interpretation. Layer assertion; module core.",
+  "type": "object",
+  "required": [
+    "id",
+    "facet",
+    "origin",
+    "assertedBy",
+    "recordedAt"
+  ],
+  "properties": {
+    "kind": {
+      "const": "Claim"
+    },
+    "id": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Envelope/properties/id"
+    },
+    "facet": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/claim-facets.facets"
+    },
+    "predicate": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Predicate"
+    },
+    "text": {
+      "description": "Kept in the asserter's words. Exactly one of text and absence (CL-1).",
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+    },
+    "absence": {
+      "description": "An explicit no-value with its reason. intentional true is allowed only with not-chosen.",
+      "type": "object",
+      "required": [
+        "code"
+      ],
+      "properties": {
+        "code": {
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/absence"
+        },
+        "intentional": {
+          "type": "boolean"
+        },
+        "note": {
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+        }
+      },
+      "additionalProperties": false,
+      "if": {
+        "properties": {
+          "intentional": {
+            "const": true
+          }
+        },
+        "required": [
+          "intentional"
+        ]
+      },
+      "then": {
+        "properties": {
+          "code": {
+            "const": "not-chosen"
+          }
+        }
+      }
+    },
+    "horizon": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/horizons"
+    },
+    "value": {
+      "description": "A machine value, if useful. Any JSON. MUST be absent when valueAddress is present (CL-7)."
+    },
+    "unit": {
+      "description": "UCUM or free text.",
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+    },
+    "valid": {
+      "description": "Experience time: when the content is true or applies.",
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Interval"
+    },
+    "lastEvidenceAt": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/DateTime"
+    },
+    "reviewAfter": {
+      "description": "Overrides the horizon interval of the freshness algorithm.",
+      "anyOf": [
+        {
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Duration"
+        },
+        {
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Date"
+        }
+      ]
+    },
+    "onExpiry": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/on-expiry"
+    },
+    "valueAddress": {
+      "type": "object",
+      "description": "A live value held elsewhere; never stored (R-T2).",
+      "required": [
+        "source",
+        "field",
+        "ttl"
+      ],
+      "properties": {
+        "source": {
+          "anyOf": [
+            {
+              "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Ref"
+            },
+            {
+              "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/URI"
+            }
+          ]
+        },
+        "field": {
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+        },
+        "ttl": {
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Duration"
+        }
+      },
+      "additionalProperties": false
+    },
+    "about": {
+      "description": "The counterpart Party; only with facets relationship, commitment, boundary, preference and goal (TP-1).",
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/LocalId"
+    },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Ground"
+      },
+      "minItems": 1
+    },
+    "derivedFrom": {
+      "description": "Required when origin is derived.",
+      "type": "array",
+      "items": {
+        "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Ref"
+      },
+      "minItems": 1
+    },
+    "rationale": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+    },
+    "origin": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Envelope/properties/origin"
+    },
+    "assertedBy": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Envelope/properties/assertedBy"
+    },
+    "recordedAt": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Envelope/properties/recordedAt"
+    },
+    "recordedBy": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Envelope/properties/recordedBy"
+    },
+    "underGrant": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Envelope/properties/underGrant"
+    },
+    "purpose": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Envelope/properties/purpose"
+    },
+    "formulatedAt": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Envelope/properties/formulatedAt"
+    },
+    "supersedes": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Envelope/properties/supersedes"
+    },
+    "epistemic": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Envelope/properties/epistemic"
+    },
+    "confidence": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Envelope/properties/confidence"
+    },
+    "sensitivity": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Envelope/properties/sensitivity"
+    },
+    "categories": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Envelope/properties/categories"
+    },
+    "handling": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Envelope/properties/handling"
+    },
+    "audience": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Envelope/properties/audience"
+    },
+    "contexts": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Envelope/properties/contexts"
+    },
+    "lang": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Envelope/properties/lang"
+    },
+    "importedFrom": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Envelope/properties/importedFrom"
+    },
+    "generatedBy": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Envelope/properties/generatedBy"
+    },
+    "synthetic": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Envelope/properties/synthetic"
+    },
+    "note": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Envelope/properties/note"
+    },
+    "ext": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Envelope/properties/ext"
+    }
+  },
+  "additionalProperties": false,
+  "allOf": [
+    {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/EnvelopeRules"
+    },
+    {
+      "oneOf": [
+        {
+          "required": [
+            "text"
+          ]
+        },
+        {
+          "required": [
+            "absence"
+          ]
+        }
+      ]
+    },
+    {
+      "not": {
+        "required": [
+          "value",
+          "valueAddress"
+        ]
+      }
+    },
+    {
+      "not": {
+        "required": [
+          "absence",
+          "valueAddress"
+        ]
+      }
+    }
+  ]
+}

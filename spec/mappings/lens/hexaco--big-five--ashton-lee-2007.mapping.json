@@ -1,0 +1,23 @@
+{
+  "format": "ohc.mapping",
+  "specVersion": "0.1.0-draft",
+  "id": "urn:ohc:mapping:hexaco--big-five--ashton-lee-2007",
+  "version": "0.1.0",
+  "bridgeKind": "lens-lens",
+  "from": {
+    "lens": "urn:ohc:lens:hexaco"
+  },
+  "to": {
+    "lens": "urn:ohc:lens:big-five"
+  },
+  "relation": "corresponds",
+  "source": "Ashton & Lee 2007, Personality and Social Psychology Review 11:150-166, doi:10.1177/1088868306294907",
+  "scope": "population-level only; never for converting one person's result",
+  "notIdentity": true,
+  "chainable": false,
+  "rowStatus": "not-identity",
+  "lost": "Structural only: six factors versus five. Honesty-Humility has no Big Five counterpart; HEXACO Emotionality is not Neuroticism, and Agreeableness is redefined.",
+  "forbiddenUse": "Never alias HEXACO construct ids to Big Five construct ids (M-1), and never convert one person's scores between the two.",
+  "evidenceGrade": "F",
+  "reviewedAt": "2026-10-09"
+}

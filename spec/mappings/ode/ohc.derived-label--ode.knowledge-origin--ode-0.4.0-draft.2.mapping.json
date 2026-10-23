@@ -1,0 +1,28 @@
+{
+  "format": "ohc.mapping",
+  "specVersion": "0.1.0-draft",
+  "id": "urn:ohc:mapping:ohc.derived-label--ode.knowledge-origin--ode-0.4.0-draft.2",
+  "version": "0.1.0",
+  "bridgeKind": "ohc-ode",
+  "from": {
+    "standard": "OHC 0.1.0-draft",
+    "concept": "derived display label (catalog labels.json)"
+  },
+  "to": {
+    "standard": "ODE 0.4.0-draft",
+    "concept": "knowledgeOrigin (proposed person-profile extension)",
+    "pin": {
+      "tag": "v0.4.0-draft.2",
+      "commit": "2de920485fb2665eaf7298ac65452a4a79412a9a"
+    }
+  },
+  "relation": "corresponds",
+  "scope": "Binding revision 0.2.0 (OHC 0.1.0-draft and ODE release 0.4.0-draft.2); a conceptual comparison, never permission to convert or disclose a person's data",
+  "notIdentity": true,
+  "chainable": false,
+  "rowStatus": "accepted-with-loss",
+  "lost": "OHC computes one label from six status axes; knowledgeOrigin keeps one value. The mapping per label is in the labels catalog.",
+  "reopenWhen": "Re-check when the ODE person-profile extension is released; the ODE term is from its proposed extension and is not in the pinned release schemas.",
+  "evidenceGrade": "verify",
+  "reviewedAt": "2026-10-23"
+}

@@ -1,0 +1,19 @@
+{
+  "description": "An allow selector reaching special tier by tiers only (R-G3).",
+  "expect": [
+    "GR-6"
+  ],
+  "form": "single",
+  "patches": [
+    {
+      "op": "add",
+      "target": "grants",
+      "path": "/@g-01/scope/include",
+      "value": {
+        "tiers": [
+          "special"
+        ]
+      }
+    }
+  ]
+}

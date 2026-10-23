@@ -1,0 +1,173 @@
+{
+  "format": "ohc.catalog",
+  "id": "urn:ohc:catalog:instruments",
+  "version": "0.1.0",
+  "specVersion": "0.1.0-draft",
+  "title": {
+    "en": "Instrument catalog index",
+    "ru": "Указатель каталога методик"
+  },
+  "description": {
+    "en": "Index of the 11 instrument registry records in 0.1. Marks are used nominatively. No record stores item text, report prose, scoring keys or raw proprietary responses.",
+    "ru": "Указатель 11 записей реестра методик версии 0.1. Товарные знаки используются только для обозначения. Ни одна запись не хранит тексты пунктов, текст отчётов, ключи подсчёта или исходные ответы по проприетарным методикам."
+  },
+  "closed": false,
+  "generatesEnum": false,
+  "notes": "Grades in brackets ([F2], [U]) mark facts from secondary or unverified sources.",
+  "codes": [
+    {
+      "code": "ipip-neo-120",
+      "label": {
+        "en": "IPIP-NEO-120",
+        "ru": "IPIP-NEO-120"
+      },
+      "definition": {
+        "en": "120 items, 4 per facet, 30 facets, 5-point scale; public-domain items.",
+        "ru": "120 пунктов, по 4 на фасету, 30 фасет, 5-балльная шкала; пункты в общественном достоянии."
+      },
+      "id": "urn:ohc:instrument:ipip-neo-120",
+      "lens": "urn:ohc:lens:big-five",
+      "path": "spec/instruments/ipip-neo-120.instrument.json"
+    },
+    {
+      "code": "bfi-2",
+      "label": {
+        "en": "BFI-2 (Big Five Inventory-2)",
+        "ru": "BFI-2 (Big Five Inventory-2)"
+      },
+      "definition": {
+        "en": "60 items, 1-5 scale, 15 facets; non-commercial research use only.",
+        "ru": "60 пунктов, шкала 1-5, 15 фасет; только для некоммерческих исследований."
+      },
+      "id": "urn:ohc:instrument:bfi-2",
+      "lens": "urn:ohc:lens:big-five",
+      "path": "spec/instruments/bfi-2.instrument.json"
+    },
+    {
+      "code": "neo-pi-3",
+      "label": {
+        "en": "NEO-PI-3",
+        "ru": "NEO-PI-3"
+      },
+      "definition": {
+        "en": "240 items, 30 facets; proprietary, with a qualification requirement; referenced by URL.",
+        "ru": "240 пунктов, 30 фасет; проприетарная методика с требованием квалификации; даётся ссылкой."
+      },
+      "id": "urn:ohc:instrument:neo-pi-3",
+      "lens": "urn:ohc:lens:big-five",
+      "path": "spec/instruments/neo-pi-3.instrument.json"
+    },
+    {
+      "code": "hexaco-pi-r",
+      "label": {
+        "en": "HEXACO-PI-R",
+        "ru": "HEXACO-PI-R"
+      },
+      "definition": {
+        "en": "60, 100 or 200 items; free for non-profit academic research only.",
+        "ru": "60, 100 или 200 пунктов; бесплатно только для некоммерческих академических исследований."
+      },
+      "id": "urn:ohc:instrument:hexaco-pi-r",
+      "lens": "urn:ohc:lens:hexaco",
+      "path": "spec/instruments/hexaco-pi-r.instrument.json"
+    },
+    {
+      "code": "mbti-form-m",
+      "label": {
+        "en": "MBTI® Form M",
+        "ru": "MBTI® Form M"
+      },
+      "definition": {
+        "en": "93 items; proprietary. The mark is used only as an adjective and only for genuine results.",
+        "ru": "93 пункта; проприетарная методика. Знак используется только как определение и только для подлинных результатов."
+      },
+      "id": "urn:ohc:instrument:mbti-form-m",
+      "lens": "urn:ohc:lens:jungian-type",
+      "path": "spec/instruments/mbti-form-m.instrument.json"
+    },
+    {
+      "code": "mbti-form-q",
+      "label": {
+        "en": "MBTI® Form Q (Step II)",
+        "ru": "MBTI® Form Q (Step II)"
+      },
+      "definition": {
+        "en": "144 items; proprietary. The mark is used only as an adjective and only for genuine results.",
+        "ru": "144 пункта; проприетарная методика. Знак используется только как определение и только для подлинных результатов."
+      },
+      "id": "urn:ohc:instrument:mbti-form-q",
+      "lens": "urn:ohc:lens:jungian-type",
+      "path": "spec/instruments/mbti-form-q.instrument.json"
+    },
+    {
+      "code": "rheti-2.5",
+      "label": {
+        "en": "RHETI® v2.5",
+        "ru": "RHETI® v2.5"
+      },
+      "definition": {
+        "en": "144 paired statements; proprietary. The mark is a vendor label only.",
+        "ru": "144 парных утверждения; проприетарная методика. Знак — только метка поставщика."
+      },
+      "id": "urn:ohc:instrument:rheti-2.5",
+      "lens": "urn:ohc:lens:enneagram",
+      "path": "spec/instruments/rheti-2.5.instrument.json"
+    },
+    {
+      "code": "via-is-r",
+      "label": {
+        "en": "VIA Inventory of Strengths-Revised (VIA-IS-R)",
+        "ru": "VIA Inventory of Strengths-Revised (VIA-IS-R)"
+      },
+      "definition": {
+        "en": "A strengths inventory; free to individuals [F2].",
+        "ru": "Опросник сильных сторон; бесплатен для частных лиц [F2]."
+      },
+      "id": "urn:ohc:instrument:via-is-r",
+      "lens": "urn:ohc:lens:via-strengths",
+      "path": "spec/instruments/via-is-r.instrument.json"
+    },
+    {
+      "code": "gacs",
+      "label": {
+        "en": "Global Assessment of Character Strengths (GACS)",
+        "ru": "Global Assessment of Character Strengths (GACS)"
+      },
+      "definition": {
+        "en": "A character-strengths assessment.",
+        "ru": "Методика оценки сильных сторон характера."
+      },
+      "id": "urn:ohc:instrument:gacs",
+      "lens": "urn:ohc:lens:via-strengths",
+      "path": "spec/instruments/gacs.instrument.json"
+    },
+    {
+      "code": "pvq-rr",
+      "label": {
+        "en": "Portrait Values Questionnaire - Revised (PVQ-RR)",
+        "ru": "Portrait Values Questionnaire - Revised (PVQ-RR)"
+      },
+      "definition": {
+        "en": "57 items, 19 values, 1-6 scale; instrument licence unknown [U].",
+        "ru": "57 пунктов, 19 ценностей, шкала 1-6; лицензия методики неизвестна [U]."
+      },
+      "id": "urn:ohc:instrument:pvq-rr",
+      "lens": "urn:ohc:lens:schwartz-values",
+      "path": "spec/instruments/pvq-rr.instrument.json"
+    },
+    {
+      "code": "ecr-r",
+      "label": {
+        "en": "Experiences in Close Relationships - Revised (ECR-R)",
+        "ru": "Experiences in Close Relationships - Revised (ECR-R)"
+      },
+      "definition": {
+        "en": "36 items, 7-point scale; free for non-commercial research.",
+        "ru": "36 пунктов, 7-балльная шкала; бесплатно для некоммерческих исследований."
+      },
+      "id": "urn:ohc:instrument:ecr-r",
+      "lens": "urn:ohc:lens:attachment-2d",
+      "path": "spec/instruments/ecr-r.instrument.json"
+    }
+  ]
+}

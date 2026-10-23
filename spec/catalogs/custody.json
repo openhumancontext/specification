@@ -1,0 +1,82 @@
+{
+  "format": "ohc.catalog",
+  "id": "urn:ohc:catalog:custody",
+  "version": "0.1.0",
+  "specVersion": "0.1.0-draft",
+  "title": {
+    "en": "Custody confidentiality",
+    "ru": "Конфиденциальность хранения"
+  },
+  "description": {
+    "en": "Professional confidentiality over a Source, with the release-tier ceilings for grantees without and with a valid `releaseRef`. A null ceiling means the tier is as set. No grant can raise a custody ceiling (V-4).",
+    "ru": "Профессиональная тайна в отношении источника и потолки уровня раскрытия для получателей без действующего `releaseRef` и с ним. Пустой потолок означает, что уровень — как задан. Никакое разрешение не может поднять этот потолок (V-4)."
+  },
+  "closed": true,
+  "codes": [
+    {
+      "code": "none",
+      "label": {
+        "en": "None",
+        "ru": "Нет"
+      },
+      "definition": {
+        "en": "No professional confidentiality; tiers as set.",
+        "ru": "Профессиональной тайны нет; уровни — как заданы."
+      },
+      "ceilingWithoutRelease": null,
+      "ceilingWithRelease": null
+    },
+    {
+      "code": "therapy",
+      "label": {
+        "en": "Therapy",
+        "ru": "Терапия"
+      },
+      "definition": {
+        "en": "Material held under therapy confidentiality. Never beyond `summary` to grantees in 0.1.",
+        "ru": "Материал под терапевтической тайной. В версии 0.1 никогда не выше `summary` для получателей."
+      },
+      "ceilingWithoutRelease": "index",
+      "ceilingWithRelease": "summary"
+    },
+    {
+      "code": "coaching",
+      "label": {
+        "en": "Coaching",
+        "ru": "Коучинг"
+      },
+      "definition": {
+        "en": "Material held under coaching confidentiality.",
+        "ru": "Материал под конфиденциальностью коучинга."
+      },
+      "ceilingWithoutRelease": "index",
+      "ceilingWithRelease": "excerpt"
+    },
+    {
+      "code": "legal",
+      "label": {
+        "en": "Legal",
+        "ru": "Юридическая тайна"
+      },
+      "definition": {
+        "en": "Material held under legal confidentiality.",
+        "ru": "Материал под юридической тайной."
+      },
+      "ceilingWithoutRelease": "index",
+      "ceilingWithRelease": "summary"
+    },
+    {
+      "code": "medical",
+      "label": {
+        "en": "Medical",
+        "ru": "Врачебная тайна"
+      },
+      "definition": {
+        "en": "Material held under medical confidentiality; pointers belong in HealthRef.",
+        "ru": "Материал под врачебной тайной; указатели относятся к HealthRef."
+      },
+      "ceilingWithoutRelease": "index",
+      "ceilingWithRelease": "index"
+    }
+  ]
+}

@@ -1,0 +1,520 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:ohc:schema:assessment-record:0.1.0-draft",
+  "title": "OHC AssessmentRecord",
+  "description": "A dated result about the person within one lens. Framework, construct, instrument and result are kept apart. There are no fields for item text, report prose, scoring keys or raw proprietary responses (AR-3). Layer assertion; module lenses.",
+  "type": "object",
+  "required": [
+    "id",
+    "lens",
+    "mode",
+    "administeredAt",
+    "results",
+    "origin",
+    "assertedBy",
+    "recordedAt"
+  ],
+  "properties": {
+    "kind": {
+      "const": "AssessmentRecord"
+    },
+    "id": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Envelope/properties/id"
+    },
+    "lens": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/LensRef"
+    },
+    "lensVariant": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+    },
+    "instrument": {
+      "type": "object",
+      "required": [
+        "id"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/URI"
+        },
+        "version": {
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+        },
+        "form": {
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+        }
+      },
+      "additionalProperties": false
+    },
+    "mode": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/assessment.modes"
+    },
+    "assessedBy": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Actor"
+    },
+    "raterRelationship": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/relationship-kinds"
+    },
+    "administeredAt": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/PartialTime"
+    },
+    "results": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/Result"
+      },
+      "minItems": 1
+    },
+    "normGroup": {
+      "type": "object",
+      "required": [
+        "id"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+        },
+        "country": {
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+        },
+        "year": {
+          "type": "integer"
+        },
+        "n": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "note": {
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+        }
+      },
+      "additionalProperties": false
+    },
+    "validityFlags": {
+      "type": "array",
+      "items": {
+        "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/assessment.validity-flags"
+      }
+    },
+    "source": {
+      "description": "The Source holding the original report.",
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/LocalId"
+    },
+    "trademarkNotice": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+    },
+    "validityCeiling": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/assessment.validity-ceilings"
+    },
+    "mapping": {
+      "description": "The Mapping used; required for cross-lens-estimate.",
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/URI"
+    },
+    "reviewAfter": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Duration"
+    },
+    "origin": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Envelope/properties/origin"
+    },
+    "assertedBy": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Envelope/properties/assertedBy"
+    },
+    "recordedAt": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Envelope/properties/recordedAt"
+    },
+    "recordedBy": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Envelope/properties/recordedBy"
+    },
+    "underGrant": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Envelope/properties/underGrant"
+    },
+    "purpose": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Envelope/properties/purpose"
+    },
+    "formulatedAt": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Envelope/properties/formulatedAt"
+    },
+    "supersedes": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Envelope/properties/supersedes"
+    },
+    "epistemic": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Envelope/properties/epistemic"
+    },
+    "confidence": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Envelope/properties/confidence"
+    },
+    "sensitivity": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Envelope/properties/sensitivity"
+    },
+    "categories": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Envelope/properties/categories"
+    },
+    "handling": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Envelope/properties/handling"
+    },
+    "audience": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Envelope/properties/audience"
+    },
+    "contexts": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Envelope/properties/contexts"
+    },
+    "lang": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Envelope/properties/lang"
+    },
+    "importedFrom": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Envelope/properties/importedFrom"
+    },
+    "generatedBy": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Envelope/properties/generatedBy"
+    },
+    "derivedFrom": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Envelope/properties/derivedFrom"
+    },
+    "synthetic": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Envelope/properties/synthetic"
+    },
+    "note": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Envelope/properties/note"
+    },
+    "ext": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Envelope/properties/ext"
+    }
+  },
+  "additionalProperties": false,
+  "allOf": [
+    {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/EnvelopeRules"
+    },
+    {
+      "if": {
+        "properties": {
+          "mode": {
+            "anyOf": [
+              {
+                "const": "agent-inference"
+              },
+              {
+                "const": "cross-lens-estimate"
+              }
+            ]
+          }
+        },
+        "required": [
+          "mode"
+        ]
+      },
+      "then": {
+        "required": [
+          "validityCeiling"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "mode": {
+            "const": "cross-lens-estimate"
+          }
+        },
+        "required": [
+          "mode"
+        ]
+      },
+      "then": {
+        "required": [
+          "mapping"
+        ]
+      }
+    }
+  ],
+  "$defs": {
+    "Result": {
+      "description": "A result, discriminated by type.",
+      "oneOf": [
+        {
+          "type": "object",
+          "required": [
+            "type",
+            "construct"
+          ],
+          "properties": {
+            "type": {
+              "const": "dimension-score"
+            },
+            "construct": {
+              "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+            },
+            "label": {
+              "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+            },
+            "raw": {
+              "type": "number"
+            },
+            "rawRange": {
+              "type": "array",
+              "items": {
+                "type": "number"
+              },
+              "minItems": 2,
+              "maxItems": 2
+            },
+            "standardized": {
+              "type": "object",
+              "required": [
+                "type",
+                "value"
+              ],
+              "properties": {
+                "type": {
+                  "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/assessment.standardized-scales"
+                },
+                "value": {
+                  "type": "number"
+                }
+              },
+              "additionalProperties": false
+            },
+            "sem": {
+              "type": "number"
+            },
+            "ci": {
+              "type": "array",
+              "items": {
+                "type": "number"
+              },
+              "minItems": 2,
+              "maxItems": 2
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "required": [
+            "type",
+            "construct",
+            "method"
+          ],
+          "properties": {
+            "type": {
+              "const": "type-assignment"
+            },
+            "construct": {
+              "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+            },
+            "label": {
+              "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+            },
+            "clarity": {
+              "type": [
+                "number",
+                "string"
+              ]
+            },
+            "method": {
+              "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/assessment.type-methods"
+            },
+            "alternatives": {
+              "type": "array",
+              "items": {
+                "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+              },
+              "minItems": 1
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "required": [
+            "type",
+            "constructs"
+          ],
+          "properties": {
+            "type": {
+              "const": "ranking"
+            },
+            "constructs": {
+              "type": "array",
+              "items": {
+                "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+              },
+              "minItems": 1
+            },
+            "signatureTopN": {
+              "type": "integer",
+              "minimum": 1
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "required": [
+            "type",
+            "scores"
+          ],
+          "properties": {
+            "type": {
+              "const": "values-profile"
+            },
+            "scores": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": [
+                  "construct",
+                  "raw",
+                  "centered"
+                ],
+                "properties": {
+                  "construct": {
+                    "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+                  },
+                  "raw": {
+                    "type": "number"
+                  },
+                  "centered": {
+                    "type": "number"
+                  }
+                },
+                "additionalProperties": false
+              },
+              "minItems": 1
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "required": [
+            "type",
+            "angle",
+            "magnitude",
+            "axes"
+          ],
+          "properties": {
+            "type": {
+              "const": "circumplex"
+            },
+            "angle": {
+              "type": "number"
+            },
+            "magnitude": {
+              "type": "number"
+            },
+            "axes": {
+              "type": "array",
+              "items": {
+                "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+              },
+              "minItems": 2
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "required": [
+            "type",
+            "construct"
+          ],
+          "properties": {
+            "type": {
+              "const": "stage"
+            },
+            "construct": {
+              "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+            },
+            "secondary": {
+              "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "description": "The person's own entries.",
+          "required": [
+            "type"
+          ],
+          "properties": {
+            "type": {
+              "const": "thought-record"
+            },
+            "situation": {
+              "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+            },
+            "thought": {
+              "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+            },
+            "emotion": {
+              "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+            },
+            "behavior": {
+              "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+            },
+            "alternative": {
+              "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "required": [
+            "type",
+            "attributes",
+            "computedFrom",
+            "engine"
+          ],
+          "properties": {
+            "type": {
+              "const": "frame-attributes"
+            },
+            "attributes": {
+              "type": "object",
+              "description": "Frame-specific attributes."
+            },
+            "computedFrom": {
+              "description": "A birth-data Claim.",
+              "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Ref"
+            },
+            "engine": {
+              "type": "object",
+              "required": [
+                "name",
+                "version"
+              ],
+              "properties": {
+                "name": {
+                  "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+                },
+                "version": {
+                  "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+                }
+              },
+              "additionalProperties": false
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "required": [
+            "type",
+            "text"
+          ],
+          "properties": {
+            "type": {
+              "const": "narrative"
+            },
+            "text": {
+              "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+            }
+          },
+          "additionalProperties": false
+        }
+      ]
+    }
+  }
+}

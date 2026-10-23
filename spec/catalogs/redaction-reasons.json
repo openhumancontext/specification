@@ -1,0 +1,61 @@
+{
+  "format": "ohc.catalog",
+  "id": "urn:ohc:catalog:redaction-reasons",
+  "version": "0.1.0",
+  "specVersion": "0.1.0-draft",
+  "title": {
+    "en": "Redaction reasons",
+    "ru": "Причины скрытия"
+  },
+  "description": {
+    "en": "Why part of a Source is redacted at release.",
+    "ru": "Почему часть источника скрывается при раскрытии."
+  },
+  "closed": true,
+  "codes": [
+    {
+      "code": "third-party",
+      "label": {
+        "en": "Third party",
+        "ru": "Третьи лица"
+      },
+      "definition": {
+        "en": "Protects a third party's words or details.",
+        "ru": "Защищает слова или сведения третьего лица."
+      }
+    },
+    {
+      "code": "subject-request",
+      "label": {
+        "en": "The person's request",
+        "ru": "По просьбе человека"
+      },
+      "definition": {
+        "en": "The person asked for it.",
+        "ru": "Об этом попросил человек."
+      }
+    },
+    {
+      "code": "legal",
+      "label": {
+        "en": "Legal",
+        "ru": "Правовые основания"
+      },
+      "definition": {
+        "en": "A legal reason.",
+        "ru": "Правовая причина."
+      }
+    },
+    {
+      "code": "custody",
+      "label": {
+        "en": "Custody",
+        "ru": "Профессиональная тайна"
+      },
+      "definition": {
+        "en": "Required by custody confidentiality.",
+        "ru": "Требуется профессиональной тайной."
+      }
+    }
+  ]
+}

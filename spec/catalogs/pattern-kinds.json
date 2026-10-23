@@ -1,0 +1,83 @@
+{
+  "format": "ohc.catalog",
+  "id": "urn:ohc:catalog:pattern-kinds",
+  "version": "0.1.0",
+  "specVersion": "0.1.0-draft",
+  "title": {
+    "en": "Pattern kinds",
+    "ru": "Виды паттернов"
+  },
+  "description": {
+    "en": "Kinds of recurrence across at least two episodes (experimental module `patterns`).",
+    "ru": "Виды повторения минимум в двух эпизодах (экспериментальный модуль `patterns`)."
+  },
+  "closed": true,
+  "codes": [
+    {
+      "code": "recurring-situation",
+      "label": {
+        "en": "Recurring situation",
+        "ru": "Повторяющаяся ситуация"
+      },
+      "definition": {
+        "en": "A situation that recurs.",
+        "ru": "Ситуация, которая повторяется."
+      }
+    },
+    {
+      "code": "recurring-reaction",
+      "label": {
+        "en": "Recurring reaction",
+        "ru": "Повторяющаяся реакция"
+      },
+      "definition": {
+        "en": "A reaction that recurs.",
+        "ru": "Реакция, которая повторяется."
+      }
+    },
+    {
+      "code": "recurring-strategy",
+      "label": {
+        "en": "Recurring strategy",
+        "ru": "Повторяющаяся стратегия"
+      },
+      "definition": {
+        "en": "A way of acting that recurs.",
+        "ru": "Способ действовать, который повторяется."
+      }
+    },
+    {
+      "code": "cross-domain",
+      "label": {
+        "en": "Cross-domain",
+        "ru": "Через сферы жизни"
+      },
+      "definition": {
+        "en": "A recurrence across life domains.",
+        "ru": "Повторение в разных сферах жизни."
+      }
+    },
+    {
+      "code": "cycle",
+      "label": {
+        "en": "Cycle",
+        "ru": "Цикл"
+      },
+      "definition": {
+        "en": "A recurring sequence that returns to its start.",
+        "ru": "Повторяющаяся последовательность, возвращающаяся к началу."
+      }
+    },
+    {
+      "code": "other",
+      "label": {
+        "en": "Other",
+        "ru": "Другое"
+      },
+      "definition": {
+        "en": "Any other recurrence.",
+        "ru": "Любое другое повторение."
+      }
+    }
+  ]
+}

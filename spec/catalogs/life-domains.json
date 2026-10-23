@@ -1,0 +1,171 @@
+{
+  "format": "ohc.catalog",
+  "id": "urn:ohc:catalog:life-domains",
+  "version": "0.1.0",
+  "specVersion": "0.1.0-draft",
+  "title": {
+    "en": "Life domains",
+    "ru": "Сферы жизни"
+  },
+  "description": {
+    "en": "Life domains used in the `contexts` field for grant scoping. Open list; local codes use `x-<namespace>:<code>`.",
+    "ru": "Сферы жизни, используемые в поле `contexts` для ограничения разрешений. Открытый список; локальные коды — `x-<namespace>:<code>`."
+  },
+  "closed": false,
+  "codes": [
+    {
+      "code": "work",
+      "label": {
+        "en": "Work",
+        "ru": "Работа"
+      },
+      "definition": {
+        "en": "Work and employment.",
+        "ru": "Работа и занятость."
+      }
+    },
+    {
+      "code": "family",
+      "label": {
+        "en": "Family",
+        "ru": "Семья"
+      },
+      "definition": {
+        "en": "Family life.",
+        "ru": "Семейная жизнь."
+      }
+    },
+    {
+      "code": "partner",
+      "label": {
+        "en": "Partner",
+        "ru": "Партнёрские отношения"
+      },
+      "definition": {
+        "en": "Life with a partner.",
+        "ru": "Жизнь с партнёром."
+      }
+    },
+    {
+      "code": "friends",
+      "label": {
+        "en": "Friends",
+        "ru": "Друзья"
+      },
+      "definition": {
+        "en": "Friendships.",
+        "ru": "Дружеские отношения."
+      }
+    },
+    {
+      "code": "health",
+      "label": {
+        "en": "Health",
+        "ru": "Здоровье"
+      },
+      "definition": {
+        "en": "Health and care.",
+        "ru": "Здоровье и уход за ним."
+      }
+    },
+    {
+      "code": "learning",
+      "label": {
+        "en": "Learning",
+        "ru": "Обучение"
+      },
+      "definition": {
+        "en": "Study and learning.",
+        "ru": "Учёба и обучение."
+      }
+    },
+    {
+      "code": "money",
+      "label": {
+        "en": "Money",
+        "ru": "Деньги"
+      },
+      "definition": {
+        "en": "Money matters.",
+        "ru": "Денежные дела."
+      }
+    },
+    {
+      "code": "home",
+      "label": {
+        "en": "Home",
+        "ru": "Жильё и быт"
+      },
+      "definition": {
+        "en": "Home and household matters.",
+        "ru": "Жильё и бытовые дела."
+      }
+    },
+    {
+      "code": "community",
+      "label": {
+        "en": "Community",
+        "ru": "Сообщество"
+      },
+      "definition": {
+        "en": "Communities the person belongs to.",
+        "ru": "Сообщества, к которым принадлежит человек."
+      }
+    },
+    {
+      "code": "spiritual",
+      "label": {
+        "en": "Spiritual",
+        "ru": "Духовная жизнь"
+      },
+      "definition": {
+        "en": "Spiritual life.",
+        "ru": "Духовная жизнь."
+      }
+    },
+    {
+      "code": "creative",
+      "label": {
+        "en": "Creative",
+        "ru": "Творчество"
+      },
+      "definition": {
+        "en": "Creative work.",
+        "ru": "Творческая деятельность."
+      }
+    },
+    {
+      "code": "personal-practice",
+      "label": {
+        "en": "Personal practice",
+        "ru": "Личная практика"
+      },
+      "definition": {
+        "en": "The person's own practices.",
+        "ru": "Собственные практики человека."
+      }
+    },
+    {
+      "code": "therapy",
+      "label": {
+        "en": "Therapy",
+        "ru": "Терапия"
+      },
+      "definition": {
+        "en": "Therapy the person is in.",
+        "ru": "Терапия, в которой находится человек."
+      }
+    },
+    {
+      "code": "coaching",
+      "label": {
+        "en": "Coaching",
+        "ru": "Коучинг"
+      },
+      "definition": {
+        "en": "Coaching the person chose.",
+        "ru": "Коучинг, выбранный человеком."
+      }
+    }
+  ]
+}

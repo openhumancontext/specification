@@ -1,0 +1,104 @@
+{
+  "description": "A claim inferred from a symbolic-frame result that is not marked frame-relative.",
+  "expect": [
+    "AR-4"
+  ],
+  "form": "single",
+  "patches": [
+    {
+      "op": "add",
+      "target": "grants",
+      "path": "",
+      "value": {
+        "id": "g-02",
+        "recordedAt": "2026-09-01T09:00:00Z",
+        "grantor": "subject",
+        "grantee": "a-01",
+        "purposes": [
+          "self-reflection"
+        ],
+        "scope": {
+          "include": [
+            {
+              "ids": [
+                "c-07"
+              ]
+            }
+          ]
+        },
+        "actions": [
+          "read",
+          "suggest",
+          "infer"
+        ],
+        "mode": "summary",
+        "interpretations": "all",
+        "constraints": {
+          "expiresAt": "2027-02-01T00:00:00Z",
+          "storage": "session",
+          "forwarding": false,
+          "crossContextUse": false,
+          "decisionUse": "approval-required",
+          "delegable": false
+        },
+        "basis": {
+          "legal": "explicit-consent"
+        },
+        "expressedBy": {
+          "actor": "subject",
+          "at": "2026-09-01T09:00:00Z",
+          "channel": "holder-ui"
+        }
+      }
+    },
+    {
+      "op": "add",
+      "target": "assessments",
+      "path": "",
+      "value": {
+        "id": "as-01",
+        "lens": {
+          "id": "urn:ohc:lens:astrology",
+          "version": "0.1.0"
+        },
+        "mode": "self-identified",
+        "administeredAt": {
+          "start": "2026-09-01",
+          "precision": "day"
+        },
+        "results": [
+          {
+            "type": "type-assignment",
+            "construct": "astrology/placement",
+            "method": "self-identified"
+          }
+        ],
+        "epistemic": "frame-relative",
+        "origin": "declared",
+        "assertedBy": "subject",
+        "recordedAt": "2026-09-07T08:00:00Z",
+        "synthetic": true
+      }
+    },
+    {
+      "op": "add",
+      "target": "claims",
+      "path": "",
+      "value": {
+        "id": "c-07",
+        "facet": "preference",
+        "text": "Starts new projects best in spring.",
+        "origin": "inferred",
+        "assertedBy": "a-01",
+        "recordedAt": "2026-09-07T09:00:00Z",
+        "underGrant": "g-02",
+        "purpose": "self-reflection",
+        "epistemic": "hypothesis",
+        "derivedFrom": [
+          "as-01"
+        ],
+        "synthetic": true
+      }
+    }
+  ]
+}

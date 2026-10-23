@@ -1,0 +1,23 @@
+{
+  "description": "A Practice while the practices module is not declared (R-M1).",
+  "expect": [
+    "CX-5"
+  ],
+  "form": "single",
+  "patches": [
+    {
+      "op": "set",
+      "target": "manifest",
+      "path": "/conformance/modules",
+      "value": [
+        "core",
+        "governance",
+        "lenses",
+        "patterns",
+        "recall",
+        "inner-system",
+        "health-ref"
+      ]
+    }
+  ]
+}

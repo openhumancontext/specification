@@ -1,0 +1,27 @@
+{
+  "description": "An intentional absence with a code other than not-chosen.",
+  "expect": [
+    "CL-9"
+  ],
+  "form": "single",
+  "patches": [
+    {
+      "op": "add",
+      "target": "claims",
+      "path": "",
+      "value": {
+        "id": "c-07",
+        "facet": "resource",
+        "predicate": "money",
+        "absence": {
+          "code": "not-disclosed",
+          "intentional": true
+        },
+        "origin": "declared",
+        "assertedBy": "subject",
+        "recordedAt": "2026-09-07T08:00:00Z",
+        "synthetic": true
+      }
+    }
+  ]
+}

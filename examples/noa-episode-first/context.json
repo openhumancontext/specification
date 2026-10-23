@@ -1,0 +1,126 @@
+{
+  "format": "ohc.context",
+  "specVersion": "0.1.0-draft",
+  "id": "urn:ohc:example:noa:context",
+  "version": "2026-10-09.4",
+  "subject": {
+    "id": "urn:ohc:example:noa",
+    "displayName": "Noa (fictional)",
+    "links": [
+      {
+        "rel": "account",
+        "uri": "urn:ohc:example:noa:workshop-account"
+      }
+    ],
+    "aliases": [
+      {
+        "grantee": "s-02",
+        "alias": "urn:ohc:alias:qagnd25qslce5ldesu324xahgn",
+        "createdAt": "2026-04-02T08:00:00Z"
+      },
+      {
+        "grantee": "a-01",
+        "alias": "urn:ohc:alias:cgkknm2urepzjn6a6qmvpmz5yc",
+        "createdAt": "2026-09-03T08:00:00Z"
+      },
+      {
+        "grantee": "a-02",
+        "alias": "urn:ohc:alias:xdtpvlyqbwczwjs3tztanuegrv",
+        "createdAt": "2026-09-24T07:30:00Z"
+      }
+    ]
+  },
+  "holder": "subject",
+  "lang": "en",
+  "created": "2026-03-12T18:45:00Z",
+  "conformance": {
+    "level": "L2",
+    "modules": [
+      "core",
+      "governance",
+      "lenses",
+      "practices",
+      "patterns",
+      "recall",
+      "inner-system",
+      "health-ref"
+    ],
+    "subjectIsAdult": true
+  },
+  "parties": [
+    {
+      "id": "p-01",
+      "partyKind": "person",
+      "label": "Supplier contact",
+      "role": "supplier"
+    },
+    {
+      "id": "p-02",
+      "partyKind": "person",
+      "label": "Coach",
+      "role": "practitioner"
+    },
+    {
+      "id": "a-01",
+      "partyKind": "agent",
+      "label": "Work assistant"
+    },
+    {
+      "id": "a-02",
+      "partyKind": "agent",
+      "label": "Reflection companion"
+    },
+    {
+      "id": "s-01",
+      "partyKind": "software",
+      "label": "Calendar export"
+    },
+    {
+      "id": "s-02",
+      "partyKind": "software",
+      "label": "Former journaling app"
+    },
+    {
+      "id": "o-01",
+      "partyKind": "organization",
+      "label": "Physio clinic"
+    }
+  ],
+  "policy": {
+    "admission": "subject-only",
+    "resolver": "returnDialog"
+  },
+  "lenses": [
+    {
+      "id": "urn:ohc:lens:cbt",
+      "version": "0.2.0",
+      "sha256": "a874745345edb48d824d35a3ae23cebaa3be8380dc2f6c165abbf1b5baf8a06a"
+    },
+    {
+      "id": "urn:ohc:lens:ifs",
+      "version": "0.2.0",
+      "sha256": "6a0a5ea1fcc666659a29676679b32b788632dd9967d1ee2bef13bedad7ced09d"
+    }
+  ],
+  "collections": {
+    "claims": "records/claims.jsonl",
+    "relations": "records/relations.jsonl",
+    "sources": "records/sources.jsonl",
+    "episodes": "records/episodes.jsonl",
+    "interpretations": "records/interpretations.jsonl",
+    "tensions": "records/tensions.jsonl",
+    "reviews": "records/reviews.jsonl",
+    "proposals": "records/proposals.jsonl",
+    "grants": "records/grants.jsonl",
+    "events": "events.jsonl",
+    "lensAdoptions": "records/lens-adoptions.jsonl",
+    "modelViews": "records/model-views.jsonl",
+    "practices": "records/practices.jsonl",
+    "outcomes": "records/outcomes.jsonl",
+    "patterns": "records/patterns.jsonl",
+    "recallCues": "records/recall-cues.jsonl",
+    "parts": "records/parts.jsonl",
+    "healthRefs": "records/health-refs.jsonl"
+  },
+  "synthetic": true
+}

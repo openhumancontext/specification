@@ -1,0 +1,27 @@
+{
+  "format": "ohc.mapping",
+  "specVersion": "0.1.0-draft",
+  "id": "urn:ohc:mapping:ohc.admission--ode.status--ode-0.2.0-draft.3",
+  "version": "0.1.0",
+  "bridgeKind": "ohc-ode",
+  "from": {
+    "standard": "OHC 0.1.0-draft",
+    "concept": "admission (proposed, active, declined, retracted)"
+  },
+  "to": {
+    "standard": "ODE 0.2.0-draft",
+    "concept": "object status (proposed, agreed, retired)",
+    "pin": {
+      "tag": "v0.2.0-draft.3",
+      "commit": "8300a50dd9d84d2a388fd60e3919ee59e7ad5399"
+    }
+  },
+  "relation": "corresponds",
+  "scope": "Binding statement between the two formats (OHC 0.1.0-draft and ODE release 0.2.0-draft.3); never a conversion of a person's data",
+  "notIdentity": true,
+  "chainable": false,
+  "rowStatus": "accepted",
+  "lost": "active maps to agreed; declined and retracted both map to retired. The mapping is in the admission catalog.",
+  "evidenceGrade": "F",
+  "reviewedAt": "2026-10-09"
+}

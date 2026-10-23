@@ -1,0 +1,109 @@
+{
+  "format": "ohc.catalog",
+  "id": "urn:ohc:catalog:origin",
+  "version": "0.1.0",
+  "specVersion": "0.1.0-draft",
+  "title": {
+    "en": "Origin",
+    "ru": "Происхождение"
+  },
+  "description": {
+    "en": "How the content of a record came to be. Set once at writing time; never changes (R-O1). A writer never labels an inference `declared` or `observed` (R-O2). The derived label `stated` is reserved for `declared` content asserted by the subject (R-O3).",
+    "ru": "Как появилось содержание записи. Задаётся один раз при записи и никогда не меняется (R-O1). Пишущий никогда не помечает вывод как `declared` или `observed` (R-O2). Производная метка `stated` зарезервирована за содержанием `declared`, высказанным самим человеком (R-O3)."
+  },
+  "closed": true,
+  "notes": "DPV mappings name data-source concepts and are informative; DPV IRIs are not asserted here.",
+  "codes": [
+    {
+      "code": "declared",
+      "label": {
+        "en": "Declared",
+        "ru": "Заявлено"
+      },
+      "definition": {
+        "en": "Stated by `assertedBy` in their own words. This covers the subject's self-statements, a steward's statements within scope, and a party's testimony.",
+        "ru": "Высказано автором записи (`assertedBy`) его собственными словами. Сюда входят самоописания человека, заявления доверенного лица в пределах его полномочий и свидетельства участника."
+      },
+      "defaultEpistemic": "as-reported",
+      "mappings": {
+        "dpv": "Provided",
+        "prov": "prov:wasAttributedTo"
+      }
+    },
+    {
+      "code": "observed",
+      "label": {
+        "en": "Observed",
+        "ru": "Наблюдено"
+      },
+      "definition": {
+        "en": "Recorded from direct observation of events or behaviour (a calendar, a log, a sensor, an agent noting what happened), without generalisation.",
+        "ru": "Записано по прямому наблюдению событий или поведения (календарь, журнал, датчик, агент, отметивший, что произошло) без обобщения."
+      },
+      "defaultEpistemic": "as-reported",
+      "mappings": {
+        "dpv": "Observed"
+      }
+    },
+    {
+      "code": "inferred",
+      "label": {
+        "en": "Inferred",
+        "ru": "Выведено"
+      },
+      "definition": {
+        "en": "A generalisation, reading or prediction about the person that was neither stated nor directly observed. Any profiling.",
+        "ru": "Обобщение, прочтение или прогноз о человеке, которые никто не высказал и не наблюдал напрямую. Любое профилирование."
+      },
+      "defaultEpistemic": "hypothesis",
+      "mappings": {
+        "dpv": "Inferred"
+      }
+    },
+    {
+      "code": "derived",
+      "label": {
+        "en": "Derived",
+        "ru": "Вычислено"
+      },
+      "definition": {
+        "en": "Computed deterministically from other records by a published rule, for example instrument scoring. Requires `derivedFrom` and `generatedBy.method`.",
+        "ru": "Детерминированно вычислено из других записей по опубликованному правилу, например подсчёт баллов методики. Требует `derivedFrom` и `generatedBy.method`."
+      },
+      "defaultEpistemic": "as-reported",
+      "mappings": {
+        "dpv": "Derived"
+      }
+    },
+    {
+      "code": "imported",
+      "label": {
+        "en": "Imported",
+        "ru": "Импортировано"
+      },
+      "definition": {
+        "en": "Copied from an external system whose original origin is unknown. When the origin is known, use that origin and add `importedFrom`.",
+        "ru": "Скопировано из внешней системы, где исходное происхождение неизвестно. Если оно известно, указывают его и добавляют `importedFrom`."
+      },
+      "defaultEpistemic": "as-reported",
+      "mappings": {
+        "dpv": "Collected"
+      }
+    },
+    {
+      "code": "attested",
+      "label": {
+        "en": "Attested",
+        "ru": "Удостоверено"
+      },
+      "definition": {
+        "en": "Asserted by an issuer through a verifiable credential (`ext[\"vc.credential\"]`).",
+        "ru": "Утверждено издателем через проверяемое удостоверение (`ext[\"vc.credential\"]`)."
+      },
+      "defaultEpistemic": "as-reported",
+      "mappings": {
+        "dpv": "Collected"
+      }
+    }
+  ]
+}

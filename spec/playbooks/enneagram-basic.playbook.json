@@ -1,0 +1,121 @@
+{
+  "format": "ohc.playbook",
+  "specVersion": "0.1.0-draft",
+  "id": "urn:ohc:playbook:enneagram-basic",
+  "version": "0.1.0",
+  "name": {
+    "en": "Enneagram: basic ways of working",
+    "ru": "Эннеаграмма: базовые способы работы"
+  },
+  "lenses": [
+    "urn:ohc:lens:enneagram"
+  ],
+  "author": "OHC editors",
+  "sources": [
+    "Hook et al. 2021",
+    "Arica Institute v. Palmer, 970 F.2d 1067 (2d Cir. 1992)"
+  ],
+  "licence": "Apache-2.0",
+  "situations": [
+    {
+      "id": "under-strain",
+      "when": {
+        "en": "Under strain: tired, pressed or overloaded.",
+        "ru": "Под нагрузкой: усталость, давление или перегрузка."
+      },
+      "use": {
+        "en": [
+          "Ask what is happening, in their words.",
+          "If they recognised a pattern, ask whether it is strong right now and what has helped when it was.",
+          "Offer the recognition exercise only if they want another way of looking."
+        ],
+        "ru": [
+          "Спросите, что происходит, — словами человека.",
+          "Если человек узнал у себя паттерн, спросите, силён ли он сейчас и что помогало, когда он был сильным.",
+          "Предлагайте упражнение на узнавание, только если человек хочет посмотреть иначе."
+        ]
+      },
+      "toolkit": [
+        "enneagram.recognition"
+      ],
+      "watchFor": {
+        "en": "Do not speak about core fears unless they bring them up.",
+        "ru": "Не говорите о базовых страхах, если человек сам их не поднял."
+      }
+    },
+    {
+      "id": "look-back-at-an-episode",
+      "when": {
+        "en": "Looking back at something that happened.",
+        "ru": "Разбор того, что произошло."
+      },
+      "use": {
+        "en": [
+          "Ask what happened, in their words.",
+          "Offer the recognition exercise: which of the nine neutral descriptions do they recognise in this episode, if any?",
+          "Note what they recognise, and when, in their words."
+        ],
+        "ru": [
+          "Спросите, что произошло, — словами человека.",
+          "Предложите упражнение на узнавание: какое из девяти нейтральных описаний человек узнаёт в этом эпизоде, если узнаёт?",
+          "Запишите, что человек узнаёт и когда, его словами."
+        ]
+      },
+      "toolkit": [
+        "enneagram.recognition"
+      ],
+      "watchFor": {
+        "en": "Do not type the person from the episode; type descriptions are not facts about them.",
+        "ru": "Не определяйте тип человека по эпизоду; описания типов — не факты о нём."
+      }
+    },
+    {
+      "id": "hard-conversation",
+      "when": {
+        "en": "Preparing a hard conversation.",
+        "ru": "Подготовка к трудному разговору."
+      },
+      "use": {
+        "en": [
+          "Ask what they want from the conversation.",
+          "If they recognised a pattern, ask what it tends to move them towards or away from in conversations like this.",
+          "Ask what they would like to do differently this time."
+        ],
+        "ru": [
+          "Спросите, чего человек хочет от разговора.",
+          "Если человек узнал у себя паттерн, спросите, к чему он обычно тянет или от чего уводит в таких разговорах.",
+          "Спросите, что человек хотел бы сделать по-другому на этот раз."
+        ]
+      },
+      "toolkit": [],
+      "watchFor": {
+        "en": "Do not describe the other person's pattern.",
+        "ru": "Не описывайте паттерн собеседника."
+      }
+    },
+    {
+      "id": "choose-between-options",
+      "when": {
+        "en": "Choosing between options.",
+        "ru": "Выбор между вариантами."
+      },
+      "use": {
+        "en": [
+          "Lay out the options with what speaks for each, in their words.",
+          "If they recognised a pattern, ask which option it pulls towards and whether that is what they want.",
+          "Leave the choice to them."
+        ],
+        "ru": [
+          "Разложите варианты и то, что говорит в пользу каждого, — словами человека.",
+          "Если человек узнал у себя паттерн, спросите, к какому варианту он тянет и этого ли человек хочет.",
+          "Оставьте выбор человеку."
+        ]
+      },
+      "toolkit": [],
+      "watchFor": {
+        "en": "Never present a type as evidence of fit for a role, task or team.",
+        "ru": "Никогда не выдавайте тип за доказательство пригодности к роли, задаче или команде."
+      }
+    }
+  ]
+}

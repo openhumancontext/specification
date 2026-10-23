@@ -1,0 +1,25 @@
+[
+  {
+    "format": "ohc.mapping",
+    "specVersion": "0.1.0-draft",
+    "id": "urn:ohc:mapping:ohc.subject-card--jscontact.card--rfc-9553",
+    "version": "0.1.0",
+    "bridgeKind": "ohc-standard",
+    "from": {
+      "standard": "OHC 0.1.0-draft",
+      "concept": "Subject.card"
+    },
+    "to": {
+      "standard": "JSContact (RFC 9553)",
+      "concept": "Card"
+    },
+    "relation": "corresponds",
+    "scope": "Informative crosswalk between formats; never a conversion of a person's data without the person's grant",
+    "notIdentity": true,
+    "chainable": false,
+    "rowStatus": "accepted",
+    "forbiddenUse": "The card is category identity-linking: it is never served unless a selector names that category.",
+    "evidenceGrade": "F",
+    "reviewedAt": "2026-10-09"
+  }
+]

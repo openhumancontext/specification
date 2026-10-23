@@ -1,0 +1,224 @@
+{
+  "format": "ohc.catalog",
+  "id": "urn:ohc:catalog:purposes",
+  "version": "0.1.0",
+  "specVersion": "0.1.0-draft",
+  "title": {
+    "en": "Purposes",
+    "ru": "Цели обработки"
+  },
+  "description": {
+    "en": "Why content may be used. Shared by Grant and the ODE binding. Every request carries exactly one purpose (R-G7).",
+    "ru": "Зачем может использоваться содержание. Общий список для разрешений (Grant) и привязки к ODE. Каждый запрос несёт ровно одну цель (R-G7)."
+  },
+  "closed": true,
+  "notes": "DPV mappings are candidate concepts [verify]; they are informative and not used for validation.",
+  "codes": [
+    {
+      "code": "self-reflection",
+      "label": {
+        "en": "Self-reflection",
+        "ru": "Саморефлексия"
+      },
+      "definition": {
+        "en": "Helping the person understand their own experience, at their request.",
+        "ru": "Помощь человеку в понимании собственного опыта — по его просьбе."
+      },
+      "mappings": {
+        "dpv": "Personalisation for the person"
+      }
+    },
+    {
+      "code": "assist-personal",
+      "label": {
+        "en": "Personal assistance",
+        "ru": "Личная помощь"
+      },
+      "definition": {
+        "en": "General personal assistance chosen by the person.",
+        "ru": "Общая личная помощь, выбранная человеком."
+      },
+      "mappings": {
+        "dpv": "ServicePersonalisation"
+      }
+    },
+    {
+      "code": "work-collaboration",
+      "label": {
+        "en": "Work collaboration",
+        "ru": "Совместная работа"
+      },
+      "definition": {
+        "en": "Working with the person on work tasks in the person's role.",
+        "ru": "Работа с человеком над рабочими задачами в его роли."
+      },
+      "mappings": {
+        "dpv": "ServiceProvision"
+      }
+    },
+    {
+      "code": "scheduling",
+      "label": {
+        "en": "Scheduling",
+        "ru": "Планирование времени"
+      },
+      "definition": {
+        "en": "Arranging the person's own time, at their request.",
+        "ru": "Организация собственного времени человека — по его просьбе."
+      },
+      "mappings": {
+        "dpv": "ServiceProvision"
+      }
+    },
+    {
+      "code": "task-execution",
+      "label": {
+        "en": "Task execution",
+        "ru": "Выполнение поручения"
+      },
+      "definition": {
+        "en": "Carrying out a task the person delegated.",
+        "ru": "Выполнение задачи, которую поручил человек."
+      },
+      "mappings": {
+        "dpv": "ServiceProvision"
+      }
+    },
+    {
+      "code": "communication-adaptation",
+      "label": {
+        "en": "Communication adaptation",
+        "ru": "Подстройка общения"
+      },
+      "definition": {
+        "en": "Adapting tone, channel, timing and format to the person.",
+        "ru": "Подстройка тона, канала, времени и формы общения под человека."
+      },
+      "mappings": {
+        "dpv": "CommunicationManagement"
+      }
+    },
+    {
+      "code": "recall-support",
+      "label": {
+        "en": "Recall support",
+        "ru": "Поддержка возвращения опыта"
+      },
+      "definition": {
+        "en": "Offering back the person's own experience under RecallCues.",
+        "ru": "Возвращение человеку его собственного опыта по сигналам возвращения опыта (RecallCue)."
+      },
+      "mappings": {
+        "dpv": "Personalisation for the person"
+      }
+    },
+    {
+      "code": "coaching",
+      "label": {
+        "en": "Coaching",
+        "ru": "Коучинг"
+      },
+      "definition": {
+        "en": "A coaching relationship the person chose.",
+        "ru": "Отношения коучинга, выбранные человеком."
+      }
+    },
+    {
+      "code": "therapy-support",
+      "label": {
+        "en": "Therapy support",
+        "ru": "Поддержка терапии"
+      },
+      "definition": {
+        "en": "Supporting a therapy the person is in. Never clinical decisions.",
+        "ru": "Поддержка терапии, в которой находится человек. Никогда не клинические решения."
+      }
+    },
+    {
+      "code": "learning-support",
+      "label": {
+        "en": "Learning support",
+        "ru": "Поддержка обучения"
+      },
+      "definition": {
+        "en": "Supporting the person's learning.",
+        "ru": "Поддержка обучения человека."
+      }
+    },
+    {
+      "code": "health-coordination",
+      "label": {
+        "en": "Health coordination",
+        "ru": "Координация вокруг здоровья"
+      },
+      "definition": {
+        "en": "Scheduling and coordination around care. Pointers only.",
+        "ru": "Планирование и координация вокруг лечения и ухода. Только указатели."
+      }
+    },
+    {
+      "code": "research",
+      "label": {
+        "en": "Research",
+        "ru": "Исследование"
+      },
+      "definition": {
+        "en": "Research the person explicitly joined.",
+        "ru": "Исследование, к которому человек явно присоединился."
+      },
+      "mappings": {
+        "dpv": "ResearchAndDevelopment"
+      }
+    },
+    {
+      "code": "service-provision",
+      "label": {
+        "en": "Service provision",
+        "ru": "Оказание услуги"
+      },
+      "definition": {
+        "en": "Providing a service the person signed up for, as described in the grant note.",
+        "ru": "Оказание услуги, на которую человек подписался, как описано в примечании к разрешению."
+      },
+      "mappings": {
+        "dpv": "ServiceProvision"
+      }
+    },
+    {
+      "code": "backup",
+      "label": {
+        "en": "Backup",
+        "ru": "Резервная копия"
+      },
+      "definition": {
+        "en": "Keeping a backup copy for the person.",
+        "ru": "Хранение резервной копии для человека."
+      }
+    },
+    {
+      "code": "gum-export",
+      "label": {
+        "en": "GUM export",
+        "ru": "Выгрузка в GUM"
+      },
+      "definition": {
+        "en": "Exporting to a GUM-compatible store.",
+        "ru": "Выгрузка в хранилище, совместимое с GUM."
+      }
+    },
+    {
+      "code": "profiling",
+      "label": {
+        "en": "Profiling",
+        "ru": "Профилирование"
+      },
+      "definition": {
+        "en": "Building or maintaining a model of the person's characteristics for the grantee's service to the person. Requires `infer` and `explicit-consent`.",
+        "ru": "Построение или поддержка модели характеристик человека для услуги, которую получатель оказывает этому человеку. Требует действия `infer` и `explicit-consent`."
+      },
+      "mappings": {
+        "dpv": "Profiling"
+      }
+    }
+  ]
+}

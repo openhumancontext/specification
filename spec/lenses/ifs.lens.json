@@ -1,0 +1,225 @@
+{
+  "format": "ohc.lens",
+  "specVersion": "0.1.0-draft",
+  "id": "urn:ohc:lens:ifs",
+  "version": "0.2.0",
+  "name": {
+    "en": "Internal Family Systems (as a parts lens)",
+    "ru": "Внутренние семейные системы (как линза частей)"
+  },
+  "descriptorStatus": "draft",
+  "kind": "parts-model",
+  "summary": {
+    "en": "Describes the mind as several parts with positive intentions and a calm, curious Self that can relate to them.",
+    "ru": "Описывает психику как несколько частей с позитивными намерениями и спокойное, любопытное Я (Self), способное с ними соотноситься."
+  },
+  "constructs": [
+    {
+      "id": "ifs/self",
+      "label": {
+        "en": "Self"
+      }
+    },
+    {
+      "id": "ifs/manager",
+      "label": {
+        "en": "Manager"
+      }
+    },
+    {
+      "id": "ifs/firefighter",
+      "label": {
+        "en": "Firefighter"
+      }
+    },
+    {
+      "id": "ifs/exile",
+      "label": {
+        "en": "Exile"
+      },
+      "categories": [
+        "trauma-adjacent"
+      ]
+    },
+    {
+      "id": "ifs/burden",
+      "label": {
+        "en": "Burden"
+      },
+      "categories": [
+        "trauma-adjacent"
+      ]
+    }
+  ],
+  "mentalModel": {
+    "summary": "Inner multiplicity is normal; parts protect; change comes through relationship, not removal.",
+    "assumptions": [
+      "parts are a way of describing, not entities",
+      "every part has a positive intention"
+    ],
+    "stance": "relational and non-pathologising",
+    "unitOfAnalysis": "parts and their relations in a situation",
+    "attendsTo": [
+      "which part is speaking",
+      "what it protects",
+      "polarisations between parts"
+    ],
+    "howChangeHappens": "Through relationship with parts, usually with a practitioner for deeper work.",
+    "languageGuidance": "Use the person's own part names; never name a part for them; never call a part bad.",
+    "agentPosture": {
+      "do": [
+        "reflect the person's own words",
+        "stay with noticing"
+      ],
+      "dont": [
+        "interpret parts",
+        "go toward exiles or burdens",
+        "suggest unburdening"
+      ]
+    },
+    "exploratoryQuestions": [
+      "Which inner positions and needs are active right now?",
+      "What might this part be afraid would happen if it stepped back?"
+    ],
+    "helperMustNot": [
+      "present itself as doing IFS therapy",
+      "name or invent parts",
+      "work with exiles or burdens"
+    ],
+    "doesNotClaim": [
+      "that parts are real entities",
+      "a diagnosis",
+      "that an agent can provide IFS therapy"
+    ],
+    "riskNotes": [
+      "Exiles and burdens are trauma-adjacent material",
+      "Deep work belongs with a practitioner"
+    ]
+  },
+  "toolkit": [
+    {
+      "id": "ifs.noticing-a-part",
+      "name": "Noticing a part",
+      "kind": "exercise",
+      "description": "Notice, name in your own words, and ask what it wants you to know, without changing it.",
+      "facilitation": "self",
+      "requiresPractitioner": false,
+      "agentMayOffer": false,
+      "nonClinical": true,
+      "produces": "Part",
+      "cautions": [
+        "Stop if it becomes overwhelming"
+      ]
+    },
+    {
+      "id": "ifs.exile-work",
+      "name": "Working with exiles",
+      "kind": "dialogue",
+      "description": "Practitioner-led only.",
+      "facilitation": "practitioner",
+      "requiresPractitioner": true,
+      "agentMayOffer": false,
+      "nonClinical": false,
+      "produces": "none"
+    }
+  ],
+  "representations": [
+    {
+      "id": "ifs.parts-map",
+      "kind": "parts-map",
+      "description": "A view over Part records and part relations; never stored as a shape."
+    }
+  ],
+  "instruments": [],
+  "adoption": {
+    "routes": [
+      "self-chosen",
+      "agent-suggested",
+      "inherited-from-practice"
+    ],
+    "suggestionRequires": [
+      "the person asked for ways of looking at inner conflict"
+    ],
+    "inheritanceRoles": [
+      "therapist",
+      "coach"
+    ],
+    "practitionerFor": [
+      "ifs.exile-work"
+    ]
+  },
+  "evidence": {
+    "measurementTier": "not-applicable",
+    "practiceTier": {
+      "clinicianDelivered": "P2",
+      "selfGuided": "not-assessed",
+      "agentOffered": "not-assessed"
+    },
+    "ontologicalStatus": "theoretical-model",
+    "citations": [
+      {
+        "ref": "doi:10.3899/jrheum.121465",
+        "grade": "F",
+        "note": "Shadick et al. 2013: one proof-of-concept RCT (n = 79) in rheumatoid arthritis; some outcomes sustained at one year, others not"
+      }
+    ],
+    "reviewedAt": "2026-10-09",
+    "notes": "Evidence about a therapy's efficacy is not evidence that parts exist."
+  },
+  "supports": [
+    "the person's own description of inner conflict",
+    "language for inner positions the person chose"
+  ],
+  "doesNotEstablish": [
+    "the existence of parts",
+    "any diagnosis",
+    "the efficacy of agent-offered use"
+  ],
+  "ip": {
+    "conceptStatus": "free-concept",
+    "marks": [
+      {
+        "mark": "Internal Family Systems",
+        "owner": "The Center for Self Leadership, Inc. (IFS Institute)",
+        "status": "pending",
+        "notice": "OHC features are not IFS therapy and are not IFS-certified. Internal Family Systems is the subject of US application SN 98151674 by The Center for Self Leadership, Inc. (IFS Institute), under opposition.",
+        "use": "nominative-only"
+      },
+      {
+        "mark": "IFS INTERNAL FAMILY SYSTEMS",
+        "owner": "The Center for Self Leadership, Inc. (IFS Institute)",
+        "status": "cancelled",
+        "notice": "US Reg. No. 4148231, cancelled in 2022.",
+        "use": "nominative-only"
+      }
+    ],
+    "itemsLicence": "not applicable",
+    "scoring": "none",
+    "restrictions": [
+      "never store training materials"
+    ],
+    "registryListing": "ok",
+    "legalReviewNeeded": true
+  },
+  "useLimits": {
+    "crossLensMapping": "not-allowed"
+  },
+  "defaults": {
+    "sensitivity": "special",
+    "categories": [
+      "mental-health",
+      "trauma-adjacent"
+    ],
+    "reviewAfter": "P6M"
+  },
+  "mappings": [],
+  "playbooks": [
+    "urn:ohc:playbook:ifs-basic"
+  ],
+  "descriptorAuthors": [
+    "OHC editors"
+  ],
+  "sources": [
+    "Shadick et al. 2013"
+  ]
+}

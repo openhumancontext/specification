@@ -1,0 +1,112 @@
+{
+  "format": "ohc.lens",
+  "specVersion": "0.1.0-draft",
+  "id": "urn:ohc:lens:process-work",
+  "version": "0.2.0",
+  "name": {
+    "en": "Process-oriented perspective (stub)",
+    "ru": "Процессуальный подход (заготовка)"
+  },
+  "descriptorStatus": "stub",
+  "kind": "process-experiential",
+  "summary": {
+    "en": "Attends to less familiar processes that want to appear in experience. Listed so that it can be named; not yet described.",
+    "ru": "Внимание к менее привычным процессам, которые стремятся проявиться в опыте. Включён, чтобы его можно было назвать; описание ещё не составлено."
+  },
+  "constructs": [],
+  "mentalModel": {
+    "summary": "Alongside familiar ways of experiencing, less familiar processes try to appear and can be followed with attention.",
+    "assumptions": [
+      "this stub records the perspective only"
+    ],
+    "stance": "experiential and process-following",
+    "unitOfAnalysis": "familiar and less familiar processes in a situation",
+    "attendsTo": [
+      "signals that do not fit the familiar picture",
+      "what wants to appear"
+    ],
+    "howChangeHappens": "Not described in this stub.",
+    "languageGuidance": "Offer the question only as one option, in the person's own words.",
+    "riskNotes": [
+      "Experiential methods can bring up strong material; deeper work belongs with a practitioner"
+    ],
+    "exploratoryQuestions": [
+      "Which less familiar process wants to appear?"
+    ],
+    "agentPosture": {
+      "do": [
+        "mention the perspective only when the person asks for ways of looking",
+        "use the person's own words"
+      ],
+      "dont": [
+        "run exercises from it"
+      ]
+    },
+    "helperMustNot": [
+      "present itself as practising the approach"
+    ],
+    "doesNotClaim": [
+      "any evidence assessment",
+      "a complete description of the approach"
+    ]
+  },
+  "toolkit": [],
+  "representations": [],
+  "instruments": [],
+  "adoption": {
+    "routes": [
+      "self-chosen",
+      "agent-suggested",
+      "inherited-from-practice"
+    ],
+    "suggestionRequires": [
+      "the person asked for ways of looking at their experience"
+    ]
+  },
+  "evidence": {
+    "measurementTier": "not-assessed",
+    "practiceTier": {
+      "clinicianDelivered": "not-assessed",
+      "selfGuided": "not-assessed",
+      "agentOffered": "not-assessed"
+    },
+    "ontologicalStatus": "practice-frame",
+    "citations": [],
+    "reviewedAt": "2026-10-09",
+    "notes": "Stub: listed so that the perspective can be named; not yet described or reviewed."
+  },
+  "supports": [
+    "naming the perspective the person uses"
+  ],
+  "doesNotEstablish": [
+    "anything about the person",
+    "the efficacy of the approach"
+  ],
+  "ip": {
+    "conceptStatus": "free-concept",
+    "marks": [],
+    "itemsLicence": "not applicable",
+    "scoring": "none",
+    "restrictions": [],
+    "registryListing": "ok",
+    "legalReviewNeeded": true
+  },
+  "useLimits": {
+    "crossLensMapping": "not-allowed"
+  },
+  "defaults": {
+    "sensitivity": "special",
+    "categories": [
+      "mental-health"
+    ],
+    "reviewAfter": "on-change"
+  },
+  "mappings": [],
+  "playbooks": [
+    "urn:ohc:playbook:process-work-basic"
+  ],
+  "sources": [],
+  "descriptorAuthors": [
+    "OHC editors"
+  ]
+}

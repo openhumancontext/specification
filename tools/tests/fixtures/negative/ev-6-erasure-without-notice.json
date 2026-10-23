@@ -1,0 +1,38 @@
+{
+  "description": "An erased record that reached a grantee, with no erasure notice.",
+  "expect": [
+    "EV-6"
+  ],
+  "form": "package",
+  "patches": [
+    {
+      "op": "set",
+      "target": "claims",
+      "path": "/@c-03",
+      "value": {
+        "kind": "Tombstone",
+        "id": "c-03",
+        "erasedKind": "Claim",
+        "erasedAt": "2026-10-08T14:00:00Z",
+        "erasedBy": "subject",
+        "reason": "subject-request"
+      }
+    },
+    {
+      "op": "add",
+      "target": "events",
+      "path": "",
+      "value": {
+        "at": "2026-10-08T14:00:00Z",
+        "eventType": "record-erased",
+        "actor": "subject",
+        "records": [
+          "c-03"
+        ]
+      }
+    }
+  ],
+  "finalize": {
+    "projections": "keep"
+  }
+}

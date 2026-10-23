@@ -1,0 +1,173 @@
+{
+  "format": "ohc.catalog",
+  "id": "urn:ohc:catalog:tension",
+  "version": "0.1.0",
+  "specVersion": "0.1.0-draft",
+  "title": {
+    "en": "Tension kinds and who decides",
+    "ru": "Виды напряжений и кто решает"
+  },
+  "description": {
+    "en": "A conflict that matters, and who decides it. A Tension is never resolved by averaging, by majority or by an agent (T1).",
+    "ru": "Значимый конфликт и тот, кто его решает. Напряжение никогда не разрешается усреднением, большинством или агентом (T1)."
+  },
+  "closed": true,
+  "lists": [
+    {
+      "name": "kinds",
+      "title": {
+        "en": "Tension kinds",
+        "ru": "Виды напряжений"
+      },
+      "closed": true,
+      "field": "Tension.tensionKind"
+    },
+    {
+      "name": "who-decides",
+      "title": {
+        "en": "Who decides",
+        "ru": "Кто решает"
+      },
+      "closed": true,
+      "field": "Tension.whoDecides"
+    }
+  ],
+  "codes": [
+    {
+      "code": "goal-conflict",
+      "list": "kinds",
+      "label": {
+        "en": "Goal conflict",
+        "ru": "Конфликт целей"
+      },
+      "definition": {
+        "en": "Two goals cannot both be fully pursued.",
+        "ru": "Две цели нельзя одновременно преследовать в полной мере."
+      }
+    },
+    {
+      "code": "value-conflict",
+      "list": "kinds",
+      "label": {
+        "en": "Value conflict",
+        "ru": "Конфликт ценностей"
+      },
+      "definition": {
+        "en": "Two declared values pull apart.",
+        "ru": "Две заявленные ценности тянут в разные стороны."
+      }
+    },
+    {
+      "code": "horizon-conflict",
+      "list": "kinds",
+      "label": {
+        "en": "Horizon conflict",
+        "ru": "Конфликт горизонтов"
+      },
+      "definition": {
+        "en": "A `state` pulls against a `focus` or a `foundation` claim.",
+        "ru": "Состояние (`state`) тянет против утверждения уровня `focus` или `foundation`."
+      }
+    },
+    {
+      "code": "resource-competition",
+      "list": "kinds",
+      "label": {
+        "en": "Resource competition",
+        "ru": "Конкуренция за ресурс"
+      },
+      "definition": {
+        "en": "Goals or commitments compete for the same time, attention or money.",
+        "ru": "Цели или обязательства конкурируют за одно и то же время, внимание или деньги."
+      }
+    },
+    {
+      "code": "inner-conflict",
+      "list": "kinds",
+      "label": {
+        "en": "Inner conflict",
+        "ru": "Внутренний конфликт"
+      },
+      "definition": {
+        "en": "Two sides within the person; explore both sides.",
+        "ru": "Две стороны внутри человека; исследуются обе."
+      }
+    },
+    {
+      "code": "source-divergence",
+      "list": "kinds",
+      "label": {
+        "en": "Source divergence",
+        "ru": "Расхождение источников"
+      },
+      "definition": {
+        "en": "Instruments, sources or raters disagree (mapping rule M-8).",
+        "ru": "Методики, источники или оценивающие расходятся (правило сопоставлений M-8)."
+      }
+    },
+    {
+      "code": "holder-divergence",
+      "list": "kinds",
+      "label": {
+        "en": "Holder divergence",
+        "ru": "Расхождение держателей"
+      },
+      "definition": {
+        "en": "Different holders hold different values.",
+        "ru": "У разных держателей разные значения."
+      }
+    },
+    {
+      "code": "subject",
+      "list": "who-decides",
+      "label": {
+        "en": "The person",
+        "ru": "Сам человек"
+      },
+      "definition": {
+        "en": "The person decides.",
+        "ru": "Решает сам человек."
+      }
+    },
+    {
+      "code": "subject-with-practitioner",
+      "list": "who-decides",
+      "label": {
+        "en": "The person with a practitioner",
+        "ru": "Человек вместе со специалистом"
+      },
+      "definition": {
+        "en": "The person decides, together with a practitioner.",
+        "ru": "Решает человек вместе со специалистом-практиком."
+      }
+    },
+    {
+      "code": "holder-policy",
+      "list": "who-decides",
+      "label": {
+        "en": "Holder policy",
+        "ru": "Правила держателя"
+      },
+      "definition": {
+        "en": "The holder's declared policy decides. Only for `source-divergence` and `holder-divergence` (T2).",
+        "ru": "Решают заявленные правила держателя. Только для `source-divergence` и `holder-divergence` (T2)."
+      },
+      "allowedFor": [
+        "source-divergence",
+        "holder-divergence"
+      ]
+    },
+    {
+      "code": "not-applicable",
+      "list": "who-decides",
+      "label": {
+        "en": "Not to be decided",
+        "ru": "Не требует решения"
+      },
+      "definition": {
+        "en": "The tension is to be held, not decided.",
+        "ru": "Напряжение нужно удерживать, а не разрешать."
+      }
+    }
+  ]
+}

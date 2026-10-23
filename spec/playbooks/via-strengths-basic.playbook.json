@@ -1,0 +1,119 @@
+{
+  "format": "ohc.playbook",
+  "specVersion": "0.1.0-draft",
+  "id": "urn:ohc:playbook:via-strengths-basic",
+  "version": "0.1.0",
+  "name": {
+    "en": "VIA character strengths: basic ways of working",
+    "ru": "Сильные стороны характера VIA: базовые способы работы"
+  },
+  "lenses": [
+    "urn:ohc:lens:via-strengths"
+  ],
+  "author": "OHC editors",
+  "sources": [
+    "McGrath 2023",
+    "VIA Institute on Character, permissions and guidelines"
+  ],
+  "licence": "Apache-2.0",
+  "situations": [
+    {
+      "id": "plan-week",
+      "when": {
+        "en": "Planning the week ahead.",
+        "ru": "Планирование предстоящей недели."
+      },
+      "use": {
+        "en": [
+          "Ask what the week holds.",
+          "Ask where they could use one of their top strengths, named as they name it.",
+          "If they want, suggest one place to use a strength they said they use too little."
+        ],
+        "ru": [
+          "Спросите, что ждёт на этой неделе.",
+          "Спросите, где человек мог бы применить одну из своих главных сильных сторон, называя её так, как называет он сам.",
+          "Если человек хочет, предложите одно место для сильной стороны, которую, по его словам, он применяет слишком мало."
+        ]
+      },
+      "toolkit": [],
+      "watchFor": {
+        "en": "A low-ranked strength is not a flaw.",
+        "ru": "Сильная сторона внизу списка — не недостаток."
+      }
+    },
+    {
+      "id": "look-back-at-an-episode",
+      "when": {
+        "en": "Looking back at something that happened.",
+        "ru": "Разбор того, что произошло."
+      },
+      "use": {
+        "en": [
+          "Ask them to pick the episode.",
+          "Offer the exercise: which of their strengths did they use, and how?",
+          "Note it in their words."
+        ],
+        "ru": [
+          "Попросите человека выбрать эпизод.",
+          "Предложите упражнение: какие свои сильные стороны человек применил и как?",
+          "Запишите это его словами."
+        ]
+      },
+      "toolkit": [
+        "via-strengths.strengths-in-episode"
+      ],
+      "watchFor": {
+        "en": "Do not infer strengths from behaviour; they name them.",
+        "ru": "Не выводите сильные стороны из поведения: их называет сам человек."
+      }
+    },
+    {
+      "id": "after-setback",
+      "when": {
+        "en": "After a setback.",
+        "ru": "После неудачи."
+      },
+      "use": {
+        "en": [
+          "Ask what happened and what they want now.",
+          "Ask which of their strengths helped them in a similar moment before.",
+          "Offer to plan one small step that uses it."
+        ],
+        "ru": [
+          "Спросите, что произошло и чего человек хочет теперь.",
+          "Спросите, какая из его сильных сторон помогала ему в похожий момент раньше.",
+          "Предложите спланировать один небольшой шаг с её опорой."
+        ]
+      },
+      "toolkit": [],
+      "watchFor": {
+        "en": "Do not compare their ranking with other people's.",
+        "ru": "Не сравнивайте порядок сильных сторон человека с чужим."
+      }
+    },
+    {
+      "id": "give-feedback",
+      "when": {
+        "en": "Giving feedback to someone.",
+        "ru": "Обратная связь другому человеку."
+      },
+      "use": {
+        "en": [
+          "Ask what the other person did that they want to name.",
+          "Ask which of their own strengths they want to bring to the conversation.",
+          "Keep the feedback about what the other person did, not about their character."
+        ],
+        "ru": [
+          "Спросите, что сделал другой человек и что именно человек хочет назвать.",
+          "Спросите, какие свои сильные стороны человек хочет принести в разговор.",
+          "Держите обратную связь в рамках того, что сделал другой человек, а не его характера."
+        ]
+      },
+      "toolkit": [],
+      "watchFor": {
+        "en": "Do not rank or label the other person's strengths.",
+        "ru": "Не ранжируйте и не называйте сильные стороны собеседника."
+      }
+    }
+  ]
+}

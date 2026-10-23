@@ -1,0 +1,27 @@
+{
+  "description": "An agent's Outcome stored as supported.",
+  "expect": [
+    "O-1"
+  ],
+  "form": "single",
+  "patches": [
+    {
+      "op": "add",
+      "target": "outcomes",
+      "path": "",
+      "value": {
+        "id": "oc-02",
+        "about": {
+          "practice": "pr-01"
+        },
+        "result": "helped",
+        "origin": "observed",
+        "assertedBy": "a-01",
+        "recordedBy": "subject",
+        "recordedAt": "2026-09-07T08:00:00Z",
+        "epistemic": "supported",
+        "synthetic": true
+      }
+    }
+  ]
+}

@@ -1,0 +1,83 @@
+{
+  "format": "ohc.catalog",
+  "id": "urn:ohc:catalog:recall-signals",
+  "version": "0.1.0",
+  "specVersion": "0.1.0-draft",
+  "title": {
+    "en": "Recall cue signals",
+    "ru": "Признаки для сигналов возвращения опыта"
+  },
+  "description": {
+    "en": "Signals a recall cue may use (experimental module `recall`). No physiological or biometric signals (R-X4).",
+    "ru": "Признаки, которые может использовать сигнал возвращения опыта (экспериментальный модуль `recall`). Никаких физиологических или биометрических признаков (R-X4)."
+  },
+  "closed": true,
+  "codes": [
+    {
+      "code": "calendar-event",
+      "label": {
+        "en": "Calendar event",
+        "ru": "Событие в календаре"
+      },
+      "definition": {
+        "en": "An event in the person's calendar.",
+        "ru": "Событие в календаре человека."
+      }
+    },
+    {
+      "code": "keyword-in-subject-message",
+      "label": {
+        "en": "Keyword in the person's message",
+        "ru": "Ключевое слово в сообщении человека"
+      },
+      "definition": {
+        "en": "A keyword in a message the person wrote.",
+        "ru": "Ключевое слово в сообщении, которое написал сам человек."
+      }
+    },
+    {
+      "code": "subject-request",
+      "label": {
+        "en": "The person asks",
+        "ru": "Просьба человека"
+      },
+      "definition": {
+        "en": "The person asks for it.",
+        "ru": "Человек сам об этом просит."
+      }
+    },
+    {
+      "code": "time-of-day",
+      "label": {
+        "en": "Time of day",
+        "ru": "Время суток"
+      },
+      "definition": {
+        "en": "A time of day.",
+        "ru": "Время суток."
+      }
+    },
+    {
+      "code": "task-type",
+      "label": {
+        "en": "Task type",
+        "ru": "Тип задачи"
+      },
+      "definition": {
+        "en": "A type of task at hand.",
+        "ru": "Тип текущей задачи."
+      }
+    },
+    {
+      "code": "other",
+      "label": {
+        "en": "Other",
+        "ru": "Другое"
+      },
+      "definition": {
+        "en": "Any other non-physiological signal.",
+        "ru": "Любой другой нефизиологический признак."
+      }
+    }
+  ]
+}

@@ -1,0 +1,233 @@
+{
+  "format": "ohc.catalog",
+  "id": "urn:ohc:catalog:categories",
+  "version": "0.1.0",
+  "specVersion": "0.1.0-draft",
+  "title": {
+    "en": "Sensitive categories",
+    "ru": "Категории чувствительных данных"
+  },
+  "description": {
+    "en": "Categories a record touches, aligned with DPV special-category concepts. Each category sets a minimum tier for the record (propagation rule C3). A category with minimum tier `special` makes a record \"treated as special category\". Local codes use `x-<namespace>:<code>`.",
+    "ru": "Категории, которых касается запись; согласованы с понятиями особых категорий DPV. Каждая категория задаёт минимальный уровень чувствительности записи (правило распространения C3). Категория с минимальным уровнем `special` означает, что запись «рассматривается как особая категория». Локальные коды записываются как `x-<namespace>:<code>`."
+  },
+  "closed": false,
+  "codes": [
+    {
+      "code": "health",
+      "label": {
+        "en": "Health",
+        "ru": "Здоровье"
+      },
+      "definition": {
+        "en": "Physical health, conditions, treatments, sleep and energy where health-related.",
+        "ru": "Физическое здоровье, состояния, лечение, сон и энергия, если они связаны со здоровьем."
+      },
+      "minimumTier": "special"
+    },
+    {
+      "code": "mental-health",
+      "label": {
+        "en": "Mental health",
+        "ru": "Психическое здоровье"
+      },
+      "definition": {
+        "en": "Mental health, psychological states and readings, psychological lens results.",
+        "ru": "Психическое здоровье, психологические состояния и прочтения, результаты психологических линз."
+      },
+      "minimumTier": "special"
+    },
+    {
+      "code": "belief",
+      "label": {
+        "en": "Belief",
+        "ru": "Убеждения"
+      },
+      "definition": {
+        "en": "Religious or philosophical beliefs, spiritual practice.",
+        "ru": "Религиозные или философские убеждения, духовная практика."
+      },
+      "minimumTier": "special"
+    },
+    {
+      "code": "political",
+      "label": {
+        "en": "Political",
+        "ru": "Политические взгляды"
+      },
+      "definition": {
+        "en": "Political opinions or affiliations.",
+        "ru": "Политические взгляды или принадлежность."
+      },
+      "minimumTier": "special"
+    },
+    {
+      "code": "sex-life",
+      "label": {
+        "en": "Sex life",
+        "ru": "Интимная жизнь"
+      },
+      "definition": {
+        "en": "Sex life or sexual orientation.",
+        "ru": "Интимная жизнь или сексуальная ориентация."
+      },
+      "minimumTier": "special"
+    },
+    {
+      "code": "ethnicity",
+      "label": {
+        "en": "Ethnicity",
+        "ru": "Этническое происхождение"
+      },
+      "definition": {
+        "en": "Racial or ethnic origin.",
+        "ru": "Расовое или этническое происхождение."
+      },
+      "minimumTier": "special"
+    },
+    {
+      "code": "biometric",
+      "label": {
+        "en": "Biometric",
+        "ru": "Биометрия"
+      },
+      "definition": {
+        "en": "Biometric data (face, voice, physiology).",
+        "ru": "Биометрические данные (лицо, голос, физиология)."
+      },
+      "minimumTier": "special"
+    },
+    {
+      "code": "genetic",
+      "label": {
+        "en": "Genetic",
+        "ru": "Генетика"
+      },
+      "definition": {
+        "en": "Genetic data.",
+        "ru": "Генетические данные."
+      },
+      "minimumTier": "special"
+    },
+    {
+      "code": "trade-union",
+      "label": {
+        "en": "Trade union",
+        "ru": "Профсоюз"
+      },
+      "definition": {
+        "en": "Trade-union membership.",
+        "ru": "Членство в профсоюзе."
+      },
+      "minimumTier": "special"
+    },
+    {
+      "code": "criminal",
+      "label": {
+        "en": "Criminal",
+        "ru": "Судимость"
+      },
+      "definition": {
+        "en": "Criminal convictions or offences (Art. 10-like).",
+        "ru": "Судимости или правонарушения (по аналогии со ст. 10)."
+      },
+      "minimumTier": "special"
+    },
+    {
+      "code": "trauma-adjacent",
+      "label": {
+        "en": "Trauma-adjacent",
+        "ru": "Близкое к травме"
+      },
+      "definition": {
+        "en": "Material touching trauma, exiles and burdens (parts models), abuse.",
+        "ru": "Материал, затрагивающий травму, изгнанников и бремена (в моделях частей), насилие."
+      },
+      "minimumTier": "special"
+    },
+    {
+      "code": "intimate",
+      "label": {
+        "en": "Intimate",
+        "ru": "Близкие отношения"
+      },
+      "definition": {
+        "en": "Intimate relationships, attachment results.",
+        "ru": "Близкие отношения, результаты по привязанности."
+      },
+      "minimumTier": "special"
+    },
+    {
+      "code": "birth-data",
+      "label": {
+        "en": "Birth data",
+        "ru": "Данные о рождении"
+      },
+      "definition": {
+        "en": "Date, time and place of birth (an identification risk; astrology inputs).",
+        "ru": "Дата, время и место рождения (риск идентификации; исходные данные для астрологии)."
+      },
+      "minimumTier": "sensitive"
+    },
+    {
+      "code": "financial",
+      "label": {
+        "en": "Financial",
+        "ru": "Финансы"
+      },
+      "definition": {
+        "en": "Income, debt, money worries.",
+        "ru": "Доходы, долги, денежные тревоги."
+      },
+      "minimumTier": "sensitive"
+    },
+    {
+      "code": "location",
+      "label": {
+        "en": "Location",
+        "ru": "Местонахождение"
+      },
+      "definition": {
+        "en": "Home, regular places, live location.",
+        "ru": "Место жительства, привычные места, текущее местонахождение."
+      },
+      "minimumTier": "sensitive"
+    },
+    {
+      "code": "third-party",
+      "label": {
+        "en": "Third party",
+        "ru": "Третьи лица"
+      },
+      "definition": {
+        "en": "Content about identifiable other people.",
+        "ru": "Содержание об узнаваемых других людях."
+      },
+      "minimumTier": "sensitive"
+    },
+    {
+      "code": "identity-linking",
+      "label": {
+        "en": "Identity linking",
+        "ru": "Связывание личности"
+      },
+      "definition": {
+        "en": "Links to accounts, real names and identifiers.",
+        "ru": "Связи с учётными записями, настоящими именами и идентификаторами."
+      },
+      "minimumTier": "sensitive"
+    },
+    {
+      "code": "workplace",
+      "label": {
+        "en": "Workplace",
+        "ru": "Работа"
+      },
+      "definition": {
+        "en": "Employer, performance context, workplace conflicts.",
+        "ru": "Работодатель, контекст оценки работы, конфликты на работе."
+      },
+      "minimumTier": "personal"
+    }
+  ]
+}

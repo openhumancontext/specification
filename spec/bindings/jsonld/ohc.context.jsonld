@@ -1,0 +1,68 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "@vocab": "urn:ohc:vocab:",
+    "ohc": "urn:ohc:vocab:",
+    "prov": "http://www.w3.org/ns/prov#",
+    "dpv": "https://w3id.org/dpv#",
+    "odrl": "http://www.w3.org/ns/odrl/2/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "id": "@id",
+    "kind": "@type",
+    "ext": {
+      "@id": "ohc:ext",
+      "@type": "@json"
+    },
+    "value": {
+      "@id": "ohc:value",
+      "@type": "@json"
+    },
+    "card": {
+      "@id": "ohc:card",
+      "@type": "@json"
+    },
+    "recordedAt": {
+      "@id": "ohc:recordedAt",
+      "@type": "xsd:dateTime"
+    },
+    "formulatedAt": {
+      "@id": "ohc:formulatedAt",
+      "@type": "xsd:dateTime"
+    },
+    "lastEvidenceAt": {
+      "@id": "ohc:lastEvidenceAt",
+      "@type": "xsd:dateTime"
+    },
+    "capturedAt": {
+      "@id": "ohc:capturedAt",
+      "@type": "xsd:dateTime"
+    },
+    "generatedAt": {
+      "@id": "ohc:generatedAt",
+      "@type": "xsd:dateTime"
+    },
+    "validUntil": {
+      "@id": "ohc:validUntil",
+      "@type": "xsd:dateTime"
+    },
+    "expiresAt": {
+      "@id": "ohc:expiresAt",
+      "@type": "xsd:dateTime"
+    },
+    "created": {
+      "@id": "ohc:created",
+      "@type": "xsd:dateTime"
+    },
+    "at": {
+      "@id": "ohc:at",
+      "@type": "xsd:dateTime"
+    },
+    "reviewedAt": {
+      "@id": "ohc:reviewedAt",
+      "@type": "xsd:date"
+    },
+    "specVersion": "ohc:specVersion",
+    "format": "ohc:format",
+    "version": "ohc:version"
+  }
+}

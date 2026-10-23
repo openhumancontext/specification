@@ -1,0 +1,29 @@
+{
+  "format": "ohc.context",
+  "specVersion": "0.1.0-draft",
+  "id": "urn:ohc:example:bento-coach-notes:context",
+  "version": "2026-10-10.1",
+  "subject": {"id": "urn:ohc:example:bento", "displayName": "Bento (fictional)"},
+  "holder": "subject",
+  "lang": "en",
+  "created": "2026-09-20T17:50:00Z",
+  "conformance": {"level": "L1", "modules": ["core", "governance", "lenses"], "subjectIsAdult": true},
+  "parties": [
+    {"id": "p-01", "partyKind": "person", "label": "Coach", "role": "practitioner"}
+  ],
+  "policy": {"admission": "subject-only", "resolver": "returnDialog"},
+  "lenses": [
+    {"id": "urn:ohc:lens:via-strengths", "version": "0.2.0", "sha256": "69a5583d8ef60955575b99cf4d706affc7d24c6d987a23d3ba628820e59ca500"}
+  ],
+  "lensAdoptions": [
+    {"id": "la-1", "lens": {"id": "urn:ohc:lens:via-strengths", "version": "0.2.0"}, "route": "inherited-from-practice", "practice": {"role": "coach", "practitioner": "p-01", "relationship": "active", "since": "2026-06-01", "releaseRef": "src-2"}, "confidentiality": "practitioner-scope", "uses": ["speak-in-lens", "store-results", "interpret", "offer-practices"], "interpretationAuthors": ["subject"], "agentInterpretation": "off", "representationPreference": "via-strengths.ranked-list", "onEnd": "ask", "origin": "declared", "assertedBy": "subject", "recordedAt": "2026-09-20T18:00:00Z", "sensitivity": "special", "categories": ["mental-health"], "synthetic": true}
+  ],
+  "sources": [
+    {"id": "src-2", "sourceKind": "practitioner-release", "content": {"locator": {"vaultPath": "vault/48/4806966871b1f06873d59a4ffbde1dfa7e4e3050f75278d715d3de4df1596e26.pdf"}, "sha256": "4806966871b1f06873d59a4ffbde1dfa7e4e3050f75278d715d3de4df1596e26", "mediaType": "application/pdf"}, "capturedAt": "2026-09-19T17:00:00Z", "authorship": {"author": "p-01"}, "inbound": true, "contemporaneity": "contemporaneous", "maxRelease": "index", "retention": {"eraseOnRequest": true}, "origin": "declared", "assertedBy": "subject", "recordedAt": "2026-09-20T17:50:00Z", "sensitivity": "special", "categories": ["mental-health"], "synthetic": true},
+    {"id": "src-3", "sourceKind": "practitioner-notes", "content": {"locator": {"vaultPath": "vault/27/2711ac21d0cf3dc92b0945151fdaf5ba811a16a8445142915e1a7420fbdfce02.pdf"}, "sha256": "2711ac21d0cf3dc92b0945151fdaf5ba811a16a8445142915e1a7420fbdfce02", "mediaType": "application/pdf"}, "capturedAt": "2026-09-19T17:00:00Z", "authorship": {"author": "p-01"}, "inbound": true, "contemporaneity": "contemporaneous", "custody": {"custodian": "p-01", "confidentiality": "coaching", "releaseRef": "src-2"}, "maxRelease": "index", "retention": {"eraseOnRequest": true}, "origin": "declared", "assertedBy": "subject", "recordedAt": "2026-09-20T18:01:00Z", "sensitivity": "special", "categories": ["mental-health"], "synthetic": true}
+  ],
+  "claims": [
+    {"id": "c-2", "facet": "disposition", "predicate": "self-described-tendency", "text": "In coaching we keep coming back to how curiosity carries me through hard repairs.", "evidence": [{"ref": "src-3", "kind": "practitioner"}], "origin": "declared", "assertedBy": "subject", "recordedAt": "2026-09-20T18:10:00Z", "horizon": "foundation", "contexts": ["community"], "sensitivity": "special", "categories": ["mental-health"], "synthetic": true}
+  ],
+  "synthetic": true
+}

@@ -1,0 +1,10 @@
+{
+  "description": "A vault object that no live Source references (left behind after erasure).",
+  "expect": [
+    "V-6"
+  ],
+  "form": "package",
+  "raw": {
+    "vault/e9/e91c8adbdd5a4f01d25e2df9ed84db4754a30c594118f1a6b2532d33d7db12aa.txt": "Erased journal page (synthetic).\n"
+  }
+}

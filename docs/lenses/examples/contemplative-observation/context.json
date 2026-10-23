@@ -1,0 +1,129 @@
+{
+  "format": "ohc.context",
+  "specVersion": "0.1.0-draft",
+  "id": "urn:ohc:example:ondine:contemplative-observation",
+  "version": "2026-10-10.1",
+  "subject": {"id": "urn:ohc:example:ondine", "displayName": "Ondine (fictional)"},
+  "holder": "subject",
+  "lang": "en",
+  "created": "2026-09-20T18:00:00Z",
+  "conformance": {"level": "L1", "modules": ["core", "governance", "lenses", "practices"], "subjectIsAdult": true},
+  "parties": [
+    {"id": "p-01", "partyKind": "person", "label": "Practice teacher", "role": "teacher"},
+    {"id": "a-01", "partyKind": "agent", "label": "Reflection companion"},
+    {"id": "a-02", "partyKind": "agent", "label": "Work assistant"}
+  ],
+  "policy": {"admission": "subject-only", "resolver": "returnDialog"},
+  "lenses": [
+    {"id": "urn:ohc:lens:contemplative-observation", "version": "0.2.0", "sha256": "2dcef40d8a3565c56997241355551d4ec4d4052bd817a74cfd74a874c44e635c"}
+  ],
+  "synthetic": true,
+  "lensAdoptions": [
+    {"id": "la-01", "lens": {"id": "urn:ohc:lens:contemplative-observation", "version": "0.2.0"},
+     "route": "inherited-from-practice",
+     "practice": {"role": "teacher", "practitioner": "p-01", "relationship": "active", "since": "2025-02-01", "releaseRef": "src-03"},
+     "confidentiality": "practitioner-scope", "uses": ["speak-in-lens", "interpret"],
+     "interpretationAuthors": ["subject"], "agentInterpretation": "off", "onEnd": "ask",
+     "origin": "declared", "assertedBy": "subject", "recordedAt": "2026-09-20T18:00:00Z",
+     "sensitivity": "special", "categories": ["mental-health"], "handling": ["no-forward"], "synthetic": true}
+  ],
+  "sources": [
+    {"id": "src-01", "sourceKind": "journal-entry",
+     "content": {"locator": {"vaultPath": "vault/79/7951165ce25dba1062995826e6716283545f901a54d88483b1abdd5e6cfeea75.md"},
+                 "sha256": "7951165ce25dba1062995826e6716283545f901a54d88483b1abdd5e6cfeea75",
+                 "mediaType": "text/markdown", "size": 210},
+     "capturedAt": "2026-09-22T21:30:00Z", "authorship": {"author": "subject"}, "contemporaneity": "contemporaneous",
+     "maxRelease": "index",
+     "summary": {"text": "Practice-journal note after the planning meeting.", "authoredBy": "subject",
+                 "recordedAt": "2026-09-22T21:35:00Z", "method": "subject-written"},
+     "retention": {"eraseOnRequest": true},
+     "origin": "declared", "assertedBy": "subject", "recordedAt": "2026-09-22T21:35:00Z",
+     "sensitivity": "special", "categories": ["mental-health"], "synthetic": true},
+    {"id": "src-02", "sourceKind": "practitioner-notes",
+     "content": {"locator": {"vaultPath": "vault/2f/2f461934c3398118ecb0abf30190545b0719bf98d15ca85a74c8f72e24811914.md"},
+                 "sha256": "2f461934c3398118ecb0abf30190545b0719bf98d15ca85a74c8f72e24811914",
+                 "mediaType": "text/markdown", "size": 219},
+     "capturedAt": "2026-09-18T20:00:00Z", "authorship": {"author": "p-01"}, "inbound": true,
+     "contemporaneity": "contemporaneous", "maxRelease": "index", "retention": {"eraseOnRequest": true},
+     "origin": "declared", "assertedBy": "subject", "recordedAt": "2026-09-20T17:40:00Z",
+     "sensitivity": "special", "categories": ["mental-health"], "synthetic": true},
+    {"id": "src-03", "sourceKind": "practitioner-release",
+     "content": {"locator": {"vaultPath": "vault/37/37bf2083edef0444dd571621a9e0690328a8bd6979360b57eb38e7bc096cf8ec.md"},
+                 "sha256": "37bf2083edef0444dd571621a9e0690328a8bd6979360b57eb38e7bc096cf8ec",
+                 "mediaType": "text/markdown", "size": 234},
+     "capturedAt": "2026-09-19T09:00:00Z", "authorship": {"author": "p-01"}, "inbound": true,
+     "contemporaneity": "contemporaneous", "maxRelease": "index", "retention": {"eraseOnRequest": true},
+     "origin": "declared", "assertedBy": "subject", "recordedAt": "2026-09-20T17:45:00Z",
+     "sensitivity": "special", "categories": ["mental-health"], "synthetic": true}
+  ],
+  "claims": [
+    {"id": "c-01", "facet": "boundary", "predicate": "never",
+     "text": "Do not offer me breathing, attention or meditation exercises.",
+     "origin": "declared", "assertedBy": "subject", "recordedAt": "2026-09-20T18:10:00Z", "horizon": "foundation",
+     "synthetic": true},
+    {"id": "c-02", "facet": "preference", "predicate": "tone",
+     "text": "When I describe a hard moment, ask what I noticed before asking what it means.",
+     "origin": "declared", "assertedBy": "subject", "recordedAt": "2026-09-20T18:12:00Z", "horizon": "foundation",
+     "synthetic": true}
+  ],
+  "episodes": [
+    {"id": "ep-01", "occurred": {"start": "2026-09-22", "precision": "day"},
+     "accounts": [
+       {"narrator": "subject", "narratedAt": "2026-09-22T21:30:00Z", "addedAt": "2026-09-22T21:35:00Z",
+        "accountKind": "in-the-moment",
+        "happened": "In the planning meeting my proposal was cut from the budget.",
+        "experienced": "A tight jaw, then quieter after a minute.",
+        "didOrTried": "Waited before answering; asked when the next budget round opens.",
+        "understandingThen": "I thought they did not value my work.",
+        "evidence": [{"source": "src-01", "selector": {"type": "whole"}}]}],
+     "origin": "declared", "assertedBy": "subject", "recordedAt": "2026-09-22T21:35:00Z",
+     "sensitivity": "sensitive", "contexts": ["work"], "synthetic": true}
+  ],
+  "interpretations": [
+    {"id": "in-01", "about": ["ep-01"], "stance": "lens-reading",
+     "lens": {"id": "urn:ohc:lens:contemplative-observation", "version": "0.2.0"},
+     "text": "Watched as it arose, the irritation came and went; it was an event in me, not a verdict on who I am.",
+     "grounds": [{"span": {"source": "src-01", "selector": {"type": "whole"}}, "kind": "evidence"}],
+     "alternatives": [
+       {"text": "The cut came from the overall budget, not from the quality of my proposal.", "kind": "situational"},
+       {"text": "I had skipped lunch and the meeting ran into the afternoon.", "kind": "physiological"}],
+     "origin": "declared", "assertedBy": "subject", "recordedAt": "2026-09-23T08:00:00Z",
+     "epistemic": "frame-relative", "sensitivity": "special", "categories": ["mental-health"],
+     "handling": ["no-quote-back"], "contexts": ["work"], "synthetic": true}
+  ],
+  "practices": [
+    {"id": "pr-01", "name": "Morning sitting",
+     "description": "Twenty minutes of sitting and noting before opening email.",
+     "practiceKind": "contemplative",
+     "source": {"route": "from-practitioner", "by": "p-01", "lens": "urn:ohc:lens:contemplative-observation"},
+     "steps": ["Sit before opening email", "Note what arises without following it", "Stop after twenty minutes"],
+     "duration": "PT20M",
+     "limits": "Not as a fix for a hard day; questions about the practice go to my teacher.",
+     "initialStatus": "in-use", "nonClinical": true,
+     "origin": "declared", "assertedBy": "subject", "recordedAt": "2026-09-20T18:20:00Z",
+     "sensitivity": "special", "categories": ["mental-health"], "synthetic": true}
+  ],
+  "outcomes": [
+    {"id": "oc-01", "about": {"practice": "pr-01"}, "episode": "ep-01", "result": "helped",
+     "origin": "declared", "assertedBy": "subject", "recordedAt": "2026-09-23T08:05:00Z", "synthetic": true}
+  ],
+  "grants": [
+    {"id": "g-01", "recordedAt": "2026-09-24T10:00:00Z", "grantor": "subject", "grantee": "a-01",
+     "purposes": ["self-reflection"],
+     "scope": {"include": [{"lenses": ["urn:ohc:lens:contemplative-observation"]}, {"ids": ["ep-01", "oc-01"]}]},
+     "actions": ["read"], "mode": "summary", "interpretations": "subject-endorsed", "maxSourceTier": "none",
+     "constraints": {"expiresAt": "2027-03-01T00:00:00Z", "storage": "session", "forwarding": false,
+                     "crossContextUse": false, "delegable": false},
+     "basis": {"legal": "explicit-consent"},
+     "expressedBy": {"actor": "subject", "at": "2026-09-24T10:00:00Z", "channel": "holder-ui"},
+     "note": "To listen alongside my practice; never to teach it or interpret through it."},
+    {"id": "g-02", "recordedAt": "2026-09-24T10:05:00Z", "grantor": "subject", "grantee": "a-02",
+     "purposes": ["work-collaboration"],
+     "scope": {"include": [{"facets": ["boundary", "preference"]}]},
+     "actions": ["read"], "mode": "rule-only", "interpretations": "none",
+     "constraints": {"expiresAt": "2027-09-01T00:00:00Z", "storage": "session", "forwarding": false,
+                     "crossContextUse": false, "delegable": false},
+     "basis": {"legal": "consent"},
+     "expressedBy": {"actor": "subject", "at": "2026-09-24T10:05:00Z", "channel": "holder-ui"}}
+  ]
+}

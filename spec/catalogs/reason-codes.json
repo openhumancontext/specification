@@ -1,0 +1,182 @@
+{
+  "format": "ohc.catalog",
+  "id": "urn:ohc:catalog:reason-codes",
+  "version": "0.1.0",
+  "specVersion": "0.1.0-draft",
+  "title": {
+    "en": "Reason codes",
+    "ru": "Коды причин"
+  },
+  "description": {
+    "en": "Reason codes for denials and Events. A denial code never depends on the data (H-5).",
+    "ru": "Коды причин для отказов и событий журнала. Код отказа никогда не зависит от данных (H-5)."
+  },
+  "closed": true,
+  "codes": [
+    {
+      "code": "not-granted",
+      "label": {
+        "en": "Not granted",
+        "ru": "Нет разрешения"
+      },
+      "definition": {
+        "en": "No grant covers the request.",
+        "ru": "Ни одно разрешение не охватывает запрос."
+      }
+    },
+    {
+      "code": "infer-not-granted",
+      "label": {
+        "en": "Infer not granted",
+        "ru": "Нет разрешения на выводы"
+      },
+      "definition": {
+        "en": "The grant does not include `infer`.",
+        "ru": "Разрешение не включает `infer`."
+      }
+    },
+    {
+      "code": "expired-grant",
+      "label": {
+        "en": "Expired grant",
+        "ru": "Разрешение истекло"
+      },
+      "definition": {
+        "en": "The grant has expired.",
+        "ru": "Срок разрешения истёк."
+      }
+    },
+    {
+      "code": "purpose-mismatch",
+      "label": {
+        "en": "Purpose mismatch",
+        "ru": "Цель не совпадает"
+      },
+      "definition": {
+        "en": "The purpose is not among the grant's purposes.",
+        "ru": "Цели нет среди целей разрешения."
+      }
+    },
+    {
+      "code": "special-needs-explicit-consent",
+      "label": {
+        "en": "Special needs explicit consent",
+        "ru": "Для особых данных нужно явное согласие"
+      },
+      "definition": {
+        "en": "Special records need a grant with explicit consent.",
+        "ru": "Особые записи требуют разрешения с явным согласием."
+      }
+    },
+    {
+      "code": "step-up-required",
+      "label": {
+        "en": "Step-up required",
+        "ru": "Нужно усиленное подтверждение"
+      },
+      "definition": {
+        "en": "Verbatim access needs a step-up.",
+        "ru": "Дословный доступ требует усиленного подтверждения."
+      }
+    },
+    {
+      "code": "step-up-timeout",
+      "label": {
+        "en": "Step-up timeout",
+        "ru": "Истёк срок подтверждения"
+      },
+      "definition": {
+        "en": "The step-up was not answered in time.",
+        "ru": "Усиленное подтверждение не получено вовремя."
+      }
+    },
+    {
+      "code": "person-only",
+      "label": {
+        "en": "Person only",
+        "ru": "Только для человека"
+      },
+      "definition": {
+        "en": "The item is for the person only.",
+        "ru": "Элемент предназначен только для самого человека."
+      }
+    },
+    {
+      "code": "locked",
+      "label": {
+        "en": "Locked",
+        "ru": "Закреплено"
+      },
+      "definition": {
+        "en": "The target record is locked.",
+        "ru": "Целевая запись закреплена."
+      }
+    },
+    {
+      "code": "quota-exceeded",
+      "label": {
+        "en": "Quota exceeded",
+        "ru": "Превышен лимит"
+      },
+      "definition": {
+        "en": "The proposer has too many open proposals.",
+        "ru": "У автора предложений слишком много открытых предложений."
+      }
+    },
+    {
+      "code": "subject-declined",
+      "label": {
+        "en": "Declined by the person",
+        "ru": "Человек отказал"
+      },
+      "definition": {
+        "en": "The person declined.",
+        "ru": "Человек отказал."
+      }
+    },
+    {
+      "code": "holder-policy",
+      "label": {
+        "en": "Holder policy",
+        "ru": "Правила держателя"
+      },
+      "definition": {
+        "en": "The holder's declared policy.",
+        "ru": "Заявленные правила держателя."
+      }
+    },
+    {
+      "code": "security",
+      "label": {
+        "en": "Security",
+        "ru": "Безопасность"
+      },
+      "definition": {
+        "en": "A security reason.",
+        "ru": "Соображения безопасности."
+      }
+    },
+    {
+      "code": "legal",
+      "label": {
+        "en": "Legal",
+        "ru": "Правовые основания"
+      },
+      "definition": {
+        "en": "A legal reason.",
+        "ru": "Правовые причины."
+      }
+    },
+    {
+      "code": "retention",
+      "label": {
+        "en": "Retention",
+        "ru": "Срок хранения"
+      },
+      "definition": {
+        "en": "The retention period ended.",
+        "ru": "Истёк срок хранения."
+      }
+    }
+  ]
+}

@@ -1,0 +1,85 @@
+{
+  "format": "ohc.catalog",
+  "id": "urn:ohc:catalog:endorsement",
+  "version": "0.1.0",
+  "specVersion": "0.1.0-draft",
+  "title": {
+    "en": "Endorsement",
+    "ru": "Позиция человека"
+  },
+  "description": {
+    "en": "The person's stance on a record. Computed by replaying Reviews; never stored on the record. A steward's endorsement within scope is shown as \"confirmed by steward\", never \"stated\" (ST-1).",
+    "ru": "Позиция человека по отношению к записи. Вычисляется воспроизведением решений (Review) и никогда не хранится в самой записи. Подтверждение доверенного лица в пределах полномочий показывается как «подтверждено доверенным лицом», но не как «высказано» (ST-1)."
+  },
+  "closed": true,
+  "flags": [
+    {
+      "flag": "contested",
+      "label": {
+        "en": "Contested",
+        "ru": "Оспорено"
+      },
+      "definition": {
+        "en": "The person disputes the record and keeps it open for discussion. Contest is not reject: contest is open; reject is final for the person.",
+        "ru": "Человек оспаривает запись и оставляет вопрос открытым для обсуждения. Оспорить — не то же, что отклонить: оспаривание открыто, отклонение для человека окончательно."
+      }
+    },
+    {
+      "flag": "locked",
+      "label": {
+        "en": "Locked",
+        "ru": "Закреплено"
+      },
+      "definition": {
+        "en": "The person froze the record. Only the subject may supersede or retract it. Proposals targeting it are declined by the holder. Consumers MUST NOT suggest changes to it.",
+        "ru": "Человек закрепил запись. Заменить или отозвать её может только сам человек. Предложения, касающиеся её, держатель отклоняет. Потребители НЕ ДОЛЖНЫ предлагать её изменить."
+      }
+    }
+  ],
+  "codes": [
+    {
+      "code": "not-asked",
+      "label": {
+        "en": "Not asked",
+        "ru": "Не спрашивали"
+      },
+      "definition": {
+        "en": "The person has not taken a stance. This is the initial value when the asserter is not the subject.",
+        "ru": "Человек ещё не выразил позицию. Это начальное значение, когда автор записи — не сам человек."
+      }
+    },
+    {
+      "code": "endorsed",
+      "label": {
+        "en": "Endorsed",
+        "ru": "Подтверждено"
+      },
+      "definition": {
+        "en": "The person accepts the record as true or fitting. This is the initial value for the subject's own records.",
+        "ru": "Человек принимает запись как верную или подходящую. Это начальное значение для собственных записей человека."
+      }
+    },
+    {
+      "code": "partial",
+      "label": {
+        "en": "Partly endorsed",
+        "ru": "Подтверждено частично"
+      },
+      "definition": {
+        "en": "The person accepts part of it, in their own words (`endorsedPart`).",
+        "ru": "Человек принимает часть записи и называет её своими словами (`endorsedPart`)."
+      }
+    },
+    {
+      "code": "rejected",
+      "label": {
+        "en": "Rejected",
+        "ru": "Отклонено"
+      },
+      "definition": {
+        "en": "The person says it is not true or not fitting. The record and its evidence are kept.",
+        "ru": "Человек говорит, что запись неверна или не подходит. Запись и её свидетельства сохраняются."
+      }
+    }
+  ]
+}

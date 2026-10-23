@@ -1,0 +1,184 @@
+{
+  "format": "ohc.lens",
+  "specVersion": "0.1.0-draft",
+  "id": "urn:ohc:lens:cbt",
+  "version": "0.2.0",
+  "name": {
+    "en": "Cognitive-behavioural lens (non-clinical use)",
+    "ru": "Когнитивно-поведенческая линза (неклиническое использование)"
+  },
+  "descriptorStatus": "draft",
+  "kind": "practice-method",
+  "summary": {
+    "en": "How a situation is interpreted shapes feeling and action; interpretations and expectations can be noticed and tested.",
+    "ru": "То, как истолкована ситуация, влияет на чувства и действия; толкования и ожидания можно заметить и проверить."
+  },
+  "constructs": [
+    {
+      "id": "cbt/situation",
+      "label": {
+        "en": "Situation"
+      }
+    },
+    {
+      "id": "cbt/automatic-thought",
+      "label": {
+        "en": "Automatic thought"
+      }
+    },
+    {
+      "id": "cbt/emotion",
+      "label": {
+        "en": "Emotion"
+      }
+    },
+    {
+      "id": "cbt/behavior",
+      "label": {
+        "en": "Behaviour"
+      }
+    },
+    {
+      "id": "cbt/alternative-thought",
+      "label": {
+        "en": "Alternative thought"
+      }
+    }
+  ],
+  "mentalModel": {
+    "summary": "Thoughts, feelings and actions influence each other; small tests of an expectation can change it.",
+    "assumptions": [
+      "interpretations are hypotheses",
+      "behaviour can be tried in small steps"
+    ],
+    "stance": "collaborative and empirical",
+    "unitOfAnalysis": "a situation and what went through the mind just before",
+    "attendsTo": [
+      "thoughts before an action",
+      "expectations",
+      "what was done",
+      "what else could be true"
+    ],
+    "howChangeHappens": "By noticing and testing interpretations and trying small different actions.",
+    "languageGuidance": "Offer questions, not corrections; never call a thought irrational or distorted.",
+    "agentPosture": {
+      "do": [
+        "ask what went through the mind",
+        "offer the thought record as an option"
+      ],
+      "dont": [
+        "label distortions",
+        "argue the person out of a view"
+      ]
+    },
+    "exploratoryQuestions": [
+      "Which interpretations and expectations shaped the reaction and the action?",
+      "What else could be true?"
+    ],
+    "helperMustNot": [
+      "apply distortion or diagnosis labels",
+      "present itself as CBT therapy"
+    ],
+    "doesNotClaim": [
+      "a diagnosis",
+      "that an agent provides therapy"
+    ],
+    "riskNotes": [
+      "Clinical CBT belongs with clinicians"
+    ]
+  },
+  "toolkit": [
+    {
+      "id": "cbt.thought-record",
+      "name": "Thought record",
+      "kind": "worksheet",
+      "description": "Write the situation, the thought, the feeling, the action and an alternative.",
+      "facilitation": "self",
+      "requiresPractitioner": false,
+      "agentMayOffer": true,
+      "nonClinical": true,
+      "produces": "AssessmentRecord",
+      "cautions": [
+        "Store the person's own entries only"
+      ]
+    }
+  ],
+  "representations": [
+    {
+      "id": "cbt.thought-record",
+      "kind": "thought-record",
+      "resultType": "thought-record",
+      "description": "Five columns, in the person's words."
+    }
+  ],
+  "instruments": [],
+  "adoption": {
+    "routes": [
+      "self-chosen",
+      "agent-suggested",
+      "inherited-from-practice"
+    ],
+    "suggestionRequires": [
+      "the person asked for a way to look at a recurring reaction"
+    ],
+    "inheritanceRoles": [
+      "therapist",
+      "coach"
+    ],
+    "practitionerFor": []
+  },
+  "evidence": {
+    "measurementTier": "not-applicable",
+    "practiceTier": {
+      "clinicianDelivered": "not-assessed",
+      "selfGuided": "not-assessed",
+      "agentOffered": "not-assessed"
+    },
+    "ontologicalStatus": "practice-frame",
+    "citations": [
+      {
+        "ref": "doi:10.1007/s10608-012-9476-1 (Hofmann et al. 2012, review of meta-analyses)",
+        "grade": "verify",
+        "note": "Clinical efficacy literature not reviewed in this workflow"
+      }
+    ],
+    "reviewedAt": "2026-10-09",
+    "notes": "OHC use is non-clinical self-reflection; no efficacy claim is made."
+  },
+  "supports": [
+    "self-reflection on interpretations before actions"
+  ],
+  "doesNotEstablish": [
+    "clinical efficacy for this person",
+    "any diagnosis"
+  ],
+  "ip": {
+    "conceptStatus": "free-concept",
+    "marks": [],
+    "itemsLicence": "store the person's own entries, not published worksheet text",
+    "scoring": "none",
+    "restrictions": [
+      "never store published worksheet text"
+    ],
+    "registryListing": "ok",
+    "legalReviewNeeded": true
+  },
+  "useLimits": {
+    "crossLensMapping": "not-allowed"
+  },
+  "defaults": {
+    "sensitivity": "special",
+    "categories": [
+      "mental-health"
+    ],
+    "reviewAfter": "P3M"
+  },
+  "mappings": [],
+  "playbooks": [
+    "urn:ohc:playbook:cbt-basic"
+  ],
+  "descriptorAuthors": [
+    "OHC editors"
+  ],
+  "sources": []
+}

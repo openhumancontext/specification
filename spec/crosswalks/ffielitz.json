@@ -1,0 +1,79 @@
+[
+  {
+    "format": "ohc.mapping",
+    "specVersion": "0.1.0-draft",
+    "id": "urn:ohc:mapping:ohc.origin--ff.source--ffielitz-codex",
+    "version": "0.1.0",
+    "bridgeKind": "ohc-standard",
+    "from": {
+      "standard": "OHC 0.1.0-draft",
+      "concept": "origin declared / inferred / derived / imported"
+    },
+    "to": {
+      "standard": "ffielitz Human Context Protocol codex assertion schema",
+      "concept": "source human / ai / derived / import",
+      "pin": {
+        "commit": "c9061d49ad6c2692818128530fc203125832e75f"
+      }
+    },
+    "relation": "corresponds",
+    "scope": "Informative crosswalk between formats; never a conversion of a person's data without the person's grant",
+    "notIdentity": true,
+    "chainable": false,
+    "rowStatus": "accepted-with-loss",
+    "lost": "OHC's observed and attested have no counterpart.",
+    "evidenceGrade": "F",
+    "reviewedAt": "2026-10-09"
+  },
+  {
+    "format": "ohc.mapping",
+    "specVersion": "0.1.0-draft",
+    "id": "urn:ohc:mapping:ohc.admission-proposed--ff.authority-proposed--ffielitz-codex",
+    "version": "0.1.0",
+    "bridgeKind": "ohc-standard",
+    "from": {
+      "standard": "OHC 0.1.0-draft",
+      "concept": "admission proposed"
+    },
+    "to": {
+      "standard": "ffielitz Human Context Protocol codex assertion schema",
+      "concept": "authority proposed",
+      "pin": {
+        "commit": "c9061d49ad6c2692818128530fc203125832e75f"
+      }
+    },
+    "relation": "corresponds",
+    "scope": "Informative crosswalk between formats; never a conversion of a person's data without the person's grant",
+    "notIdentity": true,
+    "chainable": false,
+    "rowStatus": "accepted",
+    "evidenceGrade": "F",
+    "reviewedAt": "2026-10-09"
+  },
+  {
+    "format": "ohc.mapping",
+    "specVersion": "0.1.0-draft",
+    "id": "urn:ohc:mapping:ohc.endorsement-endorsed--ff.authority-authoritative--ffielitz-codex",
+    "version": "0.1.0",
+    "bridgeKind": "ohc-standard",
+    "from": {
+      "standard": "OHC 0.1.0-draft",
+      "concept": "endorsement endorsed"
+    },
+    "to": {
+      "standard": "ffielitz Human Context Protocol codex assertion schema",
+      "concept": "authority authoritative",
+      "pin": {
+        "commit": "c9061d49ad6c2692818128530fc203125832e75f"
+      }
+    },
+    "relation": "corresponds",
+    "scope": "Informative crosswalk between formats; never a conversion of a person's data without the person's grant",
+    "notIdentity": true,
+    "chainable": false,
+    "rowStatus": "accepted-with-loss",
+    "lost": "'Authoritative' marks the human's word; OHC records endorsement by the subject as a Review.",
+    "evidenceGrade": "F",
+    "reviewedAt": "2026-10-09"
+  }
+]

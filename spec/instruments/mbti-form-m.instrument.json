@@ -1,0 +1,62 @@
+{
+  "format": "ohc.instrument",
+  "specVersion": "0.1.0-draft",
+  "id": "urn:ohc:instrument:mbti-form-m",
+  "version": "0.1.0",
+  "name": "MBTI® Form M",
+  "lens": "urn:ohc:lens:jungian-type",
+  "publisher": "The Myers-Briggs Company (exclusive publisher of the MBTI® instrument)",
+  "forms": [
+    {
+      "id": "M",
+      "items": 93,
+      "note": "Type plus a preference-clarity index per pole"
+    }
+  ],
+  "itemsLicence": "Proprietary; the MBTI® instrument may not be reproduced without written permission from the publisher",
+  "scoring": "proprietary",
+  "marks": [
+    {
+      "mark": "MBTI",
+      "owner": "Myers & Briggs Foundation, Inc.",
+      "status": "registered",
+      "notice": "Myers-Briggs Type Indicator, Myers-Briggs and MBTI are trademarks or registered trademarks of the Myers & Briggs Foundation, Inc.; The Myers-Briggs Company is the exclusive publisher of the MBTI® instrument.",
+      "use": "adjective-only"
+    },
+    {
+      "mark": "Myers-Briggs",
+      "owner": "Myers & Briggs Foundation, Inc.",
+      "status": "registered",
+      "notice": "Myers-Briggs Type Indicator, Myers-Briggs and MBTI are trademarks or registered trademarks of the Myers & Briggs Foundation, Inc.; The Myers-Briggs Company is the exclusive publisher of the MBTI® instrument.",
+      "use": "adjective-only"
+    },
+    {
+      "mark": "Myers-Briggs Type Indicator",
+      "owner": "Myers & Briggs Foundation, Inc.",
+      "status": "registered",
+      "notice": "Myers-Briggs Type Indicator, Myers-Briggs and MBTI are trademarks or registered trademarks of the Myers & Briggs Foundation, Inc.; The Myers-Briggs Company is the exclusive publisher of the MBTI® instrument.",
+      "use": "adjective-only"
+    }
+  ],
+  "neverStore": [
+    "item text",
+    "report prose",
+    "scoring key",
+    "raw item responses"
+  ],
+  "registryListing": "ok",
+  "citations": [
+    {
+      "ref": "MBTI® Form M and Form Q practitioner notes (psychometrics.com)",
+      "grade": "F",
+      "note": "Form M has 93 items; practice includes a best-fit type exercise"
+    },
+    {
+      "ref": "The Myers-Briggs Company, Trademark Guidelines, guideline 5",
+      "grade": "verify",
+      "note": "Marks only for genuine MBTI® results; revision date to be re-checked"
+    }
+  ],
+  "legalReviewNeeded": true,
+  "reviewedAt": "2026-10-09"
+}

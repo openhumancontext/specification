@@ -1,0 +1,220 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:ohc:schema:recall-cue:0.1.0-draft",
+  "title": "OHC RecallCue",
+  "description": "EXPERIMENTAL. A cue authorised by the person that lets an agent offer back the person's own experience when a described situation recurs, with alternatives and limits. Recall is not crisis support. A consumer's crisis protocol always takes precedence; recall MUST NOT delay, replace or condition it (RC-5). Layer recall; module recall.",
+  "type": "object",
+  "required": [
+    "id",
+    "trigger",
+    "offer",
+    "timing",
+    "safety",
+    "origin",
+    "assertedBy",
+    "recordedAt"
+  ],
+  "properties": {
+    "kind": {
+      "const": "RecallCue"
+    },
+    "id": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Envelope/properties/id"
+    },
+    "trigger": {
+      "type": "object",
+      "description": "No physiological or biometric signals (R-X4).",
+      "required": [
+        "description"
+      ],
+      "properties": {
+        "description": {
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+        },
+        "signals": {
+          "type": "array",
+          "items": {
+            "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/recall-signals"
+          },
+          "minItems": 1
+        },
+        "contexts": {
+          "type": "array",
+          "items": {
+            "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/life-domains"
+          },
+          "minItems": 1
+        }
+      },
+      "additionalProperties": false
+    },
+    "offer": {
+      "type": "object",
+      "required": [
+        "targets",
+        "framing",
+        "includeAlternatives",
+        "alternativesNote",
+        "maxTier"
+      ],
+      "properties": {
+        "targets": {
+          "type": "array",
+          "items": {
+            "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/LocalId"
+          },
+          "minItems": 1
+        },
+        "framing": {
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+        },
+        "suggestedWording": {
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+        },
+        "includeAlternatives": {
+          "const": true
+        },
+        "alternativesNote": {
+          "description": "Names at least one non-psychological explanation (RC-4).",
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+        },
+        "maxTier": {
+          "description": "A cue never reaches verbatim.",
+          "allOf": [
+            {
+              "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/release-tiers"
+            },
+            {
+              "not": {
+                "const": "verbatim"
+              }
+            }
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "timing": {
+      "type": "object",
+      "required": [
+        "askBeforeReminding",
+        "cooldown",
+        "maxPerWeek"
+      ],
+      "properties": {
+        "askBeforeReminding": {
+          "type": "boolean",
+          "default": true
+        },
+        "notWhen": {
+          "type": "array",
+          "items": {
+            "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+          },
+          "minItems": 1
+        },
+        "cooldown": {
+          "allOf": [
+            {
+              "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Duration"
+            }
+          ],
+          "default": "P1D"
+        },
+        "maxPerWeek": {
+          "type": "integer",
+          "minimum": 0,
+          "default": 2
+        }
+      },
+      "additionalProperties": false
+    },
+    "safety": {
+      "type": "object",
+      "required": [
+        "nonClinical"
+      ],
+      "properties": {
+        "nonClinical": {
+          "const": true
+        },
+        "note": {
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+        }
+      },
+      "additionalProperties": false
+    },
+    "origin": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Envelope/properties/origin"
+    },
+    "assertedBy": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Envelope/properties/assertedBy"
+    },
+    "recordedAt": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Envelope/properties/recordedAt"
+    },
+    "recordedBy": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Envelope/properties/recordedBy"
+    },
+    "underGrant": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Envelope/properties/underGrant"
+    },
+    "purpose": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Envelope/properties/purpose"
+    },
+    "formulatedAt": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Envelope/properties/formulatedAt"
+    },
+    "supersedes": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Envelope/properties/supersedes"
+    },
+    "epistemic": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Envelope/properties/epistemic"
+    },
+    "confidence": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Envelope/properties/confidence"
+    },
+    "sensitivity": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Envelope/properties/sensitivity"
+    },
+    "categories": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Envelope/properties/categories"
+    },
+    "handling": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Envelope/properties/handling"
+    },
+    "audience": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Envelope/properties/audience"
+    },
+    "contexts": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Envelope/properties/contexts"
+    },
+    "lang": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Envelope/properties/lang"
+    },
+    "importedFrom": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Envelope/properties/importedFrom"
+    },
+    "generatedBy": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Envelope/properties/generatedBy"
+    },
+    "derivedFrom": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Envelope/properties/derivedFrom"
+    },
+    "synthetic": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Envelope/properties/synthetic"
+    },
+    "note": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Envelope/properties/note"
+    },
+    "ext": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Envelope/properties/ext"
+    }
+  },
+  "additionalProperties": false,
+  "allOf": [
+    {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/EnvelopeRules"
+    }
+  ]
+}

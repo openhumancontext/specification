@@ -1,0 +1,39 @@
+{
+  "format": "ohc.catalog",
+  "id": "urn:ohc:catalog:licenses",
+  "version": "0.1.0",
+  "specVersion": "0.1.0-draft",
+  "title": {
+    "en": "Licences",
+    "ru": "Лицензии"
+  },
+  "description": {
+    "en": "SPDX licence identifiers used by the release plan and the release manifest.",
+    "ru": "Идентификаторы лицензий SPDX, используемые в плане выпуска и манифесте выпуска."
+  },
+  "closed": true,
+  "codes": [
+    {
+      "code": "Apache-2.0",
+      "label": {
+        "en": "Apache License 2.0",
+        "ru": "Apache License 2.0"
+      },
+      "definition": {
+        "en": "The Apache License, Version 2.0. The default licence of the specification, schemas, tools and examples.",
+        "ru": "Лицензия Apache, версия 2.0. Лицензия по умолчанию для спецификации, схем, инструментов и примеров."
+      }
+    },
+    {
+      "code": "CC-BY-4.0",
+      "label": {
+        "en": "Creative Commons Attribution 4.0",
+        "ru": "Creative Commons Attribution 4.0"
+      },
+      "definition": {
+        "en": "Creative Commons Attribution 4.0 International. Used for explanatory documents and the glossary.",
+        "ru": "Creative Commons Attribution 4.0 International. Используется для пояснительных документов и глоссария."
+      }
+    }
+  ]
+}

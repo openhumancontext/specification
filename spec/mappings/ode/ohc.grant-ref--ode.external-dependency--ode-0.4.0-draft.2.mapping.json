@@ -1,0 +1,27 @@
+{
+  "format": "ohc.mapping",
+  "specVersion": "0.1.0-draft",
+  "id": "urn:ohc:mapping:ohc.grant-ref--ode.external-dependency--ode-0.4.0-draft.2",
+  "version": "0.1.0",
+  "bridgeKind": "ohc-ode",
+  "from": {
+    "standard": "OHC 0.1.0-draft",
+    "concept": "Grant reference (the binding's durable dependency)"
+  },
+  "to": {
+    "standard": "ODE 0.4.0-draft",
+    "concept": "manifest externalDependencies entry",
+    "pin": {
+      "tag": "v0.4.0-draft.2",
+      "commit": "2de920485fb2665eaf7298ac65452a4a79412a9a"
+    }
+  },
+  "relation": "corresponds",
+  "scope": "Binding revision 0.2.0 (OHC 0.1.0-draft and ODE release 0.4.0-draft.2); a conceptual comparison, never permission to convert or disclose a person's data",
+  "notIdentity": true,
+  "chainable": false,
+  "rowStatus": "accepted",
+  "lost": "The package pins the grant (`<contextId>#<grantId>`, version = the grant's recordedAt), never a projection: projections are fetched under the grant and re-checked at every use, and their ids, digests and check times are run-time evidence (use-report). No context value enters the package.",
+  "evidenceGrade": "F",
+  "reviewedAt": "2026-10-23"
+}

@@ -1,0 +1,115 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:ohc:schema:release-plan:0.1.0-draft",
+  "title": "OHC release plan",
+  "description": "The allowlist of exported paths and the licensing rules a release is built from. The private tree and .git/** are always excluded (REL-2); the licensing rules must equal LICENSING.md (REL-3).",
+  "type": "object",
+  "required": [
+    "format",
+    "releaseVersion",
+    "specVersion",
+    "rightsHolder",
+    "include",
+    "exclude",
+    "licensing"
+  ],
+  "properties": {
+    "format": {
+      "const": "ohc.release-plan/1"
+    },
+    "releaseVersion": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+    },
+    "specVersion": {
+      "const": "0.1.0-draft"
+    },
+    "rightsHolder": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+    },
+    "include": {
+      "type": "array",
+      "items": {
+        "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+      },
+      "minItems": 1,
+      "description": "Globs of exported paths."
+    },
+    "exclude": {
+      "type": "array",
+      "items": {
+        "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+      },
+      "minItems": 1,
+      "description": "Globs never exported."
+    },
+    "licensing": {
+      "type": "object",
+      "required": [
+        "default",
+        "rules"
+      ],
+      "properties": {
+        "default": {
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/licenses"
+        },
+        "rules": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "glob",
+              "license"
+            ],
+            "properties": {
+              "glob": {
+                "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+              },
+              "license": {
+                "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/licenses"
+              }
+            },
+            "additionalProperties": false
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "licenseSources": {
+      "type": "object",
+      "propertyNames": {
+        "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/licenses"
+      },
+      "additionalProperties": {
+        "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Path"
+      }
+    },
+    "licenseStatus": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+    },
+    "binaryAssets": {
+      "type": "array",
+      "items": {
+        "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+      }
+    },
+    "checks": {
+      "type": "array",
+      "items": {
+        "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+      }
+    },
+    "verificationSources": {
+      "type": "array",
+      "items": {
+        "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Path"
+      }
+    },
+    "publication": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+    },
+    "notes": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+    }
+  },
+  "additionalProperties": false
+}

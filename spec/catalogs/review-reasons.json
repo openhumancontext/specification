@@ -1,0 +1,127 @@
+{
+  "format": "ohc.catalog",
+  "id": "urn:ohc:catalog:review-reasons",
+  "version": "0.1.0",
+  "specVersion": "0.1.0-draft",
+  "title": {
+    "en": "Review reason codes",
+    "ru": "Причины решений"
+  },
+  "description": {
+    "en": "Optional reasons for `reject`, `decline` and `retract` Reviews.",
+    "ru": "Необязательные причины для решений `reject`, `decline` и `retract`."
+  },
+  "closed": true,
+  "codes": [
+    {
+      "code": "not-true",
+      "label": {
+        "en": "Not true",
+        "ru": "Неверно"
+      },
+      "definition": {
+        "en": "The record is not true.",
+        "ru": "Запись неверна."
+      }
+    },
+    {
+      "code": "not-now",
+      "label": {
+        "en": "Not now",
+        "ru": "Не сейчас"
+      },
+      "definition": {
+        "en": "Not now; the person may return to it.",
+        "ru": "Не сейчас; человек может вернуться к этому позже."
+      }
+    },
+    {
+      "code": "too-sensitive",
+      "label": {
+        "en": "Too sensitive",
+        "ru": "Слишком чувствительно"
+      },
+      "definition": {
+        "en": "Too sensitive to keep or share.",
+        "ru": "Слишком чувствительно, чтобы хранить или делиться."
+      }
+    },
+    {
+      "code": "not-relevant",
+      "label": {
+        "en": "Not relevant",
+        "ru": "Не относится к делу"
+      },
+      "definition": {
+        "en": "Not relevant to the person.",
+        "ru": "Не имеет значения для человека."
+      }
+    },
+    {
+      "code": "outdated",
+      "label": {
+        "en": "Outdated",
+        "ru": "Устарело"
+      },
+      "definition": {
+        "en": "No longer true or fitting.",
+        "ru": "Больше не верно или не подходит."
+      }
+    },
+    {
+      "code": "wrong-person",
+      "label": {
+        "en": "Wrong person",
+        "ru": "Не о том человеке"
+      },
+      "definition": {
+        "en": "About someone else.",
+        "ru": "О ком-то другом."
+      }
+    },
+    {
+      "code": "locked",
+      "label": {
+        "en": "Locked target",
+        "ru": "Цель заблокирована"
+      },
+      "definition": {
+        "en": "The proposal targets a record the person locked. Declined by the holder automatically (IB-5).",
+        "ru": "Предложение касается записи, которую человек заблокировал. Держатель отклоняет его автоматически (IB-5)."
+      }
+    },
+    {
+      "code": "expired",
+      "label": {
+        "en": "Expired undecided",
+        "ru": "Истёк срок без решения"
+      },
+      "definition": {
+        "en": "Not decided by the person before the proposal's expiresAt; computed, never a stance of the person (PR-3).",
+        "ru": "Человек не принял решение до expiresAt предложения; вычисляется и никогда не является позицией человека (PR-3)."
+      }
+    },
+    {
+      "code": "quota-exceeded",
+      "label": {
+        "en": "Quota exceeded",
+        "ru": "Превышена квота"
+      },
+      "definition": {
+        "en": "The proposer has more open proposals than the holder accepts (IB-4).",
+        "ru": "У предлагающего больше открытых предложений, чем принимает держатель (IB-4)."
+      }
+    },
+    {
+      "code": "other",
+      "label": {
+        "en": "Other",
+        "ru": "Другое"
+      },
+      "definition": {
+        "en": "Any other reason, explained in the note.",
+        "ru": "Любая другая причина, объяснённая в примечании."
+      }
+    }
+  ]
+}

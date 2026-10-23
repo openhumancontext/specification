@@ -1,0 +1,406 @@
+{
+  "format": "ohc.lens",
+  "specVersion": "0.1.0-draft",
+  "id": "urn:ohc:lens:schwartz-values",
+  "version": "0.2.0",
+  "name": {
+    "en": "Schwartz theory of basic human values",
+    "ru": "Теория базовых человеческих ценностей Шварца"
+  },
+  "aliases": [
+    "basic human values"
+  ],
+  "descriptorStatus": "draft",
+  "kind": "values-circular",
+  "summary": {
+    "en": "Values arranged on a circular continuum where neighbouring values are compatible and opposite values trade off; scores are centred within the person.",
+    "ru": "Ценности расположены на круговом континууме: соседние совместимы, противоположные конкурируют; баллы центрируются внутри одного человека."
+  },
+  "variants": [
+    {
+      "id": "10",
+      "note": "10 basic values"
+    },
+    {
+      "id": "19",
+      "note": "19 refined values in 4 higher-order groups (PVQ-RR)"
+    }
+  ],
+  "constructs": [
+    {
+      "id": "schwartz-values/self-transcendence",
+      "label": {
+        "en": "Self-Transcendence (higher-order)",
+        "ru": "Самопреодоление (высший порядок)"
+      }
+    },
+    {
+      "id": "schwartz-values/conservation",
+      "label": {
+        "en": "Conservation (higher-order)",
+        "ru": "Сохранение (высший порядок)"
+      }
+    },
+    {
+      "id": "schwartz-values/self-enhancement",
+      "label": {
+        "en": "Self-Enhancement (higher-order)",
+        "ru": "Самоутверждение (высший порядок)"
+      }
+    },
+    {
+      "id": "schwartz-values/openness-to-change",
+      "label": {
+        "en": "Openness to Change (higher-order)",
+        "ru": "Открытость изменениям (высший порядок)"
+      }
+    },
+    {
+      "id": "schwartz-values/benevolence",
+      "label": {
+        "en": "Benevolence",
+        "ru": "Благожелательность"
+      }
+    },
+    {
+      "id": "schwartz-values/universalism",
+      "label": {
+        "en": "Universalism",
+        "ru": "Универсализм"
+      }
+    },
+    {
+      "id": "schwartz-values/conformity",
+      "label": {
+        "en": "Conformity",
+        "ru": "Конформность"
+      }
+    },
+    {
+      "id": "schwartz-values/tradition",
+      "label": {
+        "en": "Tradition",
+        "ru": "Традиция"
+      }
+    },
+    {
+      "id": "schwartz-values/security",
+      "label": {
+        "en": "Security",
+        "ru": "Безопасность"
+      }
+    },
+    {
+      "id": "schwartz-values/power",
+      "label": {
+        "en": "Power",
+        "ru": "Власть"
+      }
+    },
+    {
+      "id": "schwartz-values/achievement",
+      "label": {
+        "en": "Achievement",
+        "ru": "Достижение"
+      }
+    },
+    {
+      "id": "schwartz-values/hedonism",
+      "label": {
+        "en": "Hedonism",
+        "ru": "Гедонизм"
+      }
+    },
+    {
+      "id": "schwartz-values/stimulation",
+      "label": {
+        "en": "Stimulation",
+        "ru": "Стимуляция"
+      }
+    },
+    {
+      "id": "schwartz-values/self-direction",
+      "label": {
+        "en": "Self-Direction",
+        "ru": "Самостоятельность"
+      }
+    },
+    {
+      "id": "schwartz-values/benevolence-dependability",
+      "parent": "schwartz-values/benevolence",
+      "label": {
+        "en": "Benevolence-Dependability (refined)"
+      }
+    },
+    {
+      "id": "schwartz-values/benevolence-caring",
+      "parent": "schwartz-values/benevolence",
+      "label": {
+        "en": "Benevolence-Caring (refined)"
+      }
+    },
+    {
+      "id": "schwartz-values/universalism-tolerance",
+      "parent": "schwartz-values/universalism",
+      "label": {
+        "en": "Universalism-Tolerance (refined)"
+      }
+    },
+    {
+      "id": "schwartz-values/universalism-concern",
+      "parent": "schwartz-values/universalism",
+      "label": {
+        "en": "Universalism-Concern (refined)"
+      }
+    },
+    {
+      "id": "schwartz-values/universalism-nature",
+      "parent": "schwartz-values/universalism",
+      "label": {
+        "en": "Universalism-Nature (refined)"
+      }
+    },
+    {
+      "id": "schwartz-values/humility",
+      "label": {
+        "en": "Humility (refined)"
+      }
+    },
+    {
+      "id": "schwartz-values/conformity-interpersonal",
+      "parent": "schwartz-values/conformity",
+      "label": {
+        "en": "Conformity-Interpersonal (refined)"
+      }
+    },
+    {
+      "id": "schwartz-values/conformity-rules",
+      "parent": "schwartz-values/conformity",
+      "label": {
+        "en": "Conformity-Rules (refined)"
+      }
+    },
+    {
+      "id": "schwartz-values/security-societal",
+      "parent": "schwartz-values/security",
+      "label": {
+        "en": "Security-Societal (refined)"
+      }
+    },
+    {
+      "id": "schwartz-values/security-personal",
+      "parent": "schwartz-values/security",
+      "label": {
+        "en": "Security-Personal (refined)"
+      }
+    },
+    {
+      "id": "schwartz-values/face",
+      "label": {
+        "en": "Face (refined)"
+      }
+    },
+    {
+      "id": "schwartz-values/power-resources",
+      "parent": "schwartz-values/power",
+      "label": {
+        "en": "Power-Resources (refined)"
+      }
+    },
+    {
+      "id": "schwartz-values/power-dominance",
+      "parent": "schwartz-values/power",
+      "label": {
+        "en": "Power-Dominance (refined)"
+      }
+    },
+    {
+      "id": "schwartz-values/self-direction-action",
+      "parent": "schwartz-values/self-direction",
+      "label": {
+        "en": "Self-Direction-Action (refined)"
+      }
+    },
+    {
+      "id": "schwartz-values/self-direction-thought",
+      "parent": "schwartz-values/self-direction",
+      "label": {
+        "en": "Self-Direction-Thought (refined)"
+      }
+    }
+  ],
+  "mentalModel": {
+    "summary": "Values form a circle: pursuing one value is compatible with its neighbours and in tension with its opposites.",
+    "assumptions": [
+      "everyone holds all values, in different priorities",
+      "priorities are read relative to the person's own mean",
+      "a measured profile is different from a value the person declares"
+    ],
+    "stance": "descriptive and within-person",
+    "unitOfAnalysis": "the person's value priorities and the trade-offs between them",
+    "attendsTo": [
+      "values that pulled against each other in a situation",
+      "the person's own priorities",
+      "neighbouring and opposite values"
+    ],
+    "howChangeHappens": "Priorities shift slowly with life stage and circumstance.",
+    "languageGuidance": "Speak of priorities and trade-offs, never of right or wrong values; keep the person's declared values in their own words.",
+    "agentPosture": {
+      "do": [
+        "ask which values pulled against each other",
+        "show centred scores with their meaning"
+      ],
+      "dont": [
+        "compare the person's values with other people",
+        "infer political or religious views"
+      ]
+    },
+    "exploratoryQuestions": [
+      "Which values pulled against each other here?",
+      "Which value would you not give up in this situation?"
+    ],
+    "helperMustNot": [
+      "infer political or religious views from values",
+      "use values to tailor persuasion",
+      "turn a measured profile into declared values"
+    ],
+    "doesNotClaim": [
+      "which values are right",
+      "political or religious affiliation",
+      "behaviour in a given situation"
+    ],
+    "riskNotes": [
+      "Values such as Tradition, Universalism and Conformity can reveal political or religious views",
+      "Value profiles are a known input for psychological targeting"
+    ]
+  },
+  "toolkit": [
+    {
+      "id": "schwartz-values.values-in-tension",
+      "name": "Values in tension",
+      "kind": "exercise",
+      "description": "Take a recent decision and note which two values pulled against each other and what you chose.",
+      "facilitation": "self",
+      "requiresPractitioner": false,
+      "agentMayOffer": true,
+      "nonClinical": true,
+      "produces": "Interpretation",
+      "cautions": [
+        "Declared values stay declared-value Claims"
+      ]
+    },
+    {
+      "id": "schwartz-values.record-result",
+      "name": "Record a questionnaire result",
+      "kind": "instrument-use",
+      "description": "Record PVQ-RR raw and centred value scores; never item text.",
+      "facilitation": "self",
+      "requiresPractitioner": false,
+      "agentMayOffer": false,
+      "nonClinical": true,
+      "produces": "AssessmentRecord",
+      "cautions": [
+        "Centred scores are within-person (M-5)"
+      ]
+    }
+  ],
+  "representations": [
+    {
+      "id": "schwartz-values.circular-chart",
+      "kind": "chart",
+      "resultType": "values-profile",
+      "description": "A circular chart of centred value scores, with raw scores available beside it."
+    }
+  ],
+  "instruments": [
+    "urn:ohc:instrument:pvq-rr"
+  ],
+  "adoption": {
+    "routes": [
+      "self-chosen",
+      "agent-suggested",
+      "inherited-from-practice",
+      "imported"
+    ],
+    "suggestionRequires": [
+      "the person asked for ways of looking at what matters to them"
+    ],
+    "inheritanceRoles": [
+      "coach",
+      "teacher",
+      "therapist"
+    ],
+    "practitionerFor": []
+  },
+  "evidence": {
+    "measurementTier": "T2",
+    "practiceTier": {
+      "clinicianDelivered": "not-assessed",
+      "selfGuided": "not-assessed",
+      "agentOffered": "not-assessed"
+    },
+    "ontologicalStatus": "measured-construct",
+    "citations": [
+      {
+        "ref": "doi:10.1037/a0029393",
+        "grade": "F",
+        "note": "Schwartz et al. 2012: values form a circular motivational continuum; analyses support discrimination of the 19 values"
+      },
+      {
+        "ref": "PMC9131418",
+        "grade": "F",
+        "note": "PVQ-RR measured all four higher-order values reliably in every cultural group studied; article licensed CC BY-NC 4.0"
+      },
+      {
+        "ref": "PVQ-RR instrument licence",
+        "grade": "U",
+        "note": "The licence of the instrument itself was not found; versions and scoring instructions are distributed through the Open Science Framework"
+      }
+    ],
+    "reviewedAt": "2026-10-09"
+  },
+  "supports": [
+    "self-reflection on value trade-offs",
+    "language for priorities the person chose"
+  ],
+  "doesNotEstablish": [
+    "which values are right",
+    "political or religious views",
+    "comparisons between people"
+  ],
+  "ip": {
+    "conceptStatus": "free-concept",
+    "marks": [],
+    "itemsLicence": "Unknown: the PVQ-RR licence was not found; the validation article is CC BY-NC 4.0",
+    "scoring": "public",
+    "restrictions": [
+      "never store PVQ-RR item text",
+      "centred scores are within-person only (M-5)",
+      "values the person declares stay declared-value Claims, never AssessmentRecords"
+    ],
+    "registryListing": "ok",
+    "legalReviewNeeded": true
+  },
+  "useLimits": {
+    "crossLensMapping": "not-allowed"
+  },
+  "defaults": {
+    "sensitivity": "special",
+    "categories": [
+      "belief",
+      "political"
+    ],
+    "reviewAfter": "P3Y"
+  },
+  "mappings": [],
+  "playbooks": [
+    "urn:ohc:playbook:schwartz-values-basic"
+  ],
+  "sources": [
+    "Schwartz et al. 2012",
+    "PMC9131418"
+  ],
+  "descriptorAuthors": [
+    "OHC editors"
+  ]
+}

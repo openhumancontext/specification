@@ -1,0 +1,94 @@
+{
+  "format": "ohc.catalog",
+  "id": "urn:ohc:catalog:fhir-resource-types",
+  "version": "0.1.0",
+  "specVersion": "0.1.0-draft",
+  "title": {
+    "en": "FHIR resource types",
+    "ru": "Типы ресурсов FHIR"
+  },
+  "description": {
+    "en": "FHIR resource types a HealthRef may point to. A HealthRef carries no clinical content.",
+    "ru": "Типы ресурсов FHIR, на которые может указывать HealthRef. HealthRef не содержит клинического содержания."
+  },
+  "closed": true,
+  "codes": [
+    {
+      "code": "Condition",
+      "label": {
+        "en": "Condition",
+        "ru": "Condition"
+      },
+      "definition": {
+        "en": "A FHIR Condition resource.",
+        "ru": "Ресурс FHIR Condition."
+      }
+    },
+    {
+      "code": "Observation",
+      "label": {
+        "en": "Observation",
+        "ru": "Observation"
+      },
+      "definition": {
+        "en": "A FHIR Observation resource.",
+        "ru": "Ресурс FHIR Observation."
+      }
+    },
+    {
+      "code": "MedicationStatement",
+      "label": {
+        "en": "MedicationStatement",
+        "ru": "MedicationStatement"
+      },
+      "definition": {
+        "en": "A FHIR MedicationStatement resource.",
+        "ru": "Ресурс FHIR MedicationStatement."
+      }
+    },
+    {
+      "code": "CarePlan",
+      "label": {
+        "en": "CarePlan",
+        "ru": "CarePlan"
+      },
+      "definition": {
+        "en": "A FHIR CarePlan resource.",
+        "ru": "Ресурс FHIR CarePlan."
+      }
+    },
+    {
+      "code": "DocumentReference",
+      "label": {
+        "en": "DocumentReference",
+        "ru": "DocumentReference"
+      },
+      "definition": {
+        "en": "A FHIR DocumentReference resource.",
+        "ru": "Ресурс FHIR DocumentReference."
+      }
+    },
+    {
+      "code": "Consent",
+      "label": {
+        "en": "Consent",
+        "ru": "Consent"
+      },
+      "definition": {
+        "en": "A FHIR Consent resource. It is not used for OHC grants.",
+        "ru": "Ресурс FHIR Consent. Для разрешений OHC не используется."
+      }
+    },
+    {
+      "code": "other",
+      "label": {
+        "en": "Other",
+        "ru": "Другой"
+      },
+      "definition": {
+        "en": "Any other FHIR resource type.",
+        "ru": "Любой другой тип ресурса FHIR."
+      }
+    }
+  ]
+}

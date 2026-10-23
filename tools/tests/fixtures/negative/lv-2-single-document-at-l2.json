@@ -1,0 +1,16 @@
+{
+  "description": "A single document that declares L2.",
+  "expect": [
+    "LV-2"
+  ],
+  "form": "single",
+  "level": "L2",
+  "patches": [
+    {
+      "op": "set",
+      "target": "manifest",
+      "path": "/conformance/level",
+      "value": "L2"
+    }
+  ]
+}

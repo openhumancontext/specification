@@ -1,0 +1,325 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:ohc:schema:source:0.1.0-draft",
+  "title": "OHC Source",
+  "description": "Metadata for one piece of primary material in the vault (the vault record). The bytes live in the vault, addressed by sha256, and are released by tier. Layer evidence; module core.",
+  "type": "object",
+  "required": [
+    "id",
+    "sourceKind",
+    "content",
+    "authorship",
+    "origin",
+    "assertedBy",
+    "recordedAt"
+  ],
+  "properties": {
+    "kind": {
+      "const": "Source"
+    },
+    "id": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Envelope/properties/id"
+    },
+    "sourceKind": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/source-kinds"
+    },
+    "title": {
+      "description": "May itself be sensitive. Never served below the summary tier.",
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+    },
+    "content": {
+      "type": "object",
+      "description": "sha256 is required except for live-feed.",
+      "required": [
+        "locator",
+        "mediaType"
+      ],
+      "properties": {
+        "locator": {
+          "oneOf": [
+            {
+              "type": "object",
+              "required": [
+                "vaultPath"
+              ],
+              "properties": {
+                "vaultPath": {
+                  "type": "string",
+                  "pattern": "^vault/[0-9a-f]{2}/[0-9a-f]{64}\\.[A-Za-z0-9]+$"
+                }
+              },
+              "additionalProperties": false
+            },
+            {
+              "type": "object",
+              "required": [
+                "uri"
+              ],
+              "properties": {
+                "uri": {
+                  "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/URI"
+                }
+              },
+              "additionalProperties": false
+            }
+          ]
+        },
+        "sha256": {
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Sha256Hex"
+        },
+        "mediaType": {
+          "description": "An IANA media type.",
+          "type": "string",
+          "pattern": "^[a-z0-9]+/[A-Za-z0-9.+_-]+(?:;.*)?$"
+        },
+        "size": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "encrypted": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "capturedAt": {
+      "description": "When the material was created. If absent, it is unknown, never now.",
+      "anyOf": [
+        {
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/DateTime"
+        },
+        {
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/PartialTime"
+        }
+      ]
+    },
+    "authorship": {
+      "type": "object",
+      "required": [
+        "author"
+      ],
+      "properties": {
+        "author": {
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Actor"
+        },
+        "coAuthors": {
+          "type": "array",
+          "items": {
+            "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Actor"
+          },
+          "minItems": 1
+        }
+      },
+      "additionalProperties": false
+    },
+    "inbound": {
+      "description": "true = received from someone else.",
+      "type": "boolean"
+    },
+    "contemporaneity": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/contemporaneity"
+    },
+    "participants": {
+      "type": "array",
+      "items": {
+        "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/LocalId"
+      },
+      "minItems": 1
+    },
+    "containsThirdParty": {
+      "type": "boolean"
+    },
+    "maxRelease": {
+      "description": "The ceiling for any grantee. Default summary; index in the cases listed in the specification.",
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/release-tiers"
+    },
+    "custody": {
+      "type": "object",
+      "description": "Material held under a professional's confidentiality.",
+      "required": [
+        "custodian",
+        "confidentiality"
+      ],
+      "properties": {
+        "custodian": {
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Actor"
+        },
+        "confidentiality": {
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/custody"
+        },
+        "releaseRef": {
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/LocalId"
+        },
+        "terms": {
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+        }
+      },
+      "additionalProperties": false
+    },
+    "summary": {
+      "type": "object",
+      "description": "A selection by its author, shown with that author.",
+      "required": [
+        "text",
+        "authoredBy",
+        "recordedAt"
+      ],
+      "properties": {
+        "text": {
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+        },
+        "authoredBy": {
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Actor"
+        },
+        "recordedAt": {
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/DateTime"
+        },
+        "method": {
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/summary-methods"
+        }
+      },
+      "additionalProperties": false
+    },
+    "redactions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "selector",
+          "reason",
+          "by",
+          "at"
+        ],
+        "properties": {
+          "selector": {
+            "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Selector"
+          },
+          "reason": {
+            "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/redaction-reasons"
+          },
+          "by": {
+            "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Actor"
+          },
+          "at": {
+            "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/DateTime"
+          }
+        },
+        "additionalProperties": false
+      },
+      "minItems": 1
+    },
+    "derivedFrom": {
+      "description": "Other Sources only (G1).",
+      "type": "array",
+      "items": {
+        "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/LocalId"
+      },
+      "minItems": 1
+    },
+    "retention": {
+      "type": "object",
+      "required": [
+        "eraseOnRequest"
+      ],
+      "properties": {
+        "until": {
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Date"
+        },
+        "eraseOnRequest": {
+          "const": true
+        }
+      },
+      "additionalProperties": false
+    },
+    "origin": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Envelope/properties/origin"
+    },
+    "assertedBy": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Envelope/properties/assertedBy"
+    },
+    "recordedAt": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Envelope/properties/recordedAt"
+    },
+    "recordedBy": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Envelope/properties/recordedBy"
+    },
+    "underGrant": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Envelope/properties/underGrant"
+    },
+    "purpose": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Envelope/properties/purpose"
+    },
+    "formulatedAt": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Envelope/properties/formulatedAt"
+    },
+    "supersedes": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Envelope/properties/supersedes"
+    },
+    "epistemic": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Envelope/properties/epistemic"
+    },
+    "confidence": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Envelope/properties/confidence"
+    },
+    "sensitivity": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Envelope/properties/sensitivity"
+    },
+    "categories": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Envelope/properties/categories"
+    },
+    "handling": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Envelope/properties/handling"
+    },
+    "audience": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Envelope/properties/audience"
+    },
+    "contexts": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Envelope/properties/contexts"
+    },
+    "lang": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Envelope/properties/lang"
+    },
+    "importedFrom": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Envelope/properties/importedFrom"
+    },
+    "generatedBy": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Envelope/properties/generatedBy"
+    },
+    "synthetic": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Envelope/properties/synthetic"
+    },
+    "note": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Envelope/properties/note"
+    },
+    "ext": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Envelope/properties/ext"
+    }
+  },
+  "additionalProperties": false,
+  "allOf": [
+    {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/EnvelopeRules"
+    },
+    {
+      "if": {
+        "properties": {
+          "sourceKind": {
+            "const": "live-feed"
+          }
+        },
+        "required": [
+          "sourceKind"
+        ]
+      },
+      "else": {
+        "properties": {
+          "content": {
+            "required": [
+              "sha256"
+            ]
+          }
+        }
+      }
+    }
+  ]
+}

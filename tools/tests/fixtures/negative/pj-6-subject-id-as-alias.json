@@ -1,0 +1,16 @@
+{
+  "description": "A projection that carries the subject id as its alias.",
+  "expect": [
+    "PJ-6",
+    "S-2"
+  ],
+  "form": "package",
+  "postPatches": [
+    {
+      "op": "set",
+      "target": "projection:prj-0001",
+      "path": "/subjectAlias",
+      "value": "urn:ohc:example:fixture-ilse"
+    }
+  ]
+}

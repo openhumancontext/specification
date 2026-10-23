@@ -1,0 +1,62 @@
+{
+  "format": "ohc.catalog",
+  "id": "urn:ohc:catalog:sensitivity-tiers",
+  "version": "0.1.0",
+  "specVersion": "0.1.0-draft",
+  "title": {
+    "en": "Sensitivity tiers",
+    "ru": "Уровни чувствительности"
+  },
+  "description": {
+    "en": "Ordered tiers of disclosure risk, from lowest to highest. Docs say \"treated as special category\", never that a record \"is Art. 9 data\".",
+    "ru": "Упорядоченные уровни риска раскрытия, от низшего к высшему. В документах пишут «рассматривается как особая категория», но не «является данными по ст. 9»."
+  },
+  "closed": true,
+  "ordered": true,
+  "codes": [
+    {
+      "code": "ordinary",
+      "label": {
+        "en": "Ordinary",
+        "ru": "Обычный"
+      },
+      "definition": {
+        "en": "It would be harmless if anyone knew it. Any matching selector, including the wildcard, may reach it.",
+        "ru": "Безвредно, даже если об этом узнает кто угодно. Доступно по любому подходящему селектору, включая общий."
+      }
+    },
+    {
+      "code": "personal",
+      "label": {
+        "en": "Personal",
+        "ru": "Личный"
+      },
+      "definition": {
+        "en": "About the person, but low-risk. This is the default for Claims. Any matching selector, including the wildcard, may reach it.",
+        "ru": "О человеке, но с низким риском. Значение по умолчанию для утверждений. Доступно по любому подходящему селектору, включая общий."
+      }
+    },
+    {
+      "code": "sensitive",
+      "label": {
+        "en": "Sensitive",
+        "ru": "Чувствительный"
+      },
+      "definition": {
+        "en": "Could harm, embarrass, or reveal inner life, relationships or location. Reached only by a selector naming its kind, facet, category, lens or id; never by the wildcard.",
+        "ru": "Может навредить, смутить или раскрыть внутреннюю жизнь, отношения или местонахождение. Доступно только по селектору, который называет вид записи, грань, категорию, линзу или идентификатор; никогда по общему."
+      }
+    },
+    {
+      "code": "special",
+      "label": {
+        "en": "Special",
+        "ru": "Особый"
+      },
+      "definition": {
+        "en": "Treated as special category: health, mental health, beliefs, sexual life, ethnicity, biometrics and similar, plus psychological lens results, readings from inherited therapy, and parts. Reached only by a selector naming its id, category or lens, under a grant with `basis.legal: explicit-consent`; never by kind or facet alone.",
+        "ru": "Рассматривается как особая категория: здоровье, психическое здоровье, убеждения, интимная жизнь, этническое происхождение, биометрия и подобное, а также результаты психологических линз, прочтения из унаследованной терапии и внутренние части. Доступно только по селектору, называющему идентификатор, категорию или линзу, при разрешении с `basis.legal: explicit-consent`; никогда только по виду записи или грани."
+      }
+    }
+  ]
+}

@@ -1,0 +1,256 @@
+{
+  "format": "ohc.lens",
+  "specVersion": "0.1.0-draft",
+  "id": "urn:ohc:lens:big-five",
+  "version": "0.2.0",
+  "name": {
+    "en": "Big Five (Five-Factor Model)",
+    "ru": "Большая пятёрка (пятифакторная модель)"
+  },
+  "aliases": [
+    "FFM",
+    "OCEAN"
+  ],
+  "descriptorStatus": "draft",
+  "kind": "trait-dimensional",
+  "summary": {
+    "en": "Five broad dimensions of relatively stable tendencies, measured by questionnaire and compared with a norm group.",
+    "ru": "Пять широких измерений относительно устойчивых склонностей; измеряются опросником и сравниваются с нормативной группой."
+  },
+  "variants": [
+    {
+      "id": "5-domain-30-facet",
+      "note": "IPIP-NEO and NEO facet sets"
+    },
+    {
+      "id": "bfi-2-15-facet",
+      "note": "BFI-2 labels differ, e.g. Negative Emotionality, Open-Mindedness"
+    }
+  ],
+  "constructs": [
+    {
+      "id": "big-five/O",
+      "label": {
+        "en": "Openness",
+        "ru": "Открытость опыту"
+      },
+      "description": "How much the person tends to seek out new ideas, experiences and imagination."
+    },
+    {
+      "id": "big-five/C",
+      "label": {
+        "en": "Conscientiousness",
+        "ru": "Добросовестность"
+      },
+      "description": "How organised, dependable and persistent the person tends to be."
+    },
+    {
+      "id": "big-five/E",
+      "label": {
+        "en": "Extraversion",
+        "ru": "Экстраверсия"
+      },
+      "description": "How much the person tends to seek company, speak up and draw energy from others."
+    },
+    {
+      "id": "big-five/A",
+      "label": {
+        "en": "Agreeableness",
+        "ru": "Доброжелательность"
+      },
+      "description": "How warm, trusting and cooperative the person tends to be with others."
+    },
+    {
+      "id": "big-five/N",
+      "label": {
+        "en": "Neuroticism / Negative Emotionality",
+        "ru": "Нейротизм / негативная эмоциональность"
+      },
+      "categories": [
+        "mental-health"
+      ],
+      "description": "How strongly the person tends to react to stress and setbacks with negative feelings."
+    },
+    {
+      "id": "big-five/N/anxiety",
+      "parent": "big-five/N",
+      "label": {
+        "en": "Anxiety (facet)"
+      },
+      "categories": [
+        "mental-health"
+      ]
+    },
+    {
+      "id": "big-five/N/depression",
+      "parent": "big-five/N",
+      "label": {
+        "en": "Depression (facet)"
+      },
+      "categories": [
+        "mental-health"
+      ]
+    }
+  ],
+  "mentalModel": {
+    "summary": "People differ in typical tendencies across situations; these are measured, not diagnosed.",
+    "assumptions": [
+      "tendencies are continuous, not types",
+      "scores are relative to a norm group",
+      "situations shape how a tendency shows"
+    ],
+    "stance": "descriptive and comparative",
+    "unitOfAnalysis": "the person's typical tendencies over years",
+    "attendsTo": [
+      "typical tendencies across settings",
+      "differences from a reference population",
+      "fit with recent episodes"
+    ],
+    "howChangeHappens": "Slowly, mostly across years; rank-order stability rises with age.",
+    "languageGuidance": "Speak of tendencies and ranges, never of verdicts; never present a high or low score as a flaw.",
+    "agentPosture": {
+      "do": [
+        "show raw score, range and norm group together",
+        "ask where the score does not fit"
+      ],
+      "dont": [
+        "predict a single moment from a trait",
+        "use a score to explain away what the person says"
+      ]
+    },
+    "exploratoryQuestions": [
+      "Which of these tendencies do you recognise, and in which settings?",
+      "Where does the score not fit your experience?"
+    ],
+    "helperMustNot": [
+      "present a score as evidence of fit for a job or role",
+      "comment on facet Anxiety or Depression unless the person raises it"
+    ],
+    "doesNotClaim": [
+      "anything about a single moment",
+      "clinical states",
+      "suitability for a job"
+    ],
+    "riskNotes": [
+      "Facets named Anxiety and Depression read as health information"
+    ]
+  },
+  "toolkit": [
+    {
+      "id": "big-five.fit-check",
+      "name": "Fit check",
+      "kind": "exercise",
+      "description": "Compare one domain with three recent episodes and note fit or no fit.",
+      "facilitation": "self",
+      "requiresPractitioner": false,
+      "agentMayOffer": true,
+      "nonClinical": true,
+      "produces": "Interpretation",
+      "cautions": [
+        "Not a re-test"
+      ]
+    }
+  ],
+  "representations": [
+    {
+      "id": "big-five.score-profile",
+      "kind": "score-profile",
+      "resultType": "dimension-score",
+      "description": "Raw score, range and percentile with the norm group named."
+    }
+  ],
+  "instruments": [
+    "urn:ohc:instrument:ipip-neo-120",
+    "urn:ohc:instrument:bfi-2",
+    "urn:ohc:instrument:neo-pi-3"
+  ],
+  "adoption": {
+    "routes": [
+      "self-chosen",
+      "agent-suggested",
+      "inherited-from-practice",
+      "imported"
+    ],
+    "suggestionRequires": [
+      "the person asked for ways of describing tendencies"
+    ],
+    "inheritanceRoles": [
+      "coach",
+      "teacher",
+      "therapist"
+    ],
+    "practitionerFor": []
+  },
+  "evidence": {
+    "measurementTier": "T1",
+    "practiceTier": {
+      "clinicianDelivered": "not-assessed",
+      "selfGuided": "not-assessed",
+      "agentOffered": "not-assessed"
+    },
+    "ontologicalStatus": "measured-construct",
+    "citations": [
+      {
+        "ref": "doi:10.1177/0956797619831612",
+        "grade": "F",
+        "note": "Soto 2019: 87% of replication attempts significant in the expected direction"
+      },
+      {
+        "ref": "doi:10.1037/0033-2909.126.1.3",
+        "grade": "F",
+        "note": "Roberts & DelVecchio 2000: rank-order consistency .31 in childhood to about .74 at ages 50-70"
+      },
+      {
+        "ref": "doi:10.1016/j.jrp.2014.05.003",
+        "grade": "F",
+        "note": "Johnson 2014: IPIP-NEO-120"
+      }
+    ],
+    "reviewedAt": "2026-10-09"
+  },
+  "supports": [
+    "self-reflection on typical tendencies",
+    "choosing communication preferences the person then states"
+  ],
+  "doesNotEstablish": [
+    "what the person will do in a given moment",
+    "any clinical condition",
+    "job fit"
+  ],
+  "ip": {
+    "conceptStatus": "free-concept",
+    "marks": [],
+    "itemsLicence": "IPIP: public domain for any purpose; BFI-2: non-commercial research only; NEO-PI-3: proprietary (PAR), qualification level S",
+    "scoring": "public",
+    "restrictions": [
+      "never store NEO-PI-3 or BFI-2 item text"
+    ],
+    "registryListing": "ok",
+    "legalReviewNeeded": true
+  },
+  "useLimits": {
+    "crossLensMapping": "population-level-only"
+  },
+  "defaults": {
+    "sensitivity": "special",
+    "categories": [
+      "mental-health"
+    ],
+    "reviewAfter": "P3Y"
+  },
+  "mappings": [
+    "urn:ohc:mapping:jungian-type.EI--big-five.E--mccrae-costa-1989",
+    "urn:ohc:mapping:hexaco--big-five--ashton-lee-2007"
+  ],
+  "playbooks": [
+    "urn:ohc:playbook:big-five-basic"
+  ],
+  "descriptorAuthors": [
+    "OHC editors"
+  ],
+  "sources": [
+    "Johnson 2014",
+    "Soto 2019",
+    "Roberts & DelVecchio 2000"
+  ]
+}

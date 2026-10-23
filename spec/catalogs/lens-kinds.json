@@ -1,0 +1,171 @@
+{
+  "format": "ohc.catalog",
+  "id": "urn:ohc:catalog:lens-kinds",
+  "version": "0.1.0",
+  "specVersion": "0.1.0-draft",
+  "title": {
+    "en": "Lens kinds",
+    "ru": "Виды линз"
+  },
+  "description": {
+    "en": "The kind of framework of description a lens is.",
+    "ru": "К какому роду систем описания относится линза."
+  },
+  "closed": true,
+  "codes": [
+    {
+      "code": "trait-dimensional",
+      "label": {
+        "en": "Trait (dimensional)",
+        "ru": "Черты (измерения)"
+      },
+      "definition": {
+        "en": "Continuous dimensions of relatively stable tendencies.",
+        "ru": "Непрерывные измерения относительно устойчивых склонностей."
+      }
+    },
+    {
+      "code": "type-categorical",
+      "label": {
+        "en": "Type (categorical)",
+        "ru": "Типы (категории)"
+      },
+      "definition": {
+        "en": "Categories or types a person is assigned to or chooses.",
+        "ru": "Категории или типы, к которым человека относят или которые он выбирает."
+      }
+    },
+    {
+      "code": "strengths-ranked",
+      "label": {
+        "en": "Strengths (ranked)",
+        "ru": "Сильные стороны (ранжирование)"
+      },
+      "definition": {
+        "en": "A ranked list of strengths within the person.",
+        "ru": "Ранжированный список сильных сторон внутри одного человека."
+      }
+    },
+    {
+      "code": "values-circular",
+      "label": {
+        "en": "Values (circular)",
+        "ru": "Ценности (круговая модель)"
+      },
+      "definition": {
+        "en": "Values on a circular continuum with trade-offs.",
+        "ru": "Ценности на круговом континууме с взаимными компромиссами."
+      }
+    },
+    {
+      "code": "stage-developmental",
+      "label": {
+        "en": "Stage (developmental)",
+        "ru": "Стадии развития"
+      },
+      "definition": {
+        "en": "Stages of development.",
+        "ru": "Стадии развития."
+      }
+    },
+    {
+      "code": "style",
+      "label": {
+        "en": "Style",
+        "ru": "Стиль"
+      },
+      "definition": {
+        "en": "Styles of acting or relating.",
+        "ru": "Стили действия или взаимодействия."
+      }
+    },
+    {
+      "code": "parts-model",
+      "label": {
+        "en": "Parts model",
+        "ru": "Модель частей"
+      },
+      "definition": {
+        "en": "Inner multiplicity described as parts.",
+        "ru": "Внутренняя множественность, описанная как части."
+      }
+    },
+    {
+      "code": "practice-method",
+      "label": {
+        "en": "Practice method",
+        "ru": "Метод практики"
+      },
+      "definition": {
+        "en": "A method of practices and exercises.",
+        "ru": "Метод, состоящий из практик и упражнений."
+      }
+    },
+    {
+      "code": "process-experiential",
+      "label": {
+        "en": "Process-experiential",
+        "ru": "Процессуально-переживательный подход"
+      },
+      "definition": {
+        "en": "A perspective on unfolding experience and process.",
+        "ru": "Взгляд на разворачивающийся опыт и процесс."
+      }
+    },
+    {
+      "code": "contemplative",
+      "label": {
+        "en": "Contemplative",
+        "ru": "Созерцательный подход"
+      },
+      "definition": {
+        "en": "A contemplative perspective; naming a tradition requires its holders' consent.",
+        "ru": "Созерцательный взгляд; называть традицию можно только с согласия её держателей."
+      }
+    },
+    {
+      "code": "explanatory-model",
+      "label": {
+        "en": "Explanatory model",
+        "ru": "Объяснительная модель"
+      },
+      "definition": {
+        "en": "A model offering explanations for experience.",
+        "ru": "Модель, предлагающая объяснения опыта."
+      }
+    },
+    {
+      "code": "author-framework",
+      "label": {
+        "en": "Author framework",
+        "ru": "Авторская система"
+      },
+      "definition": {
+        "en": "A framework published by an author or practitioner.",
+        "ru": "Система, опубликованная автором или специалистом-практиком."
+      }
+    },
+    {
+      "code": "representation",
+      "label": {
+        "en": "Representation",
+        "ru": "Представление"
+      },
+      "definition": {
+        "en": "A way of arranging information, not a theory.",
+        "ru": "Способ упорядочить информацию, а не теория."
+      }
+    },
+    {
+      "code": "self-description-frame",
+      "label": {
+        "en": "Self-description frame",
+        "ru": "Рамка самоописания"
+      },
+      "definition": {
+        "en": "A non-empirical frame a person uses to describe themselves.",
+        "ru": "Неэмпирическая рамка, которой человек пользуется для самоописания."
+      }
+    }
+  ]
+}

@@ -1,0 +1,353 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:ohc:schema:catalog:0.1.0-draft",
+  "title": "OHC catalog",
+  "description": "A controlled vocabulary (shape ohc.catalog). Each code has a label and a definition in English and Russian. A catalog has one list of codes, or several named lists declared in lists (each code then names its list). Closed lists accept no x- codes; open lists accept x-<namespace>:<code> defined in Context.vocabulary. Vocabulary $defs in common.schema.json are generated from these files (S-4) unless generatesEnum is false.",
+  "type": "object",
+  "required": [
+    "format",
+    "id",
+    "version",
+    "specVersion",
+    "closed",
+    "codes"
+  ],
+  "properties": {
+    "format": {
+      "const": "ohc.catalog"
+    },
+    "id": {
+      "type": "string",
+      "pattern": "^urn:ohc:catalog:[a-z0-9]+(?:-[a-z0-9]+)*$"
+    },
+    "version": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/SemVer"
+    },
+    "specVersion": {
+      "const": "0.1.0-draft"
+    },
+    "title": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/LangText"
+    },
+    "description": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/LangText"
+    },
+    "closed": {
+      "description": "For a catalog with lists: true only when every list is closed.",
+      "type": "boolean"
+    },
+    "generatesEnum": {
+      "description": "false for data and documentation catalogs that produce no vocabulary $def. Default true.",
+      "type": "boolean"
+    },
+    "ordered": {
+      "description": "The codes are ordered from lowest to highest.",
+      "type": "boolean"
+    },
+    "notes": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+    },
+    "lists": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "name",
+          "title",
+          "closed"
+        ],
+        "properties": {
+          "name": {
+            "type": "string",
+            "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+          },
+          "title": {
+            "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/LangText"
+          },
+          "closed": {
+            "type": "boolean"
+          },
+          "ordered": {
+            "type": "boolean"
+          },
+          "field": {
+            "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+          },
+          "notes": {
+            "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+          }
+        },
+        "additionalProperties": false
+      },
+      "minItems": 1
+    },
+    "flags": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "flag",
+          "label",
+          "definition"
+        ],
+        "properties": {
+          "flag": {
+            "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+          },
+          "label": {
+            "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/LangText"
+          },
+          "definition": {
+            "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/LangText"
+          }
+        },
+        "additionalProperties": false
+      },
+      "minItems": 1
+    },
+    "defaultIntervals": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Duration"
+      }
+    },
+    "codes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "code",
+          "label",
+          "definition"
+        ],
+        "properties": {
+          "code": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]*$"
+          },
+          "list": {
+            "type": "string",
+            "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+          },
+          "label": {
+            "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/LangText"
+          },
+          "definition": {
+            "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/LangText"
+          },
+          "notes": {
+            "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+          },
+          "minimumTier": {
+            "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/sensitivity-tiers"
+          },
+          "mappings": {
+            "type": "object",
+            "properties": {
+              "dpv": {
+                "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+              },
+              "ode": {
+                "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+              },
+              "prov": {
+                "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+              },
+              "odrl": {
+                "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+              }
+            },
+            "additionalProperties": false,
+            "minProperties": 1
+          },
+          "defaultEpistemic": {
+            "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+          },
+          "glyph": {
+            "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+          },
+          "precedence": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "defaultInterval": {
+            "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Duration"
+          },
+          "defaultTier": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "facetDefaults": {
+            "type": "object",
+            "additionalProperties": {
+              "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/sensitivity-tiers"
+            }
+          },
+          "facetFamily": {
+            "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+          },
+          "predicates": {
+            "type": "array",
+            "items": {
+              "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+            }
+          },
+          "predicatesCatalog": {
+            "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+          },
+          "facets": {
+            "type": "array",
+            "items": {
+              "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+            },
+            "minItems": 1
+          },
+          "endpoints": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "from",
+                "to"
+              ],
+              "properties": {
+                "from": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+                  },
+                  "minItems": 1
+                },
+                "to": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+                  },
+                  "minItems": 1
+                },
+                "note": {
+                  "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+                }
+              },
+              "additionalProperties": false
+            },
+            "minItems": 1
+          },
+          "module": {
+            "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+          },
+          "targets": {
+            "type": "array",
+            "items": {
+              "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+            },
+            "minItems": 1
+          },
+          "allowedActors": {
+            "type": "array",
+            "items": {
+              "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+            },
+            "minItems": 1
+          },
+          "implies": {
+            "type": "array",
+            "items": {
+              "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+            },
+            "minItems": 1
+          },
+          "allowedFor": {
+            "type": "array",
+            "items": {
+              "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+            },
+            "minItems": 1
+          },
+          "group": {
+            "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+          },
+          "ladder": {
+            "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+          },
+          "order": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "storedGrantStatus": {
+            "type": "boolean"
+          },
+          "kinds": {
+            "type": "array",
+            "items": {
+              "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+            }
+          },
+          "maturity": {
+            "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+          },
+          "axis": {
+            "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+          },
+          "ceilingWithoutRelease": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "ceilingWithRelease": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "expectedOrigin": {
+            "type": "array",
+            "items": {
+              "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+            },
+            "minItems": 1
+          },
+          "biometricOrBehavioural": {
+            "type": "boolean"
+          },
+          "id": {
+            "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/URI"
+          },
+          "path": {
+            "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Path"
+          },
+          "version": {
+            "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/SemVer"
+          },
+          "kind": {
+            "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+          },
+          "descriptorStatus": {
+            "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+          },
+          "lens": {
+            "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/URI"
+          },
+          "relation": {
+            "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+          },
+          "rowStatus": {
+            "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+          },
+          "evidenceGrade": {
+            "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+          },
+          "bridgeKind": {
+            "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+          }
+        },
+        "additionalProperties": false
+      },
+      "minItems": 1
+    }
+  },
+  "additionalProperties": false
+}

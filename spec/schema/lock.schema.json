@@ -1,0 +1,56 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:ohc:schema:lock:0.1.0-draft",
+  "title": "OHC ContextLock",
+  "description": "An integrity lock over the package files except the vault and the lock itself. It hashes file bytes. It is not a signature. Module governance.",
+  "type": "object",
+  "required": [
+    "format",
+    "specVersion",
+    "context",
+    "algorithm",
+    "files",
+    "createdAt"
+  ],
+  "properties": {
+    "format": {
+      "const": "ohc.lock"
+    },
+    "specVersion": {
+      "const": "0.1.0-draft"
+    },
+    "context": {
+      "type": "object",
+      "required": [
+        "id",
+        "version"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/URI"
+        },
+        "version": {
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+        }
+      },
+      "additionalProperties": false
+    },
+    "algorithm": {
+      "const": "sha256"
+    },
+    "files": {
+      "type": "object",
+      "minProperties": 1,
+      "propertyNames": {
+        "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Path"
+      },
+      "additionalProperties": {
+        "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Digest"
+      }
+    },
+    "createdAt": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/DateTime"
+    }
+  },
+  "additionalProperties": false
+}

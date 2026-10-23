@@ -1,0 +1,15 @@
+{
+  "description": "An Event whose prev does not match the previous entryDigest.",
+  "expect": [
+    "EV-2"
+  ],
+  "form": "package",
+  "postPatches": [
+    {
+      "op": "set",
+      "target": "events",
+      "path": "/1/prev",
+      "value": "sha256:0000000000000000000000000000000000000000000000000000000000000000"
+    }
+  ]
+}

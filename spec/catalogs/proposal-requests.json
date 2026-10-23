@@ -1,0 +1,50 @@
+{
+  "format": "ohc.catalog",
+  "id": "urn:ohc:catalog:proposal-requests",
+  "version": "0.1.0",
+  "specVersion": "0.1.0-draft",
+  "title": {
+    "en": "Proposal request actions",
+    "ru": "Действия, запрашиваемые в предложениях"
+  },
+  "description": {
+    "en": "Requests a proposer may make for the subject to act on existing records.",
+    "ru": "Просьбы, с которыми автор предложения может обратиться к человеку по поводу существующих записей."
+  },
+  "closed": true,
+  "codes": [
+    {
+      "code": "retract",
+      "label": {
+        "en": "Retract",
+        "ru": "Отозвать"
+      },
+      "definition": {
+        "en": "Ask the subject to retract a record.",
+        "ru": "Попросить человека отозвать запись."
+      }
+    },
+    {
+      "code": "mark-not-current",
+      "label": {
+        "en": "Mark not current",
+        "ru": "Отметить как неактуальное"
+      },
+      "definition": {
+        "en": "Ask the subject to mark a record not current.",
+        "ru": "Попросить человека отметить запись как неактуальную."
+      }
+    },
+    {
+      "code": "reassess",
+      "label": {
+        "en": "Reassess",
+        "ru": "Пересмотреть статус"
+      },
+      "definition": {
+        "en": "Ask the subject to reassess a record's epistemic status.",
+        "ru": "Попросить человека пересмотреть эпистемический статус записи."
+      }
+    }
+  ]
+}

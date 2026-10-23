@@ -1,0 +1,117 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:ohc:schema:msg-feedback:0.1.0-draft",
+  "title": "OHC feedback message",
+  "description": "EXPERIMENTAL. Agent to holder: an outcome, a usage note or a correction request. Needs suggest. Outcomes from agents are stored proposed, as an agent's estimate (O-1).",
+  "type": "object",
+  "required": [
+    "format",
+    "specVersion",
+    "id",
+    "from",
+    "to",
+    "at",
+    "grant",
+    "purpose",
+    "about",
+    "feedbackKind"
+  ],
+  "properties": {
+    "format": {
+      "const": "ohc.experimental.feedback"
+    },
+    "specVersion": {
+      "$ref": "urn:ohc:schema:message:0.1.0-draft#/properties/specVersion"
+    },
+    "id": {
+      "$ref": "urn:ohc:schema:message:0.1.0-draft#/properties/id"
+    },
+    "from": {
+      "$ref": "urn:ohc:schema:message:0.1.0-draft#/properties/from"
+    },
+    "to": {
+      "$ref": "urn:ohc:schema:message:0.1.0-draft#/properties/to"
+    },
+    "at": {
+      "$ref": "urn:ohc:schema:message:0.1.0-draft#/properties/at"
+    },
+    "inReplyTo": {
+      "$ref": "urn:ohc:schema:message:0.1.0-draft#/properties/inReplyTo"
+    },
+    "grant": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/LocalId"
+    },
+    "purpose": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/purposes"
+    },
+    "about": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/LocalId"
+    },
+    "feedbackKind": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/messages.feedback-kinds"
+    },
+    "outcome": {
+      "allOf": [
+        {
+          "$ref": "urn:ohc:schema:outcome:0.1.0-draft"
+        },
+        {
+          "required": [
+            "kind"
+          ],
+          "properties": {
+            "kind": {
+              "const": "Outcome"
+            }
+          }
+        }
+      ]
+    },
+    "requests": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "target",
+          "action"
+        ],
+        "properties": {
+          "target": {
+            "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/LocalId"
+          },
+          "action": {
+            "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/proposal-requests"
+          },
+          "epistemic": {
+            "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/epistemic"
+          }
+        },
+        "additionalProperties": false
+      },
+      "minItems": 1
+    },
+    "note": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+    }
+  },
+  "additionalProperties": false,
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "feedbackKind": {
+            "const": "outcome"
+          }
+        },
+        "required": [
+          "feedbackKind"
+        ]
+      },
+      "then": {
+        "required": [
+          "outcome"
+        ]
+      }
+    }
+  ]
+}

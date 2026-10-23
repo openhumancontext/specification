@@ -1,0 +1,39 @@
+{
+  "format": "ohc.catalog",
+  "id": "urn:ohc:catalog:admission-policies",
+  "version": "0.1.0",
+  "specVersion": "0.1.0-draft",
+  "title": {
+    "en": "Admission policies",
+    "ru": "Правила принятия"
+  },
+  "description": {
+    "en": "Who may admit proposed records (R-A1).",
+    "ru": "Кто может принимать предложенные записи (R-A1)."
+  },
+  "closed": true,
+  "codes": [
+    {
+      "code": "subject-only",
+      "label": {
+        "en": "Subject only",
+        "ru": "Только сам человек"
+      },
+      "definition": {
+        "en": "Only the subject admits proposed records. The default.",
+        "ru": "Предложенные записи принимает только сам человек. Значение по умолчанию."
+      }
+    },
+    {
+      "code": "holder-may-admit-ordinary",
+      "label": {
+        "en": "Holder may admit ordinary",
+        "ru": "Держатель может принимать обычное"
+      },
+      "definition": {
+        "en": "The holder may admit proposed `ordinary` or `personal` records not reserved to the subject by R-A1.",
+        "ru": "Держатель может принимать предложенные записи уровня `ordinary` или `personal`, если R-A1 не оставляет это за самим человеком."
+      }
+    }
+  ]
+}

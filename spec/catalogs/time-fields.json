@@ -1,0 +1,365 @@
+{
+  "format": "ohc.catalog",
+  "id": "urn:ohc:catalog:time-fields",
+  "version": "0.1.0",
+  "specVersion": "0.1.0-draft",
+  "title": {
+    "en": "Time fields",
+    "ru": "Поля времени"
+  },
+  "description": {
+    "en": "Every time field, by axis: experience time (when something was true or happened), knowledge time (when this context learned it) and policy time. Import time rule: the original creation time goes to `formulatedAt`, the time of import to `recordedAt` (R-T5b).",
+    "ru": "Все поля времени по осям: время опыта (когда что-то было верно или произошло), время знания (когда контекст об этом узнал) и время правил. Правило импорта: исходное время создания записывается в `formulatedAt`, время импорта — в `recordedAt` (R-T5b)."
+  },
+  "closed": true,
+  "generatesEnum": false,
+  "codes": [
+    {
+      "code": "valid",
+      "label": {
+        "en": "Validity interval",
+        "ru": "Интервал действия"
+      },
+      "definition": {
+        "en": "When the content is true or applies (`from` inclusive, `until` exclusive).",
+        "ru": "Когда содержание верно или применимо (`from` включительно, `until` исключительно)."
+      },
+      "axis": "experience",
+      "kinds": [
+        "Claim"
+      ]
+    },
+    {
+      "code": "occurred",
+      "label": {
+        "en": "Occurred",
+        "ru": "Время события"
+      },
+      "definition": {
+        "en": "When the episode happened, as a partial time.",
+        "ru": "Когда произошёл эпизод, с частичной точностью."
+      },
+      "axis": "experience",
+      "kinds": [
+        "Episode"
+      ]
+    },
+    {
+      "code": "capturedAt",
+      "label": {
+        "en": "Captured at",
+        "ru": "Время создания материала"
+      },
+      "definition": {
+        "en": "When the primary material was created. If absent, it is unknown, never \"now\".",
+        "ru": "Когда был создан первичный материал. Если не указано, время неизвестно, а не «сейчас»."
+      },
+      "axis": "experience",
+      "kinds": [
+        "Source"
+      ]
+    },
+    {
+      "code": "administeredAt",
+      "label": {
+        "en": "Administered at",
+        "ru": "Время проведения"
+      },
+      "definition": {
+        "en": "When the assessment was taken.",
+        "ru": "Когда проводилась оценка."
+      },
+      "axis": "experience",
+      "kinds": [
+        "AssessmentRecord"
+      ]
+    },
+    {
+      "code": "narratedAt",
+      "label": {
+        "en": "Narrated at",
+        "ru": "Время рассказа"
+      },
+      "definition": {
+        "en": "When an account was given.",
+        "ru": "Когда был дан рассказ об эпизоде."
+      },
+      "axis": "experience",
+      "kinds": [
+        "Episode"
+      ]
+    },
+    {
+      "code": "firstNoticed",
+      "label": {
+        "en": "First noticed",
+        "ru": "Впервые замечено"
+      },
+      "definition": {
+        "en": "When the person first noticed the part.",
+        "ru": "Когда человек впервые заметил эту часть."
+      },
+      "axis": "experience",
+      "kinds": [
+        "Part"
+      ]
+    },
+    {
+      "code": "delivery.at",
+      "label": {
+        "en": "Delivered at",
+        "ru": "Время предложения"
+      },
+      "definition": {
+        "en": "When an offer or practice was delivered.",
+        "ru": "Когда было сделано предложение или применена практика."
+      },
+      "axis": "experience",
+      "kinds": [
+        "Outcome"
+      ]
+    },
+    {
+      "code": "recordedAt",
+      "label": {
+        "en": "Recorded at",
+        "ru": "Время записи"
+      },
+      "definition": {
+        "en": "Entry into this context. Every status change (Review) has its own `recordedAt`. Import, restore and copy never change it (R-T4).",
+        "ru": "Время поступления в этот контекст. У каждого изменения статуса (Review) свой `recordedAt`. Импорт, восстановление и копирование его не меняют (R-T4)."
+      },
+      "axis": "knowledge",
+      "kinds": [
+        "Claim",
+        "Relation",
+        "Source",
+        "Episode",
+        "Interpretation",
+        "Tension",
+        "Review",
+        "Proposal",
+        "Grant",
+        "LensAdoption",
+        "AssessmentRecord",
+        "ModelView",
+        "Practice",
+        "Outcome",
+        "Pattern",
+        "RecallCue",
+        "Part",
+        "HealthRef"
+      ]
+    },
+    {
+      "code": "formulatedAt",
+      "label": {
+        "en": "Formulated at",
+        "ru": "Время формулировки"
+      },
+      "definition": {
+        "en": "First formulation, possibly elsewhere and earlier. On import, the original creation time goes here (R-T5b).",
+        "ru": "Первая формулировка, возможно в другом месте и раньше. При импорте сюда записывается исходное время создания (R-T5b)."
+      },
+      "axis": "knowledge",
+      "kinds": [
+        "Claim",
+        "Relation",
+        "Source",
+        "Episode",
+        "Interpretation",
+        "Tension",
+        "LensAdoption",
+        "AssessmentRecord",
+        "ModelView",
+        "Practice",
+        "Outcome",
+        "Pattern",
+        "RecallCue",
+        "Part",
+        "HealthRef"
+      ]
+    },
+    {
+      "code": "addedAt",
+      "label": {
+        "en": "Added at",
+        "ru": "Время добавления рассказа"
+      },
+      "definition": {
+        "en": "When an account entered the context.",
+        "ru": "Когда рассказ об эпизоде попал в контекст."
+      },
+      "axis": "knowledge",
+      "kinds": [
+        "Episode"
+      ]
+    },
+    {
+      "code": "lastEvidenceAt",
+      "label": {
+        "en": "Last evidence at",
+        "ru": "Время последнего свидетельства"
+      },
+      "definition": {
+        "en": "The newest evidence at writing time. A refresh from a live source is a new superseding record (R-T5).",
+        "ru": "Самое свежее свидетельство на момент записи. Обновление из живого источника — новая заменяющая запись (R-T5)."
+      },
+      "axis": "knowledge",
+      "kinds": [
+        "Claim"
+      ]
+    },
+    {
+      "code": "heldDuring",
+      "label": {
+        "en": "Held during",
+        "ru": "Период, когда прочтение разделялось"
+      },
+      "definition": {
+        "en": "When the author held the reading. The effective `until` is computed (I7).",
+        "ru": "Когда автор придерживался этого прочтения. Действующее `until` вычисляется (I7)."
+      },
+      "axis": "knowledge",
+      "kinds": [
+        "Interpretation"
+      ]
+    },
+    {
+      "code": "at",
+      "label": {
+        "en": "Event time",
+        "ru": "Время события журнала"
+      },
+      "definition": {
+        "en": "Every disclosure and write.",
+        "ru": "Каждое раскрытие и каждая запись."
+      },
+      "axis": "knowledge",
+      "kinds": [
+        "Event"
+      ]
+    },
+    {
+      "code": "generatedAt",
+      "label": {
+        "en": "Generated at",
+        "ru": "Время построения"
+      },
+      "definition": {
+        "en": "When a projection was computed.",
+        "ru": "Когда была вычислена проекция."
+      },
+      "axis": "knowledge",
+      "kinds": [
+        "Projection"
+      ]
+    },
+    {
+      "code": "reviewAfter",
+      "label": {
+        "en": "Review after",
+        "ru": "Перепроверить после"
+      },
+      "definition": {
+        "en": "Overrides the horizon interval used by the freshness algorithm.",
+        "ru": "Заменяет интервал горизонта в алгоритме свежести."
+      },
+      "axis": "policy",
+      "kinds": [
+        "Claim",
+        "AssessmentRecord"
+      ]
+    },
+    {
+      "code": "onExpiry",
+      "label": {
+        "en": "On expiry",
+        "ru": "При устаревании"
+      },
+      "definition": {
+        "en": "What a consumer does when the content expires (R-T6).",
+        "ru": "Что делает потребитель, когда содержание устарело (R-T6)."
+      },
+      "axis": "policy",
+      "kinds": [
+        "Claim"
+      ]
+    },
+    {
+      "code": "valueAddress",
+      "label": {
+        "en": "Value address",
+        "ru": "Адрес значения"
+      },
+      "definition": {
+        "en": "A live value held elsewhere; its freshness comes from the addressed value's own timestamp (R-T2).",
+        "ru": "Живое значение, хранящееся в другом месте; его свежесть определяется собственной отметкой времени этого значения (R-T2)."
+      },
+      "axis": "policy",
+      "kinds": [
+        "Claim"
+      ]
+    },
+    {
+      "code": "constraints.notBefore",
+      "label": {
+        "en": "Not before",
+        "ru": "Не раньше"
+      },
+      "definition": {
+        "en": "The earliest time a grant may be used.",
+        "ru": "Самое раннее время, когда разрешением можно пользоваться."
+      },
+      "axis": "policy",
+      "kinds": [
+        "Grant"
+      ]
+    },
+    {
+      "code": "constraints.expiresAt",
+      "label": {
+        "en": "Grant expiry",
+        "ru": "Окончание разрешения"
+      },
+      "definition": {
+        "en": "When a grant expires. Every grant expires (R-G10).",
+        "ru": "Когда истекает разрешение. Каждое разрешение истекает (R-G10)."
+      },
+      "axis": "policy",
+      "kinds": [
+        "Grant"
+      ]
+    },
+    {
+      "code": "expiresAt",
+      "label": {
+        "en": "Proposal expiry",
+        "ru": "Окончание предложения"
+      },
+      "definition": {
+        "en": "When undecided proposal items are computed `declined` (default P30D).",
+        "ru": "Когда нерешённые пункты предложения считаются `declined` (по умолчанию P30D)."
+      },
+      "axis": "policy",
+      "kinds": [
+        "Proposal"
+      ]
+    },
+    {
+      "code": "retention.until",
+      "label": {
+        "en": "Retention until",
+        "ru": "Хранить до"
+      },
+      "definition": {
+        "en": "When the holder stops retaining the material.",
+        "ru": "До какого времени держатель хранит материал."
+      },
+      "axis": "policy",
+      "kinds": [
+        "Source"
+      ]
+    }
+  ]
+}

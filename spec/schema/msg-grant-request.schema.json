@@ -1,0 +1,77 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:ohc:schema:msg-grant-request:0.1.0-draft",
+  "title": "OHC grant-request message",
+  "description": "EXPERIMENTAL. Agent to holder: asks the person for a grant. The holder shows why to the person verbatim; silence is refused after 7 days.",
+  "type": "object",
+  "required": [
+    "format",
+    "specVersion",
+    "id",
+    "from",
+    "to",
+    "at",
+    "purposes",
+    "scope",
+    "actions",
+    "requestedExpiresAt",
+    "why"
+  ],
+  "properties": {
+    "format": {
+      "const": "ohc.experimental.grant-request"
+    },
+    "specVersion": {
+      "$ref": "urn:ohc:schema:message:0.1.0-draft#/properties/specVersion"
+    },
+    "id": {
+      "$ref": "urn:ohc:schema:message:0.1.0-draft#/properties/id"
+    },
+    "from": {
+      "$ref": "urn:ohc:schema:message:0.1.0-draft#/properties/from"
+    },
+    "to": {
+      "$ref": "urn:ohc:schema:message:0.1.0-draft#/properties/to"
+    },
+    "at": {
+      "$ref": "urn:ohc:schema:message:0.1.0-draft#/properties/at"
+    },
+    "inReplyTo": {
+      "$ref": "urn:ohc:schema:message:0.1.0-draft#/properties/inReplyTo"
+    },
+    "purposes": {
+      "type": "array",
+      "items": {
+        "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/purposes"
+      },
+      "minItems": 1
+    },
+    "scope": {
+      "$ref": "urn:ohc:schema:grant:0.1.0-draft#/properties/scope"
+    },
+    "actions": {
+      "type": "array",
+      "items": {
+        "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/grant.actions"
+      },
+      "minItems": 1
+    },
+    "mode": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/grant.modes"
+    },
+    "interpretations": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/grant.interpretations"
+    },
+    "maxSourceTier": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/release-tiers"
+    },
+    "requestedExpiresAt": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/DateTime"
+    },
+    "why": {
+      "description": "Shown to the person verbatim.",
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+    }
+  },
+  "additionalProperties": false
+}

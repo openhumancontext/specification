@@ -1,0 +1,29 @@
+{
+  "format": "ohc.context",
+  "specVersion": "0.1.0-draft",
+  "id": "urn:ohc:example:odile-coach-notes:context",
+  "version": "2026-10-10.1",
+  "subject": {"id": "urn:ohc:example:odile", "displayName": "Odile (fictional)"},
+  "holder": "subject",
+  "lang": "en",
+  "created": "2026-09-20T17:50:00Z",
+  "conformance": {"level": "L1", "modules": ["core", "governance", "lenses"], "subjectIsAdult": true},
+  "parties": [
+    {"id": "p-01", "partyKind": "person", "label": "Coach", "role": "practitioner"}
+  ],
+  "policy": {"admission": "subject-only", "resolver": "returnDialog"},
+  "lenses": [
+    {"id": "urn:ohc:lens:schwartz-values", "version": "0.2.0", "sha256": "3d794f1201ae2f22a719f0e44644deaa7829626f650700ede0df9c76786f9bb2"}
+  ],
+  "lensAdoptions": [
+    {"id": "la-1", "lens": {"id": "urn:ohc:lens:schwartz-values", "version": "0.2.0"}, "route": "inherited-from-practice", "practice": {"role": "coach", "practitioner": "p-01", "relationship": "active", "since": "2026-07-01", "releaseRef": "src-3"}, "confidentiality": "practitioner-scope", "uses": ["store-results", "speak-in-lens", "interpret", "offer-practices"], "interpretationAuthors": ["subject"], "agentInterpretation": "off", "representationPreference": "schwartz-values.circular-chart", "onEnd": "ask", "origin": "declared", "assertedBy": "subject", "recordedAt": "2026-09-20T18:00:00Z", "sensitivity": "special", "categories": ["belief", "political"], "synthetic": true}
+  ],
+  "sources": [
+    {"id": "src-3", "sourceKind": "practitioner-release", "content": {"locator": {"vaultPath": "vault/3a/3a3c1eed46da5f6f71ed0840f339a3aefd617bea0943b7cf1a43c7859600d321.pdf"}, "sha256": "3a3c1eed46da5f6f71ed0840f339a3aefd617bea0943b7cf1a43c7859600d321", "mediaType": "application/pdf"}, "capturedAt": "2026-09-19T17:00:00Z", "authorship": {"author": "p-01"}, "inbound": true, "contemporaneity": "contemporaneous", "maxRelease": "index", "retention": {"eraseOnRequest": true}, "origin": "declared", "assertedBy": "subject", "recordedAt": "2026-09-20T17:50:00Z", "sensitivity": "special", "categories": ["belief", "political"], "synthetic": true},
+    {"id": "src-4", "sourceKind": "practitioner-notes", "content": {"locator": {"vaultPath": "vault/5e/5e7349978e8051c7fa4556498824f14bc93c733ce5d9288c39c0c5a463695b02.pdf"}, "sha256": "5e7349978e8051c7fa4556498824f14bc93c733ce5d9288c39c0c5a463695b02", "mediaType": "application/pdf"}, "capturedAt": "2026-09-19T17:00:00Z", "authorship": {"author": "p-01"}, "inbound": true, "contemporaneity": "contemporaneous", "custody": {"custodian": "p-01", "confidentiality": "coaching", "releaseRef": "src-3"}, "maxRelease": "index", "retention": {"eraseOnRequest": true}, "origin": "declared", "assertedBy": "subject", "recordedAt": "2026-09-20T18:01:00Z", "sensitivity": "special", "categories": ["belief", "political"], "synthetic": true}
+  ],
+  "claims": [
+    {"id": "c-3", "facet": "declared-value", "predicate": "priority", "text": "In coaching I keep coming back to how much freedom in my work matters to me.", "evidence": [{"ref": "src-4", "kind": "practitioner"}], "origin": "declared", "assertedBy": "subject", "recordedAt": "2026-09-20T18:10:00Z", "horizon": "foundation", "contexts": ["work"], "sensitivity": "special", "categories": ["belief", "political"], "synthetic": true}
+  ],
+  "synthetic": true
+}

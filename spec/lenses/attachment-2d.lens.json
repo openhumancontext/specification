@@ -1,0 +1,184 @@
+{
+  "format": "ohc.lens",
+  "specVersion": "0.1.0-draft",
+  "id": "urn:ohc:lens:attachment-2d",
+  "version": "0.2.0",
+  "name": {
+    "en": "Adult attachment (two dimensions)",
+    "ru": "Привязанность у взрослых (два измерения)"
+  },
+  "descriptorStatus": "draft",
+  "kind": "trait-dimensional",
+  "summary": {
+    "en": "Two dimensions of relating in close relationships, anxiety and avoidance, measured by questionnaire; categories are derived only with a stated rule.",
+    "ru": "Два измерения отношений в близких связях — тревожность и избегание; измеряются опросником; категории выводятся только по явно указанному правилу."
+  },
+  "constructs": [
+    {
+      "id": "attachment-2d/anxiety",
+      "label": {
+        "en": "Attachment-related anxiety",
+        "ru": "Тревожность в привязанности"
+      }
+    },
+    {
+      "id": "attachment-2d/avoidance",
+      "label": {
+        "en": "Attachment-related avoidance",
+        "ru": "Избегание в привязанности"
+      }
+    }
+  ],
+  "mentalModel": {
+    "summary": "People differ in how much they worry about closeness and how much they keep distance; both are continuous dimensions.",
+    "assumptions": [
+      "dimensions are more precise than categories",
+      "results depend on the relationship target asked about",
+      "results describe the person, never the other person in the relationship"
+    ],
+    "stance": "descriptive and non-pathologising",
+    "unitOfAnalysis": "the person's way of relating in close relationships",
+    "attendsTo": [
+      "what the person watches for in closeness",
+      "the relationship target the result refers to"
+    ],
+    "howChangeHappens": "Gradually, with experience in relationships.",
+    "languageGuidance": "Speak of tendencies in relating, never of attachment disorders; never describe a partner or anyone else.",
+    "agentPosture": {
+      "do": [
+        "keep the relationship target explicit",
+        "ask what the person recognises"
+      ],
+      "dont": [
+        "assign a category",
+        "describe the other person in a relationship",
+        "bring the topic up unprompted"
+      ]
+    },
+    "exploratoryQuestions": [
+      "In close relationships, what do you tend to watch for?"
+    ],
+    "helperMustNot": [
+      "describe a partner's or any other person's attachment (TP-1)",
+      "present a category as a diagnosis",
+      "use results in any work context"
+    ],
+    "doesNotClaim": [
+      "a diagnosis",
+      "anything about the other person",
+      "the future of a relationship"
+    ],
+    "riskNotes": [
+      "Intimate-relationship data can indirectly reveal sex life or health",
+      "Relationship data concerns third parties"
+    ]
+  },
+  "toolkit": [
+    {
+      "id": "attachment-2d.record-result",
+      "name": "Record a questionnaire result",
+      "kind": "instrument-use",
+      "description": "Record the two ECR-R dimension scores with the relationship target; a category only as derived, with the rule.",
+      "facilitation": "self",
+      "requiresPractitioner": false,
+      "agentMayOffer": false,
+      "nonClinical": true,
+      "produces": "AssessmentRecord",
+      "cautions": [
+        "Classifying reduces measurement precision",
+        "Never about a third party"
+      ]
+    }
+  ],
+  "representations": [
+    {
+      "id": "attachment-2d.two-dimension-plot",
+      "kind": "chart",
+      "resultType": "dimension-score",
+      "description": "A plot of anxiety against avoidance; a category is shown only as derived, with its rule (AR-6)."
+    }
+  ],
+  "instruments": [
+    "urn:ohc:instrument:ecr-r"
+  ],
+  "adoption": {
+    "routes": [
+      "self-chosen",
+      "agent-suggested",
+      "inherited-from-practice",
+      "imported"
+    ],
+    "suggestionRequires": [
+      "the person asked for ways of looking at close relationships"
+    ],
+    "inheritanceRoles": [
+      "therapist",
+      "coach"
+    ],
+    "practitionerFor": []
+  },
+  "evidence": {
+    "measurementTier": "T2",
+    "practiceTier": {
+      "clinicianDelivered": "not-assessed",
+      "selfGuided": "not-assessed",
+      "agentOffered": "not-assessed"
+    },
+    "ontologicalStatus": "measured-construct",
+    "citations": [
+      {
+        "ref": "doi:10.1037//0022-3514.78.2.350",
+        "grade": "F",
+        "note": "Fraley, Waller & Brennan 2000: item response theory analysis of self-report attachment measures"
+      },
+      {
+        "ref": "R. Chris Fraley, ECR-R measure page",
+        "grade": "F",
+        "note": "Classifying people by their scores reduces the precision of measurement"
+      }
+    ],
+    "reviewedAt": "2026-10-09"
+  },
+  "supports": [
+    "self-reflection on how the person relates in closeness",
+    "language the person chose for it"
+  ],
+  "doesNotEstablish": [
+    "any diagnosis",
+    "anything about another person",
+    "how a relationship will go"
+  ],
+  "ip": {
+    "conceptStatus": "free-concept",
+    "marks": [],
+    "itemsLicence": "ECR-R: free for non-commercial research without contacting the authors; commercial applications require permission",
+    "scoring": "public",
+    "restrictions": [
+      "never store ECR-R item text",
+      "record the relationship target (relationshipTarget)",
+      "never about a third party (TP-1)"
+    ],
+    "registryListing": "ok",
+    "legalReviewNeeded": true
+  },
+  "useLimits": {
+    "crossLensMapping": "not-allowed"
+  },
+  "defaults": {
+    "sensitivity": "special",
+    "categories": [
+      "intimate"
+    ],
+    "reviewAfter": "P2Y"
+  },
+  "mappings": [],
+  "playbooks": [
+    "urn:ohc:playbook:attachment-2d-basic"
+  ],
+  "sources": [
+    "Fraley, Waller & Brennan 2000"
+  ],
+  "descriptorAuthors": [
+    "OHC editors"
+  ]
+}

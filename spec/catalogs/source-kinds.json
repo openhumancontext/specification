@@ -1,0 +1,301 @@
+{
+  "format": "ohc.catalog",
+  "id": "urn:ohc:catalog:source-kinds",
+  "version": "0.1.0",
+  "specVersion": "0.1.0-draft",
+  "title": {
+    "en": "Source kinds",
+    "ru": "Виды первичных источников"
+  },
+  "description": {
+    "en": "Kinds of primary material in the vault. Kinds marked biometricOrBehavioural trigger R-X4: no emotion, mood, stress or affect value may be grounded in them. defaultTier is the Source's tier before propagation (§8.3): primary material is at least sensitive, and recordings of the body or voice and practitioner notes are special. Local codes use `x-<namespace>:<code>`.",
+    "ru": "Виды первичного материала в хранилище. Виды с отметкой biometricOrBehavioural включают правило R-X4: на них нельзя основывать никакое значение эмоции, настроения, стресса или аффекта. defaultTier — уровень источника до распространения (§8.3): первичный материал не ниже sensitive, а записи тела или голоса и заметки практика — special. Локальные коды имеют вид `x-<namespace>:<code>`."
+  },
+  "closed": false,
+  "codes": [
+    {
+      "code": "journal-entry",
+      "label": {
+        "en": "Journal entry",
+        "ru": "Запись в дневнике"
+      },
+      "definition": {
+        "en": "A journal or diary entry.",
+        "ru": "Запись в личном дневнике."
+      },
+      "defaultTier": "sensitive"
+    },
+    {
+      "code": "note",
+      "label": {
+        "en": "Note",
+        "ru": "Заметка"
+      },
+      "definition": {
+        "en": "A note.",
+        "ru": "Заметка."
+      },
+      "defaultTier": "sensitive"
+    },
+    {
+      "code": "message",
+      "label": {
+        "en": "Message",
+        "ru": "Сообщение"
+      },
+      "definition": {
+        "en": "A message sent or received.",
+        "ru": "Отправленное или полученное сообщение."
+      },
+      "defaultTier": "sensitive"
+    },
+    {
+      "code": "email",
+      "label": {
+        "en": "Email",
+        "ru": "Электронное письмо"
+      },
+      "definition": {
+        "en": "An email.",
+        "ru": "Электронное письмо."
+      },
+      "defaultTier": "sensitive"
+    },
+    {
+      "code": "transcript",
+      "label": {
+        "en": "Transcript",
+        "ru": "Расшифровка"
+      },
+      "definition": {
+        "en": "A transcript of speech.",
+        "ru": "Расшифровка речи."
+      },
+      "defaultTier": "sensitive"
+    },
+    {
+      "code": "audio",
+      "label": {
+        "en": "Audio",
+        "ru": "Аудиозапись"
+      },
+      "definition": {
+        "en": "An audio recording.",
+        "ru": "Аудиозапись."
+      },
+      "biometricOrBehavioural": true,
+      "defaultTier": "special"
+    },
+    {
+      "code": "video",
+      "label": {
+        "en": "Video",
+        "ru": "Видеозапись"
+      },
+      "definition": {
+        "en": "A video recording.",
+        "ru": "Видеозапись."
+      },
+      "biometricOrBehavioural": true,
+      "defaultTier": "special"
+    },
+    {
+      "code": "image",
+      "label": {
+        "en": "Image",
+        "ru": "Изображение"
+      },
+      "definition": {
+        "en": "An image or photo.",
+        "ru": "Изображение или фотография."
+      },
+      "biometricOrBehavioural": true,
+      "defaultTier": "sensitive"
+    },
+    {
+      "code": "document",
+      "label": {
+        "en": "Document",
+        "ru": "Документ"
+      },
+      "definition": {
+        "en": "A document.",
+        "ru": "Документ."
+      },
+      "defaultTier": "sensitive"
+    },
+    {
+      "code": "calendar",
+      "label": {
+        "en": "Calendar",
+        "ru": "Календарь"
+      },
+      "definition": {
+        "en": "A calendar export.",
+        "ru": "Выгрузка календаря."
+      },
+      "defaultTier": "sensitive"
+    },
+    {
+      "code": "log",
+      "label": {
+        "en": "Log",
+        "ru": "Журнал"
+      },
+      "definition": {
+        "en": "A system or activity log.",
+        "ru": "Журнал системы или активности."
+      },
+      "defaultTier": "sensitive"
+    },
+    {
+      "code": "screen-observation",
+      "label": {
+        "en": "Screen observation",
+        "ru": "Наблюдение за экраном"
+      },
+      "definition": {
+        "en": "Observation of screen activity.",
+        "ru": "Наблюдение за действиями на экране."
+      },
+      "biometricOrBehavioural": true,
+      "defaultTier": "sensitive"
+    },
+    {
+      "code": "sensor",
+      "label": {
+        "en": "Sensor",
+        "ru": "Датчик"
+      },
+      "definition": {
+        "en": "Sensor readings.",
+        "ru": "Показания датчиков."
+      },
+      "biometricOrBehavioural": true,
+      "defaultTier": "special"
+    },
+    {
+      "code": "biometric",
+      "label": {
+        "en": "Biometric",
+        "ru": "Биометрия"
+      },
+      "definition": {
+        "en": "Biometric readings.",
+        "ru": "Биометрические показания."
+      },
+      "biometricOrBehavioural": true,
+      "defaultTier": "special"
+    },
+    {
+      "code": "voice",
+      "label": {
+        "en": "Voice",
+        "ru": "Голос"
+      },
+      "definition": {
+        "en": "Voice recordings or voice analysis input.",
+        "ru": "Записи голоса или исходные данные для анализа голоса."
+      },
+      "biometricOrBehavioural": true,
+      "defaultTier": "special"
+    },
+    {
+      "code": "keystroke",
+      "label": {
+        "en": "Keystroke",
+        "ru": "Нажатия клавиш"
+      },
+      "definition": {
+        "en": "Keystroke data.",
+        "ru": "Данные о нажатиях клавиш."
+      },
+      "biometricOrBehavioural": true,
+      "defaultTier": "sensitive"
+    },
+    {
+      "code": "instrument-report",
+      "label": {
+        "en": "Instrument report",
+        "ru": "Отчёт методики"
+      },
+      "definition": {
+        "en": "A report from an assessment instrument.",
+        "ru": "Отчёт методики оценки."
+      },
+      "defaultTier": "sensitive"
+    },
+    {
+      "code": "practitioner-notes",
+      "label": {
+        "en": "Practitioner notes",
+        "ru": "Заметки специалиста"
+      },
+      "definition": {
+        "en": "Notes written by a practitioner.",
+        "ru": "Заметки, написанные специалистом-практиком."
+      },
+      "defaultTier": "special"
+    },
+    {
+      "code": "practitioner-release",
+      "label": {
+        "en": "Practitioner release",
+        "ru": "Разрешение специалиста"
+      },
+      "definition": {
+        "en": "A practitioner's release of material.",
+        "ru": "Разрешение специалиста на раскрытие материала."
+      },
+      "defaultTier": "sensitive"
+    },
+    {
+      "code": "consent-document",
+      "label": {
+        "en": "Consent document",
+        "ru": "Документ о согласии"
+      },
+      "definition": {
+        "en": "A recorded consent, for example of a third party.",
+        "ru": "Зафиксированное согласие, например третьего лица."
+      },
+      "defaultTier": "sensitive"
+    },
+    {
+      "code": "live-feed",
+      "label": {
+        "en": "Live feed",
+        "ru": "Живой поток"
+      },
+      "definition": {
+        "en": "A live data feed; no content hash.",
+        "ru": "Живой поток данных; без хеша содержимого."
+      },
+      "defaultTier": "sensitive"
+    },
+    {
+      "code": "import-bundle",
+      "label": {
+        "en": "Import bundle",
+        "ru": "Пакет импорта"
+      },
+      "definition": {
+        "en": "A bundle of imported material.",
+        "ru": "Пакет импортированного материала."
+      },
+      "defaultTier": "sensitive"
+    },
+    {
+      "code": "other",
+      "label": {
+        "en": "Other",
+        "ru": "Другое"
+      },
+      "definition": {
+        "en": "Any other material.",
+        "ru": "Любой другой материал."
+      },
+      "defaultTier": "sensitive"
+    }
+  ]
+}

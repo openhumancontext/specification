@@ -1,0 +1,15 @@
+{
+  "description": "An infer grant longer than P180D (R-G10).",
+  "expect": [
+    "GR-1"
+  ],
+  "form": "single",
+  "patches": [
+    {
+      "op": "set",
+      "target": "grants",
+      "path": "/@g-01/constraints/expiresAt",
+      "value": "2027-06-01T00:00:00Z"
+    }
+  ]
+}

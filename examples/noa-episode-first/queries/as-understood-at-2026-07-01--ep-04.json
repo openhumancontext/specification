@@ -1,0 +1,44 @@
+{
+  "query": "as-understood-at",
+  "context": {
+    "id": "urn:ohc:example:noa:context",
+    "version": "2026-10-09.4"
+  },
+  "episode": "ep-04",
+  "at": "2026-07-01T00:00:00Z",
+  "episodeChain": [
+    "ep-04",
+    "ep-01"
+  ],
+  "accounts": [
+    {
+      "episode": "ep-04",
+      "index": 0,
+      "accountKind": "in-the-moment",
+      "narrator": "subject",
+      "narratedAt": "2026-03-12T18:40:00Z",
+      "addedAt": "2026-03-12T18:45:00Z",
+      "understandingThen": "I did not have the cost figures ready."
+    },
+    {
+      "episode": "ep-04",
+      "index": 1,
+      "accountKind": "external-record",
+      "narrator": "s-01",
+      "narratedAt": "2026-03-12T13:02:00Z",
+      "addedAt": "2026-03-12T18:45:00Z"
+    }
+  ],
+  "interpretations": [
+    {
+      "id": "in-01",
+      "stance": "retrospective",
+      "heldDuring": {
+        "from": "2026-06-20",
+        "until": "2026-09-26"
+      },
+      "recordedAt": "2026-06-20T21:00:00Z"
+    }
+  ],
+  "synthetic": true
+}

@@ -1,0 +1,140 @@
+{
+  "format": "ohc.projection",
+  "specVersion": "0.1.0-draft",
+  "id": "prj-0001",
+  "context": {
+    "id": "urn:ohc:example:tove:context",
+    "version": "2026-10-12.1"
+  },
+  "subjectAlias": "urn:ohc:alias:3lm3rqfas6uoyebnjua2y7bbw4",
+  "grantee": "a-01",
+  "grant": "g-01",
+  "purpose": "assist-personal",
+  "mode": "summary",
+  "generatedAt": "2026-10-13T07:00:00Z",
+  "validUntil": "2027-04-09T09:18:00Z",
+  "nonce": "bRHPyXbxEfoq2iT3c-oTNA",
+  "parties": [
+    {
+      "id": "o-01",
+      "partyKind": "organization",
+      "label": "Report scorer"
+    }
+  ],
+  "statements": {
+    "claims": [
+      {
+        "id": "c-mc2s",
+        "facet": "preference",
+        "text": "Give me the decision first, in one paragraph."
+      },
+      {
+        "id": "c-z7jn",
+        "facet": "preference",
+        "text": "When you lay out options, show me the evidence behind each one."
+      }
+    ],
+    "assessments": [
+      {
+        "administeredAt": {
+          "precision": "day",
+          "start": "2026-03-02"
+        },
+        "assertedBy": "o-01",
+        "assessedBy": "subject",
+        "categories": [
+          "mental-health"
+        ],
+        "formulatedAt": "2026-03-02T00:00:00Z",
+        "id": "as-nz95",
+        "instrument": {
+          "id": "urn:ohc:instrument:bfi-2"
+        },
+        "lens": {
+          "id": "urn:ohc:lens:big-five",
+          "version": "0.2.0"
+        },
+        "mode": "self-report-instrument",
+        "origin": "imported",
+        "recordedAt": "2026-10-12T09:05:00Z",
+        "results": [
+          {
+            "construct": "big-five/O",
+            "label": "Openness",
+            "raw": 4.1,
+            "type": "dimension-score"
+          },
+          {
+            "construct": "big-five/C",
+            "label": "Conscientiousness",
+            "raw": 3.9,
+            "type": "dimension-score"
+          },
+          {
+            "construct": "big-five/E",
+            "label": "Extraversion",
+            "raw": 2.6,
+            "type": "dimension-score"
+          },
+          {
+            "construct": "big-five/A",
+            "label": "Agreeableness",
+            "raw": 3.7,
+            "type": "dimension-score"
+          },
+          {
+            "construct": "big-five/N",
+            "label": "Neuroticism / Negative Emotionality",
+            "raw": 2.4,
+            "type": "dimension-score"
+          }
+        ],
+        "reviewAfter": "P3Y",
+        "sensitivity": "special",
+        "synthetic": true,
+        "validityFlags": []
+      }
+    ]
+  },
+  "derived": {
+    "c-mc2s": {
+      "label": "stated",
+      "freshness": "current",
+      "endorsement": "endorsed",
+      "contested": false,
+      "locked": false,
+      "admission": "active",
+      "computedAt": "2026-10-13T07:00:00Z"
+    },
+    "c-z7jn": {
+      "label": "stated",
+      "freshness": "current",
+      "endorsement": "endorsed",
+      "contested": false,
+      "locked": false,
+      "admission": "active",
+      "computedAt": "2026-10-13T07:00:00Z"
+    },
+    "as-nz95": {
+      "label": "partly-confirmed",
+      "freshness": "current",
+      "endorsement": "partial",
+      "contested": false,
+      "locked": false,
+      "admission": "active",
+      "endorsedPart": "Fits: Openness, Conscientiousness, Agreeableness, Neuroticism / Negative Emotionality. Does not fit: Extraversion. \"I am quieter in groups than this says.\"",
+      "computedAt": "2026-10-13T07:00:00Z"
+    }
+  },
+  "completeness": "partial",
+  "omissions": "hidden",
+  "obligations": {
+    "storage": "until-expiry",
+    "forwarding": false,
+    "crossContextUse": false,
+    "decisionUse": "approval-required",
+    "delegable": false,
+    "handling": {}
+  },
+  "digest": "sha256:0d81b6aa9f2809a1a64ab78ab33aaaec9a5d45c88ed48d2ad8688dffdc7a21ea"
+}

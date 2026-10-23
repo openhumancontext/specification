@@ -1,0 +1,1897 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:ohc:schema:projection:0.1.0-draft",
+  "title": "OHC Projection",
+  "description": "What one grantee receives for one purpose at one time; the only form in which OHC content leaves the holder. Statements and interpretations travel in separate members. It never reports counts or what was withheld. Module governance.",
+  "type": "object",
+  "required": [
+    "format",
+    "specVersion",
+    "id",
+    "context",
+    "subjectAlias",
+    "grantee",
+    "grant",
+    "purpose",
+    "mode",
+    "generatedAt",
+    "validUntil",
+    "nonce",
+    "derived",
+    "completeness",
+    "omissions",
+    "obligations",
+    "digest"
+  ],
+  "properties": {
+    "format": {
+      "const": "ohc.projection"
+    },
+    "specVersion": {
+      "const": "0.1.0-draft"
+    },
+    "id": {
+      "description": "Prefix prj-.",
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/LocalId"
+    },
+    "context": {
+      "type": "object",
+      "required": [
+        "id",
+        "version"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/URI"
+        },
+        "version": {
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+        }
+      },
+      "additionalProperties": false
+    },
+    "subjectAlias": {
+      "description": "Pairwise per grantee. The subject id is never included.",
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Alias"
+    },
+    "grantee": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Actor"
+    },
+    "grant": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/LocalId"
+    },
+    "request": {
+      "description": "The request message id.",
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+    },
+    "purpose": {
+      "description": "Exactly one (R-G7).",
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/purposes"
+    },
+    "mode": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/grant.modes"
+    },
+    "asOf": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/DateTime"
+    },
+    "ownProposals": {
+      "description": "Present only on a proposer view (§12.5): the projection also carries the grantee's own proposed records and those that expired undecided, labelled pending or not-accepted. Never served onward.",
+      "const": true
+    },
+    "generatedAt": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/DateTime"
+    },
+    "validUntil": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/DateTime"
+    },
+    "nonce": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Nonce"
+    },
+    "parties": {
+      "type": "array",
+      "items": {
+        "$ref": "urn:ohc:schema:party:0.1.0-draft"
+      }
+    },
+    "statements": {
+      "type": "object",
+      "properties": {
+        "claims": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/ServedClaim"
+          }
+        },
+        "practices": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/ServedPractice"
+          }
+        },
+        "lensAdoptions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/ServedLensAdoption"
+          }
+        },
+        "assessments": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/ServedAssessmentRecord"
+          }
+        },
+        "healthRefs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/ServedHealthRef"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "experience": {
+      "type": "object",
+      "properties": {
+        "episodes": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/ServedEpisode"
+          }
+        },
+        "sources": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/ServedSource"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "interpretations": {
+      "type": "object",
+      "properties": {
+        "interpretations": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/ServedInterpretation"
+          }
+        },
+        "modelViews": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/ServedModelView"
+          }
+        },
+        "patterns": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/ServedPattern"
+          }
+        },
+        "tensions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/ServedTension"
+          }
+        },
+        "parts": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/ServedPart"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "recall": {
+      "type": "object",
+      "properties": {
+        "recallCues": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/ServedRecallCue"
+          }
+        },
+        "outcomes": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/ServedOutcome"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "links": {
+      "type": "object",
+      "properties": {
+        "relations": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/ServedRelation"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "derived": {
+      "description": "One entry per served record, with its computed status and derived label.",
+      "type": "object",
+      "propertyNames": {
+        "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/LocalId"
+      },
+      "additionalProperties": {
+        "type": "object",
+        "required": [
+          "label",
+          "freshness",
+          "endorsement",
+          "contested",
+          "locked",
+          "admission",
+          "computedAt"
+        ],
+        "properties": {
+          "label": {
+            "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/labels"
+          },
+          "freshness": {
+            "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/freshness"
+          },
+          "endorsement": {
+            "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/endorsement"
+          },
+          "contested": {
+            "type": "boolean"
+          },
+          "locked": {
+            "type": "boolean"
+          },
+          "admission": {
+            "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/admission"
+          },
+          "heldNow": {
+            "type": "boolean"
+          },
+          "endorsedPart": {
+            "description": "The person's words on a partly endorsed record: the text of the latest partially-endorse Review (PJ-8).",
+            "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+          },
+          "computedAt": {
+            "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/DateTime"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "absences": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "selector",
+          "code"
+        ],
+        "properties": {
+          "selector": {
+            "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/GrantSelector"
+          },
+          "code": {
+            "const": "not-disclosed"
+          }
+        },
+        "additionalProperties": false
+      },
+      "description": "One entry per requested selector the grant does not cover, whether or not matching records exist (R-G5)."
+    },
+    "completeness": {
+      "const": "partial"
+    },
+    "omissions": {
+      "const": "hidden"
+    },
+    "obligations": {
+      "type": "object",
+      "required": [
+        "storage",
+        "forwarding",
+        "crossContextUse",
+        "decisionUse",
+        "delegable",
+        "handling"
+      ],
+      "properties": {
+        "storage": {
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/grant.storage"
+        },
+        "forwarding": {
+          "const": false
+        },
+        "crossContextUse": {
+          "const": false
+        },
+        "decisionUse": {
+          "description": "Copied from the grant; deny when the grant has no decisionUse (R-G14).",
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/grant.decision-use"
+        },
+        "delegable": {
+          "const": false
+        },
+        "handling": {
+          "type": "object",
+          "propertyNames": {
+            "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/LocalId"
+          },
+          "additionalProperties": {
+            "type": "array",
+            "items": {
+              "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/handling"
+            }
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "digest": {
+      "description": "sha256 over the JCS form of the projection without digest.",
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Digest"
+    }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "ServedClaim": {
+      "type": "object",
+      "description": "A served Claim: its stored fields except underGrant, recordedBy and ext, reduced further by the grant mode.",
+      "required": [
+        "id"
+      ],
+      "properties": {
+        "kind": {
+          "$ref": "urn:ohc:schema:claim:0.1.0-draft#/properties/kind"
+        },
+        "id": {
+          "$ref": "urn:ohc:schema:claim:0.1.0-draft#/properties/id"
+        },
+        "facet": {
+          "$ref": "urn:ohc:schema:claim:0.1.0-draft#/properties/facet"
+        },
+        "predicate": {
+          "$ref": "urn:ohc:schema:claim:0.1.0-draft#/properties/predicate"
+        },
+        "text": {
+          "$ref": "urn:ohc:schema:claim:0.1.0-draft#/properties/text"
+        },
+        "absence": {
+          "$ref": "urn:ohc:schema:claim:0.1.0-draft#/properties/absence"
+        },
+        "horizon": {
+          "$ref": "urn:ohc:schema:claim:0.1.0-draft#/properties/horizon"
+        },
+        "value": {
+          "$ref": "urn:ohc:schema:claim:0.1.0-draft#/properties/value"
+        },
+        "unit": {
+          "$ref": "urn:ohc:schema:claim:0.1.0-draft#/properties/unit"
+        },
+        "valid": {
+          "$ref": "urn:ohc:schema:claim:0.1.0-draft#/properties/valid"
+        },
+        "lastEvidenceAt": {
+          "$ref": "urn:ohc:schema:claim:0.1.0-draft#/properties/lastEvidenceAt"
+        },
+        "reviewAfter": {
+          "$ref": "urn:ohc:schema:claim:0.1.0-draft#/properties/reviewAfter"
+        },
+        "onExpiry": {
+          "$ref": "urn:ohc:schema:claim:0.1.0-draft#/properties/onExpiry"
+        },
+        "valueAddress": {
+          "$ref": "urn:ohc:schema:claim:0.1.0-draft#/properties/valueAddress"
+        },
+        "about": {
+          "$ref": "urn:ohc:schema:claim:0.1.0-draft#/properties/about"
+        },
+        "evidence": {
+          "$ref": "urn:ohc:schema:claim:0.1.0-draft#/properties/evidence"
+        },
+        "derivedFrom": {
+          "$ref": "urn:ohc:schema:claim:0.1.0-draft#/properties/derivedFrom"
+        },
+        "rationale": {
+          "$ref": "urn:ohc:schema:claim:0.1.0-draft#/properties/rationale"
+        },
+        "origin": {
+          "$ref": "urn:ohc:schema:claim:0.1.0-draft#/properties/origin"
+        },
+        "assertedBy": {
+          "$ref": "urn:ohc:schema:claim:0.1.0-draft#/properties/assertedBy"
+        },
+        "recordedAt": {
+          "$ref": "urn:ohc:schema:claim:0.1.0-draft#/properties/recordedAt"
+        },
+        "purpose": {
+          "$ref": "urn:ohc:schema:claim:0.1.0-draft#/properties/purpose"
+        },
+        "formulatedAt": {
+          "$ref": "urn:ohc:schema:claim:0.1.0-draft#/properties/formulatedAt"
+        },
+        "supersedes": {
+          "$ref": "urn:ohc:schema:claim:0.1.0-draft#/properties/supersedes"
+        },
+        "epistemic": {
+          "$ref": "urn:ohc:schema:claim:0.1.0-draft#/properties/epistemic"
+        },
+        "confidence": {
+          "$ref": "urn:ohc:schema:claim:0.1.0-draft#/properties/confidence"
+        },
+        "sensitivity": {
+          "$ref": "urn:ohc:schema:claim:0.1.0-draft#/properties/sensitivity"
+        },
+        "categories": {
+          "$ref": "urn:ohc:schema:claim:0.1.0-draft#/properties/categories"
+        },
+        "handling": {
+          "$ref": "urn:ohc:schema:claim:0.1.0-draft#/properties/handling"
+        },
+        "audience": {
+          "$ref": "urn:ohc:schema:claim:0.1.0-draft#/properties/audience"
+        },
+        "contexts": {
+          "$ref": "urn:ohc:schema:claim:0.1.0-draft#/properties/contexts"
+        },
+        "lang": {
+          "$ref": "urn:ohc:schema:claim:0.1.0-draft#/properties/lang"
+        },
+        "importedFrom": {
+          "$ref": "urn:ohc:schema:claim:0.1.0-draft#/properties/importedFrom"
+        },
+        "generatedBy": {
+          "$ref": "urn:ohc:schema:claim:0.1.0-draft#/properties/generatedBy"
+        },
+        "synthetic": {
+          "$ref": "urn:ohc:schema:claim:0.1.0-draft#/properties/synthetic"
+        },
+        "note": {
+          "$ref": "urn:ohc:schema:claim:0.1.0-draft#/properties/note"
+        }
+      },
+      "additionalProperties": false
+    },
+    "ServedPractice": {
+      "type": "object",
+      "description": "A served Practice: its stored fields except underGrant, recordedBy and ext, reduced further by the grant mode.",
+      "required": [
+        "id"
+      ],
+      "properties": {
+        "kind": {
+          "$ref": "urn:ohc:schema:practice:0.1.0-draft#/properties/kind"
+        },
+        "id": {
+          "$ref": "urn:ohc:schema:practice:0.1.0-draft#/properties/id"
+        },
+        "name": {
+          "$ref": "urn:ohc:schema:practice:0.1.0-draft#/properties/name"
+        },
+        "description": {
+          "$ref": "urn:ohc:schema:practice:0.1.0-draft#/properties/description"
+        },
+        "practiceKind": {
+          "$ref": "urn:ohc:schema:practice:0.1.0-draft#/properties/practiceKind"
+        },
+        "source": {
+          "$ref": "urn:ohc:schema:practice:0.1.0-draft#/properties/source"
+        },
+        "steps": {
+          "$ref": "urn:ohc:schema:practice:0.1.0-draft#/properties/steps"
+        },
+        "duration": {
+          "$ref": "urn:ohc:schema:practice:0.1.0-draft#/properties/duration"
+        },
+        "limits": {
+          "$ref": "urn:ohc:schema:practice:0.1.0-draft#/properties/limits"
+        },
+        "initialStatus": {
+          "$ref": "urn:ohc:schema:practice:0.1.0-draft#/properties/initialStatus"
+        },
+        "nonClinical": {
+          "$ref": "urn:ohc:schema:practice:0.1.0-draft#/properties/nonClinical"
+        },
+        "origin": {
+          "$ref": "urn:ohc:schema:practice:0.1.0-draft#/properties/origin"
+        },
+        "assertedBy": {
+          "$ref": "urn:ohc:schema:practice:0.1.0-draft#/properties/assertedBy"
+        },
+        "recordedAt": {
+          "$ref": "urn:ohc:schema:practice:0.1.0-draft#/properties/recordedAt"
+        },
+        "purpose": {
+          "$ref": "urn:ohc:schema:practice:0.1.0-draft#/properties/purpose"
+        },
+        "formulatedAt": {
+          "$ref": "urn:ohc:schema:practice:0.1.0-draft#/properties/formulatedAt"
+        },
+        "supersedes": {
+          "$ref": "urn:ohc:schema:practice:0.1.0-draft#/properties/supersedes"
+        },
+        "epistemic": {
+          "$ref": "urn:ohc:schema:practice:0.1.0-draft#/properties/epistemic"
+        },
+        "confidence": {
+          "$ref": "urn:ohc:schema:practice:0.1.0-draft#/properties/confidence"
+        },
+        "sensitivity": {
+          "$ref": "urn:ohc:schema:practice:0.1.0-draft#/properties/sensitivity"
+        },
+        "categories": {
+          "$ref": "urn:ohc:schema:practice:0.1.0-draft#/properties/categories"
+        },
+        "handling": {
+          "$ref": "urn:ohc:schema:practice:0.1.0-draft#/properties/handling"
+        },
+        "audience": {
+          "$ref": "urn:ohc:schema:practice:0.1.0-draft#/properties/audience"
+        },
+        "contexts": {
+          "$ref": "urn:ohc:schema:practice:0.1.0-draft#/properties/contexts"
+        },
+        "lang": {
+          "$ref": "urn:ohc:schema:practice:0.1.0-draft#/properties/lang"
+        },
+        "importedFrom": {
+          "$ref": "urn:ohc:schema:practice:0.1.0-draft#/properties/importedFrom"
+        },
+        "generatedBy": {
+          "$ref": "urn:ohc:schema:practice:0.1.0-draft#/properties/generatedBy"
+        },
+        "derivedFrom": {
+          "$ref": "urn:ohc:schema:practice:0.1.0-draft#/properties/derivedFrom"
+        },
+        "synthetic": {
+          "$ref": "urn:ohc:schema:practice:0.1.0-draft#/properties/synthetic"
+        },
+        "note": {
+          "$ref": "urn:ohc:schema:practice:0.1.0-draft#/properties/note"
+        }
+      },
+      "additionalProperties": false
+    },
+    "ServedLensAdoption": {
+      "type": "object",
+      "description": "A served LensAdoption: its stored fields except underGrant, recordedBy and ext, reduced further by the grant mode.",
+      "required": [
+        "id"
+      ],
+      "properties": {
+        "kind": {
+          "$ref": "urn:ohc:schema:lens-adoption:0.1.0-draft#/properties/kind"
+        },
+        "id": {
+          "$ref": "urn:ohc:schema:lens-adoption:0.1.0-draft#/properties/id"
+        },
+        "lens": {
+          "$ref": "urn:ohc:schema:lens-adoption:0.1.0-draft#/properties/lens"
+        },
+        "route": {
+          "$ref": "urn:ohc:schema:lens-adoption:0.1.0-draft#/properties/route"
+        },
+        "suggestedBy": {
+          "$ref": "urn:ohc:schema:lens-adoption:0.1.0-draft#/properties/suggestedBy"
+        },
+        "practice": {
+          "$ref": "urn:ohc:schema:lens-adoption:0.1.0-draft#/properties/practice"
+        },
+        "confidentiality": {
+          "$ref": "urn:ohc:schema:lens-adoption:0.1.0-draft#/properties/confidentiality"
+        },
+        "uses": {
+          "$ref": "urn:ohc:schema:lens-adoption:0.1.0-draft#/properties/uses"
+        },
+        "interpretationAuthors": {
+          "$ref": "urn:ohc:schema:lens-adoption:0.1.0-draft#/properties/interpretationAuthors"
+        },
+        "agentInterpretation": {
+          "$ref": "urn:ohc:schema:lens-adoption:0.1.0-draft#/properties/agentInterpretation"
+        },
+        "representationPreference": {
+          "$ref": "urn:ohc:schema:lens-adoption:0.1.0-draft#/properties/representationPreference"
+        },
+        "onEnd": {
+          "$ref": "urn:ohc:schema:lens-adoption:0.1.0-draft#/properties/onEnd"
+        },
+        "origin": {
+          "$ref": "urn:ohc:schema:lens-adoption:0.1.0-draft#/properties/origin"
+        },
+        "assertedBy": {
+          "$ref": "urn:ohc:schema:lens-adoption:0.1.0-draft#/properties/assertedBy"
+        },
+        "recordedAt": {
+          "$ref": "urn:ohc:schema:lens-adoption:0.1.0-draft#/properties/recordedAt"
+        },
+        "purpose": {
+          "$ref": "urn:ohc:schema:lens-adoption:0.1.0-draft#/properties/purpose"
+        },
+        "formulatedAt": {
+          "$ref": "urn:ohc:schema:lens-adoption:0.1.0-draft#/properties/formulatedAt"
+        },
+        "supersedes": {
+          "$ref": "urn:ohc:schema:lens-adoption:0.1.0-draft#/properties/supersedes"
+        },
+        "epistemic": {
+          "$ref": "urn:ohc:schema:lens-adoption:0.1.0-draft#/properties/epistemic"
+        },
+        "confidence": {
+          "$ref": "urn:ohc:schema:lens-adoption:0.1.0-draft#/properties/confidence"
+        },
+        "sensitivity": {
+          "$ref": "urn:ohc:schema:lens-adoption:0.1.0-draft#/properties/sensitivity"
+        },
+        "categories": {
+          "$ref": "urn:ohc:schema:lens-adoption:0.1.0-draft#/properties/categories"
+        },
+        "handling": {
+          "$ref": "urn:ohc:schema:lens-adoption:0.1.0-draft#/properties/handling"
+        },
+        "audience": {
+          "$ref": "urn:ohc:schema:lens-adoption:0.1.0-draft#/properties/audience"
+        },
+        "contexts": {
+          "$ref": "urn:ohc:schema:lens-adoption:0.1.0-draft#/properties/contexts"
+        },
+        "lang": {
+          "$ref": "urn:ohc:schema:lens-adoption:0.1.0-draft#/properties/lang"
+        },
+        "importedFrom": {
+          "$ref": "urn:ohc:schema:lens-adoption:0.1.0-draft#/properties/importedFrom"
+        },
+        "generatedBy": {
+          "$ref": "urn:ohc:schema:lens-adoption:0.1.0-draft#/properties/generatedBy"
+        },
+        "derivedFrom": {
+          "$ref": "urn:ohc:schema:lens-adoption:0.1.0-draft#/properties/derivedFrom"
+        },
+        "synthetic": {
+          "$ref": "urn:ohc:schema:lens-adoption:0.1.0-draft#/properties/synthetic"
+        },
+        "note": {
+          "$ref": "urn:ohc:schema:lens-adoption:0.1.0-draft#/properties/note"
+        }
+      },
+      "additionalProperties": false
+    },
+    "ServedAssessmentRecord": {
+      "type": "object",
+      "description": "A served AssessmentRecord: its stored fields except underGrant, recordedBy and ext, reduced further by the grant mode.",
+      "required": [
+        "id"
+      ],
+      "properties": {
+        "kind": {
+          "$ref": "urn:ohc:schema:assessment-record:0.1.0-draft#/properties/kind"
+        },
+        "id": {
+          "$ref": "urn:ohc:schema:assessment-record:0.1.0-draft#/properties/id"
+        },
+        "lens": {
+          "$ref": "urn:ohc:schema:assessment-record:0.1.0-draft#/properties/lens"
+        },
+        "lensVariant": {
+          "$ref": "urn:ohc:schema:assessment-record:0.1.0-draft#/properties/lensVariant"
+        },
+        "instrument": {
+          "$ref": "urn:ohc:schema:assessment-record:0.1.0-draft#/properties/instrument"
+        },
+        "mode": {
+          "$ref": "urn:ohc:schema:assessment-record:0.1.0-draft#/properties/mode"
+        },
+        "assessedBy": {
+          "$ref": "urn:ohc:schema:assessment-record:0.1.0-draft#/properties/assessedBy"
+        },
+        "raterRelationship": {
+          "$ref": "urn:ohc:schema:assessment-record:0.1.0-draft#/properties/raterRelationship"
+        },
+        "administeredAt": {
+          "$ref": "urn:ohc:schema:assessment-record:0.1.0-draft#/properties/administeredAt"
+        },
+        "results": {
+          "$ref": "urn:ohc:schema:assessment-record:0.1.0-draft#/properties/results"
+        },
+        "normGroup": {
+          "$ref": "urn:ohc:schema:assessment-record:0.1.0-draft#/properties/normGroup"
+        },
+        "validityFlags": {
+          "$ref": "urn:ohc:schema:assessment-record:0.1.0-draft#/properties/validityFlags"
+        },
+        "source": {
+          "$ref": "urn:ohc:schema:assessment-record:0.1.0-draft#/properties/source"
+        },
+        "trademarkNotice": {
+          "$ref": "urn:ohc:schema:assessment-record:0.1.0-draft#/properties/trademarkNotice"
+        },
+        "validityCeiling": {
+          "$ref": "urn:ohc:schema:assessment-record:0.1.0-draft#/properties/validityCeiling"
+        },
+        "mapping": {
+          "$ref": "urn:ohc:schema:assessment-record:0.1.0-draft#/properties/mapping"
+        },
+        "reviewAfter": {
+          "$ref": "urn:ohc:schema:assessment-record:0.1.0-draft#/properties/reviewAfter"
+        },
+        "origin": {
+          "$ref": "urn:ohc:schema:assessment-record:0.1.0-draft#/properties/origin"
+        },
+        "assertedBy": {
+          "$ref": "urn:ohc:schema:assessment-record:0.1.0-draft#/properties/assertedBy"
+        },
+        "recordedAt": {
+          "$ref": "urn:ohc:schema:assessment-record:0.1.0-draft#/properties/recordedAt"
+        },
+        "purpose": {
+          "$ref": "urn:ohc:schema:assessment-record:0.1.0-draft#/properties/purpose"
+        },
+        "formulatedAt": {
+          "$ref": "urn:ohc:schema:assessment-record:0.1.0-draft#/properties/formulatedAt"
+        },
+        "supersedes": {
+          "$ref": "urn:ohc:schema:assessment-record:0.1.0-draft#/properties/supersedes"
+        },
+        "epistemic": {
+          "$ref": "urn:ohc:schema:assessment-record:0.1.0-draft#/properties/epistemic"
+        },
+        "confidence": {
+          "$ref": "urn:ohc:schema:assessment-record:0.1.0-draft#/properties/confidence"
+        },
+        "sensitivity": {
+          "$ref": "urn:ohc:schema:assessment-record:0.1.0-draft#/properties/sensitivity"
+        },
+        "categories": {
+          "$ref": "urn:ohc:schema:assessment-record:0.1.0-draft#/properties/categories"
+        },
+        "handling": {
+          "$ref": "urn:ohc:schema:assessment-record:0.1.0-draft#/properties/handling"
+        },
+        "audience": {
+          "$ref": "urn:ohc:schema:assessment-record:0.1.0-draft#/properties/audience"
+        },
+        "contexts": {
+          "$ref": "urn:ohc:schema:assessment-record:0.1.0-draft#/properties/contexts"
+        },
+        "lang": {
+          "$ref": "urn:ohc:schema:assessment-record:0.1.0-draft#/properties/lang"
+        },
+        "importedFrom": {
+          "$ref": "urn:ohc:schema:assessment-record:0.1.0-draft#/properties/importedFrom"
+        },
+        "generatedBy": {
+          "$ref": "urn:ohc:schema:assessment-record:0.1.0-draft#/properties/generatedBy"
+        },
+        "derivedFrom": {
+          "$ref": "urn:ohc:schema:assessment-record:0.1.0-draft#/properties/derivedFrom"
+        },
+        "synthetic": {
+          "$ref": "urn:ohc:schema:assessment-record:0.1.0-draft#/properties/synthetic"
+        },
+        "note": {
+          "$ref": "urn:ohc:schema:assessment-record:0.1.0-draft#/properties/note"
+        }
+      },
+      "additionalProperties": false
+    },
+    "ServedHealthRef": {
+      "type": "object",
+      "description": "A served HealthRef: its stored fields except underGrant, recordedBy and ext, reduced further by the grant mode.",
+      "required": [
+        "id"
+      ],
+      "properties": {
+        "kind": {
+          "$ref": "urn:ohc:schema:health-ref:0.1.0-draft#/properties/kind"
+        },
+        "id": {
+          "$ref": "urn:ohc:schema:health-ref:0.1.0-draft#/properties/id"
+        },
+        "system": {
+          "$ref": "urn:ohc:schema:health-ref:0.1.0-draft#/properties/system"
+        },
+        "fhirVersion": {
+          "$ref": "urn:ohc:schema:health-ref:0.1.0-draft#/properties/fhirVersion"
+        },
+        "resourceType": {
+          "$ref": "urn:ohc:schema:health-ref:0.1.0-draft#/properties/resourceType"
+        },
+        "reference": {
+          "$ref": "urn:ohc:schema:health-ref:0.1.0-draft#/properties/reference"
+        },
+        "custodian": {
+          "$ref": "urn:ohc:schema:health-ref:0.1.0-draft#/properties/custodian"
+        },
+        "purposeNote": {
+          "$ref": "urn:ohc:schema:health-ref:0.1.0-draft#/properties/purposeNote"
+        },
+        "origin": {
+          "$ref": "urn:ohc:schema:health-ref:0.1.0-draft#/properties/origin"
+        },
+        "assertedBy": {
+          "$ref": "urn:ohc:schema:health-ref:0.1.0-draft#/properties/assertedBy"
+        },
+        "recordedAt": {
+          "$ref": "urn:ohc:schema:health-ref:0.1.0-draft#/properties/recordedAt"
+        },
+        "purpose": {
+          "$ref": "urn:ohc:schema:health-ref:0.1.0-draft#/properties/purpose"
+        },
+        "formulatedAt": {
+          "$ref": "urn:ohc:schema:health-ref:0.1.0-draft#/properties/formulatedAt"
+        },
+        "supersedes": {
+          "$ref": "urn:ohc:schema:health-ref:0.1.0-draft#/properties/supersedes"
+        },
+        "epistemic": {
+          "$ref": "urn:ohc:schema:health-ref:0.1.0-draft#/properties/epistemic"
+        },
+        "confidence": {
+          "$ref": "urn:ohc:schema:health-ref:0.1.0-draft#/properties/confidence"
+        },
+        "sensitivity": {
+          "$ref": "urn:ohc:schema:health-ref:0.1.0-draft#/properties/sensitivity"
+        },
+        "categories": {
+          "$ref": "urn:ohc:schema:health-ref:0.1.0-draft#/properties/categories"
+        },
+        "handling": {
+          "$ref": "urn:ohc:schema:health-ref:0.1.0-draft#/properties/handling"
+        },
+        "audience": {
+          "$ref": "urn:ohc:schema:health-ref:0.1.0-draft#/properties/audience"
+        },
+        "contexts": {
+          "$ref": "urn:ohc:schema:health-ref:0.1.0-draft#/properties/contexts"
+        },
+        "lang": {
+          "$ref": "urn:ohc:schema:health-ref:0.1.0-draft#/properties/lang"
+        },
+        "importedFrom": {
+          "$ref": "urn:ohc:schema:health-ref:0.1.0-draft#/properties/importedFrom"
+        },
+        "generatedBy": {
+          "$ref": "urn:ohc:schema:health-ref:0.1.0-draft#/properties/generatedBy"
+        },
+        "derivedFrom": {
+          "$ref": "urn:ohc:schema:health-ref:0.1.0-draft#/properties/derivedFrom"
+        },
+        "synthetic": {
+          "$ref": "urn:ohc:schema:health-ref:0.1.0-draft#/properties/synthetic"
+        },
+        "note": {
+          "$ref": "urn:ohc:schema:health-ref:0.1.0-draft#/properties/note"
+        }
+      },
+      "additionalProperties": false
+    },
+    "ServedEpisode": {
+      "type": "object",
+      "description": "A served Episode: its stored fields except underGrant, recordedBy and ext, reduced further by the grant mode.",
+      "required": [
+        "id"
+      ],
+      "properties": {
+        "kind": {
+          "$ref": "urn:ohc:schema:episode:0.1.0-draft#/properties/kind"
+        },
+        "id": {
+          "$ref": "urn:ohc:schema:episode:0.1.0-draft#/properties/id"
+        },
+        "title": {
+          "$ref": "urn:ohc:schema:episode:0.1.0-draft#/properties/title"
+        },
+        "occurred": {
+          "$ref": "urn:ohc:schema:episode:0.1.0-draft#/properties/occurred"
+        },
+        "accounts": {
+          "$ref": "urn:ohc:schema:episode:0.1.0-draft#/properties/accounts"
+        },
+        "participants": {
+          "$ref": "urn:ohc:schema:episode:0.1.0-draft#/properties/participants"
+        },
+        "externalConfirmation": {
+          "$ref": "urn:ohc:schema:episode:0.1.0-draft#/properties/externalConfirmation"
+        },
+        "selection": {
+          "$ref": "urn:ohc:schema:episode:0.1.0-draft#/properties/selection"
+        },
+        "recall": {
+          "$ref": "urn:ohc:schema:episode:0.1.0-draft#/properties/recall"
+        },
+        "salience": {
+          "$ref": "urn:ohc:schema:episode:0.1.0-draft#/properties/salience"
+        },
+        "openQuestions": {
+          "$ref": "urn:ohc:schema:episode:0.1.0-draft#/properties/openQuestions"
+        },
+        "origin": {
+          "$ref": "urn:ohc:schema:episode:0.1.0-draft#/properties/origin"
+        },
+        "assertedBy": {
+          "$ref": "urn:ohc:schema:episode:0.1.0-draft#/properties/assertedBy"
+        },
+        "recordedAt": {
+          "$ref": "urn:ohc:schema:episode:0.1.0-draft#/properties/recordedAt"
+        },
+        "purpose": {
+          "$ref": "urn:ohc:schema:episode:0.1.0-draft#/properties/purpose"
+        },
+        "formulatedAt": {
+          "$ref": "urn:ohc:schema:episode:0.1.0-draft#/properties/formulatedAt"
+        },
+        "supersedes": {
+          "$ref": "urn:ohc:schema:episode:0.1.0-draft#/properties/supersedes"
+        },
+        "epistemic": {
+          "$ref": "urn:ohc:schema:episode:0.1.0-draft#/properties/epistemic"
+        },
+        "confidence": {
+          "$ref": "urn:ohc:schema:episode:0.1.0-draft#/properties/confidence"
+        },
+        "sensitivity": {
+          "$ref": "urn:ohc:schema:episode:0.1.0-draft#/properties/sensitivity"
+        },
+        "categories": {
+          "$ref": "urn:ohc:schema:episode:0.1.0-draft#/properties/categories"
+        },
+        "handling": {
+          "$ref": "urn:ohc:schema:episode:0.1.0-draft#/properties/handling"
+        },
+        "audience": {
+          "$ref": "urn:ohc:schema:episode:0.1.0-draft#/properties/audience"
+        },
+        "contexts": {
+          "$ref": "urn:ohc:schema:episode:0.1.0-draft#/properties/contexts"
+        },
+        "lang": {
+          "$ref": "urn:ohc:schema:episode:0.1.0-draft#/properties/lang"
+        },
+        "importedFrom": {
+          "$ref": "urn:ohc:schema:episode:0.1.0-draft#/properties/importedFrom"
+        },
+        "generatedBy": {
+          "$ref": "urn:ohc:schema:episode:0.1.0-draft#/properties/generatedBy"
+        },
+        "derivedFrom": {
+          "$ref": "urn:ohc:schema:episode:0.1.0-draft#/properties/derivedFrom"
+        },
+        "synthetic": {
+          "$ref": "urn:ohc:schema:episode:0.1.0-draft#/properties/synthetic"
+        },
+        "note": {
+          "$ref": "urn:ohc:schema:episode:0.1.0-draft#/properties/note"
+        }
+      },
+      "additionalProperties": false
+    },
+    "ServedInterpretation": {
+      "type": "object",
+      "description": "A served Interpretation: its stored fields except underGrant, recordedBy and ext, reduced further by the grant mode.",
+      "required": [
+        "id"
+      ],
+      "properties": {
+        "kind": {
+          "$ref": "urn:ohc:schema:interpretation:0.1.0-draft#/properties/kind"
+        },
+        "id": {
+          "$ref": "urn:ohc:schema:interpretation:0.1.0-draft#/properties/id"
+        },
+        "about": {
+          "$ref": "urn:ohc:schema:interpretation:0.1.0-draft#/properties/about"
+        },
+        "text": {
+          "$ref": "urn:ohc:schema:interpretation:0.1.0-draft#/properties/text"
+        },
+        "question": {
+          "$ref": "urn:ohc:schema:interpretation:0.1.0-draft#/properties/question"
+        },
+        "stance": {
+          "$ref": "urn:ohc:schema:interpretation:0.1.0-draft#/properties/stance"
+        },
+        "lens": {
+          "$ref": "urn:ohc:schema:interpretation:0.1.0-draft#/properties/lens"
+        },
+        "adoption": {
+          "$ref": "urn:ohc:schema:interpretation:0.1.0-draft#/properties/adoption"
+        },
+        "causal": {
+          "$ref": "urn:ohc:schema:interpretation:0.1.0-draft#/properties/causal"
+        },
+        "grounds": {
+          "$ref": "urn:ohc:schema:interpretation:0.1.0-draft#/properties/grounds"
+        },
+        "counterEvidence": {
+          "$ref": "urn:ohc:schema:interpretation:0.1.0-draft#/properties/counterEvidence"
+        },
+        "alternatives": {
+          "$ref": "urn:ohc:schema:interpretation:0.1.0-draft#/properties/alternatives"
+        },
+        "limits": {
+          "$ref": "urn:ohc:schema:interpretation:0.1.0-draft#/properties/limits"
+        },
+        "heldDuring": {
+          "$ref": "urn:ohc:schema:interpretation:0.1.0-draft#/properties/heldDuring"
+        },
+        "facets": {
+          "$ref": "urn:ohc:schema:interpretation:0.1.0-draft#/properties/facets"
+        },
+        "origin": {
+          "$ref": "urn:ohc:schema:interpretation:0.1.0-draft#/properties/origin"
+        },
+        "assertedBy": {
+          "$ref": "urn:ohc:schema:interpretation:0.1.0-draft#/properties/assertedBy"
+        },
+        "recordedAt": {
+          "$ref": "urn:ohc:schema:interpretation:0.1.0-draft#/properties/recordedAt"
+        },
+        "purpose": {
+          "$ref": "urn:ohc:schema:interpretation:0.1.0-draft#/properties/purpose"
+        },
+        "formulatedAt": {
+          "$ref": "urn:ohc:schema:interpretation:0.1.0-draft#/properties/formulatedAt"
+        },
+        "supersedes": {
+          "$ref": "urn:ohc:schema:interpretation:0.1.0-draft#/properties/supersedes"
+        },
+        "epistemic": {
+          "$ref": "urn:ohc:schema:interpretation:0.1.0-draft#/properties/epistemic"
+        },
+        "confidence": {
+          "$ref": "urn:ohc:schema:interpretation:0.1.0-draft#/properties/confidence"
+        },
+        "sensitivity": {
+          "$ref": "urn:ohc:schema:interpretation:0.1.0-draft#/properties/sensitivity"
+        },
+        "categories": {
+          "$ref": "urn:ohc:schema:interpretation:0.1.0-draft#/properties/categories"
+        },
+        "handling": {
+          "$ref": "urn:ohc:schema:interpretation:0.1.0-draft#/properties/handling"
+        },
+        "audience": {
+          "$ref": "urn:ohc:schema:interpretation:0.1.0-draft#/properties/audience"
+        },
+        "contexts": {
+          "$ref": "urn:ohc:schema:interpretation:0.1.0-draft#/properties/contexts"
+        },
+        "lang": {
+          "$ref": "urn:ohc:schema:interpretation:0.1.0-draft#/properties/lang"
+        },
+        "importedFrom": {
+          "$ref": "urn:ohc:schema:interpretation:0.1.0-draft#/properties/importedFrom"
+        },
+        "generatedBy": {
+          "$ref": "urn:ohc:schema:interpretation:0.1.0-draft#/properties/generatedBy"
+        },
+        "derivedFrom": {
+          "$ref": "urn:ohc:schema:interpretation:0.1.0-draft#/properties/derivedFrom"
+        },
+        "synthetic": {
+          "$ref": "urn:ohc:schema:interpretation:0.1.0-draft#/properties/synthetic"
+        },
+        "note": {
+          "$ref": "urn:ohc:schema:interpretation:0.1.0-draft#/properties/note"
+        }
+      },
+      "additionalProperties": false
+    },
+    "ServedModelView": {
+      "type": "object",
+      "description": "A served ModelView: its stored fields except underGrant, recordedBy and ext, reduced further by the grant mode.",
+      "required": [
+        "id"
+      ],
+      "properties": {
+        "kind": {
+          "$ref": "urn:ohc:schema:model-view:0.1.0-draft#/properties/kind"
+        },
+        "id": {
+          "$ref": "urn:ohc:schema:model-view:0.1.0-draft#/properties/id"
+        },
+        "lens": {
+          "$ref": "urn:ohc:schema:model-view:0.1.0-draft#/properties/lens"
+        },
+        "model": {
+          "$ref": "urn:ohc:schema:model-view:0.1.0-draft#/properties/model"
+        },
+        "adoption": {
+          "$ref": "urn:ohc:schema:model-view:0.1.0-draft#/properties/adoption"
+        },
+        "question": {
+          "$ref": "urn:ohc:schema:model-view:0.1.0-draft#/properties/question"
+        },
+        "scope": {
+          "$ref": "urn:ohc:schema:model-view:0.1.0-draft#/properties/scope"
+        },
+        "hypotheses": {
+          "$ref": "urn:ohc:schema:model-view:0.1.0-draft#/properties/hypotheses"
+        },
+        "representation": {
+          "$ref": "urn:ohc:schema:model-view:0.1.0-draft#/properties/representation"
+        },
+        "summary": {
+          "$ref": "urn:ohc:schema:model-view:0.1.0-draft#/properties/summary"
+        },
+        "grounds": {
+          "$ref": "urn:ohc:schema:model-view:0.1.0-draft#/properties/grounds"
+        },
+        "limits": {
+          "$ref": "urn:ohc:schema:model-view:0.1.0-draft#/properties/limits"
+        },
+        "alternatives": {
+          "$ref": "urn:ohc:schema:model-view:0.1.0-draft#/properties/alternatives"
+        },
+        "origin": {
+          "$ref": "urn:ohc:schema:model-view:0.1.0-draft#/properties/origin"
+        },
+        "assertedBy": {
+          "$ref": "urn:ohc:schema:model-view:0.1.0-draft#/properties/assertedBy"
+        },
+        "recordedAt": {
+          "$ref": "urn:ohc:schema:model-view:0.1.0-draft#/properties/recordedAt"
+        },
+        "purpose": {
+          "$ref": "urn:ohc:schema:model-view:0.1.0-draft#/properties/purpose"
+        },
+        "formulatedAt": {
+          "$ref": "urn:ohc:schema:model-view:0.1.0-draft#/properties/formulatedAt"
+        },
+        "supersedes": {
+          "$ref": "urn:ohc:schema:model-view:0.1.0-draft#/properties/supersedes"
+        },
+        "epistemic": {
+          "$ref": "urn:ohc:schema:model-view:0.1.0-draft#/properties/epistemic"
+        },
+        "confidence": {
+          "$ref": "urn:ohc:schema:model-view:0.1.0-draft#/properties/confidence"
+        },
+        "sensitivity": {
+          "$ref": "urn:ohc:schema:model-view:0.1.0-draft#/properties/sensitivity"
+        },
+        "categories": {
+          "$ref": "urn:ohc:schema:model-view:0.1.0-draft#/properties/categories"
+        },
+        "handling": {
+          "$ref": "urn:ohc:schema:model-view:0.1.0-draft#/properties/handling"
+        },
+        "audience": {
+          "$ref": "urn:ohc:schema:model-view:0.1.0-draft#/properties/audience"
+        },
+        "contexts": {
+          "$ref": "urn:ohc:schema:model-view:0.1.0-draft#/properties/contexts"
+        },
+        "lang": {
+          "$ref": "urn:ohc:schema:model-view:0.1.0-draft#/properties/lang"
+        },
+        "importedFrom": {
+          "$ref": "urn:ohc:schema:model-view:0.1.0-draft#/properties/importedFrom"
+        },
+        "generatedBy": {
+          "$ref": "urn:ohc:schema:model-view:0.1.0-draft#/properties/generatedBy"
+        },
+        "derivedFrom": {
+          "$ref": "urn:ohc:schema:model-view:0.1.0-draft#/properties/derivedFrom"
+        },
+        "synthetic": {
+          "$ref": "urn:ohc:schema:model-view:0.1.0-draft#/properties/synthetic"
+        },
+        "note": {
+          "$ref": "urn:ohc:schema:model-view:0.1.0-draft#/properties/note"
+        }
+      },
+      "additionalProperties": false
+    },
+    "ServedPattern": {
+      "type": "object",
+      "description": "A served Pattern: its stored fields except underGrant, recordedBy and ext, reduced further by the grant mode.",
+      "required": [
+        "id"
+      ],
+      "properties": {
+        "kind": {
+          "$ref": "urn:ohc:schema:pattern:0.1.0-draft#/properties/kind"
+        },
+        "id": {
+          "$ref": "urn:ohc:schema:pattern:0.1.0-draft#/properties/id"
+        },
+        "text": {
+          "$ref": "urn:ohc:schema:pattern:0.1.0-draft#/properties/text"
+        },
+        "patternKind": {
+          "$ref": "urn:ohc:schema:pattern:0.1.0-draft#/properties/patternKind"
+        },
+        "episodes": {
+          "$ref": "urn:ohc:schema:pattern:0.1.0-draft#/properties/episodes"
+        },
+        "grounds": {
+          "$ref": "urn:ohc:schema:pattern:0.1.0-draft#/properties/grounds"
+        },
+        "counterEvidence": {
+          "$ref": "urn:ohc:schema:pattern:0.1.0-draft#/properties/counterEvidence"
+        },
+        "alternatives": {
+          "$ref": "urn:ohc:schema:pattern:0.1.0-draft#/properties/alternatives"
+        },
+        "limits": {
+          "$ref": "urn:ohc:schema:pattern:0.1.0-draft#/properties/limits"
+        },
+        "lens": {
+          "$ref": "urn:ohc:schema:pattern:0.1.0-draft#/properties/lens"
+        },
+        "adoption": {
+          "$ref": "urn:ohc:schema:pattern:0.1.0-draft#/properties/adoption"
+        },
+        "facets": {
+          "$ref": "urn:ohc:schema:pattern:0.1.0-draft#/properties/facets"
+        },
+        "origin": {
+          "$ref": "urn:ohc:schema:pattern:0.1.0-draft#/properties/origin"
+        },
+        "assertedBy": {
+          "$ref": "urn:ohc:schema:pattern:0.1.0-draft#/properties/assertedBy"
+        },
+        "recordedAt": {
+          "$ref": "urn:ohc:schema:pattern:0.1.0-draft#/properties/recordedAt"
+        },
+        "purpose": {
+          "$ref": "urn:ohc:schema:pattern:0.1.0-draft#/properties/purpose"
+        },
+        "formulatedAt": {
+          "$ref": "urn:ohc:schema:pattern:0.1.0-draft#/properties/formulatedAt"
+        },
+        "supersedes": {
+          "$ref": "urn:ohc:schema:pattern:0.1.0-draft#/properties/supersedes"
+        },
+        "epistemic": {
+          "$ref": "urn:ohc:schema:pattern:0.1.0-draft#/properties/epistemic"
+        },
+        "confidence": {
+          "$ref": "urn:ohc:schema:pattern:0.1.0-draft#/properties/confidence"
+        },
+        "sensitivity": {
+          "$ref": "urn:ohc:schema:pattern:0.1.0-draft#/properties/sensitivity"
+        },
+        "categories": {
+          "$ref": "urn:ohc:schema:pattern:0.1.0-draft#/properties/categories"
+        },
+        "handling": {
+          "$ref": "urn:ohc:schema:pattern:0.1.0-draft#/properties/handling"
+        },
+        "audience": {
+          "$ref": "urn:ohc:schema:pattern:0.1.0-draft#/properties/audience"
+        },
+        "contexts": {
+          "$ref": "urn:ohc:schema:pattern:0.1.0-draft#/properties/contexts"
+        },
+        "lang": {
+          "$ref": "urn:ohc:schema:pattern:0.1.0-draft#/properties/lang"
+        },
+        "importedFrom": {
+          "$ref": "urn:ohc:schema:pattern:0.1.0-draft#/properties/importedFrom"
+        },
+        "generatedBy": {
+          "$ref": "urn:ohc:schema:pattern:0.1.0-draft#/properties/generatedBy"
+        },
+        "derivedFrom": {
+          "$ref": "urn:ohc:schema:pattern:0.1.0-draft#/properties/derivedFrom"
+        },
+        "synthetic": {
+          "$ref": "urn:ohc:schema:pattern:0.1.0-draft#/properties/synthetic"
+        },
+        "note": {
+          "$ref": "urn:ohc:schema:pattern:0.1.0-draft#/properties/note"
+        }
+      },
+      "additionalProperties": false
+    },
+    "ServedTension": {
+      "type": "object",
+      "description": "A served Tension: its stored fields except underGrant, recordedBy and ext, reduced further by the grant mode.",
+      "required": [
+        "id"
+      ],
+      "properties": {
+        "kind": {
+          "$ref": "urn:ohc:schema:tension:0.1.0-draft#/properties/kind"
+        },
+        "id": {
+          "$ref": "urn:ohc:schema:tension:0.1.0-draft#/properties/id"
+        },
+        "between": {
+          "$ref": "urn:ohc:schema:tension:0.1.0-draft#/properties/between"
+        },
+        "tensionKind": {
+          "$ref": "urn:ohc:schema:tension:0.1.0-draft#/properties/tensionKind"
+        },
+        "whoDecides": {
+          "$ref": "urn:ohc:schema:tension:0.1.0-draft#/properties/whoDecides"
+        },
+        "text": {
+          "$ref": "urn:ohc:schema:tension:0.1.0-draft#/properties/text"
+        },
+        "origin": {
+          "$ref": "urn:ohc:schema:tension:0.1.0-draft#/properties/origin"
+        },
+        "assertedBy": {
+          "$ref": "urn:ohc:schema:tension:0.1.0-draft#/properties/assertedBy"
+        },
+        "recordedAt": {
+          "$ref": "urn:ohc:schema:tension:0.1.0-draft#/properties/recordedAt"
+        },
+        "purpose": {
+          "$ref": "urn:ohc:schema:tension:0.1.0-draft#/properties/purpose"
+        },
+        "formulatedAt": {
+          "$ref": "urn:ohc:schema:tension:0.1.0-draft#/properties/formulatedAt"
+        },
+        "supersedes": {
+          "$ref": "urn:ohc:schema:tension:0.1.0-draft#/properties/supersedes"
+        },
+        "epistemic": {
+          "$ref": "urn:ohc:schema:tension:0.1.0-draft#/properties/epistemic"
+        },
+        "confidence": {
+          "$ref": "urn:ohc:schema:tension:0.1.0-draft#/properties/confidence"
+        },
+        "sensitivity": {
+          "$ref": "urn:ohc:schema:tension:0.1.0-draft#/properties/sensitivity"
+        },
+        "categories": {
+          "$ref": "urn:ohc:schema:tension:0.1.0-draft#/properties/categories"
+        },
+        "handling": {
+          "$ref": "urn:ohc:schema:tension:0.1.0-draft#/properties/handling"
+        },
+        "audience": {
+          "$ref": "urn:ohc:schema:tension:0.1.0-draft#/properties/audience"
+        },
+        "contexts": {
+          "$ref": "urn:ohc:schema:tension:0.1.0-draft#/properties/contexts"
+        },
+        "lang": {
+          "$ref": "urn:ohc:schema:tension:0.1.0-draft#/properties/lang"
+        },
+        "importedFrom": {
+          "$ref": "urn:ohc:schema:tension:0.1.0-draft#/properties/importedFrom"
+        },
+        "generatedBy": {
+          "$ref": "urn:ohc:schema:tension:0.1.0-draft#/properties/generatedBy"
+        },
+        "derivedFrom": {
+          "$ref": "urn:ohc:schema:tension:0.1.0-draft#/properties/derivedFrom"
+        },
+        "synthetic": {
+          "$ref": "urn:ohc:schema:tension:0.1.0-draft#/properties/synthetic"
+        },
+        "note": {
+          "$ref": "urn:ohc:schema:tension:0.1.0-draft#/properties/note"
+        }
+      },
+      "additionalProperties": false
+    },
+    "ServedPart": {
+      "type": "object",
+      "description": "A served Part: its stored fields except underGrant, recordedBy and ext, reduced further by the grant mode.",
+      "required": [
+        "id"
+      ],
+      "properties": {
+        "kind": {
+          "$ref": "urn:ohc:schema:part:0.1.0-draft#/properties/kind"
+        },
+        "id": {
+          "$ref": "urn:ohc:schema:part:0.1.0-draft#/properties/id"
+        },
+        "name": {
+          "$ref": "urn:ohc:schema:part:0.1.0-draft#/properties/name"
+        },
+        "description": {
+          "$ref": "urn:ohc:schema:part:0.1.0-draft#/properties/description"
+        },
+        "lens": {
+          "$ref": "urn:ohc:schema:part:0.1.0-draft#/properties/lens"
+        },
+        "adoption": {
+          "$ref": "urn:ohc:schema:part:0.1.0-draft#/properties/adoption"
+        },
+        "role": {
+          "$ref": "urn:ohc:schema:part:0.1.0-draft#/properties/role"
+        },
+        "intention": {
+          "$ref": "urn:ohc:schema:part:0.1.0-draft#/properties/intention"
+        },
+        "concern": {
+          "$ref": "urn:ohc:schema:part:0.1.0-draft#/properties/concern"
+        },
+        "typicalTriggers": {
+          "$ref": "urn:ohc:schema:part:0.1.0-draft#/properties/typicalTriggers"
+        },
+        "firstNoticed": {
+          "$ref": "urn:ohc:schema:part:0.1.0-draft#/properties/firstNoticed"
+        },
+        "authoredWith": {
+          "$ref": "urn:ohc:schema:part:0.1.0-draft#/properties/authoredWith"
+        },
+        "origin": {
+          "$ref": "urn:ohc:schema:part:0.1.0-draft#/properties/origin"
+        },
+        "assertedBy": {
+          "$ref": "urn:ohc:schema:part:0.1.0-draft#/properties/assertedBy"
+        },
+        "recordedAt": {
+          "$ref": "urn:ohc:schema:part:0.1.0-draft#/properties/recordedAt"
+        },
+        "purpose": {
+          "$ref": "urn:ohc:schema:part:0.1.0-draft#/properties/purpose"
+        },
+        "formulatedAt": {
+          "$ref": "urn:ohc:schema:part:0.1.0-draft#/properties/formulatedAt"
+        },
+        "supersedes": {
+          "$ref": "urn:ohc:schema:part:0.1.0-draft#/properties/supersedes"
+        },
+        "epistemic": {
+          "$ref": "urn:ohc:schema:part:0.1.0-draft#/properties/epistemic"
+        },
+        "confidence": {
+          "$ref": "urn:ohc:schema:part:0.1.0-draft#/properties/confidence"
+        },
+        "sensitivity": {
+          "$ref": "urn:ohc:schema:part:0.1.0-draft#/properties/sensitivity"
+        },
+        "categories": {
+          "$ref": "urn:ohc:schema:part:0.1.0-draft#/properties/categories"
+        },
+        "handling": {
+          "$ref": "urn:ohc:schema:part:0.1.0-draft#/properties/handling"
+        },
+        "audience": {
+          "$ref": "urn:ohc:schema:part:0.1.0-draft#/properties/audience"
+        },
+        "contexts": {
+          "$ref": "urn:ohc:schema:part:0.1.0-draft#/properties/contexts"
+        },
+        "lang": {
+          "$ref": "urn:ohc:schema:part:0.1.0-draft#/properties/lang"
+        },
+        "importedFrom": {
+          "$ref": "urn:ohc:schema:part:0.1.0-draft#/properties/importedFrom"
+        },
+        "generatedBy": {
+          "$ref": "urn:ohc:schema:part:0.1.0-draft#/properties/generatedBy"
+        },
+        "derivedFrom": {
+          "$ref": "urn:ohc:schema:part:0.1.0-draft#/properties/derivedFrom"
+        },
+        "synthetic": {
+          "$ref": "urn:ohc:schema:part:0.1.0-draft#/properties/synthetic"
+        },
+        "note": {
+          "$ref": "urn:ohc:schema:part:0.1.0-draft#/properties/note"
+        }
+      },
+      "additionalProperties": false
+    },
+    "ServedRecallCue": {
+      "type": "object",
+      "description": "A served RecallCue: its stored fields except underGrant, recordedBy and ext, reduced further by the grant mode.",
+      "required": [
+        "id"
+      ],
+      "properties": {
+        "kind": {
+          "$ref": "urn:ohc:schema:recall-cue:0.1.0-draft#/properties/kind"
+        },
+        "id": {
+          "$ref": "urn:ohc:schema:recall-cue:0.1.0-draft#/properties/id"
+        },
+        "trigger": {
+          "$ref": "urn:ohc:schema:recall-cue:0.1.0-draft#/properties/trigger"
+        },
+        "offer": {
+          "$ref": "urn:ohc:schema:recall-cue:0.1.0-draft#/properties/offer"
+        },
+        "timing": {
+          "$ref": "urn:ohc:schema:recall-cue:0.1.0-draft#/properties/timing"
+        },
+        "safety": {
+          "$ref": "urn:ohc:schema:recall-cue:0.1.0-draft#/properties/safety"
+        },
+        "origin": {
+          "$ref": "urn:ohc:schema:recall-cue:0.1.0-draft#/properties/origin"
+        },
+        "assertedBy": {
+          "$ref": "urn:ohc:schema:recall-cue:0.1.0-draft#/properties/assertedBy"
+        },
+        "recordedAt": {
+          "$ref": "urn:ohc:schema:recall-cue:0.1.0-draft#/properties/recordedAt"
+        },
+        "purpose": {
+          "$ref": "urn:ohc:schema:recall-cue:0.1.0-draft#/properties/purpose"
+        },
+        "formulatedAt": {
+          "$ref": "urn:ohc:schema:recall-cue:0.1.0-draft#/properties/formulatedAt"
+        },
+        "supersedes": {
+          "$ref": "urn:ohc:schema:recall-cue:0.1.0-draft#/properties/supersedes"
+        },
+        "epistemic": {
+          "$ref": "urn:ohc:schema:recall-cue:0.1.0-draft#/properties/epistemic"
+        },
+        "confidence": {
+          "$ref": "urn:ohc:schema:recall-cue:0.1.0-draft#/properties/confidence"
+        },
+        "sensitivity": {
+          "$ref": "urn:ohc:schema:recall-cue:0.1.0-draft#/properties/sensitivity"
+        },
+        "categories": {
+          "$ref": "urn:ohc:schema:recall-cue:0.1.0-draft#/properties/categories"
+        },
+        "handling": {
+          "$ref": "urn:ohc:schema:recall-cue:0.1.0-draft#/properties/handling"
+        },
+        "audience": {
+          "$ref": "urn:ohc:schema:recall-cue:0.1.0-draft#/properties/audience"
+        },
+        "contexts": {
+          "$ref": "urn:ohc:schema:recall-cue:0.1.0-draft#/properties/contexts"
+        },
+        "lang": {
+          "$ref": "urn:ohc:schema:recall-cue:0.1.0-draft#/properties/lang"
+        },
+        "importedFrom": {
+          "$ref": "urn:ohc:schema:recall-cue:0.1.0-draft#/properties/importedFrom"
+        },
+        "generatedBy": {
+          "$ref": "urn:ohc:schema:recall-cue:0.1.0-draft#/properties/generatedBy"
+        },
+        "derivedFrom": {
+          "$ref": "urn:ohc:schema:recall-cue:0.1.0-draft#/properties/derivedFrom"
+        },
+        "synthetic": {
+          "$ref": "urn:ohc:schema:recall-cue:0.1.0-draft#/properties/synthetic"
+        },
+        "note": {
+          "$ref": "urn:ohc:schema:recall-cue:0.1.0-draft#/properties/note"
+        }
+      },
+      "additionalProperties": false
+    },
+    "ServedOutcome": {
+      "type": "object",
+      "description": "A served Outcome: its stored fields except underGrant, recordedBy and ext, reduced further by the grant mode.",
+      "required": [
+        "id"
+      ],
+      "properties": {
+        "kind": {
+          "$ref": "urn:ohc:schema:outcome:0.1.0-draft#/properties/kind"
+        },
+        "id": {
+          "$ref": "urn:ohc:schema:outcome:0.1.0-draft#/properties/id"
+        },
+        "about": {
+          "$ref": "urn:ohc:schema:outcome:0.1.0-draft#/properties/about"
+        },
+        "episode": {
+          "$ref": "urn:ohc:schema:outcome:0.1.0-draft#/properties/episode"
+        },
+        "delivery": {
+          "$ref": "urn:ohc:schema:outcome:0.1.0-draft#/properties/delivery"
+        },
+        "result": {
+          "$ref": "urn:ohc:schema:outcome:0.1.0-draft#/properties/result"
+        },
+        "origin": {
+          "$ref": "urn:ohc:schema:outcome:0.1.0-draft#/properties/origin"
+        },
+        "assertedBy": {
+          "$ref": "urn:ohc:schema:outcome:0.1.0-draft#/properties/assertedBy"
+        },
+        "recordedAt": {
+          "$ref": "urn:ohc:schema:outcome:0.1.0-draft#/properties/recordedAt"
+        },
+        "purpose": {
+          "$ref": "urn:ohc:schema:outcome:0.1.0-draft#/properties/purpose"
+        },
+        "formulatedAt": {
+          "$ref": "urn:ohc:schema:outcome:0.1.0-draft#/properties/formulatedAt"
+        },
+        "supersedes": {
+          "$ref": "urn:ohc:schema:outcome:0.1.0-draft#/properties/supersedes"
+        },
+        "epistemic": {
+          "$ref": "urn:ohc:schema:outcome:0.1.0-draft#/properties/epistemic"
+        },
+        "confidence": {
+          "$ref": "urn:ohc:schema:outcome:0.1.0-draft#/properties/confidence"
+        },
+        "sensitivity": {
+          "$ref": "urn:ohc:schema:outcome:0.1.0-draft#/properties/sensitivity"
+        },
+        "categories": {
+          "$ref": "urn:ohc:schema:outcome:0.1.0-draft#/properties/categories"
+        },
+        "handling": {
+          "$ref": "urn:ohc:schema:outcome:0.1.0-draft#/properties/handling"
+        },
+        "audience": {
+          "$ref": "urn:ohc:schema:outcome:0.1.0-draft#/properties/audience"
+        },
+        "contexts": {
+          "$ref": "urn:ohc:schema:outcome:0.1.0-draft#/properties/contexts"
+        },
+        "lang": {
+          "$ref": "urn:ohc:schema:outcome:0.1.0-draft#/properties/lang"
+        },
+        "importedFrom": {
+          "$ref": "urn:ohc:schema:outcome:0.1.0-draft#/properties/importedFrom"
+        },
+        "generatedBy": {
+          "$ref": "urn:ohc:schema:outcome:0.1.0-draft#/properties/generatedBy"
+        },
+        "derivedFrom": {
+          "$ref": "urn:ohc:schema:outcome:0.1.0-draft#/properties/derivedFrom"
+        },
+        "synthetic": {
+          "$ref": "urn:ohc:schema:outcome:0.1.0-draft#/properties/synthetic"
+        },
+        "note": {
+          "$ref": "urn:ohc:schema:outcome:0.1.0-draft#/properties/note"
+        }
+      },
+      "additionalProperties": false
+    },
+    "ServedRelation": {
+      "type": "object",
+      "description": "A served Relation: its stored fields except underGrant, recordedBy and ext, reduced further by the grant mode.",
+      "required": [
+        "id"
+      ],
+      "properties": {
+        "kind": {
+          "$ref": "urn:ohc:schema:relation:0.1.0-draft#/properties/kind"
+        },
+        "id": {
+          "$ref": "urn:ohc:schema:relation:0.1.0-draft#/properties/id"
+        },
+        "rel": {
+          "$ref": "urn:ohc:schema:relation:0.1.0-draft#/properties/rel"
+        },
+        "from": {
+          "$ref": "urn:ohc:schema:relation:0.1.0-draft#/properties/from"
+        },
+        "to": {
+          "$ref": "urn:ohc:schema:relation:0.1.0-draft#/properties/to"
+        },
+        "strength": {
+          "$ref": "urn:ohc:schema:relation:0.1.0-draft#/properties/strength"
+        },
+        "origin": {
+          "$ref": "urn:ohc:schema:relation:0.1.0-draft#/properties/origin"
+        },
+        "assertedBy": {
+          "$ref": "urn:ohc:schema:relation:0.1.0-draft#/properties/assertedBy"
+        },
+        "recordedAt": {
+          "$ref": "urn:ohc:schema:relation:0.1.0-draft#/properties/recordedAt"
+        },
+        "purpose": {
+          "$ref": "urn:ohc:schema:relation:0.1.0-draft#/properties/purpose"
+        },
+        "formulatedAt": {
+          "$ref": "urn:ohc:schema:relation:0.1.0-draft#/properties/formulatedAt"
+        },
+        "supersedes": {
+          "$ref": "urn:ohc:schema:relation:0.1.0-draft#/properties/supersedes"
+        },
+        "epistemic": {
+          "$ref": "urn:ohc:schema:relation:0.1.0-draft#/properties/epistemic"
+        },
+        "confidence": {
+          "$ref": "urn:ohc:schema:relation:0.1.0-draft#/properties/confidence"
+        },
+        "sensitivity": {
+          "$ref": "urn:ohc:schema:relation:0.1.0-draft#/properties/sensitivity"
+        },
+        "categories": {
+          "$ref": "urn:ohc:schema:relation:0.1.0-draft#/properties/categories"
+        },
+        "handling": {
+          "$ref": "urn:ohc:schema:relation:0.1.0-draft#/properties/handling"
+        },
+        "audience": {
+          "$ref": "urn:ohc:schema:relation:0.1.0-draft#/properties/audience"
+        },
+        "contexts": {
+          "$ref": "urn:ohc:schema:relation:0.1.0-draft#/properties/contexts"
+        },
+        "lang": {
+          "$ref": "urn:ohc:schema:relation:0.1.0-draft#/properties/lang"
+        },
+        "importedFrom": {
+          "$ref": "urn:ohc:schema:relation:0.1.0-draft#/properties/importedFrom"
+        },
+        "generatedBy": {
+          "$ref": "urn:ohc:schema:relation:0.1.0-draft#/properties/generatedBy"
+        },
+        "derivedFrom": {
+          "$ref": "urn:ohc:schema:relation:0.1.0-draft#/properties/derivedFrom"
+        },
+        "synthetic": {
+          "$ref": "urn:ohc:schema:relation:0.1.0-draft#/properties/synthetic"
+        },
+        "note": {
+          "$ref": "urn:ohc:schema:relation:0.1.0-draft#/properties/note"
+        }
+      },
+      "additionalProperties": false
+    },
+    "ServedSource": {
+      "type": "object",
+      "description": "A Source at its served release tier: no sha256, locator or title below the summary tier; excerpts only at the excerpt tier.",
+      "required": [
+        "id"
+      ],
+      "properties": {
+        "kind": {
+          "$ref": "urn:ohc:schema:source:0.1.0-draft#/properties/kind"
+        },
+        "id": {
+          "$ref": "urn:ohc:schema:source:0.1.0-draft#/properties/id"
+        },
+        "sourceKind": {
+          "$ref": "urn:ohc:schema:source:0.1.0-draft#/properties/sourceKind"
+        },
+        "title": {
+          "$ref": "urn:ohc:schema:source:0.1.0-draft#/properties/title"
+        },
+        "capturedAt": {
+          "$ref": "urn:ohc:schema:source:0.1.0-draft#/properties/capturedAt"
+        },
+        "authorship": {
+          "$ref": "urn:ohc:schema:source:0.1.0-draft#/properties/authorship"
+        },
+        "inbound": {
+          "$ref": "urn:ohc:schema:source:0.1.0-draft#/properties/inbound"
+        },
+        "contemporaneity": {
+          "$ref": "urn:ohc:schema:source:0.1.0-draft#/properties/contemporaneity"
+        },
+        "participants": {
+          "$ref": "urn:ohc:schema:source:0.1.0-draft#/properties/participants"
+        },
+        "containsThirdParty": {
+          "$ref": "urn:ohc:schema:source:0.1.0-draft#/properties/containsThirdParty"
+        },
+        "maxRelease": {
+          "$ref": "urn:ohc:schema:source:0.1.0-draft#/properties/maxRelease"
+        },
+        "custody": {
+          "$ref": "urn:ohc:schema:source:0.1.0-draft#/properties/custody"
+        },
+        "summary": {
+          "$ref": "urn:ohc:schema:source:0.1.0-draft#/properties/summary"
+        },
+        "redactions": {
+          "$ref": "urn:ohc:schema:source:0.1.0-draft#/properties/redactions"
+        },
+        "derivedFrom": {
+          "$ref": "urn:ohc:schema:source:0.1.0-draft#/properties/derivedFrom"
+        },
+        "retention": {
+          "$ref": "urn:ohc:schema:source:0.1.0-draft#/properties/retention"
+        },
+        "origin": {
+          "$ref": "urn:ohc:schema:source:0.1.0-draft#/properties/origin"
+        },
+        "assertedBy": {
+          "$ref": "urn:ohc:schema:source:0.1.0-draft#/properties/assertedBy"
+        },
+        "recordedAt": {
+          "$ref": "urn:ohc:schema:source:0.1.0-draft#/properties/recordedAt"
+        },
+        "purpose": {
+          "$ref": "urn:ohc:schema:source:0.1.0-draft#/properties/purpose"
+        },
+        "formulatedAt": {
+          "$ref": "urn:ohc:schema:source:0.1.0-draft#/properties/formulatedAt"
+        },
+        "supersedes": {
+          "$ref": "urn:ohc:schema:source:0.1.0-draft#/properties/supersedes"
+        },
+        "epistemic": {
+          "$ref": "urn:ohc:schema:source:0.1.0-draft#/properties/epistemic"
+        },
+        "confidence": {
+          "$ref": "urn:ohc:schema:source:0.1.0-draft#/properties/confidence"
+        },
+        "sensitivity": {
+          "$ref": "urn:ohc:schema:source:0.1.0-draft#/properties/sensitivity"
+        },
+        "categories": {
+          "$ref": "urn:ohc:schema:source:0.1.0-draft#/properties/categories"
+        },
+        "handling": {
+          "$ref": "urn:ohc:schema:source:0.1.0-draft#/properties/handling"
+        },
+        "audience": {
+          "$ref": "urn:ohc:schema:source:0.1.0-draft#/properties/audience"
+        },
+        "contexts": {
+          "$ref": "urn:ohc:schema:source:0.1.0-draft#/properties/contexts"
+        },
+        "lang": {
+          "$ref": "urn:ohc:schema:source:0.1.0-draft#/properties/lang"
+        },
+        "importedFrom": {
+          "$ref": "urn:ohc:schema:source:0.1.0-draft#/properties/importedFrom"
+        },
+        "generatedBy": {
+          "$ref": "urn:ohc:schema:source:0.1.0-draft#/properties/generatedBy"
+        },
+        "synthetic": {
+          "$ref": "urn:ohc:schema:source:0.1.0-draft#/properties/synthetic"
+        },
+        "note": {
+          "$ref": "urn:ohc:schema:source:0.1.0-draft#/properties/note"
+        },
+        "content": {
+          "type": "object",
+          "description": "Served content metadata: never the locator or sha256 to grantees.",
+          "properties": {
+            "mediaType": {
+              "$ref": "urn:ohc:schema:source:0.1.0-draft#/properties/content/properties/mediaType"
+            },
+            "size": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "encrypted": {
+              "type": "boolean"
+            }
+          },
+          "additionalProperties": false
+        },
+        "tier": {
+          "description": "The tier at which this Source is served.",
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/release-tiers"
+        },
+        "handle": {
+          "description": "A per-grant HMAC handle (R-V1).",
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Handle"
+        },
+        "excerpts": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "handle",
+              "selector",
+              "text"
+            ],
+            "properties": {
+              "handle": {
+                "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Handle"
+              },
+              "selector": {
+                "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/ServedSelector"
+              },
+              "text": {
+                "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+              }
+            },
+            "additionalProperties": false
+          },
+          "minItems": 1
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

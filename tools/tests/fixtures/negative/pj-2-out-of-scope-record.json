@@ -1,0 +1,35 @@
+{
+  "description": "A projection serving a record the grant does not cover.",
+  "expect": [
+    "EV-7",
+    "PJ-2"
+  ],
+  "form": "package",
+  "postPatches": [
+    {
+      "op": "add",
+      "target": "projection:prj-0001",
+      "path": "/statements/claims",
+      "value": {
+        "id": "c-04",
+        "facet": "state",
+        "predicate": "availability",
+        "text": "Travelling this week."
+      }
+    },
+    {
+      "op": "set",
+      "target": "projection:prj-0001",
+      "path": "/derived/c-04",
+      "value": {
+        "label": "stated",
+        "freshness": "expired",
+        "endorsement": "endorsed",
+        "contested": false,
+        "locked": false,
+        "admission": "active",
+        "computedAt": "2026-10-08T12:00:00Z"
+      }
+    }
+  ]
+}

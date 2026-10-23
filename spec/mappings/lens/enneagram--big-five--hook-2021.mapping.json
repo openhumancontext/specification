@@ -1,0 +1,26 @@
+{
+  "format": "ohc.mapping",
+  "specVersion": "0.1.0-draft",
+  "id": "urn:ohc:mapping:enneagram--big-five--hook-2021",
+  "version": "0.1.0",
+  "bridgeKind": "lens-lens",
+  "from": {
+    "lens": "urn:ohc:lens:enneagram"
+  },
+  "to": {
+    "lens": "urn:ohc:lens:big-five"
+  },
+  "relation": "correlates",
+  "statistic": {
+    "sample": "Review of 104 independent samples; correlation magnitudes not retrieved"
+  },
+  "source": "Hook et al. 2021, Journal of Clinical Psychology, doi:10.1002/jclp.23097 ('theory-consistent relationships' with the Big Five)",
+  "scope": "population-level only; never for converting one person's result",
+  "notIdentity": true,
+  "chainable": false,
+  "rowStatus": "unresolved",
+  "forbiddenUse": "No estimate in either direction until magnitudes are retrieved and reviewed.",
+  "reopenWhen": "Correlation magnitudes are retrieved from the primary studies.",
+  "evidenceGrade": "U",
+  "reviewedAt": "2026-10-09"
+}

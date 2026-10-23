@@ -1,0 +1,50 @@
+name: Proposal
+description: Propose a change to the specification, a vocabulary, a schema or a binding.
+title: '[Proposal] '
+labels: ['proposal', 'needs-triage']
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use English. One independently decidable change per issue.
+        A concrete problem is enough to start; a complete solution is not required.
+        Use synthetic examples only. Never paste a real person's context, records or results.
+  - type: input
+    id: target
+    attributes:
+      label: Draft and affected section
+      placeholder: 'main at commit …; spec/SPECIFICATION.md section …; rule id …'
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem or need
+      description: Who needs this, and what is difficult with the current draft? Give a synthetic example.
+    validations:
+      required: true
+  - type: textarea
+    id: change
+    attributes:
+      label: Proposed change
+      description: Suggested wording, record shape, rule or vocabulary entry; alternatives are welcome.
+  - type: textarea
+    id: compatibility
+    attributes:
+      label: Compatibility
+      description: Effect on stored contexts, projections, grants, bindings and migration; say unknown if unresolved.
+  - type: textarea
+    id: privacy
+    attributes:
+      label: Privacy and consent
+      description: Does the change disclose more, infer more or keep data longer? How does the person stay in control?
+  - type: textarea
+    id: verification
+    attributes:
+      label: Evidence and verification
+      description: Sources, implementation experience, or a check or test that would show the improvement.
+  - type: input
+    id: contributor
+    attributes:
+      label: Contributor
+      description: Person or submitting account; include agent name if applicable.

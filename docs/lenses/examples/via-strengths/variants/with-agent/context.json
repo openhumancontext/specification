@@ -1,0 +1,38 @@
+{
+  "format": "ohc.context",
+  "specVersion": "0.1.0-draft",
+  "id": "urn:ohc:example:bento-agent:context",
+  "version": "2026-10-10.1",
+  "subject": {"id": "urn:ohc:example:bento", "displayName": "Bento (fictional)"},
+  "holder": "subject",
+  "lang": "en",
+  "created": "2026-09-19T10:00:00Z",
+  "conformance": {"level": "L1", "modules": ["core", "governance", "lenses", "practices"], "subjectIsAdult": true},
+  "parties": [
+    {"id": "a-01", "partyKind": "agent", "label": "Reflection companion"}
+  ],
+  "policy": {"admission": "subject-only", "resolver": "returnDialog"},
+  "lenses": [
+    {"id": "urn:ohc:lens:via-strengths", "version": "0.2.0", "sha256": "69a5583d8ef60955575b99cf4d706affc7d24c6d987a23d3ba628820e59ca500"}
+  ],
+  "grants": [
+    {"id": "g-0", "recordedAt": "2026-09-19T10:00:00Z", "grantor": "subject", "grantee": "a-01", "purposes": ["self-reflection"], "scope": {"include": [{"lenses": ["urn:ohc:lens:via-strengths"]}], "exclude": [{"ids": ["as-2"]}]}, "actions": ["suggest"], "mode": "summary", "interpretations": "subject-endorsed", "constraints": {"expiresAt": "2027-03-17T00:00:00Z", "storage": "session", "forwarding": false, "crossContextUse": false, "delegable": false}, "basis": {"legal": "explicit-consent"}, "expressedBy": {"actor": "subject", "at": "2026-09-19T10:00:00Z", "channel": "holder-ui"}, "note": "The companion may suggest this lens and the episode exercise; it never sees my ranking."}
+  ],
+  "lensAdoptions": [
+    {"id": "la-1", "lens": {"id": "urn:ohc:lens:via-strengths", "version": "0.2.0"}, "route": "agent-suggested", "suggestedBy": "a-01", "uses": ["speak-in-lens", "store-results", "interpret", "offer-practices"], "interpretationAuthors": ["subject"], "agentInterpretation": "off", "representationPreference": "via-strengths.ranked-list", "origin": "observed", "assertedBy": "a-01", "underGrant": "g-0", "purpose": "self-reflection", "recordedAt": "2026-09-19T10:05:00Z", "sensitivity": "special", "categories": ["mental-health"], "synthetic": true}
+  ],
+  "assessments": [
+    {"id": "as-2", "lens": {"id": "urn:ohc:lens:via-strengths", "version": "0.2.0"}, "mode": "self-identified", "assessedBy": "subject", "administeredAt": {"start": "2026-09-19", "precision": "day"}, "results": [{"type": "ranking", "constructs": ["via-strengths/curiosity", "via-strengths/kindness", "via-strengths/humor"]}], "validityFlags": ["self-identified-only"], "origin": "declared", "reviewAfter": "P3Y", "assertedBy": "subject", "recordedAt": "2026-09-19T10:20:00Z", "sensitivity": "special", "categories": ["mental-health"], "handling": ["no-infer"], "synthetic": true}
+  ],
+  "reviews": [
+    {"id": "rv-1", "target": "la-1", "action": "admit", "by": "subject", "recordedAt": "2026-09-19T10:10:00Z"},
+    {"id": "rv-2", "target": "pr-2", "action": "admit", "by": "subject", "recordedAt": "2026-09-27T09:30:00Z"}
+  ],
+  "claims": [
+    {"id": "c-1", "facet": "disposition", "predicate": "self-described-tendency", "text": "Curiosity and kindness are what I lean on most, especially at the repair cafe.", "evidence": [{"ref": "as-2", "kind": "subject-statement"}], "origin": "declared", "assertedBy": "subject", "recordedAt": "2026-09-19T10:25:00Z", "horizon": "foundation", "contexts": ["community"], "sensitivity": "special", "categories": ["mental-health"], "synthetic": true}
+  ],
+  "practices": [
+    {"id": "pr-2", "name": "Strengths in one episode a week", "description": "Once a week, pick an episode and note which strengths I used and how.", "practiceKind": "reflection", "source": {"route": "from-agent", "lens": "urn:ohc:lens:via-strengths", "templateId": "via-strengths.strengths-in-episode", "by": "a-01"}, "steps": ["Pick one episode from the week", "Note which strengths I used", "Note one I would like to use more"], "limits": "Skip any week it feels like homework.", "initialStatus": "candidate", "nonClinical": true, "origin": "observed", "assertedBy": "a-01", "underGrant": "g-0", "purpose": "self-reflection", "recordedAt": "2026-09-27T09:00:00Z", "contexts": ["community"], "sensitivity": "special", "categories": ["mental-health"], "synthetic": true}
+  ],
+  "synthetic": true
+}

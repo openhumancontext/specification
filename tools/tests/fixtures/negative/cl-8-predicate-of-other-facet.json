@@ -1,0 +1,15 @@
+{
+  "description": "A predicate that belongs to another facet.",
+  "expect": [
+    "CL-8"
+  ],
+  "form": "single",
+  "patches": [
+    {
+      "op": "set",
+      "target": "claims",
+      "path": "/@c-02/predicate",
+      "value": "pushback"
+    }
+  ]
+}

@@ -1,0 +1,133 @@
+{
+  "format": "ohc.context",
+  "specVersion": "0.1.0-draft",
+  "id": "urn:ohc:example:jovana:context",
+  "version": "2026-09-16.1",
+  "subject": {"id": "urn:ohc:example:jovana", "displayName": "Jovana (fictional)"},
+  "holder": "subject",
+  "lang": "en",
+  "created": "2026-09-03T19:00:00Z",
+  "conformance": {"level": "L1", "modules": ["core", "governance", "lenses", "practices"], "subjectIsAdult": true},
+  "parties": [
+    {"id": "a-01", "partyKind": "agent", "label": "Reflection companion"}
+  ],
+  "policy": {"admission": "subject-only", "resolver": "returnDialog"},
+  "lenses": [
+    {"id": "urn:ohc:lens:cbt", "version": "0.2.0"}
+  ],
+  "synthetic": true,
+  "grants": [
+    {"id": "g-01", "recordedAt": "2026-09-03T19:05:00Z", "grantor": "subject", "grantee": "a-01",
+     "purposes": ["self-reflection"],
+     "scope": {"include": [{"lenses": ["urn:ohc:lens:cbt"]}, {"kinds": ["Episode"], "contexts": ["work"]}]},
+     "actions": ["read", "suggest", "infer"], "mode": "full", "interpretations": "all", "maxSourceTier": "none",
+     "constraints": {"expiresAt": "2027-03-01T19:05:00Z", "storage": "session", "forwarding": false,
+                     "crossContextUse": false, "delegable": false},
+     "reviewCadence": "P7D", "basis": {"legal": "explicit-consent"},
+     "expressedBy": {"actor": "subject", "at": "2026-09-03T19:05:00Z", "channel": "holder-ui"},
+     "note": "Thought records and readings of work situations only. No labels for my thoughts."}
+  ],
+  "lensAdoptions": [
+    {"id": "la-01", "lens": {"id": "urn:ohc:lens:cbt", "version": "0.2.0"}, "route": "agent-suggested",
+     "suggestedBy": "a-01", "confidentiality": "none",
+     "uses": ["speak-in-lens", "offer-practices", "store-results", "interpret"],
+     "interpretationAuthors": ["subject", "a-01"], "agentInterpretation": "ask-first",
+     "representationPreference": "cbt.thought-record",
+     "origin": "declared", "assertedBy": "subject", "recordedAt": "2026-09-03T19:00:00Z",
+     "sensitivity": "special", "categories": ["mental-health"], "synthetic": true}
+  ],
+  "sources": [
+    {"id": "src-01", "sourceKind": "note", "origin": "declared", "assertedBy": "subject",
+     "recordedAt": "2026-09-08T21:00:00Z",
+     "content": {"locator": {"vaultPath": "vault/60/60c2313c1c1e4bd527ea894721a14ac04415d67f038538164558f77466802cef.md"},
+                 "sha256": "60c2313c1c1e4bd527ea894721a14ac04415d67f038538164558f77466802cef",
+                 "mediaType": "text/markdown", "size": 324},
+     "capturedAt": "2026-09-08T20:40:00Z", "authorship": {"author": "subject"}, "contemporaneity": "contemporaneous",
+     "maxRelease": "index",
+     "summary": {"text": "My thought record for Tuesday.", "authoredBy": "subject",
+                 "recordedAt": "2026-09-08T21:00:00Z", "method": "subject-written"},
+     "retention": {"eraseOnRequest": true}, "sensitivity": "special", "categories": ["mental-health"],
+     "contexts": ["work"], "synthetic": true}
+  ],
+  "episodes": [
+    {"id": "ep-01", "origin": "declared", "assertedBy": "subject", "recordedAt": "2026-09-08T20:30:00Z",
+     "title": "Floor-plan draft kept back", "occurred": {"start": "2026-09-08", "precision": "day"},
+     "accounts": [
+       {"narrator": "subject", "narratedAt": "2026-09-08T20:30:00Z", "addedAt": "2026-09-08T20:30:00Z",
+        "accountKind": "in-the-moment",
+        "happened": "The floor-plan draft was due to my team lead on Tuesday. I kept it for a third day.",
+        "experienced": "A knot in my stomach every time I opened the send window.",
+        "didOrTried": "Changed the stair detail again. Did not send.",
+        "understandingThen": "The draft was not ready."}],
+     "selection": {"selectedBy": "subject", "reason": "subject-chose"}, "contexts": ["work"], "synthetic": true},
+    {"id": "ep-02", "origin": "declared", "assertedBy": "subject", "recordedAt": "2026-09-12T13:00:00Z",
+     "title": "Section draft sent", "occurred": {"start": "2026-09-12", "precision": "day"},
+     "accounts": [
+       {"narrator": "subject", "narratedAt": "2026-09-12T13:00:00Z", "addedAt": "2026-09-12T13:00:00Z",
+        "accountKind": "in-the-moment",
+        "happened": "I wrote a thought record before lunch and sent the section draft with two open questions marked.",
+        "didOrTried": "Ten minutes of writing, then sent it.",
+        "understandingThen": "Open questions are part of a draft."}],
+     "selection": {"selectedBy": "subject", "reason": "subject-chose"}, "contexts": ["work"], "synthetic": true}
+  ],
+  "assessments": [
+    {"id": "as-01", "lens": {"id": "urn:ohc:lens:cbt", "version": "0.2.0"}, "mode": "self-identified",
+     "assessedBy": "subject", "administeredAt": {"start": "2026-09-08", "precision": "day"},
+     "results": [
+       {"type": "thought-record",
+        "situation": "Draft ready to send to my team lead on Tuesday afternoon.",
+        "thought": "If she sees the stair detail she will think I cannot do this job.",
+        "emotion": "Dread, about 70 out of 100.",
+        "behavior": "Kept the draft and reworked the stair detail.",
+        "alternative": "She asked for a draft, not a finished plan. Early comments are cheaper for both of us."}],
+     "validityFlags": ["self-identified-only"], "source": "src-01", "derivedFrom": ["ep-01"],
+     "reviewAfter": "P3M", "origin": "declared", "assertedBy": "subject", "recordedAt": "2026-09-08T21:05:00Z",
+     "sensitivity": "special", "categories": ["mental-health"], "contexts": ["work"], "synthetic": true}
+  ],
+  "claims": [
+    {"id": "c-01", "facet": "disposition", "predicate": "self-described-tendency",
+     "text": "When I expect a draft to be criticised, I hold it back and keep reworking details.",
+     "origin": "declared", "assertedBy": "subject", "recordedAt": "2026-09-08T21:10:00Z", "horizon": "focus",
+     "derivedFrom": ["as-01"], "contexts": ["work"], "synthetic": true}
+  ],
+  "interpretations": [
+    {"id": "in-01", "about": ["ep-01"], "stance": "lens-reading", "lens": {"id": "urn:ohc:lens:cbt", "version": "0.2.0"},
+     "adoption": "la-01",
+     "text": "An expectation that the team lead would judge her ability by one detail may have come before the draft was held back.",
+     "causal": "hypothesized", "origin": "inferred", "assertedBy": "a-01", "recordedAt": "2026-09-09T08:00:00Z",
+     "underGrant": "g-01", "purpose": "self-reflection", "epistemic": "hypothesis",
+     "grounds": [{"ref": "as-01", "kind": "instrument"}, {"ref": "ep-01", "kind": "evidence"}],
+     "alternatives": [
+       {"text": "The stair detail really was open: the structural figures arrived late.", "kind": "informational"},
+       {"text": "It was the third late evening that week.", "kind": "physiological"}],
+     "limits": "One episode, one lens and one thought record; a self-reflection aid, not a clinical reading.",
+     "sensitivity": "special", "categories": ["mental-health"], "contexts": ["work"], "synthetic": true}
+  ],
+  "proposals": [
+    {"id": "prop-01", "proposer": "a-01", "recordedAt": "2026-09-09T08:00:00Z", "underGrant": "g-01",
+     "purpose": "self-reflection", "items": ["in-01"],
+     "rationale": "One reading of Tuesday's draft, with two other explanations to weigh.",
+     "expiresAt": "2026-10-09T08:00:00Z", "presentation": {"channel": "agent-dialog", "askedAt": "2026-09-09T07:58:00Z"}}
+  ],
+  "practices": [
+    {"id": "pr-01", "name": "Thought record before I hold a draft back",
+     "description": "Ten minutes of writing before I decide to keep a draft another day.",
+     "practiceKind": "writing",
+     "source": {"route": "from-lens", "lens": "urn:ohc:lens:cbt", "templateId": "cbt.thought-record", "by": "a-01"},
+     "steps": ["One line: the situation", "What went through my mind", "The feeling and how strong, 0 to 100", "What I did", "What else could be true"],
+     "duration": "PT10M", "limits": "Not to talk myself out of a real problem in the drawing.",
+     "initialStatus": "in-use", "nonClinical": true, "origin": "declared", "assertedBy": "subject",
+     "recordedAt": "2026-09-10T19:00:00Z", "sensitivity": "special", "categories": ["mental-health"],
+     "contexts": ["work"], "synthetic": true}
+  ],
+  "outcomes": [
+    {"id": "oc-01", "about": {"practice": "pr-01"}, "episode": "ep-02", "result": "helped", "origin": "declared",
+     "assertedBy": "subject", "recordedAt": "2026-09-12T13:05:00Z", "contexts": ["work"], "synthetic": true}
+  ],
+  "reviews": [
+    {"id": "rv-01", "target": "la-01", "action": "admit", "by": "subject", "recordedAt": "2026-09-03T19:01:00Z"},
+    {"id": "rv-02", "target": "in-01", "action": "partially-endorse", "by": "subject",
+     "recordedAt": "2026-09-16T19:00:00Z",
+     "endorsedPart": "I expected her to judge me by the stair detail."}
+  ]
+}

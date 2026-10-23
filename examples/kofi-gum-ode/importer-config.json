@@ -1,0 +1,6 @@
+{
+  "subjectId": "urn:ohc:example:kofi",
+  "gumInstanceId": "urn:ohc:example:kofi:gum",
+  "digestOnly": false,
+  "subjectIsAdult": true
+}

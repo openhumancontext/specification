@@ -1,0 +1,10 @@
+BFI-2 (Big Five Inventory-2) · taken 2026-03-02 · norm group (blank)
+   Openness                     raw 4.1
+   Conscientiousness            raw 3.9
+   Extraversion                 raw 2.6
+   Agreeableness                raw 3.7
+   Neuroticism / Negative Emotionality raw 2.4
+As on your report? y yes · t type or fix the numbers · n stop y
+Result as-nz95: Openness, Conscientiousness, Extraversion, Agreeableness, Neuroticism / Negative Emotionality
+1 it fits · 2 parts fit · 3 not sure · 4 I dispute it · 5 it doesn't fit · 6 later: 6
+Brought: as-nz95

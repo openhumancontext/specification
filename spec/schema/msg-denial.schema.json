@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:ohc:schema:msg-denial:0.1.0-draft",
+  "title": "OHC denial message",
+  "description": "EXPERIMENTAL. Holder to agent: a refusal. The code never depends on the data (H-5).",
+  "type": "object",
+  "required": [
+    "format",
+    "specVersion",
+    "id",
+    "from",
+    "to",
+    "at",
+    "code"
+  ],
+  "properties": {
+    "format": {
+      "const": "ohc.experimental.denial"
+    },
+    "specVersion": {
+      "$ref": "urn:ohc:schema:message:0.1.0-draft#/properties/specVersion"
+    },
+    "id": {
+      "$ref": "urn:ohc:schema:message:0.1.0-draft#/properties/id"
+    },
+    "from": {
+      "$ref": "urn:ohc:schema:message:0.1.0-draft#/properties/from"
+    },
+    "to": {
+      "$ref": "urn:ohc:schema:message:0.1.0-draft#/properties/to"
+    },
+    "at": {
+      "$ref": "urn:ohc:schema:message:0.1.0-draft#/properties/at"
+    },
+    "inReplyTo": {
+      "$ref": "urn:ohc:schema:message:0.1.0-draft#/properties/inReplyTo"
+    },
+    "code": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/reason-codes"
+    },
+    "retryAfter": {
+      "anyOf": [
+        {
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/DateTime"
+        },
+        {
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Duration"
+        }
+      ]
+    }
+  },
+  "additionalProperties": false
+}

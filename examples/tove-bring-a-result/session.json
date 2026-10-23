@@ -1,0 +1,19 @@
+{
+  "seed": "tove-example",
+  "steps": [
+    {"run": ["setup", "--subject", "urn:ohc:example:tove", "--synthetic", "--at", "2026-09-15T09:05:00Z"],
+     "answers": ["y", "Give me the decision first, in one paragraph."]},
+    {"run": ["bring", "--transcript", "inputs/bfi-2-score-page.txt", "--instrument", "urn:ohc:instrument:bfi-2",
+             "--report", "inputs/bfi-2-report-standin.pdf", "--at", "2026-10-12T09:05:00Z"],
+     "answers": ["y", "6"], "window": "expected/window-1-bring.txt"},
+    {"run": ["review", "as-nz95", "--at", "2026-10-12T09:08:00Z"],
+     "answers": ["2", "1,2,4,5", "3", "I am quieter in groups than this says.",
+                 "When you lay out options, show me the evidence behind each one.", "y"],
+     "window": "expected/window-2-review.txt"},
+    {"run": ["agree", "--grantee", "a-01", "--purpose", "assist-personal", "--at", "2026-10-12T09:18:00Z"],
+     "answers": ["ok"], "window": "expected/window-3-agree.txt"},
+    {"run": ["serve", "--for", "a-01", "--purpose", "assist-personal", "--render", "agent", "--id", "prj-0001",
+             "--now", "2026-10-13T07:00:00Z", "--keep"],
+     "stdout": "expected/session-start.txt"}
+  ]
+}

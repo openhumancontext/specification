@@ -1,0 +1,15 @@
+{
+  "description": "A Party whose id prefix does not match its partyKind.",
+  "expect": [
+    "PA-1"
+  ],
+  "form": "single",
+  "patches": [
+    {
+      "op": "set",
+      "target": "manifest",
+      "path": "/parties/1/partyKind",
+      "value": "agent"
+    }
+  ]
+}

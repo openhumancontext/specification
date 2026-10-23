@@ -1,0 +1,114 @@
+{
+  "format": "ohc.lens",
+  "specVersion": "0.1.0-draft",
+  "id": "urn:ohc:lens:contemplative-observation",
+  "version": "0.2.0",
+  "name": {
+    "en": "Contemplative observation (stub)",
+    "ru": "Созерцательное наблюдение (заготовка)"
+  },
+  "descriptorStatus": "stub",
+  "kind": "contemplative",
+  "summary": {
+    "en": "Observing experience without fixing on a stable self. No tradition is named. Listed so that the perspective can be named; not yet described.",
+    "ru": "Наблюдение за опытом без фиксации на устойчивом «я». Никакая традиция не называется. Включено, чтобы перспективу можно было назвать; описание ещё не составлено."
+  },
+  "constructs": [],
+  "mentalModel": {
+    "summary": "Experience can be observed as it arises, without fixing it to a stable self-image.",
+    "assumptions": [
+      "this stub records the perspective only",
+      "no tradition is named or represented"
+    ],
+    "stance": "observational and non-fixing",
+    "unitOfAnalysis": "experience as it arises",
+    "attendsTo": [
+      "how experience arises and changes",
+      "what happens when it is not fixed to a self-image"
+    ],
+    "howChangeHappens": "Not described in this stub.",
+    "languageGuidance": "Offer the question only as one option; never speak for any tradition.",
+    "riskNotes": [
+      "Contemplative practice belongs with the person's own teachers and traditions",
+      "Naming a living tradition requires its holders' consent (LN-11)"
+    ],
+    "exploratoryQuestions": [
+      "What changes when experience is observed without fixing on a stable self?"
+    ],
+    "agentPosture": {
+      "do": [
+        "mention the perspective only when the person asks for ways of looking",
+        "use the person's own words"
+      ],
+      "dont": [
+        "run exercises from it"
+      ]
+    },
+    "helperMustNot": [
+      "present itself as practising the approach"
+    ],
+    "doesNotClaim": [
+      "any evidence assessment",
+      "a complete description of the approach"
+    ]
+  },
+  "toolkit": [],
+  "representations": [],
+  "instruments": [],
+  "adoption": {
+    "routes": [
+      "self-chosen",
+      "agent-suggested",
+      "inherited-from-practice"
+    ],
+    "suggestionRequires": [
+      "the person asked for ways of looking at their experience"
+    ]
+  },
+  "evidence": {
+    "measurementTier": "not-assessed",
+    "practiceTier": {
+      "clinicianDelivered": "not-assessed",
+      "selfGuided": "not-assessed",
+      "agentOffered": "not-assessed"
+    },
+    "ontologicalStatus": "practice-frame",
+    "citations": [],
+    "reviewedAt": "2026-10-09",
+    "notes": "Stub: listed so that the perspective can be named; not yet described or reviewed."
+  },
+  "supports": [
+    "naming the perspective the person uses"
+  ],
+  "doesNotEstablish": [
+    "anything about the person",
+    "the efficacy of the approach"
+  ],
+  "ip": {
+    "conceptStatus": "free-concept",
+    "marks": [],
+    "itemsLicence": "not applicable",
+    "scoring": "none",
+    "restrictions": [],
+    "registryListing": "ok",
+    "legalReviewNeeded": true
+  },
+  "useLimits": {
+    "crossLensMapping": "not-allowed"
+  },
+  "defaults": {
+    "sensitivity": "special",
+    "categories": [
+      "mental-health"
+    ],
+    "reviewAfter": "on-change"
+  },
+  "mappings": [],
+  "playbooks": [
+    "urn:ohc:playbook:contemplative-observation-basic"
+  ],
+  "sources": [],
+  "descriptorAuthors": [
+    "OHC editors"
+  ]
+}

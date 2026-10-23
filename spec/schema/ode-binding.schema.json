@@ -1,0 +1,457 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:ohc:schema:ode-binding:0.1.0-draft",
+  "title": "OHC ODE binding (ohc.binding)",
+  "description": "OHC binding revision 0.2.0 for ODE 0.4. Extension values and editing fragments use this schema; the checker extracts these fields from full ODE manifests and checks OB-1 through OB-4. The durable dependency is the Grant, never a projection. Current authorization is evaluated by the holder at use.",
+  "type": "object",
+  "properties": {
+    "subjectAlias": {
+      "description": "Pairwise for the employee's grantee Party.",
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Alias"
+    },
+    "partyRef": {
+      "description": "The ODE Party (person). Not identity: bridge row not-identity.",
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/OdeRef"
+    },
+    "grantRef": {
+      "type": "object",
+      "required": [
+        "id"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/LocalId"
+        },
+        "context": {
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/URI"
+        }
+      },
+      "additionalProperties": false,
+      "description": "The Grant the employee reads under. It is the package's durable dependency; projections are fetched at run time."
+    },
+    "grantVersion": {
+      "description": "The grant's recordedAt. Grants are immutable, so this pins the permission, not a disclosure.",
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/DateTime"
+    },
+    "locator": {
+      "description": "Where the employee asks the holder for projections.",
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/URI"
+    },
+    "mode": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/grant.modes"
+    },
+    "purpose": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/purposes"
+    },
+    "facets": {
+      "type": "array",
+      "items": {
+        "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/claim-facets.facets"
+      },
+      "minItems": 1
+    },
+    "prohibitedPurposes": {
+      "description": "All 13 prohibited purposes. Lens guidance grants no permissions.",
+      "type": "array",
+      "items": {
+        "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/prohibited-purposes"
+      },
+      "allOf": [
+        {
+          "contains": {
+            "const": "personnel-selection"
+          }
+        },
+        {
+          "contains": {
+            "const": "task-allocation"
+          }
+        },
+        {
+          "contains": {
+            "const": "performance-evaluation"
+          }
+        },
+        {
+          "contains": {
+            "const": "promotion-decision"
+          }
+        },
+        {
+          "contains": {
+            "const": "cross-person-ranking"
+          }
+        },
+        {
+          "contains": {
+            "const": "persuasion-targeting"
+          }
+        },
+        {
+          "contains": {
+            "const": "advertising"
+          }
+        },
+        {
+          "contains": {
+            "const": "political-profiling"
+          }
+        },
+        {
+          "contains": {
+            "const": "credit-or-insurance-decision"
+          }
+        },
+        {
+          "contains": {
+            "const": "emotion-recognition-at-work-or-education"
+          }
+        },
+        {
+          "contains": {
+            "const": "model-training"
+          }
+        },
+        {
+          "contains": {
+            "const": "sale-or-transfer"
+          }
+        },
+        {
+          "contains": {
+            "const": "significant-automated-decision"
+          }
+        }
+      ]
+    },
+    "checkAtUse": {
+      "const": true
+    },
+    "manifest": {
+      "type": "object",
+      "description": "The ODE manifest members the binding needs.",
+      "required": [
+        "requiredExtensions"
+      ],
+      "properties": {
+        "requiredExtensions": {
+          "type": "array",
+          "items": {
+            "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+          },
+          "contains": {
+            "const": "ohc.binding"
+          }
+        },
+        "standards": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "id",
+              "url",
+              "revision",
+              "required"
+            ],
+            "properties": {
+              "id": {
+                "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+              },
+              "url": {
+                "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/URI"
+              },
+              "revision": {
+                "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+              },
+              "required": {
+                "type": "boolean"
+              }
+            },
+            "additionalProperties": false
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "externalDependencies": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "objectId",
+          "version",
+          "reason"
+        ],
+        "properties": {
+          "objectId": {
+            "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text",
+            "description": "An external dependency; OB-2 requires exactly one matching <contextId>#<grantId> at grantVersion. Other ODE dependencies may coexist."
+          },
+          "version": {
+            "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text",
+            "description": "The grant's recordedAt."
+          },
+          "reason": {
+            "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+          },
+          "locator": {
+            "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/URI"
+          },
+          "digest": {
+            "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Digest"
+          }
+        },
+        "additionalProperties": false
+      },
+      "minItems": 1
+    },
+    "extensions": {
+      "type": "object",
+      "required": [
+        "ohc.binding"
+      ],
+      "properties": {
+        "ohc.binding": {
+          "$ref": "#/$defs/Binding"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false,
+  "oneOf": [
+    {
+      "title": "extension value",
+      "required": [
+        "subjectAlias",
+        "grantRef",
+        "grantVersion",
+        "mode",
+        "purpose",
+        "prohibitedPurposes",
+        "checkAtUse"
+      ],
+      "not": {
+        "anyOf": [
+          {
+            "required": [
+              "manifest"
+            ]
+          },
+          {
+            "required": [
+              "externalDependencies"
+            ]
+          },
+          {
+            "required": [
+              "extensions"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "title": "ODE package fragment",
+      "required": [
+        "manifest",
+        "externalDependencies",
+        "extensions"
+      ],
+      "not": {
+        "anyOf": [
+          {
+            "required": [
+              "subjectAlias"
+            ]
+          },
+          {
+            "required": [
+              "partyRef"
+            ]
+          },
+          {
+            "required": [
+              "grantRef"
+            ]
+          },
+          {
+            "required": [
+              "grantVersion"
+            ]
+          },
+          {
+            "required": [
+              "locator"
+            ]
+          },
+          {
+            "required": [
+              "mode"
+            ]
+          },
+          {
+            "required": [
+              "purpose"
+            ]
+          },
+          {
+            "required": [
+              "facets"
+            ]
+          },
+          {
+            "required": [
+              "prohibitedPurposes"
+            ]
+          },
+          {
+            "required": [
+              "checkAtUse"
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "$defs": {
+    "Binding": {
+      "type": "object",
+      "description": "The ohc.binding extension value: the grant the employee reads under, never a projection.",
+      "required": [
+        "subjectAlias",
+        "grantRef",
+        "grantVersion",
+        "mode",
+        "purpose",
+        "prohibitedPurposes",
+        "checkAtUse"
+      ],
+      "properties": {
+        "subjectAlias": {
+          "description": "Pairwise for the employee's grantee Party.",
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Alias"
+        },
+        "partyRef": {
+          "description": "The ODE Party (person). Not identity: bridge row not-identity.",
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/OdeRef"
+        },
+        "grantRef": {
+          "type": "object",
+          "required": [
+            "id"
+          ],
+          "properties": {
+            "id": {
+              "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/LocalId"
+            },
+            "context": {
+              "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/URI"
+            }
+          },
+          "additionalProperties": false,
+          "description": "The Grant the employee reads under. It is the package's durable dependency; projections are fetched at run time."
+        },
+        "grantVersion": {
+          "description": "The grant's recordedAt. Grants are immutable, so this pins the permission, not a disclosure.",
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/DateTime"
+        },
+        "locator": {
+          "description": "Where the employee asks the holder for projections.",
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/URI"
+        },
+        "mode": {
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/grant.modes"
+        },
+        "purpose": {
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/purposes"
+        },
+        "facets": {
+          "type": "array",
+          "items": {
+            "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/claim-facets.facets"
+          },
+          "minItems": 1
+        },
+        "prohibitedPurposes": {
+          "description": "All 13 prohibited purposes. Lens guidance grants no permissions.",
+          "type": "array",
+          "items": {
+            "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/prohibited-purposes"
+          },
+          "allOf": [
+            {
+              "contains": {
+                "const": "personnel-selection"
+              }
+            },
+            {
+              "contains": {
+                "const": "task-allocation"
+              }
+            },
+            {
+              "contains": {
+                "const": "performance-evaluation"
+              }
+            },
+            {
+              "contains": {
+                "const": "promotion-decision"
+              }
+            },
+            {
+              "contains": {
+                "const": "cross-person-ranking"
+              }
+            },
+            {
+              "contains": {
+                "const": "persuasion-targeting"
+              }
+            },
+            {
+              "contains": {
+                "const": "advertising"
+              }
+            },
+            {
+              "contains": {
+                "const": "political-profiling"
+              }
+            },
+            {
+              "contains": {
+                "const": "credit-or-insurance-decision"
+              }
+            },
+            {
+              "contains": {
+                "const": "emotion-recognition-at-work-or-education"
+              }
+            },
+            {
+              "contains": {
+                "const": "model-training"
+              }
+            },
+            {
+              "contains": {
+                "const": "sale-or-transfer"
+              }
+            },
+            {
+              "contains": {
+                "const": "significant-automated-decision"
+              }
+            }
+          ]
+        },
+        "checkAtUse": {
+          "const": true
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

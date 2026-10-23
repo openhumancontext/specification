@@ -1,0 +1,107 @@
+{
+  "format": "ohc.playbook",
+  "specVersion": "0.1.0-draft",
+  "id": "urn:ohc:playbook:needs-grid-basic",
+  "version": "0.1.0",
+  "name": {
+    "en": "Needs grid: basic ways of working",
+    "ru": "Сетка потребностей: базовые способы работы"
+  },
+  "lenses": [
+    "urn:ohc:lens:needs-grid"
+  ],
+  "author": "OHC editors",
+  "sources": [],
+  "licence": "Apache-2.0",
+  "situations": [
+    {
+      "id": "plan-week",
+      "when": {
+        "en": "Planning the week ahead.",
+        "ru": "Планирование предстоящей недели."
+      },
+      "use": {
+        "en": [
+          "Offer the grid review: which cells are empty, stale or contested?",
+          "Ask which focus the week should serve.",
+          "Let them decide what to update; write nothing into the grid yourself."
+        ],
+        "ru": [
+          "Предложите просмотр сетки: какие ячейки пусты, устарели или спорны?",
+          "Спросите, на какой фокус должна работать неделя.",
+          "Пусть человек решит, что обновить; сами в сетку ничего не пишите."
+        ]
+      },
+      "toolkit": [
+        "needs-grid.review"
+      ],
+      "results": [
+        "needs-grid/column/focus",
+        "needs-grid/row/want",
+        "needs-grid/row/need"
+      ],
+      "watchFor": {
+        "en": "Do not fill cells for them.",
+        "ru": "Не заполняйте ячейки за человека."
+      }
+    },
+    {
+      "id": "after-setback",
+      "when": {
+        "en": "After a setback.",
+        "ru": "После неудачи."
+      },
+      "use": {
+        "en": [
+          "Ask what happened, in their words.",
+          "If they want, look together at what they have and can do, and at what they lack or cannot do.",
+          "Ask what they want to update, leave as it is or keep empty."
+        ],
+        "ru": [
+          "Спросите, что произошло, — словами человека.",
+          "Если человек хочет, посмотрите вместе на строки «есть / могу» и «нет / не могу».",
+          "Спросите, что он хочет обновить, оставить как есть или оставить пустым."
+        ]
+      },
+      "toolkit": [
+        "needs-grid.review"
+      ],
+      "results": [
+        "needs-grid/row/have-can",
+        "needs-grid/row/lack-cant"
+      ],
+      "watchFor": {
+        "en": "Do not infer needs from other cells.",
+        "ru": "Не выводите потребности из других ячеек."
+      }
+    },
+    {
+      "id": "choose-between-options",
+      "when": {
+        "en": "Choosing between options.",
+        "ru": "Выбор между вариантами."
+      },
+      "use": {
+        "en": [
+          "Lay out the options, in their words.",
+          "Ask which option serves what they want and what they need, as their grid shows it.",
+          "Note where wanting and needing diverge, and leave the choice to them."
+        ],
+        "ru": [
+          "Разложите варианты словами человека.",
+          "Спросите, какой вариант служит тому, чего человек хочет и что ему нужно, — как это показывает его сетка.",
+          "Отметьте, где «хочу» и «нужно» расходятся, и оставьте выбор человеку."
+        ]
+      },
+      "toolkit": [],
+      "results": [
+        "needs-grid/row/want",
+        "needs-grid/row/need"
+      ],
+      "watchFor": {
+        "en": "Respect cells left empty on purpose; the grid is not an assessment.",
+        "ru": "Уважайте ячейки, оставленные пустыми намеренно; сетка — не оценка."
+      }
+    }
+  ]
+}

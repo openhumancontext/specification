@@ -1,0 +1,137 @@
+{
+  "format": "ohc.context",
+  "specVersion": "0.1.0-draft",
+  "id": "urn:ohc:example:wren:human-design",
+  "version": "2026-10-10.1",
+  "subject": {"id": "urn:ohc:example:wren", "displayName": "Wren (fictional)"},
+  "holder": "subject",
+  "lang": "en",
+  "created": "2026-09-09T20:30:00Z",
+  "conformance": {"level": "L1", "modules": ["core", "governance", "lenses"], "subjectIsAdult": true},
+  "parties": [
+    {"id": "s-01", "partyKind": "software", "label": "Chart app"},
+    {"id": "a-01", "partyKind": "agent", "label": "Reflection companion"},
+    {"id": "a-02", "partyKind": "agent", "label": "Personal assistant"}
+  ],
+  "policy": {"admission": "subject-only", "resolver": "returnDialog"},
+  "lenses": [
+    {"id": "urn:ohc:lens:human-design", "version": "0.2.0", "sha256": "8348d08e660ee9a92c8d31d6400f92a80f5b1fe491d299b9101c2cd9fb819d6e"}
+  ],
+  "synthetic": true,
+  "sources": [
+    {"id": "src-01", "sourceKind": "instrument-report",
+     "content": {"locator": {"vaultPath": "vault/80/802b521730c95985f71e8a4a9a8f5611ceaf3e5e34df5c4dff595e255d9c5d68.json"},
+                 "sha256": "802b521730c95985f71e8a4a9a8f5611ceaf3e5e34df5c4dff595e255d9c5d68",
+                 "mediaType": "application/json", "size": 152},
+     "capturedAt": "2026-03-02T21:10:00Z", "authorship": {"author": "s-01"}, "contemporaneity": "contemporaneous",
+     "maxRelease": "index", "retention": {"eraseOnRequest": true},
+     "origin": "imported", "assertedBy": "subject", "recordedAt": "2026-09-12T19:00:00Z",
+     "formulatedAt": "2026-03-02T21:10:00Z",
+     "importedFrom": {"system": "example-chart-app", "systemVersion": "5.1", "importedAt": "2026-09-12T19:00:00Z", "run": "e-01"},
+     "sensitivity": "special", "categories": ["birth-data"], "synthetic": true}
+  ],
+  "claims": [
+    {"id": "c-01", "facet": "fact", "predicate": "birth-data",
+     "text": "Born 2 November 1988 at 23:15 local time in Utrecht.",
+     "origin": "imported", "assertedBy": "subject", "recordedAt": "2026-09-12T19:00:00Z",
+     "formulatedAt": "2026-03-02T21:10:00Z",
+     "importedFrom": {"system": "example-chart-app", "systemVersion": "5.1", "importedAt": "2026-09-12T19:00:00Z", "run": "e-01"},
+     "horizon": "foundation", "sensitivity": "sensitive", "categories": ["birth-data"], "handling": ["person-only"],
+     "synthetic": true},
+    {"id": "c-02", "facet": "identity", "predicate": "self-description",
+     "text": "In this system's terms I decide by a quiet first yes or no in the moment; I trust that more than long lists.",
+     "origin": "declared", "assertedBy": "subject", "recordedAt": "2026-09-14T20:00:00Z", "horizon": "foundation",
+     "derivedFrom": ["as-01"], "epistemic": "frame-relative", "handling": ["no-quote-back", "no-infer"],
+     "synthetic": true},
+    {"id": "c-03", "facet": "preference", "predicate": "decision-brief",
+     "text": "For a big request, give me the main point in one line and let me answer the same day; skip the long pros-and-cons list.",
+     "origin": "declared", "assertedBy": "subject", "recordedAt": "2026-09-14T20:05:00Z", "horizon": "foundation",
+     "synthetic": true}
+  ],
+  "lensAdoptions": [
+    {"id": "la-01", "lens": {"id": "urn:ohc:lens:human-design", "version": "0.2.0"}, "route": "imported",
+     "uses": ["speak-in-lens", "store-results", "interpret"],
+     "interpretationAuthors": ["subject"], "agentInterpretation": "off",
+     "representationPreference": "human-design.chart",
+     "origin": "derived",
+     "generatedBy": {"software": "example-chart-import", "version": "0.1.0", "method": "adopt the lens of the imported chart"},
+     "derivedFrom": ["src-01"],
+     "importedFrom": {"system": "example-chart-app", "systemVersion": "5.1", "importedAt": "2026-09-12T19:00:00Z", "run": "e-01"},
+     "assertedBy": "subject", "recordedAt": "2026-09-12T19:00:00Z",
+     "sensitivity": "special", "categories": ["birth-data"], "synthetic": true}
+  ],
+  "assessments": [
+    {"id": "as-01", "lens": {"id": "urn:ohc:lens:human-design", "version": "0.2.0"},
+     "mode": "computed-from-birth-data", "administeredAt": {"start": "2026-03-02", "precision": "day"},
+     "results": [
+       {"type": "frame-attributes",
+        "attributes": {
+          "human-design/type": "projector",
+          "human-design/authority": "splenic",
+          "human-design/profile": "2/4",
+          "human-design/centres": {"defined": ["spleen", "throat", "ajna"]}},
+        "computedFrom": "c-01",
+        "engine": {"name": "example-chart-app", "version": "5.1"}}],
+     "source": "src-01",
+     "origin": "derived",
+     "generatedBy": {"software": "example-chart-import", "version": "0.1.0", "method": "copy type, authority, profile and defined centres from the app export"},
+     "derivedFrom": ["c-01", "src-01"],
+     "importedFrom": {"system": "example-chart-app", "systemVersion": "5.1", "importedAt": "2026-09-12T19:00:00Z", "run": "e-01"},
+     "formulatedAt": "2026-03-02T21:10:00Z",
+     "assertedBy": "subject", "recordedAt": "2026-09-12T19:00:00Z",
+     "epistemic": "frame-relative", "sensitivity": "special", "categories": ["birth-data"],
+     "handling": ["no-infer", "no-quote-back"], "synthetic": true}
+  ],
+  "episodes": [
+    {"id": "ep-01", "occurred": {"start": "2026-09-01", "precision": "day"},
+     "accounts": [
+       {"narrator": "subject", "narratedAt": "2026-09-09T21:00:00Z", "addedAt": "2026-09-09T21:00:00Z",
+        "accountKind": "first-narrative",
+        "happened": "At the first meeting I said yes to leading the neighbourhood garden project; a week later I stepped back.",
+        "didOrTried": "Wrote to the group and offered to help with watering instead.",
+        "understandingThen": "I thought I had simply taken on too much."}],
+     "origin": "declared", "assertedBy": "subject", "recordedAt": "2026-09-09T21:00:00Z",
+     "sensitivity": "sensitive", "contexts": ["community"], "synthetic": true}
+  ],
+  "interpretations": [
+    {"id": "in-01", "about": ["ep-01"], "stance": "lens-reading",
+     "lens": {"id": "urn:ohc:lens:human-design", "version": "0.2.0"},
+     "text": "In this system's terms I answered from the pressure of the room, not from my own first sense in the moment.",
+     "grounds": [{"ref": "as-01", "kind": "instrument"}],
+     "alternatives": [
+       {"text": "The meeting ran late and everyone was waiting for a volunteer.", "kind": "situational"},
+       {"text": "The project budget was cut the following week.", "kind": "external"}],
+     "origin": "declared", "assertedBy": "subject", "recordedAt": "2026-09-16T09:00:00Z",
+     "epistemic": "frame-relative", "sensitivity": "special", "categories": ["birth-data"],
+     "handling": ["no-quote-back"], "contexts": ["community"], "synthetic": true}
+  ],
+  "reviews": [
+    {"id": "rv-01", "target": "la-01", "action": "admit", "by": "subject", "recordedAt": "2026-09-13T08:00:00Z"},
+    {"id": "rv-02", "target": "as-01", "action": "partially-endorse", "by": "subject", "recordedAt": "2026-09-13T08:05:00Z",
+     "endorsedPart": "The authority and the profile speak to me; I leave the type aside."}
+  ],
+  "grants": [
+    {"id": "g-01", "recordedAt": "2026-09-15T10:00:00Z", "grantor": "subject", "grantee": "a-01",
+     "purposes": ["self-reflection"],
+     "scope": {"include": [{"lenses": ["urn:ohc:lens:human-design"]}, {"ids": ["ep-01"]}]},
+     "actions": ["read"], "mode": "summary", "interpretations": "subject-endorsed", "maxSourceTier": "none",
+     "constraints": {"expiresAt": "2027-03-01T00:00:00Z", "storage": "session", "forwarding": false,
+                     "crossContextUse": false, "delegable": false},
+     "basis": {"legal": "explicit-consent"},
+     "expressedBy": {"actor": "subject", "at": "2026-09-15T10:00:00Z", "channel": "holder-ui"},
+     "note": "The system's language for my own reflection only; never advice about what I should decide."},
+    {"id": "g-02", "recordedAt": "2026-09-15T10:05:00Z", "grantor": "subject", "grantee": "a-02",
+     "purposes": ["assist-personal"],
+     "scope": {"include": [{"facets": ["preference"]}]},
+     "actions": ["read"], "mode": "summary", "interpretations": "none",
+     "constraints": {"expiresAt": "2027-09-01T00:00:00Z", "storage": "session", "forwarding": false,
+                     "crossContextUse": false, "delegable": false},
+     "basis": {"legal": "consent"},
+     "expressedBy": {"actor": "subject", "at": "2026-09-15T10:05:00Z", "channel": "holder-ui"}}
+  ],
+  "events": [
+    {"id": "e-01", "seq": 1, "at": "2026-09-12T19:00:00Z", "eventType": "import-run", "actor": "subject",
+     "records": ["src-01", "c-01", "la-01", "as-01"], "salt": "kGllOqi3Niw8joCgjhcr3A",
+     "prev": "sha256:0000000000000000000000000000000000000000000000000000000000000000"}
+  ]
+}

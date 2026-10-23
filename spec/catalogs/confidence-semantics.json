@@ -1,0 +1,72 @@
+{
+  "format": "ohc.catalog",
+  "id": "urn:ohc:catalog:confidence-semantics",
+  "version": "0.1.0",
+  "specVersion": "0.1.0-draft",
+  "title": {
+    "en": "Confidence semantics",
+    "ru": "Смысл уверенности"
+  },
+  "description": {
+    "en": "What a confidence value means. A missing confidence is never 0 (R-N2).",
+    "ru": "Что означает значение уверенности. Отсутствующая уверенность никогда не равна 0 (R-N2)."
+  },
+  "closed": true,
+  "codes": [
+    {
+      "code": "support-score",
+      "label": {
+        "en": "Support score",
+        "ru": "Оценка опоры"
+      },
+      "definition": {
+        "en": "A heuristic strength of support. Not a probability.",
+        "ru": "Эвристическая сила опоры. Не вероятность."
+      }
+    },
+    {
+      "code": "probability",
+      "label": {
+        "en": "Probability",
+        "ru": "Вероятность"
+      },
+      "definition": {
+        "en": "A calibrated probability. Requires `calibrationRef` (R-N1).",
+        "ru": "Откалиброванная вероятность. Требует `calibrationRef` (R-N1)."
+      }
+    },
+    {
+      "code": "self-rated-certainty",
+      "label": {
+        "en": "Self-rated certainty",
+        "ru": "Собственная уверенность"
+      },
+      "definition": {
+        "en": "The person's own certainty.",
+        "ru": "Уверенность самого человека."
+      }
+    },
+    {
+      "code": "instrument-reliability",
+      "label": {
+        "en": "Instrument reliability",
+        "ru": "Надёжность методики"
+      },
+      "definition": {
+        "en": "The reliability of the instrument used, such as alpha or a retest correlation.",
+        "ru": "Надёжность использованной методики, например альфа или ретестовая корреляция."
+      }
+    },
+    {
+      "code": "vendor-probability",
+      "label": {
+        "en": "Vendor probability",
+        "ru": "Вероятность от поставщика"
+      },
+      "definition": {
+        "en": "A probability reported by a vendor. Calibration unknown.",
+        "ru": "Вероятность, сообщённая поставщиком. Калибровка неизвестна."
+      }
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "description": "An infer grant without explicit consent (R-G11).",
+  "expect": [
+    "GR-4"
+  ],
+  "form": "single",
+  "patches": [
+    {
+      "op": "set",
+      "target": "grants",
+      "path": "/@g-01/basis/legal",
+      "value": "consent"
+    }
+  ]
+}

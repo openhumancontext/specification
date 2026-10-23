@@ -1,0 +1,10 @@
+{
+  "description": "A vault object whose bytes do not match content.sha256.",
+  "expect": [
+    "SR-2"
+  ],
+  "form": "package",
+  "rawAfterLock": {
+    "vault/6a/6aa0b30504f14b0d3eb9357c8aa3fd4ba9cd44d5558674c3feba6329c7774b5e.txt": "tampered"
+  }
+}

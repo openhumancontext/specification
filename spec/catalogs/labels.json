@@ -1,0 +1,191 @@
+{
+  "format": "ohc.catalog",
+  "id": "urn:ohc:catalog:labels",
+  "version": "0.1.0",
+  "specVersion": "0.1.0-draft",
+  "title": {
+    "en": "Derived display labels",
+    "ru": "Производные метки"
+  },
+  "description": {
+    "en": "One display label per record, computed from the status axes. The first matching rule (lowest precedence) wins. Labels are always rendered as glyph plus word; colour is never the only carrier.",
+    "ru": "Одна метка для показа на запись, вычисляемая из осей статуса. Побеждает первое совпавшее правило (наименьший precedence). Метка всегда показывается значком и словом; цвет никогда не бывает единственным носителем смысла."
+  },
+  "closed": true,
+  "ordered": true,
+  "codes": [
+    {
+      "code": "not-accepted",
+      "label": {
+        "en": "not accepted",
+        "ru": "не принято"
+      },
+      "definition": {
+        "en": "Admission is `declined` or `retracted`. Not served to grantees.",
+        "ru": "Принятие — `declined` или `retracted`. Получателям не показывается."
+      },
+      "glyph": "—",
+      "precedence": 0
+    },
+    {
+      "code": "disputed",
+      "label": {
+        "en": "disputed",
+        "ru": "оспорено"
+      },
+      "definition": {
+        "en": "Endorsement is `rejected`, or the `contested` flag is set.",
+        "ru": "Позиция человека — `rejected`, или установлен признак `contested`."
+      },
+      "glyph": "⊘",
+      "precedence": 1,
+      "mappings": {
+        "ode": "disputed"
+      }
+    },
+    {
+      "code": "stale",
+      "label": {
+        "en": "stale",
+        "ru": "устарело"
+      },
+      "definition": {
+        "en": "Freshness is `review-due`, `expired` or `unknown`.",
+        "ru": "Свежесть — `review-due`, `expired` или `unknown`."
+      },
+      "glyph": "○",
+      "precedence": 2,
+      "mappings": {
+        "ode": "stale"
+      }
+    },
+    {
+      "code": "pending",
+      "label": {
+        "en": "pending",
+        "ru": "ожидает решения"
+      },
+      "definition": {
+        "en": "Admission is `proposed`.",
+        "ru": "Принятие — `proposed`."
+      },
+      "glyph": "…",
+      "precedence": 3,
+      "mappings": {
+        "ode": "hypothesis"
+      }
+    },
+    {
+      "code": "frame",
+      "label": {
+        "en": "frame",
+        "ru": "в рамке"
+      },
+      "definition": {
+        "en": "Epistemic status is `frame-relative`. Never presented as an empirical fact (C-7).",
+        "ru": "Эпистемический статус — `frame-relative`. Никогда не подаётся как эмпирический факт (C-7)."
+      },
+      "glyph": "◇",
+      "precedence": 4,
+      "mappings": {
+        "ode": "hypothesis"
+      }
+    },
+    {
+      "code": "stated",
+      "label": {
+        "en": "stated",
+        "ru": "высказано"
+      },
+      "definition": {
+        "en": "Origin is `declared` and `assertedBy` is `\"subject\"`.",
+        "ru": "Происхождение — `declared`, и `assertedBy` — `\"subject\"`."
+      },
+      "glyph": "✓",
+      "precedence": 5,
+      "mappings": {
+        "ode": "stated"
+      }
+    },
+    {
+      "code": "confirmed",
+      "label": {
+        "en": "confirmed",
+        "ru": "подтверждено"
+      },
+      "definition": {
+        "en": "Endorsement is `endorsed`, including by a steward within scope.",
+        "ru": "Позиция — `endorsed`, в том числе подтверждение доверенного лица в пределах полномочий."
+      },
+      "glyph": "✓",
+      "precedence": 6,
+      "mappings": {
+        "ode": "confirmed"
+      }
+    },
+    {
+      "code": "partly-confirmed",
+      "label": {
+        "en": "partly confirmed",
+        "ru": "подтверждено частично"
+      },
+      "definition": {
+        "en": "Endorsement is `partial`.",
+        "ru": "Позиция — `partial`."
+      },
+      "glyph": "◐",
+      "precedence": 7,
+      "mappings": {
+        "ode": "hypothesis"
+      }
+    },
+    {
+      "code": "attested",
+      "label": {
+        "en": "attested",
+        "ru": "удостоверено"
+      },
+      "definition": {
+        "en": "Origin is `attested`.",
+        "ru": "Происхождение — `attested`."
+      },
+      "glyph": "●",
+      "precedence": 8,
+      "mappings": {
+        "ode": "observed"
+      }
+    },
+    {
+      "code": "observed",
+      "label": {
+        "en": "observed",
+        "ru": "наблюдено"
+      },
+      "definition": {
+        "en": "Origin is `observed` or `derived`, and endorsement is `not-asked`.",
+        "ru": "Происхождение — `observed` или `derived`, и позиция — `not-asked`."
+      },
+      "glyph": "◉",
+      "precedence": 9,
+      "mappings": {
+        "ode": "observed"
+      }
+    },
+    {
+      "code": "hypothesis",
+      "label": {
+        "en": "hypothesis",
+        "ru": "гипотеза"
+      },
+      "definition": {
+        "en": "Everything else: `inferred`, or `imported` and `not-asked`.",
+        "ru": "Всё остальное: `inferred`, либо `imported` при позиции `not-asked`."
+      },
+      "glyph": "~",
+      "precedence": 10,
+      "mappings": {
+        "ode": "hypothesis"
+      }
+    }
+  ]
+}

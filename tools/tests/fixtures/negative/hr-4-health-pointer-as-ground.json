@@ -1,0 +1,20 @@
+{
+  "description": "A HealthRef cited as a ground.",
+  "expect": [
+    "HR-4"
+  ],
+  "form": "single",
+  "patches": [
+    {
+      "op": "set",
+      "target": "interpretations",
+      "path": "/@in-01/grounds",
+      "value": [
+        {
+          "ref": "hr-01",
+          "kind": "evidence"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "format": "ohc.catalog",
+  "id": "urn:ohc:catalog:steward-basis",
+  "version": "0.1.0",
+  "specVersion": "0.1.0-draft",
+  "title": {
+    "en": "Steward basis",
+    "ru": "Основание полномочий доверенного лица"
+  },
+  "description": {
+    "en": "The basis on which a steward acts. Guardianship is not supported in 0.1 (R-C4).",
+    "ru": "Основание, на котором действует доверенное лицо. Опека в версии 0.1 не поддерживается (R-C4)."
+  },
+  "closed": true,
+  "codes": [
+    {
+      "code": "delegated-by-subject",
+      "label": {
+        "en": "Delegated by the person",
+        "ru": "Делегировано человеком"
+      },
+      "definition": {
+        "en": "The person delegated an explicit scope.",
+        "ru": "Человек делегировал явно очерченные полномочия."
+      }
+    },
+    {
+      "code": "power-of-attorney",
+      "label": {
+        "en": "Power of attorney",
+        "ru": "Доверенность"
+      },
+      "definition": {
+        "en": "A power of attorney.",
+        "ru": "Доверенность."
+      }
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "schemaVersion": "0.4.0-draft",
+  "kind": "ToolDefinition",
+  "layer": "dna",
+  "id": "urn:ode:example:ohc-planner:tool",
+  "version": "0.2.0",
+  "title": "tool",
+  "status": "draft",
+  "provenance": {
+    "origin": "Authored synthetic OHC integration example, adapted from ODE v0.4.0-draft.2 personal-agent; no runtime or consent observed"
+  },
+  "spec": {
+    "operation": "Read a deliberately selected local description file",
+    "inputSchema": {
+      "type": "object"
+    },
+    "outputSchema": {
+      "type": "object"
+    },
+    "effects": [],
+    "errors": []
+  }
+}

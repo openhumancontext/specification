@@ -1,0 +1,15 @@
+{
+  "description": "A Claim that supersedes an Interpretation (R-V2).",
+  "expect": [
+    "ENV-4"
+  ],
+  "form": "single",
+  "patches": [
+    {
+      "op": "set",
+      "target": "claims",
+      "path": "/@c-06/supersedes",
+      "value": "in-01"
+    }
+  ]
+}

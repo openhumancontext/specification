@@ -1,0 +1,26 @@
+[
+  {
+    "format": "ohc.mapping",
+    "specVersion": "0.1.0-draft",
+    "id": "urn:ohc:mapping:ohc.public-projection--schema.person--schema-org-30.1",
+    "version": "0.1.0",
+    "bridgeKind": "ohc-standard",
+    "from": {
+      "standard": "OHC 0.1.0-draft",
+      "concept": "a public projection (name; role claims)"
+    },
+    "to": {
+      "standard": "schema.org v30.1",
+      "concept": "Person (name, jobTitle)"
+    },
+    "relation": "projects",
+    "scope": "Informative crosswalk between formats; never a conversion of a person's data without the person's grant",
+    "notIdentity": true,
+    "chainable": false,
+    "rowStatus": "accepted-with-loss",
+    "lost": "Only public identity content is projected; everything else stays in OHC.",
+    "forbiddenUse": "Never for sensitive or special content.",
+    "evidenceGrade": "F",
+    "reviewedAt": "2026-10-09"
+  }
+]

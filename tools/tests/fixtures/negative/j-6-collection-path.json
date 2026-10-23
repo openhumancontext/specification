@@ -1,0 +1,17 @@
+{
+  "description": "A collection path with a .. segment.",
+  "expect": [
+    "J-6"
+  ],
+  "form": "package",
+  "patches": [
+    {
+      "op": "set",
+      "target": "manifest",
+      "path": "/collections",
+      "value": {
+        "healthRefs": "../health-refs.jsonl"
+      }
+    }
+  ]
+}

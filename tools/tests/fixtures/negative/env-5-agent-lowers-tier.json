@@ -1,0 +1,15 @@
+{
+  "description": "An agent stores a tier below the kind default.",
+  "expect": [
+    "ENV-5"
+  ],
+  "form": "single",
+  "patches": [
+    {
+      "op": "set",
+      "target": "claims",
+      "path": "/@c-05/sensitivity",
+      "value": "ordinary"
+    }
+  ]
+}

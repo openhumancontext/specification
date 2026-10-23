@@ -1,0 +1,106 @@
+{
+  "format": "ohc.playbook",
+  "specVersion": "0.1.0-draft",
+  "id": "urn:ohc:playbook:astrology-basic",
+  "version": "0.1.0",
+  "name": {
+    "en": "Astrology as a self-description frame: basic ways of working",
+    "ru": "Астрология как рамка самоописания: базовые способы работы"
+  },
+  "lenses": [
+    "urn:ohc:lens:astrology"
+  ],
+  "author": "OHC editors",
+  "sources": [
+    "Carlson 1985"
+  ],
+  "licence": "Apache-2.0",
+  "situations": [
+    {
+      "id": "look-back-at-an-episode",
+      "when": {
+        "en": "Looking back at something that happened.",
+        "ru": "Разбор того, что произошло."
+      },
+      "use": {
+        "en": [
+          "Ask what happened, in their words.",
+          "If they want, look at their chart together, or offer to compute one from the birth data they give, and ask which placements or aspects they find meaningful for this episode.",
+          "Keep to the frame's language, as in \"in the language of your chart…\", and note their words."
+        ],
+        "ru": [
+          "Спросите, что произошло, — словами человека.",
+          "Если человек хочет, посмотрите вместе на его карту или предложите рассчитать её по данным рождения, которые он даст, и спросите, какие положения или аспекты кажутся ему значимыми для этого эпизода.",
+          "Говорите на языке рамки, например «на языке вашей карты…», и записывайте слова человека."
+        ]
+      },
+      "toolkit": [
+        "astrology.chart"
+      ],
+      "results": [
+        "astrology/placement",
+        "astrology/aspect"
+      ],
+      "watchFor": {
+        "en": "Never present a frame attribute, or anything read from it, as a fact about them or a prediction.",
+        "ru": "Никогда не выдавайте атрибут рамки или прочитанное из него за факт о человеке или за предсказание."
+      }
+    },
+    {
+      "id": "choose-between-options",
+      "when": {
+        "en": "Choosing between options.",
+        "ru": "Выбор между вариантами."
+      },
+      "use": {
+        "en": [
+          "Lay out the options with the reasons they give.",
+          "If they want, ask how the placements or aspects of their chart help them describe what each option means to them.",
+          "Leave the choice to them: the frame describes, it does not decide."
+        ],
+        "ru": [
+          "Разложите варианты и доводы, которые приводит человек.",
+          "Если человек хочет, спросите, как положения или аспекты его карты помогают описать, что для него значит каждый вариант.",
+          "Оставьте выбор человеку: рамка описывает, но не решает."
+        ]
+      },
+      "toolkit": [],
+      "results": [
+        "astrology/placement",
+        "astrology/aspect"
+      ],
+      "watchFor": {
+        "en": "Never present a frame attribute, or anything read from it, as a fact about them or a prediction.",
+        "ru": "Никогда не выдавайте атрибут рамки или прочитанное из него за факт о человеке или за предсказание."
+      }
+    },
+    {
+      "id": "hard-conversation",
+      "when": {
+        "en": "Preparing a hard conversation.",
+        "ru": "Подготовка к трудному разговору."
+      },
+      "use": {
+        "en": [
+          "Ask what they want from the conversation.",
+          "If they use the frame's language about themselves, use it too, in their words.",
+          "Say nothing about the other person's chart or about compatibility."
+        ],
+        "ru": [
+          "Спросите, чего человек хочет от разговора.",
+          "Если человек говорит о себе на языке рамки, говорите на нём же, его словами.",
+          "Ничего не говорите о карте собеседника или о совместимости."
+        ]
+      },
+      "toolkit": [],
+      "results": [
+        "astrology/placement",
+        "astrology/aspect"
+      ],
+      "watchFor": {
+        "en": "Never speak of compatibility with other people, and never map chart attributes to an empirical trait.",
+        "ru": "Никогда не говорите о совместимости с другими людьми и не сопоставляйте атрибуты карты с эмпирическими чертами."
+      }
+    }
+  ]
+}

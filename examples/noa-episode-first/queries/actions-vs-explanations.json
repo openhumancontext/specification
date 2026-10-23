@@ -1,0 +1,79 @@
+{
+  "query": "actions-vs-explanations",
+  "context": {
+    "id": "urn:ohc:example:noa:context",
+    "version": "2026-10-09.4"
+  },
+  "episodes": [
+    {
+      "episode": "ep-04",
+      "occurred": {
+        "precision": "day",
+        "start": "2026-03-12"
+      },
+      "didOrTried": [
+        {
+          "index": 0,
+          "narrator": "subject",
+          "accountKind": "in-the-moment",
+          "didOrTried": "Wrote a short apology; tidied the workshop."
+        }
+      ],
+      "understoodThen": [
+        {
+          "index": 0,
+          "understandingThen": "I did not have the cost figures ready."
+        }
+      ],
+      "readingsHeldAtTheTime": []
+    },
+    {
+      "episode": "ep-02",
+      "occurred": {
+        "precision": "day",
+        "start": "2026-05-14"
+      },
+      "didOrTried": [
+        {
+          "index": 0,
+          "narrator": "subject",
+          "accountKind": "first-narrative",
+          "didOrTried": "Wrote an email instead of calling; reworked the cost sheet in the evening."
+        }
+      ],
+      "understoodThen": [
+        {
+          "index": 0,
+          "understandingThen": "The supplier was busy with their own move anyway."
+        }
+      ],
+      "readingsHeldAtTheTime": []
+    },
+    {
+      "episode": "ep-03",
+      "occurred": {
+        "precision": "day",
+        "start": "2026-09-18"
+      },
+      "didOrTried": [
+        {
+          "index": 0,
+          "narrator": "subject",
+          "accountKind": "in-the-moment",
+          "didOrTried": "Walked for 20 minutes without the phone, then wrote the walk-away number on a card."
+        }
+      ],
+      "understoodThen": [
+        {
+          "index": 0,
+          "understandingThen": "Having the number written down made it possible to start."
+        }
+      ],
+      "readingsHeldAtTheTime": [
+        "in-01"
+      ]
+    }
+  ],
+  "note": "Shown side by side; the tool makes no judgement.",
+  "synthetic": true
+}

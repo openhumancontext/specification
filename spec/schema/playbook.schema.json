@@ -1,0 +1,154 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:ohc:schema:playbook:0.1.0-draft",
+  "title": "OHC Playbook",
+  "description": "Ways of using one or more lenses, and the person's accepted results in them, in named situations. Guidance for the helper: it grants nothing and states nothing about any person (PB-4). Registry document (spec/playbooks/<name>.playbook.json); a local playbook (x- id) lives in a context's lenses/ folder and is pinned in Context.playbooks (LENSES.md §2.2, PB-1).",
+  "type": "object",
+  "required": [
+    "format",
+    "specVersion",
+    "id",
+    "version",
+    "name",
+    "lenses",
+    "author",
+    "sources",
+    "situations"
+  ],
+  "properties": {
+    "format": {
+      "const": "ohc.playbook"
+    },
+    "specVersion": {
+      "const": "0.1.0-draft"
+    },
+    "id": {
+      "type": "string",
+      "description": "urn:ohc:playbook:<name> in the registry; urn:ohc:playbook:x-<namespace>:<name> for a local playbook from practice.",
+      "pattern": "^urn:ohc:playbook:(?:x-[a-z0-9]+(?:[.-][a-z0-9]+)*:)?[a-z0-9]+(?:-[a-z0-9]+)*$"
+    },
+    "version": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/SemVer"
+    },
+    "name": {
+      "$ref": "#/$defs/Words"
+    },
+    "lenses": {
+      "type": "array",
+      "items": {
+        "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/URI"
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "author": {
+      "description": "One string, as an entry of a lens descriptor's descriptorAuthors: \"OHC editors\"; or the name of a public source, which sources then cites; or, for a local playbook, the person's or practitioner's own label.",
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+    },
+    "sources": {
+      "description": "Public citations only. At least one when author is a public source (PB-1). Never internal file paths.",
+      "type": "array",
+      "items": {
+        "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+      }
+    },
+    "licence": {
+      "description": "Required for a registry playbook (PB-1).",
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/licenses"
+    },
+    "situations": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/Situation"
+      },
+      "minItems": 1,
+      "maxItems": 8
+    }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "Words": {
+      "description": "Plain words in English (required) and Russian (required in the registry, PB-1).",
+      "type": "object",
+      "required": [
+        "en"
+      ],
+      "properties": {
+        "en": {
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+        },
+        "ru": {
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+        }
+      },
+      "additionalProperties": false
+    },
+    "Steps": {
+      "description": "2 to 5 short steps per language; the same count in each language given (PB-1).",
+      "type": "array",
+      "items": {
+        "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+      },
+      "minItems": 2,
+      "maxItems": 5
+    },
+    "Situation": {
+      "type": "object",
+      "required": [
+        "id",
+        "when",
+        "use",
+        "toolkit"
+      ],
+      "properties": {
+        "id": {
+          "description": "A slug unique in the playbook. No closed list; LENSES.md §2.2 lists the shared slugs as informative.",
+          "type": "string",
+          "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+        },
+        "when": {
+          "description": "The situation, in plain words.",
+          "$ref": "#/$defs/Words"
+        },
+        "use": {
+          "description": "How to use the lens and the person's accepted results here.",
+          "type": "object",
+          "required": [
+            "en"
+          ],
+          "properties": {
+            "en": {
+              "$ref": "#/$defs/Steps"
+            },
+            "ru": {
+              "$ref": "#/$defs/Steps"
+            }
+          },
+          "additionalProperties": false
+        },
+        "toolkit": {
+          "description": "Toolkit item ids of the playbook's lenses, each with agentMayOffer true (PB-1). May be empty.",
+          "type": "array",
+          "items": {
+            "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+          },
+          "uniqueItems": true
+        },
+        "results": {
+          "description": "Construct ids of the playbook's lenses that the steps draw on (PB-1).",
+          "type": "array",
+          "items": {
+            "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "watchFor": {
+          "description": "What not to do in this situation.",
+          "$ref": "#/$defs/Words"
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "description": "A Review whose target is a Proposal.",
+  "expect": [
+    "RV-1"
+  ],
+  "form": "single",
+  "patches": [
+    {
+      "op": "add",
+      "target": "reviews",
+      "path": "",
+      "value": {
+        "id": "rv-09",
+        "target": "prop-01",
+        "action": "decline",
+        "by": "subject",
+        "recordedAt": "2026-09-08T08:00:00Z"
+      }
+    }
+  ]
+}

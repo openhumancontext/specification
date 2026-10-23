@@ -1,0 +1,136 @@
+{
+  "format": "digital-employee-package",
+  "specVersion": "0.4.0-draft",
+  "id": "urn:ode:example:ohc-planner:package",
+  "version": "0.2.0",
+  "title": "Planner: synthetic OHC grant binding in ODE 0.4",
+  "entrypoints": {
+    "dna": [
+      {
+        "objectId": "urn:ode:example:ohc-planner:dna",
+        "version": "0.2.0"
+      }
+    ],
+    "environments": [
+      {
+        "objectId": "urn:ode:example:ohc-planner:environment",
+        "version": "0.2.0"
+      }
+    ],
+    "employees": [
+      {
+        "objectId": "urn:ode:example:employee:planner",
+        "version": "0.2.0"
+      }
+    ]
+  },
+  "objects": [
+    {
+      "id": "urn:ode:example:party:kofi",
+      "version": "0.2.0",
+      "kind": "Party",
+      "path": "objects/person.json"
+    },
+    {
+      "id": "urn:ode:example:ohc-planner:dna",
+      "version": "0.2.0",
+      "kind": "AgentDNA",
+      "path": "objects/dna.json"
+    },
+    {
+      "id": "urn:ode:example:ohc-planner:environment",
+      "version": "0.2.0",
+      "kind": "Environment",
+      "path": "objects/environment.json"
+    },
+    {
+      "id": "urn:ode:example:ohc-planner:world",
+      "version": "0.2.0",
+      "kind": "WorldModel",
+      "path": "objects/world.json"
+    },
+    {
+      "id": "urn:ode:example:ohc-planner:tool",
+      "version": "0.2.0",
+      "kind": "ToolDefinition",
+      "path": "objects/tool.json"
+    },
+    {
+      "id": "urn:ode:example:ohc-planner:read-policy",
+      "version": "0.2.0",
+      "kind": "Policy",
+      "path": "objects/read-policy.json"
+    },
+    {
+      "id": "urn:ode:example:ohc-planner:binding",
+      "version": "0.2.0",
+      "kind": "ToolBinding",
+      "path": "objects/binding.json"
+    },
+    {
+      "id": "urn:ode:example:employee:planner",
+      "version": "0.2.0",
+      "kind": "DigitalEmployee",
+      "path": "objects/agent.json"
+    }
+  ],
+  "resources": [],
+  "externalDependencies": [
+    {
+      "objectId": "urn:ohc:example:kofi:context#g-03",
+      "version": "2026-10-01T09:00:00Z",
+      "reason": "Person context held by the person; read under OHC grant g-03 for scheduling; values not included; projections fetched and the grant re-checked at every use",
+      "locator": "ohc+mcp://holder.example/kofi"
+    }
+  ],
+  "standards": [
+    {
+      "id": "ohc",
+      "url": "urn:ohc:specification",
+      "revision": "0.1.0-draft",
+      "required": false
+    }
+  ],
+  "packageType": "employee",
+  "requiredExtensions": [
+    "ohc.binding"
+  ],
+  "extensions": {
+    "ohc.binding": {
+      "subjectAlias": "urn:ohc:alias:mej2a2du5ccc4xp4umm4quxgib",
+      "partyRef": {
+        "objectId": "urn:ode:example:party:kofi",
+        "version": "0.2.0"
+      },
+      "grantRef": {
+        "id": "g-03",
+        "context": "urn:ohc:example:kofi:context"
+      },
+      "grantVersion": "2026-10-01T09:00:00Z",
+      "locator": "ohc+mcp://holder.example/kofi",
+      "mode": "rule-only",
+      "purpose": "scheduling",
+      "facets": [
+        "boundary",
+        "preference",
+        "state"
+      ],
+      "prohibitedPurposes": [
+        "personnel-selection",
+        "task-allocation",
+        "performance-evaluation",
+        "promotion-decision",
+        "cross-person-ranking",
+        "persuasion-targeting",
+        "advertising",
+        "political-profiling",
+        "credit-or-insurance-decision",
+        "emotion-recognition-at-work-or-education",
+        "model-training",
+        "sale-or-transfer",
+        "significant-automated-decision"
+      ],
+      "checkAtUse": true
+    }
+  }
+}

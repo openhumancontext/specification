@@ -1,0 +1,119 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:ohc:schema:health-ref:0.1.0-draft",
+  "title": "OHC HealthRef",
+  "description": "EXPERIMENTAL. A pointer to a clinical record held elsewhere (FHIR). It carries no clinical content: no codes, values or narrative (HR-1). Layer assertion; module health-ref.",
+  "type": "object",
+  "required": [
+    "id",
+    "system",
+    "fhirVersion",
+    "resourceType",
+    "reference",
+    "custodian",
+    "origin",
+    "assertedBy",
+    "recordedAt"
+  ],
+  "properties": {
+    "kind": {
+      "const": "HealthRef"
+    },
+    "id": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Envelope/properties/id"
+    },
+    "system": {
+      "const": "fhir"
+    },
+    "fhirVersion": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/fhir-versions"
+    },
+    "resourceType": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/fhir-resource-types"
+    },
+    "reference": {
+      "description": "An absolute FHIR URL or a urn:uuid.",
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/URI"
+    },
+    "custodian": {
+      "description": "A Party.",
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/LocalId"
+    },
+    "purposeNote": {
+      "description": "Why the person keeps the pointer.",
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+    },
+    "origin": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Envelope/properties/origin"
+    },
+    "assertedBy": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Envelope/properties/assertedBy"
+    },
+    "recordedAt": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Envelope/properties/recordedAt"
+    },
+    "recordedBy": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Envelope/properties/recordedBy"
+    },
+    "underGrant": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Envelope/properties/underGrant"
+    },
+    "purpose": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Envelope/properties/purpose"
+    },
+    "formulatedAt": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Envelope/properties/formulatedAt"
+    },
+    "supersedes": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Envelope/properties/supersedes"
+    },
+    "epistemic": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Envelope/properties/epistemic"
+    },
+    "confidence": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Envelope/properties/confidence"
+    },
+    "sensitivity": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Envelope/properties/sensitivity"
+    },
+    "categories": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Envelope/properties/categories"
+    },
+    "handling": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Envelope/properties/handling"
+    },
+    "audience": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Envelope/properties/audience"
+    },
+    "contexts": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Envelope/properties/contexts"
+    },
+    "lang": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Envelope/properties/lang"
+    },
+    "importedFrom": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Envelope/properties/importedFrom"
+    },
+    "generatedBy": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Envelope/properties/generatedBy"
+    },
+    "derivedFrom": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Envelope/properties/derivedFrom"
+    },
+    "synthetic": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Envelope/properties/synthetic"
+    },
+    "note": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Envelope/properties/note"
+    },
+    "ext": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Envelope/properties/ext"
+    }
+  },
+  "additionalProperties": false,
+  "allOf": [
+    {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/EnvelopeRules"
+    }
+  ]
+}

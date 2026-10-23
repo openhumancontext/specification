@@ -1,0 +1,48 @@
+{
+  "description": "An agent-authored recall cue targeting special material.",
+  "expect": [
+    "RC-2"
+  ],
+  "form": "single",
+  "patches": [
+    {
+      "op": "add",
+      "target": "recallCues",
+      "path": "",
+      "value": {
+        "id": "rc-02",
+        "trigger": {
+          "description": "Before class.",
+          "signals": [
+            "time-of-day"
+          ]
+        },
+        "offer": {
+          "targets": [
+            "part-01"
+          ],
+          "framing": "Remember the planner.",
+          "includeAlternatives": true,
+          "alternativesNote": "It may also be tiredness.",
+          "maxTier": "summary"
+        },
+        "timing": {
+          "askBeforeReminding": true,
+          "cooldown": "P1D",
+          "maxPerWeek": 2
+        },
+        "safety": {
+          "nonClinical": true
+        },
+        "origin": "inferred",
+        "assertedBy": "a-01",
+        "recordedBy": "subject",
+        "recordedAt": "2026-09-07T08:00:00Z",
+        "derivedFrom": [
+          "ep-01"
+        ],
+        "synthetic": true
+      }
+    }
+  ]
+}

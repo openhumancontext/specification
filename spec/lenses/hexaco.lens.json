@@ -1,0 +1,401 @@
+{
+  "format": "ohc.lens",
+  "specVersion": "0.1.0-draft",
+  "id": "urn:ohc:lens:hexaco",
+  "version": "0.2.0",
+  "name": {
+    "en": "HEXACO model of personality structure",
+    "ru": "Модель структуры личности HEXACO"
+  },
+  "aliases": [
+    "six-factor model"
+  ],
+  "descriptorStatus": "draft",
+  "kind": "trait-dimensional",
+  "summary": {
+    "en": "Six broad dimensions of relatively stable tendencies, including Honesty-Humility, measured by questionnaire and compared with a norm group.",
+    "ru": "Шесть широких измерений относительно устойчивых склонностей, включая честность-скромность; измеряются опросником и сравниваются с нормативной группой."
+  },
+  "constructs": [
+    {
+      "id": "hexaco/H",
+      "label": {
+        "en": "Honesty-Humility",
+        "ru": "Честность-скромность"
+      }
+    },
+    {
+      "id": "hexaco/H/sincerity",
+      "parent": "hexaco/H",
+      "label": {
+        "en": "Sincerity (facet)"
+      }
+    },
+    {
+      "id": "hexaco/H/fairness",
+      "parent": "hexaco/H",
+      "label": {
+        "en": "Fairness (facet)"
+      }
+    },
+    {
+      "id": "hexaco/H/greed-avoidance",
+      "parent": "hexaco/H",
+      "label": {
+        "en": "Greed Avoidance (facet)"
+      }
+    },
+    {
+      "id": "hexaco/H/modesty",
+      "parent": "hexaco/H",
+      "label": {
+        "en": "Modesty (facet)"
+      }
+    },
+    {
+      "id": "hexaco/E",
+      "label": {
+        "en": "Emotionality",
+        "ru": "Эмоциональность"
+      },
+      "categories": [
+        "mental-health"
+      ]
+    },
+    {
+      "id": "hexaco/E/fearfulness",
+      "parent": "hexaco/E",
+      "label": {
+        "en": "Fearfulness (facet)"
+      },
+      "categories": [
+        "mental-health"
+      ]
+    },
+    {
+      "id": "hexaco/E/anxiety",
+      "parent": "hexaco/E",
+      "label": {
+        "en": "Anxiety (facet)"
+      },
+      "categories": [
+        "mental-health"
+      ]
+    },
+    {
+      "id": "hexaco/E/dependence",
+      "parent": "hexaco/E",
+      "label": {
+        "en": "Dependence (facet)"
+      }
+    },
+    {
+      "id": "hexaco/E/sentimentality",
+      "parent": "hexaco/E",
+      "label": {
+        "en": "Sentimentality (facet)"
+      }
+    },
+    {
+      "id": "hexaco/X",
+      "label": {
+        "en": "eXtraversion",
+        "ru": "Экстраверсия"
+      }
+    },
+    {
+      "id": "hexaco/X/social-self-esteem",
+      "parent": "hexaco/X",
+      "label": {
+        "en": "Social Self-Esteem (facet)"
+      }
+    },
+    {
+      "id": "hexaco/X/social-boldness",
+      "parent": "hexaco/X",
+      "label": {
+        "en": "Social Boldness (facet)"
+      }
+    },
+    {
+      "id": "hexaco/X/sociability",
+      "parent": "hexaco/X",
+      "label": {
+        "en": "Sociability (facet)"
+      }
+    },
+    {
+      "id": "hexaco/X/liveliness",
+      "parent": "hexaco/X",
+      "label": {
+        "en": "Liveliness (facet)"
+      }
+    },
+    {
+      "id": "hexaco/A",
+      "label": {
+        "en": "Agreeableness (versus Anger)",
+        "ru": "Доброжелательность (против гнева)"
+      }
+    },
+    {
+      "id": "hexaco/A/forgivingness",
+      "parent": "hexaco/A",
+      "label": {
+        "en": "Forgivingness (facet)"
+      }
+    },
+    {
+      "id": "hexaco/A/gentleness",
+      "parent": "hexaco/A",
+      "label": {
+        "en": "Gentleness (facet)"
+      }
+    },
+    {
+      "id": "hexaco/A/flexibility",
+      "parent": "hexaco/A",
+      "label": {
+        "en": "Flexibility (facet)"
+      }
+    },
+    {
+      "id": "hexaco/A/patience",
+      "parent": "hexaco/A",
+      "label": {
+        "en": "Patience (facet)"
+      }
+    },
+    {
+      "id": "hexaco/C",
+      "label": {
+        "en": "Conscientiousness",
+        "ru": "Добросовестность"
+      }
+    },
+    {
+      "id": "hexaco/C/organization",
+      "parent": "hexaco/C",
+      "label": {
+        "en": "Organization (facet)"
+      }
+    },
+    {
+      "id": "hexaco/C/diligence",
+      "parent": "hexaco/C",
+      "label": {
+        "en": "Diligence (facet)"
+      }
+    },
+    {
+      "id": "hexaco/C/perfectionism",
+      "parent": "hexaco/C",
+      "label": {
+        "en": "Perfectionism (facet)"
+      }
+    },
+    {
+      "id": "hexaco/C/prudence",
+      "parent": "hexaco/C",
+      "label": {
+        "en": "Prudence (facet)"
+      }
+    },
+    {
+      "id": "hexaco/O",
+      "label": {
+        "en": "Openness to Experience",
+        "ru": "Открытость опыту"
+      }
+    },
+    {
+      "id": "hexaco/O/aesthetic-appreciation",
+      "parent": "hexaco/O",
+      "label": {
+        "en": "Aesthetic Appreciation (facet)"
+      }
+    },
+    {
+      "id": "hexaco/O/inquisitiveness",
+      "parent": "hexaco/O",
+      "label": {
+        "en": "Inquisitiveness (facet)"
+      }
+    },
+    {
+      "id": "hexaco/O/creativity",
+      "parent": "hexaco/O",
+      "label": {
+        "en": "Creativity (facet)"
+      }
+    },
+    {
+      "id": "hexaco/O/unconventionality",
+      "parent": "hexaco/O",
+      "label": {
+        "en": "Unconventionality (facet)"
+      }
+    },
+    {
+      "id": "hexaco/altruism",
+      "label": {
+        "en": "Altruism (versus Antagonism; interstitial scale)"
+      },
+      "description": "An interstitial scale that relates to several of the six dimensions."
+    }
+  ],
+  "mentalModel": {
+    "summary": "People differ in six broad tendencies across situations, including how fair and modest they tend to be; these are measured, not diagnosed.",
+    "assumptions": [
+      "tendencies are continuous, not types",
+      "scores are relative to a norm group",
+      "the six dimensions are not the five Big Five dimensions with one added; several are defined differently"
+    ],
+    "stance": "descriptive and comparative",
+    "unitOfAnalysis": "the person's typical tendencies over years",
+    "attendsTo": [
+      "typical tendencies across settings",
+      "fairness and modesty in how the person acts",
+      "differences from a reference population",
+      "fit with recent episodes"
+    ],
+    "howChangeHappens": "Slowly, mostly across years.",
+    "languageGuidance": "Speak of tendencies and ranges, never of moral verdicts; a low Honesty-Humility score is never a judgement of character.",
+    "agentPosture": {
+      "do": [
+        "show raw score, range and norm group together",
+        "ask where the score does not fit"
+      ],
+      "dont": [
+        "treat Honesty-Humility as a measure of trustworthiness",
+        "translate HEXACO scores into Big Five scores"
+      ]
+    },
+    "exploratoryQuestions": [
+      "Where do you recognise fairness and modesty in how you act?",
+      "Where does the score not fit your experience?"
+    ],
+    "helperMustNot": [
+      "present a score as evidence of fit for a job or role",
+      "comment on Honesty-Humility to anyone but the person",
+      "comment on the Anxiety or Fearfulness facets unless the person raises them"
+    ],
+    "doesNotClaim": [
+      "anything about a single moment",
+      "moral character",
+      "clinical states",
+      "suitability for a job"
+    ],
+    "riskNotes": [
+      "Honesty-Humility is a moralised trait; disclosure in work settings risks reputational harm",
+      "Emotionality facets named Anxiety and Fearfulness read as health information"
+    ]
+  },
+  "toolkit": [
+    {
+      "id": "hexaco.fit-check",
+      "name": "Fit check",
+      "kind": "exercise",
+      "description": "Compare one dimension with three recent episodes and note fit or no fit.",
+      "facilitation": "self",
+      "requiresPractitioner": false,
+      "agentMayOffer": true,
+      "nonClinical": true,
+      "produces": "Interpretation",
+      "cautions": [
+        "Not a re-test"
+      ]
+    }
+  ],
+  "representations": [
+    {
+      "id": "hexaco.score-profile",
+      "kind": "score-profile",
+      "resultType": "dimension-score",
+      "description": "Raw score, range and percentile for six dimensions and their facets, with the norm group named."
+    }
+  ],
+  "instruments": [
+    "urn:ohc:instrument:hexaco-pi-r"
+  ],
+  "adoption": {
+    "routes": [
+      "self-chosen",
+      "agent-suggested",
+      "inherited-from-practice",
+      "imported"
+    ],
+    "suggestionRequires": [
+      "the person asked for ways of describing tendencies"
+    ],
+    "inheritanceRoles": [
+      "coach",
+      "teacher",
+      "therapist"
+    ],
+    "practitionerFor": []
+  },
+  "evidence": {
+    "measurementTier": "T1",
+    "practiceTier": {
+      "clinicianDelivered": "not-assessed",
+      "selfGuided": "not-assessed",
+      "agentOffered": "not-assessed"
+    },
+    "ontologicalStatus": "measured-construct",
+    "citations": [
+      {
+        "ref": "doi:10.1177/1088868306294907",
+        "grade": "F",
+        "note": "Ashton & Lee 2007: 'a viable alternative to the well-known Big Five', based on a cross-culturally replicated six-dimensional structure"
+      }
+    ],
+    "reviewedAt": "2026-10-09"
+  },
+  "supports": [
+    "self-reflection on typical tendencies",
+    "choosing communication preferences the person then states"
+  ],
+  "doesNotEstablish": [
+    "what the person will do in a given moment",
+    "moral character or trustworthiness",
+    "any clinical condition",
+    "job fit"
+  ],
+  "ip": {
+    "conceptStatus": "free-concept",
+    "marks": [],
+    "itemsLicence": "HEXACO-PI-R forms: free to download only for non-profit academic research; online use only on password-protected or not-searchable pages; non-academic use: contact the authors. Copyright 2009 Kibeom Lee and Michael C. Ashton",
+    "scoring": "public",
+    "restrictions": [
+      "never store HEXACO-PI-R item text",
+      "online administration only on password-protected or not-searchable pages",
+      "non-academic use requires contacting the authors",
+      "never alias HEXACO construct ids to Big Five construct ids (M-1)"
+    ],
+    "registryListing": "ok",
+    "legalReviewNeeded": true
+  },
+  "useLimits": {
+    "crossLensMapping": "population-level-only"
+  },
+  "defaults": {
+    "sensitivity": "special",
+    "categories": [
+      "mental-health"
+    ],
+    "reviewAfter": "P3Y"
+  },
+  "mappings": [
+    "urn:ohc:mapping:hexaco--big-five--ashton-lee-2007"
+  ],
+  "playbooks": [
+    "urn:ohc:playbook:hexaco-basic"
+  ],
+  "sources": [
+    "Ashton & Lee 2007"
+  ],
+  "descriptorAuthors": [
+    "OHC editors"
+  ]
+}

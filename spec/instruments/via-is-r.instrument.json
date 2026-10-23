@@ -1,0 +1,47 @@
+{
+  "format": "ohc.instrument",
+  "specVersion": "0.1.0-draft",
+  "id": "urn:ohc:instrument:via-is-r",
+  "version": "0.1.0",
+  "name": "VIA Inventory of Strengths-Revised (VIA-IS-R)",
+  "lens": "urn:ohc:lens:via-strengths",
+  "publisher": "VIA Institute on Character",
+  "forms": [
+    {
+      "id": "adult",
+      "note": "Part of the VIA Assessment Suite for Adults; item count not verified"
+    }
+  ],
+  "itemsLicence": "Copyright VIA Institute on Character; free to individuals [F2]",
+  "scoring": "proprietary",
+  "marks": [
+    {
+      "mark": "VIA",
+      "owner": "VIA Institute on Character",
+      "status": "unverified",
+      "notice": "VIA is used only to name the VIA Institute's instruments; OHC is not authored or endorsed by the VIA Institute.",
+      "use": "nominative-only"
+    }
+  ],
+  "neverStore": [
+    "item text",
+    "report prose",
+    "scoring key",
+    "raw item responses"
+  ],
+  "registryListing": "reference-by-url",
+  "citations": [
+    {
+      "ref": "doi:10.1080/00223891.2022.2120402",
+      "grade": "F",
+      "note": "McGrath 2023: VIA Assessment Suite for Adults"
+    },
+    {
+      "ref": "VIA Institute on Character, survey availability",
+      "grade": "F2",
+      "note": "Free to individuals"
+    }
+  ],
+  "legalReviewNeeded": true,
+  "reviewedAt": "2026-10-09"
+}

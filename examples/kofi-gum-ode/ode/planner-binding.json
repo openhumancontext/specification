@@ -1,0 +1,61 @@
+{
+  "manifest": {
+    "requiredExtensions": [
+      "ohc.binding"
+    ],
+    "standards": [
+      {
+        "id": "ohc",
+        "url": "urn:ohc:specification",
+        "revision": "0.1.0-draft",
+        "required": false
+      }
+    ]
+  },
+  "externalDependencies": [
+    {
+      "objectId": "urn:ohc:example:kofi:context#g-03",
+      "version": "2026-10-01T09:00:00Z",
+      "reason": "Person context held by the person; read under OHC grant g-03 for scheduling; values not included; projections fetched and the grant re-checked at every use",
+      "locator": "ohc+mcp://holder.example/kofi"
+    }
+  ],
+  "extensions": {
+    "ohc.binding": {
+      "subjectAlias": "urn:ohc:alias:mej2a2du5ccc4xp4umm4quxgib",
+      "partyRef": {
+        "objectId": "urn:ode:example:party:kofi",
+        "version": "0.2.0"
+      },
+      "grantRef": {
+        "id": "g-03",
+        "context": "urn:ohc:example:kofi:context"
+      },
+      "grantVersion": "2026-10-01T09:00:00Z",
+      "locator": "ohc+mcp://holder.example/kofi",
+      "mode": "rule-only",
+      "purpose": "scheduling",
+      "facets": [
+        "boundary",
+        "preference",
+        "state"
+      ],
+      "prohibitedPurposes": [
+        "personnel-selection",
+        "task-allocation",
+        "performance-evaluation",
+        "promotion-decision",
+        "cross-person-ranking",
+        "persuasion-targeting",
+        "advertising",
+        "political-profiling",
+        "credit-or-insurance-decision",
+        "emotion-recognition-at-work-or-education",
+        "model-training",
+        "sale-or-transfer",
+        "significant-automated-decision"
+      ],
+      "checkAtUse": true
+    }
+  }
+}

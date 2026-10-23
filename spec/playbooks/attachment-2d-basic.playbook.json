@@ -1,0 +1,104 @@
+{
+  "format": "ohc.playbook",
+  "specVersion": "0.1.0-draft",
+  "id": "urn:ohc:playbook:attachment-2d-basic",
+  "version": "0.1.0",
+  "name": {
+    "en": "Adult attachment: basic ways of working",
+    "ru": "Привязанность у взрослых: базовые способы работы"
+  },
+  "lenses": [
+    "urn:ohc:lens:attachment-2d"
+  ],
+  "author": "OHC editors",
+  "sources": [
+    "Fraley, Waller & Brennan 2000"
+  ],
+  "licence": "Apache-2.0",
+  "situations": [
+    {
+      "id": "hard-conversation",
+      "when": {
+        "en": "Preparing a hard conversation in a close relationship.",
+        "ru": "Подготовка к трудному разговору в близких отношениях."
+      },
+      "use": {
+        "en": [
+          "Ask which relationship the conversation belongs to, and keep that relationship named.",
+          "If they accepted a result for that relationship, ask what they tend to watch for in closeness there and how they want to handle it in this conversation.",
+          "Stay with their side; say nothing about the other person's attachment."
+        ],
+        "ru": [
+          "Спросите, к каким отношениям относится разговор, и держите эти отношения названными.",
+          "Если человек принял результат для этих отношений, спросите, за чем он обычно следит в близости и как хочет обойтись с этим в этом разговоре.",
+          "Оставайтесь на стороне самого человека; ничего не говорите о привязанности собеседника."
+        ]
+      },
+      "toolkit": [],
+      "results": [
+        "attachment-2d/anxiety",
+        "attachment-2d/avoidance"
+      ],
+      "watchFor": {
+        "en": "Never use these results about work, and never assign a category.",
+        "ru": "Никогда не применяйте эти результаты к работе и не присваивайте категорию."
+      }
+    },
+    {
+      "id": "after-setback",
+      "when": {
+        "en": "After a setback in a close relationship.",
+        "ru": "После неудачи в близких отношениях."
+      },
+      "use": {
+        "en": [
+          "Ask which relationship it was in and what happened.",
+          "Ask what they noticed in themselves: worry about closeness, or wanting distance.",
+          "Ask what has helped before."
+        ],
+        "ru": [
+          "Спросите, в каких отношениях это было и что произошло.",
+          "Спросите, что человек заметил в себе: тревогу о близости или желание дистанции.",
+          "Спросите, что помогало раньше."
+        ]
+      },
+      "toolkit": [],
+      "results": [
+        "attachment-2d/anxiety",
+        "attachment-2d/avoidance"
+      ],
+      "watchFor": {
+        "en": "Do not present a dimension or a category as a diagnosis.",
+        "ru": "Не выдавайте измерение или категорию за диагноз."
+      }
+    },
+    {
+      "id": "look-back-at-an-episode",
+      "when": {
+        "en": "Looking back at something that happened in a close relationship.",
+        "ru": "Разбор того, что произошло в близких отношениях."
+      },
+      "use": {
+        "en": [
+          "Ask about the episode and which relationship it was in.",
+          "If they want, compare the episode with the result they accepted for that relationship, and note fit or no fit.",
+          "Keep their words."
+        ],
+        "ru": [
+          "Спросите об эпизоде и о том, в каких отношениях он произошёл.",
+          "Если человек хочет, сравните эпизод с результатом, принятым им для этих отношений, и отметьте, подходит он или нет.",
+          "Сохраняйте слова человека."
+        ]
+      },
+      "toolkit": [],
+      "results": [
+        "attachment-2d/anxiety",
+        "attachment-2d/avoidance"
+      ],
+      "watchFor": {
+        "en": "Never describe the other person in the relationship.",
+        "ru": "Никогда не описывайте другого человека в этих отношениях."
+      }
+    }
+  ]
+}

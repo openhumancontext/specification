@@ -1,0 +1,461 @@
+{
+  "format": "ohc.catalog",
+  "id": "urn:ohc:catalog:event-types",
+  "version": "0.1.0",
+  "specVersion": "0.1.0-draft",
+  "title": {
+    "en": "Event types",
+    "ru": "Типы событий журнала"
+  },
+  "description": {
+    "en": "Types of Event in the append-only, salted hash-chained log. Events carry ids, codes and times only; never text, values, quotes or content digests (G3).",
+    "ru": "Типы событий в журнале только для добавления, связанном солёной хеш-цепочкой. События содержат только идентификаторы, коды и время; никогда текст, значения, цитаты или дайджесты содержимого (G3)."
+  },
+  "closed": true,
+  "codes": [
+    {
+      "code": "record-written",
+      "label": {
+        "en": "Record written",
+        "ru": "Запись создана"
+      },
+      "definition": {
+        "en": "A record was written.",
+        "ru": "Записана запись."
+      },
+      "group": "writes"
+    },
+    {
+      "code": "record-proposed",
+      "label": {
+        "en": "Record proposed",
+        "ru": "Запись предложена"
+      },
+      "definition": {
+        "en": "A record was stored as proposed.",
+        "ru": "Запись сохранена как предложение."
+      },
+      "group": "writes"
+    },
+    {
+      "code": "record-admitted",
+      "label": {
+        "en": "Record admitted",
+        "ru": "Запись принята"
+      },
+      "definition": {
+        "en": "A proposed record was admitted.",
+        "ru": "Предложенная запись принята."
+      },
+      "group": "writes"
+    },
+    {
+      "code": "record-declined",
+      "label": {
+        "en": "Record declined",
+        "ru": "Запись не принята"
+      },
+      "definition": {
+        "en": "A proposed record was declined.",
+        "ru": "Предложенная запись не принята."
+      },
+      "group": "writes"
+    },
+    {
+      "code": "record-retracted",
+      "label": {
+        "en": "Record retracted",
+        "ru": "Запись отозвана"
+      },
+      "definition": {
+        "en": "A record was retracted.",
+        "ru": "Запись отозвана."
+      },
+      "group": "writes"
+    },
+    {
+      "code": "review-written",
+      "label": {
+        "en": "Review written",
+        "ru": "Решение записано"
+      },
+      "definition": {
+        "en": "A Review was written.",
+        "ru": "Записано решение по записи."
+      },
+      "group": "writes"
+    },
+    {
+      "code": "record-erased",
+      "label": {
+        "en": "Record erased",
+        "ru": "Запись удалена"
+      },
+      "definition": {
+        "en": "A record was erased and replaced by its Tombstone.",
+        "ru": "Запись удалена и заменена меткой удаления."
+      },
+      "group": "writes"
+    },
+    {
+      "code": "grant-given",
+      "label": {
+        "en": "Grant given",
+        "ru": "Разрешение выдано"
+      },
+      "definition": {
+        "en": "A grant was given.",
+        "ru": "Выдано разрешение."
+      },
+      "group": "grants"
+    },
+    {
+      "code": "grant-withdrawn",
+      "label": {
+        "en": "Grant withdrawn",
+        "ru": "Разрешение отозвано"
+      },
+      "definition": {
+        "en": "A grant was withdrawn.",
+        "ru": "Разрешение отозвано."
+      },
+      "group": "grants"
+    },
+    {
+      "code": "grant-revoked",
+      "label": {
+        "en": "Grant revoked",
+        "ru": "Разрешение аннулировано"
+      },
+      "definition": {
+        "en": "A grant was revoked by the holder.",
+        "ru": "Держатель аннулировал разрешение."
+      },
+      "group": "grants"
+    },
+    {
+      "code": "grant-request-received",
+      "label": {
+        "en": "Grant request received",
+        "ru": "Получен запрос разрешения"
+      },
+      "definition": {
+        "en": "A grant request arrived.",
+        "ru": "Пришёл запрос разрешения."
+      },
+      "group": "grants"
+    },
+    {
+      "code": "grant-request-refused",
+      "label": {
+        "en": "Grant request refused",
+        "ru": "В запросе разрешения отказано"
+      },
+      "definition": {
+        "en": "A grant request was refused.",
+        "ru": "В запросе разрешения отказано."
+      },
+      "group": "grants"
+    },
+    {
+      "code": "grant-request-deferred",
+      "label": {
+        "en": "Grant request deferred",
+        "ru": "Запрос разрешения отложен"
+      },
+      "definition": {
+        "en": "A grant request was deferred.",
+        "ru": "Запрос разрешения отложен."
+      },
+      "group": "grants"
+    },
+    {
+      "code": "projection-served",
+      "label": {
+        "en": "Projection served",
+        "ru": "Проекция выдана"
+      },
+      "definition": {
+        "en": "A projection was served to a grantee.",
+        "ru": "Получателю выдана проекция."
+      },
+      "group": "disclosure"
+    },
+    {
+      "code": "answer-served",
+      "label": {
+        "en": "Answer served",
+        "ru": "Ответ выдан"
+      },
+      "definition": {
+        "en": "An answer was served to a grantee.",
+        "ru": "Получателю выдан ответ."
+      },
+      "group": "disclosure"
+    },
+    {
+      "code": "request-denied",
+      "label": {
+        "en": "Request denied",
+        "ru": "В запросе отказано"
+      },
+      "definition": {
+        "en": "A request was denied.",
+        "ru": "В запросе отказано."
+      },
+      "group": "disclosure"
+    },
+    {
+      "code": "proposal-received",
+      "label": {
+        "en": "Proposal received",
+        "ru": "Получено предложение"
+      },
+      "definition": {
+        "en": "A proposal was received and stored.",
+        "ru": "Предложение получено и сохранено."
+      },
+      "group": "proposals-and-feedback"
+    },
+    {
+      "code": "proposal-refused",
+      "label": {
+        "en": "Proposal refused",
+        "ru": "Предложение отвергнуто"
+      },
+      "definition": {
+        "en": "A proposal was refused without storing its items.",
+        "ru": "Предложение отвергнуто без сохранения его пунктов."
+      },
+      "group": "proposals-and-feedback"
+    },
+    {
+      "code": "ask-first",
+      "label": {
+        "en": "Asked first",
+        "ru": "Предварительный вопрос"
+      },
+      "definition": {
+        "en": "The person was asked before an agent reading through a lens (I5).",
+        "ru": "Человека спросили перед прочтением агента через линзу (I5)."
+      },
+      "group": "proposals-and-feedback"
+    },
+    {
+      "code": "feedback-received",
+      "label": {
+        "en": "Feedback received",
+        "ru": "Получена обратная связь"
+      },
+      "definition": {
+        "en": "Feedback from a grantee was received.",
+        "ru": "Получена обратная связь от получателя."
+      },
+      "group": "proposals-and-feedback"
+    },
+    {
+      "code": "use-report-received",
+      "label": {
+        "en": "Use report received",
+        "ru": "Получен отчёт об использовании"
+      },
+      "definition": {
+        "en": "A report on how projected records were used was received.",
+        "ru": "Получен отчёт о том, как использовались записи из проекции."
+      },
+      "group": "proposals-and-feedback"
+    },
+    {
+      "code": "source-access-requested",
+      "label": {
+        "en": "Source access requested",
+        "ru": "Запрошен доступ к источнику"
+      },
+      "definition": {
+        "en": "Verbatim access to a source was requested.",
+        "ru": "Запрошен дословный доступ к источнику."
+      },
+      "group": "vault"
+    },
+    {
+      "code": "step-up-confirmed",
+      "label": {
+        "en": "Step-up confirmed",
+        "ru": "Усиленное подтверждение получено"
+      },
+      "definition": {
+        "en": "The person confirmed a step-up.",
+        "ru": "Человек дал усиленное подтверждение."
+      },
+      "group": "vault"
+    },
+    {
+      "code": "step-up-declined",
+      "label": {
+        "en": "Step-up declined",
+        "ru": "В усиленном подтверждении отказано"
+      },
+      "definition": {
+        "en": "The person declined a step-up, or it timed out.",
+        "ru": "Человек отказал в усиленном подтверждении, или истёк срок ожидания."
+      },
+      "group": "vault"
+    },
+    {
+      "code": "source-opened",
+      "label": {
+        "en": "Source opened",
+        "ru": "Источник открыт"
+      },
+      "definition": {
+        "en": "Source content was released to a grantee.",
+        "ru": "Содержимое источника раскрыто получателю."
+      },
+      "group": "vault"
+    },
+    {
+      "code": "recall-offered",
+      "label": {
+        "en": "Recall offered",
+        "ru": "Предложено возвращение опыта"
+      },
+      "definition": {
+        "en": "An agent offered the person's own experience under a recall cue.",
+        "ru": "Агент предложил человеку его собственный опыт по сигналу возвращения опыта."
+      },
+      "group": "recall"
+    },
+    {
+      "code": "revocation-notice-sent",
+      "label": {
+        "en": "Revocation notice sent",
+        "ru": "Отправлено уведомление об отзыве"
+      },
+      "definition": {
+        "en": "A revocation notice was sent to a grantee.",
+        "ru": "Получателю отправлено уведомление об отзыве разрешения."
+      },
+      "group": "notices"
+    },
+    {
+      "code": "erasure-notice-sent",
+      "label": {
+        "en": "Erasure notice sent",
+        "ru": "Отправлено уведомление об удалении"
+      },
+      "definition": {
+        "en": "An erasure notice was sent to a counterparty.",
+        "ru": "Контрагенту отправлено уведомление об удалении."
+      },
+      "group": "notices"
+    },
+    {
+      "code": "erasure-notice-acknowledged",
+      "label": {
+        "en": "Erasure notice acknowledged",
+        "ru": "Уведомление об удалении подтверждено"
+      },
+      "definition": {
+        "en": "A counterparty acknowledged an erasure notice.",
+        "ru": "Контрагент подтвердил получение уведомления об удалении."
+      },
+      "group": "notices"
+    },
+    {
+      "code": "purge-receipt-received",
+      "label": {
+        "en": "Purge receipt received",
+        "ru": "Получено подтверждение очистки"
+      },
+      "definition": {
+        "en": "A counterparty reported the purge result.",
+        "ru": "Контрагент сообщил результат очистки."
+      },
+      "group": "notices"
+    },
+    {
+      "code": "import-run",
+      "label": {
+        "en": "Import run",
+        "ru": "Импорт"
+      },
+      "definition": {
+        "en": "An import run.",
+        "ru": "Выполнен импорт."
+      },
+      "group": "imports-exports-backups"
+    },
+    {
+      "code": "export-run",
+      "label": {
+        "en": "Export run",
+        "ru": "Выгрузка"
+      },
+      "definition": {
+        "en": "An export run.",
+        "ru": "Выполнена выгрузка."
+      },
+      "group": "imports-exports-backups"
+    },
+    {
+      "code": "backup-created",
+      "label": {
+        "en": "Backup created",
+        "ru": "Создана резервная копия"
+      },
+      "definition": {
+        "en": "A backup was created.",
+        "ru": "Создана резервная копия."
+      },
+      "group": "imports-exports-backups"
+    },
+    {
+      "code": "backup-restored",
+      "label": {
+        "en": "Backup restored",
+        "ru": "Восстановлено из копии"
+      },
+      "definition": {
+        "en": "A backup was restored.",
+        "ru": "Выполнено восстановление из резервной копии."
+      },
+      "group": "imports-exports-backups"
+    },
+    {
+      "code": "tombstones-reapplied",
+      "label": {
+        "en": "Tombstones reapplied",
+        "ru": "Метки удаления применены повторно"
+      },
+      "definition": {
+        "en": "After a restore, tombstones from the erasure ledger were reapplied.",
+        "ru": "После восстановления повторно применены метки удаления из реестра удалений."
+      },
+      "group": "imports-exports-backups"
+    },
+    {
+      "code": "chain-resealed",
+      "label": {
+        "en": "Chain resealed",
+        "ru": "Цепочка запечатана заново"
+      },
+      "definition": {
+        "en": "The event chain was rebuilt from a new segment.",
+        "ru": "Цепочка событий перестроена с нового сегмента."
+      },
+      "group": "log-maintenance"
+    },
+    {
+      "code": "redacted",
+      "label": {
+        "en": "Redacted stub",
+        "ru": "Скрытая запись журнала"
+      },
+      "definition": {
+        "en": "Used only on redacted stubs that replace a removed Event.",
+        "ru": "Используется только в заглушках, заменяющих удалённое событие журнала."
+      },
+      "group": "log-maintenance"
+    }
+  ]
+}

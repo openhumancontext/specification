@@ -1,0 +1,408 @@
+{
+  "format": "ohc.context",
+  "specVersion": "0.1.0-draft",
+  "id": "urn:ohc:example:mara:context",
+  "version": "2026-11-28.1",
+  "subject": {
+    "id": "urn:ohc:example:mara",
+    "displayName": "Mara (fictional)"
+  },
+  "holder": "subject",
+  "lang": "en",
+  "created": "2026-09-01T09:00:00Z",
+  "conformance": {
+    "level": "L1",
+    "modules": [
+      "core",
+      "governance"
+    ],
+    "subjectIsAdult": true
+  },
+  "parties": [
+    {
+      "id": "a-01",
+      "partyKind": "agent",
+      "label": "Study companion"
+    },
+    {
+      "id": "p-01",
+      "partyKind": "person",
+      "label": "Conversation tutor",
+      "role": "teacher"
+    }
+  ],
+  "policy": {
+    "admission": "subject-only",
+    "resolver": "returnDialog"
+  },
+  "claims": [
+    {
+      "id": "c-01",
+      "facet": "goal",
+      "predicate": "learning",
+      "text": "Hold a twenty-minute conversation in Portuguese by March 2027.",
+      "origin": "declared",
+      "assertedBy": "subject",
+      "recordedAt": "2026-09-01T09:05:00Z",
+      "horizon": "focus",
+      "valid": {
+        "until": "2027-04-01"
+      },
+      "contexts": [
+        "learning"
+      ],
+      "synthetic": true
+    },
+    {
+      "id": "c-02",
+      "facet": "preference",
+      "predicate": "pushback",
+      "text": "Correct me after I finish a sentence, not in the middle of it.",
+      "origin": "declared",
+      "assertedBy": "subject",
+      "recordedAt": "2026-09-15T19:12:00Z",
+      "horizon": "focus",
+      "contexts": [
+        "learning"
+      ],
+      "synthetic": true
+    },
+    {
+      "id": "c-03",
+      "facet": "preference",
+      "predicate": "format",
+      "text": "Prefers vocabulary cards to conversation drills.",
+      "origin": "inferred",
+      "assertedBy": "a-01",
+      "recordedAt": "2026-09-12T18:00:00Z",
+      "underGrant": "g-01",
+      "purpose": "learning-support",
+      "epistemic": "hypothesis",
+      "confidence": {
+        "value": 0.3,
+        "semantics": "support-score",
+        "method": "two sessions out of six"
+      },
+      "evidence": [
+        {
+          "ref": "ep-01",
+          "kind": "observation"
+        },
+        {
+          "ref": "ep-02",
+          "kind": "observation"
+        }
+      ],
+      "contexts": [
+        "learning"
+      ],
+      "synthetic": true
+    }
+  ],
+  "episodes": [
+    {
+      "id": "ep-01",
+      "origin": "declared",
+      "assertedBy": "subject",
+      "recordedAt": "2026-09-08T21:00:00Z",
+      "title": "Conversation drill stopped early",
+      "occurred": {
+        "start": "2026-09-08",
+        "precision": "day"
+      },
+      "contexts": [
+        "learning"
+      ],
+      "accounts": [
+        {
+          "narrator": "subject",
+          "narratedAt": "2026-09-08T20:55:00Z",
+          "addedAt": "2026-09-08T21:00:00Z",
+          "accountKind": "in-the-moment",
+          "happened": "I stopped the conversation drill after ten minutes and switched to vocabulary cards.",
+          "didOrTried": "Did twenty cards instead.",
+          "understandingThen": "I was too tired after work to speak."
+        },
+        {
+          "narrator": "a-01",
+          "narratedAt": "2026-09-08T20:50:00Z",
+          "addedAt": "2026-09-08T21:00:00Z",
+          "accountKind": "observer-account",
+          "happened": "The drill ended at minute ten, right after a correction in the middle of a sentence. Three prompts were left unanswered."
+        }
+      ],
+      "selection": {
+        "selectedBy": "subject",
+        "reason": "subject-chose"
+      },
+      "synthetic": true
+    },
+    {
+      "id": "ep-02",
+      "origin": "observed",
+      "assertedBy": "a-01",
+      "recordedAt": "2026-09-12T18:00:00Z",
+      "underGrant": "g-01",
+      "purpose": "learning-support",
+      "title": "Second drill stopped early",
+      "occurred": {
+        "start": "2026-09-11",
+        "precision": "day"
+      },
+      "contexts": [
+        "learning"
+      ],
+      "accounts": [
+        {
+          "narrator": "a-01",
+          "narratedAt": "2026-09-11T19:40:00Z",
+          "addedAt": "2026-09-12T18:00:00Z",
+          "accountKind": "observer-account",
+          "happened": "The drill ended at minute twelve, one prompt after a correction in the middle of a sentence. The session went on with listening exercises."
+        }
+      ],
+      "selection": {
+        "selectedBy": "a-01",
+        "reason": "agent-suggested"
+      },
+      "synthetic": true
+    }
+  ],
+  "interpretations": [
+    {
+      "id": "in-01",
+      "about": [
+        "ep-01"
+      ],
+      "stance": "retrospective",
+      "text": "I stop drills when I am tired.",
+      "origin": "declared",
+      "assertedBy": "subject",
+      "recordedAt": "2026-09-08T21:05:00Z",
+      "heldDuring": {
+        "from": "2026-09-08"
+      },
+      "contexts": [
+        "learning"
+      ],
+      "synthetic": true
+    },
+    {
+      "id": "in-02",
+      "about": [
+        "ep-01",
+        "ep-02"
+      ],
+      "stance": "retrospective",
+      "text": "Both drills ended soon after a correction came in the middle of a sentence.",
+      "causal": "hypothesized",
+      "origin": "inferred",
+      "assertedBy": "a-01",
+      "recordedAt": "2026-09-12T18:00:00Z",
+      "underGrant": "g-01",
+      "purpose": "learning-support",
+      "epistemic": "hypothesis",
+      "grounds": [
+        {
+          "ref": "ep-01",
+          "kind": "observation"
+        },
+        {
+          "ref": "ep-02",
+          "kind": "observation"
+        }
+      ],
+      "alternatives": [
+        {
+          "text": "Both sessions came after a full working day.",
+          "kind": "physiological"
+        },
+        {
+          "text": "The drill topics were new vocabulary both times.",
+          "kind": "informational"
+        }
+      ],
+      "limits": "Two sessions, one observer, no word from Mara yet; a study aid, not a judgement.",
+      "contexts": [
+        "learning"
+      ],
+      "synthetic": true
+    },
+    {
+      "id": "in-03",
+      "supersedes": "in-01",
+      "about": [
+        "ep-01",
+        "ep-02"
+      ],
+      "stance": "revision",
+      "text": "I stop when a correction cuts into a sentence, more than when I am tired.",
+      "origin": "declared",
+      "assertedBy": "subject",
+      "recordedAt": "2026-09-15T19:10:00Z",
+      "heldDuring": {
+        "from": "2026-09-15"
+      },
+      "handling": [
+        "no-quote-back"
+      ],
+      "contexts": [
+        "learning"
+      ],
+      "synthetic": true
+    }
+  ],
+  "proposals": [
+    {
+      "id": "prop-01",
+      "proposer": "a-01",
+      "recordedAt": "2026-09-12T18:00:00Z",
+      "underGrant": "g-01",
+      "purpose": "learning-support",
+      "items": [
+        "ep-02",
+        "in-02",
+        "c-03"
+      ],
+      "rationale": "Two drills ended early this week; offering the second session, one reading and one preference for the weekly review.",
+      "expiresAt": "2026-10-12T18:00:00Z",
+      "presentation": {
+        "channel": "agent-dialog"
+      }
+    }
+  ],
+  "reviews": [
+    {
+      "id": "rv-01",
+      "target": [
+        "ep-02"
+      ],
+      "action": "admit",
+      "by": "subject",
+      "recordedAt": "2026-09-15T19:00:00Z"
+    },
+    {
+      "id": "rv-02",
+      "target": "in-02",
+      "action": "partially-endorse",
+      "by": "subject",
+      "recordedAt": "2026-09-15T19:00:00Z",
+      "endorsedPart": "Corrections in the middle of a sentence stop me."
+    },
+    {
+      "id": "rv-03",
+      "target": "c-03",
+      "action": "decline",
+      "by": "subject",
+      "recordedAt": "2026-09-15T19:00:00Z",
+      "reasonCode": "not-true"
+    }
+  ],
+  "grants": [
+    {
+      "id": "g-01",
+      "recordedAt": "2026-09-01T09:10:00Z",
+      "grantor": "subject",
+      "grantee": "a-01",
+      "purposes": [
+        "learning-support"
+      ],
+      "scope": {
+        "include": [
+          {
+            "kinds": [
+              "Episode",
+              "Interpretation"
+            ],
+            "contexts": [
+              "learning"
+            ]
+          },
+          {
+            "facets": [
+              "goal",
+              "preference"
+            ]
+          }
+        ]
+      },
+      "actions": [
+        "read",
+        "suggest",
+        "infer"
+      ],
+      "mode": "full",
+      "interpretations": "all",
+      "constraints": {
+        "expiresAt": "2026-12-01T00:00:00Z",
+        "storage": "session",
+        "forwarding": false,
+        "crossContextUse": false,
+        "delegable": false
+      },
+      "reviewCadence": "P7D",
+      "basis": {
+        "legal": "explicit-consent"
+      },
+      "expressedBy": {
+        "actor": "subject",
+        "at": "2026-09-01T09:10:00Z",
+        "channel": "holder-ui"
+      }
+    },
+    {
+      "id": "g-02",
+      "recordedAt": "2026-11-28T10:00:00Z",
+      "grantor": "subject",
+      "grantee": "a-01",
+      "renews": "g-01",
+      "purposes": [
+        "learning-support"
+      ],
+      "scope": {
+        "include": [
+          {
+            "kinds": [
+              "Episode",
+              "Interpretation"
+            ],
+            "contexts": [
+              "learning"
+            ]
+          },
+          {
+            "facets": [
+              "goal",
+              "preference"
+            ]
+          }
+        ]
+      },
+      "actions": [
+        "read",
+        "suggest",
+        "infer"
+      ],
+      "mode": "full",
+      "interpretations": "subject-endorsed",
+      "constraints": {
+        "expiresAt": "2027-05-20T00:00:00Z",
+        "storage": "session",
+        "forwarding": false,
+        "crossContextUse": false,
+        "delegable": false
+      },
+      "reviewCadence": "P14D",
+      "basis": {
+        "legal": "explicit-consent"
+      },
+      "expressedBy": {
+        "actor": "subject",
+        "at": "2026-11-28T10:00:00Z",
+        "channel": "holder-ui"
+      },
+      "note": "Renewed after the November review; readings now only when I have endorsed them."
+    }
+  ],
+  "synthetic": true
+}

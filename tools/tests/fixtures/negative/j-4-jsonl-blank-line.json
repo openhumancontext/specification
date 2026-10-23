@@ -1,0 +1,10 @@
+{
+  "description": "A blank line inside a JSON Lines collection.",
+  "expect": [
+    "J-4"
+  ],
+  "form": "package",
+  "raw": {
+    "records/health-refs.jsonl": "\n"
+  }
+}

@@ -1,0 +1,200 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:ohc:schema:lens-adoption:0.1.0-draft",
+  "title": "OHC LensAdoption",
+  "description": "The person's relation to one framework of description: how they came to it, what it may be used for, who may interpret through it, and what happens when a practice relationship ends. Layer assertion; module lenses.",
+  "type": "object",
+  "required": [
+    "id",
+    "lens",
+    "route",
+    "uses",
+    "origin",
+    "assertedBy",
+    "recordedAt"
+  ],
+  "properties": {
+    "kind": {
+      "const": "LensAdoption"
+    },
+    "id": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Envelope/properties/id"
+    },
+    "lens": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/LensRef"
+    },
+    "route": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/adoption.routes"
+    },
+    "suggestedBy": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Actor"
+    },
+    "practice": {
+      "type": "object",
+      "required": [
+        "role",
+        "practitioner",
+        "relationship"
+      ],
+      "properties": {
+        "role": {
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/adoption.practice-roles"
+        },
+        "practitioner": {
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/LocalId"
+        },
+        "relationship": {
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/adoption.practice-relationships"
+        },
+        "since": {
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Date"
+        },
+        "releaseRef": {
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/LocalId"
+        }
+      },
+      "additionalProperties": false
+    },
+    "confidentiality": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/adoption.confidentiality"
+    },
+    "uses": {
+      "type": "array",
+      "items": {
+        "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/adoption.uses"
+      }
+    },
+    "interpretationAuthors": {
+      "type": "array",
+      "items": {
+        "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Actor"
+      },
+      "minItems": 1
+    },
+    "agentInterpretation": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/adoption.agent-interpretation"
+    },
+    "representationPreference": {
+      "description": "A lens representation id.",
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+    },
+    "playbooks": {
+      "description": "The playbooks the person uses with this lens (PB-3). Absent: the descriptor's list. Empty: none.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^urn:ohc:playbook:(?:x-[a-z0-9]+(?:[.-][a-z0-9]+)*:)?[a-z0-9]+(?:-[a-z0-9]+)*$"
+      },
+      "uniqueItems": true
+    },
+    "onEnd": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/adoption.on-end"
+    },
+    "origin": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Envelope/properties/origin"
+    },
+    "assertedBy": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Envelope/properties/assertedBy"
+    },
+    "recordedAt": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Envelope/properties/recordedAt"
+    },
+    "recordedBy": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Envelope/properties/recordedBy"
+    },
+    "underGrant": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Envelope/properties/underGrant"
+    },
+    "purpose": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Envelope/properties/purpose"
+    },
+    "formulatedAt": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Envelope/properties/formulatedAt"
+    },
+    "supersedes": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Envelope/properties/supersedes"
+    },
+    "epistemic": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Envelope/properties/epistemic"
+    },
+    "confidence": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Envelope/properties/confidence"
+    },
+    "sensitivity": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Envelope/properties/sensitivity"
+    },
+    "categories": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Envelope/properties/categories"
+    },
+    "handling": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Envelope/properties/handling"
+    },
+    "audience": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Envelope/properties/audience"
+    },
+    "contexts": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Envelope/properties/contexts"
+    },
+    "lang": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Envelope/properties/lang"
+    },
+    "importedFrom": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Envelope/properties/importedFrom"
+    },
+    "generatedBy": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Envelope/properties/generatedBy"
+    },
+    "derivedFrom": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Envelope/properties/derivedFrom"
+    },
+    "synthetic": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Envelope/properties/synthetic"
+    },
+    "note": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Envelope/properties/note"
+    },
+    "ext": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Envelope/properties/ext"
+    }
+  },
+  "additionalProperties": false,
+  "allOf": [
+    {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/EnvelopeRules"
+    },
+    {
+      "if": {
+        "properties": {
+          "route": {
+            "const": "agent-suggested"
+          }
+        },
+        "required": [
+          "route"
+        ]
+      },
+      "then": {
+        "required": [
+          "suggestedBy"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "route": {
+            "const": "inherited-from-practice"
+          }
+        },
+        "required": [
+          "route"
+        ]
+      },
+      "then": {
+        "required": [
+          "practice"
+        ]
+      }
+    }
+  ]
+}

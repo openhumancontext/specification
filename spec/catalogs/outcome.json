@@ -1,0 +1,157 @@
+{
+  "format": "ohc.catalog",
+  "id": "urn:ohc:catalog:outcome",
+  "version": "0.1.0",
+  "specVersion": "0.1.0-draft",
+  "title": {
+    "en": "Outcome vocabularies",
+    "ru": "Словари исходов"
+  },
+  "description": {
+    "en": "What happened when a practice was used, a recall cue fired, a proposal was offered, an interpretation was shown or a model view was used. An Outcome asserted by anyone other than the subject is an agent's estimate (O-1).",
+    "ru": "Что произошло, когда применили практику, сработал сигнал возвращения опыта, было сделано предложение, показана интерпретация или использован взгляд модели. Исход, записанный не самим человеком, — оценка агента (O-1)."
+  },
+  "closed": true,
+  "lists": [
+    {
+      "name": "results",
+      "title": {
+        "en": "Results",
+        "ru": "Результаты"
+      },
+      "closed": true,
+      "field": "Outcome.result"
+    },
+    {
+      "name": "responses",
+      "title": {
+        "en": "Responses",
+        "ru": "Ответы"
+      },
+      "closed": true,
+      "field": "Outcome.delivery.response"
+    }
+  ],
+  "codes": [
+    {
+      "code": "helped",
+      "list": "results",
+      "label": {
+        "en": "Helped",
+        "ru": "Помогло"
+      },
+      "definition": {
+        "en": "It helped.",
+        "ru": "Помогло."
+      }
+    },
+    {
+      "code": "partly",
+      "list": "results",
+      "label": {
+        "en": "Partly",
+        "ru": "Отчасти"
+      },
+      "definition": {
+        "en": "It helped in part.",
+        "ru": "Помогло отчасти."
+      }
+    },
+    {
+      "code": "no-effect",
+      "list": "results",
+      "label": {
+        "en": "No effect",
+        "ru": "Без эффекта"
+      },
+      "definition": {
+        "en": "It made no difference.",
+        "ru": "Ничего не изменило."
+      }
+    },
+    {
+      "code": "worse",
+      "list": "results",
+      "label": {
+        "en": "Worse",
+        "ru": "Хуже"
+      },
+      "definition": {
+        "en": "It made things worse.",
+        "ru": "Стало хуже."
+      }
+    },
+    {
+      "code": "unclear",
+      "list": "results",
+      "label": {
+        "en": "Unclear",
+        "ru": "Неясно"
+      },
+      "definition": {
+        "en": "The effect is unclear.",
+        "ru": "Эффект неясен."
+      }
+    },
+    {
+      "code": "not-tried",
+      "list": "results",
+      "label": {
+        "en": "Not tried",
+        "ru": "Не пробовали"
+      },
+      "definition": {
+        "en": "It was not tried.",
+        "ru": "Не было попытки."
+      }
+    },
+    {
+      "code": "accepted",
+      "list": "responses",
+      "label": {
+        "en": "Accepted",
+        "ru": "Принято"
+      },
+      "definition": {
+        "en": "The person accepted the offer.",
+        "ru": "Человек принял предложение."
+      }
+    },
+    {
+      "code": "declined",
+      "list": "responses",
+      "label": {
+        "en": "Declined",
+        "ru": "Отклонено"
+      },
+      "definition": {
+        "en": "The person declined the offer.",
+        "ru": "Человек отклонил предложение."
+      }
+    },
+    {
+      "code": "deferred",
+      "list": "responses",
+      "label": {
+        "en": "Deferred",
+        "ru": "Отложено"
+      },
+      "definition": {
+        "en": "The person deferred the offer.",
+        "ru": "Человек отложил предложение."
+      }
+    },
+    {
+      "code": "asked-to-stop",
+      "list": "responses",
+      "label": {
+        "en": "Asked to stop",
+        "ru": "Попросил прекратить"
+      },
+      "definition": {
+        "en": "The person asked not to be offered this again. It pauses the cue or offering (RC-3).",
+        "ru": "Человек попросил больше этого не предлагать. Это приостанавливает сигнал или предложение (RC-3)."
+      }
+    }
+  ]
+}

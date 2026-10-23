@@ -1,0 +1,51 @@
+{
+  "format": "ohc.instrument",
+  "specVersion": "0.1.0-draft",
+  "id": "urn:ohc:instrument:rheti-2.5",
+  "version": "0.1.0",
+  "name": "RHETI® v2.5",
+  "lens": "urn:ohc:lens:enneagram",
+  "publisher": "The Enneagram Institute",
+  "forms": [
+    {
+      "id": "2.5",
+      "items": 144,
+      "scale": "paired statements (forced choice)",
+      "note": "About 40 minutes; a profile across all nine types"
+    }
+  ],
+  "itemsLicence": "Proprietary (The Enneagram Institute)",
+  "scoring": "proprietary",
+  "marks": [
+    {
+      "mark": "RHETI",
+      "owner": "Enneagram Personality Types, Inc. (dba The Enneagram Institute)",
+      "status": "registered",
+      "notice": "RHETI® (US Reg. No. 5584848) is a registered mark of Enneagram Personality Types, Inc. (dba The Enneagram Institute). Enneathought and Enneagram Institute are names it uses; their status is not verified here. All are used only to name its products.",
+      "use": "nominative-only"
+    },
+    {
+      "mark": "Enneagram Institute",
+      "owner": "Enneagram Personality Types, Inc. (dba The Enneagram Institute)",
+      "status": "unverified",
+      "notice": "RHETI® (US Reg. No. 5584848) is a registered mark of Enneagram Personality Types, Inc. (dba The Enneagram Institute). Enneathought and Enneagram Institute are names it uses; their status is not verified here. All are used only to name its products.",
+      "use": "nominative-only"
+    }
+  ],
+  "neverStore": [
+    "item text",
+    "report prose",
+    "scoring key",
+    "raw item responses"
+  ],
+  "registryListing": "ok",
+  "citations": [
+    {
+      "ref": "The Enneagram Institute, RHETI page",
+      "grade": "F",
+      "note": "144 paired statements; the publisher's claim of independent validation is a vendor claim"
+    }
+  ],
+  "legalReviewNeeded": true,
+  "reviewedAt": "2026-10-09"
+}

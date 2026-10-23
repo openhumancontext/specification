@@ -1,0 +1,15 @@
+{
+  "description": "A lock for another context version.",
+  "expect": [
+    "LK-3"
+  ],
+  "form": "package",
+  "lockPatches": [
+    {
+      "op": "set",
+      "target": "lock",
+      "path": "/context/version",
+      "value": "2026-01-01.1"
+    }
+  ]
+}

@@ -1,0 +1,2269 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:ohc:schema:common:0.1.0-draft",
+  "title": "OHC common definitions",
+  "description": "Shared types (names starting with a capital letter) and controlled vocabularies (names starting with a lowercase letter). Vocabulary $defs are generated from spec/catalogs by tools/check.py --gen-enums and must equal the catalogs (S-4): one $def per catalog file named after the file (without .json); a catalog that declares lists gets one $def per list, named <catalog>.<list>, holding the codes whose list member equals that name, in file order. A closed list becomes {\"enum\": [...]}; an open list becomes {\"anyOf\": [{\"enum\": [...]}, {\"$ref\": \"#/$defs/LocalCode\"}]}. Catalogs with generatesEnum false produce no $def. Every enumeration in OHC schemas is a $ref to one of these $defs. This schema only holds $defs and validates no document.",
+  "additionalProperties": false,
+  "$defs": {
+    "Text": {
+      "description": "A non-empty string.",
+      "type": "string",
+      "minLength": 1
+    },
+    "LangText": {
+      "type": "object",
+      "description": "A text in English (reference language) and Russian.",
+      "required": [
+        "en",
+        "ru"
+      ],
+      "properties": {
+        "en": {
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+        },
+        "ru": {
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+        }
+      },
+      "additionalProperties": false
+    },
+    "LocalId": {
+      "description": "A record or party id, unique within a context and never reused. The stricter R-I1 pattern (kind prefix, then counter, ULID or UUID) is a SHOULD, checked as warning W-ID1.",
+      "type": "string",
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,63}$"
+    },
+    "URI": {
+      "description": "An absolute URI, for example urn:ohc:..., urn:uuid:..., did:... or https://...",
+      "type": "string",
+      "pattern": "^[A-Za-z][A-Za-z0-9+.-]*:[^\\s]+$"
+    },
+    "LocalCode": {
+      "description": "A local vocabulary code x-<namespace>:<code>, defined in Context.vocabulary. Readers treat unknown x- codes as opaque and never infer from them.",
+      "type": "string",
+      "pattern": "^x-[a-z0-9]+(?:[.-][a-z0-9]+)*:[A-Za-z0-9][A-Za-z0-9._-]*$"
+    },
+    "Date": {
+      "description": "A calendar date YYYY-MM-DD.",
+      "type": "string",
+      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+    },
+    "DateTime": {
+      "description": "An RFC 3339 date-time with an offset.",
+      "type": "string",
+      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}(?:\\.[0-9]+)?(?:Z|[+-][0-9]{2}:[0-9]{2})$"
+    },
+    "DateOrDateTime": {
+      "description": "A date or an RFC 3339 date-time.",
+      "anyOf": [
+        {
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Date"
+        },
+        {
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/DateTime"
+        }
+      ]
+    },
+    "Duration": {
+      "description": "An ISO 8601 duration, for example P3M or PT30M.",
+      "type": "string",
+      "pattern": "^P(?=[0-9T])(?:[0-9]+Y)?(?:[0-9]+M)?(?:[0-9]+W)?(?:[0-9]+D)?(?:T(?=[0-9])(?:[0-9]+H)?(?:[0-9]+M)?(?:[0-9]+(?:\\.[0-9]+)?S)?)?$"
+    },
+    "LangTag": {
+      "description": "A BCP 47 language tag.",
+      "type": "string",
+      "pattern": "^[A-Za-z]{2,3}(?:-[A-Za-z0-9]{1,8})*$"
+    },
+    "SemVer": {
+      "description": "A semantic version.",
+      "type": "string",
+      "pattern": "^(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)(?:-[0-9A-Za-z.-]+)?(?:\\+[0-9A-Za-z.-]+)?$"
+    },
+    "Sha256Hex": {
+      "description": "A SHA-256 value as 64 lowercase hex characters.",
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "Digest": {
+      "description": "\"sha256:\" followed by 64 lowercase hex characters.",
+      "type": "string",
+      "pattern": "^sha256:[0-9a-f]{64}$"
+    },
+    "Nonce": {
+      "description": "At least 16 random bytes, base64url.",
+      "type": "string",
+      "pattern": "^[A-Za-z0-9_-]{22,}={0,2}$"
+    },
+    "Alias": {
+      "description": "A pairwise alias of the subject for one grantee (urn:ohc:alias: plus 26 lowercase characters).",
+      "type": "string",
+      "pattern": "^urn:ohc:alias:[a-z0-9]{26}$"
+    },
+    "Handle": {
+      "description": "A per-grant HMAC handle (\"hmac:\" plus base64url).",
+      "type": "string",
+      "pattern": "^hmac:[A-Za-z0-9_-]+={0,2}$"
+    },
+    "Path": {
+      "description": "A relative package path: no leading /, no backslash, no .. segment, no colon (ODE's path rule).",
+      "type": "string",
+      "pattern": "^(?!/)(?!.*\\\\)(?!.*(?:^|/)\\.\\.(?:/|$))(?!.*:)[^\\x00]+$"
+    },
+    "Ref": {
+      "description": "A reference: a local id, or a cross-context reference that is never followed.",
+      "anyOf": [
+        {
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/LocalId"
+        },
+        {
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/CrossRef"
+        }
+      ]
+    },
+    "CrossRef": {
+      "type": "object",
+      "description": "A cross-context reference <contextId>#<recordId>. Never followed by the checker.",
+      "required": [
+        "context",
+        "id"
+      ],
+      "properties": {
+        "context": {
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/URI"
+        },
+        "id": {
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/LocalId"
+        },
+        "contextVersion": {
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+        }
+      },
+      "additionalProperties": false
+    },
+    "Actor": {
+      "description": "Who: \"subject\" (the person the context is about), \"holder\" (the context's holder under its declared policy), or a Party id listed in Context.parties. A Part is never an actor (R-P2).",
+      "allOf": [
+        {
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/LocalId"
+        }
+      ]
+    },
+    "PartialTime": {
+      "type": "object",
+      "description": "Experience time with partial precision.",
+      "required": [
+        "start",
+        "precision"
+      ],
+      "properties": {
+        "start": {
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/DateOrDateTime"
+        },
+        "end": {
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/DateOrDateTime"
+        },
+        "precision": {
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/time-precision"
+        }
+      },
+      "additionalProperties": false
+    },
+    "Interval": {
+      "type": "object",
+      "description": "A time interval; until is exclusive.",
+      "properties": {
+        "from": {
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/DateOrDateTime"
+        },
+        "until": {
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/DateOrDateTime"
+        }
+      },
+      "additionalProperties": false,
+      "minProperties": 1
+    },
+    "Selector": {
+      "description": "A stored span selector, modelled on W3C Web Annotation selectors. The text-quote selector exists only in served excerpts and is never stored.",
+      "oneOf": [
+        {
+          "type": "object",
+          "description": "Unicode code points over the NFC text, 0-based, end exclusive.",
+          "required": [
+            "type",
+            "start",
+            "end"
+          ],
+          "properties": {
+            "type": {
+              "const": "text-position"
+            },
+            "start": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "end": {
+              "type": "integer",
+              "minimum": 0
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "description": "Seconds.",
+          "required": [
+            "type",
+            "start",
+            "end"
+          ],
+          "properties": {
+            "type": {
+              "const": "media-time"
+            },
+            "start": {
+              "type": "number",
+              "minimum": 0
+            },
+            "end": {
+              "type": "number",
+              "minimum": 0
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "description": "A page, optionally with a region.",
+          "required": [
+            "type",
+            "page"
+          ],
+          "properties": {
+            "type": {
+              "const": "page"
+            },
+            "page": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "region": {
+              "type": "object",
+              "description": "A region as fractions 0..1 of the page.",
+              "required": [
+                "x",
+                "y",
+                "w",
+                "h"
+              ],
+              "properties": {
+                "x": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 1
+                },
+                "y": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 1
+                },
+                "w": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 1
+                },
+                "h": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 1
+                }
+              },
+              "additionalProperties": false
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "description": "The whole source.",
+          "required": [
+            "type"
+          ],
+          "properties": {
+            "type": {
+              "const": "whole"
+            }
+          },
+          "additionalProperties": false
+        }
+      ]
+    },
+    "ServedSelector": {
+      "description": "A selector in served excerpts: any stored selector, or a text-quote selector generated at serve time.",
+      "oneOf": [
+        {
+          "type": "object",
+          "description": "Unicode code points over the NFC text, 0-based, end exclusive.",
+          "required": [
+            "type",
+            "start",
+            "end"
+          ],
+          "properties": {
+            "type": {
+              "const": "text-position"
+            },
+            "start": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "end": {
+              "type": "integer",
+              "minimum": 0
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "description": "Seconds.",
+          "required": [
+            "type",
+            "start",
+            "end"
+          ],
+          "properties": {
+            "type": {
+              "const": "media-time"
+            },
+            "start": {
+              "type": "number",
+              "minimum": 0
+            },
+            "end": {
+              "type": "number",
+              "minimum": 0
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "description": "A page, optionally with a region.",
+          "required": [
+            "type",
+            "page"
+          ],
+          "properties": {
+            "type": {
+              "const": "page"
+            },
+            "page": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "region": {
+              "type": "object",
+              "description": "A region as fractions 0..1 of the page.",
+              "required": [
+                "x",
+                "y",
+                "w",
+                "h"
+              ],
+              "properties": {
+                "x": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 1
+                },
+                "y": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 1
+                },
+                "w": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 1
+                },
+                "h": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 1
+                }
+              },
+              "additionalProperties": false
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "description": "The whole source.",
+          "required": [
+            "type"
+          ],
+          "properties": {
+            "type": {
+              "const": "whole"
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "description": "Generated at serve time only.",
+          "required": [
+            "type",
+            "exact"
+          ],
+          "properties": {
+            "type": {
+              "const": "text-quote"
+            },
+            "exact": {
+              "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+            },
+            "prefix": {
+              "type": "string"
+            },
+            "suffix": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        }
+      ]
+    },
+    "Span": {
+      "type": "object",
+      "description": "Points into a Source. Records never store quoted text or quote digests (R-V1).",
+      "required": [
+        "source",
+        "selector"
+      ],
+      "properties": {
+        "source": {
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/LocalId"
+        },
+        "selector": {
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Selector"
+        }
+      },
+      "additionalProperties": false
+    },
+    "Ground": {
+      "description": "What a reading rests on: exactly one of ref and span.",
+      "type": "object",
+      "required": [
+        "kind"
+      ],
+      "properties": {
+        "ref": {
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Ref"
+        },
+        "span": {
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Span"
+        },
+        "kind": {
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/interpretation.ground-kinds"
+        },
+        "note": {
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+        }
+      },
+      "additionalProperties": false,
+      "oneOf": [
+        {
+          "required": [
+            "ref"
+          ]
+        },
+        {
+          "required": [
+            "span"
+          ]
+        }
+      ]
+    },
+    "Alternative": {
+      "type": "object",
+      "description": "An alternative explanation.",
+      "required": [
+        "text",
+        "kind"
+      ],
+      "properties": {
+        "text": {
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+        },
+        "kind": {
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/interpretation.alternative-kinds"
+        }
+      },
+      "additionalProperties": false
+    },
+    "Confidence": {
+      "description": "A confidence value with its semantics. A missing confidence is never 0 (R-N2).",
+      "type": "object",
+      "required": [
+        "value",
+        "semantics"
+      ],
+      "properties": {
+        "value": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "semantics": {
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/confidence-semantics"
+        },
+        "scale": {
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+        },
+        "raw": {
+          "type": "number"
+        },
+        "method": {
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+        },
+        "calibrationRef": {
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+        }
+      },
+      "additionalProperties": false,
+      "if": {
+        "properties": {
+          "semantics": {
+            "const": "probability"
+          }
+        },
+        "required": [
+          "semantics"
+        ]
+      },
+      "then": {
+        "required": [
+          "calibrationRef"
+        ]
+      }
+    },
+    "ImportedFrom": {
+      "type": "object",
+      "description": "Where an imported record came from. derivedFields lists fields the importer computed rather than copied.",
+      "required": [
+        "system",
+        "importedAt"
+      ],
+      "properties": {
+        "system": {
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+        },
+        "systemVersion": {
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+        },
+        "recordId": {
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+        },
+        "importedAt": {
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/DateTime"
+        },
+        "run": {
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/LocalId"
+        },
+        "derivedFields": {
+          "type": "array",
+          "items": {
+            "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "GeneratedBy": {
+      "type": "object",
+      "description": "The software and rule that produced a derived record.",
+      "required": [
+        "software"
+      ],
+      "properties": {
+        "software": {
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+        },
+        "version": {
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+        },
+        "method": {
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+        }
+      },
+      "additionalProperties": false
+    },
+    "GrantSelector": {
+      "type": "object",
+      "description": "AND across fields, OR within a field. A selector with all and nothing else is the wildcard.",
+      "properties": {
+        "all": {
+          "const": true
+        },
+        "kinds": {
+          "type": "array",
+          "items": {
+            "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/record-kinds"
+          },
+          "minItems": 1
+        },
+        "facets": {
+          "type": "array",
+          "items": {
+            "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/claim-facets.facets"
+          },
+          "minItems": 1
+        },
+        "predicates": {
+          "type": "array",
+          "items": {
+            "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Predicate"
+          },
+          "minItems": 1
+        },
+        "horizons": {
+          "type": "array",
+          "items": {
+            "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/horizons"
+          },
+          "minItems": 1
+        },
+        "contexts": {
+          "type": "array",
+          "items": {
+            "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/life-domains"
+          },
+          "minItems": 1
+        },
+        "categories": {
+          "type": "array",
+          "items": {
+            "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/categories"
+          },
+          "minItems": 1
+        },
+        "tiers": {
+          "type": "array",
+          "items": {
+            "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/sensitivity-tiers"
+          },
+          "minItems": 1
+        },
+        "lenses": {
+          "type": "array",
+          "items": {
+            "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/URI"
+          },
+          "minItems": 1
+        },
+        "ids": {
+          "type": "array",
+          "items": {
+            "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/LocalId"
+          },
+          "minItems": 1
+        }
+      },
+      "additionalProperties": false,
+      "minProperties": 1
+    },
+    "Predicate": {
+      "description": "A claim predicate: a predicate code, a relationship kind (facet relationship), or a local x- code.",
+      "anyOf": [
+        {
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/claim-facets.predicates"
+        },
+        {
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/relationship-kinds"
+        }
+      ]
+    },
+    "Extensions": {
+      "description": "Extensions. Keys match ODE's regex; content is preserved JCS-equal. Defined keys: gum.import, gum.export, vc.credential, jscontact.extra, ohc.test-data.",
+      "type": "object",
+      "propertyNames": {
+        "pattern": "^[a-z0-9]+(?:[.-][a-z0-9]+)+$"
+      }
+    },
+    "LensRef": {
+      "type": "object",
+      "description": "A pinned lens.",
+      "required": [
+        "id",
+        "version"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/URI"
+        },
+        "version": {
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+        }
+      },
+      "additionalProperties": false
+    },
+    "OdeRef": {
+      "type": "object",
+      "description": "An ODE object reference. Not identity and not access.",
+      "required": [
+        "objectId",
+        "version"
+      ],
+      "properties": {
+        "objectId": {
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+        },
+        "version": {
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+        }
+      },
+      "additionalProperties": false
+    },
+    "Disclosure": {
+      "type": "object",
+      "description": "A disclosure change carried by a restrict or relax Review.",
+      "properties": {
+        "sensitivity": {
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/sensitivity-tiers"
+        },
+        "audience": {
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/audience"
+        },
+        "addHandling": {
+          "type": "array",
+          "items": {
+            "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/handling"
+          },
+          "minItems": 1
+        },
+        "removeHandling": {
+          "type": "array",
+          "items": {
+            "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/handling"
+          },
+          "minItems": 1
+        },
+        "addCategories": {
+          "type": "array",
+          "items": {
+            "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/categories"
+          },
+          "minItems": 1
+        },
+        "recall": {
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/episode.recall"
+        }
+      },
+      "additionalProperties": false,
+      "minProperties": 1
+    },
+    "Envelope": {
+      "type": "object",
+      "description": "The content-record envelope, defined once. Every content-record schema includes these members by reference to Envelope/properties.",
+      "required": [
+        "id",
+        "origin",
+        "assertedBy",
+        "recordedAt"
+      ],
+      "properties": {
+        "kind": {
+          "description": "Implied by the collection in the single document; required in package JSONL and in messages (R-S2).",
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/content-kinds"
+        },
+        "id": {
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/LocalId"
+        },
+        "origin": {
+          "description": "How the content came to be. Set once; never changes (R-O1).",
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/origin"
+        },
+        "assertedBy": {
+          "description": "Whose statement, reading or record this is.",
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Actor"
+        },
+        "recordedAt": {
+          "description": "Knowledge time: when it entered this context. Import and copy never change it (R-T4).",
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/DateTime"
+        },
+        "recordedBy": {
+          "description": "Who wrote it into the context. Defaults to assertedBy.",
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Actor"
+        },
+        "underGrant": {
+          "description": "INF-1: the Grant the writer used, required when the writer is neither the subject nor a steward in scope.",
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/LocalId"
+        },
+        "purpose": {
+          "description": "Required with underGrant; one of the Grant's purposes.",
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/purposes"
+        },
+        "formulatedAt": {
+          "description": "When the content was first formulated; may be earlier than recordedAt (R-T5b).",
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/DateTime"
+        },
+        "supersedes": {
+          "description": "An earlier record of the same kind that this one replaces (R-V2).",
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/LocalId"
+        },
+        "epistemic": {
+          "description": "Initial epistemic status; later changes are Reviews reassess.",
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/epistemic"
+        },
+        "confidence": {
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Confidence"
+        },
+        "sensitivity": {
+          "description": "Stored tier; the effective tier is computed by C3.",
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/sensitivity-tiers"
+        },
+        "categories": {
+          "type": "array",
+          "items": {
+            "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/categories"
+          }
+        },
+        "handling": {
+          "type": "array",
+          "items": {
+            "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/handling"
+          }
+        },
+        "audience": {
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/audience"
+        },
+        "contexts": {
+          "type": "array",
+          "items": {
+            "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/life-domains"
+          }
+        },
+        "lang": {
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/LangTag"
+        },
+        "importedFrom": {
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/ImportedFrom"
+        },
+        "generatedBy": {
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/GeneratedBy"
+        },
+        "derivedFrom": {
+          "description": "Records this one was computed from; required when origin is derived.",
+          "type": "array",
+          "items": {
+            "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Ref"
+          },
+          "minItems": 1
+        },
+        "synthetic": {
+          "description": "MUST be true in published examples (X-1).",
+          "type": "boolean"
+        },
+        "note": {
+          "description": "A free remark by the writer. Never used for inference.",
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+        },
+        "ext": {
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Extensions"
+        }
+      },
+      "additionalProperties": false
+    },
+    "EnvelopeRules": {
+      "description": "Conditional rules of the envelope: importedFrom when origin is imported; generatedBy (with method) and derivedFrom when origin is derived; purpose with underGrant.",
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "origin": {
+                "const": "imported"
+              }
+            },
+            "required": [
+              "origin"
+            ]
+          },
+          "then": {
+            "required": [
+              "importedFrom"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "origin": {
+                "const": "derived"
+              }
+            },
+            "required": [
+              "origin"
+            ]
+          },
+          "then": {
+            "required": [
+              "generatedBy",
+              "derivedFrom"
+            ],
+            "properties": {
+              "generatedBy": {
+                "required": [
+                  "method"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "dependentRequired": {
+            "underGrant": [
+              "purpose"
+            ]
+          }
+        }
+      ]
+    },
+    "absence": {
+      "enum": [
+        "unknown",
+        "not-asked",
+        "not-chosen",
+        "sources-diverge",
+        "not-disclosed",
+        "not-applicable",
+        "not-assessed"
+      ]
+    },
+    "admission": {
+      "enum": [
+        "proposed",
+        "active",
+        "declined",
+        "retracted"
+      ]
+    },
+    "admission-policies": {
+      "enum": [
+        "subject-only",
+        "holder-may-admit-ordinary"
+      ]
+    },
+    "adoption.agent-interpretation": {
+      "enum": [
+        "off",
+        "ask-first",
+        "allowed"
+      ]
+    },
+    "adoption.confidentiality": {
+      "enum": [
+        "none",
+        "practitioner-scope",
+        "therapy-confidential"
+      ]
+    },
+    "adoption.on-end": {
+      "enum": [
+        "ask",
+        "keep-read-only",
+        "archive-person-only",
+        "erase"
+      ]
+    },
+    "adoption.practice-relationships": {
+      "enum": [
+        "active",
+        "ended"
+      ]
+    },
+    "adoption.practice-roles": {
+      "enum": [
+        "therapist",
+        "coach",
+        "teacher",
+        "facilitator",
+        "other"
+      ]
+    },
+    "adoption.routes": {
+      "enum": [
+        "self-chosen",
+        "agent-suggested",
+        "inherited-from-practice",
+        "imported"
+      ]
+    },
+    "adoption.uses": {
+      "enum": [
+        "speak-in-lens",
+        "offer-practices",
+        "store-results",
+        "interpret",
+        "recall"
+      ]
+    },
+    "assessment.modes": {
+      "enum": [
+        "self-report-instrument",
+        "observer-report",
+        "interview-scored",
+        "practitioner-facilitated",
+        "self-identified",
+        "vendor-report-import",
+        "agent-inference",
+        "cross-lens-estimate",
+        "computed-from-birth-data"
+      ]
+    },
+    "assessment.result-types": {
+      "enum": [
+        "dimension-score",
+        "type-assignment",
+        "ranking",
+        "values-profile",
+        "circumplex",
+        "stage",
+        "thought-record",
+        "frame-attributes",
+        "narrative"
+      ]
+    },
+    "assessment.standardized-scales": {
+      "enum": [
+        "T",
+        "z",
+        "percentile",
+        "stanine",
+        "sten"
+      ]
+    },
+    "assessment.type-methods": {
+      "enum": [
+        "self-identified",
+        "instrument",
+        "interview",
+        "best-fit"
+      ]
+    },
+    "assessment.validity-ceilings": {
+      "enum": [
+        "agent-estimate-not-validated",
+        "cross-lens-population-estimate"
+      ]
+    },
+    "assessment.validity-flags": {
+      "enum": [
+        "incomplete",
+        "random-responding",
+        "acquiescence",
+        "translated-form",
+        "norm-mismatch",
+        "agent-estimate-not-validated",
+        "cross-lens-population-estimate",
+        "self-identified-only",
+        "vendor-algorithm-undisclosed",
+        "test-data-personal-only"
+      ]
+    },
+    "audience": {
+      "enum": [
+        "grantees",
+        "named"
+      ]
+    },
+    "categories": {
+      "anyOf": [
+        {
+          "enum": [
+            "health",
+            "mental-health",
+            "belief",
+            "political",
+            "sex-life",
+            "ethnicity",
+            "biometric",
+            "genetic",
+            "trade-union",
+            "criminal",
+            "trauma-adjacent",
+            "intimate",
+            "birth-data",
+            "financial",
+            "location",
+            "third-party",
+            "identity-linking",
+            "workplace"
+          ]
+        },
+        {
+          "$ref": "#/$defs/LocalCode"
+        }
+      ]
+    },
+    "claim-facets.facets": {
+      "enum": [
+        "identity",
+        "role",
+        "fact",
+        "disposition",
+        "goal",
+        "interest",
+        "need",
+        "declared-value",
+        "boundary",
+        "belief",
+        "preference",
+        "capability",
+        "resource",
+        "state",
+        "relationship",
+        "commitment",
+        "other"
+      ]
+    },
+    "claim-facets.families": {
+      "enum": [
+        "identity",
+        "aspiration",
+        "orientation",
+        "interaction",
+        "capacity",
+        "social",
+        "other"
+      ]
+    },
+    "claim-facets.predicates": {
+      "anyOf": [
+        {
+          "enum": [
+            "name-use",
+            "pronouns",
+            "self-description",
+            "language",
+            "work-role",
+            "family-role",
+            "community-role",
+            "birth-data",
+            "residence-area",
+            "education",
+            "credential",
+            "self-described-tendency",
+            "assessed-trait",
+            "outcome",
+            "habit",
+            "career",
+            "learning",
+            "relationship",
+            "topic",
+            "activity",
+            "rest",
+            "support",
+            "autonomy",
+            "structure",
+            "connection",
+            "principle",
+            "priority",
+            "never",
+            "only-if",
+            "ask-first",
+            "time-window",
+            "worldview",
+            "spiritual",
+            "self-belief",
+            "channel",
+            "timing",
+            "tone",
+            "detail-level",
+            "format",
+            "decision-brief",
+            "pushback",
+            "skill",
+            "language-skill",
+            "tool-skill",
+            "time",
+            "attention",
+            "energy",
+            "money",
+            "tools",
+            "network",
+            "availability",
+            "load",
+            "location-status",
+            "mood",
+            "emotion",
+            "stress",
+            "affect",
+            "promise",
+            "agreement",
+            "deadline"
+          ]
+        },
+        {
+          "$ref": "#/$defs/LocalCode"
+        }
+      ]
+    },
+    "confidence-semantics": {
+      "enum": [
+        "support-score",
+        "probability",
+        "self-rated-certainty",
+        "instrument-reliability",
+        "vendor-probability"
+      ]
+    },
+    "conformance-levels": {
+      "enum": [
+        "L0",
+        "L1",
+        "L2"
+      ]
+    },
+    "contemporaneity": {
+      "enum": [
+        "contemporaneous",
+        "retrospective",
+        "unknown"
+      ]
+    },
+    "content-kinds": {
+      "enum": [
+        "Source",
+        "Episode",
+        "Claim",
+        "AssessmentRecord",
+        "LensAdoption",
+        "Practice",
+        "HealthRef",
+        "Interpretation",
+        "ModelView",
+        "Tension",
+        "Pattern",
+        "Part",
+        "RecallCue",
+        "Outcome",
+        "Relation"
+      ]
+    },
+    "custody": {
+      "enum": [
+        "none",
+        "therapy",
+        "coaching",
+        "legal",
+        "medical"
+      ]
+    },
+    "endorsement": {
+      "enum": [
+        "not-asked",
+        "endorsed",
+        "partial",
+        "rejected"
+      ]
+    },
+    "episode.account-kinds": {
+      "enum": [
+        "in-the-moment",
+        "first-narrative",
+        "later-reconstruction",
+        "external-record",
+        "observer-account"
+      ]
+    },
+    "episode.confirmation": {
+      "enum": [
+        "none",
+        "partial",
+        "confirmed"
+      ]
+    },
+    "episode.recall": {
+      "enum": [
+        "not-permitted",
+        "ask-each-time",
+        "permitted"
+      ]
+    },
+    "episode.salience": {
+      "enum": [
+        "low",
+        "medium",
+        "high"
+      ]
+    },
+    "episode.selection-reasons": {
+      "enum": [
+        "subject-chose",
+        "agent-suggested",
+        "practitioner-suggested",
+        "imported"
+      ]
+    },
+    "epistemic": {
+      "enum": [
+        "as-reported",
+        "hypothesis",
+        "supported",
+        "corroborated",
+        "contradicted",
+        "frame-relative"
+      ]
+    },
+    "event-outcomes": {
+      "enum": [
+        "served",
+        "denied",
+        "asked",
+        "confirmed",
+        "declined",
+        "timeout",
+        "acknowledged",
+        "purged",
+        "failed"
+      ]
+    },
+    "event-types": {
+      "enum": [
+        "record-written",
+        "record-proposed",
+        "record-admitted",
+        "record-declined",
+        "record-retracted",
+        "review-written",
+        "record-erased",
+        "grant-given",
+        "grant-withdrawn",
+        "grant-revoked",
+        "grant-request-received",
+        "grant-request-refused",
+        "grant-request-deferred",
+        "projection-served",
+        "answer-served",
+        "request-denied",
+        "proposal-received",
+        "proposal-refused",
+        "ask-first",
+        "feedback-received",
+        "use-report-received",
+        "source-access-requested",
+        "step-up-confirmed",
+        "step-up-declined",
+        "source-opened",
+        "recall-offered",
+        "revocation-notice-sent",
+        "erasure-notice-sent",
+        "erasure-notice-acknowledged",
+        "purge-receipt-received",
+        "import-run",
+        "export-run",
+        "backup-created",
+        "backup-restored",
+        "tombstones-reapplied",
+        "chain-resealed",
+        "redacted"
+      ]
+    },
+    "evidence-tiers.measurement": {
+      "enum": [
+        "T1",
+        "T2",
+        "T3",
+        "T4",
+        "T5",
+        "not-applicable",
+        "not-assessed"
+      ]
+    },
+    "evidence-tiers.practice": {
+      "enum": [
+        "P1",
+        "P2",
+        "P3",
+        "P4",
+        "not-assessed"
+      ]
+    },
+    "fhir-resource-types": {
+      "enum": [
+        "Condition",
+        "Observation",
+        "MedicationStatement",
+        "CarePlan",
+        "DocumentReference",
+        "Consent",
+        "other"
+      ]
+    },
+    "fhir-versions": {
+      "enum": [
+        "R4",
+        "R5"
+      ]
+    },
+    "freshness": {
+      "enum": [
+        "current",
+        "review-due",
+        "expired",
+        "unknown",
+        "historical",
+        "not-applicable"
+      ]
+    },
+    "grant.actions": {
+      "enum": [
+        "read",
+        "suggest",
+        "write",
+        "infer",
+        "source-index",
+        "source-summary",
+        "cite-excerpt",
+        "open-verbatim",
+        "answer",
+        "export",
+        "recall",
+        "grant"
+      ]
+    },
+    "grant.channels": {
+      "enum": [
+        "in-person",
+        "holder-ui",
+        "signed-message",
+        "steward",
+        "other"
+      ]
+    },
+    "grant.decision-use": {
+      "enum": [
+        "deny",
+        "approval-required"
+      ]
+    },
+    "grant.effects": {
+      "enum": [
+        "allow",
+        "deny"
+      ]
+    },
+    "grant.interpretations": {
+      "enum": [
+        "none",
+        "subject-endorsed",
+        "all"
+      ]
+    },
+    "grant.legal-bases": {
+      "enum": [
+        "consent",
+        "explicit-consent",
+        "contract",
+        "other"
+      ]
+    },
+    "grant.modes": {
+      "enum": [
+        "full",
+        "summary",
+        "rule-only",
+        "answer-only"
+      ]
+    },
+    "grant.resolvers": {
+      "enum": [
+        "returnDialog",
+        "mostPersonal",
+        "mostRecent",
+        "returnNone"
+      ]
+    },
+    "grant.status": {
+      "enum": [
+        "given",
+        "withdrawn",
+        "revoked",
+        "expired",
+        "invalidated",
+        "requested",
+        "refused",
+        "deferred"
+      ]
+    },
+    "grant.storage": {
+      "enum": [
+        "none",
+        "session",
+        "until-expiry"
+      ]
+    },
+    "handling": {
+      "enum": [
+        "no-quote",
+        "no-quote-back",
+        "no-infer",
+        "no-remember",
+        "no-leverage",
+        "no-forward",
+        "person-only",
+        "ask-before-use",
+        "subject-initiated-only"
+      ]
+    },
+    "horizons": {
+      "enum": [
+        "foundation",
+        "focus",
+        "state"
+      ]
+    },
+    "interpretation.alternative-kinds": {
+      "enum": [
+        "psychological",
+        "situational",
+        "physiological",
+        "informational",
+        "relational",
+        "external",
+        "combination",
+        "other"
+      ]
+    },
+    "interpretation.causal": {
+      "enum": [
+        "none",
+        "hypothesized",
+        "asserted"
+      ]
+    },
+    "interpretation.ground-kinds": {
+      "enum": [
+        "evidence",
+        "observation",
+        "sequence",
+        "pattern",
+        "instrument",
+        "testimony",
+        "practitioner",
+        "subject-statement"
+      ]
+    },
+    "interpretation.stances": {
+      "enum": [
+        "in-the-moment",
+        "retrospective",
+        "revision",
+        "alternative",
+        "lens-reading"
+      ]
+    },
+    "labels": {
+      "enum": [
+        "not-accepted",
+        "disputed",
+        "stale",
+        "pending",
+        "frame",
+        "stated",
+        "confirmed",
+        "partly-confirmed",
+        "attested",
+        "observed",
+        "hypothesis"
+      ]
+    },
+    "lens-descriptor.concept-status": {
+      "enum": [
+        "free-concept",
+        "proprietary-concept",
+        "unclear"
+      ]
+    },
+    "lens-descriptor.cross-lens-mapping": {
+      "enum": [
+        "population-level-only",
+        "not-allowed"
+      ]
+    },
+    "lens-descriptor.descriptor-status": {
+      "enum": [
+        "stub",
+        "draft",
+        "reviewed"
+      ]
+    },
+    "lens-descriptor.facilitation": {
+      "enum": [
+        "self",
+        "agent-offered",
+        "practitioner"
+      ]
+    },
+    "lens-descriptor.lineage-consent": {
+      "enum": [
+        "obtained",
+        "not-required"
+      ]
+    },
+    "lens-descriptor.mark-status": {
+      "enum": [
+        "registered",
+        "pending",
+        "cancelled",
+        "abandoned",
+        "unverified",
+        "none"
+      ]
+    },
+    "lens-descriptor.mark-use": {
+      "enum": [
+        "nominative-only",
+        "adjective-only",
+        "avoid"
+      ]
+    },
+    "lens-descriptor.produces": {
+      "enum": [
+        "AssessmentRecord",
+        "Interpretation",
+        "ModelView",
+        "Practice",
+        "Part",
+        "none"
+      ]
+    },
+    "lens-descriptor.registry-listing": {
+      "enum": [
+        "ok",
+        "reference-by-url",
+        "needs-permission"
+      ]
+    },
+    "lens-descriptor.representation-kinds": {
+      "enum": [
+        "score-profile",
+        "type-label",
+        "ranked-list",
+        "circumplex",
+        "parts-map",
+        "stage",
+        "thought-record",
+        "narrative",
+        "chart",
+        "grid"
+      ]
+    },
+    "lens-descriptor.scoring": {
+      "enum": [
+        "public",
+        "proprietary",
+        "none"
+      ]
+    },
+    "lens-descriptor.toolkit-kinds": {
+      "enum": [
+        "exercise",
+        "worksheet",
+        "dialogue",
+        "observation",
+        "instrument-use"
+      ]
+    },
+    "lens-kinds": {
+      "enum": [
+        "trait-dimensional",
+        "type-categorical",
+        "strengths-ranked",
+        "values-circular",
+        "stage-developmental",
+        "style",
+        "parts-model",
+        "practice-method",
+        "process-experiential",
+        "contemplative",
+        "explanatory-model",
+        "author-framework",
+        "representation",
+        "self-description-frame"
+      ]
+    },
+    "licenses": {
+      "enum": [
+        "Apache-2.0",
+        "CC-BY-4.0"
+      ]
+    },
+    "life-domains": {
+      "anyOf": [
+        {
+          "enum": [
+            "work",
+            "family",
+            "partner",
+            "friends",
+            "health",
+            "learning",
+            "money",
+            "home",
+            "community",
+            "spiritual",
+            "creative",
+            "personal-practice",
+            "therapy",
+            "coaching"
+          ]
+        },
+        {
+          "$ref": "#/$defs/LocalCode"
+        }
+      ]
+    },
+    "link-rels": {
+      "enum": [
+        "same-as",
+        "account",
+        "did",
+        "ode-party"
+      ]
+    },
+    "mapping.bridge-kinds": {
+      "anyOf": [
+        {
+          "enum": [
+            "lens-lens",
+            "ohc-ode",
+            "ohc-standard"
+          ]
+        },
+        {
+          "$ref": "#/$defs/LocalCode"
+        }
+      ]
+    },
+    "mapping.evidence-grades": {
+      "enum": [
+        "F",
+        "F2",
+        "U",
+        "verify"
+      ]
+    },
+    "mapping.relations": {
+      "enum": [
+        "correlates",
+        "corresponds",
+        "specializes",
+        "carries-part",
+        "projects",
+        "stores",
+        "fills-seam",
+        "no-relation",
+        "not-covered"
+      ]
+    },
+    "mapping.row-status": {
+      "enum": [
+        "accepted",
+        "accepted-with-loss",
+        "not-identity",
+        "not-permitted",
+        "unresolved"
+      ]
+    },
+    "messages.access-audiences": {
+      "enum": [
+        "subject-only",
+        "grantee"
+      ]
+    },
+    "messages.answer-forms": {
+      "enum": [
+        "boolean",
+        "choice",
+        "text",
+        "time-window"
+      ]
+    },
+    "messages.feedback-kinds": {
+      "enum": [
+        "outcome",
+        "usage-note",
+        "correction-request"
+      ]
+    },
+    "messages.grant-notice-status": {
+      "enum": [
+        "given",
+        "refused",
+        "deferred"
+      ]
+    },
+    "messages.proposal-result-status": {
+      "enum": [
+        "stored",
+        "refused",
+        "decided",
+        "expired"
+      ]
+    },
+    "messages.purge-status": {
+      "enum": [
+        "purged",
+        "not-held",
+        "failed"
+      ]
+    },
+    "messages.revocation-status": {
+      "enum": [
+        "withdrawn",
+        "revoked",
+        "expired"
+      ]
+    },
+    "modules": {
+      "enum": [
+        "core",
+        "governance",
+        "lenses",
+        "instrument-import",
+        "practices",
+        "patterns",
+        "recall",
+        "inner-system",
+        "health-ref",
+        "exchange",
+        "binding.gum",
+        "binding.ode",
+        "binding.mcp"
+      ]
+    },
+    "on-expiry": {
+      "enum": [
+        "treat-as-unknown",
+        "ask",
+        "refresh-source"
+      ]
+    },
+    "ontological-status": {
+      "enum": [
+        "measured-construct",
+        "theoretical-model",
+        "practice-frame",
+        "symbolic-frame",
+        "contemplative-tradition",
+        "representation"
+      ]
+    },
+    "origin": {
+      "enum": [
+        "declared",
+        "observed",
+        "inferred",
+        "derived",
+        "imported",
+        "attested"
+      ]
+    },
+    "outcome.responses": {
+      "enum": [
+        "accepted",
+        "declined",
+        "deferred",
+        "asked-to-stop"
+      ]
+    },
+    "outcome.results": {
+      "enum": [
+        "helped",
+        "partly",
+        "no-effect",
+        "worse",
+        "unclear",
+        "not-tried"
+      ]
+    },
+    "part-authoring": {
+      "enum": [
+        "alone",
+        "with-practitioner",
+        "with-agent"
+      ]
+    },
+    "party-kinds": {
+      "enum": [
+        "person",
+        "agent",
+        "software",
+        "organization"
+      ]
+    },
+    "pattern-kinds": {
+      "enum": [
+        "recurring-situation",
+        "recurring-reaction",
+        "recurring-strategy",
+        "cross-domain",
+        "cycle",
+        "other"
+      ]
+    },
+    "practice.initial-status": {
+      "enum": [
+        "candidate",
+        "in-use",
+        "not-for-me"
+      ]
+    },
+    "practice.kinds": {
+      "anyOf": [
+        {
+          "enum": [
+            "breathing",
+            "movement",
+            "reflection",
+            "writing",
+            "conversation",
+            "rest",
+            "planning",
+            "environment",
+            "social-contact",
+            "creative",
+            "contemplative",
+            "other"
+          ]
+        },
+        {
+          "$ref": "#/$defs/LocalCode"
+        }
+      ]
+    },
+    "practice.routes": {
+      "enum": [
+        "self-discovered",
+        "from-lens",
+        "from-practitioner",
+        "from-agent",
+        "from-other-person",
+        "from-tradition",
+        "imported"
+      ]
+    },
+    "practice.status": {
+      "enum": [
+        "candidate",
+        "in-use",
+        "paused",
+        "retired",
+        "not-for-me"
+      ]
+    },
+    "presentation-channels": {
+      "enum": [
+        "holder-ui",
+        "agent-dialog",
+        "message"
+      ]
+    },
+    "prohibited-purposes": {
+      "enum": [
+        "personnel-selection",
+        "task-allocation",
+        "performance-evaluation",
+        "promotion-decision",
+        "cross-person-ranking",
+        "persuasion-targeting",
+        "advertising",
+        "political-profiling",
+        "credit-or-insurance-decision",
+        "emotion-recognition-at-work-or-education",
+        "model-training",
+        "sale-or-transfer",
+        "significant-automated-decision"
+      ]
+    },
+    "proposal-requests": {
+      "enum": [
+        "retract",
+        "mark-not-current",
+        "reassess"
+      ]
+    },
+    "purposes": {
+      "enum": [
+        "self-reflection",
+        "assist-personal",
+        "work-collaboration",
+        "scheduling",
+        "task-execution",
+        "communication-adaptation",
+        "recall-support",
+        "coaching",
+        "therapy-support",
+        "learning-support",
+        "health-coordination",
+        "research",
+        "service-provision",
+        "backup",
+        "gum-export",
+        "profiling"
+      ]
+    },
+    "reason-codes": {
+      "enum": [
+        "not-granted",
+        "infer-not-granted",
+        "expired-grant",
+        "purpose-mismatch",
+        "special-needs-explicit-consent",
+        "step-up-required",
+        "step-up-timeout",
+        "person-only",
+        "locked",
+        "quota-exceeded",
+        "subject-declined",
+        "holder-policy",
+        "security",
+        "legal",
+        "retention"
+      ]
+    },
+    "recall-signals": {
+      "enum": [
+        "calendar-event",
+        "keyword-in-subject-message",
+        "subject-request",
+        "time-of-day",
+        "task-type",
+        "other"
+      ]
+    },
+    "record-kinds": {
+      "enum": [
+        "Claim",
+        "Relation",
+        "Source",
+        "Episode",
+        "Interpretation",
+        "Tension",
+        "Review",
+        "Proposal",
+        "Grant",
+        "Event",
+        "LensAdoption",
+        "AssessmentRecord",
+        "ModelView",
+        "Practice",
+        "Outcome",
+        "Pattern",
+        "RecallCue",
+        "Part",
+        "HealthRef",
+        "Tombstone"
+      ]
+    },
+    "redaction-reasons": {
+      "enum": [
+        "third-party",
+        "subject-request",
+        "legal",
+        "custody"
+      ]
+    },
+    "relation-codes": {
+      "enum": [
+        "supports",
+        "contradicts",
+        "refines",
+        "depends-on",
+        "alternative-to",
+        "same-occurrence",
+        "conditioned-by",
+        "practice-for",
+        "translation-of",
+        "competes-for-resource",
+        "held-by",
+        "protects",
+        "polarized-with",
+        "allied-with"
+      ]
+    },
+    "relationship-kinds": {
+      "anyOf": [
+        {
+          "enum": [
+            "partner",
+            "family",
+            "friend",
+            "colleague",
+            "manager",
+            "report",
+            "client",
+            "supplier",
+            "practitioner",
+            "mentor",
+            "teacher",
+            "community",
+            "other"
+          ]
+        },
+        {
+          "$ref": "#/$defs/LocalCode"
+        }
+      ]
+    },
+    "release-tiers": {
+      "enum": [
+        "none",
+        "index",
+        "summary",
+        "excerpt",
+        "verbatim"
+      ]
+    },
+    "review-actions": {
+      "enum": [
+        "endorse",
+        "partially-endorse",
+        "reject",
+        "contest",
+        "withdraw-contest",
+        "resolve-contest",
+        "lock",
+        "unlock",
+        "confirm-current",
+        "mark-not-current",
+        "admit",
+        "decline",
+        "retract",
+        "reassess",
+        "restrict",
+        "relax",
+        "redact",
+        "pause",
+        "resume",
+        "retire",
+        "acknowledge",
+        "explore",
+        "hold-as-is",
+        "resolve",
+        "withdraw-grant",
+        "revoke-grant"
+      ]
+    },
+    "review-reasons": {
+      "enum": [
+        "not-true",
+        "not-now",
+        "too-sensitive",
+        "not-relevant",
+        "outdated",
+        "wrong-person",
+        "locked",
+        "expired",
+        "quota-exceeded",
+        "other"
+      ]
+    },
+    "sensitivity-tiers": {
+      "enum": [
+        "ordinary",
+        "personal",
+        "sensitive",
+        "special"
+      ]
+    },
+    "source-kinds": {
+      "anyOf": [
+        {
+          "enum": [
+            "journal-entry",
+            "note",
+            "message",
+            "email",
+            "transcript",
+            "audio",
+            "video",
+            "image",
+            "document",
+            "calendar",
+            "log",
+            "screen-observation",
+            "sensor",
+            "biometric",
+            "voice",
+            "keystroke",
+            "instrument-report",
+            "practitioner-notes",
+            "practitioner-release",
+            "consent-document",
+            "live-feed",
+            "import-bundle",
+            "other"
+          ]
+        },
+        {
+          "$ref": "#/$defs/LocalCode"
+        }
+      ]
+    },
+    "steward-basis": {
+      "enum": [
+        "delegated-by-subject",
+        "power-of-attorney"
+      ]
+    },
+    "summary-methods": {
+      "enum": [
+        "subject-written",
+        "agent-written",
+        "practitioner-written",
+        "imported"
+      ]
+    },
+    "tension.kinds": {
+      "enum": [
+        "goal-conflict",
+        "value-conflict",
+        "horizon-conflict",
+        "resource-competition",
+        "inner-conflict",
+        "source-divergence",
+        "holder-divergence"
+      ]
+    },
+    "tension.who-decides": {
+      "enum": [
+        "subject",
+        "subject-with-practitioner",
+        "holder-policy",
+        "not-applicable"
+      ]
+    },
+    "time-precision": {
+      "enum": [
+        "exact",
+        "day",
+        "month",
+        "year",
+        "approximate",
+        "unknown"
+      ]
+    },
+    "tombstone-reasons": {
+      "enum": [
+        "subject-request",
+        "retention-expired",
+        "consent-withdrawn",
+        "legal",
+        "holder-error"
+      ]
+    }
+  }
+}

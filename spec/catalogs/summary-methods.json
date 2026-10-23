@@ -1,0 +1,61 @@
+{
+  "format": "ohc.catalog",
+  "id": "urn:ohc:catalog:summary-methods",
+  "version": "0.1.0",
+  "specVersion": "0.1.0-draft",
+  "title": {
+    "en": "Summary methods",
+    "ru": "Способы составления сводки"
+  },
+  "description": {
+    "en": "How a Source summary was made. A summary is a selection by its author and is shown with that author.",
+    "ru": "Как составлена сводка источника. Сводка — отбор, сделанный её автором, и показывается вместе с указанием автора."
+  },
+  "closed": true,
+  "codes": [
+    {
+      "code": "subject-written",
+      "label": {
+        "en": "Written by the person",
+        "ru": "Написана самим человеком"
+      },
+      "definition": {
+        "en": "The person wrote the summary.",
+        "ru": "Сводку написал сам человек."
+      }
+    },
+    {
+      "code": "agent-written",
+      "label": {
+        "en": "Written by an agent",
+        "ru": "Написана агентом"
+      },
+      "definition": {
+        "en": "An agent wrote the summary.",
+        "ru": "Сводку написал агент."
+      }
+    },
+    {
+      "code": "practitioner-written",
+      "label": {
+        "en": "Written by a practitioner",
+        "ru": "Написана специалистом"
+      },
+      "definition": {
+        "en": "A practitioner wrote the summary.",
+        "ru": "Сводку написал специалист-практик."
+      }
+    },
+    {
+      "code": "imported",
+      "label": {
+        "en": "Imported",
+        "ru": "Импортирована"
+      },
+      "definition": {
+        "en": "The summary came with an import.",
+        "ru": "Сводка пришла с импортом."
+      }
+    }
+  ]
+}

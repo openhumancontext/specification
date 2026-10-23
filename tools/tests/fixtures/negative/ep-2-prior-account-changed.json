@@ -1,0 +1,35 @@
+{
+  "description": "A superseding Episode that rewrites a prior account (R-E1).",
+  "expect": [
+    "EP-2"
+  ],
+  "form": "single",
+  "patches": [
+    {
+      "op": "add",
+      "target": "episodes",
+      "path": "",
+      "value": {
+        "id": "ep-03",
+        "supersedes": "ep-02",
+        "occurred": {
+          "start": "2026-09-05",
+          "precision": "day"
+        },
+        "accounts": [
+          {
+            "narrator": "subject",
+            "narratedAt": "2026-09-05T20:00:00Z",
+            "addedAt": "2026-09-05T20:05:00Z",
+            "accountKind": "in-the-moment",
+            "happened": "Went to class."
+          }
+        ],
+        "origin": "declared",
+        "assertedBy": "subject",
+        "recordedAt": "2026-09-07T08:00:00Z",
+        "synthetic": true
+      }
+    }
+  ]
+}

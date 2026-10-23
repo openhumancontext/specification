@@ -1,0 +1,20 @@
+{
+  "description": "A Claim that cites an Outcome as evidence (G4).",
+  "expect": [
+    "G4"
+  ],
+  "form": "single",
+  "patches": [
+    {
+      "op": "set",
+      "target": "claims",
+      "path": "/@c-03/evidence",
+      "value": [
+        {
+          "ref": "oc-01",
+          "kind": "evidence"
+        }
+      ]
+    }
+  ]
+}

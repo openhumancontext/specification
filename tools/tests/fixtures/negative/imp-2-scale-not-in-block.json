@@ -1,0 +1,182 @@
+{
+  "description": "An imported result with a scale the instrument's import block does not list.",
+  "expect": [
+    "IMP-2"
+  ],
+  "form": "single",
+  "registry": {
+    "instruments/bfi-2.instrument.json": {
+      "documentFrom": "spec/instruments/bfi-2.instrument.json",
+      "patches": [
+        {
+          "op": "set",
+          "path": "/version",
+          "value": "0.1.0"
+        },
+        {
+          "op": "set",
+          "path": "/import",
+          "value": {
+            "scoredBy": {
+              "partyKind": "organization",
+              "id": "urn:ohc:scorer:test-report",
+              "label": "Report scorer"
+            },
+            "scores": [
+              {
+                "kind": "raw",
+                "range": [
+                  1,
+                  5
+                ]
+              },
+              {
+                "kind": "percentile",
+                "range": [
+                  0,
+                  100
+                ],
+                "integer": true
+              }
+            ],
+            "scales": [
+              "big-five/O",
+              "big-five/C",
+              "big-five/E",
+              "big-five/A",
+              "big-five/N"
+            ],
+            "normGroups": [
+              {
+                "id": "test-norms",
+                "label": {
+                  "en": "Test norms",
+                  "ru": "Тестовые нормы"
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  "patches": [
+    {
+      "op": "set",
+      "target": "manifest",
+      "path": "/conformance/modules",
+      "value": [
+        "core",
+        "governance",
+        "lenses",
+        "instrument-import",
+        "practices",
+        "patterns",
+        "recall",
+        "inner-system",
+        "health-ref"
+      ]
+    },
+    {
+      "op": "add",
+      "target": "manifest",
+      "path": "/parties",
+      "value": {
+        "id": "o-02",
+        "partyKind": "organization",
+        "label": "Report scorer",
+        "uri": "urn:ohc:scorer:test-report"
+      }
+    },
+    {
+      "op": "add",
+      "target": "sources",
+      "path": "",
+      "value": {
+        "id": "src-02",
+        "sourceKind": "instrument-report",
+        "content": {
+          "locator": {
+            "uri": "urn:uuid:5b1c2d3e-4f50-4a6b-8c7d-9e0f1a2b3c4d"
+          },
+          "sha256": "4444444444444444444444444444444444444444444444444444444444444444",
+          "mediaType": "application/pdf"
+        },
+        "authorship": {
+          "author": "o-02"
+        },
+        "maxRelease": "index",
+        "retention": {
+          "eraseOnRequest": true
+        },
+        "sensitivity": "special",
+        "categories": [
+          "mental-health"
+        ],
+        "origin": "declared",
+        "assertedBy": "subject",
+        "recordedAt": "2026-09-07T08:00:00Z",
+        "synthetic": true
+      }
+    },
+    {
+      "op": "add",
+      "target": "assessments",
+      "path": "",
+      "value": {
+        "id": "as-01",
+        "lens": {
+          "id": "urn:ohc:lens:big-five",
+          "version": "0.1.0"
+        },
+        "instrument": {
+          "id": "urn:ohc:instrument:bfi-2",
+          "form": "60"
+        },
+        "mode": "self-report-instrument",
+        "assessedBy": "subject",
+        "administeredAt": {
+          "start": "2026-08-30",
+          "precision": "day"
+        },
+        "results": [
+          {
+            "type": "dimension-score",
+            "construct": "big-five/N/anxiety",
+            "label": "Extraversion",
+            "raw": 2.9
+          },
+          {
+            "type": "dimension-score",
+            "construct": "big-five/C",
+            "label": "Conscientiousness",
+            "raw": 4.2,
+            "standardized": {
+              "type": "percentile",
+              "value": 71
+            }
+          }
+        ],
+        "normGroup": {
+          "id": "test-norms"
+        },
+        "origin": "imported",
+        "assertedBy": "o-02",
+        "recordedBy": "subject",
+        "recordedAt": "2026-09-07T08:00:00Z",
+        "formulatedAt": "2026-08-30T00:00:00Z",
+        "importedFrom": {
+          "system": "urn:ohc:instrument:bfi-2",
+          "systemVersion": "0.1.0",
+          "importedAt": "2026-09-07T08:00:00Z"
+        },
+        "source": "src-02",
+        "sensitivity": "special",
+        "categories": [
+          "mental-health"
+        ],
+        "synthetic": true
+      }
+    }
+  ]
+}

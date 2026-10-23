@@ -1,0 +1,56 @@
+{
+  "description": "An agent's reading labelled declared (an inference must be labelled inferred).",
+  "expect": [
+    "I10"
+  ],
+  "form": "single",
+  "patches": [
+    {
+      "op": "add",
+      "target": "grants",
+      "path": "/@g-01/scope/include",
+      "value": {
+        "kinds": [
+          "Interpretation"
+        ]
+      }
+    },
+    {
+      "op": "add",
+      "target": "interpretations",
+      "path": "",
+      "value": {
+        "id": "in-02",
+        "about": [
+          "ep-01"
+        ],
+        "stance": "retrospective",
+        "epistemic": "hypothesis",
+        "text": "Skipping may follow long work days.",
+        "origin": "declared",
+        "assertedBy": "a-01",
+        "recordedAt": "2026-09-07T08:00:00Z",
+        "underGrant": "g-01",
+        "purpose": "learning-support",
+        "grounds": [
+          {
+            "ref": "ep-01",
+            "kind": "observation"
+          }
+        ],
+        "alternatives": [
+          {
+            "kind": "physiological",
+            "text": "Tiredness."
+          },
+          {
+            "kind": "situational",
+            "text": "A late bus."
+          }
+        ],
+        "limits": "One evening only.",
+        "synthetic": true
+      }
+    }
+  ]
+}

@@ -1,0 +1,309 @@
+{
+  "format": "ohc.catalog",
+  "id": "urn:ohc:catalog:mapping",
+  "version": "0.1.0",
+  "specVersion": "0.1.0-draft",
+  "title": {
+    "en": "Mapping vocabularies",
+    "ru": "Словари сопоставлений"
+  },
+  "description": {
+    "en": "Vocabularies for Mapping records: one shape for every bridge. A mapping is never an alias and never chains (M-1, M-3).",
+    "ru": "Словари для записей сопоставления: одна форма для любого моста. Сопоставление никогда не является псевдонимом и не образует цепочек (M-1, M-3)."
+  },
+  "closed": false,
+  "lists": [
+    {
+      "name": "bridge-kinds",
+      "title": {
+        "en": "Bridge kinds",
+        "ru": "Виды мостов"
+      },
+      "closed": false,
+      "field": "Mapping.bridgeKind",
+      "notes": "Open list: a bridge kind outside this list is a local x- code and is never part of a release."
+    },
+    {
+      "name": "relations",
+      "title": {
+        "en": "Relations",
+        "ru": "Отношения"
+      },
+      "closed": true,
+      "field": "Mapping.relation"
+    },
+    {
+      "name": "row-status",
+      "title": {
+        "en": "Row status",
+        "ru": "Статус строки"
+      },
+      "closed": true,
+      "field": "Mapping.rowStatus"
+    },
+    {
+      "name": "evidence-grades",
+      "title": {
+        "en": "Evidence grades",
+        "ru": "Уровни источников"
+      },
+      "closed": true,
+      "field": "Mapping.evidenceGrade; citations[].grade",
+      "notes": "Facts graded F2, U or verify stay out of normative text and keep their marker."
+    }
+  ],
+  "codes": [
+    {
+      "code": "lens-lens",
+      "list": "bridge-kinds",
+      "label": {
+        "en": "Lens to lens",
+        "ru": "Линза — линза"
+      },
+      "definition": {
+        "en": "Mappings between lenses.",
+        "ru": "Сопоставления между линзами."
+      }
+    },
+    {
+      "code": "ohc-ode",
+      "list": "bridge-kinds",
+      "label": {
+        "en": "OHC to ODE",
+        "ru": "OHC — ODE"
+      },
+      "definition": {
+        "en": "The public bridge to Open Digital Employee.",
+        "ru": "Публичный мост к Open Digital Employee."
+      }
+    },
+    {
+      "code": "ohc-standard",
+      "list": "bridge-kinds",
+      "label": {
+        "en": "OHC to another standard",
+        "ru": "OHC — другой стандарт"
+      },
+      "definition": {
+        "en": "Crosswalks to other standards.",
+        "ru": "Соответствия другим стандартам."
+      }
+    },
+    {
+      "code": "correlates",
+      "list": "relations",
+      "label": {
+        "en": "Correlates",
+        "ru": "Коррелирует"
+      },
+      "definition": {
+        "en": "A population-level statistic.",
+        "ru": "Статистика на уровне популяции."
+      }
+    },
+    {
+      "code": "corresponds",
+      "list": "relations",
+      "label": {
+        "en": "Corresponds",
+        "ru": "Соответствует"
+      },
+      "definition": {
+        "en": "The same role in both, with differences.",
+        "ru": "Та же роль в обоих, с различиями."
+      }
+    },
+    {
+      "code": "specializes",
+      "list": "relations",
+      "label": {
+        "en": "Specializes",
+        "ru": "Сужает"
+      },
+      "definition": {
+        "en": "The target is a narrower form.",
+        "ru": "Цель — более узкая форма."
+      }
+    },
+    {
+      "code": "carries-part",
+      "list": "relations",
+      "label": {
+        "en": "Carries part",
+        "ru": "Несёт часть"
+      },
+      "definition": {
+        "en": "The target carries part of the concept.",
+        "ru": "Цель несёт часть понятия."
+      }
+    },
+    {
+      "code": "projects",
+      "list": "relations",
+      "label": {
+        "en": "Projects",
+        "ru": "Проецирует"
+      },
+      "definition": {
+        "en": "The target is a projection of the source.",
+        "ru": "Цель — проекция исходного понятия."
+      }
+    },
+    {
+      "code": "stores",
+      "list": "relations",
+      "label": {
+        "en": "Stores",
+        "ru": "Хранит"
+      },
+      "definition": {
+        "en": "The target stores the source.",
+        "ru": "Цель хранит исходное понятие."
+      }
+    },
+    {
+      "code": "fills-seam",
+      "list": "relations",
+      "label": {
+        "en": "Fills a seam",
+        "ru": "Заполняет пробел"
+      },
+      "definition": {
+        "en": "The target fills a gap in the source.",
+        "ru": "Цель заполняет пробел в исходном понятии."
+      }
+    },
+    {
+      "code": "no-relation",
+      "list": "relations",
+      "label": {
+        "en": "No relation",
+        "ru": "Нет связи"
+      },
+      "definition": {
+        "en": "The two must never be linked (frames versus empirical constructs).",
+        "ru": "Их никогда нельзя связывать (рамки и эмпирические конструкты)."
+      }
+    },
+    {
+      "code": "not-covered",
+      "list": "relations",
+      "label": {
+        "en": "Not covered",
+        "ru": "Не покрыто"
+      },
+      "definition": {
+        "en": "No counterpart.",
+        "ru": "Аналога нет."
+      }
+    },
+    {
+      "code": "accepted",
+      "list": "row-status",
+      "label": {
+        "en": "Accepted",
+        "ru": "Принято"
+      },
+      "definition": {
+        "en": "The row is accepted.",
+        "ru": "Строка принята."
+      }
+    },
+    {
+      "code": "accepted-with-loss",
+      "list": "row-status",
+      "label": {
+        "en": "Accepted with loss",
+        "ru": "Принято с потерями"
+      },
+      "definition": {
+        "en": "Accepted; `lost` says what does not carry over.",
+        "ru": "Принято; `lost` говорит, что не переносится."
+      }
+    },
+    {
+      "code": "not-identity",
+      "list": "row-status",
+      "label": {
+        "en": "Not identity",
+        "ru": "Не тождество"
+      },
+      "definition": {
+        "en": "Related, but never to be treated as the same thing.",
+        "ru": "Связаны, но никогда не считаются одним и тем же."
+      }
+    },
+    {
+      "code": "not-permitted",
+      "list": "row-status",
+      "label": {
+        "en": "Not permitted",
+        "ru": "Не допускается"
+      },
+      "definition": {
+        "en": "The mapping must not be used.",
+        "ru": "Сопоставление использовать нельзя."
+      }
+    },
+    {
+      "code": "unresolved",
+      "list": "row-status",
+      "label": {
+        "en": "Unresolved",
+        "ru": "Не решено"
+      },
+      "definition": {
+        "en": "Not settled yet.",
+        "ru": "Пока не решено."
+      }
+    },
+    {
+      "code": "F",
+      "list": "evidence-grades",
+      "label": {
+        "en": "F primary",
+        "ru": "F первоисточник"
+      },
+      "definition": {
+        "en": "Primary source read.",
+        "ru": "Прочитан первоисточник."
+      }
+    },
+    {
+      "code": "F2",
+      "list": "evidence-grades",
+      "label": {
+        "en": "F2 secondary",
+        "ru": "F2 вторичный источник"
+      },
+      "definition": {
+        "en": "Secondary source.",
+        "ru": "Вторичный источник."
+      }
+    },
+    {
+      "code": "U",
+      "list": "evidence-grades",
+      "label": {
+        "en": "U unverified",
+        "ru": "U не проверено"
+      },
+      "definition": {
+        "en": "Unverified.",
+        "ru": "Не проверено."
+      }
+    },
+    {
+      "code": "verify",
+      "list": "evidence-grades",
+      "label": {
+        "en": "To verify",
+        "ru": "Требует проверки"
+      },
+      "definition": {
+        "en": "To be verified before any normative use.",
+        "ru": "Требует проверки перед любым нормативным использованием."
+      }
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "description": "A locked file changed after locking.",
+  "expect": [
+    "LK-1"
+  ],
+  "form": "package",
+  "rawAfterLock": {
+    "records/relations.jsonl": "{\"id\": \"r-01\", \"rel\": \"practice-for\", \"from\": \"pr-01\", \"to\": \"c-01\", \"origin\": \"declared\", \"assertedBy\": \"subject\", \"recordedAt\": \"2026-09-06T08:20:00Z\", \"synthetic\": true}\n"
+  }
+}

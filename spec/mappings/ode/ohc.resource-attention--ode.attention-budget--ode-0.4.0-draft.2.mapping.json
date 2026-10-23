@@ -1,0 +1,27 @@
+{
+  "format": "ohc.mapping",
+  "specVersion": "0.1.0-draft",
+  "id": "urn:ohc:mapping:ohc.resource-attention--ode.attention-budget--ode-0.4.0-draft.2",
+  "version": "0.1.0",
+  "bridgeKind": "ohc-ode",
+  "from": {
+    "standard": "OHC 0.1.0-draft",
+    "concept": "Claim facet resource, predicate attention"
+  },
+  "to": {
+    "standard": "ODE 0.4.0-draft",
+    "concept": "InteractionContract attentionBudget",
+    "pin": {
+      "tag": "v0.4.0-draft.2",
+      "commit": "2de920485fb2665eaf7298ac65452a4a79412a9a"
+    }
+  },
+  "relation": "carries-part",
+  "scope": "Binding revision 0.2.0 (OHC 0.1.0-draft and ODE release 0.4.0-draft.2); a conceptual comparison, never permission to convert or disclose a person's data",
+  "notIdentity": true,
+  "chainable": false,
+  "rowStatus": "accepted-with-loss",
+  "lost": "The person's total attention stays with the holder; the contract carries only the share agreed for one employee.",
+  "evidenceGrade": "F",
+  "reviewedAt": "2026-10-23"
+}

@@ -1,0 +1,92 @@
+{
+  "format": "ohc.playbook",
+  "specVersion": "0.1.0-draft",
+  "id": "urn:ohc:playbook:ifs-basic",
+  "version": "0.1.0",
+  "name": {
+    "en": "Internal Family Systems: basic ways of working",
+    "ru": "Внутренние семейные системы: базовые способы работы"
+  },
+  "lenses": [
+    "urn:ohc:lens:ifs"
+  ],
+  "author": "OHC editors",
+  "sources": [
+    "Shadick et al. 2013"
+  ],
+  "licence": "Apache-2.0",
+  "situations": [
+    {
+      "id": "under-strain",
+      "when": {
+        "en": "Under strain: tired, pressed or overloaded.",
+        "ru": "Под нагрузкой: усталость, давление или перегрузка."
+      },
+      "use": {
+        "en": [
+          "Ask what is happening, in their words.",
+          "If they speak of a part of them, reflect their words back without adding names.",
+          "Stay with noticing; do not try to change anything."
+        ],
+        "ru": [
+          "Спросите, что происходит, — словами человека.",
+          "Если человек говорит о какой-то своей части, отразите его слова, не добавляя названий.",
+          "Оставайтесь в замечании; ничего не пытайтесь изменить."
+        ]
+      },
+      "toolkit": [],
+      "watchFor": {
+        "en": "Never go toward exiles or burdens, and never name or invent parts.",
+        "ru": "Никогда не идите к изгнанникам или бремени и никогда не называйте и не придумывайте части."
+      }
+    },
+    {
+      "id": "hard-conversation",
+      "when": {
+        "en": "Preparing a hard conversation.",
+        "ru": "Подготовка к трудному разговору."
+      },
+      "use": {
+        "en": [
+          "Ask what they want from the conversation.",
+          "If they mention an inner conflict, such as \"part of me wants…\", reflect both sides in their words.",
+          "Ask which of them they want to lead the conversation."
+        ],
+        "ru": [
+          "Спросите, чего человек хочет от разговора.",
+          "Если человек говорит о внутреннем конфликте, например «часть меня хочет…», отразите обе стороны его словами.",
+          "Спросите, какой из них он хочет доверить вести разговор."
+        ]
+      },
+      "toolkit": [],
+      "watchFor": {
+        "en": "Do not interpret parts, and do not present this as IFS therapy.",
+        "ru": "Не интерпретируйте части и не выдавайте это за IFS-терапию."
+      }
+    },
+    {
+      "id": "after-setback",
+      "when": {
+        "en": "After a setback.",
+        "ru": "После неудачи."
+      },
+      "use": {
+        "en": [
+          "Ask what happened, in their words.",
+          "Reflect their words about any inner voices without interpreting them.",
+          "Ask what they need now."
+        ],
+        "ru": [
+          "Спросите, что произошло, — словами человека.",
+          "Отразите его слова о внутренних голосах, не интерпретируя их.",
+          "Спросите, что ему нужно сейчас."
+        ]
+      },
+      "toolkit": [],
+      "watchFor": {
+        "en": "Do not suggest unburdening; deeper work belongs with a practitioner.",
+        "ru": "Не предлагайте освобождение от бремени: более глубокая работа — дело практика."
+      }
+    }
+  ]
+}

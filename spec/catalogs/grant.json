@@ -1,0 +1,775 @@
+{
+  "format": "ohc.catalog",
+  "id": "urn:ohc:catalog:grant",
+  "version": "0.2.0",
+  "specVersion": "0.1.0-draft",
+  "title": {
+    "en": "Grant vocabularies",
+    "ru": "Словари разрешений"
+  },
+  "description": {
+    "en": "Vocabularies for Grants: actions, modes, interpretations policy, computed status, resolvers, channels, effect, storage, decision use and legal basis. Default deny; a grant is never authority to act in the world (R-G9).",
+    "ru": "Словари для разрешений: действия, режимы, политика интерпретаций, вычисляемый статус, способы разрешения расхождений, каналы, эффект, хранение, опору решений и правовое основание. По умолчанию — запрет; разрешение никогда не даёт полномочий действовать в мире (R-G9)."
+  },
+  "closed": true,
+  "lists": [
+    {
+      "name": "actions",
+      "title": {
+        "en": "Actions",
+        "ru": "Действия"
+      },
+      "closed": true,
+      "field": "Grant.actions",
+      "notes": "Content ladder read < suggest < write; source ladder source-index < source-summary < cite-excerpt < open-verbatim; infer, answer, export, recall and grant are separate (R-G4)."
+    },
+    {
+      "name": "modes",
+      "title": {
+        "en": "Modes",
+        "ru": "Режимы"
+      },
+      "closed": true,
+      "field": "Grant.mode"
+    },
+    {
+      "name": "interpretations",
+      "title": {
+        "en": "Interpretations policy",
+        "ru": "Политика интерпретаций"
+      },
+      "closed": true,
+      "field": "Grant.interpretations"
+    },
+    {
+      "name": "status",
+      "title": {
+        "en": "Grant status (computed)",
+        "ru": "Статус разрешения (вычисляемый)"
+      },
+      "closed": true,
+      "notes": "Stored grants: given, withdrawn, revoked, expired, invalidated. Requested, refused and deferred exist only in messages and Events. DPV concept names are informative."
+    },
+    {
+      "name": "resolvers",
+      "title": {
+        "en": "Resolvers",
+        "ru": "Способы разрешения расхождений"
+      },
+      "closed": true,
+      "field": "Context.policy.resolver"
+    },
+    {
+      "name": "channels",
+      "title": {
+        "en": "Channels",
+        "ru": "Каналы выражения"
+      },
+      "closed": true,
+      "field": "Grant.expressedBy.channel"
+    },
+    {
+      "name": "effects",
+      "title": {
+        "en": "Effects",
+        "ru": "Эффект"
+      },
+      "closed": true,
+      "field": "Grant.effect"
+    },
+    {
+      "name": "storage",
+      "title": {
+        "en": "Storage",
+        "ru": "Хранение у получателя"
+      },
+      "closed": true,
+      "field": "Grant.constraints.storage"
+    },
+    {
+      "name": "decision-use",
+      "title": {
+        "en": "Decision use",
+        "ru": "Опора решений"
+      },
+      "closed": true,
+      "field": "Grant.constraints.decisionUse",
+      "notes": "Covers AssessmentRecords, Interpretations and records with origin inferred (R-G14). Absent means deny. Never opens a prohibited purpose (§8.10)."
+    },
+    {
+      "name": "legal-bases",
+      "title": {
+        "en": "Legal bases",
+        "ru": "Правовые основания"
+      },
+      "closed": true,
+      "field": "Grant.basis.legal"
+    }
+  ],
+  "codes": [
+    {
+      "code": "read",
+      "list": "actions",
+      "label": {
+        "en": "Read",
+        "ru": "Читать"
+      },
+      "definition": {
+        "en": "Receive projections.",
+        "ru": "Получать проекции."
+      },
+      "ladder": "content",
+      "order": 1,
+      "mappings": {
+        "odrl": "odrl:read"
+      }
+    },
+    {
+      "code": "suggest",
+      "list": "actions",
+      "label": {
+        "en": "Suggest",
+        "ru": "Предлагать"
+      },
+      "definition": {
+        "en": "Also file Proposals and feedback.",
+        "ru": "Также подавать предложения и обратную связь."
+      },
+      "ladder": "content",
+      "order": 2,
+      "implies": [
+        "read"
+      ],
+      "mappings": {
+        "odrl": "ohc:suggest"
+      }
+    },
+    {
+      "code": "write",
+      "list": "actions",
+      "label": {
+        "en": "Write",
+        "ru": "Записывать"
+      },
+      "definition": {
+        "en": "Also write records directly. These are still `proposed` for non-subject writers (R-A1).",
+        "ru": "Также записывать записи напрямую. Для пишущих, кроме самого человека, они всё равно остаются предложениями (R-A1)."
+      },
+      "ladder": "content",
+      "order": 3,
+      "implies": [
+        "suggest",
+        "read"
+      ],
+      "mappings": {
+        "odrl": "ohc:write"
+      }
+    },
+    {
+      "code": "infer",
+      "list": "actions",
+      "label": {
+        "en": "Infer",
+        "ru": "Делать выводы"
+      },
+      "definition": {
+        "en": "Create or propose records with `origin: inferred`. Required by INF-1 and PR-2. Never implied by `write` (R-G11).",
+        "ru": "Создавать или предлагать записи с `origin: inferred`. Требуется правилами INF-1 и PR-2. Никогда не подразумевается действием `write` (R-G11)."
+      },
+      "ladder": "separate",
+      "mappings": {
+        "odrl": "ohc:infer"
+      }
+    },
+    {
+      "code": "source-index",
+      "list": "actions",
+      "label": {
+        "en": "Source index",
+        "ru": "Указатель источников"
+      },
+      "definition": {
+        "en": "Receive Sources at the `index` tier.",
+        "ru": "Получать источники на уровне `index`."
+      },
+      "ladder": "source",
+      "order": 1
+    },
+    {
+      "code": "source-summary",
+      "list": "actions",
+      "label": {
+        "en": "Source summary",
+        "ru": "Сводка источника"
+      },
+      "definition": {
+        "en": "Receive Sources up to the `summary` tier.",
+        "ru": "Получать источники до уровня `summary`."
+      },
+      "ladder": "source",
+      "order": 2,
+      "implies": [
+        "source-index"
+      ]
+    },
+    {
+      "code": "cite-excerpt",
+      "list": "actions",
+      "label": {
+        "en": "Cite excerpt",
+        "ru": "Цитировать фрагмент"
+      },
+      "definition": {
+        "en": "Receive excerpts of spans cited by served records.",
+        "ru": "Получать фрагменты, на которые ссылаются показанные записи."
+      },
+      "ladder": "source",
+      "order": 3,
+      "implies": [
+        "source-summary",
+        "source-index"
+      ],
+      "mappings": {
+        "odrl": "ohc:citeExcerpt"
+      }
+    },
+    {
+      "code": "open-verbatim",
+      "list": "actions",
+      "label": {
+        "en": "Open verbatim",
+        "ru": "Открыть дословно"
+      },
+      "definition": {
+        "en": "Receive full primary content, only through step-up.",
+        "ru": "Получать первичный материал целиком — только через усиленное подтверждение."
+      },
+      "ladder": "source",
+      "order": 4,
+      "implies": [
+        "cite-excerpt",
+        "source-summary",
+        "source-index"
+      ],
+      "mappings": {
+        "odrl": "ohc:openVerbatim"
+      }
+    },
+    {
+      "code": "answer",
+      "list": "actions",
+      "label": {
+        "en": "Answer",
+        "ru": "Ответы"
+      },
+      "definition": {
+        "en": "Receive answers derived from records in scope.",
+        "ru": "Получать ответы, выведенные из записей в пределах разрешения."
+      },
+      "ladder": "separate"
+    },
+    {
+      "code": "export",
+      "list": "actions",
+      "label": {
+        "en": "Export",
+        "ru": "Выгрузка"
+      },
+      "definition": {
+        "en": "Receive a full export of the scope, for portability to another holder the person names.",
+        "ru": "Получать полную выгрузку в пределах разрешения для переноса к другому держателю, которого называет человек."
+      },
+      "ladder": "separate",
+      "mappings": {
+        "odrl": "odrl:distribute"
+      }
+    },
+    {
+      "code": "recall",
+      "list": "actions",
+      "label": {
+        "en": "Recall",
+        "ru": "Возвращение опыта"
+      },
+      "definition": {
+        "en": "Use RecallCues in scope.",
+        "ru": "Использовать сигналы возвращения опыта в пределах разрешения."
+      },
+      "ladder": "separate"
+    },
+    {
+      "code": "grant",
+      "list": "actions",
+      "label": {
+        "en": "Grant",
+        "ru": "Выдавать разрешения"
+      },
+      "definition": {
+        "en": "Steward scopes only. Allows issuing grants.",
+        "ru": "Только для полномочий доверенных лиц. Позволяет выдавать разрешения."
+      },
+      "ladder": "separate"
+    },
+    {
+      "code": "full",
+      "list": "modes",
+      "label": {
+        "en": "Full",
+        "ru": "Полностью"
+      },
+      "definition": {
+        "en": "Records with all fields allowed by grant evaluation.",
+        "ru": "Записи со всеми полями, которые допускает проверка разрешения."
+      }
+    },
+    {
+      "code": "summary",
+      "list": "modes",
+      "label": {
+        "en": "Summary",
+        "ru": "Кратко"
+      },
+      "definition": {
+        "en": "Records reduced to `id`, `kind`, `facet`, `predicate`, `horizon`, `text`, `valid` and `contexts`, plus their derived status. No evidence, grounds, confidence or rationale.",
+        "ru": "Записи сокращены до `id`, `kind`, `facet`, `predicate`, `horizon`, `text`, `valid` и `contexts` плюс производный статус. Без свидетельств, оснований, уверенности и обоснований."
+      }
+    },
+    {
+      "code": "rule-only",
+      "list": "modes",
+      "label": {
+        "en": "Rules only",
+        "ru": "Только правила"
+      },
+      "definition": {
+        "en": "Only the facets `boundary`, `preference` and `commitment`, plus `state` predicates `availability` and `load`, rendered as their `text`. Nothing else.",
+        "ru": "Только грани `boundary`, `preference` и `commitment`, а также уточнения `availability` и `load` грани `state` — в виде их `text`. Больше ничего."
+      }
+    },
+    {
+      "code": "answer-only",
+      "list": "modes",
+      "label": {
+        "en": "Answers only",
+        "ru": "Только ответы"
+      },
+      "definition": {
+        "en": "No records. Only answer replies to questions.",
+        "ru": "Никаких записей. Только ответы на вопросы."
+      }
+    },
+    {
+      "code": "none",
+      "list": "interpretations",
+      "label": {
+        "en": "None",
+        "ru": "Никаких"
+      },
+      "definition": {
+        "en": "No interpretation-layer records.",
+        "ru": "Никаких записей слоя интерпретаций."
+      }
+    },
+    {
+      "code": "subject-endorsed",
+      "list": "interpretations",
+      "label": {
+        "en": "Subject-endorsed",
+        "ru": "Подтверждённые человеком"
+      },
+      "definition": {
+        "en": "Interpretation-layer records authored or endorsed by the subject. The default.",
+        "ru": "Записи слоя интерпретаций, написанные или подтверждённые самим человеком. Значение по умолчанию."
+      }
+    },
+    {
+      "code": "all",
+      "list": "interpretations",
+      "label": {
+        "en": "All",
+        "ru": "Все"
+      },
+      "definition": {
+        "en": "Every admitted interpretation-layer record in scope.",
+        "ru": "Все принятые записи слоя интерпретаций в пределах разрешения."
+      }
+    },
+    {
+      "code": "given",
+      "list": "status",
+      "label": {
+        "en": "Given",
+        "ru": "Дано"
+      },
+      "definition": {
+        "en": "The grant is in force.",
+        "ru": "Разрешение действует."
+      },
+      "storedGrantStatus": true,
+      "mappings": {
+        "dpv": "ConsentGiven"
+      }
+    },
+    {
+      "code": "withdrawn",
+      "list": "status",
+      "label": {
+        "en": "Withdrawn",
+        "ru": "Отозвано"
+      },
+      "definition": {
+        "en": "Withdrawn by the subject or a steward grantor.",
+        "ru": "Отозвано самим человеком или доверенным лицом, выдавшим разрешение."
+      },
+      "storedGrantStatus": true,
+      "mappings": {
+        "dpv": "ConsentWithdrawn"
+      }
+    },
+    {
+      "code": "revoked",
+      "list": "status",
+      "label": {
+        "en": "Revoked",
+        "ru": "Аннулировано"
+      },
+      "definition": {
+        "en": "Revoked by the holder for security or misuse.",
+        "ru": "Аннулировано держателем из соображений безопасности или при злоупотреблении."
+      },
+      "storedGrantStatus": true,
+      "mappings": {
+        "dpv": "ConsentRevoked"
+      }
+    },
+    {
+      "code": "expired",
+      "list": "status",
+      "label": {
+        "en": "Expired",
+        "ru": "Истекло"
+      },
+      "definition": {
+        "en": "Past `expiresAt`, or `maxUses` exhausted.",
+        "ru": "Прошёл срок `expiresAt` или исчерпан `maxUses`."
+      },
+      "storedGrantStatus": true,
+      "mappings": {
+        "dpv": "ConsentExpired"
+      }
+    },
+    {
+      "code": "invalidated",
+      "list": "status",
+      "label": {
+        "en": "Invalidated",
+        "ru": "Недействительно"
+      },
+      "definition": {
+        "en": "The grantor steward's scope or validity ended, or the grantee Party was removed.",
+        "ru": "Полномочия или срок доверенного лица, выдавшего разрешение, закончились, либо участник-получатель удалён."
+      },
+      "storedGrantStatus": true,
+      "mappings": {
+        "dpv": "ConsentInvalidated"
+      }
+    },
+    {
+      "code": "requested",
+      "list": "status",
+      "label": {
+        "en": "Requested",
+        "ru": "Запрошено"
+      },
+      "definition": {
+        "en": "A grant request awaiting the person. Messages and Events only.",
+        "ru": "Запрос разрешения, ожидающий решения человека. Только в сообщениях и событиях журнала."
+      },
+      "storedGrantStatus": false,
+      "mappings": {
+        "dpv": "ConsentRequested"
+      }
+    },
+    {
+      "code": "refused",
+      "list": "status",
+      "label": {
+        "en": "Refused",
+        "ru": "Отказано"
+      },
+      "definition": {
+        "en": "The person refused a request. Messages and Events only.",
+        "ru": "Человек отказал в запросе. Только в сообщениях и событиях журнала."
+      },
+      "storedGrantStatus": false,
+      "mappings": {
+        "dpv": "ConsentRefused"
+      }
+    },
+    {
+      "code": "deferred",
+      "list": "status",
+      "label": {
+        "en": "Deferred",
+        "ru": "Отложено"
+      },
+      "definition": {
+        "en": "The person deferred a request. Messages and Events only.",
+        "ru": "Человек отложил запрос. Только в сообщениях и событиях журнала."
+      },
+      "storedGrantStatus": false,
+      "mappings": {
+        "dpv": "ConsentRequestDeferred"
+      }
+    },
+    {
+      "code": "returnDialog",
+      "list": "resolvers",
+      "label": {
+        "en": "Return dialog",
+        "ru": "Вернуть на диалог"
+      },
+      "definition": {
+        "en": "Return both values marked contested and ask the person. The default.",
+        "ru": "Вернуть оба значения с пометкой «оспорено» и спросить человека. Значение по умолчанию."
+      }
+    },
+    {
+      "code": "mostPersonal",
+      "list": "resolvers",
+      "label": {
+        "en": "Most personal",
+        "ru": "Самое личное"
+      },
+      "definition": {
+        "en": "Prefer the value the subject asserted or endorsed.",
+        "ru": "Предпочесть значение, высказанное или подтверждённое самим человеком."
+      }
+    },
+    {
+      "code": "mostRecent",
+      "list": "resolvers",
+      "label": {
+        "en": "Most recent",
+        "ru": "Самое свежее"
+      },
+      "definition": {
+        "en": "Prefer the newest by `recordedAt`. Only for `state` facets.",
+        "ru": "Предпочесть самое новое по `recordedAt`. Только для грани `state`."
+      }
+    },
+    {
+      "code": "returnNone",
+      "list": "resolvers",
+      "label": {
+        "en": "Return none",
+        "ru": "Ничего не возвращать"
+      },
+      "definition": {
+        "en": "Return `not-disclosed`. Used whenever any holder marks the item `person-only`.",
+        "ru": "Вернуть `not-disclosed`. Применяется всегда, когда любой держатель помечает элемент как `person-only`."
+      }
+    },
+    {
+      "code": "in-person",
+      "list": "channels",
+      "label": {
+        "en": "In person",
+        "ru": "Лично"
+      },
+      "definition": {
+        "en": "Expressed in person.",
+        "ru": "Выражено лично."
+      }
+    },
+    {
+      "code": "holder-ui",
+      "list": "channels",
+      "label": {
+        "en": "Holder interface",
+        "ru": "Интерфейс держателя"
+      },
+      "definition": {
+        "en": "Expressed in the holder's interface.",
+        "ru": "Выражено в интерфейсе держателя."
+      }
+    },
+    {
+      "code": "signed-message",
+      "list": "channels",
+      "label": {
+        "en": "Signed message",
+        "ru": "Подписанное сообщение"
+      },
+      "definition": {
+        "en": "Expressed in a signed message.",
+        "ru": "Выражено подписанным сообщением."
+      }
+    },
+    {
+      "code": "steward",
+      "list": "channels",
+      "label": {
+        "en": "Steward",
+        "ru": "Доверенное лицо"
+      },
+      "definition": {
+        "en": "Expressed by a steward within scope.",
+        "ru": "Выражено доверенным лицом в пределах полномочий."
+      }
+    },
+    {
+      "code": "other",
+      "list": "channels",
+      "label": {
+        "en": "Other",
+        "ru": "Другое"
+      },
+      "definition": {
+        "en": "Any other channel.",
+        "ru": "Любой другой канал."
+      }
+    },
+    {
+      "code": "allow",
+      "list": "effects",
+      "label": {
+        "en": "Allow",
+        "ru": "Разрешить"
+      },
+      "definition": {
+        "en": "The grant allows the listed actions. The default.",
+        "ru": "Разрешение допускает перечисленные действия. Значение по умолчанию."
+      }
+    },
+    {
+      "code": "deny",
+      "list": "effects",
+      "label": {
+        "en": "Deny",
+        "ru": "Запретить"
+      },
+      "definition": {
+        "en": "The grant denies the scope to the grantee. Deny wins over allow (R-G2).",
+        "ru": "Разрешение запрещает получателю доступ к области. Запрет сильнее разрешения (R-G2)."
+      }
+    },
+    {
+      "code": "none",
+      "list": "storage",
+      "label": {
+        "en": "None",
+        "ru": "Не хранить"
+      },
+      "definition": {
+        "en": "The grantee may not store what it receives.",
+        "ru": "Получатель не может хранить полученное."
+      }
+    },
+    {
+      "code": "session",
+      "list": "storage",
+      "label": {
+        "en": "Session",
+        "ru": "На время сеанса"
+      },
+      "definition": {
+        "en": "The grantee may keep it for the session (at most PT12H). The default.",
+        "ru": "Получатель может хранить на время сеанса (не более PT12H). Значение по умолчанию."
+      }
+    },
+    {
+      "code": "until-expiry",
+      "list": "storage",
+      "label": {
+        "en": "Until expiry",
+        "ru": "До истечения разрешения"
+      },
+      "definition": {
+        "en": "The grantee may keep it until the grant expires.",
+        "ru": "Получатель может хранить до истечения разрешения."
+      }
+    },
+    {
+      "code": "deny",
+      "list": "decision-use",
+      "label": {
+        "en": "Deny",
+        "ru": "Нет"
+      },
+      "definition": {
+        "en": "Results and readings inform the grantee's work with the person; none of them grounds a choice the grantee makes or proposes for the person. The default: the member is absent.",
+        "ru": "Результаты и прочтения помогают получателю работать с человеком; ни один из них не служит основанием выбора, который получатель делает или предлагает за человека. Значение по умолчанию: поля нет."
+      }
+    },
+    {
+      "code": "approval-required",
+      "list": "decision-use",
+      "label": {
+        "en": "Approval required",
+        "ru": "С подтверждением"
+      },
+      "definition": {
+        "en": "A result or reading the person stated or accepted may ground a choice the grantee proposes for the person; the grantee names what it weighed, and the person confirms each proposal before it takes effect. Silence is not confirmation.",
+        "ru": "Результат или прочтение, которое человек сам высказал или принял, может служить основанием выбора, который получатель предлагает за человека; получатель называет, что учёл, и человек подтверждает каждое предложение до того, как оно вступит в силу. Молчание — не подтверждение."
+      }
+    },
+    {
+      "code": "consent",
+      "list": "legal-bases",
+      "label": {
+        "en": "Consent",
+        "ru": "Согласие"
+      },
+      "definition": {
+        "en": "The person's consent.",
+        "ru": "Согласие человека."
+      },
+      "mappings": {
+        "dpv": "Consent"
+      }
+    },
+    {
+      "code": "explicit-consent",
+      "list": "legal-bases",
+      "label": {
+        "en": "Explicit consent",
+        "ru": "Явное согласие"
+      },
+      "definition": {
+        "en": "Explicit consent. Required for grants that reach special records or include `infer` (R-G11).",
+        "ru": "Явное согласие. Обязательно для разрешений, охватывающих особые записи или включающих `infer` (R-G11)."
+      },
+      "mappings": {
+        "dpv": "ExplicitlyExpressedConsent"
+      }
+    },
+    {
+      "code": "contract",
+      "list": "legal-bases",
+      "label": {
+        "en": "Contract",
+        "ru": "Договор"
+      },
+      "definition": {
+        "en": "A contract with the person.",
+        "ru": "Договор с человеком."
+      },
+      "mappings": {
+        "dpv": "Contract"
+      }
+    },
+    {
+      "code": "other",
+      "list": "legal-bases",
+      "label": {
+        "en": "Other",
+        "ru": "Другое"
+      },
+      "definition": {
+        "en": "Another basis, described in the note.",
+        "ru": "Другое основание, описанное в примечании."
+      }
+    }
+  ]
+}

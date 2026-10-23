@@ -1,0 +1,193 @@
+{
+  "format": "ohc.playbook",
+  "specVersion": "0.1.0-draft",
+  "id": "urn:ohc:playbook:big-five-basic",
+  "version": "0.1.0",
+  "name": {
+    "en": "Big Five: basic ways of working",
+    "ru": "Большая пятёрка: базовые способы работы"
+  },
+  "lenses": [
+    "urn:ohc:lens:big-five"
+  ],
+  "author": "OHC editors",
+  "sources": [
+    "Johnson 2014",
+    "Soto 2019",
+    "Roberts & DelVecchio 2000"
+  ],
+  "licence": "Apache-2.0",
+  "situations": [
+    {
+      "id": "plan-week",
+      "when": {
+        "en": "Planning the week ahead.",
+        "ru": "Планирование предстоящей недели."
+      },
+      "use": {
+        "en": [
+          "Ask which outcomes matter most this week, in their words.",
+          "Where they said a tendency fits them, shape the plan with it and say which tendency you used.",
+          "Leave room for the settings where they said the tendency does not show.",
+          "At the end of the week, offer the fit check on one domain."
+        ],
+        "ru": [
+          "Спросите, какие результаты важнее всего на этой неделе, — словами человека.",
+          "Там, где человек сказал, что склонность ему подходит, стройте план с её учётом и назовите, какую склонность вы учли.",
+          "Оставьте место для ситуаций, в которых, по словам человека, эта склонность не проявляется.",
+          "В конце недели предложите проверку соответствия по одному измерению."
+        ]
+      },
+      "toolkit": [
+        "big-five.fit-check"
+      ],
+      "results": [
+        "big-five/C",
+        "big-five/E"
+      ],
+      "watchFor": {
+        "en": "Do not predict how a single day will go from a score.",
+        "ru": "Не предсказывайте по баллу, как пройдёт отдельный день."
+      }
+    },
+    {
+      "id": "choose-between-options",
+      "when": {
+        "en": "Choosing between options.",
+        "ru": "Выбор между вариантами."
+      },
+      "use": {
+        "en": [
+          "Lay out the options with what speaks for each, in their words.",
+          "If they want, say which option asks more of a tendency they accepted and which asks them to work against one; speak of the work each option asks for, never of their fit for it.",
+          "Leave the choice to them: a tendency is a range, not a rule."
+        ],
+        "ru": [
+          "Разложите варианты и то, что говорит в пользу каждого, — словами человека.",
+          "Если человек хочет, скажите, какой вариант больше опирается на принятую им склонность, а какой потребует идти против неё; говорите о работе, которой требует вариант, а не о пригодности человека к нему.",
+          "Оставьте выбор человеку: склонность — это диапазон, а не правило."
+        ]
+      },
+      "toolkit": [],
+      "results": [
+        "big-five/O",
+        "big-five/C"
+      ],
+      "watchFor": {
+        "en": "A score never shows fit for a job or role. Never put their results into what others use to decide about them, such as an application or a case for promotion; they can share their own report.",
+        "ru": "Балл никогда не показывает пригодность к работе или роли. Не вносите результаты человека в то, чем другие пользуются для решений о нём, — в заявку или обоснование повышения; свой отчёт человек может показать сам."
+      }
+    },
+    {
+      "id": "give-feedback",
+      "when": {
+        "en": "Giving feedback to someone.",
+        "ru": "Обратная связь другому человеку."
+      },
+      "use": {
+        "en": [
+          "Ask what they want the other person to take away.",
+          "Where they recognise one of their own tendencies in how they give feedback, ask how they want to use it this time.",
+          "Keep to their own tendencies; say nothing about the other person's."
+        ],
+        "ru": [
+          "Спросите, что человек хочет, чтобы собеседник вынес из разговора.",
+          "Если человек узнаёт свою склонность в том, как он даёт обратную связь, спросите, как он хочет использовать её на этот раз.",
+          "Говорите только о склонностях самого человека, не о склонностях собеседника."
+        ]
+      },
+      "toolkit": [],
+      "results": [
+        "big-five/A",
+        "big-five/E"
+      ],
+      "watchFor": {
+        "en": "Do not describe the other person's traits or guess their scores.",
+        "ru": "Не описывайте черты собеседника и не угадывайте его баллы."
+      }
+    },
+    {
+      "id": "look-back-at-an-episode",
+      "when": {
+        "en": "Looking back at something that happened.",
+        "ru": "Разбор того, что произошло."
+      },
+      "use": {
+        "en": [
+          "Ask what happened, in their words.",
+          "Offer the fit check: does the tendency they accepted show in this and two other recent episodes?",
+          "Note fit or no fit in their words; a no-fit is as useful as a fit."
+        ],
+        "ru": [
+          "Спросите, что произошло, — словами человека.",
+          "Предложите проверку соответствия: проявляется ли принятая склонность в этом и ещё двух недавних эпизодах?",
+          "Запишите «подходит» или «не подходит» словами человека; несовпадение так же полезно, как совпадение."
+        ]
+      },
+      "toolkit": [
+        "big-five.fit-check"
+      ],
+      "results": [
+        "big-five/O",
+        "big-five/C",
+        "big-five/E",
+        "big-five/A",
+        "big-five/N"
+      ],
+      "watchFor": {
+        "en": "A score is a dated reading against a norm group, never a verdict on the episode.",
+        "ru": "Балл — датированное измерение относительно нормативной группы, а не приговор эпизоду."
+      }
+    },
+    {
+      "id": "hard-conversation",
+      "when": {
+        "en": "Preparing a hard conversation.",
+        "ru": "Подготовка к трудному разговору."
+      },
+      "use": {
+        "en": [
+          "Ask what they want the conversation to achieve.",
+          "Where they recognise one of their own tendencies in conversations like this, ask how they want to use it this time.",
+          "Help them decide what to say first."
+        ],
+        "ru": [
+          "Спросите, чего человек хочет добиться разговором.",
+          "Если человек узнаёт свою склонность в таких разговорах, спросите, как он хочет использовать её на этот раз.",
+          "Помогите решить, что сказать первым."
+        ]
+      },
+      "toolkit": [],
+      "results": [
+        "big-five/A",
+        "big-five/E"
+      ],
+      "watchFor": {
+        "en": "Keep to their own tendencies; never describe the other person's traits or guess their scores.",
+        "ru": "Говорите только о склонностях самого человека; не описывайте черты собеседника и не угадывайте его баллы."
+      }
+    },
+    {
+      "id": "under-strain",
+      "when": {
+        "en": "Under strain: tired, pressed or overloaded.",
+        "ru": "Под нагрузкой: усталость, давление или перегрузка."
+      },
+      "use": {
+        "en": [
+          "Ask what is happening, in their words, and what would help now.",
+          "Offer practical help first: what to move, drop or finish."
+        ],
+        "ru": [
+          "Спросите, что происходит, — словами человека, — и что поможет сейчас.",
+          "Сначала предложите практическую помощь: что перенести, отменить или закончить."
+        ]
+      },
+      "toolkit": [],
+      "watchFor": {
+        "en": "Never use a score to explain away or shrink what they say about today.",
+        "ru": "Не объясняйте баллом и не преуменьшайте то, что человек говорит о сегодняшнем дне."
+      }
+    }
+  ]
+}

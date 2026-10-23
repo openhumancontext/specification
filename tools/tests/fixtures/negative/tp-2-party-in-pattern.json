@@ -1,0 +1,19 @@
+{
+  "description": "A Party referenced from an interpretation-layer record.",
+  "expect": [
+    "TP-2"
+  ],
+  "form": "single",
+  "patches": [
+    {
+      "op": "set",
+      "target": "patterns",
+      "path": "/@pat-01/episodes",
+      "value": [
+        "ep-01",
+        "ep-02",
+        "p-01"
+      ]
+    }
+  ]
+}

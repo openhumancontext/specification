@@ -1,0 +1,16 @@
+{
+  "description": "open-verbatim without step-up.",
+  "expect": [
+    "GR-3",
+    "S-3"
+  ],
+  "form": "single",
+  "patches": [
+    {
+      "op": "add",
+      "target": "grants",
+      "path": "/@g-01/actions",
+      "value": "open-verbatim"
+    }
+  ]
+}

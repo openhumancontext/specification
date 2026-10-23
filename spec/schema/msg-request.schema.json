@@ -1,0 +1,72 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:ohc:schema:msg-request:0.1.0-draft",
+  "title": "OHC request message",
+  "description": "EXPERIMENTAL. Agent to holder: asks for a projection under a grant. Answered by a Projection or a denial.",
+  "type": "object",
+  "required": [
+    "format",
+    "specVersion",
+    "id",
+    "from",
+    "to",
+    "at",
+    "grant",
+    "purpose",
+    "select"
+  ],
+  "properties": {
+    "format": {
+      "const": "ohc.experimental.request"
+    },
+    "specVersion": {
+      "$ref": "urn:ohc:schema:message:0.1.0-draft#/properties/specVersion"
+    },
+    "id": {
+      "$ref": "urn:ohc:schema:message:0.1.0-draft#/properties/id"
+    },
+    "from": {
+      "$ref": "urn:ohc:schema:message:0.1.0-draft#/properties/from"
+    },
+    "to": {
+      "$ref": "urn:ohc:schema:message:0.1.0-draft#/properties/to"
+    },
+    "at": {
+      "$ref": "urn:ohc:schema:message:0.1.0-draft#/properties/at"
+    },
+    "inReplyTo": {
+      "$ref": "urn:ohc:schema:message:0.1.0-draft#/properties/inReplyTo"
+    },
+    "grant": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/LocalId"
+    },
+    "purpose": {
+      "description": "Exactly one (R-G7).",
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/purposes"
+    },
+    "select": {
+      "type": "array",
+      "items": {
+        "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/GrantSelector"
+      },
+      "minItems": 1
+    },
+    "asOf": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/DateTime"
+    },
+    "mode": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/grant.modes"
+    },
+    "withoutInterpretations": {
+      "type": "boolean"
+    },
+    "resolver": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/grant.resolvers"
+    },
+    "ownProposals": {
+      "description": "Proposer view (§12.5): also serve the requester's own proposed records and its records that expired undecided, under the same grant.",
+      "type": "boolean"
+    }
+  },
+  "additionalProperties": false
+}

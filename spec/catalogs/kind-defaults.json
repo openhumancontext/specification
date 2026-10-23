@@ -1,0 +1,204 @@
+{
+  "format": "ohc.catalog",
+  "id": "urn:ohc:catalog:kind-defaults",
+  "version": "0.1.0",
+  "specVersion": "0.1.0-draft",
+  "title": {
+    "en": "Default sensitivity tiers by kind",
+    "ru": "Уровни чувствительности по умолчанию для видов записей"
+  },
+  "description": {
+    "en": "Default tiers of the content-record kinds before C3 propagation. A null defaultTier means the tier is computed from other records. Lens descriptors may raise these tiers, never lower them. Only the subject may lower a tier, with a `relax` Review.",
+    "ru": "Уровни по умолчанию для видов содержательных записей до распространения по правилу C3. Пустое значение defaultTier означает, что уровень вычисляется по другим записям. Описания линз могут повышать эти уровни, но не понижать. Понизить уровень может только сам человек решением `relax`."
+  },
+  "closed": true,
+  "generatesEnum": false,
+  "codes": [
+    {
+      "code": "Claim",
+      "label": {
+        "en": "Claim",
+        "ru": "Утверждение"
+      },
+      "definition": {
+        "en": "Default `personal`. Facets `declared-value`, `relationship`, `disposition` and `need` default to `sensitive`. Raised to `special` for facet `belief`; for facet `state` with predicate `mood`, `emotion`, `stress` or `affect`; and for any special category.",
+        "ru": "По умолчанию `personal`. Грани `declared-value`, `relationship`, `disposition` и `need` по умолчанию `sensitive`. Повышается до `special` для грани `belief`; для грани `state` с уточнением `mood`, `emotion`, `stress` или `affect`; и при любой особой категории."
+      },
+      "defaultTier": "personal",
+      "facetDefaults": {
+        "declared-value": "sensitive",
+        "relationship": "sensitive",
+        "disposition": "sensitive",
+        "need": "sensitive"
+      }
+    },
+    {
+      "code": "Source",
+      "label": {
+        "en": "Source",
+        "ru": "Первичный источник"
+      },
+      "definition": {
+        "en": "Default `sensitive`; the source kind's defaultTier may raise it (special for biometric, voice, audio, video, sensor and practitioner-notes). Raised to `special` when custody confidentiality is not `none`. A wildcard selector never reaches primary material.",
+        "ru": "По умолчанию `sensitive`; defaultTier вида источника может его повысить (special для biometric, voice, audio, video, sensor и practitioner-notes). Повышается до `special`, если конфиденциальность хранения не `none`. Подстановочный селектор никогда не достаёт первичный материал."
+      },
+      "defaultTier": "sensitive"
+    },
+    {
+      "code": "Episode",
+      "label": {
+        "en": "Episode",
+        "ru": "Эпизод"
+      },
+      "definition": {
+        "en": "Default `sensitive`. Raised to `special` for any special category.",
+        "ru": "По умолчанию `sensitive`. Повышается до `special` при любой особой категории."
+      },
+      "defaultTier": "sensitive"
+    },
+    {
+      "code": "Interpretation",
+      "label": {
+        "en": "Interpretation",
+        "ru": "Интерпретация"
+      },
+      "definition": {
+        "en": "Default `sensitive`. Raised to `special` when a `lens` is present, when `about` includes a Part, or when the adoption's confidentiality is not `none` (I9).",
+        "ru": "По умолчанию `sensitive`. Повышается до `special`, если указана линза, если `about` включает внутреннюю часть или если конфиденциальность принятия линзы не `none` (I9)."
+      },
+      "defaultTier": "sensitive"
+    },
+    {
+      "code": "Tension",
+      "label": {
+        "en": "Tension",
+        "ru": "Напряжение"
+      },
+      "definition": {
+        "en": "Computed: the maximum over `between`.",
+        "ru": "Вычисляется: максимум по записям в `between`."
+      },
+      "defaultTier": null
+    },
+    {
+      "code": "Pattern",
+      "label": {
+        "en": "Pattern",
+        "ru": "Паттерн"
+      },
+      "definition": {
+        "en": "Default `sensitive`. Raised to `special` when a `lens` is present.",
+        "ru": "По умолчанию `sensitive`. Повышается до `special`, если указана линза."
+      },
+      "defaultTier": "sensitive"
+    },
+    {
+      "code": "ModelView",
+      "label": {
+        "en": "Model view",
+        "ru": "Взгляд модели"
+      },
+      "definition": {
+        "en": "Always `special` by default.",
+        "ru": "Всегда `special` по умолчанию."
+      },
+      "defaultTier": "special"
+    },
+    {
+      "code": "AssessmentRecord",
+      "label": {
+        "en": "Assessment record",
+        "ru": "Запись оценки"
+      },
+      "definition": {
+        "en": "Always `special` by default (AR-5). Only the subject may lower it, with `relax`.",
+        "ru": "Всегда `special` по умолчанию (AR-5). Понизить может только сам человек решением `relax`."
+      },
+      "defaultTier": "special"
+    },
+    {
+      "code": "Part",
+      "label": {
+        "en": "Part",
+        "ru": "Внутренняя часть"
+      },
+      "definition": {
+        "en": "Always `special` by default; default handling `person-only` (P-3).",
+        "ru": "Всегда `special` по умолчанию; ограничение обращения по умолчанию — `person-only` (P-3)."
+      },
+      "defaultTier": "special"
+    },
+    {
+      "code": "HealthRef",
+      "label": {
+        "en": "Health pointer",
+        "ru": "Указатель на медицинскую запись"
+      },
+      "definition": {
+        "en": "Always `special` (HR-2).",
+        "ru": "Всегда `special` (HR-2)."
+      },
+      "defaultTier": "special"
+    },
+    {
+      "code": "LensAdoption",
+      "label": {
+        "en": "Lens adoption",
+        "ru": "Принятие линзы"
+      },
+      "definition": {
+        "en": "Default `sensitive`. Raised to `special` when the route is `inherited-from-practice`, when confidentiality is not `none`, or when the lens default is special.",
+        "ru": "По умолчанию `sensitive`. Повышается до `special`, если путь — `inherited-from-practice`, если конфиденциальность не `none` или если по умолчанию линзы уровень особый."
+      },
+      "defaultTier": "sensitive"
+    },
+    {
+      "code": "Practice",
+      "label": {
+        "en": "Practice",
+        "ru": "Практика"
+      },
+      "definition": {
+        "en": "Default `personal`.",
+        "ru": "По умолчанию `personal`."
+      },
+      "defaultTier": "personal"
+    },
+    {
+      "code": "Outcome",
+      "label": {
+        "en": "Outcome",
+        "ru": "Исход"
+      },
+      "definition": {
+        "en": "Computed: the tier of its `about` target.",
+        "ru": "Вычисляется: уровень записи, на которую указывает `about`."
+      },
+      "defaultTier": null
+    },
+    {
+      "code": "RecallCue",
+      "label": {
+        "en": "Recall cue",
+        "ru": "Сигнал возвращения опыта"
+      },
+      "definition": {
+        "en": "Default `sensitive`. Raised to `special` when any target is special; rule RC-2 then applies.",
+        "ru": "По умолчанию `sensitive`. Повышается до `special`, если любая из целей особая; тогда применяется правило RC-2."
+      },
+      "defaultTier": "sensitive"
+    },
+    {
+      "code": "Relation",
+      "label": {
+        "en": "Relation",
+        "ru": "Связь"
+      },
+      "definition": {
+        "en": "Computed: the maximum of `from` and `to`.",
+        "ru": "Вычисляется: максимум из `from` и `to`."
+      },
+      "defaultTier": null
+    }
+  ]
+}

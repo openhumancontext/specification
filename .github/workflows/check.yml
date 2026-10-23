@@ -1,0 +1,41 @@
+name: check
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.9", "3.11"]
+    steps:
+      - uses: actions/checkout@v7.0.1
+      - uses: actions/setup-python@v7.0.0
+        with:
+          python-version: ${{ matrix.python-version }}
+      - run: python -m pip install "jsonschema>=4.25,<5"
+      - name: Private release denylist (kept outside the repository; the release checks fail closed without it)
+        env:
+          OHC_RELEASE_DENYLIST: ${{ secrets.OHC_RELEASE_DENYLIST }}
+        run: |
+          if [ -n "$OHC_RELEASE_DENYLIST" ]; then
+            printf '%s' "$OHC_RELEASE_DENYLIST" > "$RUNNER_TEMP/release-denylist.json"
+            echo "OHC_DENYLIST=$RUNNER_TEMP/release-denylist.json" >> "$GITHUB_ENV"
+          fi
+      - run: python -B tools/check.py --self-test
+      - run: python -B tools/check.py examples/ilse-minimal --level L0 --json
+      - run: python -B tools/check.py examples/noa-episode-first --level L2 --json
+      - run: python -B tools/check.py examples/kofi-gum-ode/context --level L2 --json
+      - run: python -B tools/check.py examples/mara-l1-agent --level L1 --json
+      - run: python -B tools/check.py examples/tove-bring-a-result/context --level L2 --json
+      - run: python -B tools/lens_tables.py --check
+      - run: python -B -m unittest discover -s tools/tests -v
+      - run: python -B tools/render_viewer.py --check
+      - run: python -B tools/build_release_manifest.py --check
+      - uses: actions/checkout@v7.0.1
+        with:
+          repository: opendigitalemployee/specification
+          ref: 2de920485fb2665eaf7298ac65452a4a79412a9a
+          path: .ode-reference
+          persist-credentials: false
+      - run: python -B tools/check_ode_example.py --ode-root .ode-reference

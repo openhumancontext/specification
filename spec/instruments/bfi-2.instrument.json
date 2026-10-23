@@ -1,0 +1,56 @@
+{
+  "format": "ohc.instrument",
+  "specVersion": "0.1.0-draft",
+  "id": "urn:ohc:instrument:bfi-2",
+  "version": "0.2.0",
+  "name": "BFI-2 (Big Five Inventory-2)",
+  "lens": "urn:ohc:lens:big-five",
+  "publisher": "Christopher J. Soto and Oliver P. John (authors and copyright holders)",
+  "forms": [
+    {
+      "id": "60",
+      "items": 60,
+      "scale": "1-5 agreement scale; 5 domains, 15 facets",
+      "note": "Domain labels differ from other forms: Negative Emotionality, Open-Mindedness"
+    }
+  ],
+  "itemsLicence": "Copyright Soto & John; not in the public domain; free for non-commercial research only; commercial use requires a request to the authors",
+  "scoring": "public",
+  "neverStore": [
+    "item text",
+    "raw item responses outside the person's own test data"
+  ],
+  "registryListing": "ok",
+  "citations": [
+    {
+      "ref": "Berkeley Personality Lab, BFI-2 terms of use",
+      "grade": "F",
+      "note": "Free for non-commercial research purposes; at this time for non-commercial uses only"
+    }
+  ],
+  "import": {
+    "scoredBy": {
+      "partyKind": "organization",
+      "id": "urn:ohc:scorer:bfi-2-report",
+      "label": "Report scorer"
+    },
+    "scores": [
+      {
+        "kind": "raw",
+        "range": [
+          1,
+          5
+        ]
+      }
+    ],
+    "scales": [
+      "big-five/O",
+      "big-five/C",
+      "big-five/E",
+      "big-five/A",
+      "big-five/N"
+    ]
+  },
+  "legalReviewNeeded": true,
+  "reviewedAt": "2026-10-09"
+}

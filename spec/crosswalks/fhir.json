@@ -1,0 +1,48 @@
+[
+  {
+    "format": "ohc.mapping",
+    "specVersion": "0.1.0-draft",
+    "id": "urn:ohc:mapping:ohc.health-ref--fhir.resource-reference--fhir-r5",
+    "version": "0.1.0",
+    "bridgeKind": "ohc-standard",
+    "from": {
+      "standard": "OHC 0.1.0-draft",
+      "concept": "HealthRef"
+    },
+    "to": {
+      "standard": "HL7 FHIR R4/R5",
+      "concept": "reference to a FHIR resource held by the health system"
+    },
+    "relation": "corresponds",
+    "scope": "Informative crosswalk between formats; never a conversion of a person's data without the person's grant",
+    "notIdentity": true,
+    "chainable": false,
+    "rowStatus": "accepted",
+    "forbiddenUse": "Pointers only: no clinical content is copied into OHC.",
+    "evidenceGrade": "F",
+    "reviewedAt": "2026-10-09"
+  },
+  {
+    "format": "ohc.mapping",
+    "specVersion": "0.1.0-draft",
+    "id": "urn:ohc:mapping:ohc.grant--fhir.consent--fhir-r5",
+    "version": "0.1.0",
+    "bridgeKind": "ohc-standard",
+    "from": {
+      "standard": "OHC 0.1.0-draft",
+      "concept": "Grant"
+    },
+    "to": {
+      "standard": "HL7 FHIR R4/R5",
+      "concept": "Consent"
+    },
+    "relation": "not-covered",
+    "scope": "Informative crosswalk between formats; never a conversion of a person's data without the person's grant",
+    "notIdentity": true,
+    "chainable": false,
+    "rowStatus": "not-permitted",
+    "forbiddenUse": "FHIR Consent is not used for OHC grants.",
+    "evidenceGrade": "F",
+    "reviewedAt": "2026-10-09"
+  }
+]

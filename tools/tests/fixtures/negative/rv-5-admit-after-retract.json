@@ -1,0 +1,33 @@
+{
+  "description": "An admit after a terminal retract.",
+  "expect": [
+    "RV-5"
+  ],
+  "form": "single",
+  "patches": [
+    {
+      "op": "add",
+      "target": "reviews",
+      "path": "",
+      "value": {
+        "id": "rv-09",
+        "target": "c-03",
+        "action": "retract",
+        "by": "subject",
+        "recordedAt": "2026-09-08T08:00:00Z"
+      }
+    },
+    {
+      "op": "add",
+      "target": "reviews",
+      "path": "",
+      "value": {
+        "id": "rv-10",
+        "target": "c-03",
+        "action": "admit",
+        "by": "subject",
+        "recordedAt": "2026-09-09T08:00:00Z"
+      }
+    }
+  ]
+}

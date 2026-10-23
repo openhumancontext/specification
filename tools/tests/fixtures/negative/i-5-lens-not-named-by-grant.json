@@ -1,0 +1,100 @@
+{
+  "description": "An agent reads through a lens under an infer grant that does not name the lens.",
+  "expect": [
+    "I5"
+  ],
+  "form": "single",
+  "patches": [
+    {
+      "op": "add",
+      "target": "grants",
+      "path": "",
+      "value": {
+        "id": "g-02",
+        "recordedAt": "2026-09-01T09:00:00Z",
+        "grantor": "subject",
+        "grantee": "a-01",
+        "purposes": [
+          "self-reflection"
+        ],
+        "scope": {
+          "include": [
+            {
+              "categories": [
+                "mental-health"
+              ]
+            }
+          ]
+        },
+        "actions": [
+          "read",
+          "suggest",
+          "infer"
+        ],
+        "mode": "summary",
+        "interpretations": "all",
+        "constraints": {
+          "expiresAt": "2027-02-01T00:00:00Z",
+          "storage": "session",
+          "forwarding": false,
+          "crossContextUse": false,
+          "decisionUse": "approval-required",
+          "delegable": false
+        },
+        "basis": {
+          "legal": "explicit-consent"
+        },
+        "expressedBy": {
+          "actor": "subject",
+          "at": "2026-09-01T09:00:00Z",
+          "channel": "holder-ui"
+        }
+      }
+    },
+    {
+      "op": "add",
+      "target": "interpretations",
+      "path": "",
+      "value": {
+        "id": "in-02",
+        "about": [
+          "ep-01"
+        ],
+        "stance": "lens-reading",
+        "lens": {
+          "id": "urn:ohc:lens:cbt",
+          "version": "0.1.0"
+        },
+        "text": "A thought that the class would go badly may have come before skipping it.",
+        "origin": "inferred",
+        "assertedBy": "a-01",
+        "recordedAt": "2026-09-07T08:00:00Z",
+        "underGrant": "g-02",
+        "purpose": "self-reflection",
+        "epistemic": "hypothesis",
+        "grounds": [
+          {
+            "ref": "ep-01",
+            "kind": "evidence"
+          }
+        ],
+        "alternatives": [
+          {
+            "text": "Tired after work.",
+            "kind": "physiological"
+          },
+          {
+            "text": "The class moved rooms.",
+            "kind": "situational"
+          }
+        ],
+        "limits": "One episode; a reflection aid only.",
+        "sensitivity": "special",
+        "categories": [
+          "mental-health"
+        ],
+        "synthetic": true
+      }
+    }
+  ]
+}

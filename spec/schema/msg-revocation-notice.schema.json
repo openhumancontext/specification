@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:ohc:schema:msg-revocation-notice:0.1.0-draft",
+  "title": "OHC revocation-notice message",
+  "description": "EXPERIMENTAL. Holder to agent: a grant was withdrawn, revoked or expired. MUST on withdrawal or revocation. The envelope at is the time of the change.",
+  "type": "object",
+  "required": [
+    "format",
+    "specVersion",
+    "id",
+    "from",
+    "to",
+    "at",
+    "grant",
+    "status",
+    "purgeBy"
+  ],
+  "properties": {
+    "format": {
+      "const": "ohc.experimental.revocation-notice"
+    },
+    "specVersion": {
+      "$ref": "urn:ohc:schema:message:0.1.0-draft#/properties/specVersion"
+    },
+    "id": {
+      "$ref": "urn:ohc:schema:message:0.1.0-draft#/properties/id"
+    },
+    "from": {
+      "$ref": "urn:ohc:schema:message:0.1.0-draft#/properties/from"
+    },
+    "to": {
+      "$ref": "urn:ohc:schema:message:0.1.0-draft#/properties/to"
+    },
+    "at": {
+      "$ref": "urn:ohc:schema:message:0.1.0-draft#/properties/at"
+    },
+    "inReplyTo": {
+      "$ref": "urn:ohc:schema:message:0.1.0-draft#/properties/inReplyTo"
+    },
+    "grant": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/LocalId"
+    },
+    "status": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/messages.revocation-status"
+    },
+    "purgeBy": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/DateTime"
+    }
+  },
+  "additionalProperties": false
+}

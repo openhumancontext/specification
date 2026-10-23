@@ -1,0 +1,72 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:ohc:schema:subject:0.1.0-draft",
+  "title": "OHC Subject",
+  "description": "The person the context is about, embedded in Context. Holds the minimum needed for identity and nothing that belongs in claims.",
+  "type": "object",
+  "required": [
+    "id"
+  ],
+  "properties": {
+    "id": {
+      "description": "Stable for this context. Never sent to grantees, who get a pairwise alias.",
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/URI"
+    },
+    "displayName": {
+      "description": "Examples add \"(fictional)\".",
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+    },
+    "card": {
+      "description": "A JSContact Card (RFC 9553), copied verbatim. Category identity-linking. Its members are not constrained here beyond being an object (SU-2 checks @type and version).",
+      "type": "object"
+    },
+    "links": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "rel",
+          "uri"
+        ],
+        "properties": {
+          "rel": {
+            "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/link-rels"
+          },
+          "uri": {
+            "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/URI"
+          },
+          "odeRef": {
+            "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/OdeRef"
+          }
+        },
+        "additionalProperties": false
+      },
+      "description": "Category identity-linking. A link is not access (R-L0)."
+    },
+    "aliases": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "grantee",
+          "alias",
+          "createdAt"
+        ],
+        "properties": {
+          "grantee": {
+            "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Actor"
+          },
+          "alias": {
+            "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Alias"
+          },
+          "createdAt": {
+            "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/DateTime"
+          }
+        },
+        "additionalProperties": false
+      },
+      "description": "Optional stored record of the pairwise aliases issued."
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,15 @@
+{
+  "description": "same-occurrence between a Practice and a Claim.",
+  "expect": [
+    "RL-2"
+  ],
+  "form": "single",
+  "patches": [
+    {
+      "op": "set",
+      "target": "relations",
+      "path": "/@r-01/rel",
+      "value": "same-occurrence"
+    }
+  ]
+}

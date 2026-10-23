@@ -1,0 +1,51 @@
+{
+  "format": "ohc.context",
+  "specVersion": "0.1.0-draft",
+  "id": "urn:ohc:example:linnea:context",
+  "version": "2026-10-10.1",
+  "subject": {"id": "urn:ohc:example:linnea", "displayName": "Linnea (fictional)"},
+  "holder": "subject",
+  "lang": "en",
+  "created": "2026-09-24T22:05:00Z",
+  "conformance": {"level": "L1", "modules": ["core", "governance", "lenses", "practices"], "subjectIsAdult": true},
+  "parties": [
+    {"id": "s-01", "partyKind": "software", "label": "Online test report"},
+    {"id": "a-01", "partyKind": "agent", "label": "Reflection companion"}
+  ],
+  "policy": {"admission": "subject-only", "resolver": "returnDialog"},
+  "lenses": [
+    {"id": "urn:ohc:lens:enneagram", "version": "0.2.0", "sha256": "1c22298a0fb2bc26f272a35d5382eefb026585597aa3020279ea1078e2c99a3b"}
+  ],
+  "lensAdoptions": [
+    {"id": "la-1", "lens": {"id": "urn:ohc:lens:enneagram", "version": "0.2.0"}, "route": "self-chosen", "uses": ["speak-in-lens", "store-results", "interpret", "offer-practices"], "interpretationAuthors": ["subject"], "agentInterpretation": "off", "representationPreference": "enneagram.type-label", "origin": "declared", "assertedBy": "subject", "recordedAt": "2026-10-01T19:00:00Z", "sensitivity": "special", "categories": ["mental-health"], "synthetic": true}
+  ],
+  "sources": [
+    {"id": "src-1", "sourceKind": "instrument-report", "content": {"locator": {"vaultPath": "vault/64/64d90261deb72a4b6bf2c0220a75433793731f33d7555598b864f5d6013c1ec9.pdf"}, "sha256": "64d90261deb72a4b6bf2c0220a75433793731f33d7555598b864f5d6013c1ec9", "mediaType": "application/pdf"}, "capturedAt": "2026-09-28T20:00:00Z", "authorship": {"author": "s-01"}, "inbound": true, "contemporaneity": "contemporaneous", "maxRelease": "index", "retention": {"eraseOnRequest": true}, "origin": "declared", "assertedBy": "subject", "recordedAt": "2026-10-01T19:02:00Z", "sensitivity": "special", "categories": ["mental-health"], "synthetic": true}
+  ],
+  "assessments": [
+    {"id": "as-1", "lens": {"id": "urn:ohc:lens:enneagram", "version": "0.2.0"}, "mode": "self-identified", "assessedBy": "subject", "administeredAt": {"start": "2026-10-01", "precision": "day"}, "results": [{"type": "type-assignment", "construct": "enneagram/type-4", "label": "Type 4", "method": "self-identified", "alternatives": ["enneagram/type-9"]}, {"type": "type-assignment", "construct": "enneagram/wing", "label": "Wing: type 5", "method": "self-identified"}], "validityFlags": ["self-identified-only"], "origin": "declared", "assertedBy": "subject", "recordedAt": "2026-10-01T19:05:00Z", "sensitivity": "special", "categories": ["mental-health"], "handling": ["no-infer", "no-quote-back"], "synthetic": true},
+    {"id": "as-2", "lens": {"id": "urn:ohc:lens:enneagram", "version": "0.2.0"}, "instrument": {"id": "urn:ohc:instrument:rheti-2.5", "version": "2.5", "form": "2.5"}, "mode": "vendor-report-import", "assessedBy": "subject", "administeredAt": {"start": "2026-09-28", "precision": "day"}, "results": [{"type": "dimension-score", "construct": "enneagram/type-1", "label": "Type 1", "raw": 14}, {"type": "dimension-score", "construct": "enneagram/type-2", "label": "Type 2", "raw": 12}, {"type": "dimension-score", "construct": "enneagram/type-3", "label": "Type 3", "raw": 9}, {"type": "dimension-score", "construct": "enneagram/type-4", "label": "Type 4", "raw": 19}, {"type": "dimension-score", "construct": "enneagram/type-5", "label": "Type 5", "raw": 17}, {"type": "dimension-score", "construct": "enneagram/type-6", "label": "Type 6", "raw": 13}, {"type": "dimension-score", "construct": "enneagram/type-7", "label": "Type 7", "raw": 8}, {"type": "dimension-score", "construct": "enneagram/type-8", "label": "Type 8", "raw": 6}, {"type": "dimension-score", "construct": "enneagram/type-9", "label": "Type 9", "raw": 21}, {"type": "type-assignment", "construct": "enneagram/type-9", "label": "Type 9", "method": "instrument"}], "validityFlags": ["vendor-algorithm-undisclosed"], "source": "src-1", "trademarkNotice": "RHETI® (US Reg. No. 5584848) is a registered mark of Enneagram Personality Types, Inc. (dba The Enneagram Institute). Enneathought and Enneagram Institute are names it uses; their status is not verified here. All are used only to name its products.", "origin": "imported", "importedFrom": {"system": "vendor report (PDF), scores copied by the person", "importedAt": "2026-10-01T19:10:00Z"}, "generatedBy": {"software": "vendor scoring (not disclosed)", "method": "main type as stated in the vendor report; the vendor's rule is not disclosed"}, "formulatedAt": "2026-09-28T20:00:00Z", "assertedBy": "subject", "recordedAt": "2026-10-01T19:10:00Z", "sensitivity": "special", "categories": ["mental-health"], "handling": ["no-infer", "no-quote-back"], "synthetic": true}
+  ],
+  "tensions": [
+    {"id": "t-1", "between": ["as-1", "as-2"], "tensionKind": "source-divergence", "whoDecides": "subject", "text": "I recognise pattern 4; the test put pattern 9 first. I keep both.", "origin": "declared", "assertedBy": "subject", "recordedAt": "2026-10-01T19:15:00Z", "sensitivity": "special", "categories": ["mental-health"], "synthetic": true}
+  ],
+  "claims": [
+    {"id": "c-1", "facet": "disposition", "predicate": "self-described-tendency", "text": "Under pressure I go quiet and wait to be noticed instead of asking for what I want.", "evidence": [{"ref": "as-1", "kind": "subject-statement"}], "origin": "declared", "assertedBy": "subject", "recordedAt": "2026-10-02T08:00:00Z", "horizon": "foundation", "sensitivity": "special", "categories": ["mental-health"], "handling": ["no-quote-back"], "synthetic": true}
+  ],
+  "episodes": [
+    {"id": "ep-1", "occurred": {"start": "2026-09-24", "precision": "day"}, "accounts": [{"narrator": "subject", "narratedAt": "2026-09-24T22:00:00Z", "addedAt": "2026-09-24T22:05:00Z", "accountKind": "in-the-moment", "happened": "At choir rehearsal the solo I had prepared went to another singer.", "experienced": "Hot face, then flat.", "didOrTried": "Said nothing and left before the last song.", "understandingThen": "My voice was not good enough this week."}], "selection": {"selectedBy": "subject", "reason": "subject-chose"}, "origin": "declared", "assertedBy": "subject", "recordedAt": "2026-09-24T22:05:00Z", "contexts": ["community"], "sensitivity": "sensitive", "synthetic": true}
+  ],
+  "interpretations": [
+    {"id": "in-1", "about": ["ep-1"], "stance": "lens-reading", "lens": {"id": "urn:ohc:lens:enneagram", "version": "0.2.0"}, "text": "This is the pattern I recognise as my 4: I pulled back and waited to be seen instead of asking for the solo.", "alternatives": [{"text": "I had a cold that week and my voice was weak.", "kind": "physiological"}, {"text": "The solo list may have been set before the rehearsal.", "kind": "situational"}], "origin": "declared", "assertedBy": "subject", "recordedAt": "2026-10-02T08:10:00Z", "heldDuring": {"from": "2026-10-02"}, "contexts": ["community"], "sensitivity": "special", "categories": ["mental-health"], "synthetic": true}
+  ],
+  "practices": [
+    {"id": "pr-1", "name": "Say one sentence before I go quiet", "description": "When I notice the pull to withdraw, I name the pattern to myself and say one sentence about what I want.", "practiceKind": "reflection", "source": {"route": "from-lens", "lens": "urn:ohc:lens:enneagram", "templateId": "enneagram.recognition"}, "steps": ["Notice the pull to go quiet", "Name it to myself as the pattern", "Say one sentence about what I want"], "limits": "Not a rule for every silence; sometimes quiet is what I want.", "initialStatus": "in-use", "nonClinical": true, "origin": "declared", "assertedBy": "subject", "recordedAt": "2026-10-02T08:20:00Z", "contexts": ["community"], "sensitivity": "special", "categories": ["mental-health"], "synthetic": true}
+  ],
+  "outcomes": [
+    {"id": "oc-1", "about": {"practice": "pr-1"}, "result": "partly", "origin": "declared", "assertedBy": "subject", "recordedAt": "2026-10-09T21:00:00Z", "note": "Said it once at rehearsal; the second time I still went quiet.", "contexts": ["community"], "synthetic": true}
+  ],
+  "grants": [
+    {"id": "g-1", "recordedAt": "2026-10-03T09:00:00Z", "grantor": "subject", "grantee": "a-01", "purposes": ["self-reflection"], "scope": {"include": [{"lenses": ["urn:ohc:lens:enneagram"]}, {"ids": ["c-1", "oc-1"]}], "exclude": [{"ids": ["as-2"]}]}, "actions": ["read"], "mode": "summary", "interpretations": "subject-endorsed", "constraints": {"expiresAt": "2027-03-31T00:00:00Z", "storage": "session", "forwarding": false, "crossContextUse": false, "delegable": false}, "basis": {"legal": "explicit-consent"}, "expressedBy": {"actor": "subject", "at": "2026-10-03T09:00:00Z", "channel": "holder-ui"}, "note": "Pattern language for reflection; the test scores stay with me."}
+  ],
+  "synthetic": true
+}

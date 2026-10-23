@@ -1,0 +1,51 @@
+{
+  "format": "ohc.catalog",
+  "id": "urn:ohc:catalog:conformance-levels",
+  "version": "0.1.0",
+  "specVersion": "0.1.0-draft",
+  "title": {
+    "en": "Conformance levels",
+    "ru": "Уровни соответствия"
+  },
+  "description": {
+    "en": "Declared conformance levels. If absent, the checker applies L0 and reports that it applied the default (R-C1).",
+    "ru": "Заявляемые уровни соответствия. Если уровень не указан, проверяющий инструмент применяет L0 и сообщает об этом (R-C1)."
+  },
+  "closed": true,
+  "ordered": true,
+  "codes": [
+    {
+      "code": "L0",
+      "label": {
+        "en": "L0 Minimal",
+        "ru": "L0 Минимальный"
+      },
+      "definition": {
+        "en": "The manifest, the subject id and at least one valid Claim. No grant is required; with no grant, nothing is disclosed to anyone but the subject.",
+        "ru": "Манифест, идентификатор субъекта и хотя бы одно корректное утверждение. Разрешения не нужны; без разрешений ничего не раскрывается никому, кроме самого человека."
+      }
+    },
+    {
+      "code": "L1",
+      "label": {
+        "en": "L1 Grounded",
+        "ru": "L1 Обоснованный"
+      },
+      "definition": {
+        "en": "L0, plus grounds for inferences, hashed sources, accounts, acyclic supersession, layer rules, Reviews for every status change and the interpretation rules.",
+        "ru": "L0, а также основания для выводов, хеши источников, рассказы об эпизодах, ацикличные замены, правила слоёв, решения для каждого изменения статуса и правила интерпретаций."
+      }
+    },
+    {
+      "code": "L2",
+      "label": {
+        "en": "L2 Governed",
+        "ru": "L2 Управляемый"
+      },
+      "definition": {
+        "en": "L1, plus the package form with a lock, an unbroken event chain, expiring grants, reproducible projections, tombstones, step-up and erasure notices.",
+        "ru": "L1, а также пакетная форма с замком целостности, непрерывная цепочка событий, истекающие разрешения, воспроизводимые проекции, метки удаления, усиленное подтверждение и уведомления об удалении."
+      }
+    }
+  ]
+}

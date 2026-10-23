@@ -1,0 +1,28 @@
+{
+  "format": "ohc.mapping",
+  "specVersion": "0.1.0-draft",
+  "id": "urn:ohc:mapping:ohc.glossary--ode.glossary--ode-0.4.0-draft.2",
+  "version": "0.1.0",
+  "bridgeKind": "ohc-ode",
+  "from": {
+    "standard": "OHC 0.1.0-draft",
+    "concept": "Subject; context; holder; Grant; state facet; knowledge time"
+  },
+  "to": {
+    "standard": "ODE 0.4.0-draft",
+    "concept": "glossary terms person, person-profile, personal-space, consent, current-state, history",
+    "pin": {
+      "tag": "v0.4.0-draft.2",
+      "commit": "2de920485fb2665eaf7298ac65452a4a79412a9a"
+    }
+  },
+  "relation": "corresponds",
+  "scope": "Binding revision 0.2.0 (OHC 0.1.0-draft and ODE release 0.4.0-draft.2); a conceptual comparison, never permission to convert or disclose a person's data",
+  "notIdentity": true,
+  "chainable": false,
+  "rowStatus": "unresolved",
+  "forbiddenUse": "Do not map the OHC state facet to ODE RoleState: ODE's glossary assigns current-state to RoleState, which is a mis-assignment for person context.",
+  "reopenWhen": "ODE revises its glossary.",
+  "evidenceGrade": "F",
+  "reviewedAt": "2026-10-23"
+}

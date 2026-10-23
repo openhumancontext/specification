@@ -1,0 +1,7 @@
+# What Tove's agent read from her screenshot of the score page (one scale per line; nothing guessed).
+taken: 2026-03-02
+Openness: 4.1
+Conscientiousness: 3.9
+Extraversion: 2.6
+Agreeableness: 3.7
+Neuroticism / Negative Emotionality: 2.4

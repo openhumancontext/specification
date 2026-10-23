@@ -1,0 +1,368 @@
+{
+  "format": "ohc.catalog",
+  "id": "urn:ohc:catalog:id-prefixes",
+  "version": "0.1.0",
+  "specVersion": "0.1.0-draft",
+  "title": {
+    "en": "Id prefixes",
+    "ru": "Префиксы идентификаторов"
+  },
+  "description": {
+    "en": "Kind prefixes for record ids (R-I1): a prefix, then a counter, ULID or UUID. Ids of sensitive or special records never contain words from their content.",
+    "ru": "Префиксы видов для идентификаторов записей (R-I1): префикс, затем счётчик, ULID или UUID. Идентификаторы чувствительных и особых записей никогда не содержат слов из их содержания."
+  },
+  "closed": true,
+  "generatesEnum": false,
+  "codes": [
+    {
+      "code": "c-",
+      "label": {
+        "en": "Claim",
+        "ru": "Утверждение"
+      },
+      "definition": {
+        "en": "Id prefix for Claim.",
+        "ru": "Префикс идентификатора: утверждение."
+      },
+      "kinds": [
+        "Claim"
+      ]
+    },
+    {
+      "code": "r-",
+      "label": {
+        "en": "Relation",
+        "ru": "Связь"
+      },
+      "definition": {
+        "en": "Id prefix for Relation.",
+        "ru": "Префикс идентификатора: связь."
+      },
+      "kinds": [
+        "Relation"
+      ]
+    },
+    {
+      "code": "src-",
+      "label": {
+        "en": "Source",
+        "ru": "Первичный источник"
+      },
+      "definition": {
+        "en": "Id prefix for Source.",
+        "ru": "Префикс идентификатора: первичный источник."
+      },
+      "kinds": [
+        "Source"
+      ]
+    },
+    {
+      "code": "ep-",
+      "label": {
+        "en": "Episode",
+        "ru": "Эпизод"
+      },
+      "definition": {
+        "en": "Id prefix for Episode.",
+        "ru": "Префикс идентификатора: эпизод."
+      },
+      "kinds": [
+        "Episode"
+      ]
+    },
+    {
+      "code": "in-",
+      "label": {
+        "en": "Interpretation",
+        "ru": "Интерпретация"
+      },
+      "definition": {
+        "en": "Id prefix for Interpretation.",
+        "ru": "Префикс идентификатора: интерпретация."
+      },
+      "kinds": [
+        "Interpretation"
+      ]
+    },
+    {
+      "code": "t-",
+      "label": {
+        "en": "Tension",
+        "ru": "Напряжение"
+      },
+      "definition": {
+        "en": "Id prefix for Tension.",
+        "ru": "Префикс идентификатора: напряжение."
+      },
+      "kinds": [
+        "Tension"
+      ]
+    },
+    {
+      "code": "mv-",
+      "label": {
+        "en": "ModelView",
+        "ru": "Взгляд модели"
+      },
+      "definition": {
+        "en": "Id prefix for ModelView.",
+        "ru": "Префикс идентификатора: взгляд модели."
+      },
+      "kinds": [
+        "ModelView"
+      ]
+    },
+    {
+      "code": "oc-",
+      "label": {
+        "en": "Outcome",
+        "ru": "Исход"
+      },
+      "definition": {
+        "en": "Id prefix for Outcome.",
+        "ru": "Префикс идентификатора: исход."
+      },
+      "kinds": [
+        "Outcome"
+      ]
+    },
+    {
+      "code": "rc-",
+      "label": {
+        "en": "RecallCue",
+        "ru": "Сигнал возвращения опыта"
+      },
+      "definition": {
+        "en": "Id prefix for RecallCue.",
+        "ru": "Префикс идентификатора: сигнал возвращения опыта."
+      },
+      "kinds": [
+        "RecallCue"
+      ]
+    },
+    {
+      "code": "hr-",
+      "label": {
+        "en": "HealthRef",
+        "ru": "Указатель на медицинскую запись"
+      },
+      "definition": {
+        "en": "Id prefix for HealthRef.",
+        "ru": "Префикс идентификатора: указатель на медицинскую запись."
+      },
+      "kinds": [
+        "HealthRef"
+      ]
+    },
+    {
+      "code": "rv-",
+      "label": {
+        "en": "Review",
+        "ru": "Решение по записи"
+      },
+      "definition": {
+        "en": "Id prefix for Review.",
+        "ru": "Префикс идентификатора: решение по записи."
+      },
+      "kinds": [
+        "Review"
+      ]
+    },
+    {
+      "code": "prop-",
+      "label": {
+        "en": "Proposal",
+        "ru": "Предложение"
+      },
+      "definition": {
+        "en": "Id prefix for Proposal.",
+        "ru": "Префикс идентификатора: предложение."
+      },
+      "kinds": [
+        "Proposal"
+      ]
+    },
+    {
+      "code": "g-",
+      "label": {
+        "en": "Grant",
+        "ru": "Разрешение"
+      },
+      "definition": {
+        "en": "Id prefix for Grant.",
+        "ru": "Префикс идентификатора: разрешение."
+      },
+      "kinds": [
+        "Grant"
+      ]
+    },
+    {
+      "code": "e-",
+      "label": {
+        "en": "Event",
+        "ru": "Событие журнала"
+      },
+      "definition": {
+        "en": "Id prefix for Event.",
+        "ru": "Префикс идентификатора: событие журнала."
+      },
+      "kinds": [
+        "Event"
+      ]
+    },
+    {
+      "code": "la-",
+      "label": {
+        "en": "LensAdoption",
+        "ru": "Принятие линзы"
+      },
+      "definition": {
+        "en": "Id prefix for LensAdoption.",
+        "ru": "Префикс идентификатора: принятие линзы."
+      },
+      "kinds": [
+        "LensAdoption"
+      ]
+    },
+    {
+      "code": "as-",
+      "label": {
+        "en": "AssessmentRecord",
+        "ru": "Запись оценки"
+      },
+      "definition": {
+        "en": "Id prefix for AssessmentRecord.",
+        "ru": "Префикс идентификатора: запись оценки."
+      },
+      "kinds": [
+        "AssessmentRecord"
+      ]
+    },
+    {
+      "code": "pr-",
+      "label": {
+        "en": "Practice",
+        "ru": "Практика"
+      },
+      "definition": {
+        "en": "Id prefix for Practice.",
+        "ru": "Префикс идентификатора: практика."
+      },
+      "kinds": [
+        "Practice"
+      ]
+    },
+    {
+      "code": "pat-",
+      "label": {
+        "en": "Pattern",
+        "ru": "Паттерн"
+      },
+      "definition": {
+        "en": "Id prefix for Pattern.",
+        "ru": "Префикс идентификатора: паттерн."
+      },
+      "kinds": [
+        "Pattern"
+      ]
+    },
+    {
+      "code": "part-",
+      "label": {
+        "en": "Part",
+        "ru": "Внутренняя часть"
+      },
+      "definition": {
+        "en": "Id prefix for Part.",
+        "ru": "Префикс идентификатора: внутренняя часть."
+      },
+      "kinds": [
+        "Part"
+      ]
+    },
+    {
+      "code": "prj-",
+      "label": {
+        "en": "Projection",
+        "ru": "Проекция"
+      },
+      "definition": {
+        "en": "Id prefix for Projection.",
+        "ru": "Префикс идентификатора: проекция."
+      },
+      "kinds": [
+        "Projection"
+      ]
+    },
+    {
+      "code": "p-",
+      "label": {
+        "en": "Party: person",
+        "ru": "Участник: человек"
+      },
+      "definition": {
+        "en": "Id prefix for Party: person.",
+        "ru": "Префикс идентификатора: участник: человек."
+      },
+      "kinds": [
+        "Party"
+      ]
+    },
+    {
+      "code": "a-",
+      "label": {
+        "en": "Party: agent",
+        "ru": "Участник: агент"
+      },
+      "definition": {
+        "en": "Id prefix for Party: agent.",
+        "ru": "Префикс идентификатора: участник: агент."
+      },
+      "kinds": [
+        "Party"
+      ]
+    },
+    {
+      "code": "s-",
+      "label": {
+        "en": "Party: software or system",
+        "ru": "Участник: программа или система"
+      },
+      "definition": {
+        "en": "Id prefix for Party: software or system.",
+        "ru": "Префикс идентификатора: участник: программа или система."
+      },
+      "kinds": [
+        "Party"
+      ]
+    },
+    {
+      "code": "o-",
+      "label": {
+        "en": "Party: organization",
+        "ru": "Участник: организация"
+      },
+      "definition": {
+        "en": "Id prefix for Party: organization.",
+        "ru": "Префикс идентификатора: участник: организация."
+      },
+      "kinds": [
+        "Party"
+      ]
+    },
+    {
+      "code": "msg-",
+      "label": {
+        "en": "Exchange message",
+        "ru": "Сообщение обмена"
+      },
+      "definition": {
+        "en": "Id prefix for Exchange message.",
+        "ru": "Префикс идентификатора: сообщение обмена."
+      },
+      "kinds": [
+        "message"
+      ]
+    }
+  ]
+}

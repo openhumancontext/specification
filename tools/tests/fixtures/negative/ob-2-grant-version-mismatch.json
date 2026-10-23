@@ -1,0 +1,8 @@
+{
+  "description": "A structurally valid ODE fragment must not pin a different version of its OHC grant.",
+  "documentFrom": "examples/kofi-gum-ode/ode/planner-binding.json",
+  "expect": ["OB-2"],
+  "patches": [
+    {"op": "set", "path": "/externalDependencies/0/version", "value": "2026-10-02T09:00:00Z"}
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "description": "A psychological lens whose default tier is not special.",
+  "expect": [
+    "LN-4"
+  ],
+  "form": "single",
+  "patches": [
+    {
+      "op": "set",
+      "target": "document",
+      "path": "/defaults/sensitivity",
+      "value": "sensitive"
+    }
+  ],
+  "documentFrom": "spec/lenses/big-five.lens.json"
+}

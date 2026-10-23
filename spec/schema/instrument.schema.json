@@ -1,0 +1,218 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:ohc:schema:instrument:0.1.0-draft",
+  "title": "OHC Instrument registry record",
+  "description": "A specific test or procedure belonging to a lens, with its forms, licence, scoring status and what must never be stored. Marks are used nominatively. Module lenses.",
+  "type": "object",
+  "required": [
+    "format",
+    "specVersion",
+    "id",
+    "version",
+    "name",
+    "lens",
+    "publisher",
+    "forms",
+    "itemsLicence",
+    "scoring",
+    "neverStore",
+    "registryListing",
+    "citations",
+    "legalReviewNeeded",
+    "reviewedAt"
+  ],
+  "properties": {
+    "format": {
+      "const": "ohc.instrument"
+    },
+    "specVersion": {
+      "const": "0.1.0-draft"
+    },
+    "id": {
+      "type": "string",
+      "pattern": "^urn:ohc:instrument:[a-z0-9]+(?:[.-][a-z0-9]+)*$"
+    },
+    "version": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/SemVer"
+    },
+    "name": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+    },
+    "lens": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/URI"
+    },
+    "publisher": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+    },
+    "forms": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id"
+        ],
+        "properties": {
+          "id": {
+            "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+          },
+          "items": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "scale": {
+            "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+          },
+          "note": {
+            "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+          }
+        },
+        "additionalProperties": false
+      },
+      "minItems": 1
+    },
+    "itemsLicence": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+    },
+    "scoring": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/lens-descriptor.scoring"
+    },
+    "qualification": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+    },
+    "marks": {
+      "type": "array",
+      "items": {
+        "$ref": "urn:ohc:schema:lens:0.1.0-draft#/$defs/Mark"
+      }
+    },
+    "neverStore": {
+      "type": "array",
+      "items": {
+        "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+      },
+      "minItems": 1
+    },
+    "registryListing": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/lens-descriptor.registry-listing"
+    },
+    "citations": {
+      "type": "array",
+      "items": {
+        "$ref": "urn:ohc:schema:lens:0.1.0-draft#/$defs/Citation"
+      }
+    },
+    "legalReviewNeeded": {
+      "type": "boolean"
+    },
+    "reviewedAt": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Date"
+    },
+    "import": {
+      "description": "How a person brings a result of this instrument (module instrument-import; INS-1, IMP-2, IMP-3).",
+      "$ref": "#/$defs/ImportBlock"
+    }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "ImportBlock": {
+      "type": "object",
+      "required": [
+        "scoredBy",
+        "scores",
+        "scales"
+      ],
+      "properties": {
+        "scoredBy": {
+          "description": "The Party that scored the result, matched by uri (IMP-3).",
+          "type": "object",
+          "required": [
+            "partyKind",
+            "id",
+            "label"
+          ],
+          "properties": {
+            "partyKind": {
+              "const": "organization"
+            },
+            "id": {
+              "type": "string",
+              "pattern": "^urn:ohc:scorer:[a-z0-9]+(?:-[a-z0-9]+)*$"
+            },
+            "label": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 60
+            }
+          },
+          "additionalProperties": false
+        },
+        "scores": {
+          "description": "The score kinds a report shows: raw, or one standardized scale; at most one standardized (INS-1).",
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 2,
+          "items": {
+            "type": "object",
+            "required": [
+              "kind",
+              "range"
+            ],
+            "properties": {
+              "kind": {
+                "anyOf": [
+                  {
+                    "const": "raw"
+                  },
+                  {
+                    "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/assessment.standardized-scales"
+                  }
+                ]
+              },
+              "range": {
+                "type": "array",
+                "items": {
+                  "type": "number"
+                },
+                "minItems": 2,
+                "maxItems": 2
+              },
+              "integer": {
+                "type": "boolean"
+              }
+            },
+            "additionalProperties": false
+          }
+        },
+        "scales": {
+          "description": "Construct ids of the instrument's lens, each once (INS-1).",
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+          }
+        },
+        "normGroups": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "required": [
+              "id",
+              "label"
+            ],
+            "properties": {
+              "id": {
+                "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+              },
+              "label": {
+                "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/LangText"
+              }
+            },
+            "additionalProperties": false
+          }
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

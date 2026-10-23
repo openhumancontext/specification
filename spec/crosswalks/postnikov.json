@@ -1,0 +1,77 @@
+[
+  {
+    "format": "ohc.mapping",
+    "specVersion": "0.1.0-draft",
+    "id": "urn:ohc:mapping:ohc.handling.no-remember--pn.not-to-remember--postnikov-hcp-4.0",
+    "version": "0.1.0",
+    "bridgeKind": "ohc-standard",
+    "from": {
+      "standard": "OHC 0.1.0-draft",
+      "concept": "handling no-remember"
+    },
+    "to": {
+      "standard": "postnikov Human Context Protocol 4.0 (boundaries template)",
+      "concept": "Not to Remember",
+      "pin": {
+        "commit": "a330324c0b1f74108076822edc90dcc54bae1fef"
+      }
+    },
+    "relation": "corresponds",
+    "scope": "Informative crosswalk between formats; never a conversion of a person's data without the person's grant",
+    "notIdentity": true,
+    "chainable": false,
+    "rowStatus": "accepted",
+    "evidenceGrade": "F",
+    "reviewedAt": "2026-10-09"
+  },
+  {
+    "format": "ohc.mapping",
+    "specVersion": "0.1.0-draft",
+    "id": "urn:ohc:mapping:ohc.handling.no-quote--pn.not-to-quote--postnikov-hcp-4.0",
+    "version": "0.1.0",
+    "bridgeKind": "ohc-standard",
+    "from": {
+      "standard": "OHC 0.1.0-draft",
+      "concept": "handling no-quote"
+    },
+    "to": {
+      "standard": "postnikov Human Context Protocol 4.0 (boundaries template)",
+      "concept": "Not to Quote",
+      "pin": {
+        "commit": "a330324c0b1f74108076822edc90dcc54bae1fef"
+      }
+    },
+    "relation": "corresponds",
+    "scope": "Informative crosswalk between formats; never a conversion of a person's data without the person's grant",
+    "notIdentity": true,
+    "chainable": false,
+    "rowStatus": "accepted",
+    "evidenceGrade": "F",
+    "reviewedAt": "2026-10-09"
+  },
+  {
+    "format": "ohc.mapping",
+    "specVersion": "0.1.0-draft",
+    "id": "urn:ohc:mapping:ohc.handling.no-infer--pn.not-to-infer--postnikov-hcp-4.0",
+    "version": "0.1.0",
+    "bridgeKind": "ohc-standard",
+    "from": {
+      "standard": "OHC 0.1.0-draft",
+      "concept": "handling no-infer"
+    },
+    "to": {
+      "standard": "postnikov Human Context Protocol 4.0 (boundaries template)",
+      "concept": "Not to Infer",
+      "pin": {
+        "commit": "a330324c0b1f74108076822edc90dcc54bae1fef"
+      }
+    },
+    "relation": "corresponds",
+    "scope": "Informative crosswalk between formats; never a conversion of a person's data without the person's grant",
+    "notIdentity": true,
+    "chainable": false,
+    "rowStatus": "accepted",
+    "evidenceGrade": "F",
+    "reviewedAt": "2026-10-09"
+  }
+]

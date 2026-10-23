@@ -1,0 +1,15 @@
+{
+  "description": "An example record without synthetic: true.",
+  "expect": [
+    "X-1"
+  ],
+  "form": "single",
+  "patches": [
+    {
+      "op": "set",
+      "target": "claims",
+      "path": "/@c-01/synthetic",
+      "value": false
+    }
+  ]
+}

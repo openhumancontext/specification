@@ -1,0 +1,118 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:ohc:schema:proposal:0.1.0-draft",
+  "title": "OHC Proposal",
+  "description": "The stored intake record for anything a non-subject writer proposes. Decisions are Reviews on the items. Silence is not acceptance. Layer governance; module core.",
+  "type": "object",
+  "required": [
+    "id",
+    "proposer",
+    "recordedAt",
+    "underGrant",
+    "purpose",
+    "rationale"
+  ],
+  "properties": {
+    "kind": {
+      "const": "Proposal"
+    },
+    "id": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/LocalId"
+    },
+    "proposer": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Actor"
+    },
+    "recordedAt": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/DateTime"
+    },
+    "underGrant": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/LocalId"
+    },
+    "purpose": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/purposes"
+    },
+    "items": {
+      "type": "array",
+      "items": {
+        "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/LocalId"
+      }
+    },
+    "requests": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "target",
+          "action"
+        ],
+        "properties": {
+          "target": {
+            "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/LocalId"
+          },
+          "action": {
+            "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/proposal-requests"
+          },
+          "epistemic": {
+            "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/epistemic"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "rationale": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+    },
+    "grounds": {
+      "type": "array",
+      "items": {
+        "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Ground"
+      }
+    },
+    "expiresAt": {
+      "description": "Default recordedAt + P30D.",
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/DateTime"
+    },
+    "presentation": {
+      "type": "object",
+      "required": [
+        "channel"
+      ],
+      "properties": {
+        "channel": {
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/presentation-channels"
+        },
+        "askedAt": {
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/DateTime"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false,
+  "allOf": [
+    {
+      "anyOf": [
+        {
+          "required": [
+            "items"
+          ],
+          "properties": {
+            "items": {
+              "minItems": 1
+            }
+          }
+        },
+        {
+          "required": [
+            "requests"
+          ],
+          "properties": {
+            "requests": {
+              "minItems": 1
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

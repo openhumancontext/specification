@@ -1,0 +1,83 @@
+{
+  "format": "ohc.catalog",
+  "id": "urn:ohc:catalog:ontological-status",
+  "version": "0.1.0",
+  "specVersion": "0.1.0-draft",
+  "title": {
+    "en": "Ontological status",
+    "ru": "Онтологический статус"
+  },
+  "description": {
+    "en": "What kind of claim a lens makes about what it describes.",
+    "ru": "Какого рода утверждение делает линза о том, что описывает."
+  },
+  "closed": true,
+  "codes": [
+    {
+      "code": "measured-construct",
+      "label": {
+        "en": "Measured construct",
+        "ru": "Измеряемый конструкт"
+      },
+      "definition": {
+        "en": "Constructs defined by measurement.",
+        "ru": "Конструкты, определяемые измерением."
+      }
+    },
+    {
+      "code": "theoretical-model",
+      "label": {
+        "en": "Theoretical model",
+        "ru": "Теоретическая модель"
+      },
+      "definition": {
+        "en": "A model of mind or behaviour used to understand, not to measure.",
+        "ru": "Модель психики или поведения для понимания, а не для измерения."
+      }
+    },
+    {
+      "code": "practice-frame",
+      "label": {
+        "en": "Practice frame",
+        "ru": "Рамка практики"
+      },
+      "definition": {
+        "en": "A frame of practices.",
+        "ru": "Рамка, состоящая из практик."
+      }
+    },
+    {
+      "code": "symbolic-frame",
+      "label": {
+        "en": "Symbolic frame",
+        "ru": "Символическая рамка"
+      },
+      "definition": {
+        "en": "Meaning-making without an empirical claim.",
+        "ru": "Смыслообразование без эмпирических утверждений."
+      }
+    },
+    {
+      "code": "contemplative-tradition",
+      "label": {
+        "en": "Contemplative tradition",
+        "ru": "Созерцательная традиция"
+      },
+      "definition": {
+        "en": "A living tradition of practice. Naming one requires its holders' consent.",
+        "ru": "Живая традиция практики. Называть её можно только с согласия её держателей."
+      }
+    },
+    {
+      "code": "representation",
+      "label": {
+        "en": "Representation",
+        "ru": "Представление"
+      },
+      "definition": {
+        "en": "A way of arranging information, not a theory.",
+        "ru": "Способ упорядочить информацию, а не теория."
+      }
+    }
+  ]
+}

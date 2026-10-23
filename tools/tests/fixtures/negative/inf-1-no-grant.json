@@ -1,0 +1,24 @@
+{
+  "description": "An agent's inferred Claim without underGrant.",
+  "expect": [
+    "INF-1"
+  ],
+  "form": "single",
+  "patches": [
+    {
+      "op": "remove",
+      "target": "claims",
+      "path": "/@c-05/underGrant"
+    },
+    {
+      "op": "remove",
+      "target": "claims",
+      "path": "/@c-05/purpose"
+    },
+    {
+      "op": "remove",
+      "target": "proposals",
+      "path": "/@prop-01"
+    }
+  ]
+}

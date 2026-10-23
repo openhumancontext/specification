@@ -1,0 +1,26 @@
+[
+  {
+    "format": "ohc.mapping",
+    "specVersion": "0.1.0-draft",
+    "id": "urn:ohc:mapping:ohc.origin-attested--vc.credential--vc-2.0",
+    "version": "0.1.0",
+    "bridgeKind": "ohc-standard",
+    "from": {
+      "standard": "OHC 0.1.0-draft",
+      "concept": "origin attested; ext[\"vc.credential\"]"
+    },
+    "to": {
+      "standard": "W3C Verifiable Credentials Data Model 2.0",
+      "concept": "verifiable credential"
+    },
+    "relation": "corresponds",
+    "scope": "Informative crosswalk between formats; never a conversion of a person's data without the person's grant",
+    "notIdentity": true,
+    "chainable": false,
+    "rowStatus": "accepted-with-loss",
+    "lost": "OHC embeds the credential; verification of its proof is outside OHC.",
+    "forbiddenUse": "Do not read the VC confidence-method drafts as claim confidence; they concern subject binding.",
+    "evidenceGrade": "F",
+    "reviewedAt": "2026-10-09"
+  }
+]

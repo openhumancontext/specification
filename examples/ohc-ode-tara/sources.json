@@ -1,0 +1,19 @@
+{
+  "ode": {
+    "tag": "v0.4.0-draft.2",
+    "commit": "2de920485fb2665eaf7298ac65452a4a79412a9a"
+  },
+  "tara": {
+    "commit": "f8fa6fff5e931a8bab00a9ab527f34277f636187",
+    "practiceVersion": "0.1"
+  },
+  "ohc": {
+    "release": "0.1.0-draft.3",
+    "bindingRevision": "0.2.0"
+  },
+  "verification": {
+    "synthetic": true,
+    "runtimeTested": false,
+    "consentAuthenticated": false
+  }
+}

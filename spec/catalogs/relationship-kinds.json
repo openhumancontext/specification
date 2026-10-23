@@ -1,0 +1,160 @@
+{
+  "format": "ohc.catalog",
+  "id": "urn:ohc:catalog:relationship-kinds",
+  "version": "0.1.0",
+  "specVersion": "0.1.0-draft",
+  "title": {
+    "en": "Relationship kinds",
+    "ru": "Виды отношений"
+  },
+  "description": {
+    "en": "Kinds of relationship, used by `Party.role`, `AssessmentRecord.raterRelationship` and as predicates of the `relationship` facet. Open list; local codes use `x-<namespace>:<code>`.",
+    "ru": "Виды отношений; используются в `Party.role`, `AssessmentRecord.raterRelationship` и как уточнения грани `relationship`. Открытый список; локальные коды — `x-<namespace>:<code>`."
+  },
+  "closed": false,
+  "codes": [
+    {
+      "code": "partner",
+      "label": {
+        "en": "Partner",
+        "ru": "Партнёр"
+      },
+      "definition": {
+        "en": "A life partner.",
+        "ru": "Спутник или спутница жизни."
+      }
+    },
+    {
+      "code": "family",
+      "label": {
+        "en": "Family member",
+        "ru": "Родственник"
+      },
+      "definition": {
+        "en": "A family member.",
+        "ru": "Член семьи."
+      }
+    },
+    {
+      "code": "friend",
+      "label": {
+        "en": "Friend",
+        "ru": "Друг"
+      },
+      "definition": {
+        "en": "A friend.",
+        "ru": "Друг или подруга."
+      }
+    },
+    {
+      "code": "colleague",
+      "label": {
+        "en": "Colleague",
+        "ru": "Коллега"
+      },
+      "definition": {
+        "en": "A colleague.",
+        "ru": "Коллега."
+      }
+    },
+    {
+      "code": "manager",
+      "label": {
+        "en": "Manager",
+        "ru": "Руководитель"
+      },
+      "definition": {
+        "en": "The person's manager.",
+        "ru": "Руководитель человека."
+      }
+    },
+    {
+      "code": "report",
+      "label": {
+        "en": "Report",
+        "ru": "Подчинённый"
+      },
+      "definition": {
+        "en": "Someone who reports to the person.",
+        "ru": "Тот, кто подчиняется человеку."
+      }
+    },
+    {
+      "code": "client",
+      "label": {
+        "en": "Client",
+        "ru": "Клиент"
+      },
+      "definition": {
+        "en": "A client of the person.",
+        "ru": "Клиент человека."
+      }
+    },
+    {
+      "code": "supplier",
+      "label": {
+        "en": "Supplier",
+        "ru": "Поставщик"
+      },
+      "definition": {
+        "en": "A supplier to the person or their work.",
+        "ru": "Поставщик человека или его работы."
+      }
+    },
+    {
+      "code": "practitioner",
+      "label": {
+        "en": "Practitioner",
+        "ru": "Специалист-практик"
+      },
+      "definition": {
+        "en": "A therapist, coach, teacher or other practitioner.",
+        "ru": "Терапевт, коуч, преподаватель или другой специалист-практик."
+      }
+    },
+    {
+      "code": "mentor",
+      "label": {
+        "en": "Mentor",
+        "ru": "Наставник"
+      },
+      "definition": {
+        "en": "A mentor.",
+        "ru": "Наставник."
+      }
+    },
+    {
+      "code": "teacher",
+      "label": {
+        "en": "Teacher",
+        "ru": "Преподаватель"
+      },
+      "definition": {
+        "en": "A teacher.",
+        "ru": "Преподаватель."
+      }
+    },
+    {
+      "code": "community",
+      "label": {
+        "en": "Community member",
+        "ru": "Член сообщества"
+      },
+      "definition": {
+        "en": "A member of a shared community.",
+        "ru": "Член общего сообщества."
+      }
+    },
+    {
+      "code": "other",
+      "label": {
+        "en": "Other",
+        "ru": "Другое"
+      },
+      "definition": {
+        "en": "Any other relationship.",
+        "ru": "Любые другие отношения."
+      }
+    }
+  ]
+}

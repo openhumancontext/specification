@@ -1,0 +1,180 @@
+[
+  {
+    "format": "ohc.mapping",
+    "specVersion": "0.1.0-draft",
+    "id": "urn:ohc:mapping:ohc.asserted-by--prov.wasAttributedTo--prov-o-2013",
+    "version": "0.1.0",
+    "bridgeKind": "ohc-standard",
+    "from": {
+      "standard": "OHC 0.1.0-draft",
+      "concept": "assertedBy"
+    },
+    "to": {
+      "standard": "W3C PROV-O (Recommendation, 30 April 2013)",
+      "concept": "prov:wasAttributedTo"
+    },
+    "relation": "corresponds",
+    "scope": "Informative crosswalk between formats; never a conversion of a person's data without the person's grant",
+    "notIdentity": true,
+    "chainable": false,
+    "rowStatus": "accepted",
+    "evidenceGrade": "F",
+    "reviewedAt": "2026-10-09"
+  },
+  {
+    "format": "ohc.mapping",
+    "specVersion": "0.1.0-draft",
+    "id": "urn:ohc:mapping:ohc.generated-by--prov.wasGeneratedBy--prov-o-2013",
+    "version": "0.1.0",
+    "bridgeKind": "ohc-standard",
+    "from": {
+      "standard": "OHC 0.1.0-draft",
+      "concept": "generatedBy"
+    },
+    "to": {
+      "standard": "W3C PROV-O (Recommendation, 30 April 2013)",
+      "concept": "prov:wasGeneratedBy (a prov:Activity)"
+    },
+    "relation": "corresponds",
+    "scope": "Informative crosswalk between formats; never a conversion of a person's data without the person's grant",
+    "notIdentity": true,
+    "chainable": false,
+    "rowStatus": "accepted",
+    "evidenceGrade": "F",
+    "reviewedAt": "2026-10-09"
+  },
+  {
+    "format": "ohc.mapping",
+    "specVersion": "0.1.0-draft",
+    "id": "urn:ohc:mapping:ohc.evidence-grounds--prov.wasDerivedFrom--prov-o-2013",
+    "version": "0.1.0",
+    "bridgeKind": "ohc-standard",
+    "from": {
+      "standard": "OHC 0.1.0-draft",
+      "concept": "evidence, grounds"
+    },
+    "to": {
+      "standard": "W3C PROV-O (Recommendation, 30 April 2013)",
+      "concept": "prov:wasDerivedFrom (prov:hadPrimarySource for Sources)"
+    },
+    "relation": "corresponds",
+    "scope": "Informative crosswalk between formats; never a conversion of a person's data without the person's grant",
+    "notIdentity": true,
+    "chainable": false,
+    "rowStatus": "accepted-with-loss",
+    "lost": "PROV-O does not keep the ground kind or the span selector.",
+    "evidenceGrade": "F",
+    "reviewedAt": "2026-10-09"
+  },
+  {
+    "format": "ohc.mapping",
+    "specVersion": "0.1.0-draft",
+    "id": "urn:ohc:mapping:ohc.supersedes--prov.wasRevisionOf--prov-o-2013",
+    "version": "0.1.0",
+    "bridgeKind": "ohc-standard",
+    "from": {
+      "standard": "OHC 0.1.0-draft",
+      "concept": "supersedes"
+    },
+    "to": {
+      "standard": "W3C PROV-O (Recommendation, 30 April 2013)",
+      "concept": "prov:wasRevisionOf"
+    },
+    "relation": "corresponds",
+    "scope": "Informative crosswalk between formats; never a conversion of a person's data without the person's grant",
+    "notIdentity": true,
+    "chainable": false,
+    "rowStatus": "accepted",
+    "evidenceGrade": "F",
+    "reviewedAt": "2026-10-09"
+  },
+  {
+    "format": "ohc.mapping",
+    "specVersion": "0.1.0-draft",
+    "id": "urn:ohc:mapping:ohc.recorded-at--prov.generatedAtTime--prov-o-2013",
+    "version": "0.1.0",
+    "bridgeKind": "ohc-standard",
+    "from": {
+      "standard": "OHC 0.1.0-draft",
+      "concept": "recordedAt"
+    },
+    "to": {
+      "standard": "W3C PROV-O (Recommendation, 30 April 2013)",
+      "concept": "prov:generatedAtTime"
+    },
+    "relation": "corresponds",
+    "scope": "Informative crosswalk between formats; never a conversion of a person's data without the person's grant",
+    "notIdentity": true,
+    "chainable": false,
+    "rowStatus": "accepted",
+    "evidenceGrade": "F",
+    "reviewedAt": "2026-10-09"
+  },
+  {
+    "format": "ohc.mapping",
+    "specVersion": "0.1.0-draft",
+    "id": "urn:ohc:mapping:ohc.retract-review--prov.invalidatedAtTime--prov-o-2013",
+    "version": "0.1.0",
+    "bridgeKind": "ohc-standard",
+    "from": {
+      "standard": "OHC 0.1.0-draft",
+      "concept": "Review retract"
+    },
+    "to": {
+      "standard": "W3C PROV-O (Recommendation, 30 April 2013)",
+      "concept": "prov:invalidatedAtTime"
+    },
+    "relation": "corresponds",
+    "scope": "Informative crosswalk between formats; never a conversion of a person's data without the person's grant",
+    "notIdentity": true,
+    "chainable": false,
+    "rowStatus": "accepted-with-loss",
+    "lost": "The Review's actor and reason are not kept.",
+    "evidenceGrade": "F",
+    "reviewedAt": "2026-10-09"
+  },
+  {
+    "format": "ohc.mapping",
+    "specVersion": "0.1.0-draft",
+    "id": "urn:ohc:mapping:ohc.source--prov.Entity--prov-o-2013",
+    "version": "0.1.0",
+    "bridgeKind": "ohc-standard",
+    "from": {
+      "standard": "OHC 0.1.0-draft",
+      "concept": "Source"
+    },
+    "to": {
+      "standard": "W3C PROV-O (Recommendation, 30 April 2013)",
+      "concept": "prov:Entity"
+    },
+    "relation": "corresponds",
+    "scope": "Informative crosswalk between formats; never a conversion of a person's data without the person's grant",
+    "notIdentity": true,
+    "chainable": false,
+    "rowStatus": "accepted",
+    "evidenceGrade": "F",
+    "reviewedAt": "2026-10-09"
+  },
+  {
+    "format": "ohc.mapping",
+    "specVersion": "0.1.0-draft",
+    "id": "urn:ohc:mapping:ohc.party--prov.Agent--prov-o-2013",
+    "version": "0.1.0",
+    "bridgeKind": "ohc-standard",
+    "from": {
+      "standard": "OHC 0.1.0-draft",
+      "concept": "Party"
+    },
+    "to": {
+      "standard": "W3C PROV-O (Recommendation, 30 April 2013)",
+      "concept": "prov:Agent"
+    },
+    "relation": "corresponds",
+    "scope": "Informative crosswalk between formats; never a conversion of a person's data without the person's grant",
+    "notIdentity": true,
+    "chainable": false,
+    "rowStatus": "accepted",
+    "evidenceGrade": "F",
+    "reviewedAt": "2026-10-09"
+  }
+]

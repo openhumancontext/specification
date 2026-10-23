@@ -1,0 +1,163 @@
+{
+  "format": "ohc.projection",
+  "specVersion": "0.1.0-draft",
+  "id": "prj-0007",
+  "context": {
+    "id": "urn:ohc:example:noa:context",
+    "version": "2026-10-09.4"
+  },
+  "subjectAlias": "urn:ohc:alias:xdtpvlyqbwczwjs3tztanuegrv",
+  "grantee": "a-02",
+  "grant": "g-02",
+  "request": "msg-0310",
+  "purpose": "recall-support",
+  "mode": "summary",
+  "generatedAt": "2026-09-24T07:30:00Z",
+  "validUntil": "2026-09-24T19:30:00Z",
+  "nonce": "hTyL1eZW2THN1Zkol3YHIw",
+  "parties": [
+    {
+      "id": "p-01",
+      "partyKind": "person",
+      "label": "Supplier contact",
+      "role": "supplier"
+    }
+  ],
+  "statements": {
+    "practices": [
+      {
+        "assertedBy": "subject",
+        "contexts": [
+          "work"
+        ],
+        "description": "A 20-minute walk before a hard call; then one line: the price at which I would leave.",
+        "duration": "PT30M",
+        "id": "pr-01",
+        "initialStatus": "in-use",
+        "limits": "Not when the call is in less than an hour.",
+        "name": "Walk, then write the walk-away number",
+        "nonClinical": true,
+        "origin": "declared",
+        "practiceKind": "planning",
+        "recordedAt": "2026-09-18T19:10:00Z",
+        "source": {
+          "route": "self-discovered"
+        },
+        "steps": [
+          "Walk 20 minutes without the phone",
+          "Write the walk-away number",
+          "Make the call"
+        ],
+        "synthetic": true
+      }
+    ]
+  },
+  "experience": {
+    "episodes": [
+      {
+        "accounts": [
+          {
+            "accountKind": "in-the-moment",
+            "addedAt": "2026-09-18T19:00:00Z",
+            "didOrTried": "Walked for 20 minutes without the phone, then wrote the walk-away number on a card.",
+            "happened": "Held the 15:00 price call with the supplier. Opened with the number at which I would walk away.",
+            "narratedAt": "2026-09-18T18:45:00Z",
+            "narrator": "subject"
+          }
+        ],
+        "assertedBy": "subject",
+        "contexts": [
+          "work"
+        ],
+        "id": "ep-03",
+        "occurred": {
+          "precision": "day",
+          "start": "2026-09-18"
+        },
+        "origin": "declared",
+        "participants": [
+          "p-01"
+        ],
+        "recall": "permitted",
+        "recordedAt": "2026-09-18T19:00:00Z",
+        "salience": "high",
+        "selection": {
+          "reason": "subject-chose",
+          "selectedBy": "subject"
+        },
+        "sensitivity": "sensitive",
+        "synthetic": true,
+        "title": "Supplier call held"
+      }
+    ]
+  },
+  "recall": {
+    "outcomes": [
+      {
+        "about": {
+          "practice": "pr-01"
+        },
+        "assertedBy": "subject",
+        "contexts": [
+          "work"
+        ],
+        "episode": "ep-03",
+        "id": "oc-01",
+        "origin": "declared",
+        "recordedAt": "2026-09-18T19:15:00Z",
+        "result": "helped",
+        "synthetic": true
+      }
+    ]
+  },
+  "derived": {
+    "ep-03": {
+      "label": "stated",
+      "freshness": "historical",
+      "endorsement": "endorsed",
+      "contested": false,
+      "locked": false,
+      "admission": "active",
+      "computedAt": "2026-09-24T07:30:00Z"
+    },
+    "pr-01": {
+      "label": "stated",
+      "freshness": "current",
+      "endorsement": "endorsed",
+      "contested": false,
+      "locked": false,
+      "admission": "active",
+      "computedAt": "2026-09-24T07:30:00Z"
+    },
+    "oc-01": {
+      "label": "stated",
+      "freshness": "historical",
+      "endorsement": "endorsed",
+      "contested": false,
+      "locked": false,
+      "admission": "active",
+      "computedAt": "2026-09-24T07:30:00Z"
+    }
+  },
+  "absences": [
+    {
+      "selector": {
+        "facets": [
+          "relationship"
+        ]
+      },
+      "code": "not-disclosed"
+    }
+  ],
+  "completeness": "partial",
+  "omissions": "hidden",
+  "obligations": {
+    "storage": "session",
+    "forwarding": false,
+    "crossContextUse": false,
+    "decisionUse": "deny",
+    "delegable": false,
+    "handling": {}
+  },
+  "digest": "sha256:3b174d2e6ce86c4331a5abffe3a991e657d1f08860f3f914b834805ef47595f0"
+}

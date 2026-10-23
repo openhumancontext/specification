@@ -1,0 +1,38 @@
+{
+  "format": "ohc.instrument",
+  "specVersion": "0.1.0-draft",
+  "id": "urn:ohc:instrument:pvq-rr",
+  "version": "0.1.0",
+  "name": "Portrait Values Questionnaire - Revised (PVQ-RR)",
+  "lens": "urn:ohc:lens:schwartz-values",
+  "publisher": "Shalom H. Schwartz and colleagues (versions and scoring instructions distributed through the Open Science Framework)",
+  "forms": [
+    {
+      "id": "57",
+      "items": 57,
+      "scale": "1 (not like me at all) to 6 (very much like me); 19 values; within-person centring",
+      "note": "Versions in 47 languages"
+    }
+  ],
+  "itemsLicence": "Unknown [U]: the instrument licence was not found",
+  "scoring": "public",
+  "neverStore": [
+    "item text",
+    "raw item responses outside the person's own test data"
+  ],
+  "registryListing": "ok",
+  "citations": [
+    {
+      "ref": "PMC9131418",
+      "grade": "F",
+      "note": "57 items, 19 values, 1-6 scale, mean-centred analysis; scoring instructions on the Open Science Framework"
+    },
+    {
+      "ref": "PVQ-RR instrument licence",
+      "grade": "U",
+      "note": "Not found; commercial terms unknown"
+    }
+  ],
+  "legalReviewNeeded": true,
+  "reviewedAt": "2026-10-09"
+}

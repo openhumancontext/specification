@@ -1,0 +1,37 @@
+name: Problem
+description: Report an ambiguity, contradiction, schema defect, checker defect or invalid example.
+title: '[Problem] '
+labels: ['spec-bug', 'needs-triage']
+body:
+  - type: markdown
+    attributes:
+      value: Use English. Quote the smallest relevant passage or give a synthetic example. Never paste real personal data.
+  - type: input
+    id: target
+    attributes:
+      label: Draft and affected section
+      placeholder: 'main at commit …; file …; record kind …; rule id …'
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Observed problem
+      description: What is contradictory, ambiguous or invalid? Include the checker output and reproduction steps when applicable.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected meaning or behavior
+      description: What should be clear or valid, and why?
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence and suggested fix
+      description: Minimal synthetic example, check results, primary sources or suggested wording.
+  - type: input
+    id: contributor
+    attributes:
+      label: Contributor
+      description: Person or submitting account; include agent name if applicable.

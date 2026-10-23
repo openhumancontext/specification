@@ -1,0 +1,83 @@
+{
+  "format": "ohc.catalog",
+  "id": "urn:ohc:catalog:time-precision",
+  "version": "0.1.0",
+  "specVersion": "0.1.0-draft",
+  "title": {
+    "en": "Partial-time precision",
+    "ru": "Точность частичного времени"
+  },
+  "description": {
+    "en": "How precisely a PartialTime (experience time) is known.",
+    "ru": "Насколько точно известно частичное время (PartialTime) — время опыта."
+  },
+  "closed": true,
+  "codes": [
+    {
+      "code": "exact",
+      "label": {
+        "en": "Exact",
+        "ru": "Точно"
+      },
+      "definition": {
+        "en": "The time is known to the stated instant.",
+        "ru": "Время известно с точностью до указанного момента."
+      }
+    },
+    {
+      "code": "day",
+      "label": {
+        "en": "Day",
+        "ru": "День"
+      },
+      "definition": {
+        "en": "Known to the day.",
+        "ru": "Известно с точностью до дня."
+      }
+    },
+    {
+      "code": "month",
+      "label": {
+        "en": "Month",
+        "ru": "Месяц"
+      },
+      "definition": {
+        "en": "Known to the month.",
+        "ru": "Известно с точностью до месяца."
+      }
+    },
+    {
+      "code": "year",
+      "label": {
+        "en": "Year",
+        "ru": "Год"
+      },
+      "definition": {
+        "en": "Known to the year.",
+        "ru": "Известно с точностью до года."
+      }
+    },
+    {
+      "code": "approximate",
+      "label": {
+        "en": "Approximate",
+        "ru": "Приблизительно"
+      },
+      "definition": {
+        "en": "An approximate time, as the narrator remembers it.",
+        "ru": "Приблизительное время, как его помнит рассказчик."
+      }
+    },
+    {
+      "code": "unknown",
+      "label": {
+        "en": "Unknown",
+        "ru": "Неизвестно"
+      },
+      "definition": {
+        "en": "The time is unknown; `start` is a placeholder for ordering only.",
+        "ru": "Время неизвестно; `start` служит только для упорядочивания."
+      }
+    }
+  ]
+}

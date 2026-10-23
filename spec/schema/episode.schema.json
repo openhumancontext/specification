@@ -1,0 +1,265 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:ohc:schema:episode:0.1.0-draft",
+  "title": "OHC Episode",
+  "description": "One occurrence in the person's life, told through one or more dated, attributed accounts. Later readings are Interpretations pointing at the Episode. Layer experience; module core.",
+  "type": "object",
+  "required": [
+    "id",
+    "occurred",
+    "accounts",
+    "origin",
+    "assertedBy",
+    "recordedAt"
+  ],
+  "properties": {
+    "kind": {
+      "const": "Episode"
+    },
+    "id": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Envelope/properties/id"
+    },
+    "title": {
+      "description": "Short and neutral. Served only at named audience.",
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+    },
+    "occurred": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/PartialTime"
+    },
+    "accounts": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/Account"
+      },
+      "minItems": 1
+    },
+    "participants": {
+      "type": "array",
+      "items": {
+        "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/LocalId"
+      },
+      "minItems": 1
+    },
+    "externalConfirmation": {
+      "type": "object",
+      "required": [
+        "status"
+      ],
+      "properties": {
+        "status": {
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/episode.confirmation"
+        },
+        "basis": {
+          "type": "array",
+          "items": {
+            "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/LocalId"
+          },
+          "minItems": 1
+        },
+        "by": {
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Actor"
+        }
+      },
+      "additionalProperties": false
+    },
+    "selection": {
+      "type": "object",
+      "required": [
+        "selectedBy",
+        "reason"
+      ],
+      "properties": {
+        "selectedBy": {
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Actor"
+        },
+        "reason": {
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/episode.selection-reasons"
+        },
+        "note": {
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+        }
+      },
+      "additionalProperties": false
+    },
+    "recall": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/episode.recall"
+    },
+    "salience": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/episode.salience"
+    },
+    "openQuestions": {
+      "type": "array",
+      "items": {
+        "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+      },
+      "minItems": 1
+    },
+    "origin": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Envelope/properties/origin"
+    },
+    "assertedBy": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Envelope/properties/assertedBy"
+    },
+    "recordedAt": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Envelope/properties/recordedAt"
+    },
+    "recordedBy": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Envelope/properties/recordedBy"
+    },
+    "underGrant": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Envelope/properties/underGrant"
+    },
+    "purpose": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Envelope/properties/purpose"
+    },
+    "formulatedAt": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Envelope/properties/formulatedAt"
+    },
+    "supersedes": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Envelope/properties/supersedes"
+    },
+    "epistemic": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Envelope/properties/epistemic"
+    },
+    "confidence": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Envelope/properties/confidence"
+    },
+    "sensitivity": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Envelope/properties/sensitivity"
+    },
+    "categories": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Envelope/properties/categories"
+    },
+    "handling": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Envelope/properties/handling"
+    },
+    "audience": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Envelope/properties/audience"
+    },
+    "contexts": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Envelope/properties/contexts"
+    },
+    "lang": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Envelope/properties/lang"
+    },
+    "importedFrom": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Envelope/properties/importedFrom"
+    },
+    "generatedBy": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Envelope/properties/generatedBy"
+    },
+    "derivedFrom": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Envelope/properties/derivedFrom"
+    },
+    "synthetic": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Envelope/properties/synthetic"
+    },
+    "note": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Envelope/properties/note"
+    },
+    "ext": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Envelope/properties/ext"
+    }
+  },
+  "additionalProperties": false,
+  "allOf": [
+    {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/EnvelopeRules"
+    }
+  ],
+  "$defs": {
+    "Account": {
+      "description": "One dated, attributed telling. It has no field for later readings (EP-4).",
+      "type": "object",
+      "required": [
+        "narrator",
+        "narratedAt",
+        "addedAt",
+        "accountKind"
+      ],
+      "properties": {
+        "narrator": {
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Actor"
+        },
+        "narratedAt": {
+          "anyOf": [
+            {
+              "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/DateTime"
+            },
+            {
+              "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/PartialTime"
+            }
+          ]
+        },
+        "addedAt": {
+          "description": "Knowledge time: when this account entered the context.",
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/DateTime"
+        },
+        "accountKind": {
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/episode.account-kinds"
+        },
+        "happened": {
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+        },
+        "experienced": {
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+        },
+        "didOrTried": {
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+        },
+        "understandingThen": {
+          "description": "How the narrator understood it at the time of the episode.",
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+        },
+        "text": {
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+        },
+        "affectTags": {
+          "type": "array",
+          "items": {
+            "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+          },
+          "minItems": 1
+        },
+        "evidence": {
+          "type": "array",
+          "items": {
+            "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Span"
+          },
+          "minItems": 1
+        },
+        "lang": {
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/LangTag"
+        }
+      },
+      "additionalProperties": false,
+      "anyOf": [
+        {
+          "required": [
+            "happened"
+          ]
+        },
+        {
+          "required": [
+            "experienced"
+          ]
+        },
+        {
+          "required": [
+            "didOrTried"
+          ]
+        },
+        {
+          "required": [
+            "understandingThen"
+          ]
+        },
+        {
+          "required": [
+            "text"
+          ]
+        }
+      ]
+    }
+  }
+}

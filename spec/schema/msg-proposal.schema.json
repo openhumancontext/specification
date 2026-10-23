@@ -1,0 +1,352 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:ohc:schema:msg-proposal:0.1.0-draft",
+  "title": "OHC proposal message",
+  "description": "EXPERIMENTAL. Agent to holder: proposes records or requests. A proposal failing PR-2 is refused with a denial and nothing is stored.",
+  "type": "object",
+  "required": [
+    "format",
+    "specVersion",
+    "id",
+    "from",
+    "to",
+    "at",
+    "grant",
+    "purpose",
+    "rationale"
+  ],
+  "properties": {
+    "format": {
+      "const": "ohc.experimental.proposal"
+    },
+    "specVersion": {
+      "$ref": "urn:ohc:schema:message:0.1.0-draft#/properties/specVersion"
+    },
+    "id": {
+      "$ref": "urn:ohc:schema:message:0.1.0-draft#/properties/id"
+    },
+    "from": {
+      "$ref": "urn:ohc:schema:message:0.1.0-draft#/properties/from"
+    },
+    "to": {
+      "$ref": "urn:ohc:schema:message:0.1.0-draft#/properties/to"
+    },
+    "at": {
+      "$ref": "urn:ohc:schema:message:0.1.0-draft#/properties/at"
+    },
+    "inReplyTo": {
+      "$ref": "urn:ohc:schema:message:0.1.0-draft#/properties/inReplyTo"
+    },
+    "grant": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/LocalId"
+    },
+    "purpose": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/purposes"
+    },
+    "items": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/ContentRecord"
+      }
+    },
+    "requests": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "target",
+          "action"
+        ],
+        "properties": {
+          "target": {
+            "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/LocalId"
+          },
+          "action": {
+            "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/proposal-requests"
+          },
+          "epistemic": {
+            "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/epistemic"
+          }
+        },
+        "additionalProperties": false
+      },
+      "minItems": 1
+    },
+    "rationale": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+    },
+    "grounds": {
+      "type": "array",
+      "items": {
+        "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Ground"
+      }
+    },
+    "expiresAt": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/DateTime"
+    }
+  },
+  "additionalProperties": false,
+  "allOf": [
+    {
+      "anyOf": [
+        {
+          "required": [
+            "items"
+          ],
+          "properties": {
+            "items": {
+              "minItems": 1
+            }
+          }
+        },
+        {
+          "required": [
+            "requests"
+          ]
+        }
+      ]
+    }
+  ],
+  "$defs": {
+    "ContentRecord": {
+      "description": "A full content record; kind is required in messages (R-S2). Dispatched to the schema of its kind.",
+      "required": [
+        "kind"
+      ],
+      "allOf": [
+        {
+          "properties": {
+            "kind": {
+              "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/content-kinds"
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "kind": {
+                "const": "Claim"
+              }
+            },
+            "required": [
+              "kind"
+            ]
+          },
+          "then": {
+            "$ref": "urn:ohc:schema:claim:0.1.0-draft"
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "kind": {
+                "const": "Relation"
+              }
+            },
+            "required": [
+              "kind"
+            ]
+          },
+          "then": {
+            "$ref": "urn:ohc:schema:relation:0.1.0-draft"
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "kind": {
+                "const": "Source"
+              }
+            },
+            "required": [
+              "kind"
+            ]
+          },
+          "then": {
+            "$ref": "urn:ohc:schema:source:0.1.0-draft"
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "kind": {
+                "const": "Episode"
+              }
+            },
+            "required": [
+              "kind"
+            ]
+          },
+          "then": {
+            "$ref": "urn:ohc:schema:episode:0.1.0-draft"
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "kind": {
+                "const": "Interpretation"
+              }
+            },
+            "required": [
+              "kind"
+            ]
+          },
+          "then": {
+            "$ref": "urn:ohc:schema:interpretation:0.1.0-draft"
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "kind": {
+                "const": "Tension"
+              }
+            },
+            "required": [
+              "kind"
+            ]
+          },
+          "then": {
+            "$ref": "urn:ohc:schema:tension:0.1.0-draft"
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "kind": {
+                "const": "LensAdoption"
+              }
+            },
+            "required": [
+              "kind"
+            ]
+          },
+          "then": {
+            "$ref": "urn:ohc:schema:lens-adoption:0.1.0-draft"
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "kind": {
+                "const": "AssessmentRecord"
+              }
+            },
+            "required": [
+              "kind"
+            ]
+          },
+          "then": {
+            "$ref": "urn:ohc:schema:assessment-record:0.1.0-draft"
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "kind": {
+                "const": "ModelView"
+              }
+            },
+            "required": [
+              "kind"
+            ]
+          },
+          "then": {
+            "$ref": "urn:ohc:schema:model-view:0.1.0-draft"
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "kind": {
+                "const": "Practice"
+              }
+            },
+            "required": [
+              "kind"
+            ]
+          },
+          "then": {
+            "$ref": "urn:ohc:schema:practice:0.1.0-draft"
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "kind": {
+                "const": "Outcome"
+              }
+            },
+            "required": [
+              "kind"
+            ]
+          },
+          "then": {
+            "$ref": "urn:ohc:schema:outcome:0.1.0-draft"
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "kind": {
+                "const": "Pattern"
+              }
+            },
+            "required": [
+              "kind"
+            ]
+          },
+          "then": {
+            "$ref": "urn:ohc:schema:pattern:0.1.0-draft"
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "kind": {
+                "const": "RecallCue"
+              }
+            },
+            "required": [
+              "kind"
+            ]
+          },
+          "then": {
+            "$ref": "urn:ohc:schema:recall-cue:0.1.0-draft"
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "kind": {
+                "const": "Part"
+              }
+            },
+            "required": [
+              "kind"
+            ]
+          },
+          "then": {
+            "$ref": "urn:ohc:schema:part:0.1.0-draft"
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "kind": {
+                "const": "HealthRef"
+              }
+            },
+            "required": [
+              "kind"
+            ]
+          },
+          "then": {
+            "$ref": "urn:ohc:schema:health-ref:0.1.0-draft"
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,91 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:ohc:schema:msg-source-access-request:0.1.0-draft",
+  "title": "OHC source-access-request message",
+  "description": "EXPERIMENTAL. Agent to holder: asks for verbatim access to sources, answered after an out-of-band step-up of the person.",
+  "type": "object",
+  "required": [
+    "format",
+    "specVersion",
+    "id",
+    "from",
+    "to",
+    "at",
+    "grant",
+    "purpose",
+    "targets",
+    "why",
+    "requestedDuration"
+  ],
+  "properties": {
+    "format": {
+      "const": "ohc.experimental.source-access-request"
+    },
+    "specVersion": {
+      "$ref": "urn:ohc:schema:message:0.1.0-draft#/properties/specVersion"
+    },
+    "id": {
+      "$ref": "urn:ohc:schema:message:0.1.0-draft#/properties/id"
+    },
+    "from": {
+      "$ref": "urn:ohc:schema:message:0.1.0-draft#/properties/from"
+    },
+    "to": {
+      "$ref": "urn:ohc:schema:message:0.1.0-draft#/properties/to"
+    },
+    "at": {
+      "$ref": "urn:ohc:schema:message:0.1.0-draft#/properties/at"
+    },
+    "inReplyTo": {
+      "$ref": "urn:ohc:schema:message:0.1.0-draft#/properties/inReplyTo"
+    },
+    "grant": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/LocalId"
+    },
+    "purpose": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/purposes"
+    },
+    "targets": {
+      "oneOf": [
+        {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "source"
+            ],
+            "properties": {
+              "source": {
+                "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/LocalId"
+              },
+              "selector": {
+                "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Selector"
+              }
+            },
+            "additionalProperties": false
+          },
+          "minItems": 1
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Handle"
+          },
+          "minItems": 1
+        }
+      ]
+    },
+    "why": {
+      "description": "Shown to the person verbatim.",
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+    },
+    "requestedDuration": {
+      "description": "At most PT1H.",
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Duration"
+    },
+    "audience": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/messages.access-audiences"
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,260 @@
+{
+  "format": "ohc.lens",
+  "specVersion": "0.1.0-draft",
+  "id": "urn:ohc:lens:jungian-type",
+  "version": "0.2.0",
+  "name": {
+    "en": "Psychological type (four preference pairs, after Jung)",
+    "ru": "Психологический тип (четыре пары предпочтений, по мотивам Юнга)"
+  },
+  "aliases": [
+    "psychological type",
+    "four-letter type"
+  ],
+  "descriptorStatus": "draft",
+  "kind": "type-categorical",
+  "summary": {
+    "en": "Preferences on four pairs of poles, combined into a type that the person checks by best fit. Genuine MBTI® results are recorded only through their instrument entries. E/I, S/N and T/F follow Jung's attitudes and functions; treating them as four independent preference pairs and adding J/P is the Briggs–Myers operationalisation.",
+    "ru": "Предпочтения на четырёх парах полюсов, складывающиеся в тип, который человек проверяет по принципу «лучшего соответствия». Подлинные результаты MBTI® записываются только через карточки инструментов. E/I, S/N и T/F следуют установкам и функциям Юнга; трактовка их как четырёх независимых пар предпочтений и добавление пары J/P — операционализация Бриггс и Майерс."
+  },
+  "constructs": [
+    {
+      "id": "jungian-type/EI",
+      "label": {
+        "en": "Extraversion - Introversion (preference pole pair)",
+        "ru": "Экстраверсия - интроверсия"
+      }
+    },
+    {
+      "id": "jungian-type/SN",
+      "label": {
+        "en": "Sensing - Intuition (preference pole pair)",
+        "ru": "Ощущение - интуиция"
+      }
+    },
+    {
+      "id": "jungian-type/TF",
+      "label": {
+        "en": "Thinking - Feeling (preference pole pair)",
+        "ru": "Мышление - чувство"
+      }
+    },
+    {
+      "id": "jungian-type/JP",
+      "label": {
+        "en": "Judging - Perceiving (preference pole pair)",
+        "ru": "Суждение - восприятие"
+      }
+    }
+  ],
+  "mentalModel": {
+    "summary": "People show preferences on four pairs of poles; a type is a starting point that the person checks by best fit, not a verdict.",
+    "assumptions": [
+      "a type is a convenient summary of four preferences",
+      "the person is the authority on best fit",
+      "the underlying measures are continuous even when a type is reported"
+    ],
+    "stance": "descriptive and self-confirming",
+    "unitOfAnalysis": "the person's preferences across typical situations",
+    "attendsTo": [
+      "which description the person recognises",
+      "pole clarity",
+      "situations where the opposite pole shows"
+    ],
+    "howChangeHappens": "Preferences are treated as relatively stable; the person may revise the best-fit type at any time.",
+    "languageGuidance": "Speak of preferences, never of fixed kinds of people; use the person's own type wording; never call a quiz result an MBTI® type.",
+    "agentPosture": {
+      "do": [
+        "offer the best-fit question",
+        "show pole clarity when it is available"
+      ],
+      "dont": [
+        "assign a type to the person",
+        "explain behaviour away by type",
+        "label any non-MBTI® result with the MBTI® marks"
+      ]
+    },
+    "exploratoryQuestions": [
+      "Which description fits you best?",
+      "In which situations does the other pole show?"
+    ],
+    "helperMustNot": [
+      "derive a type from Big Five or other scores",
+      "present a type as evidence of fit for a role, task or team"
+    ],
+    "doesNotClaim": [
+      "that people fall into distinct types",
+      "anything about ability or performance",
+      "job fit"
+    ],
+    "riskNotes": [
+      "Type labels invite pigeon-holing and are misused in hiring",
+      "Branded type labels are protected marks; generic results must never carry them"
+    ]
+  },
+  "toolkit": [
+    {
+      "id": "jungian-type.best-fit",
+      "name": "Best-fit check",
+      "kind": "exercise",
+      "description": "Read short descriptions of each pole in your own words and choose the one that fits best; note where neither fits.",
+      "facilitation": "self",
+      "requiresPractitioner": false,
+      "agentMayOffer": true,
+      "nonClinical": true,
+      "produces": "AssessmentRecord",
+      "cautions": [
+        "The result is self-identified, not measured"
+      ]
+    },
+    {
+      "id": "jungian-type.record-genuine-result",
+      "name": "Record a genuine instrument result",
+      "kind": "instrument-use",
+      "description": "Record the type and pole clarity from a genuine MBTI® assessment, with the trademark notice; never the report prose.",
+      "facilitation": "self",
+      "requiresPractitioner": false,
+      "agentMayOffer": false,
+      "nonClinical": true,
+      "produces": "AssessmentRecord",
+      "cautions": [
+        "Only for genuine MBTI® results",
+        "A trademark notice is required"
+      ]
+    }
+  ],
+  "representations": [
+    {
+      "id": "jungian-type.type-label",
+      "kind": "type-label",
+      "resultType": "type-assignment",
+      "description": "Four-letter type with clarity per pole and whether the person confirmed it by best fit."
+    }
+  ],
+  "instruments": [
+    "urn:ohc:instrument:mbti-form-m",
+    "urn:ohc:instrument:mbti-form-q"
+  ],
+  "adoption": {
+    "routes": [
+      "self-chosen",
+      "agent-suggested",
+      "inherited-from-practice",
+      "imported"
+    ],
+    "suggestionRequires": [
+      "the person asked for ways of describing preferences"
+    ],
+    "inheritanceRoles": [
+      "coach",
+      "teacher",
+      "facilitator"
+    ],
+    "practitionerFor": []
+  },
+  "evidence": {
+    "measurementTier": "T4",
+    "practiceTier": {
+      "clinicianDelivered": "not-assessed",
+      "selfGuided": "not-assessed",
+      "agentOffered": "not-assessed"
+    },
+    "ontologicalStatus": "theoretical-model",
+    "citations": [
+      {
+        "ref": "doi:10.1111/j.1467-6494.1989.tb00759.x",
+        "grade": "F",
+        "note": "McCrae & Costa 1989 (N = 267 men, 201 women): no support for truly dichotomous preferences or distinct types; the instrument measures four relatively independent dimensions"
+      },
+      {
+        "ref": "Pittenger 1993, as cited in a secondary source",
+        "grade": "F2",
+        "note": "Between 39% and 76% of respondents received a different type on retest after five weeks [verify]"
+      },
+      {
+        "ref": "The Myers-Briggs Company, Trademark Guidelines, guideline 5",
+        "grade": "verify",
+        "note": "Use the MBTI marks only for genuine MBTI products and services; other instruments must not be described with them. Revision date of the guidelines to be re-checked"
+      },
+      {
+        "ref": "Myers & McCaulley 1985, Manual: A Guide to the Development and Use of the Myers-Briggs Type Indicator, as cited in a secondary source",
+        "grade": "F2",
+        "note": "The judging–perceiving preference was added by Briggs and Myers; Jung's typology has the two attitudes and four functions"
+      }
+    ],
+    "reviewedAt": "2026-10-09",
+    "notes": "Evidence about the instrument's dimensions is not evidence that people fall into types."
+  },
+  "supports": [
+    "self-description in a vocabulary the person chose",
+    "talking about preferences the person recognises"
+  ],
+  "doesNotEstablish": [
+    "that the person belongs to a distinct type",
+    "ability, performance or job fit",
+    "any clinical condition"
+  ],
+  "ip": {
+    "conceptStatus": "free-concept",
+    "marks": [
+      {
+        "mark": "MBTI",
+        "owner": "Myers & Briggs Foundation, Inc.",
+        "status": "registered",
+        "notice": "Myers-Briggs Type Indicator, Myers-Briggs and MBTI are trademarks or registered trademarks of the Myers & Briggs Foundation, Inc.; The Myers-Briggs Company is the exclusive publisher of the MBTI® instrument.",
+        "use": "adjective-only"
+      },
+      {
+        "mark": "Myers-Briggs",
+        "owner": "Myers & Briggs Foundation, Inc.",
+        "status": "registered",
+        "notice": "Myers-Briggs Type Indicator, Myers-Briggs and MBTI are trademarks or registered trademarks of the Myers & Briggs Foundation, Inc.; The Myers-Briggs Company is the exclusive publisher of the MBTI® instrument.",
+        "use": "adjective-only"
+      },
+      {
+        "mark": "Myers-Briggs Type Indicator",
+        "owner": "Myers & Briggs Foundation, Inc.",
+        "status": "registered",
+        "notice": "Myers-Briggs Type Indicator, Myers-Briggs and MBTI are trademarks or registered trademarks of the Myers & Briggs Foundation, Inc.; The Myers-Briggs Company is the exclusive publisher of the MBTI® instrument.",
+        "use": "adjective-only"
+      }
+    ],
+    "itemsLicence": "MBTI® instrument items are proprietary and may not be reproduced without written permission from the publisher",
+    "scoring": "proprietary",
+    "restrictions": [
+      "use the MBTI marks only as adjectives and only for genuine MBTI® results",
+      "never describe other instruments, quizzes or agent estimates with the MBTI marks",
+      "a trademarkNotice is required on every genuine result",
+      "never store MBTI® item text, report prose or scoring keys",
+      "never derive a branded type from other data (M-4)"
+    ],
+    "registryListing": "ok",
+    "legalReviewNeeded": true
+  },
+  "useLimits": {
+    "crossLensMapping": "population-level-only"
+  },
+  "defaults": {
+    "sensitivity": "special",
+    "categories": [
+      "mental-health"
+    ],
+    "reviewAfter": "on-change"
+  },
+  "mappings": [
+    "urn:ohc:mapping:jungian-type.EI--big-five.E--mccrae-costa-1989",
+    "urn:ohc:mapping:jungian-type.SN--big-five.O--mccrae-costa-1989",
+    "urn:ohc:mapping:jungian-type.TF--big-five.A--mccrae-costa-1989",
+    "urn:ohc:mapping:jungian-type.JP--big-five.C--mccrae-costa-1989"
+  ],
+  "playbooks": [
+    "urn:ohc:playbook:jungian-type-basic"
+  ],
+  "sources": [
+    "McCrae & Costa 1989",
+    "The Myers-Briggs Company, Trademark Guidelines"
+  ],
+  "descriptorAuthors": [
+    "OHC editors"
+  ]
+}

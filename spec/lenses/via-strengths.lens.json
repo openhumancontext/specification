@@ -1,0 +1,212 @@
+{
+  "format": "ohc.lens",
+  "specVersion": "0.1.0-draft",
+  "id": "urn:ohc:lens:via-strengths",
+  "version": "0.2.0",
+  "name": {
+    "en": "VIA character strengths (by reference)",
+    "ru": "Сильные стороны характера VIA (по ссылке)"
+  },
+  "descriptorStatus": "draft",
+  "kind": "strengths-ranked",
+  "summary": {
+    "en": "Character strengths the person uses, ranked within the person. The classification is referenced by URL, not reproduced.",
+    "ru": "Сильные стороны характера, которыми человек пользуется, ранжированные внутри одного человека. Классификация указывается ссылкой, а не воспроизводится."
+  },
+  "constructsByReference": {
+    "url": "https://www.viacharacter.org/",
+    "reason": "The VIA Classification (24 strengths in 6 virtues) is copyrighted; listing it in a registry may need permission. <n> is a strength's published name in lowercase, with words joined by hyphens (for example via-strengths/spirituality).",
+    "idPattern": "via-strengths/<n>"
+  },
+  "mentalModel": {
+    "summary": "Everyone has a profile of character strengths; using one's strongest ones in daily life is a way to act well.",
+    "assumptions": [
+      "a ranking describes one person and is not compared with others",
+      "results are indicators with measurement error",
+      "strengths are used in situations, not possessed as fixed traits"
+    ],
+    "stance": "appreciative and practical",
+    "unitOfAnalysis": "strengths used in specific episodes",
+    "attendsTo": [
+      "which strengths showed in an episode",
+      "the person's signature strengths",
+      "strengths that are underused"
+    ],
+    "howChangeHappens": "By noticing and deliberately using strengths in new ways.",
+    "languageGuidance": "Speak of strengths in use, never of weaknesses or deficits; never rank the person against others.",
+    "agentPosture": {
+      "do": [
+        "ask which strengths showed in an episode",
+        "use the person's own top strengths"
+      ],
+      "dont": [
+        "compare the person's ranking with other people",
+        "infer strengths from behaviour"
+      ]
+    },
+    "exploratoryQuestions": [
+      "Which strengths did you use in that episode?",
+      "Which strength would you like to use more?"
+    ],
+    "helperMustNot": [
+      "use rankings for selection or placement",
+      "describe a low-ranked strength as a flaw",
+      "comment on the Spirituality strength unless the person raises it"
+    ],
+    "doesNotClaim": [
+      "comparisons between people",
+      "competence or skill",
+      "job fit"
+    ],
+    "riskNotes": [
+      "The Spirituality strength can reveal religious or philosophical beliefs",
+      "Rankings are within-person; comparing them across people misuses them"
+    ]
+  },
+  "toolkit": [
+    {
+      "id": "via-strengths.strengths-in-episode",
+      "name": "Strengths in an episode",
+      "kind": "exercise",
+      "description": "Pick a recent episode and note which of your strengths you used and how.",
+      "facilitation": "self",
+      "requiresPractitioner": false,
+      "agentMayOffer": true,
+      "nonClinical": true,
+      "produces": "Interpretation",
+      "cautions": [
+        "Use the person's own ranking only"
+      ]
+    },
+    {
+      "id": "via-strengths.record-result",
+      "name": "Record a survey result",
+      "kind": "instrument-use",
+      "description": "Record the rank order and signature strengths from a VIA survey result; never report prose.",
+      "facilitation": "self",
+      "requiresPractitioner": false,
+      "agentMayOffer": false,
+      "nonClinical": true,
+      "produces": "AssessmentRecord",
+      "cautions": [
+        "Within-person ranking only (M-5)"
+      ]
+    }
+  ],
+  "representations": [
+    {
+      "id": "via-strengths.ranked-list",
+      "kind": "ranked-list",
+      "resultType": "ranking",
+      "description": "The person's own rank order with the signature top-N as reported."
+    }
+  ],
+  "instruments": [
+    "urn:ohc:instrument:via-is-r",
+    "urn:ohc:instrument:gacs"
+  ],
+  "adoption": {
+    "routes": [
+      "self-chosen",
+      "agent-suggested",
+      "inherited-from-practice",
+      "imported"
+    ],
+    "suggestionRequires": [
+      "the person asked for ways of looking at what they do well"
+    ],
+    "inheritanceRoles": [
+      "coach",
+      "teacher",
+      "therapist"
+    ],
+    "practitionerFor": []
+  },
+  "evidence": {
+    "measurementTier": "T2",
+    "practiceTier": {
+      "clinicianDelivered": "not-assessed",
+      "selfGuided": "not-assessed",
+      "agentOffered": "not-assessed"
+    },
+    "ontologicalStatus": "measured-construct",
+    "citations": [
+      {
+        "ref": "doi:10.1080/00223891.2022.2120402",
+        "grade": "F",
+        "note": "McGrath 2023: five samples, total N = 7,924; findings 'generally support the construct validity ... with exceptions noted'"
+      },
+      {
+        "ref": "VIA Institute on Character, permissions and guidelines for use and interpretation",
+        "grade": "F",
+        "note": "Not recommended for personnel selection or placement decisions. Paraphrase of the guidance: the measures are most appropriate for insight into groups through aggregated data; they can be used with one person to estimate the relative strength of the 24 strengths within that person; people should not be compared with one another"
+      },
+      {
+        "ref": "VIA Institute on Character, survey availability",
+        "grade": "F2",
+        "note": "The survey is free to individuals"
+      }
+    ],
+    "reviewedAt": "2026-10-09"
+  },
+  "supports": [
+    "self-reflection on strengths in use",
+    "choosing practices that use the person's strengths"
+  ],
+  "doesNotEstablish": [
+    "how the person compares with others",
+    "skill or competence",
+    "job fit or placement"
+  ],
+  "ip": {
+    "conceptStatus": "unclear",
+    "marks": [
+      {
+        "mark": "VIA",
+        "owner": "VIA Institute on Character",
+        "status": "unverified",
+        "notice": "VIA is used only to name the VIA Institute's instruments; OHC is not authored or endorsed by the VIA Institute.",
+        "use": "nominative-only"
+      }
+    ],
+    "itemsLicence": "The VIA Survey, Classification and Reports are copyrighted by the VIA Institute on Character",
+    "scoring": "proprietary",
+    "restrictions": [
+      "never store VIA item text or report prose",
+      "never alter or restructure the Classification",
+      "rankings are within-person only and never compared across people (M-5)",
+      "not for personnel selection or placement (publisher guidance)"
+    ],
+    "registryListing": "reference-by-url",
+    "legalReviewNeeded": true
+  },
+  "useLimits": {
+    "crossLensMapping": "not-allowed"
+  },
+  "defaults": {
+    "sensitivity": "special",
+    "categories": [
+      "mental-health"
+    ],
+    "perConstruct": {
+      "via-strengths/spirituality": {
+        "sensitivity": "special",
+        "categories": [
+          "belief"
+        ]
+      }
+    },
+    "reviewAfter": "P3Y"
+  },
+  "mappings": [],
+  "playbooks": [
+    "urn:ohc:playbook:via-strengths-basic"
+  ],
+  "sources": [
+    "McGrath 2023",
+    "VIA Institute on Character, permissions and guidelines"
+  ],
+  "descriptorAuthors": [
+    "OHC editors"
+  ]
+}

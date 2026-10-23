@@ -1,0 +1,38 @@
+{
+ "administered": "2026-08-14",
+ "domains": {
+  "A": {
+   "percentile": 52,
+   "raw": 3.7
+  },
+  "C": {
+   "percentile": 66,
+   "raw": 3.9
+  },
+  "E": {
+   "percentile": 22,
+   "raw": 2.6
+  },
+  "N": {
+   "percentile": 55,
+   "raw": 3.1
+  },
+  "O": {
+   "percentile": 81,
+   "raw": 4.2
+  }
+ },
+ "facets": {
+  "N1": {
+   "raw": 3.5
+  },
+  "N3": {
+   "raw": 2.5
+  }
+ },
+ "instrument": "IPIP-NEO-120",
+ "norms": "internet sample published with the instrument (2014)",
+ "note": "Synthetic score page for a fictional person. Scores only; no item text, no report prose.",
+ "scale": "domain and facet means of keyed items, 1-5",
+ "synthetic": true
+}

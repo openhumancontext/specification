@@ -1,0 +1,37 @@
+{
+  "valid": true,
+  "levelDeclared": "L1",
+  "levelMet": "L1",
+  "modules": [
+    "core",
+    "governance",
+    "lenses"
+  ],
+  "errors": [],
+  "warnings": [
+    {
+      "rule": "W-CL4",
+      "id": "c-01",
+      "path": "context.json#/claims/0/text",
+      "message": "Warning: a record that the subject did not declare, that is not quarantined and that rests on no behavioural Source has text the affect classifier reads as affect.",
+      "see": "spec/SPECIFICATION.md §9.4.4"
+    }
+  ],
+  "defaultsApplied": [
+    "admission",
+    "endorsement",
+    "epistemic"
+  ],
+  "counts": {
+    "records": 9
+  },
+  "truthVerified": false,
+  "consentVerified": false,
+  "consentAuthenticated": false,
+  "endorsementAuthenticated": false,
+  "behaviorTested": false,
+  "runtimeTested": false,
+  "vaultContentRead": false,
+  "externalLocatorsFollowed": 0,
+  "realPersonData": "not-detectable-by-check"
+}

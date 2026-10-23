@@ -1,0 +1,344 @@
+{
+  "format": "ohc.catalog",
+  "id": "urn:ohc:catalog:interpretation",
+  "version": "0.1.0",
+  "specVersion": "0.1.0-draft",
+  "title": {
+    "en": "Interpretation vocabularies",
+    "ru": "Словари интерпретаций"
+  },
+  "description": {
+    "en": "Vocabularies for readings of experience: the stance of a reading, its causal claim, the kinds of grounds and the kinds of alternative explanations.",
+    "ru": "Словари для прочтений опыта: позиция прочтения, его причинное утверждение, виды оснований и виды альтернативных объяснений."
+  },
+  "closed": true,
+  "lists": [
+    {
+      "name": "stances",
+      "title": {
+        "en": "Stances",
+        "ru": "Позиции прочтения"
+      },
+      "closed": true,
+      "field": "Interpretation.stance"
+    },
+    {
+      "name": "causal",
+      "title": {
+        "en": "Causal claims",
+        "ru": "Причинные утверждения"
+      },
+      "closed": true,
+      "field": "Interpretation.causal"
+    },
+    {
+      "name": "ground-kinds",
+      "title": {
+        "en": "Ground kinds",
+        "ru": "Виды оснований"
+      },
+      "closed": true,
+      "field": "Ground.kind"
+    },
+    {
+      "name": "alternative-kinds",
+      "title": {
+        "en": "Alternative kinds",
+        "ru": "Виды альтернатив"
+      },
+      "closed": true,
+      "field": "Alternative.kind",
+      "notes": "I4 and RC-4 require at least one alternative that is not psychological."
+    }
+  ],
+  "codes": [
+    {
+      "code": "in-the-moment",
+      "list": "stances",
+      "label": {
+        "en": "In the moment",
+        "ru": "В моменте"
+      },
+      "definition": {
+        "en": "Formed during the episode, recorded as a reading.",
+        "ru": "Сложилось во время эпизода и записано как прочтение."
+      }
+    },
+    {
+      "code": "retrospective",
+      "list": "stances",
+      "label": {
+        "en": "Retrospective",
+        "ru": "Ретроспективное"
+      },
+      "definition": {
+        "en": "Formed later.",
+        "ru": "Сложилось позже."
+      }
+    },
+    {
+      "code": "revision",
+      "list": "stances",
+      "label": {
+        "en": "Revision",
+        "ru": "Пересмотр"
+      },
+      "definition": {
+        "en": "Replaces the same author's earlier reading (uses `supersedes`).",
+        "ru": "Заменяет более раннее прочтение того же автора (через `supersedes`)."
+      }
+    },
+    {
+      "code": "alternative",
+      "list": "stances",
+      "label": {
+        "en": "Alternative",
+        "ru": "Альтернатива"
+      },
+      "definition": {
+        "en": "Offered next to another reading.",
+        "ru": "Предложено рядом с другим прочтением."
+      }
+    },
+    {
+      "code": "lens-reading",
+      "list": "stances",
+      "label": {
+        "en": "Lens reading",
+        "ru": "Прочтение через линзу"
+      },
+      "definition": {
+        "en": "Produced through a named lens.",
+        "ru": "Получено через названную линзу."
+      }
+    },
+    {
+      "code": "none",
+      "list": "causal",
+      "label": {
+        "en": "No causal claim",
+        "ru": "Без причинного утверждения"
+      },
+      "definition": {
+        "en": "The reading makes no causal claim. The default.",
+        "ru": "Прочтение не утверждает причинности. Значение по умолчанию."
+      }
+    },
+    {
+      "code": "hypothesized",
+      "list": "causal",
+      "label": {
+        "en": "Hypothesized cause",
+        "ru": "Предполагаемая причина"
+      },
+      "definition": {
+        "en": "A cause is offered as a hypothesis.",
+        "ru": "Причина предлагается как гипотеза."
+      }
+    },
+    {
+      "code": "asserted",
+      "list": "causal",
+      "label": {
+        "en": "Asserted cause",
+        "ru": "Утверждаемая причина"
+      },
+      "definition": {
+        "en": "A cause is asserted. Requires a ground that is not only a sequence; never used by non-subject authors (I2).",
+        "ru": "Причина утверждается. Требует основания, которое не сводится к последовательности событий; не используется авторами, кроме самого человека (I2)."
+      }
+    },
+    {
+      "code": "evidence",
+      "list": "ground-kinds",
+      "label": {
+        "en": "Evidence",
+        "ru": "Свидетельство"
+      },
+      "definition": {
+        "en": "A span or record that shows it.",
+        "ru": "Фрагмент или запись, которые это показывают."
+      }
+    },
+    {
+      "code": "observation",
+      "list": "ground-kinds",
+      "label": {
+        "en": "Observation",
+        "ru": "Наблюдение"
+      },
+      "definition": {
+        "en": "An observed event.",
+        "ru": "Наблюдённое событие."
+      }
+    },
+    {
+      "code": "sequence",
+      "list": "ground-kinds",
+      "label": {
+        "en": "Sequence",
+        "ru": "Последовательность"
+      },
+      "definition": {
+        "en": "Temporal order only, which never proves a cause.",
+        "ru": "Только порядок во времени, который никогда не доказывает причину."
+      }
+    },
+    {
+      "code": "pattern",
+      "list": "ground-kinds",
+      "label": {
+        "en": "Pattern",
+        "ru": "Повторяемость"
+      },
+      "definition": {
+        "en": "Recurrence.",
+        "ru": "Повторение."
+      }
+    },
+    {
+      "code": "instrument",
+      "list": "ground-kinds",
+      "label": {
+        "en": "Instrument result",
+        "ru": "Результат методики"
+      },
+      "definition": {
+        "en": "An assessment result.",
+        "ru": "Результат оценки."
+      }
+    },
+    {
+      "code": "testimony",
+      "list": "ground-kinds",
+      "label": {
+        "en": "Testimony",
+        "ru": "Свидетельство участника"
+      },
+      "definition": {
+        "en": "A party's account.",
+        "ru": "Рассказ участника."
+      }
+    },
+    {
+      "code": "practitioner",
+      "list": "ground-kinds",
+      "label": {
+        "en": "Practitioner reading",
+        "ru": "Прочтение специалиста"
+      },
+      "definition": {
+        "en": "A practitioner's reading.",
+        "ru": "Прочтение специалиста-практика."
+      }
+    },
+    {
+      "code": "subject-statement",
+      "list": "ground-kinds",
+      "label": {
+        "en": "Subject statement",
+        "ru": "Слова человека"
+      },
+      "definition": {
+        "en": "The person said so.",
+        "ru": "Так сказал сам человек."
+      }
+    },
+    {
+      "code": "psychological",
+      "list": "alternative-kinds",
+      "label": {
+        "en": "Psychological",
+        "ru": "Психологическое"
+      },
+      "definition": {
+        "en": "A psychological explanation.",
+        "ru": "Психологическое объяснение."
+      }
+    },
+    {
+      "code": "situational",
+      "list": "alternative-kinds",
+      "label": {
+        "en": "Situational",
+        "ru": "Ситуационное"
+      },
+      "definition": {
+        "en": "An explanation from the situation.",
+        "ru": "Объяснение через ситуацию."
+      }
+    },
+    {
+      "code": "physiological",
+      "list": "alternative-kinds",
+      "label": {
+        "en": "Physiological",
+        "ru": "Физиологическое"
+      },
+      "definition": {
+        "en": "Fatigue, load or health.",
+        "ru": "Усталость, нагрузка или здоровье."
+      }
+    },
+    {
+      "code": "informational",
+      "list": "alternative-kinds",
+      "label": {
+        "en": "Informational",
+        "ru": "Информационное"
+      },
+      "definition": {
+        "en": "Missing information.",
+        "ru": "Недостаток информации."
+      }
+    },
+    {
+      "code": "relational",
+      "list": "alternative-kinds",
+      "label": {
+        "en": "Relational",
+        "ru": "Отношенческое"
+      },
+      "definition": {
+        "en": "An explanation from relationships.",
+        "ru": "Объяснение через отношения."
+      }
+    },
+    {
+      "code": "external",
+      "list": "alternative-kinds",
+      "label": {
+        "en": "External",
+        "ru": "Внешнее"
+      },
+      "definition": {
+        "en": "Outside obstacles.",
+        "ru": "Внешние препятствия."
+      }
+    },
+    {
+      "code": "combination",
+      "list": "alternative-kinds",
+      "label": {
+        "en": "Combination",
+        "ru": "Сочетание"
+      },
+      "definition": {
+        "en": "Several explanations together.",
+        "ru": "Несколько объяснений вместе."
+      }
+    },
+    {
+      "code": "other",
+      "list": "alternative-kinds",
+      "label": {
+        "en": "Other",
+        "ru": "Другое"
+      },
+      "definition": {
+        "en": "Any other explanation.",
+        "ru": "Любое другое объяснение."
+      }
+    }
+  ]
+}

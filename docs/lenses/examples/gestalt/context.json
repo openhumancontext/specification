@@ -1,0 +1,81 @@
+{
+  "format": "ohc.context",
+  "specVersion": "0.1.0-draft",
+  "id": "urn:ohc:example:edda:context",
+  "version": "2026-10-02.1",
+  "subject": {"id": "urn:ohc:example:edda", "displayName": "Edda (fictional)"},
+  "holder": "subject",
+  "lang": "en",
+  "created": "2026-09-15T18:00:00Z",
+  "conformance": {"level": "L1", "modules": ["core", "governance", "lenses"], "subjectIsAdult": true},
+  "parties": [
+    {"id": "p-01", "partyKind": "person", "label": "Group facilitator", "role": "practitioner"},
+    {"id": "a-01", "partyKind": "agent", "label": "Reflection companion"}
+  ],
+  "policy": {"admission": "subject-only", "resolver": "returnDialog"},
+  "lenses": [
+    {"id": "urn:ohc:lens:gestalt", "version": "0.2.0"}
+  ],
+  "synthetic": true,
+  "lensAdoptions": [
+    {"id": "la-01", "lens": {"id": "urn:ohc:lens:gestalt", "version": "0.2.0"}, "route": "inherited-from-practice",
+     "practice": {"role": "facilitator", "practitioner": "p-01", "relationship": "active", "since": "2026-03-01"},
+     "confidentiality": "practitioner-scope", "uses": ["speak-in-lens"], "interpretationAuthors": ["subject"],
+     "agentInterpretation": "off", "onEnd": "ask",
+     "origin": "declared", "assertedBy": "subject", "recordedAt": "2026-09-15T18:00:00Z",
+     "sensitivity": "special", "categories": ["mental-health"], "synthetic": true}
+  ],
+  "sources": [
+    {"id": "src-01", "sourceKind": "journal-entry", "origin": "declared", "assertedBy": "subject",
+     "recordedAt": "2026-09-29T22:00:00Z",
+     "content": {"locator": {"vaultPath": "vault/2d/2d15b091fa8c73631202a6f058374bdf7a85c43569cdf0bc4e4dbdf234796b7f.md"},
+                 "sha256": "2d15b091fa8c73631202a6f058374bdf7a85c43569cdf0bc4e4dbdf234796b7f",
+                 "mediaType": "text/markdown", "size": 198},
+     "capturedAt": "2026-09-29T21:45:00Z", "authorship": {"author": "subject"}, "contemporaneity": "retrospective",
+     "maxRelease": "index",
+     "summary": {"text": "My note after the group evening.", "authoredBy": "subject",
+                 "recordedAt": "2026-09-29T22:00:00Z", "method": "subject-written"},
+     "retention": {"eraseOnRequest": true}, "sensitivity": "special", "categories": ["mental-health"],
+     "synthetic": true}
+  ],
+  "episodes": [
+    {"id": "ep-01", "origin": "declared", "assertedBy": "subject", "recordedAt": "2026-09-29T22:05:00Z",
+     "title": "Farewell lunch", "occurred": {"start": "2026-08-28", "precision": "day"},
+     "accounts": [
+       {"narrator": "subject", "narratedAt": "2026-09-29T21:45:00Z", "addedAt": "2026-09-29T22:05:00Z",
+        "accountKind": "later-reconstruction",
+        "happened": "At the farewell lunch for my old team I said a quick goodbye and walked to the station.",
+        "experienced": "A lump in my throat; then flat for the rest of the day.",
+        "didOrTried": "Left before the coffee.",
+        "understandingThen": "It was not the place for speeches.",
+        "evidence": [{"source": "src-01", "selector": {"type": "whole"}}]}],
+     "selection": {"selectedBy": "subject", "reason": "subject-chose"},
+     "openQuestions": ["What did I not say?"], "contexts": ["work"], "synthetic": true}
+  ],
+  "claims": [
+    {"id": "c-01", "facet": "identity", "predicate": "self-description",
+     "text": "I use the word 'unfinished' for moments I walked away from without saying what mattered to me.",
+     "origin": "declared", "assertedBy": "subject", "recordedAt": "2026-09-29T22:10:00Z", "horizon": "focus",
+     "synthetic": true}
+  ],
+  "interpretations": [
+    {"id": "in-01", "about": ["ep-01"], "stance": "lens-reading", "lens": {"id": "urn:ohc:lens:gestalt", "version": "0.2.0"},
+     "adoption": "la-01",
+     "question": "What remains unfinished from that lunch, and what would finishing it look like for me?",
+     "epistemic": "frame-relative", "heldDuring": {"from": "2026-09-29"},
+     "origin": "declared", "assertedBy": "subject", "recordedAt": "2026-09-29T22:12:00Z",
+     "sensitivity": "special", "categories": ["mental-health"], "handling": ["no-quote-back", "subject-initiated-only"],
+     "synthetic": true}
+  ],
+  "grants": [
+    {"id": "g-01", "recordedAt": "2026-10-02T09:00:00Z", "grantor": "subject", "grantee": "a-01",
+     "purposes": ["self-reflection"],
+     "scope": {"include": [{"lenses": ["urn:ohc:lens:gestalt"]}, {"ids": ["c-01"]}]},
+     "actions": ["read"], "mode": "summary", "interpretations": "subject-endorsed", "maxSourceTier": "none",
+     "constraints": {"expiresAt": "2027-03-30T09:00:00Z", "storage": "session", "forwarding": false,
+                     "crossContextUse": false, "delegable": false},
+     "basis": {"legal": "explicit-consent"},
+     "expressedBy": {"actor": "subject", "at": "2026-10-02T09:00:00Z", "channel": "holder-ui"},
+     "note": "So you can use my own word when I bring it up. No readings, no exercises."}
+  ]
+}

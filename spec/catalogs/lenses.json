@@ -1,0 +1,274 @@
+{
+  "format": "ohc.catalog",
+  "id": "urn:ohc:catalog:lenses",
+  "version": "0.1.0",
+  "specVersion": "0.1.0-draft",
+  "title": {
+    "en": "Lens catalog index",
+    "ru": "Указатель каталога линз"
+  },
+  "description": {
+    "en": "Index of the 16 lens catalog entries in 0.1 (12 descriptors and 4 stubs). Catalog entries are experimental data; each descriptor carries its own status and `legalReviewNeeded: true`. OHC chooses no lens and never ranks lenses for a person.",
+    "ru": "Указатель 16 записей каталога линз версии 0.1 (12 описаний и 4 заготовки). Записи каталога — экспериментальные данные; у каждого описания свой статус и `legalReviewNeeded: true`. OHC не выбирает линзу и никогда не ранжирует линзы для человека."
+  },
+  "closed": false,
+  "generatesEnum": false,
+  "codes": [
+    {
+      "code": "big-five",
+      "label": {
+        "en": "Big Five (Five-Factor Model)",
+        "ru": "Большая пятёрка (пятифакторная модель)"
+      },
+      "definition": {
+        "en": "Five broad dimensions of relatively stable tendencies, measured by questionnaire and compared with a norm group.",
+        "ru": "Пять широких измерений относительно устойчивых склонностей; измеряются опросником и сравниваются с нормативной группой."
+      },
+      "id": "urn:ohc:lens:big-five",
+      "version": "0.1.0",
+      "kind": "trait-dimensional",
+      "descriptorStatus": "draft",
+      "path": "spec/lenses/big-five.lens.json"
+    },
+    {
+      "code": "ifs",
+      "label": {
+        "en": "Internal Family Systems (as a parts lens)",
+        "ru": "Внутренние семейные системы (как линза частей)"
+      },
+      "definition": {
+        "en": "Describes the mind as several parts with positive intentions and a calm, curious Self that can relate to them.",
+        "ru": "Описывает психику как несколько частей с позитивными намерениями и спокойное, любопытное Я (Self), способное с ними соотноситься."
+      },
+      "id": "urn:ohc:lens:ifs",
+      "version": "0.1.0",
+      "kind": "parts-model",
+      "descriptorStatus": "draft",
+      "path": "spec/lenses/ifs.lens.json"
+    },
+    {
+      "code": "cbt",
+      "label": {
+        "en": "Cognitive-behavioural lens (non-clinical use)",
+        "ru": "Когнитивно-поведенческая линза (неклиническое использование)"
+      },
+      "definition": {
+        "en": "How a situation is interpreted shapes feeling and action; interpretations and expectations can be noticed and tested.",
+        "ru": "То, как истолкована ситуация, влияет на чувства и действия; толкования и ожидания можно заметить и проверить."
+      },
+      "id": "urn:ohc:lens:cbt",
+      "version": "0.1.0",
+      "kind": "practice-method",
+      "descriptorStatus": "draft",
+      "path": "spec/lenses/cbt.lens.json"
+    },
+    {
+      "code": "hexaco",
+      "label": {
+        "en": "HEXACO model of personality structure",
+        "ru": "Модель структуры личности HEXACO"
+      },
+      "definition": {
+        "en": "Six broad dimensions of relatively stable tendencies, including Honesty-Humility, measured by questionnaire and compared with a norm group.",
+        "ru": "Шесть широких измерений относительно устойчивых склонностей, включая честность-скромность; измеряются опросником и сравниваются с нормативной группой."
+      },
+      "id": "urn:ohc:lens:hexaco",
+      "version": "0.1.0",
+      "kind": "trait-dimensional",
+      "descriptorStatus": "draft",
+      "path": "spec/lenses/hexaco.lens.json"
+    },
+    {
+      "code": "jungian-type",
+      "label": {
+        "en": "Jungian psychological type (four preference poles)",
+        "ru": "Юнгианский психологический тип (четыре пары полюсов предпочтений)"
+      },
+      "definition": {
+        "en": "Preferences on four pairs of poles, combined into a type that the person checks by best fit. Genuine MBTI® results are recorded only through their instrument entries.",
+        "ru": "Предпочтения на четырёх парах полюсов, складывающиеся в тип, который человек проверяет по принципу «лучшего соответствия». Подлинные результаты MBTI® записываются только через карточки инструментов."
+      },
+      "id": "urn:ohc:lens:jungian-type",
+      "version": "0.1.0",
+      "kind": "type-categorical",
+      "descriptorStatus": "draft",
+      "path": "spec/lenses/jungian-type.lens.json"
+    },
+    {
+      "code": "enneagram",
+      "label": {
+        "en": "Enneagram (nine motivational patterns)",
+        "ru": "Эннеаграмма (девять мотивационных паттернов)"
+      },
+      "definition": {
+        "en": "Nine motivational patterns, with wings and instinctual variants, used for personal growth rather than measurement.",
+        "ru": "Девять мотивационных паттернов с «крыльями» и инстинктивными вариантами; используется для личностного роста, а не для измерения."
+      },
+      "id": "urn:ohc:lens:enneagram",
+      "version": "0.1.0",
+      "kind": "type-categorical",
+      "descriptorStatus": "draft",
+      "path": "spec/lenses/enneagram.lens.json"
+    },
+    {
+      "code": "via-strengths",
+      "label": {
+        "en": "VIA character strengths (by reference)",
+        "ru": "Сильные стороны характера VIA (по ссылке)"
+      },
+      "definition": {
+        "en": "Character strengths the person uses, ranked within the person. The classification is referenced by URL, not reproduced.",
+        "ru": "Сильные стороны характера, которыми человек пользуется, ранжированные внутри одного человека. Классификация указывается ссылкой, а не воспроизводится."
+      },
+      "id": "urn:ohc:lens:via-strengths",
+      "version": "0.1.0",
+      "kind": "strengths-ranked",
+      "descriptorStatus": "draft",
+      "path": "spec/lenses/via-strengths.lens.json"
+    },
+    {
+      "code": "schwartz-values",
+      "label": {
+        "en": "Schwartz theory of basic human values",
+        "ru": "Теория базовых человеческих ценностей Шварца"
+      },
+      "definition": {
+        "en": "Values arranged on a circular continuum where neighbouring values are compatible and opposite values trade off; scores are centred within the person.",
+        "ru": "Ценности расположены на круговом континууме: соседние совместимы, противоположные конкурируют; баллы центрируются внутри одного человека."
+      },
+      "id": "urn:ohc:lens:schwartz-values",
+      "version": "0.1.0",
+      "kind": "values-circular",
+      "descriptorStatus": "draft",
+      "path": "spec/lenses/schwartz-values.lens.json"
+    },
+    {
+      "code": "attachment-2d",
+      "label": {
+        "en": "Adult attachment (two dimensions)",
+        "ru": "Привязанность у взрослых (два измерения)"
+      },
+      "definition": {
+        "en": "Two dimensions of relating in close relationships, anxiety and avoidance, measured by questionnaire; categories are derived only with a stated rule.",
+        "ru": "Два измерения отношений в близких связях — тревожность и избегание; измеряются опросником; категории выводятся только по явно указанному правилу."
+      },
+      "id": "urn:ohc:lens:attachment-2d",
+      "version": "0.1.0",
+      "kind": "trait-dimensional",
+      "descriptorStatus": "draft",
+      "path": "spec/lenses/attachment-2d.lens.json"
+    },
+    {
+      "code": "needs-grid",
+      "label": {
+        "en": "Needs grid",
+        "ru": "Сетка потребностей"
+      },
+      "definition": {
+        "en": "An organising view, not a theory: the person's claims arranged by wanting, needing and having across three horizons.",
+        "ru": "Упорядочивающее представление, а не теория: утверждения человека, разложенные по «хочу», «нужно» и «есть» на трёх горизонтах."
+      },
+      "id": "urn:ohc:lens:needs-grid",
+      "version": "0.1.0",
+      "kind": "representation",
+      "descriptorStatus": "draft",
+      "path": "spec/lenses/needs-grid.lens.json"
+    },
+    {
+      "code": "astrology",
+      "label": {
+        "en": "Astrology (as a self-description frame)",
+        "ru": "Астрология (как рамка самоописания)"
+      },
+      "definition": {
+        "en": "A symbolic language some people use to describe their experience. In OHC it makes no claim to empirical validity, and its results are frame-relative.",
+        "ru": "Символический язык, которым некоторые люди описывают свой опыт. В OHC он не претендует на эмпирическую обоснованность, а его результаты относятся только к этой рамке."
+      },
+      "id": "urn:ohc:lens:astrology",
+      "version": "0.1.0",
+      "kind": "self-description-frame",
+      "descriptorStatus": "draft",
+      "path": "spec/lenses/astrology.lens.json"
+    },
+    {
+      "code": "human-design",
+      "label": {
+        "en": "Human Design (as a self-description frame)",
+        "ru": "Дизайн человека (как рамка самоописания)"
+      },
+      "definition": {
+        "en": "A symbolic system some people use for self-description. In OHC it makes no claim to empirical validity, and its results are frame-relative.",
+        "ru": "Символическая система, которой некоторые люди пользуются для самоописания. В OHC она не претендует на эмпирическую обоснованность, а её результаты относятся только к этой рамке."
+      },
+      "id": "urn:ohc:lens:human-design",
+      "version": "0.1.0",
+      "kind": "self-description-frame",
+      "descriptorStatus": "draft",
+      "path": "spec/lenses/human-design.lens.json"
+    },
+    {
+      "code": "gestalt",
+      "label": {
+        "en": "Gestalt perspective (stub)",
+        "ru": "Гештальт-подход (заготовка)"
+      },
+      "definition": {
+        "en": "Attends to what remains unfinished in experience and seeks awareness. Listed so that it can be named; not yet described.",
+        "ru": "Внимание к тому, что в опыте осталось незавершённым и ищет осознавания. Включён, чтобы его можно было назвать; описание ещё не составлено."
+      },
+      "id": "urn:ohc:lens:gestalt",
+      "version": "0.1.0",
+      "kind": "process-experiential",
+      "descriptorStatus": "stub",
+      "path": "spec/lenses/gestalt.lens.json"
+    },
+    {
+      "code": "process-work",
+      "label": {
+        "en": "Process-oriented perspective (stub)",
+        "ru": "Процессуальный подход (заготовка)"
+      },
+      "definition": {
+        "en": "Attends to less familiar processes that want to appear in experience. Listed so that it can be named; not yet described.",
+        "ru": "Внимание к менее привычным процессам, которые стремятся проявиться в опыте. Включён, чтобы его можно было назвать; описание ещё не составлено."
+      },
+      "id": "urn:ohc:lens:process-work",
+      "version": "0.1.0",
+      "kind": "process-experiential",
+      "descriptorStatus": "stub",
+      "path": "spec/lenses/process-work.lens.json"
+    },
+    {
+      "code": "contemplative-observation",
+      "label": {
+        "en": "Contemplative observation (stub)",
+        "ru": "Созерцательное наблюдение (заготовка)"
+      },
+      "definition": {
+        "en": "Observing experience without fixing on a stable self. No tradition is named. Listed so that the perspective can be named; not yet described.",
+        "ru": "Наблюдение за опытом без фиксации на устойчивом «я». Никакая традиция не называется. Включено, чтобы перспективу можно было назвать; описание ещё не составлено."
+      },
+      "id": "urn:ohc:lens:contemplative-observation",
+      "version": "0.1.0",
+      "kind": "contemplative",
+      "descriptorStatus": "stub",
+      "path": "spec/lenses/contemplative-observation.lens.json"
+    },
+    {
+      "code": "cognitive-appraisal",
+      "label": {
+        "en": "Cognitive appraisal (stub)",
+        "ru": "Когнитивная оценка (заготовка)"
+      },
+      "definition": {
+        "en": "Considers whether a difficulty could be uncertainty, load or incubation rather than a personal flaw. Listed so that it can be named; not yet described.",
+        "ru": "Рассматривает, не может ли трудность быть неопределённостью, нагрузкой или инкубацией, а не личным недостатком. Включён, чтобы его можно было назвать; описание ещё не составлено."
+      },
+      "id": "urn:ohc:lens:cognitive-appraisal",
+      "version": "0.1.0",
+      "kind": "explanatory-model",
+      "descriptorStatus": "stub",
+      "path": "spec/lenses/cognitive-appraisal.lens.json"
+    }
+  ]
+}

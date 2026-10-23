@@ -1,0 +1,2207 @@
+{
+  "format": "ohc.glossary",
+  "version": "0.1",
+  "specVersion": "0.1.0-draft",
+  "referenceLanguage": "en",
+  "requiredLanguages": [
+    "en",
+    "ru"
+  ],
+  "languagePolicy": "English is the reference language for normative publication. The English definitions are binding for 0.1; the Russian definitions are a draft translation and establish no requirements of their own.",
+  "groups": [
+    {
+      "id": "model",
+      "en": "Data model",
+      "ru": "Модель данных",
+      "status": "draft",
+      "description": {
+        "en": "What a context is made of: the subject, the parties, records and their time axes.",
+        "ru": "Из чего состоит контекст: субъект, участники, записи и их оси времени."
+      }
+    },
+    {
+      "id": "status",
+      "en": "Status",
+      "ru": "Статусы",
+      "status": "draft",
+      "description": {
+        "en": "The separate status axes of a record and the label computed from them.",
+        "ru": "Отдельные оси статуса записи и метка, вычисляемая из них."
+      }
+    },
+    {
+      "id": "disclosure",
+      "en": "Disclosure",
+      "ru": "Раскрытие",
+      "status": "draft",
+      "description": {
+        "en": "How sensitive content is, why it may be used, and what may never be done with it.",
+        "ru": "Насколько чувствительно содержание, зачем его можно использовать и что с ним нельзя делать никогда."
+      }
+    },
+    {
+      "id": "experience",
+      "en": "Experience",
+      "ru": "Опыт",
+      "status": "draft",
+      "description": {
+        "en": "Primary sources, episodes, readings of them, conflicts, practices and the return of one's own experience.",
+        "ru": "Первичные источники, эпизоды, их прочтения, конфликты, практики и возвращение собственного опыта."
+      }
+    },
+    {
+      "id": "lenses",
+      "en": "Lenses",
+      "ru": "Линзы",
+      "status": "draft",
+      "description": {
+        "en": "Frameworks of description, the person's relation to them, and results within them.",
+        "ru": "Системы описания, отношение человека к ним и результаты в их рамках."
+      }
+    },
+    {
+      "id": "governance",
+      "en": "Governance",
+      "ru": "Управление",
+      "status": "draft",
+      "description": {
+        "en": "Permissions, status changes, the log and erasure.",
+        "ru": "Разрешения, изменения статуса, журнал и удаление."
+      }
+    },
+    {
+      "id": "exchange",
+      "en": "Exchange",
+      "ru": "Обмен",
+      "status": "draft",
+      "description": {
+        "en": "What leaves the holder and what comes back to it.",
+        "ru": "Что выходит от держателя и что к нему возвращается."
+      }
+    }
+  ],
+  "sources": [
+    {
+      "title": "ISO 704 — Terminology work: principles and methods",
+      "url": "https://www.iso.org/standard/79077.html"
+    },
+    {
+      "title": "W3C SKOS — concepts and language labels",
+      "url": "https://www.w3.org/TR/skos-reference/"
+    },
+    {
+      "title": "W3C — language tags (BCP 47)",
+      "url": "https://www.w3.org/International/articles/language-tags/"
+    },
+    {
+      "title": "W3C PROV-O — provenance ontology",
+      "url": "https://www.w3.org/TR/prov-o/"
+    },
+    {
+      "title": "W3C Data Privacy Vocabulary (DPV)",
+      "url": "https://w3id.org/dpv"
+    }
+  ],
+  "terms": [
+    {
+      "id": "open-human-context",
+      "group": "model",
+      "status": "draft",
+      "revision": 1,
+      "locales": {
+        "en": {
+          "preferred": "Open Human Context (OHC)",
+          "aliases": [
+            "OHC"
+          ],
+          "definition": "An open, file-based format for a person's context, shared with agents by permission.",
+          "example": "Ilse keeps her OHC context as one JSON file and gives a scheduling agent a grant to read three claims.",
+          "status": "draft",
+          "basedOnRevision": 1,
+          "reviewedRevision": null
+        },
+        "ru": {
+          "preferred": "Open Human Context (OHC)",
+          "aliases": [
+            "OHC"
+          ],
+          "definition": "Открытый файловый формат контекста человека, которым он делится с агентами по разрешению.",
+          "example": "Ильзе хранит свой контекст OHC в одном файле JSON и даёт агенту-планировщику разрешение читать три утверждения.",
+          "status": "draft",
+          "basedOnRevision": 1,
+          "reviewedRevision": null
+        }
+      },
+      "seeAlso": [
+        "context",
+        "grant",
+        "projection"
+      ],
+      "externalMappings": [],
+      "reviewNote": ""
+    },
+    {
+      "id": "tagline",
+      "group": "model",
+      "status": "draft",
+      "revision": 1,
+      "locales": {
+        "en": {
+          "preferred": "tagline",
+          "aliases": [
+            "five clauses"
+          ],
+          "definition": "A person changes. Their goals conflict. Their memory is selective. Their understanding of themselves is revised. Sometimes they lose access to their own ways of coping with what is happening.",
+          "example": "The opening line of the README and the overview, and the five clauses of SPECIFICATION.md §2.1, reuse this wording verbatim.",
+          "status": "draft",
+          "basedOnRevision": 1,
+          "reviewedRevision": null
+        },
+        "ru": {
+          "preferred": "девиз",
+          "aliases": [
+            "пять утверждений"
+          ],
+          "definition": "Человек сам меняется. Его цели противоречивы. Его память избирательна. Его представления о себе пересматриваются. Иногда он теряет доступ к собственным способам справляться с происходящим.",
+          "example": "Первая строка README и обзора и пять утверждений SPECIFICATION.md §2.1 повторяют эту формулировку дословно.",
+          "status": "draft",
+          "basedOnRevision": 1,
+          "reviewedRevision": null
+        }
+      },
+      "seeAlso": [
+        "open-human-context"
+      ],
+      "docs": [
+        "spec/SPECIFICATION.md §2.1",
+        "README.md",
+        "docs/OVERVIEW.md",
+        "docs/OVERVIEW.ru.md"
+      ],
+      "externalMappings": [],
+      "reviewNote": "The Russian text is the original and is reproduced verbatim. The English text is the single canonical provisional rendering until the owner confirms it; every English page reuses it unchanged, including its last clause."
+    },
+    {
+      "id": "context",
+      "group": "model",
+      "status": "draft",
+      "revision": 1,
+      "locales": {
+        "en": {
+          "preferred": "context",
+          "aliases": [],
+          "definition": "The set of records about one person, with their origins and permissions.",
+          "example": "Noa's context holds her goals, three accounts of one episode and two grants.",
+          "status": "draft",
+          "basedOnRevision": 1,
+          "reviewedRevision": null
+        },
+        "ru": {
+          "preferred": "контекст",
+          "aliases": [],
+          "definition": "Совокупность записей об одном человеке вместе с их происхождением и разрешениями.",
+          "example": "Контекст Ноа содержит её цели, три рассказа об одном эпизоде и два разрешения.",
+          "status": "draft",
+          "basedOnRevision": 1,
+          "reviewedRevision": null
+        }
+      },
+      "modelKinds": [
+        "Context"
+      ],
+      "seeAlso": [
+        "subject",
+        "record",
+        "holder"
+      ],
+      "externalMappings": [],
+      "reviewNote": ""
+    },
+    {
+      "id": "subject",
+      "group": "model",
+      "status": "draft",
+      "revision": 1,
+      "locales": {
+        "en": {
+          "preferred": "subject",
+          "aliases": [
+            "the person"
+          ],
+          "definition": "The person a context is about.",
+          "example": "In Kofi's context the subject is Kofi; agents refer to him only by a pairwise alias.",
+          "status": "draft",
+          "basedOnRevision": 1,
+          "reviewedRevision": null
+        },
+        "ru": {
+          "preferred": "субъект",
+          "aliases": [
+            "человек"
+          ],
+          "definition": "Человек, о котором контекст.",
+          "example": "В контексте Кофи субъект — сам Кофи; агенты обращаются к нему только по парному псевдониму.",
+          "status": "draft",
+          "basedOnRevision": 1,
+          "reviewedRevision": null
+        }
+      },
+      "modelKinds": [
+        "Subject"
+      ],
+      "seeAlso": [
+        "context",
+        "pairwise-alias"
+      ],
+      "externalMappings": [],
+      "reviewNote": ""
+    },
+    {
+      "id": "holder",
+      "group": "model",
+      "status": "draft",
+      "revision": 1,
+      "locales": {
+        "en": {
+          "preferred": "holder",
+          "aliases": [],
+          "definition": "Whoever keeps the context and serves projections.",
+          "example": "Noa is her own holder; a personal agent could also act as holder under her policy.",
+          "status": "draft",
+          "basedOnRevision": 1,
+          "reviewedRevision": null
+        },
+        "ru": {
+          "preferred": "держатель",
+          "aliases": [],
+          "definition": "Тот, кто хранит контекст и выдаёт проекции.",
+          "example": "Ноа сама держатель своего контекста; держателем по её правилам мог бы быть и личный агент.",
+          "status": "draft",
+          "basedOnRevision": 1,
+          "reviewedRevision": null
+        }
+      },
+      "seeAlso": [
+        "projection",
+        "grant"
+      ],
+      "externalMappings": [],
+      "reviewNote": ""
+    },
+    {
+      "id": "party",
+      "group": "model",
+      "status": "draft",
+      "revision": 1,
+      "locales": {
+        "en": {
+          "preferred": "party",
+          "aliases": [],
+          "definition": "Anyone other than the subject who asserts, narrates, receives or appears.",
+          "example": "The supplier contact, the coach and the work assistant are parties in Noa's context, labelled by role.",
+          "status": "draft",
+          "basedOnRevision": 1,
+          "reviewedRevision": null
+        },
+        "ru": {
+          "preferred": "участник",
+          "aliases": [],
+          "definition": "Любой, кроме субъекта, кто высказывается, рассказывает, получает данные или фигурирует в контексте.",
+          "example": "Контактное лицо поставщика, коуч и рабочий помощник — участники в контексте Ноа, обозначенные по ролям.",
+          "status": "draft",
+          "basedOnRevision": 1,
+          "reviewedRevision": null
+        }
+      },
+      "modelKinds": [
+        "Party"
+      ],
+      "seeAlso": [
+        "subject",
+        "steward"
+      ],
+      "externalMappings": [],
+      "reviewNote": ""
+    },
+    {
+      "id": "steward",
+      "group": "governance",
+      "status": "draft",
+      "revision": 1,
+      "locales": {
+        "en": {
+          "preferred": "steward",
+          "aliases": [],
+          "definition": "A party the person authorised to act within an explicit scope.",
+          "example": "A steward may confirm Ilse's scheduling preferences while she travels, but never touches special records.",
+          "status": "draft",
+          "basedOnRevision": 1,
+          "reviewedRevision": null
+        },
+        "ru": {
+          "preferred": "доверенное лицо",
+          "aliases": [],
+          "definition": "Участник, которому человек поручил действовать в явно очерченных пределах.",
+          "example": "Доверенное лицо может подтверждать предпочтения Ильзе по расписанию, пока она в поездке, но никогда не касается особых записей.",
+          "status": "draft",
+          "basedOnRevision": 1,
+          "reviewedRevision": null
+        }
+      },
+      "seeAlso": [
+        "party",
+        "review"
+      ],
+      "externalMappings": [],
+      "reviewNote": ""
+    },
+    {
+      "id": "record",
+      "group": "model",
+      "status": "draft",
+      "revision": 1,
+      "locales": {
+        "en": {
+          "preferred": "record",
+          "aliases": [],
+          "definition": "One immutable unit of a context.",
+          "example": "A change to a claim is a new record that supersedes the old one; the old record stays in history.",
+          "status": "draft",
+          "basedOnRevision": 1,
+          "reviewedRevision": null
+        },
+        "ru": {
+          "preferred": "запись",
+          "aliases": [],
+          "definition": "Одна неизменяемая единица контекста.",
+          "example": "Изменение утверждения — новая запись, заменяющая старую; старая остаётся в истории.",
+          "status": "draft",
+          "basedOnRevision": 1,
+          "reviewedRevision": null
+        }
+      },
+      "seeAlso": [
+        "claim",
+        "review",
+        "tombstone"
+      ],
+      "externalMappings": [],
+      "reviewNote": ""
+    },
+    {
+      "id": "claim",
+      "group": "model",
+      "status": "draft",
+      "revision": 1,
+      "locales": {
+        "en": {
+          "preferred": "claim",
+          "aliases": [],
+          "definition": "A statement about the person.",
+          "example": "\"No work messages after 19:00 on weekdays\" is one of Ilse's claims, with facet boundary.",
+          "status": "draft",
+          "basedOnRevision": 1,
+          "reviewedRevision": null
+        },
+        "ru": {
+          "preferred": "утверждение",
+          "aliases": [],
+          "definition": "Утверждение о человеке.",
+          "example": "«Никаких рабочих сообщений после 19:00 в будни» — одно из утверждений Ильзе с гранью boundary.",
+          "status": "draft",
+          "basedOnRevision": 1,
+          "reviewedRevision": null
+        }
+      },
+      "modelKinds": [
+        "Claim"
+      ],
+      "seeAlso": [
+        "facet",
+        "horizon",
+        "absence"
+      ],
+      "externalMappings": [],
+      "reviewNote": ""
+    },
+    {
+      "id": "facet",
+      "group": "model",
+      "status": "draft",
+      "revision": 1,
+      "locales": {
+        "en": {
+          "preferred": "facet",
+          "aliases": [],
+          "definition": "The kind of statement a claim makes.",
+          "example": "goal, boundary, preference and state are facets.",
+          "status": "draft",
+          "basedOnRevision": 1,
+          "reviewedRevision": null
+        },
+        "ru": {
+          "preferred": "грань",
+          "aliases": [],
+          "definition": "Род высказывания, которое делает утверждение.",
+          "example": "goal, boundary, preference и state — грани.",
+          "status": "draft",
+          "basedOnRevision": 1,
+          "reviewedRevision": null
+        }
+      },
+      "modelKinds": [
+        "Claim"
+      ],
+      "seeAlso": [
+        "claim",
+        "predicate"
+      ],
+      "externalMappings": [],
+      "reviewNote": ""
+    },
+    {
+      "id": "predicate",
+      "group": "model",
+      "status": "draft",
+      "revision": 1,
+      "locales": {
+        "en": {
+          "preferred": "predicate",
+          "aliases": [],
+          "definition": "A finer code within a facet.",
+          "example": "time-window refines the facet boundary in Ilse's evening rule.",
+          "status": "draft",
+          "basedOnRevision": 1,
+          "reviewedRevision": null
+        },
+        "ru": {
+          "preferred": "уточнение грани",
+          "aliases": [],
+          "definition": "Более узкий код внутри грани.",
+          "example": "time-window уточняет грань boundary в вечернем правиле Ильзе.",
+          "status": "draft",
+          "basedOnRevision": 1,
+          "reviewedRevision": null
+        }
+      },
+      "modelKinds": [
+        "Claim"
+      ],
+      "seeAlso": [
+        "facet"
+      ],
+      "externalMappings": [],
+      "reviewNote": ""
+    },
+    {
+      "id": "horizon",
+      "group": "model",
+      "status": "draft",
+      "revision": 1,
+      "locales": {
+        "en": {
+          "preferred": "horizon",
+          "aliases": [],
+          "definition": "How fast a claim's content changes: foundation, focus, state.",
+          "example": "\"Travelling; slow replies\" has horizon state and a validity interval of four days.",
+          "status": "draft",
+          "basedOnRevision": 1,
+          "reviewedRevision": null
+        },
+        "ru": {
+          "preferred": "горизонт",
+          "aliases": [],
+          "definition": "Как быстро меняется содержание утверждения: основа, фокус, состояние.",
+          "example": "«В поездке; отвечаю медленно» имеет горизонт state и интервал действия в четыре дня.",
+          "status": "draft",
+          "basedOnRevision": 1,
+          "reviewedRevision": null
+        }
+      },
+      "modelKinds": [
+        "Claim"
+      ],
+      "seeAlso": [
+        "freshness",
+        "claim"
+      ],
+      "externalMappings": [],
+      "reviewNote": ""
+    },
+    {
+      "id": "absence",
+      "group": "model",
+      "status": "draft",
+      "revision": 1,
+      "locales": {
+        "en": {
+          "preferred": "absence",
+          "aliases": [
+            "absence code"
+          ],
+          "definition": "An explicit \"no value\", with its reason.",
+          "example": "Ilse records a career goal for 2027 as absent, code not-chosen, intentionally.",
+          "status": "draft",
+          "basedOnRevision": 1,
+          "reviewedRevision": null
+        },
+        "ru": {
+          "preferred": "отсутствие",
+          "aliases": [
+            "код отсутствия"
+          ],
+          "definition": "Явное «нет значения» с указанием причины.",
+          "example": "Ильзе записывает карьерную цель на 2027 год как отсутствующую — код not-chosen, намеренно.",
+          "status": "draft",
+          "basedOnRevision": 1,
+          "reviewedRevision": null
+        }
+      },
+      "modelKinds": [
+        "Claim"
+      ],
+      "seeAlso": [
+        "claim"
+      ],
+      "externalMappings": [],
+      "reviewNote": ""
+    },
+    {
+      "id": "origin",
+      "group": "status",
+      "status": "draft",
+      "revision": 1,
+      "locales": {
+        "en": {
+          "preferred": "origin",
+          "aliases": [],
+          "definition": "How content came to be: declared, observed, inferred, derived, imported, attested.",
+          "example": "Noa's goal is declared; the companion's guess about her calendar habits is inferred.",
+          "status": "draft",
+          "basedOnRevision": 1,
+          "reviewedRevision": null
+        },
+        "ru": {
+          "preferred": "происхождение",
+          "aliases": [],
+          "definition": "Как появилось содержание: заявлено, наблюдено, выведено, вычислено, импортировано, удостоверено.",
+          "example": "Цель Ноа заявлена ею самой; догадка помощника о её привычках в календаре — выведена.",
+          "status": "draft",
+          "basedOnRevision": 1,
+          "reviewedRevision": null
+        }
+      },
+      "seeAlso": [
+        "epistemic-status",
+        "derived-label"
+      ],
+      "externalMappings": [
+        {
+          "relation": "conceptual-reference",
+          "label": "W3C Data Privacy Vocabulary (DPV): data sources",
+          "url": "https://w3id.org/dpv",
+          "note": "Origin codes align with DPV's provided, observed, inferred, derived and collected data concepts (informative)."
+        }
+      ],
+      "reviewNote": ""
+    },
+    {
+      "id": "endorsement",
+      "group": "status",
+      "status": "draft",
+      "revision": 1,
+      "locales": {
+        "en": {
+          "preferred": "endorsement",
+          "aliases": [],
+          "definition": "The person's stance on a record.",
+          "example": "Noa partly endorsed an agent's reading, in her own words.",
+          "status": "draft",
+          "basedOnRevision": 1,
+          "reviewedRevision": null
+        },
+        "ru": {
+          "preferred": "позиция человека",
+          "aliases": [],
+          "definition": "Позиция человека по отношению к записи.",
+          "example": "Ноа частично подтвердила прочтение агента — своими словами.",
+          "status": "draft",
+          "basedOnRevision": 1,
+          "reviewedRevision": null
+        }
+      },
+      "modelKinds": [
+        "Review"
+      ],
+      "seeAlso": [
+        "contest",
+        "review"
+      ],
+      "externalMappings": [],
+      "reviewNote": ""
+    },
+    {
+      "id": "contest",
+      "group": "status",
+      "status": "draft",
+      "revision": 1,
+      "locales": {
+        "en": {
+          "preferred": "contest",
+          "aliases": [
+            "contested"
+          ],
+          "definition": "An open dispute by the person; the record and its evidence stay.",
+          "example": "Noa contests the inferred claim that she moves calls by weekday; the calendar evidence is kept.",
+          "status": "draft",
+          "basedOnRevision": 1,
+          "reviewedRevision": null
+        },
+        "ru": {
+          "preferred": "оспаривание",
+          "aliases": [
+            "оспорено"
+          ],
+          "definition": "Открытое несогласие человека; запись и её свидетельства остаются.",
+          "example": "Ноа оспаривает выведенное утверждение, будто она переносит звонки по дням недели; данные календаря сохраняются.",
+          "status": "draft",
+          "basedOnRevision": 1,
+          "reviewedRevision": null
+        }
+      },
+      "modelKinds": [
+        "Review"
+      ],
+      "seeAlso": [
+        "endorsement"
+      ],
+      "externalMappings": [],
+      "reviewNote": ""
+    },
+    {
+      "id": "epistemic-status",
+      "group": "status",
+      "status": "draft",
+      "revision": 1,
+      "locales": {
+        "en": {
+          "preferred": "epistemic status",
+          "aliases": [],
+          "definition": "How well a record is supported.",
+          "example": "An agent's reading starts as hypothesis; an astrology result is frame-relative.",
+          "status": "draft",
+          "basedOnRevision": 1,
+          "reviewedRevision": null
+        },
+        "ru": {
+          "preferred": "эпистемический статус",
+          "aliases": [],
+          "definition": "Насколько запись опирается на основания.",
+          "example": "Прочтение агента начинается как гипотеза; результат астрологии — в рамках системы описания.",
+          "status": "draft",
+          "basedOnRevision": 1,
+          "reviewedRevision": null
+        }
+      },
+      "seeAlso": [
+        "origin"
+      ],
+      "externalMappings": [],
+      "reviewNote": ""
+    },
+    {
+      "id": "admission",
+      "group": "status",
+      "status": "draft",
+      "revision": 1,
+      "locales": {
+        "en": {
+          "preferred": "admission",
+          "aliases": [],
+          "definition": "Whether a record is part of the active context.",
+          "example": "A proposal Kofi never answered expired; its items are computed declined.",
+          "status": "draft",
+          "basedOnRevision": 1,
+          "reviewedRevision": null
+        },
+        "ru": {
+          "preferred": "принятие в контекст",
+          "aliases": [],
+          "definition": "Входит ли запись в действующий контекст.",
+          "example": "Предложение, на которое Кофи не ответил, истекло; его пункты считаются непринятыми.",
+          "status": "draft",
+          "basedOnRevision": 1,
+          "reviewedRevision": null
+        }
+      },
+      "modelKinds": [
+        "Review",
+        "Proposal"
+      ],
+      "seeAlso": [
+        "proposal",
+        "review"
+      ],
+      "externalMappings": [],
+      "reviewNote": ""
+    },
+    {
+      "id": "freshness",
+      "group": "status",
+      "status": "draft",
+      "revision": 1,
+      "locales": {
+        "en": {
+          "preferred": "freshness",
+          "aliases": [],
+          "definition": "Whether content may be used as current; computed at use.",
+          "example": "Ilse's travel state expires on 13 October; after that it is not used as current.",
+          "status": "draft",
+          "basedOnRevision": 1,
+          "reviewedRevision": null
+        },
+        "ru": {
+          "preferred": "свежесть",
+          "aliases": [],
+          "definition": "Можно ли использовать содержание как актуальное; вычисляется в момент использования.",
+          "example": "Состояние Ильзе «в поездке» устаревает 13 октября; после этого оно не используется как актуальное.",
+          "status": "draft",
+          "basedOnRevision": 1,
+          "reviewedRevision": null
+        }
+      },
+      "seeAlso": [
+        "horizon",
+        "derived-label"
+      ],
+      "externalMappings": [],
+      "reviewNote": ""
+    },
+    {
+      "id": "derived-label",
+      "group": "status",
+      "status": "draft",
+      "revision": 1,
+      "locales": {
+        "en": {
+          "preferred": "derived label",
+          "aliases": [
+            "label"
+          ],
+          "definition": "A display label computed from the status axes.",
+          "example": "A contested record is shown as \"disputed\" with a glyph, never by colour alone.",
+          "status": "draft",
+          "basedOnRevision": 1,
+          "reviewedRevision": null
+        },
+        "ru": {
+          "preferred": "производная метка",
+          "aliases": [
+            "метка"
+          ],
+          "definition": "Метка для показа, вычисленная из осей статуса.",
+          "example": "Оспоренная запись показывается как «оспорено» со значком, а не только цветом.",
+          "status": "draft",
+          "basedOnRevision": 1,
+          "reviewedRevision": null
+        }
+      },
+      "seeAlso": [
+        "origin",
+        "endorsement",
+        "freshness"
+      ],
+      "externalMappings": [],
+      "reviewNote": ""
+    },
+    {
+      "id": "sensitivity-tier",
+      "group": "disclosure",
+      "status": "draft",
+      "revision": 1,
+      "locales": {
+        "en": {
+          "preferred": "sensitivity tier",
+          "aliases": [
+            "tier"
+          ],
+          "definition": "ordinary, personal, sensitive, special.",
+          "example": "Noa's episodes are sensitive by default; her assessment results are special.",
+          "status": "draft",
+          "basedOnRevision": 1,
+          "reviewedRevision": null
+        },
+        "ru": {
+          "preferred": "уровень чувствительности",
+          "aliases": [
+            "уровень"
+          ],
+          "definition": "Обычный, личный, чувствительный, особый.",
+          "example": "Эпизоды Ноа по умолчанию чувствительные; результаты её оценок — особые.",
+          "status": "draft",
+          "basedOnRevision": 1,
+          "reviewedRevision": null
+        }
+      },
+      "seeAlso": [
+        "special-category"
+      ],
+      "externalMappings": [],
+      "reviewNote": ""
+    },
+    {
+      "id": "special-category",
+      "group": "disclosure",
+      "status": "draft",
+      "revision": 1,
+      "locales": {
+        "en": {
+          "preferred": "special category",
+          "aliases": [],
+          "definition": "Content treated with the strictest regime.",
+          "example": "A lens reading is treated as special category and reaches a grantee only when named by id, category or lens under explicit consent.",
+          "status": "draft",
+          "basedOnRevision": 1,
+          "reviewedRevision": null
+        },
+        "ru": {
+          "preferred": "особая категория",
+          "aliases": [],
+          "definition": "Содержание, к которому применяется самый строгий режим.",
+          "example": "Прочтение через линзу рассматривается как особая категория и доходит до получателя, только если названо по идентификатору, категории или линзе при явном согласии.",
+          "status": "draft",
+          "basedOnRevision": 1,
+          "reviewedRevision": null
+        }
+      },
+      "seeAlso": [
+        "sensitivity-tier"
+      ],
+      "externalMappings": [],
+      "reviewNote": ""
+    },
+    {
+      "id": "handling-restriction",
+      "group": "disclosure",
+      "status": "draft",
+      "revision": 2,
+      "locales": {
+        "en": {
+          "preferred": "handling restriction",
+          "aliases": [
+            "handling code"
+          ],
+          "definition": "An obligation that travels with a record.",
+          "example": "A Part carries person-only: it is never served to any grantee. A reading carries no-quote-back: an agent never cites it to the person as proof.",
+          "status": "draft",
+          "basedOnRevision": 2,
+          "reviewedRevision": null
+        },
+        "ru": {
+          "preferred": "ограничение обращения",
+          "aliases": [
+            "код обращения"
+          ],
+          "definition": "Обязательство, которое следует за записью.",
+          "example": "Внутренняя часть имеет ограничение person-only: она никогда не показывается ни одному получателю. Прочтение с ограничением no-quote-back агент никогда не предъявляет человеку как доказательство.",
+          "status": "draft",
+          "basedOnRevision": 2,
+          "reviewedRevision": null
+        }
+      },
+      "seeAlso": [
+        "sensitivity-tier"
+      ],
+      "externalMappings": [],
+      "reviewNote": ""
+    },
+    {
+      "id": "purpose",
+      "group": "disclosure",
+      "status": "draft",
+      "revision": 1,
+      "locales": {
+        "en": {
+          "preferred": "purpose",
+          "aliases": [],
+          "definition": "Why content may be used.",
+          "example": "The work assistant may use Noa's boundaries only for scheduling and work collaboration.",
+          "status": "draft",
+          "basedOnRevision": 1,
+          "reviewedRevision": null
+        },
+        "ru": {
+          "preferred": "цель обработки",
+          "aliases": [],
+          "definition": "Зачем может использоваться содержание.",
+          "example": "Рабочий помощник может использовать границы Ноа только для планирования времени и совместной работы.",
+          "status": "draft",
+          "basedOnRevision": 1,
+          "reviewedRevision": null
+        }
+      },
+      "modelKinds": [
+        "Grant"
+      ],
+      "seeAlso": [
+        "grant",
+        "prohibited-purpose"
+      ],
+      "externalMappings": [
+        {
+          "relation": "conceptual-reference",
+          "label": "W3C Data Privacy Vocabulary (DPV): purposes",
+          "url": "https://w3id.org/dpv",
+          "note": "Purpose codes have candidate DPV concepts (informative)."
+        }
+      ],
+      "reviewNote": ""
+    },
+    {
+      "id": "prohibited-purpose",
+      "group": "disclosure",
+      "status": "draft",
+      "revision": 1,
+      "locales": {
+        "en": {
+          "preferred": "prohibited purpose",
+          "aliases": [],
+          "definition": "A use no grant can authorise.",
+          "example": "No grant lets an employer use Kofi's personality results for personnel selection.",
+          "status": "draft",
+          "basedOnRevision": 1,
+          "reviewedRevision": null
+        },
+        "ru": {
+          "preferred": "запрещённая цель",
+          "aliases": [],
+          "definition": "Использование, которое не может разрешить никакое разрешение.",
+          "example": "Никакое разрешение не позволит работодателю использовать результаты оценки личности Кофи для отбора персонала.",
+          "status": "draft",
+          "basedOnRevision": 1,
+          "reviewedRevision": null
+        }
+      },
+      "seeAlso": [
+        "purpose"
+      ],
+      "externalMappings": [],
+      "reviewNote": ""
+    },
+    {
+      "id": "evidence",
+      "group": "experience",
+      "status": "draft",
+      "revision": 1,
+      "locales": {
+        "en": {
+          "preferred": "evidence",
+          "aliases": [
+            "ground"
+          ],
+          "definition": "What supports a record.",
+          "example": "The calendar export is evidence for the account that the call was moved.",
+          "status": "draft",
+          "basedOnRevision": 1,
+          "reviewedRevision": null
+        },
+        "ru": {
+          "preferred": "свидетельство",
+          "aliases": [
+            "основание"
+          ],
+          "definition": "То, на что опирается запись.",
+          "example": "Выгрузка календаря — свидетельство для рассказа о том, что звонок перенесли.",
+          "status": "draft",
+          "basedOnRevision": 1,
+          "reviewedRevision": null
+        }
+      },
+      "seeAlso": [
+        "source",
+        "span"
+      ],
+      "externalMappings": [
+        {
+          "relation": "conceptual-reference",
+          "label": "W3C PROV-O",
+          "url": "https://www.w3.org/TR/prov-o/",
+          "note": "Evidence and grounds correspond to prov:wasDerivedFrom (informative)."
+        }
+      ],
+      "reviewNote": ""
+    },
+    {
+      "id": "source",
+      "group": "experience",
+      "status": "draft",
+      "revision": 1,
+      "locales": {
+        "en": {
+          "preferred": "source",
+          "aliases": [],
+          "definition": "Primary material, referenced by hash.",
+          "example": "Noa's evening journal note is a Source; its bytes live in the vault.",
+          "status": "draft",
+          "basedOnRevision": 1,
+          "reviewedRevision": null
+        },
+        "ru": {
+          "preferred": "первичный источник",
+          "aliases": [],
+          "definition": "Первичный материал, на который ссылаются по хешу.",
+          "example": "Вечерняя дневниковая запись Ноа — первичный источник; её содержимое хранится в хранилище.",
+          "status": "draft",
+          "basedOnRevision": 1,
+          "reviewedRevision": null
+        }
+      },
+      "modelKinds": [
+        "Source"
+      ],
+      "seeAlso": [
+        "vault",
+        "span",
+        "release-tier"
+      ],
+      "externalMappings": [],
+      "reviewNote": ""
+    },
+    {
+      "id": "vault",
+      "group": "experience",
+      "status": "draft",
+      "revision": 1,
+      "locales": {
+        "en": {
+          "preferred": "vault",
+          "aliases": [],
+          "definition": "Where primary material lives.",
+          "example": "Each vault object is named by its sha256 and may be encrypted under its own key.",
+          "status": "draft",
+          "basedOnRevision": 1,
+          "reviewedRevision": null
+        },
+        "ru": {
+          "preferred": "хранилище источников",
+          "aliases": [],
+          "definition": "Место, где хранится первичный материал.",
+          "example": "Каждый объект хранилища назван по своему sha256 и может быть зашифрован собственным ключом.",
+          "status": "draft",
+          "basedOnRevision": 1,
+          "reviewedRevision": null
+        }
+      },
+      "seeAlso": [
+        "source"
+      ],
+      "externalMappings": [],
+      "reviewNote": ""
+    },
+    {
+      "id": "span",
+      "group": "experience",
+      "status": "draft",
+      "revision": 1,
+      "locales": {
+        "en": {
+          "preferred": "span",
+          "aliases": [],
+          "definition": "A selected part of a source.",
+          "example": "A reading cites characters 120 to 260 of Noa's journal note, not a copy of the text.",
+          "status": "draft",
+          "basedOnRevision": 1,
+          "reviewedRevision": null
+        },
+        "ru": {
+          "preferred": "фрагмент источника",
+          "aliases": [],
+          "definition": "Выделенная часть источника.",
+          "example": "Прочтение ссылается на символы со 120 по 260 дневниковой записи Ноа, а не на копию текста.",
+          "status": "draft",
+          "basedOnRevision": 1,
+          "reviewedRevision": null
+        }
+      },
+      "seeAlso": [
+        "source",
+        "evidence"
+      ],
+      "externalMappings": [
+        {
+          "relation": "conceptual-reference",
+          "label": "W3C Web Annotation Data Model: selectors",
+          "url": "https://www.w3.org/TR/annotation-model/",
+          "note": "Span selectors are modelled on Web Annotation selectors."
+        }
+      ],
+      "reviewNote": ""
+    },
+    {
+      "id": "release-tier",
+      "group": "disclosure",
+      "status": "draft",
+      "revision": 1,
+      "locales": {
+        "en": {
+          "preferred": "release tier",
+          "aliases": [],
+          "definition": "How much of a source a grantee may see.",
+          "example": "The coach's notes are released only at the index tier.",
+          "status": "draft",
+          "basedOnRevision": 1,
+          "reviewedRevision": null
+        },
+        "ru": {
+          "preferred": "уровень раскрытия",
+          "aliases": [],
+          "definition": "Сколько из источника может увидеть получатель.",
+          "example": "Заметки коуча раскрываются только на уровне указателя.",
+          "status": "draft",
+          "basedOnRevision": 1,
+          "reviewedRevision": null
+        }
+      },
+      "modelKinds": [
+        "Source"
+      ],
+      "seeAlso": [
+        "source",
+        "step-up"
+      ],
+      "externalMappings": [],
+      "reviewNote": ""
+    },
+    {
+      "id": "step-up",
+      "group": "governance",
+      "status": "draft",
+      "revision": 1,
+      "locales": {
+        "en": {
+          "preferred": "step-up",
+          "aliases": [],
+          "definition": "A fresh, out-of-band confirmation by the person for verbatim access.",
+          "example": "Before the companion reads Noa's note verbatim, Noa confirms in her holder app; no answer in ten minutes means no.",
+          "status": "draft",
+          "basedOnRevision": 1,
+          "reviewedRevision": null
+        },
+        "ru": {
+          "preferred": "усиленное подтверждение",
+          "aliases": [],
+          "definition": "Свежее подтверждение человека по отдельному каналу для дословного доступа.",
+          "example": "Прежде чем помощник прочитает запись Ноа дословно, Ноа подтверждает это в приложении держателя; нет ответа за десять минут — значит нет.",
+          "status": "draft",
+          "basedOnRevision": 1,
+          "reviewedRevision": null
+        }
+      },
+      "modelKinds": [
+        "Event"
+      ],
+      "seeAlso": [
+        "release-tier",
+        "grant"
+      ],
+      "externalMappings": [],
+      "reviewNote": ""
+    },
+    {
+      "id": "episode",
+      "group": "experience",
+      "status": "draft",
+      "revision": 1,
+      "locales": {
+        "en": {
+          "preferred": "episode",
+          "aliases": [],
+          "definition": "One occurrence in the person's life.",
+          "example": "The first postponed supplier call is one Episode with three accounts.",
+          "status": "draft",
+          "basedOnRevision": 1,
+          "reviewedRevision": null
+        },
+        "ru": {
+          "preferred": "эпизод",
+          "aliases": [],
+          "definition": "Одно событие в жизни человека.",
+          "example": "Первый перенесённый звонок поставщику — один эпизод с тремя рассказами.",
+          "status": "draft",
+          "basedOnRevision": 1,
+          "reviewedRevision": null
+        }
+      },
+      "modelKinds": [
+        "Episode"
+      ],
+      "seeAlso": [
+        "account",
+        "interpretation"
+      ],
+      "externalMappings": [],
+      "reviewNote": ""
+    },
+    {
+      "id": "account",
+      "group": "experience",
+      "status": "draft",
+      "revision": 1,
+      "locales": {
+        "en": {
+          "preferred": "account",
+          "aliases": [],
+          "definition": "One dated, attributed telling of an episode.",
+          "example": "Noa's note on the evening, the calendar entry and her later reconstruction are three accounts of one episode.",
+          "status": "draft",
+          "basedOnRevision": 1,
+          "reviewedRevision": null
+        },
+        "ru": {
+          "preferred": "рассказ об эпизоде",
+          "aliases": [],
+          "definition": "Один датированный рассказ об эпизоде с указанием рассказчика.",
+          "example": "Вечерняя запись Ноа, запись календаря и её поздняя реконструкция — три рассказа об одном эпизоде.",
+          "status": "draft",
+          "basedOnRevision": 1,
+          "reviewedRevision": null
+        }
+      },
+      "modelKinds": [
+        "Episode"
+      ],
+      "seeAlso": [
+        "episode"
+      ],
+      "externalMappings": [],
+      "reviewNote": ""
+    },
+    {
+      "id": "interpretation",
+      "group": "experience",
+      "status": "draft",
+      "revision": 1,
+      "locales": {
+        "en": {
+          "preferred": "interpretation",
+          "aliases": [
+            "reading"
+          ],
+          "definition": "A reading of experience by a named author.",
+          "example": "In September Noa revised her reading: she postponed when she had no walk-away number.",
+          "status": "draft",
+          "basedOnRevision": 1,
+          "reviewedRevision": null
+        },
+        "ru": {
+          "preferred": "интерпретация",
+          "aliases": [
+            "прочтение"
+          ],
+          "definition": "Прочтение опыта названным автором.",
+          "example": "В сентябре Ноа пересмотрела своё прочтение: она откладывала, когда у неё не было цены отказа от сделки.",
+          "status": "draft",
+          "basedOnRevision": 1,
+          "reviewedRevision": null
+        }
+      },
+      "modelKinds": [
+        "Interpretation"
+      ],
+      "seeAlso": [
+        "episode",
+        "model-view"
+      ],
+      "externalMappings": [],
+      "reviewNote": ""
+    },
+    {
+      "id": "model-view",
+      "group": "lenses",
+      "status": "draft",
+      "revision": 1,
+      "locales": {
+        "en": {
+          "preferred": "model view",
+          "aliases": [],
+          "definition": "One model's set of hypotheses over episodes.",
+          "example": "A cognitive-behavioural view over two episodes groups one agent reading with its limits and alternatives.",
+          "status": "draft",
+          "basedOnRevision": 1,
+          "reviewedRevision": null
+        },
+        "ru": {
+          "preferred": "взгляд модели",
+          "aliases": [],
+          "definition": "Набор гипотез одной модели об эпизодах.",
+          "example": "Когнитивно-поведенческий взгляд на два эпизода объединяет одно прочтение агента с его ограничениями и альтернативами.",
+          "status": "draft",
+          "basedOnRevision": 1,
+          "reviewedRevision": null
+        }
+      },
+      "modelKinds": [
+        "ModelView"
+      ],
+      "seeAlso": [
+        "interpretation",
+        "lens"
+      ],
+      "externalMappings": [],
+      "reviewNote": ""
+    },
+    {
+      "id": "tension",
+      "group": "experience",
+      "status": "draft",
+      "revision": 1,
+      "locales": {
+        "en": {
+          "preferred": "tension",
+          "aliases": [],
+          "definition": "A conflict that matters, with who decides.",
+          "example": "Keeping a long supplier relationship warm pulls against cutting costs; Noa decides.",
+          "status": "draft",
+          "basedOnRevision": 1,
+          "reviewedRevision": null
+        },
+        "ru": {
+          "preferred": "напряжение",
+          "aliases": [],
+          "definition": "Значимый конфликт с указанием, кто решает.",
+          "example": "Сохранить тёплые отношения с давним поставщиком мешает задача сократить расходы; решает Ноа.",
+          "status": "draft",
+          "basedOnRevision": 1,
+          "reviewedRevision": null
+        }
+      },
+      "modelKinds": [
+        "Tension"
+      ],
+      "seeAlso": [
+        "claim"
+      ],
+      "externalMappings": [],
+      "reviewNote": ""
+    },
+    {
+      "id": "pattern",
+      "group": "experience",
+      "status": "draft",
+      "revision": 1,
+      "locales": {
+        "en": {
+          "preferred": "pattern",
+          "aliases": [],
+          "definition": "A recurrence across at least two episodes.",
+          "example": "Noa notices that calls were moved when no walk-away number was written down.",
+          "status": "draft",
+          "basedOnRevision": 1,
+          "reviewedRevision": null
+        },
+        "ru": {
+          "preferred": "паттерн",
+          "aliases": [],
+          "definition": "Повторение минимум в двух эпизодах.",
+          "example": "Ноа замечает, что звонки переносились, когда цена отказа от сделки не была записана.",
+          "status": "draft",
+          "basedOnRevision": 1,
+          "reviewedRevision": null
+        }
+      },
+      "modelKinds": [
+        "Pattern"
+      ],
+      "seeAlso": [
+        "episode"
+      ],
+      "externalMappings": [],
+      "reviewNote": ""
+    },
+    {
+      "id": "practice",
+      "group": "experience",
+      "status": "draft",
+      "revision": 1,
+      "locales": {
+        "en": {
+          "preferred": "practice",
+          "aliases": [],
+          "definition": "A way of coping or acting.",
+          "example": "A walk, then writing the walk-away number, before a hard call.",
+          "status": "draft",
+          "basedOnRevision": 1,
+          "reviewedRevision": null
+        },
+        "ru": {
+          "preferred": "практика",
+          "aliases": [],
+          "definition": "Способ справляться или действовать.",
+          "example": "Прогулка, а затем запись цены отказа от сделки — перед трудным звонком.",
+          "status": "draft",
+          "basedOnRevision": 1,
+          "reviewedRevision": null
+        }
+      },
+      "modelKinds": [
+        "Practice"
+      ],
+      "seeAlso": [
+        "outcome",
+        "recall-cue"
+      ],
+      "externalMappings": [],
+      "reviewNote": ""
+    },
+    {
+      "id": "outcome",
+      "group": "experience",
+      "status": "draft",
+      "revision": 1,
+      "locales": {
+        "en": {
+          "preferred": "outcome",
+          "aliases": [],
+          "definition": "What happened when something was tried or offered.",
+          "example": "Noa rated the reminder as helped; an agent's own rating would be only its estimate.",
+          "status": "draft",
+          "basedOnRevision": 1,
+          "reviewedRevision": null
+        },
+        "ru": {
+          "preferred": "исход",
+          "aliases": [],
+          "definition": "Что произошло, когда что-то попробовали или предложили.",
+          "example": "Ноа оценила напоминание как полезное; собственная оценка агента была бы лишь его предположением.",
+          "status": "draft",
+          "basedOnRevision": 1,
+          "reviewedRevision": null
+        }
+      },
+      "modelKinds": [
+        "Outcome"
+      ],
+      "seeAlso": [
+        "practice",
+        "recall-cue"
+      ],
+      "externalMappings": [],
+      "reviewNote": ""
+    },
+    {
+      "id": "recall-cue",
+      "group": "experience",
+      "status": "draft",
+      "revision": 1,
+      "locales": {
+        "en": {
+          "preferred": "recall cue",
+          "aliases": [],
+          "definition": "The person's permission for an agent to hand back their own experience in a described situation.",
+          "example": "When a pricing call is in her calendar and she wants to move it, Noa allows the companion to remind her what helped, with alternatives.",
+          "status": "draft",
+          "basedOnRevision": 1,
+          "reviewedRevision": null
+        },
+        "ru": {
+          "preferred": "сигнал возвращения опыта",
+          "aliases": [],
+          "definition": "Разрешение человека агенту возвращать ему его собственный опыт в описанной ситуации.",
+          "example": "Когда в календаре стоит звонок о ценах, а Ноа хочет его перенести, она разрешает помощнику напомнить, что помогало, вместе с альтернативами.",
+          "status": "draft",
+          "basedOnRevision": 1,
+          "reviewedRevision": null
+        }
+      },
+      "modelKinds": [
+        "RecallCue"
+      ],
+      "seeAlso": [
+        "recall",
+        "practice"
+      ],
+      "externalMappings": [],
+      "reviewNote": ""
+    },
+    {
+      "id": "part",
+      "group": "experience",
+      "status": "draft",
+      "revision": 1,
+      "locales": {
+        "en": {
+          "preferred": "part",
+          "aliases": [],
+          "definition": "An inner position as the person names it.",
+          "example": "Noa calls one part \"the keeper\": it wants every number checked twice.",
+          "status": "draft",
+          "basedOnRevision": 1,
+          "reviewedRevision": null
+        },
+        "ru": {
+          "preferred": "внутренняя часть",
+          "aliases": [],
+          "definition": "Внутренняя позиция так, как её называет человек.",
+          "example": "Одну часть Ноа называет «хранитель»: она хочет, чтобы каждое число проверяли дважды.",
+          "status": "draft",
+          "basedOnRevision": 1,
+          "reviewedRevision": null
+        }
+      },
+      "modelKinds": [
+        "Part"
+      ],
+      "seeAlso": [
+        "lens"
+      ],
+      "externalMappings": [],
+      "reviewNote": ""
+    },
+    {
+      "id": "lens",
+      "group": "lenses",
+      "status": "draft",
+      "revision": 1,
+      "locales": {
+        "en": {
+          "preferred": "lens",
+          "aliases": [
+            "framework of description"
+          ],
+          "definition": "A framework of description, with mental model, toolkit and representations.",
+          "example": "Big Five, a parts lens and a cognitive-behavioural lens are entries in the lens catalog.",
+          "status": "draft",
+          "basedOnRevision": 1,
+          "reviewedRevision": null
+        },
+        "ru": {
+          "preferred": "линза",
+          "aliases": [
+            "система описания"
+          ],
+          "definition": "Система описания со своей моделью работы с человеком, набором инструментов и способами представления.",
+          "example": "Большая пятёрка, линза частей и когнитивно-поведенческая линза — записи каталога линз.",
+          "status": "draft",
+          "basedOnRevision": 1,
+          "reviewedRevision": null
+        }
+      },
+      "modelKinds": [
+        "Lens"
+      ],
+      "seeAlso": [
+        "lens-adoption",
+        "mapping"
+      ],
+      "externalMappings": [],
+      "reviewNote": ""
+    },
+    {
+      "id": "lens-adoption",
+      "group": "lenses",
+      "status": "draft",
+      "revision": 1,
+      "locales": {
+        "en": {
+          "preferred": "lens adoption",
+          "aliases": [],
+          "definition": "The person's relation to a lens: chosen, suggested, inherited, imported.",
+          "example": "Noa inherited a parts lens from her coaching; it gives the coach no access.",
+          "status": "draft",
+          "basedOnRevision": 1,
+          "reviewedRevision": null
+        },
+        "ru": {
+          "preferred": "принятие линзы",
+          "aliases": [],
+          "definition": "Отношение человека к линзе: выбрана, предложена, унаследована, импортирована.",
+          "example": "Ноа унаследовала линзу частей из коучинга; это не даёт коучу никакого доступа.",
+          "status": "draft",
+          "basedOnRevision": 1,
+          "reviewedRevision": null
+        }
+      },
+      "modelKinds": [
+        "LensAdoption"
+      ],
+      "seeAlso": [
+        "lens"
+      ],
+      "externalMappings": [],
+      "reviewNote": ""
+    },
+    {
+      "id": "assessment-record",
+      "group": "lenses",
+      "status": "draft",
+      "revision": 1,
+      "locales": {
+        "en": {
+          "preferred": "assessment record",
+          "aliases": [],
+          "definition": "A dated result within a lens.",
+          "example": "Kofi's IPIP-NEO-120 self-report scores are one assessment record, treated as special category.",
+          "status": "draft",
+          "basedOnRevision": 1,
+          "reviewedRevision": null
+        },
+        "ru": {
+          "preferred": "запись оценки",
+          "aliases": [],
+          "definition": "Датированный результат в рамках линзы.",
+          "example": "Баллы самоотчёта Кофи по IPIP-NEO-120 — одна запись оценки, рассматриваемая как особая категория.",
+          "status": "draft",
+          "basedOnRevision": 1,
+          "reviewedRevision": null
+        }
+      },
+      "modelKinds": [
+        "AssessmentRecord"
+      ],
+      "seeAlso": [
+        "lens",
+        "instrument"
+      ],
+      "externalMappings": [],
+      "reviewNote": ""
+    },
+    {
+      "id": "instrument",
+      "group": "lenses",
+      "status": "draft",
+      "revision": 1,
+      "locales": {
+        "en": {
+          "preferred": "instrument",
+          "aliases": [
+            "test"
+          ],
+          "definition": "A specific test or procedure.",
+          "example": "IPIP-NEO-120 is an instrument of the Big Five lens.",
+          "status": "draft",
+          "basedOnRevision": 1,
+          "reviewedRevision": null
+        },
+        "ru": {
+          "preferred": "методика",
+          "aliases": [
+            "тест"
+          ],
+          "definition": "Конкретный тест или процедура.",
+          "example": "IPIP-NEO-120 — методика линзы «Большая пятёрка».",
+          "status": "draft",
+          "basedOnRevision": 1,
+          "reviewedRevision": null
+        }
+      },
+      "modelKinds": [
+        "Instrument"
+      ],
+      "seeAlso": [
+        "lens",
+        "assessment-record"
+      ],
+      "externalMappings": [],
+      "reviewNote": ""
+    },
+    {
+      "id": "mapping",
+      "group": "lenses",
+      "status": "draft",
+      "revision": 1,
+      "locales": {
+        "en": {
+          "preferred": "mapping",
+          "aliases": [],
+          "definition": "A cited, population-level link between constructs; never identity.",
+          "example": "A correlation between a type pole and a trait holds across people; it never converts one person's result.",
+          "status": "draft",
+          "basedOnRevision": 1,
+          "reviewedRevision": null
+        },
+        "ru": {
+          "preferred": "сопоставление",
+          "aliases": [],
+          "definition": "Обоснованная ссылкой связь между конструктами на уровне популяции; никогда не тождество.",
+          "example": "Корреляция между полюсом типа и чертой верна для множества людей; она никогда не переводит результат одного человека.",
+          "status": "draft",
+          "basedOnRevision": 1,
+          "reviewedRevision": null
+        }
+      },
+      "modelKinds": [
+        "Mapping"
+      ],
+      "seeAlso": [
+        "lens"
+      ],
+      "externalMappings": [],
+      "reviewNote": ""
+    },
+    {
+      "id": "playbook",
+      "group": "lenses",
+      "status": "draft",
+      "revision": 1,
+      "locales": {
+        "en": {
+          "preferred": "playbook",
+          "aliases": [
+            "ways of working"
+          ],
+          "definition": "Ways of using a lens, and the person's accepted results in it, by situation; guidance for a helper, never a permission.",
+          "example": "The Big Five basic playbook says what to do when the person plans a week or looks back at an episode.",
+          "status": "draft",
+          "basedOnRevision": 1,
+          "reviewedRevision": null
+        },
+        "ru": {
+          "preferred": "плейбук",
+          "aliases": [
+            "способы работы"
+          ],
+          "definition": "Способы пользоваться линзой и принятыми человеком результатами в ней по ситуациям; подсказка помощнику, а не разрешение.",
+          "example": "Базовый плейбук «Большой пятёрки» говорит, что делать, когда человек планирует неделю или оглядывается на эпизод.",
+          "status": "draft",
+          "basedOnRevision": 1,
+          "reviewedRevision": null
+        }
+      },
+      "modelKinds": [
+        "Playbook"
+      ],
+      "seeAlso": [
+        "lens",
+        "lens-adoption"
+      ],
+      "externalMappings": [],
+      "reviewNote": ""
+    },
+    {
+      "id": "imported-result",
+      "group": "lenses",
+      "status": "draft",
+      "revision": 1,
+      "locales": {
+        "en": {
+          "preferred": "imported result",
+          "aliases": [],
+          "definition": "A test result the person brings from a report they hold, recorded as an AssessmentRecord and checked against the instrument's import block.",
+          "example": "Five BFI-2 scale scores the person typed from her report, dated the day she took the test.",
+          "status": "draft",
+          "basedOnRevision": 1,
+          "reviewedRevision": null
+        },
+        "ru": {
+          "preferred": "перенесённый результат",
+          "aliases": [],
+          "definition": "Результат теста, который человек приносит из своего отчёта; записывается как AssessmentRecord и проверяется по блоку import методики.",
+          "example": "Пять баллов шкал BFI-2, которые человек ввёл из своего отчёта, с датой прохождения теста.",
+          "status": "draft",
+          "basedOnRevision": 1,
+          "reviewedRevision": null
+        }
+      },
+      "modelKinds": [
+        "AssessmentRecord"
+      ],
+      "seeAlso": [
+        "assessment-record",
+        "instrument"
+      ],
+      "externalMappings": [],
+      "reviewNote": ""
+    },
+    {
+      "id": "grant",
+      "group": "governance",
+      "status": "draft",
+      "revision": 1,
+      "locales": {
+        "en": {
+          "preferred": "grant",
+          "aliases": [
+            "permission"
+          ],
+          "definition": "The person's permission for one grantee.",
+          "example": "Kofi's grant lets the Planner read only boundaries, preferences and availability, for scheduling, for 90 days.",
+          "status": "draft",
+          "basedOnRevision": 1,
+          "reviewedRevision": null
+        },
+        "ru": {
+          "preferred": "разрешение",
+          "aliases": [],
+          "definition": "Разрешение человека для одного получателя.",
+          "example": "Разрешение Кофи позволяет «Планировщику» читать только границы, предпочтения и доступность — для планирования, на 90 дней.",
+          "status": "draft",
+          "basedOnRevision": 1,
+          "reviewedRevision": null
+        }
+      },
+      "modelKinds": [
+        "Grant"
+      ],
+      "seeAlso": [
+        "projection",
+        "purpose"
+      ],
+      "externalMappings": [],
+      "reviewNote": ""
+    },
+    {
+      "id": "projection",
+      "group": "exchange",
+      "status": "draft",
+      "revision": 1,
+      "locales": {
+        "en": {
+          "preferred": "projection",
+          "aliases": [],
+          "definition": "What one grantee receives for one purpose at one time.",
+          "example": "The work assistant's projection carries two claims and no interpretations.",
+          "status": "draft",
+          "basedOnRevision": 1,
+          "reviewedRevision": null
+        },
+        "ru": {
+          "preferred": "проекция",
+          "aliases": [],
+          "definition": "То, что один получатель получает для одной цели в один момент.",
+          "example": "Проекция для рабочего помощника содержит два утверждения и ни одной интерпретации.",
+          "status": "draft",
+          "basedOnRevision": 1,
+          "reviewedRevision": null
+        }
+      },
+      "modelKinds": [
+        "Projection"
+      ],
+      "seeAlso": [
+        "grant",
+        "pairwise-alias"
+      ],
+      "externalMappings": [],
+      "reviewNote": ""
+    },
+    {
+      "id": "event",
+      "group": "governance",
+      "status": "draft",
+      "revision": 1,
+      "locales": {
+        "en": {
+          "preferred": "event",
+          "aliases": [
+            "log entry"
+          ],
+          "definition": "An id-only log entry of writes and disclosures.",
+          "example": "Each projection served to the companion leaves an Event with ids, codes and times only.",
+          "status": "draft",
+          "basedOnRevision": 1,
+          "reviewedRevision": null
+        },
+        "ru": {
+          "preferred": "событие журнала",
+          "aliases": [
+            "запись журнала"
+          ],
+          "definition": "Запись журнала о записях и раскрытиях, содержащая только идентификаторы.",
+          "example": "Каждая проекция, выданная помощнику, оставляет событие журнала только с идентификаторами, кодами и временем.",
+          "status": "draft",
+          "basedOnRevision": 1,
+          "reviewedRevision": null
+        }
+      },
+      "modelKinds": [
+        "Event"
+      ],
+      "seeAlso": [
+        "projection",
+        "tombstone"
+      ],
+      "externalMappings": [],
+      "reviewNote": ""
+    },
+    {
+      "id": "tombstone",
+      "group": "governance",
+      "status": "draft",
+      "revision": 1,
+      "locales": {
+        "en": {
+          "preferred": "tombstone",
+          "aliases": [],
+          "definition": "A content-free placeholder for an erased record.",
+          "example": "When Noa erased an agent's reading, a tombstone kept its id from reuse and nothing else.",
+          "status": "draft",
+          "basedOnRevision": 1,
+          "reviewedRevision": null
+        },
+        "ru": {
+          "preferred": "метка удаления",
+          "aliases": [],
+          "definition": "Метка без содержания на месте удалённой записи.",
+          "example": "Когда Ноа удалила прочтение агента, метка удаления сохранила только его идентификатор от повторного использования.",
+          "status": "draft",
+          "basedOnRevision": 1,
+          "reviewedRevision": null
+        }
+      },
+      "modelKinds": [
+        "Tombstone"
+      ],
+      "seeAlso": [
+        "record",
+        "event"
+      ],
+      "externalMappings": [],
+      "reviewNote": ""
+    },
+    {
+      "id": "review",
+      "group": "governance",
+      "status": "draft",
+      "revision": 1,
+      "locales": {
+        "en": {
+          "preferred": "review",
+          "aliases": [],
+          "definition": "An append-only status change.",
+          "example": "Noa's contest of an inferred claim is a Review; the claim itself never changes.",
+          "status": "draft",
+          "basedOnRevision": 1,
+          "reviewedRevision": null
+        },
+        "ru": {
+          "preferred": "решение по записи",
+          "aliases": [],
+          "definition": "Изменение статуса, которое только добавляется.",
+          "example": "Оспаривание Ноа выведенного утверждения — это решение по записи; само утверждение не меняется.",
+          "status": "draft",
+          "basedOnRevision": 1,
+          "reviewedRevision": null
+        }
+      },
+      "modelKinds": [
+        "Review"
+      ],
+      "seeAlso": [
+        "endorsement",
+        "admission"
+      ],
+      "externalMappings": [],
+      "reviewNote": ""
+    },
+    {
+      "id": "proposal",
+      "group": "exchange",
+      "status": "draft",
+      "revision": 1,
+      "locales": {
+        "en": {
+          "preferred": "proposal",
+          "aliases": [],
+          "definition": "Content offered by someone other than the person, awaiting decision.",
+          "example": "The companion proposes one reading with two alternatives; silence is not acceptance.",
+          "status": "draft",
+          "basedOnRevision": 1,
+          "reviewedRevision": null
+        },
+        "ru": {
+          "preferred": "предложение",
+          "aliases": [],
+          "definition": "Содержание, предложенное не самим человеком и ожидающее решения.",
+          "example": "Помощник предлагает одно прочтение и две альтернативы; молчание — не согласие.",
+          "status": "draft",
+          "basedOnRevision": 1,
+          "reviewedRevision": null
+        }
+      },
+      "modelKinds": [
+        "Proposal"
+      ],
+      "seeAlso": [
+        "admission",
+        "review"
+      ],
+      "externalMappings": [],
+      "reviewNote": ""
+    },
+    {
+      "id": "pairwise-alias",
+      "group": "exchange",
+      "status": "draft",
+      "revision": 1,
+      "locales": {
+        "en": {
+          "preferred": "pairwise alias",
+          "aliases": [
+            "alias"
+          ],
+          "definition": "A per-grantee identifier for the subject.",
+          "example": "The Planner and the GUM instance see different aliases for Kofi and cannot link them.",
+          "status": "draft",
+          "basedOnRevision": 1,
+          "reviewedRevision": null
+        },
+        "ru": {
+          "preferred": "парный псевдоним",
+          "aliases": [
+            "псевдоним"
+          ],
+          "definition": "Идентификатор субъекта, свой для каждого получателя.",
+          "example": "«Планировщик» и экземпляр GUM видят разные псевдонимы Кофи и не могут их связать.",
+          "status": "draft",
+          "basedOnRevision": 1,
+          "reviewedRevision": null
+        }
+      },
+      "modelKinds": [
+        "Subject",
+        "Projection"
+      ],
+      "seeAlso": [
+        "subject",
+        "projection"
+      ],
+      "externalMappings": [],
+      "reviewNote": ""
+    },
+    {
+      "id": "experience-time",
+      "group": "model",
+      "status": "draft",
+      "revision": 1,
+      "locales": {
+        "en": {
+          "preferred": "experience time",
+          "aliases": [],
+          "definition": "When something happened or was true.",
+          "example": "The episode occurred on 12 March 2026.",
+          "status": "draft",
+          "basedOnRevision": 1,
+          "reviewedRevision": null
+        },
+        "ru": {
+          "preferred": "время опыта",
+          "aliases": [],
+          "definition": "Когда что-то произошло или было верно.",
+          "example": "Эпизод произошёл 12 марта 2026 года.",
+          "status": "draft",
+          "basedOnRevision": 1,
+          "reviewedRevision": null
+        }
+      },
+      "seeAlso": [
+        "knowledge-time"
+      ],
+      "externalMappings": [],
+      "reviewNote": ""
+    },
+    {
+      "id": "knowledge-time",
+      "group": "model",
+      "status": "draft",
+      "revision": 1,
+      "locales": {
+        "en": {
+          "preferred": "knowledge time",
+          "aliases": [],
+          "definition": "When the context learned it.",
+          "example": "Noa added a later reconstruction of the March episode in September.",
+          "status": "draft",
+          "basedOnRevision": 1,
+          "reviewedRevision": null
+        },
+        "ru": {
+          "preferred": "время знания",
+          "aliases": [],
+          "definition": "Когда контекст об этом узнал.",
+          "example": "Ноа добавила позднюю реконструкцию мартовского эпизода в сентябре.",
+          "status": "draft",
+          "basedOnRevision": 1,
+          "reviewedRevision": null
+        }
+      },
+      "seeAlso": [
+        "experience-time"
+      ],
+      "externalMappings": [],
+      "reviewNote": ""
+    },
+    {
+      "id": "conformance-level",
+      "group": "model",
+      "status": "draft",
+      "revision": 1,
+      "locales": {
+        "en": {
+          "preferred": "conformance level",
+          "aliases": [
+            "level"
+          ],
+          "definition": "L0 Minimal, L1 Grounded, L2 Governed.",
+          "example": "Ilse's one-file context meets L0; Noa's package meets L2.",
+          "status": "draft",
+          "basedOnRevision": 1,
+          "reviewedRevision": null
+        },
+        "ru": {
+          "preferred": "уровень соответствия",
+          "aliases": [
+            "уровень"
+          ],
+          "definition": "L0 Минимальный, L1 Обоснованный, L2 Управляемый.",
+          "example": "Однофайловый контекст Ильзе соответствует L0; пакет Ноа — L2.",
+          "status": "draft",
+          "basedOnRevision": 1,
+          "reviewedRevision": null
+        }
+      },
+      "modelKinds": [
+        "Context"
+      ],
+      "seeAlso": [
+        "context"
+      ],
+      "externalMappings": [],
+      "reviewNote": ""
+    },
+    {
+      "id": "recall",
+      "group": "experience",
+      "status": "draft",
+      "revision": 1,
+      "locales": {
+        "en": {
+          "preferred": "recall",
+          "aliases": [],
+          "definition": "Offering a person their own experience when it is needed.",
+          "example": "Before a hard call, the companion offers back what helped Noa last time, with a non-psychological alternative.",
+          "status": "draft",
+          "basedOnRevision": 1,
+          "reviewedRevision": null
+        },
+        "ru": {
+          "preferred": "возвращение доступа к опыту",
+          "aliases": [],
+          "definition": "Предложение человеку его собственного опыта тогда, когда он нужен.",
+          "example": "Перед трудным звонком помощник напоминает Ноа, что помогло ей в прошлый раз, и добавляет непсихологическое объяснение.",
+          "status": "draft",
+          "basedOnRevision": 1,
+          "reviewedRevision": null
+        }
+      },
+      "modelKinds": [
+        "RecallCue"
+      ],
+      "seeAlso": [
+        "recall-cue",
+        "practice"
+      ],
+      "externalMappings": [],
+      "reviewNote": ""
+    }
+  ]
+}

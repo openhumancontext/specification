@@ -1,0 +1,112 @@
+{
+  "format": "ohc.context",
+  "specVersion": "0.1.0-draft",
+  "id": "urn:ohc:example:femi:needs-grid",
+  "version": "2026-10-10.1",
+  "subject": {"id": "urn:ohc:example:femi", "displayName": "Femi (fictional)"},
+  "holder": "subject",
+  "lang": "en",
+  "created": "2026-05-02T18:00:00Z",
+  "conformance": {"level": "L1", "modules": ["core", "governance", "lenses", "practices"], "subjectIsAdult": true},
+  "parties": [
+    {"id": "a-01", "partyKind": "agent", "label": "Planning assistant"}
+  ],
+  "policy": {"admission": "subject-only", "resolver": "returnDialog"},
+  "lenses": [
+    {"id": "urn:ohc:lens:needs-grid", "version": "0.2.0", "sha256": "75d7db57639e2b6639c2bf0b740613d994111c26a14f528bd7f11cef47c83426"}
+  ],
+  "vocabulary": {
+    "x-needs-grid:dont-need": {"definition": "Needs-grid row 'don't need': something the person states they do not need."},
+    "x-needs-grid:lack": {"definition": "Needs-grid row 'lack / can't': something the person states they do not have or cannot do."}
+  },
+  "synthetic": true,
+  "sources": [
+    {"id": "src-01", "sourceKind": "note",
+     "content": {"locator": {"vaultPath": "vault/20/20541f1223c5cf30469bd239d69b192eb79d8353c7f901ad84e18fc03caf6e4a.md"},
+                 "sha256": "20541f1223c5cf30469bd239d69b192eb79d8353c7f901ad84e18fc03caf6e4a",
+                 "mediaType": "text/markdown", "size": 181},
+     "capturedAt": "2026-10-04T19:30:00Z", "authorship": {"author": "subject"}, "contemporaneity": "contemporaneous",
+     "maxRelease": "index",
+     "summary": {"text": "My list of wants, needs and resources for this season.", "authoredBy": "subject",
+                 "recordedAt": "2026-10-04T20:00:00Z", "method": "subject-written"},
+     "retention": {"eraseOnRequest": true},
+     "origin": "declared", "assertedBy": "subject", "recordedAt": "2026-10-04T20:00:00Z", "synthetic": true}
+  ],
+  "claims": [
+    {"id": "c-08", "facet": "need", "predicate": "support",
+     "text": "A friend's help with the boat engine this summer.",
+     "origin": "declared", "assertedBy": "subject", "recordedAt": "2026-05-02T18:05:00Z", "horizon": "focus",
+     "synthetic": true},
+    {"id": "c-01", "facet": "goal", "predicate": "outcome",
+     "text": "Finish restoring the boat before next summer.",
+     "origin": "declared", "assertedBy": "subject", "recordedAt": "2026-10-04T20:10:00Z", "horizon": "focus",
+     "valid": {"until": "2027-07-01"},
+     "evidence": [{"span": {"source": "src-01", "selector": {"type": "whole"}}, "kind": "subject-statement"}],
+     "synthetic": true},
+    {"id": "c-02", "facet": "boundary", "predicate": "never",
+     "text": "No school messages on Sundays.",
+     "origin": "declared", "assertedBy": "subject", "recordedAt": "2026-10-04T20:12:00Z", "horizon": "foundation",
+     "synthetic": true},
+    {"id": "c-03", "facet": "need", "predicate": "rest",
+     "text": "Two quiet evenings at home this week.",
+     "origin": "declared", "assertedBy": "subject", "recordedAt": "2026-10-04T20:14:00Z", "horizon": "state",
+     "valid": {"from": "2026-10-05", "until": "2026-10-12"}, "synthetic": true},
+    {"id": "c-04", "facet": "need", "predicate": "x-needs-grid:dont-need",
+     "text": "I do not need another course this year; I need to use what I already learned.",
+     "origin": "declared", "assertedBy": "subject", "recordedAt": "2026-10-04T20:16:00Z", "horizon": "focus",
+     "evidence": [{"span": {"source": "src-01", "selector": {"type": "whole"}}, "kind": "subject-statement"}],
+     "synthetic": true},
+    {"id": "c-05", "facet": "resource", "predicate": "time",
+     "text": "Friday afternoons are free until March.",
+     "origin": "declared", "assertedBy": "subject", "recordedAt": "2026-10-04T20:18:00Z", "horizon": "focus",
+     "valid": {"until": "2027-03-01"}, "synthetic": true},
+    {"id": "c-06", "facet": "resource", "predicate": "x-needs-grid:lack",
+     "text": "No budget to rent workshop space this year.",
+     "origin": "declared", "assertedBy": "subject", "recordedAt": "2026-10-04T20:20:00Z", "horizon": "focus",
+     "synthetic": true},
+    {"id": "c-07", "facet": "goal",
+     "absence": {"code": "not-chosen", "intentional": true, "note": "Not naming a life direction right now."},
+     "origin": "declared", "assertedBy": "subject", "recordedAt": "2026-10-04T20:22:00Z", "horizon": "foundation",
+     "synthetic": true}
+  ],
+  "lensAdoptions": [
+    {"id": "la-01", "lens": {"id": "urn:ohc:lens:needs-grid", "version": "0.2.0"}, "route": "agent-suggested",
+     "suggestedBy": "a-01", "uses": ["speak-in-lens", "offer-practices"],
+     "interpretationAuthors": ["subject"], "agentInterpretation": "off",
+     "representationPreference": "needs-grid.grid",
+     "origin": "declared", "assertedBy": "subject", "recordedBy": "a-01", "recordedAt": "2026-10-05T09:00:00Z",
+     "underGrant": "g-01", "purpose": "assist-personal", "synthetic": true}
+  ],
+  "practices": [
+    {"id": "pr-01", "name": "Monthly grid review",
+     "description": "Once a month, look at the grid and decide which cells to fill, update or leave empty.",
+     "practiceKind": "planning",
+     "source": {"route": "from-lens", "lens": "urn:ohc:lens:needs-grid", "templateId": "needs-grid.review"},
+     "steps": ["Open the grid", "Mark cells that are empty, stale or contested", "Decide for each: fill, update or leave empty"],
+     "duration": "PT20M", "initialStatus": "in-use", "nonClinical": true,
+     "origin": "declared", "assertedBy": "subject", "recordedAt": "2026-10-05T09:20:00Z", "synthetic": true}
+  ],
+  "outcomes": [
+    {"id": "oc-01", "about": {"practice": "pr-01"}, "result": "helped",
+     "delivery": {"at": "2026-10-05T09:12:00Z", "by": "a-01", "response": "accepted"},
+     "origin": "declared", "assertedBy": "subject", "recordedAt": "2026-10-05T09:40:00Z", "synthetic": true}
+  ],
+  "reviews": [
+    {"id": "rv-01", "target": "la-01", "action": "admit", "by": "subject", "recordedAt": "2026-10-05T09:10:00Z"},
+    {"id": "rv-02", "target": "c-05", "action": "confirm-current", "by": "subject", "recordedAt": "2026-10-05T09:30:00Z"},
+    {"id": "rv-03", "target": "c-08", "action": "mark-not-current", "by": "subject", "recordedAt": "2026-10-05T09:31:00Z",
+     "note": "Summer is over; this cell is done."}
+  ],
+  "grants": [
+    {"id": "g-01", "recordedAt": "2026-09-30T09:00:00Z", "grantor": "subject", "grantee": "a-01",
+     "purposes": ["assist-personal"],
+     "scope": {"include": [{"kinds": ["LensAdoption", "Practice", "Outcome"]},
+                           {"facets": ["goal", "need", "boundary", "resource", "capability"]}]},
+     "actions": ["read", "suggest"], "mode": "summary", "interpretations": "none",
+     "constraints": {"expiresAt": "2027-09-01T00:00:00Z", "storage": "session", "forwarding": false,
+                     "crossContextUse": false, "delegable": false},
+     "basis": {"legal": "consent"},
+     "expressedBy": {"actor": "subject", "at": "2026-09-30T09:00:00Z", "channel": "holder-ui"},
+     "note": "Help me plan; you may suggest, but you never fill my grid for me."}
+  ]
+}

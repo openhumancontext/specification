@@ -1,0 +1,22 @@
+{
+  "format": "ohc.mapping",
+  "specVersion": "0.1.0-draft",
+  "id": "urn:ohc:mapping:astrology--any",
+  "version": "0.1.0",
+  "bridgeKind": "lens-lens",
+  "from": {
+    "lens": "urn:ohc:lens:astrology"
+  },
+  "to": {
+    "concept": "any empirical construct in any lens"
+  },
+  "relation": "no-relation",
+  "source": "Carlson 1985, Nature 318:419, doi:10.1038/318419a0 (chance-level matching in a double-blind test)",
+  "scope": "population-level only; never for converting one person's result",
+  "notIdentity": true,
+  "chainable": false,
+  "rowStatus": "not-permitted",
+  "forbiddenUse": "Frames have no relation to empirical constructs (M-6): no conversion, estimate or inference in either direction. Frame attributes and empirical results may be placed side by side for the person's own reflection, labelled as such.",
+  "evidenceGrade": "F2",
+  "reviewedAt": "2026-10-09"
+}

@@ -1,0 +1,54 @@
+{
+  "description": "A verbatim source-opened Event under a grant that allows verbatim, without a step-up confirmation.",
+  "expect": [
+    "EV-5"
+  ],
+  "form": "package",
+  "patches": [
+    {
+      "op": "add",
+      "target": "grants",
+      "path": "/@g-01/actions",
+      "value": "open-verbatim"
+    },
+    {
+      "op": "set",
+      "target": "grants",
+      "path": "/@g-01/maxSourceTier",
+      "value": "verbatim"
+    },
+    {
+      "op": "set",
+      "target": "grants",
+      "path": "/@g-01/stepUp",
+      "value": {
+        "required": true,
+        "maxDuration": "PT30M"
+      }
+    },
+    {
+      "op": "set",
+      "target": "sources",
+      "path": "/@src-01/maxRelease",
+      "value": "verbatim"
+    },
+    {
+      "op": "add",
+      "target": "events",
+      "path": "",
+      "value": {
+        "at": "2026-10-08T13:00:00Z",
+        "eventType": "source-opened",
+        "actor": "holder",
+        "counterparty": "a-01",
+        "grant": "g-01",
+        "records": [
+          "src-01"
+        ],
+        "tier": "verbatim",
+        "outcome": "served",
+        "purpose": "learning-support"
+      }
+    }
+  ]
+}

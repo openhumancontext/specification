@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:ohc:schema:tombstone:0.1.0-draft",
+  "title": "OHC Tombstone",
+  "description": "Replaces an erased record in place, keeping its id from reuse and chains well-formed, without content (TB-1). Layer governance; module core.",
+  "type": "object",
+  "required": [
+    "kind",
+    "id",
+    "erasedKind",
+    "erasedAt",
+    "erasedBy",
+    "reason"
+  ],
+  "properties": {
+    "kind": {
+      "const": "Tombstone"
+    },
+    "id": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/LocalId"
+    },
+    "erasedKind": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/record-kinds"
+    },
+    "erasedAt": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/DateTime"
+    },
+    "erasedBy": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Actor"
+    },
+    "reason": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/tombstone-reasons"
+    }
+  },
+  "additionalProperties": false
+}

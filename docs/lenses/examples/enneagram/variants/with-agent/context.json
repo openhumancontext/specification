@@ -1,0 +1,42 @@
+{
+  "format": "ohc.context",
+  "specVersion": "0.1.0-draft",
+  "id": "urn:ohc:example:linnea-agent:context",
+  "version": "2026-10-10.1",
+  "subject": {"id": "urn:ohc:example:linnea", "displayName": "Linnea (fictional)"},
+  "holder": "subject",
+  "lang": "en",
+  "created": "2026-09-29T10:00:00Z",
+  "conformance": {"level": "L1", "modules": ["core", "governance", "lenses", "practices"], "subjectIsAdult": true},
+  "parties": [
+    {"id": "a-01", "partyKind": "agent", "label": "Reflection companion"},
+    {"id": "s-02", "partyKind": "software", "label": "Online test site"}
+  ],
+  "policy": {"admission": "subject-only", "resolver": "returnDialog"},
+  "lenses": [
+    {"id": "urn:ohc:lens:enneagram", "version": "0.2.0", "sha256": "1c22298a0fb2bc26f272a35d5382eefb026585597aa3020279ea1078e2c99a3b"}
+  ],
+  "grants": [
+    {"id": "g-0", "recordedAt": "2026-09-29T10:00:00Z", "grantor": "subject", "grantee": "a-01", "purposes": ["self-reflection"], "scope": {"include": [{"lenses": ["urn:ohc:lens:enneagram"]}], "exclude": [{"ids": ["as-4"]}]}, "actions": ["suggest"], "mode": "summary", "interpretations": "subject-endorsed", "constraints": {"expiresAt": "2027-03-27T00:00:00Z", "storage": "session", "forwarding": false, "crossContextUse": false, "delegable": false}, "basis": {"legal": "explicit-consent"}, "expressedBy": {"actor": "subject", "at": "2026-09-29T10:00:00Z", "channel": "holder-ui"}, "note": "The companion may suggest this lens and its recognition exercise; it never sees my results."}
+  ],
+  "lensAdoptions": [
+    {"id": "la-1", "lens": {"id": "urn:ohc:lens:enneagram", "version": "0.2.0"}, "route": "agent-suggested", "suggestedBy": "a-01", "uses": ["speak-in-lens", "store-results", "interpret", "offer-practices"], "interpretationAuthors": ["subject"], "agentInterpretation": "off", "representationPreference": "enneagram.type-label", "origin": "observed", "assertedBy": "a-01", "underGrant": "g-0", "purpose": "self-reflection", "recordedAt": "2026-09-29T10:05:00Z", "sensitivity": "special", "categories": ["mental-health"], "synthetic": true}
+  ],
+  "sources": [
+    {"id": "src-4", "sourceKind": "image", "content": {"locator": {"vaultPath": "vault/fc/fc16c529b1a721d09ee4596d5d6d92dd0d2fb22ed664fdcb6fef01d0082203d9.png"}, "sha256": "fc16c529b1a721d09ee4596d5d6d92dd0d2fb22ed664fdcb6fef01d0082203d9", "mediaType": "image/png"}, "capturedAt": "2026-09-30T20:00:00Z", "authorship": {"author": "s-02"}, "inbound": true, "contemporaneity": "contemporaneous", "maxRelease": "index", "retention": {"eraseOnRequest": true}, "origin": "declared", "assertedBy": "subject", "recordedAt": "2026-09-30T20:05:00Z", "sensitivity": "special", "categories": ["mental-health"], "synthetic": true}
+  ],
+  "assessments": [
+    {"id": "as-4", "lens": {"id": "urn:ohc:lens:enneagram", "version": "0.2.0"}, "mode": "self-identified", "assessedBy": "subject", "administeredAt": {"start": "2026-09-30", "precision": "day"}, "results": [{"type": "type-assignment", "construct": "enneagram/type-4", "label": "Type 4", "method": "self-identified"}], "validityFlags": ["self-identified-only"], "source": "src-4", "origin": "declared", "assertedBy": "subject", "recordedAt": "2026-09-30T20:10:00Z", "sensitivity": "special", "categories": ["mental-health"], "handling": ["no-infer", "no-quote-back"], "synthetic": true}
+  ],
+  "reviews": [
+    {"id": "rv-1", "target": "la-1", "action": "admit", "by": "subject", "recordedAt": "2026-09-29T10:10:00Z"},
+    {"id": "rv-2", "target": "pr-2", "action": "admit", "by": "subject", "recordedAt": "2026-10-02T09:30:00Z"}
+  ],
+  "claims": [
+    {"id": "c-1", "facet": "disposition", "predicate": "self-described-tendency", "text": "Under pressure I go quiet and wait to be noticed instead of asking for what I want.", "evidence": [{"ref": "as-4", "kind": "subject-statement"}], "origin": "declared", "assertedBy": "subject", "recordedAt": "2026-09-30T20:15:00Z", "horizon": "foundation", "sensitivity": "special", "categories": ["mental-health"], "handling": ["no-quote-back"], "synthetic": true}
+  ],
+  "practices": [
+    {"id": "pr-2", "name": "Notice the pattern once a day", "description": "Once a day, notice whether the pull to go quiet showed up, without judging it.", "practiceKind": "reflection", "source": {"route": "from-agent", "lens": "urn:ohc:lens:enneagram", "templateId": "enneagram.recognition", "by": "a-01"}, "steps": ["At the end of the day, recall one moment", "Note whether the pull to go quiet was there"], "limits": "Only while it feels useful; skip any day.", "initialStatus": "candidate", "nonClinical": true, "origin": "observed", "assertedBy": "a-01", "underGrant": "g-0", "purpose": "self-reflection", "recordedAt": "2026-10-02T09:00:00Z", "sensitivity": "special", "categories": ["mental-health"], "synthetic": true}
+  ],
+  "synthetic": true
+}

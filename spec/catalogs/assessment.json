@@ -1,0 +1,568 @@
+{
+  "format": "ohc.catalog",
+  "id": "urn:ohc:catalog:assessment",
+  "version": "0.1.0",
+  "specVersion": "0.1.0-draft",
+  "title": {
+    "en": "Assessment vocabularies",
+    "ru": "Словари оценок"
+  },
+  "description": {
+    "en": "Vocabularies for AssessmentRecords: how a result was produced, its shape and its validity limits. `expectedOrigin` gives the origin rule AR-1 per mode.",
+    "ru": "Словари для записей оценки: как получен результат, его форма и пределы валидности. `expectedOrigin` задаёт правило происхождения AR-1 для каждого способа."
+  },
+  "closed": true,
+  "lists": [
+    {
+      "name": "modes",
+      "title": {
+        "en": "Assessment modes",
+        "ru": "Способы оценки"
+      },
+      "closed": true,
+      "field": "AssessmentRecord.mode"
+    },
+    {
+      "name": "result-types",
+      "title": {
+        "en": "Result types",
+        "ru": "Типы результатов"
+      },
+      "closed": true,
+      "field": "AssessmentRecord.results[].type"
+    },
+    {
+      "name": "validity-flags",
+      "title": {
+        "en": "Validity flags",
+        "ru": "Признаки валидности"
+      },
+      "closed": true,
+      "field": "AssessmentRecord.validityFlags"
+    },
+    {
+      "name": "validity-ceilings",
+      "title": {
+        "en": "Validity ceilings",
+        "ru": "Потолки валидности"
+      },
+      "closed": true,
+      "field": "AssessmentRecord.validityCeiling"
+    },
+    {
+      "name": "standardized-scales",
+      "title": {
+        "en": "Standardized scales",
+        "ru": "Стандартные шкалы"
+      },
+      "closed": true,
+      "field": "dimension-score.standardized.type"
+    },
+    {
+      "name": "type-methods",
+      "title": {
+        "en": "Type-assignment methods",
+        "ru": "Способы отнесения к типу"
+      },
+      "closed": true,
+      "field": "type-assignment.method"
+    }
+  ],
+  "codes": [
+    {
+      "code": "self-report-instrument",
+      "list": "modes",
+      "label": {
+        "en": "Self-report instrument",
+        "ru": "Самоотчётная методика"
+      },
+      "definition": {
+        "en": "The person took an instrument.",
+        "ru": "Человек прошёл методику."
+      },
+      "expectedOrigin": [
+        "derived",
+        "imported"
+      ]
+    },
+    {
+      "code": "observer-report",
+      "list": "modes",
+      "label": {
+        "en": "Observer report",
+        "ru": "Отчёт наблюдателя"
+      },
+      "definition": {
+        "en": "Another rater used an instrument.",
+        "ru": "Другой оценивающий использовал методику."
+      },
+      "expectedOrigin": [
+        "derived",
+        "imported"
+      ]
+    },
+    {
+      "code": "interview-scored",
+      "list": "modes",
+      "label": {
+        "en": "Interview-scored",
+        "ru": "Оценка по интервью"
+      },
+      "definition": {
+        "en": "Scored from an interview.",
+        "ru": "Оценено по интервью."
+      },
+      "expectedOrigin": [
+        "derived",
+        "imported"
+      ]
+    },
+    {
+      "code": "practitioner-facilitated",
+      "list": "modes",
+      "label": {
+        "en": "Practitioner-facilitated",
+        "ru": "Со специалистом"
+      },
+      "definition": {
+        "en": "Arrived at with a practitioner.",
+        "ru": "Получено вместе со специалистом-практиком."
+      }
+    },
+    {
+      "code": "self-identified",
+      "list": "modes",
+      "label": {
+        "en": "Self-identified",
+        "ru": "Самоопределение"
+      },
+      "definition": {
+        "en": "The person chose the type or result.",
+        "ru": "Человек сам выбрал тип или результат."
+      },
+      "expectedOrigin": [
+        "declared"
+      ]
+    },
+    {
+      "code": "vendor-report-import",
+      "list": "modes",
+      "label": {
+        "en": "Vendor report import",
+        "ru": "Импорт отчёта поставщика"
+      },
+      "definition": {
+        "en": "Copied from a vendor report.",
+        "ru": "Скопировано из отчёта поставщика."
+      },
+      "expectedOrigin": [
+        "imported"
+      ]
+    },
+    {
+      "code": "agent-inference",
+      "list": "modes",
+      "label": {
+        "en": "Agent inference",
+        "ru": "Вывод агента"
+      },
+      "definition": {
+        "en": "An agent estimated it. Constrained by AR-2.",
+        "ru": "Оценено агентом. Ограничено правилом AR-2."
+      },
+      "expectedOrigin": [
+        "inferred"
+      ]
+    },
+    {
+      "code": "cross-lens-estimate",
+      "list": "modes",
+      "label": {
+        "en": "Cross-lens estimate",
+        "ru": "Оценка через другую линзу"
+      },
+      "definition": {
+        "en": "Estimated through a population-level Mapping. Constrained by AR-2 and AR-7.",
+        "ru": "Оценено через сопоставление на уровне популяции. Ограничено правилами AR-2 и AR-7."
+      },
+      "expectedOrigin": [
+        "inferred"
+      ]
+    },
+    {
+      "code": "computed-from-birth-data",
+      "list": "modes",
+      "label": {
+        "en": "Computed from birth data",
+        "ru": "Вычислено по данным о рождении"
+      },
+      "definition": {
+        "en": "A frame computed from birth data.",
+        "ru": "Рамка, вычисленная по данным о рождении."
+      },
+      "expectedOrigin": [
+        "derived"
+      ]
+    },
+    {
+      "code": "dimension-score",
+      "list": "result-types",
+      "label": {
+        "en": "Dimension score",
+        "ru": "Балл по измерению"
+      },
+      "definition": {
+        "en": "A score on one dimension.",
+        "ru": "Балл по одному измерению."
+      }
+    },
+    {
+      "code": "type-assignment",
+      "list": "result-types",
+      "label": {
+        "en": "Type assignment",
+        "ru": "Отнесение к типу"
+      },
+      "definition": {
+        "en": "A type assigned or chosen.",
+        "ru": "Назначенный или выбранный тип."
+      }
+    },
+    {
+      "code": "ranking",
+      "list": "result-types",
+      "label": {
+        "en": "Ranking",
+        "ru": "Ранжирование"
+      },
+      "definition": {
+        "en": "An ordered list of constructs within the person.",
+        "ru": "Упорядоченный список конструктов внутри одного человека."
+      }
+    },
+    {
+      "code": "values-profile",
+      "list": "result-types",
+      "label": {
+        "en": "Values profile",
+        "ru": "Профиль ценностей"
+      },
+      "definition": {
+        "en": "Scores of values with within-person centring.",
+        "ru": "Баллы ценностей с центрированием внутри человека."
+      }
+    },
+    {
+      "code": "circumplex",
+      "list": "result-types",
+      "label": {
+        "en": "Circumplex",
+        "ru": "Круговая модель"
+      },
+      "definition": {
+        "en": "A position on a circular model.",
+        "ru": "Положение на круговой модели."
+      }
+    },
+    {
+      "code": "stage",
+      "list": "result-types",
+      "label": {
+        "en": "Stage",
+        "ru": "Стадия"
+      },
+      "definition": {
+        "en": "A developmental stage.",
+        "ru": "Стадия развития."
+      }
+    },
+    {
+      "code": "thought-record",
+      "list": "result-types",
+      "label": {
+        "en": "Thought record",
+        "ru": "Запись мыслей"
+      },
+      "definition": {
+        "en": "The person's own entries: situation, thought, emotion, behaviour, alternative.",
+        "ru": "Собственные записи человека: ситуация, мысль, эмоция, поведение, альтернатива."
+      }
+    },
+    {
+      "code": "frame-attributes",
+      "list": "result-types",
+      "label": {
+        "en": "Frame attributes",
+        "ru": "Атрибуты рамки"
+      },
+      "definition": {
+        "en": "Attributes computed within a self-description frame.",
+        "ru": "Атрибуты, вычисленные в рамке самоописания."
+      }
+    },
+    {
+      "code": "narrative",
+      "list": "result-types",
+      "label": {
+        "en": "Narrative",
+        "ru": "Повествование"
+      },
+      "definition": {
+        "en": "A narrative result.",
+        "ru": "Результат в виде повествования."
+      }
+    },
+    {
+      "code": "incomplete",
+      "list": "validity-flags",
+      "label": {
+        "en": "Incomplete",
+        "ru": "Неполно"
+      },
+      "definition": {
+        "en": "The instrument was not completed.",
+        "ru": "Методика пройдена не полностью."
+      }
+    },
+    {
+      "code": "random-responding",
+      "list": "validity-flags",
+      "label": {
+        "en": "Random responding",
+        "ru": "Случайные ответы"
+      },
+      "definition": {
+        "en": "Signs of random responding.",
+        "ru": "Признаки случайных ответов."
+      }
+    },
+    {
+      "code": "acquiescence",
+      "list": "validity-flags",
+      "label": {
+        "en": "Acquiescence",
+        "ru": "Склонность соглашаться"
+      },
+      "definition": {
+        "en": "Signs of agreeing regardless of content.",
+        "ru": "Признаки согласия независимо от содержания."
+      }
+    },
+    {
+      "code": "translated-form",
+      "list": "validity-flags",
+      "label": {
+        "en": "Translated form",
+        "ru": "Переведённая форма"
+      },
+      "definition": {
+        "en": "A translated form was used.",
+        "ru": "Использована переведённая форма."
+      }
+    },
+    {
+      "code": "norm-mismatch",
+      "list": "validity-flags",
+      "label": {
+        "en": "Norm mismatch",
+        "ru": "Несоответствие норм"
+      },
+      "definition": {
+        "en": "The norm group does not match the person.",
+        "ru": "Нормативная группа не соответствует человеку."
+      }
+    },
+    {
+      "code": "agent-estimate-not-validated",
+      "list": "validity-flags",
+      "label": {
+        "en": "Agent estimate, not validated",
+        "ru": "Оценка агента, не валидирована"
+      },
+      "definition": {
+        "en": "An agent's estimate with no validated instrument behind it.",
+        "ru": "Оценка агента без валидированной методики."
+      }
+    },
+    {
+      "code": "cross-lens-population-estimate",
+      "list": "validity-flags",
+      "label": {
+        "en": "Cross-lens population estimate",
+        "ru": "Популяционная оценка через другую линзу"
+      },
+      "definition": {
+        "en": "Estimated from a population-level mapping, not measured.",
+        "ru": "Оценено по сопоставлению на уровне популяции, а не измерено."
+      }
+    },
+    {
+      "code": "self-identified-only",
+      "list": "validity-flags",
+      "label": {
+        "en": "Self-identified only",
+        "ru": "Только самоопределение"
+      },
+      "definition": {
+        "en": "The person chose the result; no instrument.",
+        "ru": "Результат выбран человеком; методика не применялась."
+      }
+    },
+    {
+      "code": "vendor-algorithm-undisclosed",
+      "list": "validity-flags",
+      "label": {
+        "en": "Vendor algorithm undisclosed",
+        "ru": "Алгоритм поставщика не раскрыт"
+      },
+      "definition": {
+        "en": "The vendor's scoring algorithm is not disclosed.",
+        "ru": "Алгоритм подсчёта поставщика не раскрыт."
+      }
+    },
+    {
+      "code": "test-data-personal-only",
+      "list": "validity-flags",
+      "label": {
+        "en": "Test data personal only",
+        "ru": "Данные теста только для человека"
+      },
+      "definition": {
+        "en": "Raw test data kept for the person only.",
+        "ru": "Исходные данные теста хранятся только для человека."
+      }
+    },
+    {
+      "code": "agent-estimate-not-validated",
+      "list": "validity-ceilings",
+      "label": {
+        "en": "Agent estimate, not validated",
+        "ru": "Оценка агента, не валидирована"
+      },
+      "definition": {
+        "en": "The result cannot be read as more than an unvalidated agent estimate.",
+        "ru": "Результат нельзя считать чем-то большим, чем невалидированная оценка агента."
+      }
+    },
+    {
+      "code": "cross-lens-population-estimate",
+      "list": "validity-ceilings",
+      "label": {
+        "en": "Cross-lens population estimate",
+        "ru": "Популяционная оценка через другую линзу"
+      },
+      "definition": {
+        "en": "The result cannot be read as more than a population-level estimate.",
+        "ru": "Результат нельзя считать чем-то большим, чем популяционная оценка."
+      }
+    },
+    {
+      "code": "T",
+      "list": "standardized-scales",
+      "label": {
+        "en": "T-score",
+        "ru": "T-балл"
+      },
+      "definition": {
+        "en": "Mean 50, standard deviation 10.",
+        "ru": "Среднее 50, стандартное отклонение 10."
+      }
+    },
+    {
+      "code": "z",
+      "list": "standardized-scales",
+      "label": {
+        "en": "z-score",
+        "ru": "z-оценка"
+      },
+      "definition": {
+        "en": "Mean 0, standard deviation 1.",
+        "ru": "Среднее 0, стандартное отклонение 1."
+      }
+    },
+    {
+      "code": "percentile",
+      "list": "standardized-scales",
+      "label": {
+        "en": "Percentile",
+        "ru": "Процентиль"
+      },
+      "definition": {
+        "en": "Percent of the norm group scoring lower.",
+        "ru": "Доля нормативной группы с более низким баллом, в процентах."
+      }
+    },
+    {
+      "code": "stanine",
+      "list": "standardized-scales",
+      "label": {
+        "en": "Stanine",
+        "ru": "Станайн"
+      },
+      "definition": {
+        "en": "Nine-point standard scale.",
+        "ru": "Девятибалльная стандартная шкала."
+      }
+    },
+    {
+      "code": "sten",
+      "list": "standardized-scales",
+      "label": {
+        "en": "Sten",
+        "ru": "Стэн"
+      },
+      "definition": {
+        "en": "Ten-point standard scale.",
+        "ru": "Десятибалльная стандартная шкала."
+      }
+    },
+    {
+      "code": "self-identified",
+      "list": "type-methods",
+      "label": {
+        "en": "Self-identified",
+        "ru": "Самоопределение"
+      },
+      "definition": {
+        "en": "The person chose the type.",
+        "ru": "Человек сам выбрал тип."
+      }
+    },
+    {
+      "code": "instrument",
+      "list": "type-methods",
+      "label": {
+        "en": "Instrument",
+        "ru": "Методика"
+      },
+      "definition": {
+        "en": "Assigned by an instrument.",
+        "ru": "Назначено методикой."
+      }
+    },
+    {
+      "code": "interview",
+      "list": "type-methods",
+      "label": {
+        "en": "Interview",
+        "ru": "Интервью"
+      },
+      "definition": {
+        "en": "Arrived at in an interview.",
+        "ru": "Получено в интервью."
+      }
+    },
+    {
+      "code": "best-fit",
+      "list": "type-methods",
+      "label": {
+        "en": "Best fit",
+        "ru": "Наилучшее соответствие"
+      },
+      "definition": {
+        "en": "Chosen by the person as the best fit after feedback.",
+        "ru": "Выбрано человеком как наилучшее соответствие после обратной связи."
+      }
+    }
+  ]
+}

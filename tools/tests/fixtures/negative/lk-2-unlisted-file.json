@@ -1,0 +1,10 @@
+{
+  "description": "A package file that the lock does not list.",
+  "expect": [
+    "LK-2"
+  ],
+  "form": "package",
+  "rawAfterLock": {
+    "records/notes.jsonl": ""
+  }
+}

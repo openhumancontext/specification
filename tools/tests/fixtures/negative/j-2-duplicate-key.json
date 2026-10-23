@@ -1,0 +1,10 @@
+{
+  "description": "A duplicate member name in the context document.",
+  "expect": [
+    "J-2"
+  ],
+  "form": "single",
+  "raw": {
+    "context.json": "{\"format\": \"ohc.context\", \"format\": \"ohc.context\", \"specVersion\": \"0.1.0-draft\"}\n"
+  }
+}

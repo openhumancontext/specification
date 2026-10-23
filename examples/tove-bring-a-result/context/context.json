@@ -1,0 +1,61 @@
+{
+  "format": "ohc.context",
+  "specVersion": "0.1.0-draft",
+  "id": "urn:ohc:example:tove:context",
+  "version": "2026-10-12.1",
+  "subject": {
+    "id": "urn:ohc:example:tove"
+  },
+  "holder": "subject",
+  "created": "2026-09-15T09:05:00Z",
+  "conformance": {
+    "level": "L2",
+    "modules": [
+      "core",
+      "governance",
+      "lenses",
+      "instrument-import"
+    ],
+    "subjectIsAdult": true
+  },
+  "parties": [
+    {
+      "id": "a-01",
+      "partyKind": "agent",
+      "label": "Personal agent"
+    },
+    {
+      "id": "o-01",
+      "partyKind": "organization",
+      "label": "Report scorer",
+      "uri": "urn:ohc:scorer:bfi-2-report"
+    }
+  ],
+  "policy": {
+    "admission": "subject-only",
+    "resolver": "returnDialog"
+  },
+  "synthetic": true,
+  "collections": {
+    "claims": "records/claims.jsonl",
+    "events": "events.jsonl",
+    "sources": "records/sources.jsonl",
+    "assessments": "records/assessments.jsonl",
+    "reviews": "records/reviews.jsonl",
+    "grants": "records/grants.jsonl"
+  },
+  "lenses": [
+    {
+      "id": "urn:ohc:lens:big-five",
+      "version": "0.2.0",
+      "sha256": "6af97400e92c87df43cdb7aa7d7406c0a6688c4f819d456182559bd4d41b0a4d"
+    }
+  ],
+  "playbooks": [
+    {
+      "id": "urn:ohc:playbook:big-five-basic",
+      "version": "0.1.0",
+      "sha256": "30406e8d18d5f268e078e71b779f3cd7c660fa3cac5b7b074d7fcf1e3e7c1eee"
+    }
+  ]
+}

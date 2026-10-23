@@ -1,0 +1,16 @@
+{
+  "description": "A projection that reports a count of withheld items.",
+  "expect": [
+    "PJ-3",
+    "S-2"
+  ],
+  "form": "package",
+  "postPatches": [
+    {
+      "op": "set",
+      "target": "projection:prj-0001",
+      "path": "/omittedCount",
+      "value": 2
+    }
+  ]
+}

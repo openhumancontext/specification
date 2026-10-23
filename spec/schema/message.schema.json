@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:ohc:schema:message:0.1.0-draft",
+  "title": "OHC exchange message envelope",
+  "description": "EXPERIMENTAL. The common envelope of every exchange message (module exchange). Each message schema includes these members by reference and adds its body; a full message is validated against the schema for its format (see index.json). The Projection is the normative document ohc.projection. Transport, authentication and signatures are out of scope.",
+  "type": "object",
+  "required": [
+    "format",
+    "specVersion",
+    "id",
+    "from",
+    "to",
+    "at"
+  ],
+  "properties": {
+    "format": {
+      "type": "string",
+      "pattern": "^ohc\\.experimental\\.[a-z]+(?:-[a-z]+)*$"
+    },
+    "specVersion": {
+      "const": "0.1.0-draft"
+    },
+    "id": {
+      "description": "Prefix msg-.",
+      "allOf": [
+        {
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/LocalId"
+        },
+        {
+          "pattern": "^msg-"
+        }
+      ]
+    },
+    "from": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Actor"
+    },
+    "to": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Actor"
+    },
+    "at": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/DateTime"
+    },
+    "inReplyTo": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+    }
+  },
+  "additionalProperties": false
+}

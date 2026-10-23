@@ -1,0 +1,26 @@
+{
+  "description": "A causal reading resting only on a sequence.",
+  "expect": [
+    "I2"
+  ],
+  "form": "single",
+  "patches": [
+    {
+      "op": "set",
+      "target": "interpretations",
+      "path": "/@in-01/causal",
+      "value": "asserted"
+    },
+    {
+      "op": "set",
+      "target": "interpretations",
+      "path": "/@in-01/grounds",
+      "value": [
+        {
+          "ref": "ep-01",
+          "kind": "sequence"
+        }
+      ]
+    }
+  ]
+}

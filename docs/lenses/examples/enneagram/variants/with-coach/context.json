@@ -1,0 +1,35 @@
+{
+  "format": "ohc.context",
+  "specVersion": "0.1.0-draft",
+  "id": "urn:ohc:example:linnea-coach:context",
+  "version": "2026-10-10.1",
+  "subject": {"id": "urn:ohc:example:linnea", "displayName": "Linnea (fictional)"},
+  "holder": "subject",
+  "lang": "en",
+  "created": "2026-10-01T18:50:00Z",
+  "conformance": {"level": "L1", "modules": ["core", "governance", "lenses"], "subjectIsAdult": true},
+  "parties": [
+    {"id": "p-01", "partyKind": "person", "label": "Coach", "role": "practitioner"}
+  ],
+  "policy": {"admission": "subject-only", "resolver": "returnDialog"},
+  "lenses": [
+    {"id": "urn:ohc:lens:enneagram", "version": "0.2.0", "sha256": "1c22298a0fb2bc26f272a35d5382eefb026585597aa3020279ea1078e2c99a3b"}
+  ],
+  "lensAdoptions": [
+    {"id": "la-1", "lens": {"id": "urn:ohc:lens:enneagram", "version": "0.2.0"}, "route": "inherited-from-practice", "practice": {"role": "coach", "practitioner": "p-01", "relationship": "active", "since": "2026-08-01", "releaseRef": "src-2"}, "confidentiality": "practitioner-scope", "uses": ["speak-in-lens", "store-results", "interpret", "offer-practices"], "interpretationAuthors": ["subject"], "agentInterpretation": "off", "representationPreference": "enneagram.type-label", "onEnd": "ask", "origin": "declared", "assertedBy": "subject", "recordedAt": "2026-10-01T19:00:00Z", "sensitivity": "special", "categories": ["mental-health"], "synthetic": true}
+  ],
+  "sources": [
+    {"id": "src-2", "sourceKind": "practitioner-release", "content": {"locator": {"vaultPath": "vault/22/22f766eb7183cf2ec7f3e20f0bc59eb224e2f66fdc07a867805208b880b83f74.pdf"}, "sha256": "22f766eb7183cf2ec7f3e20f0bc59eb224e2f66fdc07a867805208b880b83f74", "mediaType": "application/pdf"}, "capturedAt": "2026-09-30T17:00:00Z", "authorship": {"author": "p-01"}, "inbound": true, "contemporaneity": "contemporaneous", "maxRelease": "index", "retention": {"eraseOnRequest": true}, "origin": "declared", "assertedBy": "subject", "recordedAt": "2026-10-01T18:50:00Z", "sensitivity": "special", "categories": ["mental-health"], "synthetic": true},
+    {"id": "src-3", "sourceKind": "practitioner-notes", "content": {"locator": {"vaultPath": "vault/b9/b9212fcb20d7a5360968d7106f6030f5f296ce526a63f4eb1afd4450b15d4776.pdf"}, "sha256": "b9212fcb20d7a5360968d7106f6030f5f296ce526a63f4eb1afd4450b15d4776", "mediaType": "application/pdf"}, "capturedAt": "2026-09-30T17:00:00Z", "authorship": {"author": "p-01"}, "inbound": true, "contemporaneity": "contemporaneous", "custody": {"custodian": "p-01", "confidentiality": "coaching", "releaseRef": "src-2"}, "maxRelease": "index", "retention": {"eraseOnRequest": true}, "origin": "declared", "assertedBy": "subject", "recordedAt": "2026-10-01T19:02:00Z", "sensitivity": "special", "categories": ["mental-health"], "synthetic": true}
+  ],
+  "assessments": [
+    {"id": "as-3", "lens": {"id": "urn:ohc:lens:enneagram", "version": "0.2.0"}, "mode": "practitioner-facilitated", "assessedBy": "p-01", "administeredAt": {"start": "2026-09-30", "precision": "day"}, "results": [{"type": "type-assignment", "construct": "enneagram/type-4", "label": "Type 4", "method": "interview"}], "source": "src-3", "origin": "declared", "assertedBy": "p-01", "recordedBy": "subject", "recordedAt": "2026-10-01T19:05:00Z", "sensitivity": "special", "categories": ["mental-health"], "handling": ["no-infer", "no-quote-back"], "synthetic": true}
+  ],
+  "reviews": [
+    {"id": "rv-3", "target": "as-3", "action": "endorse", "by": "subject", "recordedAt": "2026-10-01T19:20:00Z"}
+  ],
+  "claims": [
+    {"id": "c-2", "facet": "disposition", "predicate": "self-described-tendency", "text": "When I feel unseen I pull back and wait, instead of saying what I want.", "evidence": [{"ref": "as-3", "kind": "practitioner"}], "origin": "declared", "assertedBy": "subject", "recordedAt": "2026-10-01T19:25:00Z", "horizon": "foundation", "sensitivity": "special", "categories": ["mental-health"], "handling": ["no-quote-back"], "synthetic": true}
+  ],
+  "synthetic": true
+}

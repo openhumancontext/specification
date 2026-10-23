@@ -1,0 +1,50 @@
+{
+  "format": "ohc.catalog",
+  "id": "urn:ohc:catalog:part-authoring",
+  "version": "0.1.0",
+  "specVersion": "0.1.0-draft",
+  "title": {
+    "en": "Part authoring",
+    "ru": "Как описана часть"
+  },
+  "description": {
+    "en": "How a Part description came about (experimental module `inner-system`). Agents never author Parts (P-2).",
+    "ru": "Как появилось описание внутренней части (экспериментальный модуль `inner-system`). Агенты никогда не являются авторами частей (P-2)."
+  },
+  "closed": true,
+  "codes": [
+    {
+      "code": "alone",
+      "label": {
+        "en": "Alone",
+        "ru": "Самостоятельно"
+      },
+      "definition": {
+        "en": "The person described the part alone.",
+        "ru": "Человек описал часть сам."
+      }
+    },
+    {
+      "code": "with-practitioner",
+      "label": {
+        "en": "With a practitioner",
+        "ru": "Со специалистом"
+      },
+      "definition": {
+        "en": "Described together with a practitioner.",
+        "ru": "Описано вместе со специалистом-практиком."
+      }
+    },
+    {
+      "code": "with-agent",
+      "label": {
+        "en": "With an agent",
+        "ru": "С агентом"
+      },
+      "definition": {
+        "en": "Described in a dialogue with an agent; still authored by the person.",
+        "ru": "Описано в диалоге с агентом; автор всё равно сам человек."
+      }
+    }
+  ]
+}

@@ -1,0 +1,690 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:ohc:schema:lens:0.1.0-draft",
+  "title": "OHC Lens descriptor",
+  "description": "A registry document describing one framework of description: its constructs, mental model of working with the person, toolkit, representations, adoption routes, evidence, IP limits, use limits and defaults. It contains no personal data (G2) and no item text, report prose, scoring keys or raw proprietary responses (LN-5). Module lenses. A local descriptor (id in an x- namespace) is always a stub and needs only the light profile: name, kind, summary and a mental model with summary, attendsTo, agentPosture and helperMustNot; toolkit and representations are optional.",
+  "type": "object",
+  "required": [
+    "format",
+    "specVersion",
+    "id",
+    "version",
+    "name",
+    "descriptorStatus",
+    "kind",
+    "summary",
+    "mentalModel"
+  ],
+  "properties": {
+    "format": {
+      "const": "ohc.lens"
+    },
+    "specVersion": {
+      "const": "0.1.0-draft"
+    },
+    "id": {
+      "type": "string",
+      "description": "urn:ohc:lens:<name> for catalog entries; urn:ohc:lens:x-<namespace>:<name> for a local descriptor written by the person or their practitioner (light profile, LENSES.md §5.1).",
+      "pattern": "^urn:ohc:lens:(?:x-[a-z0-9]+(?:[.-][a-z0-9]+)*:)?[a-z0-9]+(?:-[a-z0-9]+)*$"
+    },
+    "version": {
+      "description": "The version of the descriptor, not of the framework.",
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/SemVer"
+    },
+    "name": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/LangText"
+    },
+    "aliases": {
+      "type": "array",
+      "items": {
+        "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+      },
+      "description": "Never a protected mark used as a generic name."
+    },
+    "descriptorStatus": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/lens-descriptor.descriptor-status"
+    },
+    "kind": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/lens-kinds"
+    },
+    "summary": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/LangText"
+    },
+    "variants": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id"
+        ],
+        "properties": {
+          "id": {
+            "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+          },
+          "note": {
+            "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "constructs": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/Construct"
+      }
+    },
+    "constructsByReference": {
+      "type": "object",
+      "required": [
+        "url",
+        "reason",
+        "idPattern"
+      ],
+      "properties": {
+        "url": {
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/URI"
+        },
+        "reason": {
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+        },
+        "idPattern": {
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+        }
+      },
+      "additionalProperties": false
+    },
+    "mentalModel": {
+      "$ref": "#/$defs/MentalModel"
+    },
+    "toolkit": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/ToolkitItem"
+      }
+    },
+    "representations": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/Representation"
+      }
+    },
+    "instruments": {
+      "type": "array",
+      "items": {
+        "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/URI"
+      }
+    },
+    "adoption": {
+      "type": "object",
+      "required": [
+        "routes"
+      ],
+      "properties": {
+        "routes": {
+          "type": "array",
+          "items": {
+            "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/adoption.routes"
+          },
+          "minItems": 1
+        },
+        "suggestionRequires": {
+          "type": "array",
+          "items": {
+            "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+          }
+        },
+        "inheritanceRoles": {
+          "type": "array",
+          "items": {
+            "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/adoption.practice-roles"
+          }
+        },
+        "practitionerFor": {
+          "type": "array",
+          "items": {
+            "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+          }
+        }
+      },
+      "additionalProperties": false,
+      "description": "Describes how the lens is usually adopted; never restricts a LensAdoption."
+    },
+    "evidence": {
+      "type": "object",
+      "required": [
+        "measurementTier",
+        "practiceTier",
+        "ontologicalStatus",
+        "citations",
+        "reviewedAt"
+      ],
+      "properties": {
+        "measurementTier": {
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/evidence-tiers.measurement"
+        },
+        "practiceTier": {
+          "type": "object",
+          "required": [
+            "clinicianDelivered",
+            "selfGuided",
+            "agentOffered"
+          ],
+          "properties": {
+            "clinicianDelivered": {
+              "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/evidence-tiers.practice"
+            },
+            "selfGuided": {
+              "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/evidence-tiers.practice"
+            },
+            "agentOffered": {
+              "const": "not-assessed"
+            }
+          },
+          "additionalProperties": false
+        },
+        "ontologicalStatus": {
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/ontological-status"
+        },
+        "citations": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Citation"
+          }
+        },
+        "reviewedAt": {
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Date"
+        },
+        "notes": {
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+        }
+      },
+      "additionalProperties": false
+    },
+    "supports": {
+      "type": "array",
+      "items": {
+        "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+      }
+    },
+    "doesNotEstablish": {
+      "type": "array",
+      "items": {
+        "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+      }
+    },
+    "ip": {
+      "type": "object",
+      "description": "Not legal advice.",
+      "required": [
+        "conceptStatus",
+        "marks",
+        "itemsLicence",
+        "scoring",
+        "restrictions",
+        "registryListing",
+        "legalReviewNeeded"
+      ],
+      "properties": {
+        "conceptStatus": {
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/lens-descriptor.concept-status"
+        },
+        "marks": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Mark"
+          }
+        },
+        "itemsLicence": {
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+        },
+        "scoring": {
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/lens-descriptor.scoring"
+        },
+        "restrictions": {
+          "type": "array",
+          "items": {
+            "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+          }
+        },
+        "registryListing": {
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/lens-descriptor.registry-listing"
+        },
+        "lineageConsent": {
+          "type": "object",
+          "required": [
+            "status"
+          ],
+          "properties": {
+            "status": {
+              "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/lens-descriptor.lineage-consent"
+            },
+            "ref": {
+              "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+            }
+          },
+          "additionalProperties": false
+        },
+        "legalReviewNeeded": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "useLimits": {
+      "type": "object",
+      "description": "Whether population-level Mappings involving this lens may be used (§4, AR-7, LN-3). What an agent may see, infer or decide is the person's agreement (the Grant), never the lens.",
+      "required": [
+        "crossLensMapping"
+      ],
+      "properties": {
+        "crossLensMapping": {
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/lens-descriptor.cross-lens-mapping"
+        }
+      },
+      "additionalProperties": false
+    },
+    "defaults": {
+      "type": "object",
+      "required": [
+        "sensitivity",
+        "categories",
+        "reviewAfter"
+      ],
+      "properties": {
+        "sensitivity": {
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/sensitivity-tiers"
+        },
+        "categories": {
+          "type": "array",
+          "items": {
+            "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/categories"
+          }
+        },
+        "perConstruct": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "object",
+            "properties": {
+              "sensitivity": {
+                "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/sensitivity-tiers"
+              },
+              "categories": {
+                "type": "array",
+                "items": {
+                  "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/categories"
+                }
+              }
+            },
+            "additionalProperties": false
+          }
+        },
+        "reviewAfter": {
+          "anyOf": [
+            {
+              "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Duration"
+            },
+            {
+              "const": "on-change"
+            }
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "mappings": {
+      "type": "array",
+      "items": {
+        "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/URI"
+      }
+    },
+    "playbooks": {
+      "description": "Playbooks that come with this lens: ways of using it by situation (PB-2). A registry descriptor lists registry playbooks only.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^urn:ohc:playbook:(?:x-[a-z0-9]+(?:[.-][a-z0-9]+)*:)?[a-z0-9]+(?:-[a-z0-9]+)*$"
+      },
+      "uniqueItems": true
+    },
+    "descriptorAuthors": {
+      "type": "array",
+      "items": {
+        "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+      },
+      "minItems": 1
+    },
+    "sources": {
+      "type": "array",
+      "items": {
+        "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+      },
+      "description": "Public citations only."
+    }
+  },
+  "additionalProperties": false,
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "id": {
+            "pattern": "^urn:ohc:lens:x-"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      },
+      "then": {
+        "properties": {
+          "descriptorStatus": {
+            "const": "stub"
+          },
+          "mentalModel": {
+            "required": [
+              "summary",
+              "attendsTo",
+              "agentPosture",
+              "helperMustNot"
+            ]
+          }
+        }
+      },
+      "else": {
+        "required": [
+          "toolkit",
+          "representations",
+          "adoption",
+          "evidence",
+          "supports",
+          "doesNotEstablish",
+          "ip",
+          "useLimits",
+          "defaults",
+          "descriptorAuthors"
+        ],
+        "allOf": [
+          {
+            "oneOf": [
+              {
+                "required": [
+                  "constructs"
+                ]
+              },
+              {
+                "required": [
+                  "constructsByReference"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "descriptorStatus": {
+            "const": "stub"
+          }
+        },
+        "required": [
+          "descriptorStatus"
+        ]
+      },
+      "else": {
+        "properties": {
+          "representations": {
+            "minItems": 1
+          }
+        }
+      }
+    }
+  ],
+  "$defs": {
+    "Construct": {
+      "type": "object",
+      "required": [
+        "id",
+        "label"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*/[A-Za-z0-9][A-Za-z0-9/._-]*$"
+        },
+        "parent": {
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+        },
+        "label": {
+          "type": "object",
+          "required": [
+            "en"
+          ],
+          "properties": {
+            "en": {
+              "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+            },
+            "ru": {
+              "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+            }
+          },
+          "additionalProperties": false
+        },
+        "description": {
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+        },
+        "sensitivity": {
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/sensitivity-tiers"
+        },
+        "categories": {
+          "type": "array",
+          "items": {
+            "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/categories"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "MentalModel": {
+      "type": "object",
+      "description": "The lens's mental model of working with the person. Further members may be added as arrays of strings.",
+      "properties": {
+        "summary": {
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+        },
+        "assumptions": {
+          "type": "array",
+          "items": {
+            "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+          }
+        },
+        "stance": {
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+        },
+        "unitOfAnalysis": {
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+        },
+        "attendsTo": {
+          "type": "array",
+          "items": {
+            "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+          }
+        },
+        "howChangeHappens": {
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+        },
+        "languageGuidance": {
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+        },
+        "agentPosture": {
+          "type": "object",
+          "properties": {
+            "do": {
+              "type": "array",
+              "items": {
+                "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+              }
+            },
+            "dont": {
+              "type": "array",
+              "items": {
+                "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+              }
+            }
+          },
+          "additionalProperties": false
+        },
+        "exploratoryQuestions": {
+          "type": "array",
+          "items": {
+            "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+          }
+        },
+        "helperMustNot": {
+          "type": "array",
+          "items": {
+            "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+          }
+        },
+        "doesNotClaim": {
+          "type": "array",
+          "items": {
+            "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+          }
+        },
+        "riskNotes": {
+          "type": "array",
+          "items": {
+            "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+          }
+        }
+      },
+      "additionalProperties": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    },
+    "ToolkitItem": {
+      "type": "object",
+      "required": [
+        "id",
+        "name",
+        "kind",
+        "description",
+        "facilitation",
+        "requiresPractitioner",
+        "agentMayOffer",
+        "nonClinical"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*\\.[a-z0-9]+(?:[.-][a-z0-9]+)*$"
+        },
+        "name": {
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+        },
+        "kind": {
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/lens-descriptor.toolkit-kinds"
+        },
+        "description": {
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+        },
+        "facilitation": {
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/lens-descriptor.facilitation"
+        },
+        "requiresPractitioner": {
+          "type": "boolean"
+        },
+        "agentMayOffer": {
+          "type": "boolean"
+        },
+        "nonClinical": {
+          "type": "boolean"
+        },
+        "produces": {
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/lens-descriptor.produces"
+        },
+        "cautions": {
+          "type": "array",
+          "items": {
+            "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "Representation": {
+      "type": "object",
+      "required": [
+        "id",
+        "kind",
+        "description"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+        },
+        "kind": {
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/lens-descriptor.representation-kinds"
+        },
+        "resultType": {
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/assessment.result-types"
+        },
+        "description": {
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+        }
+      },
+      "additionalProperties": false
+    },
+    "Citation": {
+      "type": "object",
+      "required": [
+        "ref",
+        "grade"
+      ],
+      "properties": {
+        "ref": {
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+        },
+        "grade": {
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/mapping.evidence-grades"
+        },
+        "note": {
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+        }
+      },
+      "additionalProperties": false
+    },
+    "Mark": {
+      "type": "object",
+      "required": [
+        "mark",
+        "owner",
+        "status",
+        "use"
+      ],
+      "properties": {
+        "mark": {
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+        },
+        "owner": {
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+        },
+        "status": {
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/lens-descriptor.mark-status"
+        },
+        "notice": {
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+        },
+        "use": {
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/lens-descriptor.mark-use"
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

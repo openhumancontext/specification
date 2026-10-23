@@ -1,0 +1,52 @@
+{
+  "description": "A Pattern over one episode chain.",
+  "expect": [
+    "PT-1"
+  ],
+  "form": "single",
+  "patches": [
+    {
+      "op": "add",
+      "target": "episodes",
+      "path": "",
+      "value": {
+        "id": "ep-03",
+        "supersedes": "ep-02",
+        "occurred": {
+          "start": "2026-09-05",
+          "precision": "day"
+        },
+        "accounts": [
+          {
+            "narrator": "subject",
+            "narratedAt": "2026-09-05T20:00:00Z",
+            "addedAt": "2026-09-05T20:05:00Z",
+            "accountKind": "in-the-moment",
+            "happened": "Went to class after a short walk."
+          },
+          {
+            "narrator": "subject",
+            "narratedAt": "2026-09-07T08:00:00Z",
+            "addedAt": "2026-09-07T08:00:00Z",
+            "accountKind": "later-reconstruction",
+            "happened": "The walk was ten minutes."
+          }
+        ],
+        "recall": "permitted",
+        "origin": "declared",
+        "assertedBy": "subject",
+        "recordedAt": "2026-09-07T08:00:00Z",
+        "synthetic": true
+      }
+    },
+    {
+      "op": "set",
+      "target": "patterns",
+      "path": "/@pat-01/episodes",
+      "value": [
+        "ep-02",
+        "ep-03"
+      ]
+    }
+  ]
+}

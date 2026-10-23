@@ -1,0 +1,83 @@
+{
+  "format": "ohc.catalog",
+  "id": "urn:ohc:catalog:epistemic",
+  "version": "0.1.0",
+  "specVersion": "0.1.0-draft",
+  "title": {
+    "en": "Epistemic status",
+    "ru": "Эпистемический статус"
+  },
+  "description": {
+    "en": "How well-supported the content is. The initial value depends on origin (see the origin catalog). Later changes are made by a Review `reassess`, by the asserter or the subject.",
+    "ru": "Насколько содержание опирается на основания. Начальное значение зависит от происхождения (см. каталог происхождения). Последующие изменения делаются решением `reassess` — автором записи или самим человеком."
+  },
+  "closed": true,
+  "codes": [
+    {
+      "code": "as-reported",
+      "label": {
+        "en": "As reported",
+        "ru": "Со слов автора"
+      },
+      "definition": {
+        "en": "Recorded as its asserter reported it. No further support is claimed.",
+        "ru": "Записано так, как сообщил автор. Дополнительная опора не заявляется."
+      }
+    },
+    {
+      "code": "hypothesis",
+      "label": {
+        "en": "Hypothesis",
+        "ru": "Гипотеза"
+      },
+      "definition": {
+        "en": "A possibility that needs confirmation before use.",
+        "ru": "Возможность, которую нужно подтвердить, прежде чем на неё опираться."
+      }
+    },
+    {
+      "code": "supported",
+      "label": {
+        "en": "Supported",
+        "ru": "Подкреплено"
+      },
+      "definition": {
+        "en": "At least one independent ground supports it.",
+        "ru": "Есть хотя бы одно независимое основание в поддержку."
+      }
+    },
+    {
+      "code": "corroborated",
+      "label": {
+        "en": "Corroborated",
+        "ru": "Подтверждено независимо"
+      },
+      "definition": {
+        "en": "At least two independent grounds support it, from different Sources or Parties. The checker verifies the count.",
+        "ru": "Есть хотя бы два независимых основания из разных источников или от разных участников. Проверяющий инструмент сверяет их число."
+      }
+    },
+    {
+      "code": "contradicted",
+      "label": {
+        "en": "Contradicted",
+        "ru": "Опровергается"
+      },
+      "definition": {
+        "en": "Grounds exist against it, recorded in `counterEvidence` or by a `contradicts` relation.",
+        "ru": "Есть основания против, записанные в `counterEvidence` или связью `contradicts`."
+      }
+    },
+    {
+      "code": "frame-relative",
+      "label": {
+        "en": "Frame-relative",
+        "ru": "В рамках системы описания"
+      },
+      "definition": {
+        "en": "Meaningful only inside a non-empirical or interpretive frame (a symbolic or contemplative lens, or a parts model). Never presented as an empirical fact, and neither is anything inferred from it (C-7).",
+        "ru": "Имеет смысл только внутри неэмпирической или интерпретативной рамки (символическая или созерцательная линза, модель частей). Никогда не подаётся как эмпирический факт — ни сама запись, ни выведенное из неё (C-7)."
+      }
+    }
+  ]
+}

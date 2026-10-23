@@ -1,0 +1,15 @@
+{
+  "description": "A projection whose derived block differs from the replay.",
+  "expect": [
+    "PJ-7"
+  ],
+  "form": "package",
+  "postPatches": [
+    {
+      "op": "set",
+      "target": "projection:prj-0001",
+      "path": "/derived/c-01/label",
+      "value": "hypothesis"
+    }
+  ]
+}

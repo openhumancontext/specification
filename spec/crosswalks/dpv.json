@@ -1,0 +1,423 @@
+[
+  {
+    "format": "ohc.mapping",
+    "specVersion": "0.1.0-draft",
+    "id": "urn:ohc:mapping:ohc.origin.declared--dpv.ProvidedPersonalData--dpv-2.3",
+    "version": "0.1.0",
+    "bridgeKind": "ohc-standard",
+    "from": {
+      "standard": "OHC 0.1.0-draft",
+      "concept": "origin declared"
+    },
+    "to": {
+      "standard": "W3C Data Privacy Vocabulary (DPV) 2.3, Community Group Final Report",
+      "concept": "ProvidedPersonalData"
+    },
+    "relation": "corresponds",
+    "scope": "Informative crosswalk between formats; never a conversion of a person's data without the person's grant",
+    "notIdentity": true,
+    "chainable": false,
+    "rowStatus": "accepted",
+    "evidenceGrade": "F",
+    "reviewedAt": "2026-10-09"
+  },
+  {
+    "format": "ohc.mapping",
+    "specVersion": "0.1.0-draft",
+    "id": "urn:ohc:mapping:ohc.origin.observed--dpv.ObservedPersonalData--dpv-2.3",
+    "version": "0.1.0",
+    "bridgeKind": "ohc-standard",
+    "from": {
+      "standard": "OHC 0.1.0-draft",
+      "concept": "origin observed"
+    },
+    "to": {
+      "standard": "W3C Data Privacy Vocabulary (DPV) 2.3, Community Group Final Report",
+      "concept": "ObservedPersonalData"
+    },
+    "relation": "corresponds",
+    "scope": "Informative crosswalk between formats; never a conversion of a person's data without the person's grant",
+    "notIdentity": true,
+    "chainable": false,
+    "rowStatus": "accepted",
+    "evidenceGrade": "F",
+    "reviewedAt": "2026-10-09"
+  },
+  {
+    "format": "ohc.mapping",
+    "specVersion": "0.1.0-draft",
+    "id": "urn:ohc:mapping:ohc.origin.inferred--dpv.InferredPersonalData--dpv-2.3",
+    "version": "0.1.0",
+    "bridgeKind": "ohc-standard",
+    "from": {
+      "standard": "OHC 0.1.0-draft",
+      "concept": "origin inferred"
+    },
+    "to": {
+      "standard": "W3C Data Privacy Vocabulary (DPV) 2.3, Community Group Final Report",
+      "concept": "InferredPersonalData"
+    },
+    "relation": "corresponds",
+    "scope": "Informative crosswalk between formats; never a conversion of a person's data without the person's grant",
+    "notIdentity": true,
+    "chainable": false,
+    "rowStatus": "accepted",
+    "evidenceGrade": "F",
+    "reviewedAt": "2026-10-09"
+  },
+  {
+    "format": "ohc.mapping",
+    "specVersion": "0.1.0-draft",
+    "id": "urn:ohc:mapping:ohc.origin.derived--dpv.DerivedPersonalData--dpv-2.3",
+    "version": "0.1.0",
+    "bridgeKind": "ohc-standard",
+    "from": {
+      "standard": "OHC 0.1.0-draft",
+      "concept": "origin derived"
+    },
+    "to": {
+      "standard": "W3C Data Privacy Vocabulary (DPV) 2.3, Community Group Final Report",
+      "concept": "DerivedPersonalData"
+    },
+    "relation": "corresponds",
+    "scope": "Informative crosswalk between formats; never a conversion of a person's data without the person's grant",
+    "notIdentity": true,
+    "chainable": false,
+    "rowStatus": "accepted",
+    "evidenceGrade": "F",
+    "reviewedAt": "2026-10-09"
+  },
+  {
+    "format": "ohc.mapping",
+    "specVersion": "0.1.0-draft",
+    "id": "urn:ohc:mapping:ohc.origin.imported--dpv.CollectedPersonalData--dpv-2.3",
+    "version": "0.1.0",
+    "bridgeKind": "ohc-standard",
+    "from": {
+      "standard": "OHC 0.1.0-draft",
+      "concept": "origin imported"
+    },
+    "to": {
+      "standard": "W3C Data Privacy Vocabulary (DPV) 2.3, Community Group Final Report",
+      "concept": "CollectedPersonalData"
+    },
+    "relation": "corresponds",
+    "scope": "Informative crosswalk between formats; never a conversion of a person's data without the person's grant",
+    "notIdentity": true,
+    "chainable": false,
+    "rowStatus": "accepted",
+    "evidenceGrade": "F",
+    "reviewedAt": "2026-10-09"
+  },
+  {
+    "format": "ohc.mapping",
+    "specVersion": "0.1.0-draft",
+    "id": "urn:ohc:mapping:ohc.origin.attested--dpv.CollectedPersonalData-vc--dpv-2.3",
+    "version": "0.1.0",
+    "bridgeKind": "ohc-standard",
+    "from": {
+      "standard": "OHC 0.1.0-draft",
+      "concept": "origin attested"
+    },
+    "to": {
+      "standard": "W3C Data Privacy Vocabulary (DPV) 2.3, Community Group Final Report",
+      "concept": "CollectedPersonalData (with the verifiable credential as evidence)"
+    },
+    "relation": "corresponds",
+    "scope": "Informative crosswalk between formats; never a conversion of a person's data without the person's grant",
+    "notIdentity": true,
+    "chainable": false,
+    "rowStatus": "accepted-with-loss",
+    "lost": "DPV has no concept for issuer-attested data; the credential itself carries the attestation.",
+    "evidenceGrade": "F",
+    "reviewedAt": "2026-10-09"
+  },
+  {
+    "format": "ohc.mapping",
+    "specVersion": "0.1.0-draft",
+    "id": "urn:ohc:mapping:ohc.grant-status.given--dpv.ConsentGiven--dpv-2.3",
+    "version": "0.1.0",
+    "bridgeKind": "ohc-standard",
+    "from": {
+      "standard": "OHC 0.1.0-draft",
+      "concept": "Grant status given"
+    },
+    "to": {
+      "standard": "W3C Data Privacy Vocabulary (DPV) 2.3, Community Group Final Report",
+      "concept": "ConsentGiven"
+    },
+    "relation": "corresponds",
+    "scope": "Informative crosswalk between formats; never a conversion of a person's data without the person's grant",
+    "notIdentity": true,
+    "chainable": false,
+    "rowStatus": "accepted",
+    "evidenceGrade": "F",
+    "reviewedAt": "2026-10-09"
+  },
+  {
+    "format": "ohc.mapping",
+    "specVersion": "0.1.0-draft",
+    "id": "urn:ohc:mapping:ohc.grant-status.withdrawn--dpv.ConsentWithdrawn--dpv-2.3",
+    "version": "0.1.0",
+    "bridgeKind": "ohc-standard",
+    "from": {
+      "standard": "OHC 0.1.0-draft",
+      "concept": "Grant status withdrawn"
+    },
+    "to": {
+      "standard": "W3C Data Privacy Vocabulary (DPV) 2.3, Community Group Final Report",
+      "concept": "ConsentWithdrawn"
+    },
+    "relation": "corresponds",
+    "scope": "Informative crosswalk between formats; never a conversion of a person's data without the person's grant",
+    "notIdentity": true,
+    "chainable": false,
+    "rowStatus": "accepted",
+    "evidenceGrade": "F",
+    "reviewedAt": "2026-10-09"
+  },
+  {
+    "format": "ohc.mapping",
+    "specVersion": "0.1.0-draft",
+    "id": "urn:ohc:mapping:ohc.grant-status.revoked--dpv.ConsentRevoked--dpv-2.3",
+    "version": "0.1.0",
+    "bridgeKind": "ohc-standard",
+    "from": {
+      "standard": "OHC 0.1.0-draft",
+      "concept": "Grant status revoked"
+    },
+    "to": {
+      "standard": "W3C Data Privacy Vocabulary (DPV) 2.3, Community Group Final Report",
+      "concept": "ConsentRevoked"
+    },
+    "relation": "corresponds",
+    "scope": "Informative crosswalk between formats; never a conversion of a person's data without the person's grant",
+    "notIdentity": true,
+    "chainable": false,
+    "rowStatus": "accepted",
+    "evidenceGrade": "F",
+    "reviewedAt": "2026-10-09"
+  },
+  {
+    "format": "ohc.mapping",
+    "specVersion": "0.1.0-draft",
+    "id": "urn:ohc:mapping:ohc.grant-status.expired--dpv.ConsentExpired--dpv-2.3",
+    "version": "0.1.0",
+    "bridgeKind": "ohc-standard",
+    "from": {
+      "standard": "OHC 0.1.0-draft",
+      "concept": "Grant status expired"
+    },
+    "to": {
+      "standard": "W3C Data Privacy Vocabulary (DPV) 2.3, Community Group Final Report",
+      "concept": "ConsentExpired"
+    },
+    "relation": "corresponds",
+    "scope": "Informative crosswalk between formats; never a conversion of a person's data without the person's grant",
+    "notIdentity": true,
+    "chainable": false,
+    "rowStatus": "accepted",
+    "evidenceGrade": "F",
+    "reviewedAt": "2026-10-09"
+  },
+  {
+    "format": "ohc.mapping",
+    "specVersion": "0.1.0-draft",
+    "id": "urn:ohc:mapping:ohc.grant-status.invalidated--dpv.ConsentInvalidated--dpv-2.3",
+    "version": "0.1.0",
+    "bridgeKind": "ohc-standard",
+    "from": {
+      "standard": "OHC 0.1.0-draft",
+      "concept": "Grant status invalidated"
+    },
+    "to": {
+      "standard": "W3C Data Privacy Vocabulary (DPV) 2.3, Community Group Final Report",
+      "concept": "ConsentInvalidated"
+    },
+    "relation": "corresponds",
+    "scope": "Informative crosswalk between formats; never a conversion of a person's data without the person's grant",
+    "notIdentity": true,
+    "chainable": false,
+    "rowStatus": "accepted",
+    "evidenceGrade": "F",
+    "reviewedAt": "2026-10-09"
+  },
+  {
+    "format": "ohc.mapping",
+    "specVersion": "0.1.0-draft",
+    "id": "urn:ohc:mapping:ohc.grant-status.requested--dpv.ConsentRequested--dpv-2.3",
+    "version": "0.1.0",
+    "bridgeKind": "ohc-standard",
+    "from": {
+      "standard": "OHC 0.1.0-draft",
+      "concept": "grant status in messages and Events: requested"
+    },
+    "to": {
+      "standard": "W3C Data Privacy Vocabulary (DPV) 2.3, Community Group Final Report",
+      "concept": "ConsentRequested"
+    },
+    "relation": "corresponds",
+    "scope": "Informative crosswalk between formats; never a conversion of a person's data without the person's grant",
+    "notIdentity": true,
+    "chainable": false,
+    "rowStatus": "accepted",
+    "evidenceGrade": "F",
+    "reviewedAt": "2026-10-09"
+  },
+  {
+    "format": "ohc.mapping",
+    "specVersion": "0.1.0-draft",
+    "id": "urn:ohc:mapping:ohc.grant-status.refused--dpv.ConsentRefused--dpv-2.3",
+    "version": "0.1.0",
+    "bridgeKind": "ohc-standard",
+    "from": {
+      "standard": "OHC 0.1.0-draft",
+      "concept": "grant status in messages and Events: refused"
+    },
+    "to": {
+      "standard": "W3C Data Privacy Vocabulary (DPV) 2.3, Community Group Final Report",
+      "concept": "ConsentRefused"
+    },
+    "relation": "corresponds",
+    "scope": "Informative crosswalk between formats; never a conversion of a person's data without the person's grant",
+    "notIdentity": true,
+    "chainable": false,
+    "rowStatus": "accepted",
+    "evidenceGrade": "F",
+    "reviewedAt": "2026-10-09"
+  },
+  {
+    "format": "ohc.mapping",
+    "specVersion": "0.1.0-draft",
+    "id": "urn:ohc:mapping:ohc.grant-status.deferred--dpv.ConsentRequestDeferred--dpv-2.3",
+    "version": "0.1.0",
+    "bridgeKind": "ohc-standard",
+    "from": {
+      "standard": "OHC 0.1.0-draft",
+      "concept": "grant status in messages and Events: deferred"
+    },
+    "to": {
+      "standard": "W3C Data Privacy Vocabulary (DPV) 2.3, Community Group Final Report",
+      "concept": "ConsentRequestDeferred"
+    },
+    "relation": "corresponds",
+    "scope": "Informative crosswalk between formats; never a conversion of a person's data without the person's grant",
+    "notIdentity": true,
+    "chainable": false,
+    "rowStatus": "accepted",
+    "evidenceGrade": "F",
+    "reviewedAt": "2026-10-09"
+  },
+  {
+    "format": "ohc.mapping",
+    "specVersion": "0.1.0-draft",
+    "id": "urn:ohc:mapping:ohc.basis.consent--dpv.Consent--dpv-2.3",
+    "version": "0.1.0",
+    "bridgeKind": "ohc-standard",
+    "from": {
+      "standard": "OHC 0.1.0-draft",
+      "concept": "Grant basis.legal consent"
+    },
+    "to": {
+      "standard": "W3C Data Privacy Vocabulary (DPV) 2.3, Community Group Final Report",
+      "concept": "Consent"
+    },
+    "relation": "corresponds",
+    "scope": "Informative crosswalk between formats; never a conversion of a person's data without the person's grant",
+    "notIdentity": true,
+    "chainable": false,
+    "rowStatus": "accepted",
+    "evidenceGrade": "verify",
+    "reviewedAt": "2026-10-09"
+  },
+  {
+    "format": "ohc.mapping",
+    "specVersion": "0.1.0-draft",
+    "id": "urn:ohc:mapping:ohc.basis.explicit-consent--dpv.ExplicitlyExpressedConsent--dpv-2.3",
+    "version": "0.1.0",
+    "bridgeKind": "ohc-standard",
+    "from": {
+      "standard": "OHC 0.1.0-draft",
+      "concept": "Grant basis.legal explicit-consent"
+    },
+    "to": {
+      "standard": "W3C Data Privacy Vocabulary (DPV) 2.3, Community Group Final Report",
+      "concept": "ExplicitlyExpressedConsent"
+    },
+    "relation": "corresponds",
+    "scope": "Informative crosswalk between formats; never a conversion of a person's data without the person's grant",
+    "notIdentity": true,
+    "chainable": false,
+    "rowStatus": "accepted",
+    "evidenceGrade": "F",
+    "reviewedAt": "2026-10-09"
+  },
+  {
+    "format": "ohc.mapping",
+    "specVersion": "0.1.0-draft",
+    "id": "urn:ohc:mapping:ohc.basis.contract--dpv.Contract--dpv-2.3",
+    "version": "0.1.0",
+    "bridgeKind": "ohc-standard",
+    "from": {
+      "standard": "OHC 0.1.0-draft",
+      "concept": "Grant basis.legal contract"
+    },
+    "to": {
+      "standard": "W3C Data Privacy Vocabulary (DPV) 2.3, Community Group Final Report",
+      "concept": "Contract"
+    },
+    "relation": "corresponds",
+    "scope": "Informative crosswalk between formats; never a conversion of a person's data without the person's grant",
+    "notIdentity": true,
+    "chainable": false,
+    "rowStatus": "accepted",
+    "evidenceGrade": "verify",
+    "reviewedAt": "2026-10-09"
+  },
+  {
+    "format": "ohc.mapping",
+    "specVersion": "0.1.0-draft",
+    "id": "urn:ohc:mapping:ohc.purposes--dpv.purposes--dpv-2.3",
+    "version": "0.1.0",
+    "bridgeKind": "ohc-standard",
+    "from": {
+      "standard": "OHC 0.1.0-draft",
+      "concept": "purposes (catalog purposes.json)"
+    },
+    "to": {
+      "standard": "W3C Data Privacy Vocabulary (DPV) 2.3, Community Group Final Report",
+      "concept": "candidate purpose concepts listed per code"
+    },
+    "relation": "corresponds",
+    "scope": "Informative crosswalk between formats; never a conversion of a person's data without the person's grant",
+    "notIdentity": true,
+    "chainable": false,
+    "rowStatus": "unresolved",
+    "reopenWhen": "Each candidate is checked against DPV 2.x.",
+    "evidenceGrade": "verify",
+    "reviewedAt": "2026-10-09"
+  },
+  {
+    "format": "ohc.mapping",
+    "specVersion": "0.1.0-draft",
+    "id": "urn:ohc:mapping:ohc.categories--dpv.special-categories--dpv-2.3",
+    "version": "0.1.0",
+    "bridgeKind": "ohc-standard",
+    "from": {
+      "standard": "OHC 0.1.0-draft",
+      "concept": "categories with minimum tier special"
+    },
+    "to": {
+      "standard": "W3C Data Privacy Vocabulary (DPV) 2.3, Community Group Final Report",
+      "concept": "SpecialCategoryPersonalData and its sub-concepts"
+    },
+    "relation": "corresponds",
+    "scope": "Informative crosswalk between formats; never a conversion of a person's data without the person's grant",
+    "notIdentity": true,
+    "chainable": false,
+    "rowStatus": "unresolved",
+    "reopenWhen": "Each category is checked against DPV 2.x.",
+    "evidenceGrade": "verify",
+    "reviewedAt": "2026-10-09"
+  }
+]

@@ -1,0 +1,183 @@
+{
+  "format": "ohc.catalog",
+  "id": "urn:ohc:catalog:evidence-tiers",
+  "version": "0.1.0",
+  "specVersion": "0.1.0-draft",
+  "title": {
+    "en": "Evidence tiers",
+    "ru": "Уровни доказательности"
+  },
+  "description": {
+    "en": "Two evidence axes for lenses: measurement tiers for constructs (T) and practice tiers by delivery context (P).",
+    "ru": "Две оси доказательности линз: уровни измерения для конструктов (T) и уровни доказательности практик по контексту применения (P)."
+  },
+  "closed": true,
+  "lists": [
+    {
+      "name": "measurement",
+      "title": {
+        "en": "Measurement tiers",
+        "ru": "Уровни измерения"
+      },
+      "closed": true,
+      "field": "Lens.evidence.measurementTier",
+      "notes": "Applies to the constructs."
+    },
+    {
+      "name": "practice",
+      "title": {
+        "en": "Practice tiers",
+        "ru": "Уровни доказательности практик"
+      },
+      "closed": true,
+      "field": "Lens.evidence.practiceTier.*",
+      "notes": "Scoped by delivery context: clinicianDelivered, selfGuided, agentOffered."
+    }
+  ],
+  "codes": [
+    {
+      "code": "T1",
+      "list": "measurement",
+      "label": {
+        "en": "T1 Established",
+        "ru": "T1 Устоявшийся"
+      },
+      "definition": {
+        "en": "Established psychometric construct: replicated structure, norms, outcome validity.",
+        "ru": "Устоявшийся психометрический конструкт: воспроизведённая структура, нормы, прогностическая валидность."
+      }
+    },
+    {
+      "code": "T2",
+      "list": "measurement",
+      "label": {
+        "en": "T2 Validated with caveats",
+        "ru": "T2 Валидирован с оговорками"
+      },
+      "definition": {
+        "en": "Good psychometrics, but narrower or newer evidence, or cultural variance.",
+        "ru": "Хорошие психометрические свойства, но более узкие или новые данные либо культурные различия."
+      }
+    },
+    {
+      "code": "T3",
+      "list": "measurement",
+      "label": {
+        "en": "T3 Publisher-validated",
+        "ru": "T3 Валидирован издателем"
+      },
+      "definition": {
+        "en": "Publisher-validated or practitioner tool: reliability shown mainly by the vendor; limited independent validity.",
+        "ru": "Инструмент, валидированный издателем или практиками: надёжность показана в основном поставщиком; независимая валидность ограничена."
+      }
+    },
+    {
+      "code": "T4",
+      "list": "measurement",
+      "label": {
+        "en": "T4 Contested",
+        "ru": "T4 Оспаривается"
+      },
+      "definition": {
+        "en": "Core structural claims not supported, or validity \"not demonstrated\".",
+        "ru": "Ключевые структурные утверждения не подтверждены или валидность «не продемонстрирована»."
+      }
+    },
+    {
+      "code": "T5",
+      "list": "measurement",
+      "label": {
+        "en": "T5 Non-empirical frame",
+        "ru": "T5 Неэмпирическая рамка"
+      },
+      "definition": {
+        "en": "Non-empirical self-description frame: makes no claim to empirical validity.",
+        "ru": "Неэмпирическая рамка самоописания: не претендует на эмпирическую валидность."
+      }
+    },
+    {
+      "code": "not-applicable",
+      "list": "measurement",
+      "label": {
+        "en": "Not applicable",
+        "ru": "Неприменимо"
+      },
+      "definition": {
+        "en": "The lens makes no measurement claim (practice methods, contemplative traditions, representations).",
+        "ru": "Линза не делает измерительных утверждений (методы практики, созерцательные традиции, представления)."
+      }
+    },
+    {
+      "code": "not-assessed",
+      "list": "measurement",
+      "label": {
+        "en": "Not assessed",
+        "ru": "Не оценивалось"
+      },
+      "definition": {
+        "en": "Not reviewed yet.",
+        "ru": "Ещё не рассматривалось."
+      }
+    },
+    {
+      "code": "P1",
+      "list": "practice",
+      "label": {
+        "en": "P1 Replicated trials",
+        "ru": "P1 Воспроизведённые испытания"
+      },
+      "definition": {
+        "en": "Replicated randomised controlled trials in this delivery context, on relevant outcomes.",
+        "ru": "Воспроизведённые рандомизированные контролируемые испытания в этом контексте применения, по значимым исходам."
+      }
+    },
+    {
+      "code": "P2",
+      "list": "practice",
+      "label": {
+        "en": "P2 Single trial",
+        "ru": "P2 Одно испытание"
+      },
+      "definition": {
+        "en": "At least one randomised controlled trial in a stated population, not replicated.",
+        "ru": "Хотя бы одно рандомизированное контролируемое испытание в указанной популяции, не воспроизведённое."
+      }
+    },
+    {
+      "code": "P3",
+      "list": "practice",
+      "label": {
+        "en": "P3 Uncontrolled evidence",
+        "ru": "P3 Неконтролируемые данные"
+      },
+      "definition": {
+        "en": "Uncontrolled studies, case series, or practitioner reports.",
+        "ru": "Неконтролируемые исследования, серии случаев или отчёты практиков."
+      }
+    },
+    {
+      "code": "P4",
+      "list": "practice",
+      "label": {
+        "en": "P4 No systematic evidence",
+        "ru": "P4 Нет систематических данных"
+      },
+      "definition": {
+        "en": "No systematic evidence.",
+        "ru": "Систематических данных нет."
+      }
+    },
+    {
+      "code": "not-assessed",
+      "list": "practice",
+      "label": {
+        "en": "Not assessed",
+        "ru": "Не оценивалось"
+      },
+      "definition": {
+        "en": "Not reviewed. Agent-offered delivery is always `not-assessed` in 0.1.",
+        "ru": "Не рассматривалось. Применение по предложению агента в версии 0.1 всегда `not-assessed`."
+      }
+    }
+  ]
+}

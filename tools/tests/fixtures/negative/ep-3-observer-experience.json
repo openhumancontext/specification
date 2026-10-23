@@ -1,0 +1,22 @@
+{
+  "description": "An observer account that states what was experienced.",
+  "expect": [
+    "EP-3"
+  ],
+  "form": "single",
+  "patches": [
+    {
+      "op": "add",
+      "target": "episodes",
+      "path": "/@ep-02/accounts",
+      "value": {
+        "narrator": "p-01",
+        "narratedAt": "2026-09-05T21:00:00Z",
+        "addedAt": "2026-09-06T08:00:00Z",
+        "accountKind": "observer-account",
+        "happened": "Arrived on time.",
+        "experienced": "Relaxed."
+      }
+    }
+  ]
+}

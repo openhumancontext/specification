@@ -1,0 +1,46 @@
+{
+  "format": "ohc.instrument",
+  "specVersion": "0.1.0-draft",
+  "id": "urn:ohc:instrument:hexaco-pi-r",
+  "version": "0.1.0",
+  "name": "HEXACO-PI-R",
+  "lens": "urn:ohc:lens:hexaco",
+  "publisher": "Kibeom Lee and Michael C. Ashton (authors)",
+  "forms": [
+    {
+      "id": "60",
+      "items": 60,
+      "note": "A subset of the 100-item form; item numbers differ between the two"
+    },
+    {
+      "id": "100",
+      "items": 100
+    },
+    {
+      "id": "200",
+      "items": 200,
+      "note": "Available on request"
+    }
+  ],
+  "itemsLicence": "Free to download only for non-profit academic research; online use only on password-protected or not-searchable pages; non-academic use: contact the authors. Copyright 2009 Kibeom Lee and Michael C. Ashton",
+  "scoring": "public",
+  "neverStore": [
+    "item text",
+    "raw item responses outside the person's own test data"
+  ],
+  "registryListing": "ok",
+  "citations": [
+    {
+      "ref": "HEXACO-PI-R inventory page (authors' site)",
+      "grade": "F",
+      "note": "60, 100 and 200 item versions; terms of use as stated"
+    },
+    {
+      "ref": "doi:10.1177/1088868306294907",
+      "grade": "F",
+      "note": "Ashton & Lee 2007"
+    }
+  ],
+  "legalReviewNeeded": true,
+  "reviewedAt": "2026-10-09"
+}

@@ -1,0 +1,15 @@
+{
+  "description": "A package manifest that also carries a record array.",
+  "expect": [
+    "CX-2"
+  ],
+  "form": "package",
+  "postPatches": [
+    {
+      "op": "set",
+      "target": "manifest",
+      "path": "/claims",
+      "value": []
+    }
+  ]
+}

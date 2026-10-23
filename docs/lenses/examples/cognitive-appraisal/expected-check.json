@@ -1,0 +1,31 @@
+{
+  "valid": true,
+  "levelDeclared": "L1",
+  "levelMet": "L1",
+  "modules": [
+    "core",
+    "governance",
+    "lenses",
+    "practices"
+  ],
+  "errors": [],
+  "warnings": [],
+  "defaultsApplied": [
+    "sensitivity",
+    "admission",
+    "endorsement",
+    "epistemic"
+  ],
+  "counts": {
+    "records": 14
+  },
+  "truthVerified": false,
+  "consentVerified": false,
+  "consentAuthenticated": false,
+  "endorsementAuthenticated": false,
+  "behaviorTested": false,
+  "runtimeTested": false,
+  "vaultContentRead": false,
+  "externalLocatorsFollowed": 0,
+  "realPersonData": "not-detectable-by-check"
+}

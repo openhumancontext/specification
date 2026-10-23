@@ -1,0 +1,244 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:ohc:schema:glossary:0.1.0-draft",
+  "title": "OHC glossary",
+  "description": "Terms of Open Human Context in English (reference language) and Russian, in the shape of the Open Digital Employee glossary. Every term has a group, a status, an integer revision, and locales en and ru.",
+  "type": "object",
+  "required": [
+    "format",
+    "version",
+    "specVersion",
+    "referenceLanguage",
+    "requiredLanguages",
+    "groups",
+    "terms"
+  ],
+  "properties": {
+    "format": {
+      "const": "ohc.glossary"
+    },
+    "version": {
+      "const": "0.1"
+    },
+    "specVersion": {
+      "const": "0.1.0-draft"
+    },
+    "referenceLanguage": {
+      "const": "en"
+    },
+    "requiredLanguages": {
+      "type": "array",
+      "items": {
+        "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/LangTag"
+      },
+      "allOf": [
+        {
+          "contains": {
+            "const": "en"
+          }
+        },
+        {
+          "contains": {
+            "const": "ru"
+          }
+        }
+      ]
+    },
+    "languagePolicy": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+    },
+    "groups": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "en",
+          "ru",
+          "status"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z]+(?:-[a-z]+)*$"
+          },
+          "en": {
+            "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+          },
+          "ru": {
+            "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+          },
+          "status": {
+            "const": "draft"
+          },
+          "description": {
+            "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/LangText"
+          }
+        },
+        "additionalProperties": false
+      },
+      "minItems": 1
+    },
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "title",
+          "url"
+        ],
+        "properties": {
+          "title": {
+            "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+          },
+          "url": {
+            "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/URI"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "terms": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/Term"
+      },
+      "minItems": 1
+    }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "Locale": {
+      "type": "object",
+      "required": [
+        "preferred",
+        "aliases",
+        "definition",
+        "example"
+      ],
+      "properties": {
+        "preferred": {
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+        },
+        "aliases": {
+          "type": "array",
+          "items": {
+            "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+          }
+        },
+        "definition": {
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+        },
+        "example": {
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+        },
+        "status": {
+          "const": "draft"
+        },
+        "basedOnRevision": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "reviewedRevision": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "Term": {
+      "type": "object",
+      "required": [
+        "id",
+        "group",
+        "status",
+        "revision",
+        "locales"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+        },
+        "group": {
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+        },
+        "status": {
+          "const": "draft"
+        },
+        "revision": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "locales": {
+          "type": "object",
+          "required": [
+            "en",
+            "ru"
+          ],
+          "properties": {
+            "en": {
+              "$ref": "#/$defs/Locale"
+            },
+            "ru": {
+              "$ref": "#/$defs/Locale"
+            }
+          },
+          "additionalProperties": false
+        },
+        "modelKinds": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[A-Z][A-Za-z]+$"
+          }
+        },
+        "seeAlso": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+          }
+        },
+        "docs": {
+          "type": "array",
+          "items": {
+            "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+          }
+        },
+        "externalMappings": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "relation",
+              "label",
+              "url"
+            ],
+            "properties": {
+              "relation": {
+                "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+              },
+              "label": {
+                "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+              },
+              "url": {
+                "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/URI"
+              },
+              "note": {
+                "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+              }
+            },
+            "additionalProperties": false
+          }
+        },
+        "reviewNote": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

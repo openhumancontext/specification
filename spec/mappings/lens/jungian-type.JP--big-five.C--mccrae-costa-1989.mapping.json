@@ -1,0 +1,31 @@
+{
+  "format": "ohc.mapping",
+  "specVersion": "0.1.0-draft",
+  "id": "urn:ohc:mapping:jungian-type.JP--big-five.C--mccrae-costa-1989",
+  "version": "0.1.0",
+  "bridgeKind": "lens-lens",
+  "from": {
+    "lens": "urn:ohc:lens:jungian-type",
+    "construct": "jungian-type/JP"
+  },
+  "to": {
+    "lens": "urn:ohc:lens:big-five",
+    "construct": "big-five/C"
+  },
+  "relation": "correlates",
+  "statistic": {
+    "r": -0.49,
+    "n": 267,
+    "sample": "US adults, men; women reported separately"
+  },
+  "source": "McCrae & Costa 1989, Journal of Personality 57:17-40, doi:10.1111/j.1467-6494.1989.tb00759.x (coefficient as tabulated in a secondary source)",
+  "scope": "population-level only; never for converting one person's result",
+  "notIdentity": true,
+  "chainable": false,
+  "rowStatus": "accepted-with-loss",
+  "lost": "Types versus dimensions: a type collapses a continuous score into a pole, and the 1989 instrument forms differ from current ones.",
+  "forbiddenUse": "Never estimate one person's Big Five score from a type, and never output a branded type label from Big Five or other data (M-4).",
+  "reopenWhen": "The coefficient is re-read from the primary article's tables.",
+  "evidenceGrade": "F2",
+  "reviewedAt": "2026-10-09"
+}

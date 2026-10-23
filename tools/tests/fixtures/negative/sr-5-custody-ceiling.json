@@ -1,0 +1,41 @@
+{
+  "description": "Coaching material released above its ceiling without a release.",
+  "expect": [
+    "SR-5",
+    "SR-7"
+  ],
+  "form": "single",
+  "patches": [
+    {
+      "op": "add",
+      "target": "sources",
+      "path": "",
+      "value": {
+        "id": "src-02",
+        "sourceKind": "practitioner-notes",
+        "content": {
+          "locator": {
+            "uri": "urn:uuid:7c0e1d2b-5a3f-4e6d-8b9a-0c1d2e3f4a5b"
+          },
+          "sha256": "2222222222222222222222222222222222222222222222222222222222222222",
+          "mediaType": "text/markdown"
+        },
+        "authorship": {
+          "author": "p-01"
+        },
+        "maxRelease": "summary",
+        "custody": {
+          "custodian": "p-01",
+          "confidentiality": "coaching"
+        },
+        "retention": {
+          "eraseOnRequest": true
+        },
+        "origin": "declared",
+        "assertedBy": "subject",
+        "recordedAt": "2026-09-07T08:00:00Z",
+        "synthetic": true
+      }
+    }
+  ]
+}

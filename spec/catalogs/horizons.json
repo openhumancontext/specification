@@ -1,0 +1,60 @@
+{
+  "format": "ohc.catalog",
+  "id": "urn:ohc:catalog:horizons",
+  "version": "0.1.0",
+  "specVersion": "0.1.0-draft",
+  "title": {
+    "en": "Horizons",
+    "ru": "Горизонты"
+  },
+  "description": {
+    "en": "How fast a claim's content changes. The horizon value `state` and the facet value `state` are the same concept: content about the person's current condition.",
+    "ru": "Как быстро меняется содержание утверждения. Значение горизонта `state` и значение грани `state` означают одно и то же: содержание о текущем состоянии человека."
+  },
+  "closed": true,
+  "ordered": true,
+  "codes": [
+    {
+      "code": "foundation",
+      "label": {
+        "en": "Foundation",
+        "ru": "Основа"
+      },
+      "definition": {
+        "en": "Changes over years: values, life direction, \"who I am\".",
+        "ru": "Меняется годами: ценности, жизненное направление, «кто я»."
+      },
+      "defaultInterval": "P2Y",
+      "mappings": {
+        "ode": "stable"
+      }
+    },
+    {
+      "code": "focus",
+      "label": {
+        "en": "Focus",
+        "ru": "Фокус"
+      },
+      "definition": {
+        "en": "Changes over months: the current chapter, projects, period commitments.",
+        "ru": "Меняется месяцами: текущий этап, проекты, обязательства на период."
+      },
+      "defaultInterval": "P90D"
+    },
+    {
+      "code": "state",
+      "label": {
+        "en": "State",
+        "ru": "Состояние"
+      },
+      "definition": {
+        "en": "Changes over hours or days: energy, attention, availability.",
+        "ru": "Меняется часами или днями: энергия, внимание, доступность."
+      },
+      "defaultInterval": "P1D",
+      "mappings": {
+        "ode": "live"
+      }
+    }
+  ]
+}

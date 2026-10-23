@@ -1,0 +1,42 @@
+{
+  "format": "ohc.context",
+  "specVersion": "0.1.0-draft",
+  "id": "urn:ohc:example:odile-by-hand:context",
+  "version": "2026-10-10.1",
+  "subject": {"id": "urn:ohc:example:odile", "displayName": "Odile (fictional)"},
+  "holder": "subject",
+  "lang": "en",
+  "created": "2026-09-15T08:00:00Z",
+  "conformance": {"level": "L1", "modules": ["core", "governance", "lenses", "practices"], "subjectIsAdult": true},
+  "parties": [
+    {"id": "a-01", "partyKind": "agent", "label": "Reflection companion"},
+    {"id": "s-02", "partyKind": "software", "label": "Short values survey site"}
+  ],
+  "policy": {"admission": "subject-only", "resolver": "returnDialog"},
+  "lenses": [
+    {"id": "urn:ohc:lens:schwartz-values", "version": "0.2.0", "sha256": "3d794f1201ae2f22a719f0e44644deaa7829626f650700ede0df9c76786f9bb2"}
+  ],
+  "grants": [
+    {"id": "g-0", "recordedAt": "2026-09-16T09:00:00Z", "grantor": "subject", "grantee": "a-01", "purposes": ["self-reflection"], "scope": {"include": [{"lenses": ["urn:ohc:lens:schwartz-values"]}], "exclude": [{"ids": ["as-1"]}]}, "actions": ["suggest"], "mode": "summary", "interpretations": "subject-endorsed", "constraints": {"expiresAt": "2027-03-14T00:00:00Z", "storage": "session", "forwarding": false, "crossContextUse": false, "delegable": false}, "basis": {"legal": "explicit-consent"}, "expressedBy": {"actor": "subject", "at": "2026-09-16T09:00:00Z", "channel": "holder-ui"}, "note": "The companion may suggest the values-in-tension exercise; it never sees my profile."}
+  ],
+  "lensAdoptions": [
+    {"id": "la-1", "lens": {"id": "urn:ohc:lens:schwartz-values", "version": "0.2.0"}, "route": "self-chosen", "uses": ["store-results", "speak-in-lens", "interpret", "offer-practices"], "interpretationAuthors": ["subject"], "agentInterpretation": "off", "representationPreference": "schwartz-values.circular-chart", "origin": "declared", "assertedBy": "subject", "recordedAt": "2026-09-15T08:00:00Z", "sensitivity": "special", "categories": ["belief", "political"], "synthetic": true}
+  ],
+  "sources": [
+    {"id": "src-1", "sourceKind": "instrument-report", "content": {"locator": {"vaultPath": "vault/74/7413c6d945343591439cd39fb46c6652a27d388981eed96109ba1292e36eeec6.json"}, "sha256": "7413c6d945343591439cd39fb46c6652a27d388981eed96109ba1292e36eeec6", "mediaType": "application/json"}, "capturedAt": "2026-09-14T21:00:00Z", "authorship": {"author": "subject"}, "contemporaneity": "contemporaneous", "maxRelease": "index", "retention": {"eraseOnRequest": true}, "origin": "declared", "assertedBy": "subject", "recordedAt": "2026-09-15T08:02:00Z", "sensitivity": "special", "categories": ["belief", "political"], "synthetic": true},
+    {"id": "src-2", "sourceKind": "instrument-report", "content": {"locator": {"vaultPath": "vault/05/051af99e6b54400e6b66867e556a1738e3c9880e91a661d87a3e8f220e1965b0.pdf"}, "sha256": "051af99e6b54400e6b66867e556a1738e3c9880e91a661d87a3e8f220e1965b0", "mediaType": "application/pdf"}, "capturedAt": "2026-08-30T12:00:00Z", "authorship": {"author": "s-02"}, "inbound": true, "contemporaneity": "contemporaneous", "maxRelease": "index", "retention": {"eraseOnRequest": true}, "origin": "declared", "assertedBy": "subject", "recordedAt": "2026-09-15T08:03:00Z", "sensitivity": "special", "categories": ["belief", "political"], "synthetic": true}
+  ],
+  "assessments": [
+    {"id": "as-1", "lens": {"id": "urn:ohc:lens:schwartz-values", "version": "0.2.0"}, "lensVariant": "19", "instrument": {"id": "urn:ohc:instrument:pvq-rr", "form": "57"}, "mode": "self-report-instrument", "assessedBy": "subject", "administeredAt": {"start": "2026-09-14", "precision": "day"}, "results": [{"type": "values-profile", "scores": [{"construct": "schwartz-values/self-direction-thought", "raw": 5.67, "centered": 1.61}, {"construct": "schwartz-values/self-direction-action", "raw": 5.33, "centered": 1.28}, {"construct": "schwartz-values/stimulation", "raw": 4, "centered": -0.05}, {"construct": "schwartz-values/hedonism", "raw": 4.33, "centered": 0.28}, {"construct": "schwartz-values/achievement", "raw": 3.67, "centered": -0.39}, {"construct": "schwartz-values/power-dominance", "raw": 2, "centered": -2.05}, {"construct": "schwartz-values/power-resources", "raw": 2.33, "centered": -1.72}, {"construct": "schwartz-values/face", "raw": 3.33, "centered": -0.72}, {"construct": "schwartz-values/security-personal", "raw": 4.67, "centered": 0.61}, {"construct": "schwartz-values/security-societal", "raw": 4, "centered": -0.05}, {"construct": "schwartz-values/tradition", "raw": 2.67, "centered": -1.39}, {"construct": "schwartz-values/conformity-rules", "raw": 3, "centered": -1.05}, {"construct": "schwartz-values/conformity-interpersonal", "raw": 3.67, "centered": -0.39}, {"construct": "schwartz-values/humility", "raw": 4, "centered": -0.05}, {"construct": "schwartz-values/benevolence-caring", "raw": 5.33, "centered": 1.28}, {"construct": "schwartz-values/benevolence-dependability", "raw": 5, "centered": 0.95}, {"construct": "schwartz-values/universalism-concern", "raw": 4.67, "centered": 0.61}, {"construct": "schwartz-values/universalism-nature", "raw": 5, "centered": 0.95}, {"construct": "schwartz-values/universalism-tolerance", "raw": 4.33, "centered": 0.28}]}], "validityFlags": [], "source": "src-1", "origin": "derived", "derivedFrom": ["src-1"], "generatedBy": {"software": "by hand", "method": "public PVQ-RR scoring: mean of the three items of each of the 19 values; centred by subtracting the person's mean over all 57 items"}, "formulatedAt": "2026-09-14T21:00:00Z", "reviewAfter": "P3Y", "assertedBy": "subject", "recordedAt": "2026-09-15T08:05:00Z", "sensitivity": "special", "categories": ["belief", "political"], "handling": ["no-infer", "no-leverage"], "synthetic": true}
+  ],
+  "reviews": [
+    {"id": "rv-2", "target": "pr-2", "action": "admit", "by": "subject", "recordedAt": "2026-09-16T09:40:00Z"}
+  ],
+  "claims": [
+    {"id": "c-1", "facet": "declared-value", "predicate": "priority", "text": "Choosing my own way of working matters to me.", "origin": "declared", "assertedBy": "subject", "recordedAt": "2026-09-21T09:00:00Z", "horizon": "foundation", "contexts": ["work"], "sensitivity": "sensitive", "synthetic": true}
+  ],
+  "practices": [
+    {"id": "pr-2", "name": "Two values before a bigger choice", "description": "Before a bigger decision, name the two values that pull against each other.", "practiceKind": "writing", "source": {"route": "from-agent", "lens": "urn:ohc:lens:schwartz-values", "templateId": "schwartz-values.values-in-tension", "by": "a-01"}, "steps": ["Write the decision in one line", "Name the two values pulling against each other"], "limits": "Not for small daily choices.", "initialStatus": "candidate", "nonClinical": true, "origin": "observed", "assertedBy": "a-01", "underGrant": "g-0", "purpose": "self-reflection", "recordedAt": "2026-09-16T09:10:00Z", "sensitivity": "special", "categories": ["belief", "political"], "synthetic": true}
+  ],
+  "synthetic": true
+}

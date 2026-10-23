@@ -1,0 +1,84 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:ohc:schema:msg-answer-request:0.1.0-draft",
+  "title": "OHC answer-request message",
+  "description": "EXPERIMENTAL. Agent to holder: asks a question answered from records in scope. Needs action answer.",
+  "type": "object",
+  "required": [
+    "format",
+    "specVersion",
+    "id",
+    "from",
+    "to",
+    "at",
+    "grant",
+    "purpose",
+    "question",
+    "answerForm"
+  ],
+  "properties": {
+    "format": {
+      "const": "ohc.experimental.answer-request"
+    },
+    "specVersion": {
+      "$ref": "urn:ohc:schema:message:0.1.0-draft#/properties/specVersion"
+    },
+    "id": {
+      "$ref": "urn:ohc:schema:message:0.1.0-draft#/properties/id"
+    },
+    "from": {
+      "$ref": "urn:ohc:schema:message:0.1.0-draft#/properties/from"
+    },
+    "to": {
+      "$ref": "urn:ohc:schema:message:0.1.0-draft#/properties/to"
+    },
+    "at": {
+      "$ref": "urn:ohc:schema:message:0.1.0-draft#/properties/at"
+    },
+    "inReplyTo": {
+      "$ref": "urn:ohc:schema:message:0.1.0-draft#/properties/inReplyTo"
+    },
+    "grant": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/LocalId"
+    },
+    "purpose": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/purposes"
+    },
+    "question": {
+      "anyOf": [
+        {
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+        },
+        {
+          "type": "object",
+          "required": [
+            "facet"
+          ],
+          "properties": {
+            "facet": {
+              "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/claim-facets.facets"
+            },
+            "predicate": {
+              "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Predicate"
+            },
+            "kind": {
+              "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/record-kinds"
+            }
+          },
+          "additionalProperties": false
+        }
+      ]
+    },
+    "answerForm": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/messages.answer-forms"
+    },
+    "choices": {
+      "type": "array",
+      "items": {
+        "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+      },
+      "minItems": 1
+    }
+  },
+  "additionalProperties": false
+}

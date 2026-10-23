@@ -1,0 +1,15 @@
+{
+  "description": "A vaultPath that does not match the content hash.",
+  "expect": [
+    "SR-3"
+  ],
+  "form": "single",
+  "patches": [
+    {
+      "op": "set",
+      "target": "sources",
+      "path": "/@src-01/content/locator/vaultPath",
+      "value": "vault/00/0000000000000000000000000000000000000000000000000000000000000000.txt"
+    }
+  ]
+}

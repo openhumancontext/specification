@@ -1,0 +1,157 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:ohc:schema:review:0.1.0-draft",
+  "title": "OHC Review",
+  "description": "The single mechanism for every status change. Records are immutable; effective status is computed by replaying Reviews. Layer governance; module core.",
+  "type": "object",
+  "required": [
+    "id",
+    "target",
+    "action",
+    "by",
+    "recordedAt"
+  ],
+  "properties": {
+    "kind": {
+      "const": "Review"
+    },
+    "id": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/LocalId"
+    },
+    "target": {
+      "anyOf": [
+        {
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/LocalId"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/LocalId"
+          },
+          "minItems": 1,
+          "maxItems": 100
+        }
+      ]
+    },
+    "action": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/review-actions"
+    },
+    "by": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Actor"
+    },
+    "recordedAt": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/DateTime"
+    },
+    "underGrant": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/LocalId"
+    },
+    "basis": {
+      "description": "Required when by is a steward.",
+      "const": "steward-scope"
+    },
+    "note": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+    },
+    "endorsedPart": {
+      "description": "What the person accepts, in their words.",
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+    },
+    "epistemic": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/epistemic"
+    },
+    "disclosure": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Disclosure"
+    },
+    "selectors": {
+      "type": "array",
+      "items": {
+        "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Selector"
+      },
+      "minItems": 1
+    },
+    "reasonCode": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/review-reasons"
+    },
+    "ext": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Extensions"
+    }
+  },
+  "additionalProperties": false,
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "action": {
+            "const": "partially-endorse"
+          }
+        },
+        "required": [
+          "action"
+        ]
+      },
+      "then": {
+        "required": [
+          "endorsedPart"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "action": {
+            "const": "reassess"
+          }
+        },
+        "required": [
+          "action"
+        ]
+      },
+      "then": {
+        "required": [
+          "epistemic"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "action": {
+            "anyOf": [
+              {
+                "const": "restrict"
+              },
+              {
+                "const": "relax"
+              }
+            ]
+          }
+        },
+        "required": [
+          "action"
+        ]
+      },
+      "then": {
+        "required": [
+          "disclosure"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "action": {
+            "const": "redact"
+          }
+        },
+        "required": [
+          "action"
+        ]
+      },
+      "then": {
+        "required": [
+          "selectors"
+        ]
+      }
+    }
+  ]
+}

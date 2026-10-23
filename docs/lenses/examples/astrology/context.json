@@ -1,0 +1,120 @@
+{
+  "format": "ohc.context",
+  "specVersion": "0.1.0-draft",
+  "id": "urn:ohc:example:imre:astrology",
+  "version": "2026-10-10.1",
+  "subject": {"id": "urn:ohc:example:imre", "displayName": "Imre (fictional)"},
+  "holder": "subject",
+  "lang": "en",
+  "created": "2026-09-03T18:30:00Z",
+  "conformance": {"level": "L1", "modules": ["core", "governance", "lenses"], "subjectIsAdult": true},
+  "parties": [
+    {"id": "s-01", "partyKind": "software", "label": "Chart software"},
+    {"id": "a-01", "partyKind": "agent", "label": "Reflection companion"},
+    {"id": "a-02", "partyKind": "agent", "label": "Work assistant"}
+  ],
+  "policy": {"admission": "subject-only", "resolver": "returnDialog"},
+  "lenses": [
+    {"id": "urn:ohc:lens:astrology", "version": "0.2.0", "sha256": "5ebefc64c34aa0c6a977e271b4c80d7bb8ade6a5c1d1e53a90cdb89e43e09e74"}
+  ],
+  "synthetic": true,
+  "lensAdoptions": [
+    {"id": "la-01", "lens": {"id": "urn:ohc:lens:astrology", "version": "0.2.0"}, "route": "self-chosen",
+     "uses": ["speak-in-lens", "store-results", "interpret"],
+     "interpretationAuthors": ["subject"], "agentInterpretation": "off",
+     "representationPreference": "astrology.chart",
+     "origin": "declared", "assertedBy": "subject", "recordedAt": "2026-09-03T18:45:00Z",
+     "sensitivity": "special", "categories": ["birth-data"], "synthetic": true}
+  ],
+  "claims": [
+    {"id": "c-01", "facet": "fact", "predicate": "birth-data",
+     "text": "Born 14 March 1991 at about 06:40 local time in Porto.",
+     "origin": "declared", "assertedBy": "subject", "recordedAt": "2026-09-03T18:50:00Z", "horizon": "foundation",
+     "sensitivity": "sensitive", "categories": ["birth-data"], "handling": ["person-only"], "synthetic": true},
+    {"id": "c-02", "facet": "identity", "predicate": "self-description",
+     "text": "In my chart's language I am a Pisces Sun with a Taurus Moon: I do my best thinking alone, before the day starts.",
+     "origin": "declared", "assertedBy": "subject", "recordedAt": "2026-09-05T20:00:00Z", "horizon": "foundation",
+     "derivedFrom": ["as-01"], "epistemic": "frame-relative", "handling": ["no-quote-back", "no-infer"],
+     "synthetic": true},
+    {"id": "c-03", "facet": "preference", "predicate": "timing",
+     "text": "Keep my mornings for focused work; put meetings after 11:00.",
+     "origin": "declared", "assertedBy": "subject", "recordedAt": "2026-09-05T20:05:00Z", "horizon": "foundation",
+     "contexts": ["work"], "synthetic": true}
+  ],
+  "sources": [
+    {"id": "src-01", "sourceKind": "instrument-report",
+     "content": {"locator": {"vaultPath": "vault/03/03b169fc93949c19bd13ceb6b0c931d850b13a17cc4f91b57a6cf66d74074162.json"},
+                 "sha256": "03b169fc93949c19bd13ceb6b0c931d850b13a17cc4f91b57a6cf66d74074162",
+                 "mediaType": "application/json", "size": 172},
+     "capturedAt": "2026-09-03T18:55:00Z", "authorship": {"author": "s-01"}, "contemporaneity": "contemporaneous",
+     "maxRelease": "index",
+     "summary": {"text": "Chart export saved from my chart software.", "authoredBy": "subject",
+                 "recordedAt": "2026-09-03T19:00:00Z", "method": "subject-written"},
+     "retention": {"eraseOnRequest": true},
+     "origin": "declared", "assertedBy": "subject", "recordedAt": "2026-09-03T19:00:00Z",
+     "sensitivity": "special", "categories": ["birth-data"], "synthetic": true}
+  ],
+  "assessments": [
+    {"id": "as-01", "lens": {"id": "urn:ohc:lens:astrology", "version": "0.2.0"}, "lensVariant": "western-tropical",
+     "mode": "computed-from-birth-data", "administeredAt": {"start": "2026-09-03", "precision": "day"},
+     "results": [
+       {"type": "frame-attributes",
+        "attributes": {
+          "astrology/placement": [
+            {"point": "sun", "sign": "pisces"},
+            {"point": "moon", "sign": "taurus"},
+            {"point": "ascendant", "sign": "pisces"}],
+          "astrology/aspect": [
+            {"points": ["sun", "saturn"], "aspect": "sextile"}]},
+        "computedFrom": "c-01",
+        "engine": {"name": "example-chart-engine", "version": "3.2"}}],
+     "source": "src-01",
+     "origin": "derived",
+     "generatedBy": {"software": "example-chart-engine", "version": "3.2", "method": "western tropical zodiac; signs only, no degrees and no houses"},
+     "derivedFrom": ["c-01"], "assertedBy": "subject", "recordedAt": "2026-09-03T19:10:00Z",
+     "epistemic": "frame-relative", "sensitivity": "special", "categories": ["birth-data"],
+     "handling": ["no-infer", "no-quote-back"], "synthetic": true}
+  ],
+  "episodes": [
+    {"id": "ep-01", "occurred": {"start": "2026-09-08", "end": "2026-09-19", "precision": "day"},
+     "accounts": [
+       {"narrator": "subject", "narratedAt": "2026-09-20T21:00:00Z", "addedAt": "2026-09-20T21:00:00Z",
+        "accountKind": "first-narrative",
+        "happened": "For two weeks the translation stalled; I rewrote the opening of the same chapter five times.",
+        "didOrTried": "Moved my desk to the window and started working at night.",
+        "understandingThen": "I thought the text was simply hard."}],
+     "origin": "declared", "assertedBy": "subject", "recordedAt": "2026-09-20T21:00:00Z",
+     "sensitivity": "sensitive", "contexts": ["work"], "synthetic": true}
+  ],
+  "interpretations": [
+    {"id": "in-01", "about": ["ep-01"], "stance": "lens-reading",
+     "lens": {"id": "urn:ohc:lens:astrology", "version": "0.2.0"},
+     "text": "Read through my chart, those weeks were my Pisces Sun asking for more solitude than the shared office gave me.",
+     "grounds": [{"ref": "as-01", "kind": "instrument"}],
+     "alternatives": [
+       {"text": "The publisher changed the style guide in the middle of the job.", "kind": "external"},
+       {"text": "I was sleeping badly after the move.", "kind": "physiological"}],
+     "origin": "declared", "assertedBy": "subject", "recordedAt": "2026-09-27T09:00:00Z",
+     "epistemic": "frame-relative", "sensitivity": "special", "categories": ["birth-data"],
+     "handling": ["no-quote-back"], "contexts": ["work"], "synthetic": true}
+  ],
+  "grants": [
+    {"id": "g-01", "recordedAt": "2026-09-06T10:00:00Z", "grantor": "subject", "grantee": "a-01",
+     "purposes": ["self-reflection"],
+     "scope": {"include": [{"lenses": ["urn:ohc:lens:astrology"]}, {"ids": ["ep-01"]}]},
+     "actions": ["read"], "mode": "summary", "interpretations": "subject-endorsed", "maxSourceTier": "none",
+     "constraints": {"expiresAt": "2027-03-01T00:00:00Z", "storage": "session", "forwarding": false,
+                     "crossContextUse": false, "delegable": false},
+     "basis": {"legal": "explicit-consent"},
+     "expressedBy": {"actor": "subject", "at": "2026-09-06T10:00:00Z", "channel": "holder-ui"},
+     "note": "Chart language for my own reflection only; no advice, no predictions."},
+    {"id": "g-02", "recordedAt": "2026-09-06T10:05:00Z", "grantor": "subject", "grantee": "a-02",
+     "purposes": ["scheduling"],
+     "scope": {"include": [{"facets": ["preference"], "contexts": ["work"]}]},
+     "actions": ["read"], "mode": "summary", "interpretations": "none",
+     "constraints": {"expiresAt": "2027-09-01T00:00:00Z", "storage": "session", "forwarding": false,
+                     "crossContextUse": false, "delegable": false},
+     "basis": {"legal": "consent"},
+     "expressedBy": {"actor": "subject", "at": "2026-09-06T10:05:00Z", "channel": "holder-ui"}}
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "description": "An agent's trait estimate that is not person-only.",
+  "expect": [
+    "AR-2"
+  ],
+  "form": "single",
+  "patches": [
+    {
+      "op": "add",
+      "target": "assessments",
+      "path": "",
+      "value": {
+        "id": "as-02",
+        "lens": {
+          "id": "urn:ohc:lens:big-five",
+          "version": "0.1.0"
+        },
+        "mode": "agent-inference",
+        "administeredAt": {
+          "start": "2026-09-06",
+          "precision": "day"
+        },
+        "results": [
+          {
+            "type": "dimension-score",
+            "construct": "big-five/C",
+            "raw": 3.0
+          }
+        ],
+        "validityFlags": [
+          "agent-estimate-not-validated"
+        ],
+        "validityCeiling": "agent-estimate-not-validated",
+        "origin": "inferred",
+        "assertedBy": "a-01",
+        "recordedBy": "subject",
+        "recordedAt": "2026-09-07T08:00:00Z",
+        "derivedFrom": [
+          "ep-01"
+        ],
+        "synthetic": true
+      }
+    }
+  ]
+}

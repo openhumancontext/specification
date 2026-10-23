@@ -1,0 +1,15 @@
+{
+  "format": "ohc.context",
+  "specVersion": "0.1.0-draft",
+  "id": "urn:ohc:example:ilse:context",
+  "version": "1",
+  "subject": {"id": "urn:ohc:example:ilse", "displayName": "Ilse (fictional)"},
+  "synthetic": true,
+  "claims": [
+    {"id": "c-1", "facet": "goal", "text": "Finish the Dutch B1 course by June 2027.", "origin": "declared", "assertedBy": "subject", "recordedAt": "2026-10-09T08:00:00Z", "horizon": "focus", "valid": {"until": "2027-07-01"}, "synthetic": true},
+    {"id": "c-2", "facet": "boundary", "predicate": "time-window", "text": "No work messages after 19:00 on weekdays.", "origin": "declared", "assertedBy": "subject", "recordedAt": "2026-10-09T08:00:00Z", "horizon": "foundation", "synthetic": true},
+    {"id": "c-3", "facet": "preference", "predicate": "format", "text": "Short written summaries before calls.", "origin": "declared", "assertedBy": "subject", "recordedAt": "2026-10-09T08:00:00Z", "synthetic": true},
+    {"id": "c-4", "facet": "state", "predicate": "availability", "text": "Travelling; slow replies.", "origin": "declared", "assertedBy": "subject", "recordedAt": "2026-10-09T08:00:00Z", "horizon": "state", "valid": {"from": "2026-10-09", "until": "2026-10-13"}, "synthetic": true},
+    {"id": "c-5", "facet": "goal", "predicate": "career", "absence": {"code": "not-chosen", "intentional": true}, "origin": "declared", "assertedBy": "subject", "recordedAt": "2026-10-09T08:00:00Z", "synthetic": true}
+  ]
+}

@@ -1,0 +1,182 @@
+{
+  "format": "ohc.catalog",
+  "id": "urn:ohc:catalog:content-kinds",
+  "version": "0.1.0",
+  "specVersion": "0.1.0-draft",
+  "title": {
+    "en": "Content record kinds",
+    "ru": "Виды содержательных записей"
+  },
+  "description": {
+    "en": "The 15 content-record kinds that carry the common envelope: the evidence, experience, assertion, interpretation, recall, outcome and link layers.",
+    "ru": "15 видов содержательных записей с общей оболочкой: слои свидетельств, опыта, утверждений, интерпретаций, возвращения опыта, исходов и связей."
+  },
+  "closed": true,
+  "codes": [
+    {
+      "code": "Source",
+      "label": {
+        "en": "Source",
+        "ru": "Первичный источник"
+      },
+      "definition": {
+        "en": "Metadata for one piece of primary material in the vault.",
+        "ru": "Метаданные одного фрагмента первичного материала в хранилище."
+      }
+    },
+    {
+      "code": "Episode",
+      "label": {
+        "en": "Episode",
+        "ru": "Эпизод"
+      },
+      "definition": {
+        "en": "One occurrence in the person's life, told through dated accounts.",
+        "ru": "Одно событие в жизни человека, рассказанное в датированных рассказах."
+      }
+    },
+    {
+      "code": "Claim",
+      "label": {
+        "en": "Claim",
+        "ru": "Утверждение"
+      },
+      "definition": {
+        "en": "A statement about the person.",
+        "ru": "Утверждение о человеке."
+      }
+    },
+    {
+      "code": "AssessmentRecord",
+      "label": {
+        "en": "Assessment record",
+        "ru": "Запись оценки"
+      },
+      "definition": {
+        "en": "A dated result about the person within one lens.",
+        "ru": "Датированный результат о человеке в рамках одной линзы."
+      }
+    },
+    {
+      "code": "LensAdoption",
+      "label": {
+        "en": "Lens adoption",
+        "ru": "Принятие линзы"
+      },
+      "definition": {
+        "en": "The person's relation to one lens.",
+        "ru": "Отношение человека к одной линзе."
+      }
+    },
+    {
+      "code": "Practice",
+      "label": {
+        "en": "Practice",
+        "ru": "Практика"
+      },
+      "definition": {
+        "en": "A way of coping or acting.",
+        "ru": "Способ справляться или действовать."
+      }
+    },
+    {
+      "code": "HealthRef",
+      "label": {
+        "en": "Health pointer",
+        "ru": "Указатель на медицинскую запись"
+      },
+      "definition": {
+        "en": "A pointer to a clinical record held elsewhere (experimental).",
+        "ru": "Указатель на клиническую запись, хранящуюся в другом месте (экспериментально)."
+      }
+    },
+    {
+      "code": "Interpretation",
+      "label": {
+        "en": "Interpretation",
+        "ru": "Интерпретация"
+      },
+      "definition": {
+        "en": "A reading of experience by a named author.",
+        "ru": "Прочтение опыта названным автором."
+      }
+    },
+    {
+      "code": "ModelView",
+      "label": {
+        "en": "Model view",
+        "ru": "Взгляд модели"
+      },
+      "definition": {
+        "en": "One model's view over a set of episodes and evidence.",
+        "ru": "Взгляд одной модели на набор эпизодов и свидетельств."
+      }
+    },
+    {
+      "code": "Tension",
+      "label": {
+        "en": "Tension",
+        "ru": "Напряжение"
+      },
+      "definition": {
+        "en": "A conflict that matters, with who decides it.",
+        "ru": "Значимый конфликт и тот, кто его решает."
+      }
+    },
+    {
+      "code": "Pattern",
+      "label": {
+        "en": "Pattern",
+        "ru": "Паттерн"
+      },
+      "definition": {
+        "en": "A recurrence across at least two episodes (experimental).",
+        "ru": "Повторение минимум в двух эпизодах (экспериментально)."
+      }
+    },
+    {
+      "code": "Part",
+      "label": {
+        "en": "Part",
+        "ru": "Внутренняя часть"
+      },
+      "definition": {
+        "en": "An inner position as the person names it (experimental).",
+        "ru": "Внутренняя позиция так, как её называет человек (экспериментально)."
+      }
+    },
+    {
+      "code": "RecallCue",
+      "label": {
+        "en": "Recall cue",
+        "ru": "Сигнал возвращения опыта"
+      },
+      "definition": {
+        "en": "The person's permission to hand back their own experience in a described situation (experimental).",
+        "ru": "Разрешение человека возвращать ему его собственный опыт в описанной ситуации (экспериментально)."
+      }
+    },
+    {
+      "code": "Outcome",
+      "label": {
+        "en": "Outcome",
+        "ru": "Исход"
+      },
+      "definition": {
+        "en": "What happened when something was tried or offered.",
+        "ru": "Что произошло, когда что-то попробовали или предложили."
+      }
+    },
+    {
+      "code": "Relation",
+      "label": {
+        "en": "Relation",
+        "ru": "Связь"
+      },
+      "definition": {
+        "en": "A typed link between two records.",
+        "ru": "Типизированная связь между двумя записями."
+      }
+    }
+  ]
+}

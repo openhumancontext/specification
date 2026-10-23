@@ -1,0 +1,43 @@
+{
+  "description": "An agent-suggested adoption admitted by someone other than the subject.",
+  "expect": [
+    "LA-1",
+    "RA-1"
+  ],
+  "form": "single",
+  "patches": [
+    {
+      "op": "add",
+      "target": "lensAdoptions",
+      "path": "",
+      "value": {
+        "id": "la-02",
+        "lens": {
+          "id": "urn:ohc:lens:astrology",
+          "version": "0.1.0"
+        },
+        "route": "agent-suggested",
+        "suggestedBy": "a-01",
+        "uses": [
+          "speak-in-lens"
+        ],
+        "origin": "declared",
+        "assertedBy": "subject",
+        "recordedAt": "2026-09-07T08:00:00Z",
+        "synthetic": true
+      }
+    },
+    {
+      "op": "add",
+      "target": "reviews",
+      "path": "",
+      "value": {
+        "id": "rv-02",
+        "target": "la-02",
+        "action": "endorse",
+        "by": "holder",
+        "recordedAt": "2026-09-07T09:00:00Z"
+      }
+    }
+  ]
+}

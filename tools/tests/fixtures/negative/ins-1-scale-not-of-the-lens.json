@@ -1,0 +1,52 @@
+{
+  "description": "An import block that lists a construct of another lens.",
+  "expect": [
+    "INS-1"
+  ],
+  "form": "single",
+  "documentFrom": "spec/instruments/bfi-2.instrument.json",
+  "patches": [
+    {
+      "op": "set",
+      "target": "document",
+      "path": "/import",
+      "value": {
+        "scoredBy": {
+          "partyKind": "organization",
+          "id": "urn:ohc:scorer:test-report",
+          "label": "Report scorer"
+        },
+        "scores": [
+          {
+            "kind": "raw",
+            "range": [
+              1,
+              5
+            ]
+          },
+          {
+            "kind": "percentile",
+            "range": [
+              0,
+              100
+            ],
+            "integer": true
+          }
+        ],
+        "scales": [
+          "big-five/E",
+          "cbt/emotion"
+        ],
+        "normGroups": [
+          {
+            "id": "test-norms",
+            "label": {
+              "en": "Test norms",
+              "ru": "Тестовые нормы"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

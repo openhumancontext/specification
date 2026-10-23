@@ -1,0 +1,76 @@
+[
+  {
+    "format": "ohc.mapping",
+    "specVersion": "0.1.0-draft",
+    "id": "urn:ohc:mapping:ohc.valid--graphiti.valid-at-invalid-at--graphiti",
+    "version": "0.1.0",
+    "bridgeKind": "ohc-standard",
+    "from": {
+      "standard": "OHC 0.1.0-draft",
+      "concept": "valid.from / valid.until"
+    },
+    "to": {
+      "standard": "Graphiti (Zep)",
+      "concept": "EntityEdge valid_at / invalid_at",
+      "pin": {
+        "commit": "a9ef13f7e2cce23e92abd2f76947f42e270da25a"
+      }
+    },
+    "relation": "corresponds",
+    "scope": "Informative crosswalk between formats; never a conversion of a person's data without the person's grant",
+    "notIdentity": true,
+    "chainable": false,
+    "rowStatus": "accepted",
+    "evidenceGrade": "F",
+    "reviewedAt": "2026-10-09"
+  },
+  {
+    "format": "ohc.mapping",
+    "specVersion": "0.1.0-draft",
+    "id": "urn:ohc:mapping:ohc.recorded-at--memory.created-at--mem0-letta-graphiti",
+    "version": "0.1.0",
+    "bridgeKind": "ohc-standard",
+    "from": {
+      "standard": "OHC 0.1.0-draft",
+      "concept": "recordedAt (formulatedAt on import)"
+    },
+    "to": {
+      "standard": "Mem0, Letta, Graphiti",
+      "concept": "created_at"
+    },
+    "relation": "corresponds",
+    "scope": "Informative crosswalk between formats; never a conversion of a person's data without the person's grant",
+    "notIdentity": true,
+    "chainable": false,
+    "rowStatus": "accepted-with-loss",
+    "lost": "On import, the source's created_at becomes formulatedAt and recordedAt is the import time (knowledge time in this context).",
+    "evidenceGrade": "F",
+    "reviewedAt": "2026-10-09"
+  },
+  {
+    "format": "ohc.mapping",
+    "specVersion": "0.1.0-draft",
+    "id": "urn:ohc:mapping:ohc.retract-supersede--graphiti.expired-at--graphiti",
+    "version": "0.1.0",
+    "bridgeKind": "ohc-standard",
+    "from": {
+      "standard": "OHC 0.1.0-draft",
+      "concept": "a retract Review, or supersession"
+    },
+    "to": {
+      "standard": "Graphiti (Zep)",
+      "concept": "EntityEdge expired_at",
+      "pin": {
+        "commit": "a9ef13f7e2cce23e92abd2f76947f42e270da25a"
+      }
+    },
+    "relation": "corresponds",
+    "scope": "Informative crosswalk between formats; never a conversion of a person's data without the person's grant",
+    "notIdentity": true,
+    "chainable": false,
+    "rowStatus": "accepted-with-loss",
+    "lost": "OHC records who retracted and why; expired_at records only when.",
+    "evidenceGrade": "F",
+    "reviewedAt": "2026-10-09"
+  }
+]

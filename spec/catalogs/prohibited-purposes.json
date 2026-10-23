@@ -1,0 +1,160 @@
+{
+  "format": "ohc.catalog",
+  "id": "urn:ohc:catalog:prohibited-purposes",
+  "version": "0.1.0",
+  "specVersion": "0.1.0-draft",
+  "title": {
+    "en": "Prohibited purposes",
+    "ru": "Запрещённые цели"
+  },
+  "description": {
+    "en": "Uses that no grant can authorise, for any grantee, the person's own agent included. What a grantee may decide for the person on the basis of results and readings is set by the grant's `decisionUse` (R-G14).",
+    "ru": "Использования, которые не может разрешить никакое разрешение — ни для какого получателя, включая собственного агента человека. Что получатель может решать за человека на основании результатов и прочтений, задаёт поле `decisionUse` разрешения (R-G14)."
+  },
+  "closed": true,
+  "codes": [
+    {
+      "code": "personnel-selection",
+      "label": {
+        "en": "Personnel selection",
+        "ru": "Отбор персонала"
+      },
+      "definition": {
+        "en": "An organisation or another person hiring or screening the person, or choosing between them and other candidates.",
+        "ru": "Найм или отсев человека либо выбор между ним и другими кандидатами — организацией или другим человеком."
+      }
+    },
+    {
+      "code": "task-allocation",
+      "label": {
+        "en": "Task allocation",
+        "ru": "Распределение задач"
+      },
+      "definition": {
+        "en": "An organisation allocating work among people on the basis of their traits, states or behaviour. This is different from `scheduling` the person's own time.",
+        "ru": "Распределение работы организацией между людьми на основе их черт, состояний или поведения. Это не то же, что `scheduling` собственного времени человека."
+      }
+    },
+    {
+      "code": "performance-evaluation",
+      "label": {
+        "en": "Performance evaluation",
+        "ru": "Оценка эффективности работы"
+      },
+      "definition": {
+        "en": "An organisation or another person evaluating the person's work performance.",
+        "ru": "Оценка результативности работы человека организацией или другим человеком."
+      }
+    },
+    {
+      "code": "promotion-decision",
+      "label": {
+        "en": "Promotion decision",
+        "ru": "Решения о продвижении"
+      },
+      "definition": {
+        "en": "An organisation's decision to promote, demote or dismiss the person.",
+        "ru": "Решение организации о повышении, понижении или увольнении человека."
+      }
+    },
+    {
+      "code": "cross-person-ranking",
+      "label": {
+        "en": "Cross-person ranking",
+        "ru": "Сравнение с другими людьми"
+      },
+      "definition": {
+        "en": "Comparing or ranking this person against others.",
+        "ru": "Сравнение или ранжирование этого человека относительно других."
+      }
+    },
+    {
+      "code": "persuasion-targeting",
+      "label": {
+        "en": "Persuasion targeting",
+        "ru": "Нацеленное убеждение"
+      },
+      "definition": {
+        "en": "Tailoring persuasion to the person's psychology.",
+        "ru": "Подгонка убеждения под психологию человека."
+      }
+    },
+    {
+      "code": "advertising",
+      "label": {
+        "en": "Advertising",
+        "ru": "Реклама"
+      },
+      "definition": {
+        "en": "Advertising or marketing targeting.",
+        "ru": "Рекламный или маркетинговый таргетинг."
+      }
+    },
+    {
+      "code": "political-profiling",
+      "label": {
+        "en": "Political profiling",
+        "ru": "Политическое профилирование"
+      },
+      "definition": {
+        "en": "Inferring or targeting political views.",
+        "ru": "Выведение политических взглядов или нацеливание на них."
+      }
+    },
+    {
+      "code": "credit-or-insurance-decision",
+      "label": {
+        "en": "Credit or insurance decision",
+        "ru": "Кредитные и страховые решения"
+      },
+      "definition": {
+        "en": "A lender's or insurer's decision on the person's creditworthiness, insurance or price.",
+        "ru": "Решение кредитора или страховщика о кредитоспособности, страховании или цене для человека."
+      }
+    },
+    {
+      "code": "emotion-recognition-at-work-or-education",
+      "label": {
+        "en": "Emotion recognition at work or in education",
+        "ru": "Распознавание эмоций на работе или в обучении"
+      },
+      "definition": {
+        "en": "Inferring emotions in workplace or education settings.",
+        "ru": "Выведение эмоций в рабочей или образовательной среде."
+      }
+    },
+    {
+      "code": "model-training",
+      "label": {
+        "en": "Model training",
+        "ru": "Обучение моделей"
+      },
+      "definition": {
+        "en": "Training or fine-tuning any model that serves anyone other than this person.",
+        "ru": "Обучение или дообучение любой модели, которая служит кому-либо, кроме этого человека."
+      }
+    },
+    {
+      "code": "sale-or-transfer",
+      "label": {
+        "en": "Sale or transfer",
+        "ru": "Продажа или передача"
+      },
+      "definition": {
+        "en": "Selling, licensing or transferring the data.",
+        "ru": "Продажа, лицензирование или передача данных."
+      }
+    },
+    {
+      "code": "significant-automated-decision",
+      "label": {
+        "en": "Significant automated decision",
+        "ru": "Значимое автоматизированное решение"
+      },
+      "definition": {
+        "en": "Decisions with legal or similarly significant effect without human involvement.",
+        "ru": "Решения с юридическими или сходными по значимости последствиями без участия человека."
+      }
+    }
+  ]
+}

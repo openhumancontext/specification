@@ -1,0 +1,47 @@
+{
+  "format": "ohc.context",
+  "specVersion": "0.1.0-draft",
+  "id": "urn:ohc:example:bento:context",
+  "version": "2026-10-10.1",
+  "subject": {"id": "urn:ohc:example:bento", "displayName": "Bento (fictional)"},
+  "holder": "subject",
+  "lang": "en",
+  "created": "2026-09-20T18:00:00Z",
+  "conformance": {"level": "L1", "modules": ["core", "governance", "lenses", "practices"], "subjectIsAdult": true},
+  "parties": [
+    {"id": "p-01", "partyKind": "person", "label": "Coach", "role": "practitioner"},
+    {"id": "s-01", "partyKind": "software", "label": "Survey report"}
+  ],
+  "policy": {"admission": "subject-only", "resolver": "returnDialog"},
+  "lenses": [
+    {"id": "urn:ohc:lens:via-strengths", "version": "0.2.0", "sha256": "69a5583d8ef60955575b99cf4d706affc7d24c6d987a23d3ba628820e59ca500"}
+  ],
+  "lensAdoptions": [
+    {"id": "la-1", "lens": {"id": "urn:ohc:lens:via-strengths", "version": "0.2.0"}, "route": "inherited-from-practice", "practice": {"role": "coach", "practitioner": "p-01", "relationship": "active", "since": "2026-06-01"}, "confidentiality": "practitioner-scope", "uses": ["speak-in-lens", "store-results", "interpret", "offer-practices"], "interpretationAuthors": ["subject"], "agentInterpretation": "off", "representationPreference": "via-strengths.ranked-list", "onEnd": "ask", "origin": "declared", "assertedBy": "subject", "recordedAt": "2026-09-20T18:00:00Z", "sensitivity": "special", "categories": ["mental-health"], "synthetic": true}
+  ],
+  "sources": [
+    {"id": "src-1", "sourceKind": "instrument-report", "content": {"locator": {"vaultPath": "vault/82/82b74edd1ea2a5c1273c407ff5f91ffee9333e401b0e943c4ea4d7b510b0ce2a.pdf"}, "sha256": "82b74edd1ea2a5c1273c407ff5f91ffee9333e401b0e943c4ea4d7b510b0ce2a", "mediaType": "application/pdf"}, "capturedAt": "2026-09-18T19:00:00Z", "authorship": {"author": "s-01"}, "inbound": true, "contemporaneity": "contemporaneous", "maxRelease": "index", "retention": {"eraseOnRequest": true}, "origin": "declared", "assertedBy": "subject", "recordedAt": "2026-09-20T18:02:00Z", "sensitivity": "special", "categories": ["mental-health"], "synthetic": true}
+  ],
+  "assessments": [
+    {"id": "as-1", "lens": {"id": "urn:ohc:lens:via-strengths", "version": "0.2.0"}, "instrument": {"id": "urn:ohc:instrument:via-is-r", "form": "adult"}, "mode": "vendor-report-import", "assessedBy": "subject", "administeredAt": {"start": "2026-09-18", "precision": "day"}, "results": [{"type": "ranking", "constructs": ["via-strengths/curiosity", "via-strengths/kindness", "via-strengths/honesty", "via-strengths/perseverance", "via-strengths/humor"], "signatureTopN": 5}], "validityFlags": ["vendor-algorithm-undisclosed"], "source": "src-1", "trademarkNotice": "VIA is used only to name the VIA Institute's instruments; OHC is not authored or endorsed by the VIA Institute.", "origin": "imported", "importedFrom": {"system": "survey report (PDF), top five copied by the person", "importedAt": "2026-09-20T18:05:00Z"}, "formulatedAt": "2026-09-18T19:00:00Z", "reviewAfter": "P3Y", "assertedBy": "subject", "recordedAt": "2026-09-20T18:05:00Z", "sensitivity": "special", "categories": ["mental-health"], "handling": ["no-infer"], "note": "Only the five signature strengths are stored; the rest of the order stays in the report.", "synthetic": true}
+  ],
+  "claims": [
+    {"id": "c-1", "facet": "disposition", "predicate": "self-described-tendency", "text": "Curiosity and kindness are what I lean on most, especially at the repair cafe.", "evidence": [{"ref": "as-1", "kind": "instrument"}], "origin": "declared", "assertedBy": "subject", "recordedAt": "2026-09-20T18:10:00Z", "horizon": "foundation", "contexts": ["community"], "sensitivity": "special", "categories": ["mental-health"], "synthetic": true}
+  ],
+  "episodes": [
+    {"id": "ep-1", "occurred": {"start": "2026-09-26", "precision": "day"}, "accounts": [{"narrator": "subject", "narratedAt": "2026-09-26T19:00:00Z", "addedAt": "2026-09-26T19:05:00Z", "accountKind": "in-the-moment", "happened": "At the repair cafe a neighbour brought a radio that would not turn on.", "didOrTried": "Asked what she had already tried, then showed her how to test the fuse; we fixed it together.", "experienced": "Light and awake."}], "selection": {"selectedBy": "subject", "reason": "subject-chose"}, "origin": "declared", "assertedBy": "subject", "recordedAt": "2026-09-26T19:05:00Z", "contexts": ["community"], "sensitivity": "sensitive", "synthetic": true}
+  ],
+  "interpretations": [
+    {"id": "in-1", "about": ["ep-1"], "stance": "lens-reading", "lens": {"id": "urn:ohc:lens:via-strengths", "version": "0.2.0"}, "text": "I used curiosity and kindness: I asked what she had tried before showing anything, and kept it light.", "alternatives": [{"text": "It was a quiet afternoon, so there was time to explain.", "kind": "situational"}], "origin": "declared", "assertedBy": "subject", "recordedAt": "2026-09-27T09:00:00Z", "heldDuring": {"from": "2026-09-27"}, "contexts": ["community"], "sensitivity": "special", "categories": ["mental-health"], "synthetic": true}
+  ],
+  "practices": [
+    {"id": "pr-1", "name": "One question before every repair", "description": "Use curiosity in a new place: ask about the person's own attempt before I touch the tool.", "practiceKind": "conversation", "source": {"route": "from-practitioner", "lens": "urn:ohc:lens:via-strengths", "by": "p-01"}, "steps": ["Ask what they have already tried", "Ask what they want to learn", "Only then pick up the tool"], "limits": "Not when someone only wants the thing fixed quickly.", "initialStatus": "in-use", "nonClinical": true, "origin": "declared", "assertedBy": "subject", "recordedAt": "2026-09-30T18:00:00Z", "contexts": ["community"], "sensitivity": "special", "categories": ["mental-health"], "synthetic": true}
+  ],
+  "outcomes": [
+    {"id": "oc-1", "about": {"practice": "pr-1"}, "result": "helped", "origin": "declared", "assertedBy": "subject", "recordedAt": "2026-10-08T20:00:00Z", "contexts": ["community"], "synthetic": true}
+  ],
+  "grants": [
+    {"id": "g-1", "recordedAt": "2026-10-01T09:00:00Z", "grantor": "subject", "grantee": "p-01", "purposes": ["coaching"], "scope": {"include": [{"lenses": ["urn:ohc:lens:via-strengths"]}, {"ids": ["c-1", "oc-1"]}]}, "actions": ["read"], "mode": "summary", "interpretations": "subject-endorsed", "constraints": {"expiresAt": "2027-03-25T00:00:00Z", "storage": "session", "forwarding": false, "crossContextUse": false, "delegable": false}, "basis": {"legal": "explicit-consent"}, "expressedBy": {"actor": "subject", "at": "2026-10-01T09:00:00Z", "channel": "holder-ui"}, "note": "For our coaching sessions: my strengths and how the practices went."}
+  ],
+  "synthetic": true
+}

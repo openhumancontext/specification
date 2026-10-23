@@ -1,0 +1,43 @@
+{
+  "schemaVersion": "0.4.0-draft",
+  "kind": "DigitalEmployee",
+  "layer": "agent",
+  "id": "urn:ode:example:employee:planner",
+  "version": "0.2.0",
+  "title": "Planner (synthetic working configuration)",
+  "status": "draft",
+  "provenance": {
+    "origin": "Authored synthetic OHC integration example, adapted from ODE v0.4.0-draft.2 personal-agent; no runtime or consent observed"
+  },
+  "spec": {
+    "dnaRef": {
+      "objectId": "urn:ode:example:ohc-planner:dna",
+      "version": "0.2.0"
+    },
+    "servesRef": {
+      "objectId": "urn:ode:example:party:kofi",
+      "version": "0.2.0"
+    },
+    "authorityRef": {
+      "objectId": "urn:ode:example:party:kofi",
+      "version": "0.2.0"
+    },
+    "environmentRef": {
+      "objectId": "urn:ode:example:ohc-planner:environment",
+      "version": "0.2.0"
+    },
+    "workRefs": [],
+    "toolBindingRefs": [
+      {
+        "objectId": "urn:ode:example:ohc-planner:binding",
+        "version": "0.2.0"
+      }
+    ],
+    "policyRefs": [
+      {
+        "objectId": "urn:ode:example:ohc-planner:read-policy",
+        "version": "0.2.0"
+      }
+    ]
+  }
+}

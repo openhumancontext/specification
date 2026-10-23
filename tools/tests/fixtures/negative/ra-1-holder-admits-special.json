@@ -1,0 +1,63 @@
+{
+  "description": "The holder admits a special-tier proposal (R-A1).",
+  "expect": [
+    "RA-1"
+  ],
+  "form": "single",
+  "patches": [
+    {
+      "op": "set",
+      "target": "manifest",
+      "path": "/policy/admission",
+      "value": "holder-may-admit-ordinary"
+    },
+    {
+      "op": "add",
+      "target": "grants",
+      "path": "/@g-01/scope/include",
+      "value": {
+        "categories": [
+          "health"
+        ]
+      }
+    },
+    {
+      "op": "add",
+      "target": "claims",
+      "path": "",
+      "value": {
+        "id": "c-07",
+        "facet": "preference",
+        "predicate": "timing",
+        "text": "Prefers short sessions.",
+        "origin": "inferred",
+        "assertedBy": "a-01",
+        "recordedAt": "2026-09-07T08:00:00Z",
+        "underGrant": "g-01",
+        "purpose": "learning-support",
+        "categories": [
+          "health"
+        ],
+        "evidence": [
+          {
+            "ref": "ep-01",
+            "kind": "observation"
+          }
+        ],
+        "synthetic": true
+      }
+    },
+    {
+      "op": "add",
+      "target": "reviews",
+      "path": "",
+      "value": {
+        "id": "rv-09",
+        "target": "c-07",
+        "action": "admit",
+        "by": "holder",
+        "recordedAt": "2026-09-07T09:00:00Z"
+      }
+    }
+  ]
+}

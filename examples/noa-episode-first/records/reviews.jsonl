@@ -1,0 +1,8 @@
+{"action":"withdraw-grant","by":"subject","id":"rv-04","kind":"Review","recordedAt":"2026-09-01T10:10:00Z","target":"g-05"}
+{"action":"acknowledge","by":"subject","id":"rv-06","kind":"Review","recordedAt":"2026-09-02T08:25:00Z","target":"t-01"}
+{"action":"confirm-current","by":"subject","id":"rv-08","kind":"Review","recordedAt":"2026-09-02T08:35:00Z","target":"c-05"}
+{"action":"contest","by":"subject","id":"rv-01","kind":"Review","note":"I move calls when the numbers are not ready, not by weekday.","reasonCode":"not-true","recordedAt":"2026-09-22T07:55:00Z","target":"c-09"}
+{"action":"partially-endorse","by":"subject","endorsedPart":"Before both calls I expected the supplier to walk away if I pushed.","id":"rv-02","kind":"Review","recordedAt":"2026-09-22T08:00:00Z","target":"in-02"}
+{"action":"admit","by":"subject","id":"rv-03","kind":"Review","recordedAt":"2026-09-22T08:02:00Z","target":"mv-01"}
+{"action":"decline","by":"subject","id":"rv-07","kind":"Review","reasonCode":"not-true","recordedAt":"2026-09-22T08:05:00Z","target":"c-13"}
+{"action":"relax","by":"subject","disclosure":{"recall":"ask-each-time"},"id":"rv-05","kind":"Review","recordedAt":"2026-09-26T20:06:00Z","target":"ep-04"}

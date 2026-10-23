@@ -1,0 +1,48 @@
+{
+  "format": "ohc.instrument",
+  "specVersion": "0.1.0-draft",
+  "id": "urn:ohc:instrument:neo-pi-3",
+  "version": "0.1.0",
+  "name": "NEO-PI-3",
+  "lens": "urn:ohc:lens:big-five",
+  "publisher": "PAR, Inc.",
+  "forms": [
+    {
+      "id": "self-report",
+      "items": 240,
+      "scale": "5 domains, 30 facets"
+    },
+    {
+      "id": "informant-report",
+      "note": "Informant form; 2024 norms: self-report N = 1,855, informant N = 1,200"
+    }
+  ],
+  "itemsLicence": "Proprietary; copyright PAR, Inc., all rights reserved",
+  "scoring": "proprietary",
+  "marks": [
+    {
+      "mark": "NEO-PI-3",
+      "owner": "PAR, Inc.",
+      "status": "unverified",
+      "notice": "NEO-PI-3™ is a mark of PAR, Inc.; used here only to name the instrument.",
+      "use": "nominative-only"
+    }
+  ],
+  "qualification": "level S",
+  "neverStore": [
+    "item text",
+    "report prose",
+    "scoring key",
+    "raw item responses"
+  ],
+  "registryListing": "reference-by-url",
+  "citations": [
+    {
+      "ref": "PAR, Inc., NEO-PI-3 product page",
+      "grade": "F",
+      "note": "240 items; 30 facets; qualification level S; self and informant forms; 2024 norm update"
+    }
+  ],
+  "legalReviewNeeded": true,
+  "reviewedAt": "2026-10-09"
+}

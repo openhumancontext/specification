@@ -1,0 +1,11 @@
+{"action":"admit","by":"subject","id":"rv-01","kind":"Review","recordedAt":"2026-09-28T20:00:00Z","target":["src-9f414d6e-bd61-5b29-8f68-666418043a76","src-ac734655-d008-5f81-8614-586442c54ef5","src-8d145dd1-10f1-5fd9-b3f1-2f1cf12bded8","src-30260282-0dea-5699-9b24-4204c145fed7","src-ff01943a-c8e7-5d93-978b-e919f23c2736","src-fac093b2-9457-51c3-a2f6-594d04fa99aa"]}
+{"action":"endorse","by":"subject","id":"rv-02","kind":"Review","recordedAt":"2026-09-28T20:01:00Z","target":"c-05c897e9-864b-5898-aa5f-8c2c79a94e02"}
+{"action":"endorse","by":"subject","id":"rv-03","kind":"Review","recordedAt":"2026-09-28T20:02:00Z","target":"c-bfbe912b-bd33-5fc4-bc28-b710f5b92482"}
+{"action":"contest","by":"subject","id":"rv-04","kind":"Review","note":"Only in the week before a delivery.","reasonCode":"not-true","recordedAt":"2026-09-28T20:03:00Z","target":"c-3253889c-156d-54ca-8cd7-515dab1ea96c"}
+{"action":"admit","by":"subject","id":"rv-05","kind":"Review","recordedAt":"2026-09-28T20:04:00Z","target":"c-89a40ea3-cdc9-5514-83dc-aa94677d9046"}
+{"action":"decline","by":"subject","id":"rv-06","kind":"Review","reasonCode":"not-relevant","recordedAt":"2026-09-28T20:05:00Z","target":"c-7367258e-c326-5594-bac7-aa856e23cd45"}
+{"action":"admit","by":"subject","id":"rv-07","kind":"Review","recordedAt":"2026-09-29T19:10:00Z","target":"la-01"}
+{"action":"admit","by":"subject","id":"rv-08","kind":"Review","recordedAt":"2026-09-29T19:11:00Z","target":"as-01"}
+{"action":"retract","by":"a-gum","id":"rv-09","kind":"Review","recordedAt":"2026-10-05T10:05:00Z","target":"c-89a40ea3-cdc9-5514-83dc-aa94677d9046","underGrant":"g-04"}
+{"action":"admit","by":"subject","id":"rv-10","kind":"Review","recordedAt":"2026-10-06T19:00:00Z","target":["src-9b9aea4d-7995-5196-91fe-969ff218e8ab","src-f8b7e046-0def-5b1c-b7c4-316665578bce"]}
+{"action":"endorse","by":"subject","id":"rv-11","kind":"Review","recordedAt":"2026-10-06T19:01:00Z","target":"c-dc0be4c1-47df-586e-a0fd-c263432e14c5"}

@@ -1,0 +1,39 @@
+{
+  "format": "ohc.catalog",
+  "id": "urn:ohc:catalog:fhir-versions",
+  "version": "0.1.0",
+  "specVersion": "0.1.0-draft",
+  "title": {
+    "en": "FHIR versions",
+    "ru": "Версии FHIR"
+  },
+  "description": {
+    "en": "FHIR versions a HealthRef may point into (experimental module `health-ref`).",
+    "ru": "Версии FHIR, на ресурсы которых может указывать HealthRef (экспериментальный модуль `health-ref`)."
+  },
+  "closed": true,
+  "codes": [
+    {
+      "code": "R4",
+      "label": {
+        "en": "FHIR R4",
+        "ru": "FHIR R4"
+      },
+      "definition": {
+        "en": "HL7 FHIR Release 4.",
+        "ru": "HL7 FHIR, выпуск 4."
+      }
+    },
+    {
+      "code": "R5",
+      "label": {
+        "en": "FHIR R5",
+        "ru": "FHIR R5"
+      },
+      "definition": {
+        "en": "HL7 FHIR Release 5.",
+        "ru": "HL7 FHIR, выпуск 5."
+      }
+    }
+  ]
+}

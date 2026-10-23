@@ -1,0 +1,30 @@
+{
+  "description": "An agent-sourced practice from a toolkit item agents may not offer.",
+  "expect": [
+    "PC-2"
+  ],
+  "form": "single",
+  "patches": [
+    {
+      "op": "add",
+      "target": "practices",
+      "path": "",
+      "value": {
+        "id": "pr-02",
+        "name": "Noticing",
+        "practiceKind": "reflection",
+        "source": {
+          "route": "from-agent",
+          "lens": "urn:ohc:lens:ifs",
+          "templateId": "ifs.noticing-a-part",
+          "by": "a-01"
+        },
+        "nonClinical": true,
+        "origin": "declared",
+        "assertedBy": "subject",
+        "recordedAt": "2026-09-07T08:00:00Z",
+        "synthetic": true
+      }
+    }
+  ]
+}

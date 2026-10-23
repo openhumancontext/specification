@@ -1,0 +1,27 @@
+{
+  "format": "ohc.mapping",
+  "specVersion": "0.1.0-draft",
+  "id": "urn:ohc:mapping:ohc.interaction-preferences--ode.interaction-contract--ode-0.2.0-draft.3",
+  "version": "0.1.0",
+  "bridgeKind": "ohc-ode",
+  "from": {
+    "standard": "OHC 0.1.0-draft",
+    "concept": "Claim facet preference (decision-brief, channel, timing)"
+  },
+  "to": {
+    "standard": "ODE 0.2.0-draft",
+    "concept": "InteractionContract decisionBrief / channelRef / proactivity",
+    "pin": {
+      "tag": "v0.2.0-draft.3",
+      "commit": "8300a50dd9d84d2a388fd60e3919ee59e7ad5399"
+    }
+  },
+  "relation": "corresponds",
+  "scope": "Binding statement between the two formats (OHC 0.1.0-draft and ODE release 0.2.0-draft.3); never a conversion of a person's data",
+  "notIdentity": true,
+  "chainable": false,
+  "rowStatus": "accepted-with-loss",
+  "lost": "The reasons behind a preference stay in OHC; the contract carries the rule only.",
+  "evidenceGrade": "F",
+  "reviewedAt": "2026-10-09"
+}

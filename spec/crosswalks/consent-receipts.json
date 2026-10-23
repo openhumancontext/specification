@@ -1,0 +1,247 @@
+[
+  {
+    "format": "ohc.mapping",
+    "specVersion": "0.1.0-draft",
+    "id": "urn:ohc:mapping:ohc.grantor--cr.pii-principal--iso-27560-kantara",
+    "version": "0.1.0",
+    "bridgeKind": "ohc-standard",
+    "from": {
+      "standard": "OHC 0.1.0-draft",
+      "concept": "grantor"
+    },
+    "to": {
+      "standard": "ISO/IEC TS 27560 consent records and the Kantara Consent Receipt (field names to be verified)",
+      "concept": "PII principal"
+    },
+    "relation": "corresponds",
+    "scope": "Informative crosswalk between formats; never a conversion of a person's data without the person's grant",
+    "notIdentity": true,
+    "chainable": false,
+    "rowStatus": "accepted",
+    "evidenceGrade": "verify",
+    "reviewedAt": "2026-10-09"
+  },
+  {
+    "format": "ohc.mapping",
+    "specVersion": "0.1.0-draft",
+    "id": "urn:ohc:mapping:ohc.holder--cr.pii-controller--iso-27560-kantara",
+    "version": "0.1.0",
+    "bridgeKind": "ohc-standard",
+    "from": {
+      "standard": "OHC 0.1.0-draft",
+      "concept": "holder"
+    },
+    "to": {
+      "standard": "ISO/IEC TS 27560 consent records and the Kantara Consent Receipt (field names to be verified)",
+      "concept": "PII controller"
+    },
+    "relation": "corresponds",
+    "scope": "Informative crosswalk between formats; never a conversion of a person's data without the person's grant",
+    "notIdentity": true,
+    "chainable": false,
+    "rowStatus": "accepted-with-loss",
+    "lost": "An OHC holder may be the person's own store, not a controller in the legal sense.",
+    "evidenceGrade": "verify",
+    "reviewedAt": "2026-10-09"
+  },
+  {
+    "format": "ohc.mapping",
+    "specVersion": "0.1.0-draft",
+    "id": "urn:ohc:mapping:ohc.grantee--cr.recipient--iso-27560-kantara",
+    "version": "0.1.0",
+    "bridgeKind": "ohc-standard",
+    "from": {
+      "standard": "OHC 0.1.0-draft",
+      "concept": "grantee"
+    },
+    "to": {
+      "standard": "ISO/IEC TS 27560 consent records and the Kantara Consent Receipt (field names to be verified)",
+      "concept": "recipient"
+    },
+    "relation": "corresponds",
+    "scope": "Informative crosswalk between formats; never a conversion of a person's data without the person's grant",
+    "notIdentity": true,
+    "chainable": false,
+    "rowStatus": "accepted",
+    "evidenceGrade": "verify",
+    "reviewedAt": "2026-10-09"
+  },
+  {
+    "format": "ohc.mapping",
+    "specVersion": "0.1.0-draft",
+    "id": "urn:ohc:mapping:ohc.purposes--cr.purposes--iso-27560-kantara",
+    "version": "0.1.0",
+    "bridgeKind": "ohc-standard",
+    "from": {
+      "standard": "OHC 0.1.0-draft",
+      "concept": "purposes"
+    },
+    "to": {
+      "standard": "ISO/IEC TS 27560 consent records and the Kantara Consent Receipt (field names to be verified)",
+      "concept": "purposes"
+    },
+    "relation": "corresponds",
+    "scope": "Informative crosswalk between formats; never a conversion of a person's data without the person's grant",
+    "notIdentity": true,
+    "chainable": false,
+    "rowStatus": "accepted",
+    "evidenceGrade": "verify",
+    "reviewedAt": "2026-10-09"
+  },
+  {
+    "format": "ohc.mapping",
+    "specVersion": "0.1.0-draft",
+    "id": "urn:ohc:mapping:ohc.selector-categories--cr.pii-categories--iso-27560-kantara",
+    "version": "0.1.0",
+    "bridgeKind": "ohc-standard",
+    "from": {
+      "standard": "OHC 0.1.0-draft",
+      "concept": "selector categories"
+    },
+    "to": {
+      "standard": "ISO/IEC TS 27560 consent records and the Kantara Consent Receipt (field names to be verified)",
+      "concept": "PII categories"
+    },
+    "relation": "corresponds",
+    "scope": "Informative crosswalk between formats; never a conversion of a person's data without the person's grant",
+    "notIdentity": true,
+    "chainable": false,
+    "rowStatus": "accepted-with-loss",
+    "lost": "OHC selectors also select by kind, facet, lens and id.",
+    "evidenceGrade": "verify",
+    "reviewedAt": "2026-10-09"
+  },
+  {
+    "format": "ohc.mapping",
+    "specVersion": "0.1.0-draft",
+    "id": "urn:ohc:mapping:ohc.basis--cr.legal-basis--iso-27560-kantara",
+    "version": "0.1.0",
+    "bridgeKind": "ohc-standard",
+    "from": {
+      "standard": "OHC 0.1.0-draft",
+      "concept": "basis"
+    },
+    "to": {
+      "standard": "ISO/IEC TS 27560 consent records and the Kantara Consent Receipt (field names to be verified)",
+      "concept": "legal basis"
+    },
+    "relation": "corresponds",
+    "scope": "Informative crosswalk between formats; never a conversion of a person's data without the person's grant",
+    "notIdentity": true,
+    "chainable": false,
+    "rowStatus": "accepted",
+    "evidenceGrade": "verify",
+    "reviewedAt": "2026-10-09"
+  },
+  {
+    "format": "ohc.mapping",
+    "specVersion": "0.1.0-draft",
+    "id": "urn:ohc:mapping:ohc.expressed-at--cr.consent-timestamp--iso-27560-kantara",
+    "version": "0.1.0",
+    "bridgeKind": "ohc-standard",
+    "from": {
+      "standard": "OHC 0.1.0-draft",
+      "concept": "expressedBy.at"
+    },
+    "to": {
+      "standard": "ISO/IEC TS 27560 consent records and the Kantara Consent Receipt (field names to be verified)",
+      "concept": "consent timestamp"
+    },
+    "relation": "corresponds",
+    "scope": "Informative crosswalk between formats; never a conversion of a person's data without the person's grant",
+    "notIdentity": true,
+    "chainable": false,
+    "rowStatus": "accepted",
+    "evidenceGrade": "verify",
+    "reviewedAt": "2026-10-09"
+  },
+  {
+    "format": "ohc.mapping",
+    "specVersion": "0.1.0-draft",
+    "id": "urn:ohc:mapping:ohc.expires-at--cr.termination--iso-27560-kantara",
+    "version": "0.1.0",
+    "bridgeKind": "ohc-standard",
+    "from": {
+      "standard": "OHC 0.1.0-draft",
+      "concept": "constraints.expiresAt"
+    },
+    "to": {
+      "standard": "ISO/IEC TS 27560 consent records and the Kantara Consent Receipt (field names to be verified)",
+      "concept": "termination"
+    },
+    "relation": "corresponds",
+    "scope": "Informative crosswalk between formats; never a conversion of a person's data without the person's grant",
+    "notIdentity": true,
+    "chainable": false,
+    "rowStatus": "accepted",
+    "evidenceGrade": "verify",
+    "reviewedAt": "2026-10-09"
+  },
+  {
+    "format": "ohc.mapping",
+    "specVersion": "0.1.0-draft",
+    "id": "urn:ohc:mapping:ohc.grant-status--cr.consent-state--iso-27560-kantara",
+    "version": "0.1.0",
+    "bridgeKind": "ohc-standard",
+    "from": {
+      "standard": "OHC 0.1.0-draft",
+      "concept": "Grant status (computed)"
+    },
+    "to": {
+      "standard": "ISO/IEC TS 27560 consent records and the Kantara Consent Receipt (field names to be verified)",
+      "concept": "consent state"
+    },
+    "relation": "corresponds",
+    "scope": "Informative crosswalk between formats; never a conversion of a person's data without the person's grant",
+    "notIdentity": true,
+    "chainable": false,
+    "rowStatus": "accepted",
+    "evidenceGrade": "verify",
+    "reviewedAt": "2026-10-09"
+  },
+  {
+    "format": "ohc.mapping",
+    "specVersion": "0.1.0-draft",
+    "id": "urn:ohc:mapping:ohc.event-grant-given--cr.receipt-issued--iso-27560-kantara",
+    "version": "0.1.0",
+    "bridgeKind": "ohc-standard",
+    "from": {
+      "standard": "OHC 0.1.0-draft",
+      "concept": "Event grant-given"
+    },
+    "to": {
+      "standard": "ISO/IEC TS 27560 consent records and the Kantara Consent Receipt (field names to be verified)",
+      "concept": "issuing a consent receipt"
+    },
+    "relation": "corresponds",
+    "scope": "Informative crosswalk between formats; never a conversion of a person's data without the person's grant",
+    "notIdentity": true,
+    "chainable": false,
+    "rowStatus": "accepted",
+    "evidenceGrade": "verify",
+    "reviewedAt": "2026-10-09"
+  },
+  {
+    "format": "ohc.mapping",
+    "specVersion": "0.1.0-draft",
+    "id": "urn:ohc:mapping:ohc.event-projection-served--cr.none--iso-27560-kantara",
+    "version": "0.1.0",
+    "bridgeKind": "ohc-standard",
+    "from": {
+      "standard": "OHC 0.1.0-draft",
+      "concept": "Event projection-served"
+    },
+    "to": {
+      "standard": "ISO/IEC TS 27560 consent records and the Kantara Consent Receipt (field names to be verified)",
+      "concept": "(no counterpart)"
+    },
+    "relation": "not-covered",
+    "scope": "Informative crosswalk between formats; never a conversion of a person's data without the person's grant",
+    "notIdentity": true,
+    "chainable": false,
+    "rowStatus": "not-permitted",
+    "forbiddenUse": "A projection-served Event is a disclosure log entry, not a consent receipt.",
+    "evidenceGrade": "verify",
+    "reviewedAt": "2026-10-09"
+  }
+]

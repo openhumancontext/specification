@@ -1,0 +1,90 @@
+{
+  "format": "ohc.catalog",
+  "id": "urn:ohc:catalog:freshness",
+  "version": "0.1.0",
+  "specVersion": "0.1.0-draft",
+  "title": {
+    "en": "Freshness",
+    "ru": "Свежесть"
+  },
+  "description": {
+    "en": "Whether content may be used as current. Computed at use and never stored (R-T3). The algorithm applies to Claim, AssessmentRecord, LensAdoption and Practice.",
+    "ru": "Можно ли использовать содержание как актуальное. Вычисляется в момент использования и никогда не хранится (R-T3). Алгоритм применяется к Claim, AssessmentRecord, LensAdoption и Practice."
+  },
+  "closed": true,
+  "notes": "defaultIntervals apply when a record has no reviewAfter; 'none' means no horizon. An AssessmentRecord uses its lens defaults.reviewAfter (traits P3Y).",
+  "defaultIntervals": {
+    "state": "P1D",
+    "focus": "P90D",
+    "foundation": "P2Y",
+    "none": "P1Y"
+  },
+  "codes": [
+    {
+      "code": "current",
+      "label": {
+        "en": "Current",
+        "ru": "Актуально"
+      },
+      "definition": {
+        "en": "Usable as current.",
+        "ru": "Можно использовать как актуальное."
+      }
+    },
+    {
+      "code": "review-due",
+      "label": {
+        "en": "Review due",
+        "ru": "Пора перепроверить"
+      },
+      "definition": {
+        "en": "Old enough that a consumer SHOULD ask or refresh before relying on it.",
+        "ru": "Достаточно старое: прежде чем опираться на него, потребителю СЛЕДУЕТ спросить или обновить данные."
+      }
+    },
+    {
+      "code": "expired",
+      "label": {
+        "en": "Expired",
+        "ru": "Устарело"
+      },
+      "definition": {
+        "en": "MUST NOT be used as current. `onExpiry` applies (R-T6).",
+        "ru": "НЕЛЬЗЯ использовать как актуальное. Применяется `onExpiry` (R-T6)."
+      }
+    },
+    {
+      "code": "unknown",
+      "label": {
+        "en": "Unknown",
+        "ru": "Неизвестно"
+      },
+      "definition": {
+        "en": "No anchor exists, or the `valueAddress` could not be resolved. Treated like `expired` for action.",
+        "ru": "Нет точки отсчёта, или значение по `valueAddress` получить не удалось. Для действий приравнивается к `expired`."
+      }
+    },
+    {
+      "code": "historical",
+      "label": {
+        "en": "Historical",
+        "ru": "Историческое"
+      },
+      "definition": {
+        "en": "The kind is about the past (Episode, Outcome). Freshness does not apply.",
+        "ru": "Вид записи относится к прошлому (Episode, Outcome). Свежесть не применяется."
+      }
+    },
+    {
+      "code": "not-applicable",
+      "label": {
+        "en": "Not applicable",
+        "ru": "Неприменимо"
+      },
+      "definition": {
+        "en": "The kind has no freshness (Relation, Source, governance records).",
+        "ru": "У этого вида записей нет свежести (Relation, Source, записи управления)."
+      }
+    }
+  ]
+}

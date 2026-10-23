@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<link rel="canonical" href="./">
+<link rel="alternate" hreflang="en" href="./">
+<title>Ilse (fictional) - example viewer</title>
+<style>
+:root{--ink:#172235;--muted:#546174;--line:#d5deea;--paper:#fff;--wash:#f1f5fb;--night:#102544;--accent:#a3305c;--accent-ink:#7d2346;--accent-wash:#fbeaf0;--ode:#234cec;--ode-wash:#edf1ff;--evidence:#186453;--evidence-wash:#eaf5f0;--reading:#714296;--reading-wash:#f3eef9;--focus:#b96000;--radius:5px;color-scheme:light dark;font-family:Arial,Helvetica,sans-serif;color:var(--ink);background:var(--paper);font-size:16px;line-height:1.6}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--ink:#e6edf6;--muted:#a9b6c8;--line:#33465f;--paper:#111c2b;--wash:#18263a;--night:#0b1422;--accent:#f39abb;--accent-ink:#f8c3d6;--accent-wash:#3a1f2c;--ode:#9dbffc;--ode-wash:#1b2c4a;--evidence:#7fd1b5;--evidence-wash:#11302a;--reading:#cfb0ea;--reading-wash:#2a2140;--focus:#ffb35c}}
+:root[data-theme="dark"]{--ink:#e6edf6;--muted:#a9b6c8;--line:#33465f;--paper:#111c2b;--wash:#18263a;--night:#0b1422;--accent:#f39abb;--accent-ink:#f8c3d6;--accent-wash:#3a1f2c;--ode:#9dbffc;--ode-wash:#1b2c4a;--evidence:#7fd1b5;--evidence-wash:#11302a;--reading:#cfb0ea;--reading-wash:#2a2140;--focus:#ffb35c}
+body{margin:0;background:var(--paper);color:var(--ink)}
+::selection{background:var(--accent-wash);color:var(--ink)}
+a{color:var(--accent-ink);text-underline-offset:4px}
+a:focus-visible,button:focus-visible,summary:focus-visible,[tabindex]:focus-visible{outline:3px solid var(--focus);outline-offset:4px}
+*{box-sizing:border-box}
+html{scroll-padding-top:100px}
+.wrap{max-width:1240px;margin:0 auto;padding:0 36px}
+.top{position:sticky;top:0;z-index:2;background:var(--paper);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;flex-wrap:wrap;gap:12px 24px;align-items:center;justify-content:space-between;min-height:64px}
+.brand{font-weight:700;text-decoration:none;color:var(--ink)}
+.home{font-size:14px}
+.controls{display:flex;flex-wrap:wrap;gap:12px;align-items:center;min-width:0}
+.controls input{font:inherit;padding:6px 10px;border:1px solid var(--line);border-radius:var(--radius);background:var(--paper);color:var(--ink);max-width:220px;min-width:0;flex:1 1 140px}
+.controls button{font:inherit;padding:6px 12px;border:1px solid var(--line);border-radius:var(--radius);background:var(--wash);color:var(--ink);cursor:pointer}
+main{padding-block:32px 64px}
+h1{font-size:clamp(36px,4.8vw,63px);font-weight:500;line-height:1.1;letter-spacing:-.02em;margin:8px 0 16px}
+h2{font-size:clamp(24px,2.6vw,34px);font-weight:600;line-height:1.2;margin:56px 0 16px;padding-top:16px;border-top:1px solid var(--line)}
+h3{font-size:19px;margin:24px 0 8px}
+.kicker{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.055em;color:var(--accent-ink)}
+.lead{font-size:19px;line-height:1.65;max-width:760px}
+.small,.meta{font-size:14px;color:var(--muted)}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:8px 24px;margin:16px 0;padding:16px;background:var(--wash);border-radius:8px}
+.facts div{min-width:0;overflow-wrap:anywhere}
+.badge{display:inline-block;padding:2px 10px;border-radius:999px;border:1px solid var(--evidence);color:var(--evidence);background:var(--evidence-wash);font-size:14px;font-weight:700}
+.badge.bad{border-color:var(--accent);color:var(--accent-ink);background:var(--accent-wash)}
+.label{display:inline-block;white-space:nowrap;font-size:13px;font-weight:700;padding:0 8px;border-radius:999px;border:1px solid var(--line);background:var(--wash);color:var(--ink)}
+.label.l-disputed,.label.l-not-accepted{border-color:var(--accent);color:var(--accent-ink);background:var(--accent-wash)}
+.label.l-stated,.label.l-confirmed,.label.l-attested,.label.l-observed{border-color:var(--evidence);color:var(--evidence);background:var(--evidence-wash)}
+.label.l-hypothesis,.label.l-frame,.label.l-partly-confirmed{border-color:var(--reading);color:var(--reading);background:var(--reading-wash)}
+.table-wrap{overflow-x:auto;max-width:100%}
+.table-wrap table{min-width:640px}
+table{border-collapse:collapse;width:100%;font-size:15px}
+th,td{text-align:left;vertical-align:top;padding:8px 10px;border-bottom:1px solid var(--line);overflow-wrap:break-word;word-break:normal}
+th{background:var(--wash);font-weight:700}
+ul.records{list-style:none;padding:0;margin:0}
+ul.records>li{padding:12px 0;border-bottom:1px solid var(--line)}
+details>summary{cursor:pointer;color:var(--accent-ink)}
+details dl{display:grid;grid-template-columns:minmax(120px,max-content) 1fr;gap:4px 16px;margin:8px 0 0;font-size:14px}
+details dt{color:var(--muted)}
+details dd{margin:0;overflow-wrap:anywhere}
+.chips{display:flex;flex-direction:column;gap:6px}
+.chip{display:block;font-size:14px;line-height:1.4;text-decoration:none;padding:6px 8px;border:1px solid var(--line);border-radius:8px;background:var(--paper);color:var(--ink)}
+.accounts{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin-top:8px}
+.account{border:1px solid var(--line);border-radius:8px;padding:12px;background:var(--wash);min-width:0;overflow-wrap:anywhere}
+.account p{margin:6px 0}
+.timeline{display:flex;flex-direction:column;gap:14px}
+.track{position:relative;height:12px;background:var(--wash);border:1px solid var(--line);border-radius:999px;overflow:hidden}
+.bar{position:absolute;top:0;bottom:0;background:var(--reading);border-radius:999px}
+.bar.subject{background:var(--accent)}
+.bar.agent{background:var(--ode)}
+.axis{display:flex;justify-content:space-between;font-size:13px;color:var(--muted)}
+.served{border-left:4px solid var(--accent);padding-left:12px}
+.note{padding:12px 16px;border-left:4px solid var(--evidence);background:var(--evidence-wash);border-radius:var(--radius)}
+footer{border-top:1px solid var(--line);padding-block:24px 48px;font-size:14px;color:var(--muted)}
+@media (max-width:1000px){.wrap{padding:0 24px}}
+@media (max-width:760px){.wrap{padding:0 20px}}
+@media (max-width:440px){.wrap{padding:0 16px}details dl{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap"><a class="brand" href="../index.html">Open Human Context &middot; example viewer</a><span class="controls" id="controls" hidden><label class="small" for="filter">Filter</label><input id="filter" type="search" autocomplete="off"><button id="theme" type="button">Theme</button></span></div></header>
+<main class="wrap" id="main">
+<p class="kicker">Subject view</p><h1>Ilse (fictional)</h1><p class="lead">The person&#39;s own view of the example context <code>examples/ilse-minimal</code>, computed at its latest knowledge time 2026-10-09T08:00:00Z.</p><div class="facts"><div><span class="meta">context</span><br>urn:ohc:example:ilse:context</div><div><span class="meta">version</span><br>1</div><div><span class="meta">holder</span><br>subject</div><div><span class="meta">spec version</span><br>0.1.0-draft</div><div><span class="meta">declared level</span><br>L0</div><div><span class="badge">checker: valid &middot; L0 met</span></div></div>
+<section aria-labelledby="needs"><h2 id="needs">Needs grid</h2>
+<div class="table-wrap"><table><thead><tr><th scope="col">facet</th><th scope="col">foundation</th><th scope="col">focus</th><th scope="col">state</th><th scope="col">none</th></tr></thead><tbody><tr><th scope="row">goal</th><td><div class="chips"></div></td><td><div class="chips"><a class="chip" href="#rec-c-1">✓ stated &middot; Finish the Dutch B1 course by June 2027.</a></div></td><td><div class="chips"></div></td><td><div class="chips"><a class="chip" href="#rec-c-5">✓ stated &middot; intentionally absent (not-chosen)</a></div></td></tr><tr><th scope="row">boundary</th><td><div class="chips"><a class="chip" href="#rec-c-2">✓ stated &middot; No work messages after 19:00 on weekdays.</a></div></td><td><div class="chips"></div></td><td><div class="chips"></div></td><td><div class="chips"></div></td></tr><tr><th scope="row">preference</th><td><div class="chips"></div></td><td><div class="chips"></div></td><td><div class="chips"></div></td><td><div class="chips"><a class="chip" href="#rec-c-3">✓ stated &middot; Short written summaries before calls.</a></div></td></tr><tr><th scope="row">state</th><td><div class="chips"></div></td><td><div class="chips"></div></td><td><div class="chips"><a class="chip" href="#rec-c-4">✓ stated &middot; Travelling; slow replies.</a></div></td><td><div class="chips"></div></td></tr></tbody></table></div>
+</section>
+<section aria-labelledby="claims"><h2 id="claims">Statements</h2>
+<ul class="records"><li id="rec-c-1" data-filter data-id="c-1"><span class="label l-stated">✓ stated</span> <strong>Finish the Dutch B1 course by June 2027.</strong> <span class="meta">Claim &middot; c-1</span><details><summary>Details</summary><dl><dt>origin</dt><dd>declared</dd><dt>asserted by</dt><dd>subject</dd><dt>admission</dt><dd>active</dd><dt>endorsement</dt><dd>endorsed</dd><dt>contested</dt><dd>no</dd><dt>epistemic</dt><dd>as-reported</dd><dt>freshness</dt><dd>current</dd><dt>sensitivity</dt><dd>personal</dd><dt>handling</dt><dd>none</dd><dt>categories</dt><dd>none</dd><dt>recorded</dt><dd>2026-10-09T08:00:00Z</dd></dl></details></li><li id="rec-c-2" data-filter data-id="c-2"><span class="label l-stated">✓ stated</span> <strong>No work messages after 19:00 on weekdays.</strong> <span class="meta">Claim &middot; c-2</span><details><summary>Details</summary><dl><dt>origin</dt><dd>declared</dd><dt>asserted by</dt><dd>subject</dd><dt>admission</dt><dd>active</dd><dt>endorsement</dt><dd>endorsed</dd><dt>contested</dt><dd>no</dd><dt>epistemic</dt><dd>as-reported</dd><dt>freshness</dt><dd>current</dd><dt>sensitivity</dt><dd>personal</dd><dt>handling</dt><dd>none</dd><dt>categories</dt><dd>none</dd><dt>recorded</dt><dd>2026-10-09T08:00:00Z</dd></dl></details></li><li id="rec-c-3" data-filter data-id="c-3"><span class="label l-stated">✓ stated</span> <strong>Short written summaries before calls.</strong> <span class="meta">Claim &middot; c-3</span><details><summary>Details</summary><dl><dt>origin</dt><dd>declared</dd><dt>asserted by</dt><dd>subject</dd><dt>admission</dt><dd>active</dd><dt>endorsement</dt><dd>endorsed</dd><dt>contested</dt><dd>no</dd><dt>epistemic</dt><dd>as-reported</dd><dt>freshness</dt><dd>current</dd><dt>sensitivity</dt><dd>personal</dd><dt>handling</dt><dd>none</dd><dt>categories</dt><dd>none</dd><dt>recorded</dt><dd>2026-10-09T08:00:00Z</dd></dl></details></li><li id="rec-c-4" data-filter data-id="c-4"><span class="label l-stated">✓ stated</span> <strong>Travelling; slow replies.</strong> <span class="meta">Claim &middot; c-4</span><details><summary>Details</summary><dl><dt>origin</dt><dd>declared</dd><dt>asserted by</dt><dd>subject</dd><dt>admission</dt><dd>active</dd><dt>endorsement</dt><dd>endorsed</dd><dt>contested</dt><dd>no</dd><dt>epistemic</dt><dd>as-reported</dd><dt>freshness</dt><dd>current</dd><dt>sensitivity</dt><dd>personal</dd><dt>handling</dt><dd>none</dd><dt>categories</dt><dd>none</dd><dt>recorded</dt><dd>2026-10-09T08:00:00Z</dd></dl></details></li><li id="rec-c-5" data-filter data-id="c-5"><span class="label l-stated">✓ stated</span> <strong>intentionally absent (not-chosen)</strong> <span class="meta">Claim &middot; c-5</span><details><summary>Details</summary><dl><dt>origin</dt><dd>declared</dd><dt>asserted by</dt><dd>subject</dd><dt>admission</dt><dd>active</dd><dt>endorsement</dt><dd>endorsed</dd><dt>contested</dt><dd>no</dd><dt>epistemic</dt><dd>as-reported</dd><dt>freshness</dt><dd>current</dd><dt>sensitivity</dt><dd>personal</dd><dt>handling</dt><dd>none</dd><dt>categories</dt><dd>none</dd><dt>recorded</dt><dd>2026-10-09T08:00:00Z</dd></dl></details></li></ul>
+</section>
+<section aria-labelledby="episodes"><h2 id="episodes">Episodes</h2>
+<p class="small">No episodes.</p>
+</section>
+<section aria-labelledby="then-and-now"><h2 id="then-and-now">Then and now</h2>
+<p class="small">No readings.</p>
+</section>
+<section aria-labelledby="tensions"><h2 id="tensions">Tensions</h2>
+<p class="small">No tensions.</p>
+</section>
+<section aria-labelledby="lenses"><h2 id="lenses">Lenses</h2>
+<p class="small">No lenses adopted.</p>
+</section>
+<section aria-labelledby="practices"><h2 id="practices">Practices, outcomes and recall</h2>
+<p class="small">No practices.</p>
+</section>
+<section aria-labelledby="grants"><h2 id="grants">Grants</h2>
+<p class="small">No grants.</p>
+</section>
+<section aria-labelledby="events"><h2 id="events">Event log</h2>
+<p class="small">No Event log (single-document context).</p>
+</section>
+<section aria-labelledby="legend"><h2 id="legend">Legend</h2>
+<p class="small">Each record shows one derived label, glyph and word together; the first matching rule wins. Colour never carries the meaning alone.</p><div class="table-wrap"><table><thead><tr><th scope="col">#</th><th scope="col">label</th><th scope="col">rule</th></tr></thead><tbody><tr><td>0</td><td><span class="label l-not-accepted">— not accepted</span></td><td>admission is declined or retracted</td></tr><tr><td>1</td><td><span class="label l-disputed">⊘ disputed</span></td><td>endorsement is rejected, or the record is contested</td></tr><tr><td>2</td><td><span class="label l-stale">○ stale</span></td><td>freshness is review-due, expired or unknown</td></tr><tr><td>3</td><td><span class="label l-pending">… pending</span></td><td>admission is proposed</td></tr><tr><td>4</td><td><span class="label l-frame">◇ frame</span></td><td>epistemic status is frame-relative</td></tr><tr><td>5</td><td><span class="label l-stated">✓ stated</span></td><td>declared by the subject</td></tr><tr><td>6</td><td><span class="label l-confirmed">✓ confirmed</span></td><td>endorsed (including a steward within scope)</td></tr><tr><td>7</td><td><span class="label l-partly-confirmed">◐ partly confirmed</span></td><td>partially endorsed</td></tr><tr><td>8</td><td><span class="label l-attested">● attested</span></td><td>origin is attested</td></tr><tr><td>9</td><td><span class="label l-observed">◉ observed</span></td><td>observed or derived, and not asked</td></tr><tr><td>10</td><td><span class="label l-hypothesis">~ hypothesis</span></td><td>everything else (inferred, or imported and not asked)</td></tr></tbody></table></div>
+</section>
+</main>
+<footer class="wrap"><p>All people in these examples are fictional. Generated by <code>tools/render_viewer.py</code>; nothing here is a real person&#39;s data.</p><p>Copyright 2026 Taras Pustovoy and contributors. Licensed under <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache-2.0</a>.</p></footer>
+<script>(function(){var c=document.getElementById('controls');if(!c)return;c.hidden=false;document.getElementById('theme').addEventListener('click',function(){var r=document.documentElement;var t=r.getAttribute('data-theme');var dark=t?t==='dark':window.matchMedia('(prefers-color-scheme: dark)').matches;r.setAttribute('data-theme',dark?'light':'dark');});var f=document.getElementById('filter');f.addEventListener('input',function(){var q=f.value.toLowerCase();var els=document.querySelectorAll('[data-filter]');for(var i=0;i<els.length;i++){els[i].hidden=!!q&&els[i].textContent.toLowerCase().indexOf(q)<0;}});})();</script>
+</body>
+</html>

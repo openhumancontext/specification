@@ -1,0 +1,25 @@
+{
+  "schemaVersion": "0.4.0-draft",
+  "kind": "Environment",
+  "layer": "environment",
+  "id": "urn:ode:example:ohc-planner:environment",
+  "version": "0.2.0",
+  "title": "environment",
+  "status": "draft",
+  "provenance": {
+    "origin": "Authored synthetic OHC integration example, adapted from ODE v0.4.0-draft.2 personal-agent; no runtime or consent observed"
+  },
+  "spec": {
+    "controllerRef": {
+      "objectId": "urn:ode:example:party:kofi",
+      "version": "0.2.0"
+    },
+    "readiness": "design",
+    "worldModelRefs": [
+      {
+        "objectId": "urn:ode:example:ohc-planner:world",
+        "version": "0.2.0"
+      }
+    ]
+  }
+}

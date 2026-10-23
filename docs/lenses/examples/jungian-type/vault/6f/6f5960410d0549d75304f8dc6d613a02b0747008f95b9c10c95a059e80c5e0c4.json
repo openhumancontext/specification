@@ -1,0 +1,24 @@
+{
+ "administered": "2026-04-18",
+ "form": "M",
+ "note": "Synthetic stand-in for a genuine report file. It holds only the reported preferences and clarity bands; a real report's prose is never copied into any record.",
+ "reported": {
+  "EI": {
+   "clarity": "slight",
+   "pole": "E"
+  },
+  "JP": {
+   "clarity": "moderate",
+   "pole": "P"
+  },
+  "SN": {
+   "clarity": "clear",
+   "pole": "N"
+  },
+  "TF": {
+   "clarity": "moderate",
+   "pole": "F"
+  }
+ },
+ "synthetic": true
+}

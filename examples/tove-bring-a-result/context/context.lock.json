@@ -1,0 +1,22 @@
+{
+  "format": "ohc.lock",
+  "specVersion": "0.1.0-draft",
+  "context": {
+    "id": "urn:ohc:example:tove:context",
+    "version": "2026-10-12.1"
+  },
+  "algorithm": "sha256",
+  "files": {
+    "context.json": "sha256:0ae5767b009614987d59f750cf63ddcd04704662a8818fb11ef9cb1390836d42",
+    "events.jsonl": "sha256:7ef61d4b641501b070f9670c94666fee049d5009e3251daba371f9d52ca9dd83",
+    "lenses/big-five-basic@0.1.0.playbook.json": "sha256:30406e8d18d5f268e078e71b779f3cd7c660fa3cac5b7b074d7fcf1e3e7c1eee",
+    "lenses/big-five@0.2.0.lens.json": "sha256:6af97400e92c87df43cdb7aa7d7406c0a6688c4f819d456182559bd4d41b0a4d",
+    "projections/prj-0001.json": "sha256:f474f2500ccec25afb0631d63cbd67cab4a126756130d6e5cb78a73ede88b20c",
+    "records/assessments.jsonl": "sha256:8abec4dc5dd8c3fc05be4d1121eb958378c1e9e43edda3e311534796e764a431",
+    "records/claims.jsonl": "sha256:6d21cb798918cc5e17edf9d1e94f1e61d84cf35c0f4fc2e02e1d30d3d893d639",
+    "records/grants.jsonl": "sha256:84f1bc17698eac3df40df6f884e6c7282028fd6a3f9408e80782278785eadd73",
+    "records/reviews.jsonl": "sha256:180999b6d09f2dbaaccab93b5dba6a05827da1e232eaa79d95ae96613dc9a4f5",
+    "records/sources.jsonl": "sha256:3d7b3f5889c46f65516b5f6cc9e0415e06ab798465f8c09b64522098be2d4716"
+  },
+  "createdAt": "2026-10-13T07:00:00Z"
+}

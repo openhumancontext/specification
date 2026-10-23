@@ -1,0 +1,18 @@
+{
+  "description": "A projection whose digest does not verify.",
+  "expect": [
+    "PJ-1"
+  ],
+  "form": "package",
+  "finalize": {
+    "digest": false
+  },
+  "postPatches": [
+    {
+      "op": "set",
+      "target": "projection:prj-0001",
+      "path": "/nonce",
+      "value": "AAAAAAAAAAAAAAAAAAAAAA"
+    }
+  ]
+}

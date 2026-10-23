@@ -1,0 +1,913 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:ohc:schema:context:0.1.0-draft",
+  "title": "OHC Context",
+  "description": "The root document of a context (manifest): the subject, parties, stewards, holder, declared conformance and record collections. One schema covers both serializations: the package form (collections, no record arrays) and the single-document form (record arrays). Layer subject; module core.",
+  "type": "object",
+  "required": [
+    "format",
+    "specVersion",
+    "id",
+    "version",
+    "subject"
+  ],
+  "properties": {
+    "format": {
+      "const": "ohc.context"
+    },
+    "specVersion": {
+      "const": "0.1.0-draft"
+    },
+    "id": {
+      "description": "A URI the holder controls: urn:uuid (recommended), a DID, or urn:ohc:example:<person>[:context] in examples.",
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/URI"
+    },
+    "version": {
+      "description": "Chosen by the holder; changes with every change set.",
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+    },
+    "subject": {
+      "$ref": "urn:ohc:schema:subject:0.1.0-draft"
+    },
+    "holder": {
+      "description": "Default \"subject\".",
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Actor"
+    },
+    "parties": {
+      "type": "array",
+      "items": {
+        "$ref": "urn:ohc:schema:party:0.1.0-draft"
+      }
+    },
+    "stewards": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/Steward"
+      }
+    },
+    "conformance": {
+      "type": "object",
+      "description": "Declared conformance (R-C1). Default L0 with core.",
+      "properties": {
+        "level": {
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/conformance-levels"
+        },
+        "modules": {
+          "type": "array",
+          "items": {
+            "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/modules"
+          },
+          "minItems": 1
+        },
+        "subjectIsAdult": {
+          "description": "The holder's attestation that the subject is an adult who decides for themselves (R-C4). A context about a child, or about an adult whose decisions are made by a guardian, cannot claim conformance in 0.1.",
+          "const": true
+        }
+      },
+      "additionalProperties": false
+    },
+    "lang": {
+      "description": "Default en.",
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/LangTag"
+    },
+    "created": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/DateTime"
+    },
+    "policy": {
+      "type": "object",
+      "description": "Default admission subject-only; default resolver returnDialog.",
+      "properties": {
+        "admission": {
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/admission-policies"
+        },
+        "retention": {
+          "type": "object",
+          "properties": {
+            "sourcesDefault": {
+              "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Duration"
+            }
+          },
+          "additionalProperties": false
+        },
+        "resolver": {
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/grant.resolvers"
+        }
+      },
+      "additionalProperties": false
+    },
+    "lenses": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "version"
+        ],
+        "properties": {
+          "id": {
+            "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/URI"
+          },
+          "version": {
+            "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+          },
+          "sha256": {
+            "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Sha256Hex"
+          },
+          "descriptor": {
+            "description": "An inline local lens descriptor (single-document form only; a package ships it in lenses/). Local descriptors use an x- namespace in the lens id and the light profile of LENSES.md §5.1.",
+            "$ref": "urn:ohc:schema:lens:0.1.0-draft"
+          }
+        },
+        "additionalProperties": false
+      },
+      "description": "Pins of the lens descriptor versions this context uses. A pin without a resolvable descriptor is treated as a stub (LA-6, W-LA6)."
+    },
+    "playbooks": {
+      "type": "array",
+      "description": "Pins of the playbooks this context uses (LENSES.md §2.2). A single document MAY carry a local playbook inline (playbook); a package ships it in lenses/. A pin that resolves to no playbook is left out of the agent rendering (W-PB5).",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "version"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^urn:ohc:playbook:(?:x-[a-z0-9]+(?:[.-][a-z0-9]+)*:)?[a-z0-9]+(?:-[a-z0-9]+)*$"
+          },
+          "version": {
+            "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+          },
+          "sha256": {
+            "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Sha256Hex"
+          },
+          "playbook": {
+            "description": "An inline local playbook (single-document form only; a package ships it in lenses/).",
+            "$ref": "urn:ohc:schema:playbook:0.1.0-draft"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "vocabulary": {
+      "description": "Definitions of local x- codes.",
+      "type": "object",
+      "propertyNames": {
+        "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/LocalCode"
+      },
+      "additionalProperties": {
+        "type": "object",
+        "required": [
+          "definition"
+        ],
+        "properties": {
+          "definition": {
+            "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+          },
+          "broader": {
+            "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "requiredExtensions": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z0-9]+(?:[.-][a-z0-9]+)+$"
+      },
+      "minItems": 1
+    },
+    "collections": {
+      "type": "object",
+      "description": "Package form only: collection name to a relative path or a list of paths (R-S5). Collection names equal the single-document array names.",
+      "properties": {
+        "claims": {
+          "anyOf": [
+            {
+              "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Path"
+            },
+            {
+              "type": "array",
+              "items": {
+                "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Path"
+              },
+              "minItems": 1
+            }
+          ]
+        },
+        "relations": {
+          "anyOf": [
+            {
+              "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Path"
+            },
+            {
+              "type": "array",
+              "items": {
+                "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Path"
+              },
+              "minItems": 1
+            }
+          ]
+        },
+        "sources": {
+          "anyOf": [
+            {
+              "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Path"
+            },
+            {
+              "type": "array",
+              "items": {
+                "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Path"
+              },
+              "minItems": 1
+            }
+          ]
+        },
+        "episodes": {
+          "anyOf": [
+            {
+              "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Path"
+            },
+            {
+              "type": "array",
+              "items": {
+                "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Path"
+              },
+              "minItems": 1
+            }
+          ]
+        },
+        "interpretations": {
+          "anyOf": [
+            {
+              "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Path"
+            },
+            {
+              "type": "array",
+              "items": {
+                "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Path"
+              },
+              "minItems": 1
+            }
+          ]
+        },
+        "tensions": {
+          "anyOf": [
+            {
+              "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Path"
+            },
+            {
+              "type": "array",
+              "items": {
+                "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Path"
+              },
+              "minItems": 1
+            }
+          ]
+        },
+        "reviews": {
+          "anyOf": [
+            {
+              "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Path"
+            },
+            {
+              "type": "array",
+              "items": {
+                "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Path"
+              },
+              "minItems": 1
+            }
+          ]
+        },
+        "proposals": {
+          "anyOf": [
+            {
+              "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Path"
+            },
+            {
+              "type": "array",
+              "items": {
+                "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Path"
+              },
+              "minItems": 1
+            }
+          ]
+        },
+        "grants": {
+          "anyOf": [
+            {
+              "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Path"
+            },
+            {
+              "type": "array",
+              "items": {
+                "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Path"
+              },
+              "minItems": 1
+            }
+          ]
+        },
+        "events": {
+          "anyOf": [
+            {
+              "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Path"
+            },
+            {
+              "type": "array",
+              "items": {
+                "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Path"
+              },
+              "minItems": 1
+            }
+          ]
+        },
+        "lensAdoptions": {
+          "anyOf": [
+            {
+              "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Path"
+            },
+            {
+              "type": "array",
+              "items": {
+                "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Path"
+              },
+              "minItems": 1
+            }
+          ]
+        },
+        "assessments": {
+          "anyOf": [
+            {
+              "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Path"
+            },
+            {
+              "type": "array",
+              "items": {
+                "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Path"
+              },
+              "minItems": 1
+            }
+          ]
+        },
+        "modelViews": {
+          "anyOf": [
+            {
+              "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Path"
+            },
+            {
+              "type": "array",
+              "items": {
+                "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Path"
+              },
+              "minItems": 1
+            }
+          ]
+        },
+        "practices": {
+          "anyOf": [
+            {
+              "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Path"
+            },
+            {
+              "type": "array",
+              "items": {
+                "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Path"
+              },
+              "minItems": 1
+            }
+          ]
+        },
+        "outcomes": {
+          "anyOf": [
+            {
+              "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Path"
+            },
+            {
+              "type": "array",
+              "items": {
+                "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Path"
+              },
+              "minItems": 1
+            }
+          ]
+        },
+        "patterns": {
+          "anyOf": [
+            {
+              "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Path"
+            },
+            {
+              "type": "array",
+              "items": {
+                "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Path"
+              },
+              "minItems": 1
+            }
+          ]
+        },
+        "recallCues": {
+          "anyOf": [
+            {
+              "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Path"
+            },
+            {
+              "type": "array",
+              "items": {
+                "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Path"
+              },
+              "minItems": 1
+            }
+          ]
+        },
+        "parts": {
+          "anyOf": [
+            {
+              "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Path"
+            },
+            {
+              "type": "array",
+              "items": {
+                "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Path"
+              },
+              "minItems": 1
+            }
+          ]
+        },
+        "healthRefs": {
+          "anyOf": [
+            {
+              "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Path"
+            },
+            {
+              "type": "array",
+              "items": {
+                "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Path"
+              },
+              "minItems": 1
+            }
+          ]
+        }
+      },
+      "additionalProperties": false,
+      "minProperties": 1
+    },
+    "claims": {
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "urn:ohc:schema:claim:0.1.0-draft"
+          },
+          {
+            "$ref": "urn:ohc:schema:tombstone:0.1.0-draft"
+          }
+        ]
+      }
+    },
+    "relations": {
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "urn:ohc:schema:relation:0.1.0-draft"
+          },
+          {
+            "$ref": "urn:ohc:schema:tombstone:0.1.0-draft"
+          }
+        ]
+      }
+    },
+    "sources": {
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "urn:ohc:schema:source:0.1.0-draft"
+          },
+          {
+            "$ref": "urn:ohc:schema:tombstone:0.1.0-draft"
+          }
+        ]
+      }
+    },
+    "episodes": {
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "urn:ohc:schema:episode:0.1.0-draft"
+          },
+          {
+            "$ref": "urn:ohc:schema:tombstone:0.1.0-draft"
+          }
+        ]
+      }
+    },
+    "interpretations": {
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "urn:ohc:schema:interpretation:0.1.0-draft"
+          },
+          {
+            "$ref": "urn:ohc:schema:tombstone:0.1.0-draft"
+          }
+        ]
+      }
+    },
+    "tensions": {
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "urn:ohc:schema:tension:0.1.0-draft"
+          },
+          {
+            "$ref": "urn:ohc:schema:tombstone:0.1.0-draft"
+          }
+        ]
+      }
+    },
+    "reviews": {
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "urn:ohc:schema:review:0.1.0-draft"
+          },
+          {
+            "$ref": "urn:ohc:schema:tombstone:0.1.0-draft"
+          }
+        ]
+      }
+    },
+    "proposals": {
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "urn:ohc:schema:proposal:0.1.0-draft"
+          },
+          {
+            "$ref": "urn:ohc:schema:tombstone:0.1.0-draft"
+          }
+        ]
+      }
+    },
+    "grants": {
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "urn:ohc:schema:grant:0.1.0-draft"
+          },
+          {
+            "$ref": "urn:ohc:schema:tombstone:0.1.0-draft"
+          }
+        ]
+      }
+    },
+    "events": {
+      "type": "array",
+      "items": {
+        "$ref": "urn:ohc:schema:event:0.1.0-draft"
+      }
+    },
+    "lensAdoptions": {
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "urn:ohc:schema:lens-adoption:0.1.0-draft"
+          },
+          {
+            "$ref": "urn:ohc:schema:tombstone:0.1.0-draft"
+          }
+        ]
+      }
+    },
+    "assessments": {
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "urn:ohc:schema:assessment-record:0.1.0-draft"
+          },
+          {
+            "$ref": "urn:ohc:schema:tombstone:0.1.0-draft"
+          }
+        ]
+      }
+    },
+    "modelViews": {
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "urn:ohc:schema:model-view:0.1.0-draft"
+          },
+          {
+            "$ref": "urn:ohc:schema:tombstone:0.1.0-draft"
+          }
+        ]
+      }
+    },
+    "practices": {
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "urn:ohc:schema:practice:0.1.0-draft"
+          },
+          {
+            "$ref": "urn:ohc:schema:tombstone:0.1.0-draft"
+          }
+        ]
+      }
+    },
+    "outcomes": {
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "urn:ohc:schema:outcome:0.1.0-draft"
+          },
+          {
+            "$ref": "urn:ohc:schema:tombstone:0.1.0-draft"
+          }
+        ]
+      }
+    },
+    "patterns": {
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "urn:ohc:schema:pattern:0.1.0-draft"
+          },
+          {
+            "$ref": "urn:ohc:schema:tombstone:0.1.0-draft"
+          }
+        ]
+      }
+    },
+    "recallCues": {
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "urn:ohc:schema:recall-cue:0.1.0-draft"
+          },
+          {
+            "$ref": "urn:ohc:schema:tombstone:0.1.0-draft"
+          }
+        ]
+      }
+    },
+    "parts": {
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "urn:ohc:schema:part:0.1.0-draft"
+          },
+          {
+            "$ref": "urn:ohc:schema:tombstone:0.1.0-draft"
+          }
+        ]
+      }
+    },
+    "healthRefs": {
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "urn:ohc:schema:health-ref:0.1.0-draft"
+          },
+          {
+            "$ref": "urn:ohc:schema:tombstone:0.1.0-draft"
+          }
+        ]
+      }
+    },
+    "synthetic": {
+      "description": "MUST be true in examples.",
+      "type": "boolean"
+    },
+    "ext": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Extensions"
+    }
+  },
+  "additionalProperties": false,
+  "oneOf": [
+    {
+      "title": "package form",
+      "required": [
+        "collections"
+      ],
+      "not": {
+        "anyOf": [
+          {
+            "required": [
+              "claims"
+            ]
+          },
+          {
+            "required": [
+              "relations"
+            ]
+          },
+          {
+            "required": [
+              "sources"
+            ]
+          },
+          {
+            "required": [
+              "episodes"
+            ]
+          },
+          {
+            "required": [
+              "interpretations"
+            ]
+          },
+          {
+            "required": [
+              "tensions"
+            ]
+          },
+          {
+            "required": [
+              "reviews"
+            ]
+          },
+          {
+            "required": [
+              "proposals"
+            ]
+          },
+          {
+            "required": [
+              "grants"
+            ]
+          },
+          {
+            "required": [
+              "events"
+            ]
+          },
+          {
+            "required": [
+              "lensAdoptions"
+            ]
+          },
+          {
+            "required": [
+              "assessments"
+            ]
+          },
+          {
+            "required": [
+              "modelViews"
+            ]
+          },
+          {
+            "required": [
+              "practices"
+            ]
+          },
+          {
+            "required": [
+              "outcomes"
+            ]
+          },
+          {
+            "required": [
+              "patterns"
+            ]
+          },
+          {
+            "required": [
+              "recallCues"
+            ]
+          },
+          {
+            "required": [
+              "parts"
+            ]
+          },
+          {
+            "required": [
+              "healthRefs"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "title": "single-document form",
+      "not": {
+        "required": [
+          "collections"
+        ]
+      }
+    }
+  ],
+  "$defs": {
+    "Steward": {
+      "type": "object",
+      "description": "A steward never acts on special-tier or inner-system records (R-A1) and never endorses beyond scope (ST-1).",
+      "required": [
+        "party",
+        "scope",
+        "basis",
+        "validFrom",
+        "validUntil",
+        "expressedBy"
+      ],
+      "properties": {
+        "party": {
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/LocalId"
+        },
+        "scope": {
+          "type": "object",
+          "description": "Review actions the steward may take (§11.1), plus write and infer for records the steward writes itself (INF-1), grant to issue grants (GR-8), and open-verbatim to confirm step-ups (SU-2).",
+          "required": [
+            "actions"
+          ],
+          "properties": {
+            "kinds": {
+              "type": "array",
+              "items": {
+                "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/record-kinds"
+              },
+              "minItems": 1
+            },
+            "facets": {
+              "type": "array",
+              "items": {
+                "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/claim-facets.facets"
+              },
+              "minItems": 1
+            },
+            "actions": {
+              "type": "array",
+              "items": {
+                "anyOf": [
+                  {
+                    "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/review-actions"
+                  },
+                  {
+                    "enum": [
+                      "write",
+                      "infer",
+                      "grant",
+                      "open-verbatim"
+                    ]
+                  }
+                ]
+              },
+              "minItems": 1
+            }
+          },
+          "additionalProperties": false
+        },
+        "basis": {
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/steward-basis"
+        },
+        "validFrom": {
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/DateTime"
+        },
+        "validUntil": {
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/DateTime"
+        },
+        "expressedBy": {
+          "type": "object",
+          "required": [
+            "actor",
+            "at",
+            "channel"
+          ],
+          "properties": {
+            "actor": {
+              "const": "subject"
+            },
+            "at": {
+              "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/DateTime"
+            },
+            "channel": {
+              "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/grant.channels"
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

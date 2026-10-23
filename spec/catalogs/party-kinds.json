@@ -1,0 +1,61 @@
+{
+  "format": "ohc.catalog",
+  "id": "urn:ohc:catalog:party-kinds",
+  "version": "0.1.0",
+  "specVersion": "0.1.0-draft",
+  "title": {
+    "en": "Party kinds",
+    "ru": "Виды участников"
+  },
+  "description": {
+    "en": "Kinds of Party. Parts are never Parties (P-1).",
+    "ru": "Виды участников. Внутренние части никогда не являются участниками (P-1)."
+  },
+  "closed": true,
+  "codes": [
+    {
+      "code": "person",
+      "label": {
+        "en": "Person",
+        "ru": "Человек"
+      },
+      "definition": {
+        "en": "A person other than the subject. Id prefix `p-`.",
+        "ru": "Человек, кроме самого субъекта. Префикс `p-`."
+      }
+    },
+    {
+      "code": "agent",
+      "label": {
+        "en": "Agent",
+        "ru": "Агент"
+      },
+      "definition": {
+        "en": "An AI agent. Id prefix `a-`.",
+        "ru": "ИИ-агент. Префикс `a-`."
+      }
+    },
+    {
+      "code": "software",
+      "label": {
+        "en": "Software",
+        "ru": "Программа"
+      },
+      "definition": {
+        "en": "Software or a system. Id prefix `s-`.",
+        "ru": "Программа или система. Префикс `s-`."
+      }
+    },
+    {
+      "code": "organization",
+      "label": {
+        "en": "Organization",
+        "ru": "Организация"
+      },
+      "definition": {
+        "en": "An organization. Id prefix `o-`.",
+        "ru": "Организация. Префикс `o-`."
+      }
+    }
+  ]
+}

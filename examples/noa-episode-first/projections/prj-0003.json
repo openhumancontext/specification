@@ -1,0 +1,82 @@
+{
+  "format": "ohc.projection",
+  "specVersion": "0.1.0-draft",
+  "id": "prj-0003",
+  "context": {
+    "id": "urn:ohc:example:noa:context",
+    "version": "2026-10-09.4"
+  },
+  "subjectAlias": "urn:ohc:alias:cgkknm2urepzjn6a6qmvpmz5yc",
+  "grantee": "a-01",
+  "grant": "g-01",
+  "request": "msg-0402",
+  "purpose": "scheduling",
+  "mode": "summary",
+  "generatedAt": "2026-10-09T09:00:00Z",
+  "validUntil": "2026-10-09T21:00:00Z",
+  "nonce": "DI3JTwOnH_IdBefaKAvZ3A",
+  "statements": {
+    "claims": [
+      {
+        "id": "c-05",
+        "facet": "boundary",
+        "horizon": "foundation",
+        "text": "No calls before 10:00.",
+        "contexts": [
+          "work"
+        ]
+      },
+      {
+        "id": "c-06",
+        "facet": "preference",
+        "predicate": "decision-brief",
+        "horizon": "focus",
+        "text": "Before a hard conversation, send me the numbers on one page.",
+        "contexts": [
+          "work"
+        ]
+      }
+    ]
+  },
+  "derived": {
+    "c-05": {
+      "label": "stated",
+      "freshness": "current",
+      "endorsement": "endorsed",
+      "contested": false,
+      "locked": false,
+      "admission": "active",
+      "computedAt": "2026-10-09T09:00:00Z"
+    },
+    "c-06": {
+      "label": "stated",
+      "freshness": "current",
+      "endorsement": "endorsed",
+      "contested": false,
+      "locked": false,
+      "admission": "active",
+      "computedAt": "2026-10-09T09:00:00Z"
+    }
+  },
+  "absences": [
+    {
+      "selector": {
+        "facets": [
+          "state"
+        ]
+      },
+      "code": "not-disclosed"
+    }
+  ],
+  "completeness": "partial",
+  "omissions": "hidden",
+  "obligations": {
+    "storage": "session",
+    "forwarding": false,
+    "crossContextUse": false,
+    "decisionUse": "deny",
+    "delegable": false,
+    "handling": {}
+  },
+  "digest": "sha256:caf0d73af1d2c5f2335ac8001dbed7c1329b5ff1310080ca853b90b62b314896"
+}

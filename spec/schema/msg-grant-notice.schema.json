@@ -1,0 +1,63 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:ohc:schema:msg-grant-notice:0.1.0-draft",
+  "title": "OHC grant-notice message",
+  "description": "EXPERIMENTAL. Holder to agent: the person's decision on a grant request.",
+  "type": "object",
+  "required": [
+    "format",
+    "specVersion",
+    "id",
+    "from",
+    "to",
+    "at",
+    "status"
+  ],
+  "properties": {
+    "format": {
+      "const": "ohc.experimental.grant-notice"
+    },
+    "specVersion": {
+      "$ref": "urn:ohc:schema:message:0.1.0-draft#/properties/specVersion"
+    },
+    "id": {
+      "$ref": "urn:ohc:schema:message:0.1.0-draft#/properties/id"
+    },
+    "from": {
+      "$ref": "urn:ohc:schema:message:0.1.0-draft#/properties/from"
+    },
+    "to": {
+      "$ref": "urn:ohc:schema:message:0.1.0-draft#/properties/to"
+    },
+    "at": {
+      "$ref": "urn:ohc:schema:message:0.1.0-draft#/properties/at"
+    },
+    "inReplyTo": {
+      "$ref": "urn:ohc:schema:message:0.1.0-draft#/properties/inReplyTo"
+    },
+    "status": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/messages.grant-notice-status"
+    },
+    "grant": {
+      "description": "The stored Grant without note.",
+      "allOf": [
+        {
+          "$ref": "urn:ohc:schema:grant:0.1.0-draft"
+        },
+        {
+          "required": [
+            "kind"
+          ]
+        },
+        {
+          "not": {
+            "required": [
+              "note"
+            ]
+          }
+        }
+      ]
+    }
+  },
+  "additionalProperties": false
+}

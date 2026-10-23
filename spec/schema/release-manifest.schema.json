@@ -1,0 +1,219 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:ohc:schema:release-manifest:0.1.0-draft",
+  "title": "OHC release manifest",
+  "description": "The generated record of a release: every exported file with its licence and sha256 (file bytes), the licensing map, the checks run and an honest flags ledger (REL-6).",
+  "type": "object",
+  "required": [
+    "format",
+    "releaseVersion",
+    "specVersion",
+    "rightsHolder",
+    "licensing",
+    "licenseStatus",
+    "licenseSources",
+    "files",
+    "binaryAssets",
+    "checks",
+    "verificationSources",
+    "sourcePlan",
+    "sourcePlanSha256",
+    "publication",
+    "flags"
+  ],
+  "properties": {
+    "format": {
+      "const": "ohc.public-export/1"
+    },
+    "releaseVersion": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+    },
+    "specVersion": {
+      "const": "0.1.0-draft"
+    },
+    "rightsHolder": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+    },
+    "licensing": {
+      "type": "object",
+      "required": [
+        "default",
+        "rules"
+      ],
+      "properties": {
+        "default": {
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/licenses"
+        },
+        "rules": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "glob",
+              "license"
+            ],
+            "properties": {
+              "glob": {
+                "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+              },
+              "license": {
+                "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/licenses"
+              }
+            },
+            "additionalProperties": false
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "licenseStatus": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+    },
+    "licenseSources": {
+      "type": "object",
+      "propertyNames": {
+        "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/licenses"
+      },
+      "additionalProperties": {
+        "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Path"
+      }
+    },
+    "files": {
+      "type": "object",
+      "propertyNames": {
+        "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Path"
+      },
+      "additionalProperties": {
+        "type": "object",
+        "required": [
+          "license",
+          "sha256",
+          "adapted",
+          "source",
+          "sourceSha256"
+        ],
+        "properties": {
+          "license": {
+            "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/licenses"
+          },
+          "sha256": {
+            "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Sha256Hex"
+          },
+          "adapted": {
+            "type": "boolean"
+          },
+          "source": {
+            "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Path"
+          },
+          "sourceSha256": {
+            "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Sha256Hex"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "binaryAssets": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "path",
+          "sha256"
+        ],
+        "properties": {
+          "path": {
+            "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Path"
+          },
+          "sha256": {
+            "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Sha256Hex"
+          },
+          "bytes": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "mimeType": {
+            "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+          },
+          "width": {
+            "type": "integer"
+          },
+          "height": {
+            "type": "integer"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "checks": {
+      "type": "array",
+      "items": {
+        "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+      }
+    },
+    "verificationSources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "path",
+          "sha256"
+        ],
+        "properties": {
+          "path": {
+            "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Path"
+          },
+          "sha256": {
+            "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Sha256Hex"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "sourcePlan": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Path"
+    },
+    "sourcePlanSha256": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Sha256Hex"
+    },
+    "publication": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+    },
+    "flags": {
+      "type": "object",
+      "required": [
+        "realPersonDataIncluded",
+        "legalReviewPerformed",
+        "publisherPermissionsObtained",
+        "internalExcluded",
+        "referenceToolsDistributed",
+        "privateMarkersAndCredentialPatternScan",
+        "liveRuntimeTested"
+      ],
+      "properties": {
+        "realPersonDataIncluded": {
+          "type": "boolean"
+        },
+        "legalReviewPerformed": {
+          "type": "boolean"
+        },
+        "publisherPermissionsObtained": {
+          "type": "boolean"
+        },
+        "internalExcluded": {
+          "type": "boolean"
+        },
+        "referenceToolsDistributed": {
+          "type": "boolean"
+        },
+        "privateMarkersAndCredentialPatternScan": {
+          "type": "boolean"
+        },
+        "liveRuntimeTested": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

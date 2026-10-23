@@ -1,0 +1,37 @@
+{
+  "format": "ohc.instrument",
+  "specVersion": "0.1.0-draft",
+  "id": "urn:ohc:instrument:ecr-r",
+  "version": "0.1.0",
+  "name": "Experiences in Close Relationships - Revised (ECR-R)",
+  "lens": "urn:ohc:lens:attachment-2d",
+  "publisher": "R. Chris Fraley, Niels G. Waller and Kelly A. Brennan (authors)",
+  "forms": [
+    {
+      "id": "36",
+      "items": 36,
+      "scale": "7-point; 18 items per dimension; scale means after recoding reverse-keyed items"
+    }
+  ],
+  "itemsLicence": "Free for non-commercial research without contacting the authors; commercial applications require permission",
+  "scoring": "public",
+  "neverStore": [
+    "item text",
+    "raw item responses outside the person's own test data"
+  ],
+  "registryListing": "ok",
+  "citations": [
+    {
+      "ref": "doi:10.1037//0022-3514.78.2.350",
+      "grade": "F",
+      "note": "Fraley, Waller & Brennan 2000"
+    },
+    {
+      "ref": "R. Chris Fraley, ECR-R measure page",
+      "grade": "F",
+      "note": "Terms of use and scoring as stated"
+    }
+  ],
+  "legalReviewNeeded": true,
+  "reviewedAt": "2026-10-09"
+}

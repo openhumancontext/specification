@@ -1,0 +1,130 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:ohc:schema:event:0.1.0-draft",
+  "title": "OHC Event",
+  "description": "An append-only log entry of writes, disclosures, access, step-ups, notices, imports, exports and restores. Events carry ids, codes and times only; the log is a salted hash chain that survives erasure. A redacted stub carries id, seq, at, eventType redacted, prev, entryDigest and redacted true. Layer governance; module governance.",
+  "type": "object",
+  "required": [
+    "id",
+    "seq",
+    "at",
+    "eventType",
+    "prev"
+  ],
+  "properties": {
+    "kind": {
+      "const": "Event"
+    },
+    "id": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/LocalId"
+    },
+    "seq": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "at": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/DateTime"
+    },
+    "eventType": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/event-types"
+    },
+    "actor": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Actor"
+    },
+    "counterparty": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Actor"
+    },
+    "grant": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/LocalId"
+    },
+    "purpose": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/purposes"
+    },
+    "records": {
+      "type": "array",
+      "items": {
+        "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/LocalId"
+      }
+    },
+    "message": {
+      "description": "The id of an exchange message or a Projection.",
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/LocalId"
+    },
+    "outcome": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/event-outcomes"
+    },
+    "reason": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/reason-codes"
+    },
+    "tier": {
+      "description": "The tier released. Required on source-opened Events (EV-5).",
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/release-tiers"
+    },
+    "confirmationDigest": {
+      "description": "On step-up-confirmed: covers request parameters only, never content (SU-5).",
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Digest"
+    },
+    "salt": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Nonce"
+    },
+    "prev": {
+      "description": "The entryDigest of the previous Event; the first Event uses 64 zeros.",
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Digest"
+    },
+    "entryDigest": {
+      "description": "Present only on redacted stubs.",
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Digest"
+    },
+    "redacted": {
+      "const": true
+    }
+  },
+  "additionalProperties": false,
+  "allOf": [
+    {
+      "if": {
+        "required": [
+          "redacted"
+        ]
+      },
+      "then": {
+        "required": [
+          "entryDigest"
+        ],
+        "properties": {
+          "eventType": {
+            "const": "redacted"
+          }
+        }
+      },
+      "else": {
+        "required": [
+          "actor",
+          "salt"
+        ],
+        "not": {
+          "required": [
+            "entryDigest"
+          ]
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "eventType": {
+            "const": "source-opened"
+          }
+        },
+        "required": [
+          "eventType"
+        ]
+      },
+      "then": {
+        "required": [
+          "tier"
+        ]
+      }
+    }
+  ]
+}

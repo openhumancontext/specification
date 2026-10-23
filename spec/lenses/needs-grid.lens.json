@@ -1,0 +1,199 @@
+{
+  "format": "ohc.lens",
+  "specVersion": "0.1.0-draft",
+  "id": "urn:ohc:lens:needs-grid",
+  "version": "0.2.0",
+  "name": {
+    "en": "Needs grid",
+    "ru": "Сетка потребностей"
+  },
+  "descriptorStatus": "draft",
+  "kind": "representation",
+  "summary": {
+    "en": "An organising view, not a theory: the person's claims arranged by wanting, needing and having across three horizons.",
+    "ru": "Упорядочивающее представление, а не теория: утверждения человека, разложенные по «хочу», «нужно» и «есть» на трёх горизонтах."
+  },
+  "constructs": [
+    {
+      "id": "needs-grid/row/want",
+      "label": {
+        "en": "Want",
+        "ru": "Хочу"
+      }
+    },
+    {
+      "id": "needs-grid/row/dont-want",
+      "label": {
+        "en": "Don't want",
+        "ru": "Не хочу"
+      }
+    },
+    {
+      "id": "needs-grid/row/need",
+      "label": {
+        "en": "Need",
+        "ru": "Нужно"
+      }
+    },
+    {
+      "id": "needs-grid/row/dont-need",
+      "label": {
+        "en": "Don't need",
+        "ru": "Не нужно"
+      }
+    },
+    {
+      "id": "needs-grid/row/have-can",
+      "label": {
+        "en": "Have / can",
+        "ru": "Есть / могу"
+      }
+    },
+    {
+      "id": "needs-grid/row/lack-cant",
+      "label": {
+        "en": "Lack / can't",
+        "ru": "Нет / не могу"
+      }
+    },
+    {
+      "id": "needs-grid/column/foundation",
+      "label": {
+        "en": "Foundation (years)",
+        "ru": "Основа (годы)"
+      }
+    },
+    {
+      "id": "needs-grid/column/focus",
+      "label": {
+        "en": "Focus (months)",
+        "ru": "Фокус (месяцы)"
+      }
+    },
+    {
+      "id": "needs-grid/column/state",
+      "label": {
+        "en": "State (hours or days)",
+        "ru": "Состояние (часы или дни)"
+      }
+    }
+  ],
+  "mentalModel": {
+    "summary": "Wanting, needing and having do not always line up; a grid shows where they diverge and which cells are empty, stale or contested.",
+    "assumptions": [
+      "the grid is a view, not a theory of needs",
+      "an empty cell may be the person's choice (not-chosen)",
+      "every cell shows the person's own claims with their derived labels"
+    ],
+    "stance": "organising and neutral",
+    "unitOfAnalysis": "the person's claims, grouped by row and horizon",
+    "attendsTo": [
+      "empty cells",
+      "stale cells",
+      "contested cells",
+      "where wanting and needing diverge"
+    ],
+    "howChangeHappens": "The person adds, updates or leaves cells empty; the grid only shows the state.",
+    "languageGuidance": "Describe what is in the grid; never treat an empty cell as a problem to fix.",
+    "agentPosture": {
+      "do": [
+        "ask which cells are empty, stale or contested",
+        "respect cells left empty on purpose"
+      ],
+      "dont": [
+        "fill cells for the person",
+        "infer needs from other cells"
+      ]
+    },
+    "exploratoryQuestions": [
+      "Which cells are empty, stale or contested?",
+      "Is there a cell you would rather leave empty?"
+    ],
+    "helperMustNot": [
+      "write claims into the grid without the person",
+      "present the grid as an assessment"
+    ],
+    "doesNotClaim": [
+      "a theory of human needs",
+      "that any cell should be filled"
+    ],
+    "riskNotes": [
+      "A grid can make gaps look like failures; empty is a legitimate state"
+    ]
+  },
+  "toolkit": [
+    {
+      "id": "needs-grid.review",
+      "name": "Grid review",
+      "kind": "observation",
+      "description": "Look at the grid together; mark cells that are empty, stale or contested; the person decides what to fill, update or leave empty.",
+      "facilitation": "self",
+      "requiresPractitioner": false,
+      "agentMayOffer": true,
+      "nonClinical": true,
+      "produces": "none"
+    }
+  ],
+  "representations": [
+    {
+      "id": "needs-grid.grid",
+      "kind": "grid",
+      "description": "Six rows by three horizons; each cell lists Claims (goal, boundary, need, resource, capability and others) with their derived labels."
+    }
+  ],
+  "instruments": [],
+  "adoption": {
+    "routes": [
+      "self-chosen",
+      "agent-suggested"
+    ],
+    "suggestionRequires": [
+      "the person asked for an overview of their goals, needs and resources"
+    ]
+  },
+  "evidence": {
+    "measurementTier": "not-applicable",
+    "practiceTier": {
+      "clinicianDelivered": "not-assessed",
+      "selfGuided": "not-assessed",
+      "agentOffered": "not-assessed"
+    },
+    "ontologicalStatus": "representation",
+    "citations": [],
+    "reviewedAt": "2026-10-09",
+    "notes": "A representation makes no evidence claim; it produces no results of its own."
+  },
+  "supports": [
+    "an overview of the person's own claims",
+    "finding empty, stale or contested areas"
+  ],
+  "doesNotEstablish": [
+    "any need the person has not stated",
+    "that an empty cell is a problem"
+  ],
+  "ip": {
+    "conceptStatus": "free-concept",
+    "marks": [],
+    "itemsLicence": "Published with OHC under Apache-2.0",
+    "scoring": "none",
+    "restrictions": [],
+    "registryListing": "ok",
+    "legalReviewNeeded": true
+  },
+  "useLimits": {
+    "crossLensMapping": "not-allowed"
+  },
+  "defaults": {
+    "sensitivity": "personal",
+    "categories": [],
+    "reviewAfter": "on-change"
+  },
+  "mappings": [],
+  "playbooks": [
+    "urn:ohc:playbook:needs-grid-basic"
+  ],
+  "sources": [],
+  "descriptorAuthors": [
+    "OHC editors"
+  ]
+}

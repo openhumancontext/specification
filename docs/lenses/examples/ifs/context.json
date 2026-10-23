@@ -1,0 +1,121 @@
+{
+  "format": "ohc.context",
+  "specVersion": "0.1.0-draft",
+  "id": "urn:ohc:example:ysolde:context",
+  "version": "2026-10-01.1",
+  "subject": {"id": "urn:ohc:example:ysolde", "displayName": "Ysolde (fictional)"},
+  "holder": "subject",
+  "lang": "en",
+  "created": "2026-09-20T19:00:00Z",
+  "conformance": {"level": "L1", "modules": ["core", "governance", "lenses", "practices", "inner-system"], "subjectIsAdult": true},
+  "parties": [
+    {"id": "a-01", "partyKind": "agent", "label": "Reflection companion"}
+  ],
+  "policy": {"admission": "subject-only", "resolver": "returnDialog"},
+  "lenses": [
+    {"id": "urn:ohc:lens:ifs", "version": "0.2.0"}
+  ],
+  "synthetic": true,
+  "lensAdoptions": [
+    {"id": "la-01", "lens": {"id": "urn:ohc:lens:ifs", "version": "0.2.0"}, "route": "self-chosen",
+     "confidentiality": "none", "uses": ["speak-in-lens", "store-results", "interpret"],
+     "interpretationAuthors": ["subject"], "agentInterpretation": "off", "representationPreference": "ifs.parts-map",
+     "origin": "declared", "assertedBy": "subject", "recordedAt": "2026-09-20T19:00:00Z",
+     "sensitivity": "special", "categories": ["mental-health", "trauma-adjacent"], "synthetic": true}
+  ],
+  "sources": [
+    {"id": "src-01", "sourceKind": "journal-entry", "origin": "declared", "assertedBy": "subject",
+     "recordedAt": "2026-09-24T21:10:00Z",
+     "content": {"locator": {"vaultPath": "vault/4f/4fd5d61f5cf141e1b4c566d9b5a007765966a167599bb3908e14230b452edb68.md"},
+                 "sha256": "4fd5d61f5cf141e1b4c566d9b5a007765966a167599bb3908e14230b452edb68",
+                 "mediaType": "text/markdown", "size": 313},
+     "capturedAt": "2026-09-24T21:00:00Z", "authorship": {"author": "subject"}, "contemporaneity": "contemporaneous",
+     "maxRelease": "index",
+     "summary": {"text": "Evening note after the club meeting.", "authoredBy": "subject",
+                 "recordedAt": "2026-09-24T21:10:00Z", "method": "subject-written"},
+     "retention": {"eraseOnRequest": true}, "sensitivity": "special", "categories": ["mental-health"],
+     "contexts": ["community"], "synthetic": true}
+  ],
+  "episodes": [
+    {"id": "ep-01", "origin": "declared", "assertedBy": "subject", "recordedAt": "2026-09-24T21:15:00Z",
+     "title": "Budget evening at the club", "occurred": {"start": "2026-09-24", "precision": "day"},
+     "accounts": [
+       {"narrator": "subject", "narratedAt": "2026-09-24T21:00:00Z", "addedAt": "2026-09-24T21:15:00Z",
+        "accountKind": "in-the-moment",
+        "happened": "Before the club meeting I opened the budget file four times and drafted a message cancelling my slot.",
+        "experienced": "Tight in the chest; a pull to check again and a pull to run.",
+        "didOrTried": "Did not send the message. Wrote down what each side wanted, then went.",
+        "understandingThen": "I thought I was just badly prepared.",
+        "evidence": [{"source": "src-01", "selector": {"type": "whole"}}]}],
+     "selection": {"selectedBy": "subject", "reason": "subject-chose"}, "salience": "medium",
+     "contexts": ["community"], "synthetic": true}
+  ],
+  "parts": [
+    {"id": "part-01", "name": "The double-checker", "description": "Goes over every figure again before anyone sees it.",
+     "lens": {"id": "urn:ohc:lens:ifs", "version": "0.2.0"}, "adoption": "la-01", "role": "ifs/manager",
+     "intention": "Make sure nobody finds a mistake in my numbers.", "concern": "Being shown up in front of the club.",
+     "typicalTriggers": ["presenting figures to a group"], "firstNoticed": {"start": "2026-09-01", "precision": "month"},
+     "authoredWith": "alone", "origin": "declared", "assertedBy": "subject", "recordedAt": "2026-09-24T21:20:00Z",
+     "sensitivity": "special", "categories": ["mental-health", "trauma-adjacent"],
+     "handling": ["person-only", "no-quote-back", "no-forward"], "synthetic": true},
+    {"id": "part-02", "name": "The one who wants to cancel", "description": "Wants me out of the room before the questions start.",
+     "lens": {"id": "urn:ohc:lens:ifs", "version": "0.2.0"}, "adoption": "la-01",
+     "concern": "Getting it wrong in public.", "authoredWith": "alone", "origin": "declared", "assertedBy": "subject",
+     "recordedAt": "2026-09-24T21:21:00Z", "sensitivity": "special", "categories": ["mental-health", "trauma-adjacent"],
+     "handling": ["person-only", "no-quote-back", "no-forward"], "synthetic": true}
+  ],
+  "claims": [
+    {"id": "c-01", "facet": "need", "predicate": "structure",
+     "text": "I need the figures closed a day before I present them.", "origin": "declared", "assertedBy": "subject",
+     "recordedAt": "2026-09-26T08:00:00Z", "horizon": "focus", "contexts": ["community"], "synthetic": true}
+  ],
+  "relations": [
+    {"id": "r-01", "rel": "polarized-with", "from": "part-01", "to": "part-02", "origin": "declared",
+     "assertedBy": "subject", "recordedAt": "2026-09-24T21:22:00Z", "synthetic": true},
+    {"id": "r-02", "rel": "held-by", "from": "c-01", "to": "part-01", "origin": "declared",
+     "assertedBy": "subject", "recordedAt": "2026-09-26T08:01:00Z", "synthetic": true}
+  ],
+  "interpretations": [
+    {"id": "in-01", "about": ["ep-01"], "stance": "lens-reading", "lens": {"id": "urn:ohc:lens:ifs", "version": "0.2.0"},
+     "adoption": "la-01",
+     "text": "Two of my parts pulled in opposite directions: the double-checker wanted one more pass, the one who wants to cancel wanted out. Once each had been heard, I could go.",
+     "alternatives": [
+       {"text": "I had slept five hours the night before.", "kind": "physiological"},
+       {"text": "The final bank figures only arrived that afternoon.", "kind": "informational"}],
+     "heldDuring": {"from": "2026-09-27"}, "origin": "declared", "assertedBy": "subject",
+     "recordedAt": "2026-09-27T20:00:00Z", "sensitivity": "special", "categories": ["mental-health", "trauma-adjacent"],
+     "handling": ["person-only", "no-quote-back"], "contexts": ["community"], "synthetic": true}
+  ],
+  "practices": [
+    {"id": "pr-01", "name": "Pause and ask the part",
+     "description": "When I notice the pull, I name it in my own words and ask what it wants me to know, without trying to change it.",
+     "practiceKind": "reflection",
+     "source": {"route": "from-lens", "lens": "urn:ohc:lens:ifs", "templateId": "ifs.noticing-a-part"},
+     "steps": ["Stop for a minute", "Name the pull in my own words", "Ask what it wants me to know", "Write one line, change nothing"],
+     "duration": "PT5M",
+     "limits": "Stop if it gets too much. Anything that feels like old hurt goes to a practitioner, not here.",
+     "initialStatus": "in-use", "nonClinical": true, "origin": "declared", "assertedBy": "subject",
+     "recordedAt": "2026-09-21T19:30:00Z", "sensitivity": "special", "categories": ["mental-health", "trauma-adjacent"],
+     "synthetic": true}
+  ],
+  "outcomes": [
+    {"id": "oc-01", "about": {"practice": "pr-01"}, "episode": "ep-01", "result": "helped", "origin": "declared",
+     "assertedBy": "subject", "recordedAt": "2026-09-24T21:25:00Z", "synthetic": true}
+  ],
+  "grants": [
+    {"id": "g-01", "recordedAt": "2026-10-01T09:00:00Z", "grantor": "subject", "grantee": "a-01",
+     "purposes": ["self-reflection"],
+     "scope": {"include": [{"lenses": ["urn:ohc:lens:ifs"]}]},
+     "actions": ["read"], "mode": "summary", "interpretations": "subject-endorsed", "maxSourceTier": "none",
+     "constraints": {"expiresAt": "2027-03-28T09:00:00Z", "storage": "session", "forwarding": false,
+                     "crossContextUse": false, "delegable": false},
+     "basis": {"legal": "explicit-consent"},
+     "expressedBy": {"actor": "subject", "at": "2026-10-01T09:00:00Z", "channel": "holder-ui"},
+     "note": "Use my own part names when I bring them up. Never name, interpret or look for parts yourself."}
+  ],
+  "reviews": [
+    {"id": "rv-01", "target": "part-01", "action": "relax", "by": "subject", "recordedAt": "2026-10-01T09:05:00Z",
+     "disclosure": {"removeHandling": ["person-only"]},
+     "note": "The companion may know this part and use its name."}
+  ]
+}

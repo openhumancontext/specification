@@ -1,0 +1,155 @@
+{
+  "format": "ohc.catalog",
+  "id": "urn:ohc:catalog:mappings",
+  "version": "0.1.0",
+  "specVersion": "0.1.0-draft",
+  "title": {
+    "en": "Lens mapping catalog index",
+    "ru": "Указатель каталога сопоставлений линз"
+  },
+  "description": {
+    "en": "Index of the lens-to-lens mapping rows in 0.1. Every row is population-level, non-identity and non-chainable (M-1 to M-3); none converts one person's result.",
+    "ru": "Указатель строк сопоставления линз версии 0.1. Каждая строка относится к уровню популяции, не означает тождества и не допускает цепочек (M-1–M-3); ни одна не переводит результат отдельного человека."
+  },
+  "closed": false,
+  "generatesEnum": false,
+  "notes": "Evidence grades F2 and U mark secondary or unverified facts.",
+  "codes": [
+    {
+      "code": "jungian-type.EI--big-five.E--mccrae-costa-1989",
+      "label": {
+        "en": "E-I pole and Extraversion",
+        "ru": "Полюс E-I и экстраверсия"
+      },
+      "definition": {
+        "en": "Population-level correlation r = -.74 (men). Lost: types versus dimensions.",
+        "ru": "Корреляция на уровне популяции r = -.74 (мужчины). Потеряно: типы против измерений."
+      },
+      "id": "urn:ohc:mapping:jungian-type.EI--big-five.E--mccrae-costa-1989",
+      "bridgeKind": "lens-lens",
+      "relation": "correlates",
+      "rowStatus": "accepted-with-loss",
+      "evidenceGrade": "F2",
+      "path": "spec/mappings/lens/jungian-type.EI--big-five.E--mccrae-costa-1989.mapping.json"
+    },
+    {
+      "code": "jungian-type.SN--big-five.O--mccrae-costa-1989",
+      "label": {
+        "en": "S-N pole and Openness",
+        "ru": "Полюс S-N и открытость опыту"
+      },
+      "definition": {
+        "en": "Population-level correlation r = .72 (men). Lost: types versus dimensions.",
+        "ru": "Корреляция на уровне популяции r = .72 (мужчины). Потеряно: типы против измерений."
+      },
+      "id": "urn:ohc:mapping:jungian-type.SN--big-five.O--mccrae-costa-1989",
+      "bridgeKind": "lens-lens",
+      "relation": "correlates",
+      "rowStatus": "accepted-with-loss",
+      "evidenceGrade": "F2",
+      "path": "spec/mappings/lens/jungian-type.SN--big-five.O--mccrae-costa-1989.mapping.json"
+    },
+    {
+      "code": "jungian-type.TF--big-five.A--mccrae-costa-1989",
+      "label": {
+        "en": "T-F pole and Agreeableness",
+        "ru": "Полюс T-F и доброжелательность"
+      },
+      "definition": {
+        "en": "Population-level correlation r = .44 (men). Lost: types versus dimensions.",
+        "ru": "Корреляция на уровне популяции r = .44 (мужчины). Потеряно: типы против измерений."
+      },
+      "id": "urn:ohc:mapping:jungian-type.TF--big-five.A--mccrae-costa-1989",
+      "bridgeKind": "lens-lens",
+      "relation": "correlates",
+      "rowStatus": "accepted-with-loss",
+      "evidenceGrade": "F2",
+      "path": "spec/mappings/lens/jungian-type.TF--big-five.A--mccrae-costa-1989.mapping.json"
+    },
+    {
+      "code": "jungian-type.JP--big-five.C--mccrae-costa-1989",
+      "label": {
+        "en": "J-P pole and Conscientiousness",
+        "ru": "Полюс J-P и добросовестность"
+      },
+      "definition": {
+        "en": "Population-level correlation r = -.49 (men). Lost: types versus dimensions.",
+        "ru": "Корреляция на уровне популяции r = -.49 (мужчины). Потеряно: типы против измерений."
+      },
+      "id": "urn:ohc:mapping:jungian-type.JP--big-five.C--mccrae-costa-1989",
+      "bridgeKind": "lens-lens",
+      "relation": "correlates",
+      "rowStatus": "accepted-with-loss",
+      "evidenceGrade": "F2",
+      "path": "spec/mappings/lens/jungian-type.JP--big-five.C--mccrae-costa-1989.mapping.json"
+    },
+    {
+      "code": "hexaco--big-five--ashton-lee-2007",
+      "label": {
+        "en": "HEXACO and Big Five",
+        "ru": "HEXACO и Большая пятёрка"
+      },
+      "definition": {
+        "en": "Structural correspondence: six versus five factors; Honesty-Humility has no Big Five counterpart.",
+        "ru": "Структурное соответствие: шесть факторов против пяти; у честности-скромности нет аналога в Большой пятёрке."
+      },
+      "id": "urn:ohc:mapping:hexaco--big-five--ashton-lee-2007",
+      "bridgeKind": "lens-lens",
+      "relation": "corresponds",
+      "rowStatus": "not-identity",
+      "evidenceGrade": "F",
+      "path": "spec/mappings/lens/hexaco--big-five--ashton-lee-2007.mapping.json"
+    },
+    {
+      "code": "enneagram--big-five--hook-2021",
+      "label": {
+        "en": "Enneagram and Big Five",
+        "ru": "Эннеаграмма и Большая пятёрка"
+      },
+      "definition": {
+        "en": "Theory-consistent relationships reported; magnitudes not retrieved.",
+        "ru": "Сообщается о согласующихся с теорией связях; величины не получены."
+      },
+      "id": "urn:ohc:mapping:enneagram--big-five--hook-2021",
+      "bridgeKind": "lens-lens",
+      "relation": "correlates",
+      "rowStatus": "unresolved",
+      "evidenceGrade": "U",
+      "path": "spec/mappings/lens/enneagram--big-five--hook-2021.mapping.json"
+    },
+    {
+      "code": "astrology--any",
+      "label": {
+        "en": "Astrology and any empirical construct",
+        "ru": "Астрология и любой эмпирический конструкт"
+      },
+      "definition": {
+        "en": "Frames have no relation to empirical constructs (M-6). They may be placed side by side for the person's own reflection, labelled as such.",
+        "ru": "У рамок нет связи с эмпирическими конструктами (M-6). Их можно ставить рядом для собственной рефлексии человека, с соответствующей пометкой."
+      },
+      "id": "urn:ohc:mapping:astrology--any",
+      "bridgeKind": "lens-lens",
+      "relation": "no-relation",
+      "rowStatus": "not-permitted",
+      "evidenceGrade": "F2",
+      "path": "spec/mappings/lens/astrology--any.mapping.json"
+    },
+    {
+      "code": "human-design--any",
+      "label": {
+        "en": "Human design and any empirical construct",
+        "ru": "Дизайн человека и любой эмпирический конструкт"
+      },
+      "definition": {
+        "en": "Frames have no relation to empirical constructs (M-6). They may be placed side by side for the person's own reflection, labelled as such.",
+        "ru": "У рамок нет связи с эмпирическими конструктами (M-6). Их можно ставить рядом для собственной рефлексии человека, с соответствующей пометкой."
+      },
+      "id": "urn:ohc:mapping:human-design--any",
+      "bridgeKind": "lens-lens",
+      "relation": "no-relation",
+      "rowStatus": "not-permitted",
+      "evidenceGrade": "U",
+      "path": "spec/mappings/lens/human-design--any.mapping.json"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "description": "An unknown specVersion (R-V0).",
+  "expect": [
+    "CX-1"
+  ],
+  "form": "single",
+  "patches": [
+    {
+      "op": "set",
+      "target": "manifest",
+      "path": "/specVersion",
+      "value": "0.2.0-draft"
+    }
+  ]
+}

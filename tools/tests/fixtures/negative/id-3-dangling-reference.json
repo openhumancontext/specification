@@ -1,0 +1,17 @@
+{
+  "description": "An Interpretation about an Episode that does not exist.",
+  "expect": [
+    "ID-3"
+  ],
+  "form": "single",
+  "patches": [
+    {
+      "op": "set",
+      "target": "interpretations",
+      "path": "/@in-01/about",
+      "value": [
+        "ep-09"
+      ]
+    }
+  ]
+}

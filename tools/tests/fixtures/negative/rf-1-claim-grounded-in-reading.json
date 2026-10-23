@@ -1,0 +1,30 @@
+{
+  "description": "A Claim whose evidence cites an Interpretation (a reading restated as a statement).",
+  "expect": [
+    "RF-1"
+  ],
+  "form": "single",
+  "patches": [
+    {
+      "op": "add",
+      "target": "claims",
+      "path": "",
+      "value": {
+        "id": "c-07",
+        "facet": "preference",
+        "predicate": "timing",
+        "text": "Prefers to eat before class.",
+        "evidence": [
+          {
+            "ref": "in-01",
+            "kind": "observation"
+          }
+        ],
+        "origin": "declared",
+        "assertedBy": "subject",
+        "recordedAt": "2026-09-07T08:00:00Z",
+        "synthetic": true
+      }
+    }
+  ]
+}

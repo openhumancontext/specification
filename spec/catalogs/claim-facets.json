@@ -1,0 +1,1348 @@
+{
+  "format": "ohc.catalog",
+  "id": "urn:ohc:catalog:claim-facets",
+  "version": "0.1.0",
+  "specVersion": "0.1.0-draft",
+  "title": {
+    "en": "Claim facets, families and predicates",
+    "ru": "Грани утверждений, семейства и уточнения"
+  },
+  "description": {
+    "en": "What kind of statement a Claim makes. Flat facet codes are grouped into families; predicates are optional finer codes, closed per facet with `x-` extension. `part`, `practice`, `outcome` and `recall-cue` are record kinds, not facets.",
+    "ru": "Какого рода утверждение делает запись Claim. Плоские коды граней сгруппированы в семейства; уточнения — необязательные более узкие коды, закрытые для каждой грани с расширением `x-`. `part`, `practice`, `outcome` и `recall-cue` — виды записей, а не грани."
+  },
+  "closed": false,
+  "lists": [
+    {
+      "name": "families",
+      "title": {
+        "en": "Facet families",
+        "ru": "Семейства граней"
+      },
+      "closed": true,
+      "field": "(grouping only)"
+    },
+    {
+      "name": "facets",
+      "title": {
+        "en": "Facets",
+        "ru": "Грани"
+      },
+      "closed": true,
+      "field": "Claim.facet"
+    },
+    {
+      "name": "predicates",
+      "title": {
+        "en": "Predicates",
+        "ru": "Уточнения граней"
+      },
+      "closed": false,
+      "field": "Claim.predicate",
+      "notes": "Each predicate lists its facets; the relationship facet takes its predicates from relationship-kinds. Local codes use x-<namespace>:<code>."
+    }
+  ],
+  "codes": [
+    {
+      "code": "identity",
+      "list": "families",
+      "label": {
+        "en": "Identity",
+        "ru": "Идентичность"
+      },
+      "definition": {
+        "en": "Who the person is and how they name themselves.",
+        "ru": "Кто человек и как он себя называет."
+      }
+    },
+    {
+      "code": "aspiration",
+      "list": "families",
+      "label": {
+        "en": "Aspiration",
+        "ru": "Устремления"
+      },
+      "definition": {
+        "en": "What the person wants, is drawn to or needs.",
+        "ru": "Чего человек хочет, что его привлекает и что ему нужно."
+      }
+    },
+    {
+      "code": "orientation",
+      "list": "families",
+      "label": {
+        "en": "Orientation",
+        "ru": "Ориентиры"
+      },
+      "definition": {
+        "en": "What matters to the person, their limits and beliefs.",
+        "ru": "Что важно человеку, его границы и убеждения."
+      }
+    },
+    {
+      "code": "interaction",
+      "list": "families",
+      "label": {
+        "en": "Interaction",
+        "ru": "Взаимодействие"
+      },
+      "definition": {
+        "en": "How the person likes to be worked with.",
+        "ru": "Как с человеком предпочтительно работать."
+      }
+    },
+    {
+      "code": "capacity",
+      "list": "families",
+      "label": {
+        "en": "Capacity",
+        "ru": "Возможности"
+      },
+      "definition": {
+        "en": "What the person can do, has, and their current condition.",
+        "ru": "Что человек умеет, чем располагает и в каком он сейчас состоянии."
+      }
+    },
+    {
+      "code": "social",
+      "list": "families",
+      "label": {
+        "en": "Social",
+        "ru": "Связи"
+      },
+      "definition": {
+        "en": "Relationships and commitments with other parties.",
+        "ru": "Отношения и обязательства с другими участниками."
+      }
+    },
+    {
+      "code": "other",
+      "list": "families",
+      "label": {
+        "en": "Other",
+        "ru": "Прочее"
+      },
+      "definition": {
+        "en": "Anything else.",
+        "ru": "Всё остальное."
+      }
+    },
+    {
+      "code": "identity",
+      "list": "facets",
+      "label": {
+        "en": "Identity",
+        "ru": "Идентичность"
+      },
+      "definition": {
+        "en": "How the person names themselves; self-description.",
+        "ru": "Как человек себя называет; самоописание."
+      },
+      "facetFamily": "identity",
+      "predicates": [
+        "name-use",
+        "pronouns",
+        "self-description",
+        "language"
+      ]
+    },
+    {
+      "code": "role",
+      "list": "facets",
+      "label": {
+        "en": "Role",
+        "ru": "Роль"
+      },
+      "definition": {
+        "en": "Roles held (work, family, community).",
+        "ru": "Роли, которые занимает человек (работа, семья, сообщество)."
+      },
+      "facetFamily": "identity",
+      "predicates": [
+        "work-role",
+        "family-role",
+        "community-role"
+      ]
+    },
+    {
+      "code": "fact",
+      "list": "facets",
+      "label": {
+        "en": "Fact",
+        "ru": "Факт"
+      },
+      "definition": {
+        "en": "Plain facts about the person.",
+        "ru": "Простые факты о человеке."
+      },
+      "facetFamily": "identity",
+      "predicates": [
+        "birth-data",
+        "residence-area",
+        "education",
+        "credential"
+      ]
+    },
+    {
+      "code": "disposition",
+      "list": "facets",
+      "label": {
+        "en": "Disposition",
+        "ru": "Склонность"
+      },
+      "definition": {
+        "en": "Stable tendencies, declared by the person or derived from an AssessmentRecord (CL-3).",
+        "ru": "Устойчивые склонности, заявленные самим человеком или вычисленные из записи оценки (CL-3)."
+      },
+      "facetFamily": "identity",
+      "predicates": [
+        "self-described-tendency",
+        "assessed-trait"
+      ]
+    },
+    {
+      "code": "goal",
+      "list": "facets",
+      "label": {
+        "en": "Goal",
+        "ru": "Цель"
+      },
+      "definition": {
+        "en": "What the person wants to achieve.",
+        "ru": "Чего человек хочет достичь."
+      },
+      "facetFamily": "aspiration",
+      "predicates": [
+        "outcome",
+        "habit",
+        "career",
+        "learning",
+        "relationship"
+      ]
+    },
+    {
+      "code": "interest",
+      "list": "facets",
+      "label": {
+        "en": "Interest",
+        "ru": "Интерес"
+      },
+      "definition": {
+        "en": "What attracts the person's attention.",
+        "ru": "Что привлекает внимание человека."
+      },
+      "facetFamily": "aspiration",
+      "predicates": [
+        "topic",
+        "activity"
+      ]
+    },
+    {
+      "code": "need",
+      "list": "facets",
+      "label": {
+        "en": "Need",
+        "ru": "Потребность"
+      },
+      "definition": {
+        "en": "What keeps the person well, whatever they want.",
+        "ru": "Что поддерживает благополучие человека, чего бы он ни хотел."
+      },
+      "facetFamily": "aspiration",
+      "predicates": [
+        "rest",
+        "support",
+        "autonomy",
+        "structure",
+        "connection"
+      ]
+    },
+    {
+      "code": "declared-value",
+      "list": "facets",
+      "label": {
+        "en": "Declared value",
+        "ru": "Заявленная ценность"
+      },
+      "definition": {
+        "en": "What matters to the person, in their words.",
+        "ru": "Что важно человеку — его словами."
+      },
+      "facetFamily": "orientation",
+      "predicates": [
+        "principle",
+        "priority"
+      ]
+    },
+    {
+      "code": "boundary",
+      "list": "facets",
+      "label": {
+        "en": "Boundary",
+        "ru": "Граница"
+      },
+      "definition": {
+        "en": "What the person will not do or accept, and conditions on contact.",
+        "ru": "Чего человек не будет делать или принимать, и условия контакта."
+      },
+      "facetFamily": "orientation",
+      "predicates": [
+        "never",
+        "only-if",
+        "ask-first",
+        "time-window"
+      ]
+    },
+    {
+      "code": "belief",
+      "list": "facets",
+      "label": {
+        "en": "Belief",
+        "ru": "Убеждение"
+      },
+      "definition": {
+        "en": "Beliefs the person holds about the world or themselves (special by default).",
+        "ru": "Убеждения человека о мире или о себе (по умолчанию особый уровень)."
+      },
+      "facetFamily": "orientation",
+      "predicates": [
+        "worldview",
+        "spiritual",
+        "self-belief"
+      ]
+    },
+    {
+      "code": "preference",
+      "list": "facets",
+      "label": {
+        "en": "Preference",
+        "ru": "Предпочтение"
+      },
+      "definition": {
+        "en": "How the person likes to be worked with.",
+        "ru": "Как с человеком предпочтительно работать."
+      },
+      "facetFamily": "interaction",
+      "predicates": [
+        "channel",
+        "timing",
+        "tone",
+        "detail-level",
+        "format",
+        "decision-brief",
+        "pushback"
+      ]
+    },
+    {
+      "code": "capability",
+      "list": "facets",
+      "label": {
+        "en": "Capability",
+        "ru": "Умение"
+      },
+      "definition": {
+        "en": "Skills and abilities.",
+        "ru": "Навыки и способности."
+      },
+      "facetFamily": "capacity",
+      "predicates": [
+        "skill",
+        "language-skill",
+        "tool-skill"
+      ]
+    },
+    {
+      "code": "resource",
+      "list": "facets",
+      "label": {
+        "en": "Resource",
+        "ru": "Ресурс"
+      },
+      "definition": {
+        "en": "What the person has or lacks.",
+        "ru": "Чем человек располагает или чего ему не хватает."
+      },
+      "facetFamily": "capacity",
+      "predicates": [
+        "time",
+        "attention",
+        "energy",
+        "money",
+        "tools",
+        "network"
+      ]
+    },
+    {
+      "code": "state",
+      "list": "facets",
+      "label": {
+        "en": "State",
+        "ru": "Состояние"
+      },
+      "definition": {
+        "en": "The current condition.",
+        "ru": "Текущее состояние."
+      },
+      "facetFamily": "capacity",
+      "predicates": [
+        "energy",
+        "attention",
+        "availability",
+        "load",
+        "location-status",
+        "mood",
+        "emotion",
+        "stress",
+        "affect"
+      ]
+    },
+    {
+      "code": "relationship",
+      "list": "facets",
+      "label": {
+        "en": "Relationship",
+        "ru": "Отношения"
+      },
+      "definition": {
+        "en": "A relationship with a Party (`about`). Predicates come from the relationship-kinds catalog.",
+        "ru": "Отношения с участником (`about`). Уточнения берутся из каталога видов отношений."
+      },
+      "facetFamily": "social",
+      "predicatesCatalog": "urn:ohc:catalog:relationship-kinds"
+    },
+    {
+      "code": "commitment",
+      "list": "facets",
+      "label": {
+        "en": "Commitment",
+        "ru": "Обязательство"
+      },
+      "definition": {
+        "en": "Something promised to someone, or by someone (`about`).",
+        "ru": "Что-то обещанное кому-то или кем-то (`about`)."
+      },
+      "facetFamily": "social",
+      "predicates": [
+        "promise",
+        "agreement",
+        "deadline"
+      ]
+    },
+    {
+      "code": "other",
+      "list": "facets",
+      "label": {
+        "en": "Other",
+        "ru": "Прочее"
+      },
+      "definition": {
+        "en": "Anything else. GUM imports start here.",
+        "ru": "Всё остальное. Импорт из GUM начинается здесь."
+      },
+      "facetFamily": "other",
+      "predicates": []
+    },
+    {
+      "code": "name-use",
+      "list": "predicates",
+      "label": {
+        "en": "Name use",
+        "ru": "Обращение по имени"
+      },
+      "definition": {
+        "en": "How the person wants to be named or addressed.",
+        "ru": "Как человек хочет, чтобы его называли или к нему обращались."
+      },
+      "facets": [
+        "identity"
+      ]
+    },
+    {
+      "code": "pronouns",
+      "list": "predicates",
+      "label": {
+        "en": "Pronouns",
+        "ru": "Местоимения"
+      },
+      "definition": {
+        "en": "The pronouns the person uses.",
+        "ru": "Местоимения, которые использует человек."
+      },
+      "facets": [
+        "identity"
+      ]
+    },
+    {
+      "code": "self-description",
+      "list": "predicates",
+      "label": {
+        "en": "Self-description",
+        "ru": "Самоописание"
+      },
+      "definition": {
+        "en": "A description of themselves in their own words.",
+        "ru": "Описание себя собственными словами."
+      },
+      "facets": [
+        "identity"
+      ]
+    },
+    {
+      "code": "language",
+      "list": "predicates",
+      "label": {
+        "en": "Language",
+        "ru": "Язык"
+      },
+      "definition": {
+        "en": "Languages the person identifies with or prefers.",
+        "ru": "Языки, с которыми человек себя связывает или которые предпочитает."
+      },
+      "facets": [
+        "identity"
+      ]
+    },
+    {
+      "code": "work-role",
+      "list": "predicates",
+      "label": {
+        "en": "Work role",
+        "ru": "Рабочая роль"
+      },
+      "definition": {
+        "en": "A role held at work.",
+        "ru": "Роль на работе."
+      },
+      "facets": [
+        "role"
+      ]
+    },
+    {
+      "code": "family-role",
+      "list": "predicates",
+      "label": {
+        "en": "Family role",
+        "ru": "Семейная роль"
+      },
+      "definition": {
+        "en": "A role held in the family.",
+        "ru": "Роль в семье."
+      },
+      "facets": [
+        "role"
+      ]
+    },
+    {
+      "code": "community-role",
+      "list": "predicates",
+      "label": {
+        "en": "Community role",
+        "ru": "Роль в сообществе"
+      },
+      "definition": {
+        "en": "A role held in a community.",
+        "ru": "Роль в сообществе."
+      },
+      "facets": [
+        "role"
+      ]
+    },
+    {
+      "code": "birth-data",
+      "list": "predicates",
+      "label": {
+        "en": "Birth data",
+        "ru": "Данные о рождении"
+      },
+      "definition": {
+        "en": "Date, time or place of birth (category birth-data).",
+        "ru": "Дата, время или место рождения (категория birth-data)."
+      },
+      "facets": [
+        "fact"
+      ]
+    },
+    {
+      "code": "residence-area",
+      "list": "predicates",
+      "label": {
+        "en": "Residence area",
+        "ru": "Район проживания"
+      },
+      "definition": {
+        "en": "A coarse area where the person lives.",
+        "ru": "Обобщённый район, где живёт человек."
+      },
+      "facets": [
+        "fact"
+      ]
+    },
+    {
+      "code": "education",
+      "list": "predicates",
+      "label": {
+        "en": "Education",
+        "ru": "Образование"
+      },
+      "definition": {
+        "en": "Education completed or in progress.",
+        "ru": "Полученное или получаемое образование."
+      },
+      "facets": [
+        "fact"
+      ]
+    },
+    {
+      "code": "credential",
+      "list": "predicates",
+      "label": {
+        "en": "Credential",
+        "ru": "Квалификация"
+      },
+      "definition": {
+        "en": "A qualification or credential held.",
+        "ru": "Имеющаяся квалификация или документ о ней."
+      },
+      "facets": [
+        "fact"
+      ]
+    },
+    {
+      "code": "self-described-tendency",
+      "list": "predicates",
+      "label": {
+        "en": "Self-described tendency",
+        "ru": "Склонность в самоописании"
+      },
+      "definition": {
+        "en": "A tendency the person describes in themselves.",
+        "ru": "Склонность, которую человек описывает в себе."
+      },
+      "facets": [
+        "disposition"
+      ]
+    },
+    {
+      "code": "assessed-trait",
+      "list": "predicates",
+      "label": {
+        "en": "Assessed trait",
+        "ru": "Оценённая черта"
+      },
+      "definition": {
+        "en": "A trait derived from an AssessmentRecord.",
+        "ru": "Черта, вычисленная из записи оценки."
+      },
+      "facets": [
+        "disposition"
+      ]
+    },
+    {
+      "code": "outcome",
+      "list": "predicates",
+      "label": {
+        "en": "Outcome goal",
+        "ru": "Цель-результат"
+      },
+      "definition": {
+        "en": "A goal stated as a result to reach.",
+        "ru": "Цель, сформулированная как результат."
+      },
+      "facets": [
+        "goal"
+      ]
+    },
+    {
+      "code": "habit",
+      "list": "predicates",
+      "label": {
+        "en": "Habit",
+        "ru": "Привычка"
+      },
+      "definition": {
+        "en": "A goal stated as a habit to build or drop.",
+        "ru": "Цель, сформулированная как привычка, которую нужно выработать или оставить."
+      },
+      "facets": [
+        "goal"
+      ]
+    },
+    {
+      "code": "career",
+      "list": "predicates",
+      "label": {
+        "en": "Career",
+        "ru": "Карьера"
+      },
+      "definition": {
+        "en": "A goal about work or career direction.",
+        "ru": "Цель, связанная с работой или карьерным направлением."
+      },
+      "facets": [
+        "goal"
+      ]
+    },
+    {
+      "code": "learning",
+      "list": "predicates",
+      "label": {
+        "en": "Learning",
+        "ru": "Обучение"
+      },
+      "definition": {
+        "en": "A goal about learning.",
+        "ru": "Цель, связанная с обучением."
+      },
+      "facets": [
+        "goal"
+      ]
+    },
+    {
+      "code": "relationship",
+      "list": "predicates",
+      "label": {
+        "en": "Relationship goal",
+        "ru": "Цель в отношениях"
+      },
+      "definition": {
+        "en": "A goal about a relationship.",
+        "ru": "Цель, связанная с отношениями."
+      },
+      "facets": [
+        "goal"
+      ]
+    },
+    {
+      "code": "topic",
+      "list": "predicates",
+      "label": {
+        "en": "Topic",
+        "ru": "Тема"
+      },
+      "definition": {
+        "en": "A subject the person is interested in.",
+        "ru": "Тема, которая интересует человека."
+      },
+      "facets": [
+        "interest"
+      ]
+    },
+    {
+      "code": "activity",
+      "list": "predicates",
+      "label": {
+        "en": "Activity",
+        "ru": "Занятие"
+      },
+      "definition": {
+        "en": "An activity the person is drawn to.",
+        "ru": "Занятие, которое привлекает человека."
+      },
+      "facets": [
+        "interest"
+      ]
+    },
+    {
+      "code": "rest",
+      "list": "predicates",
+      "label": {
+        "en": "Rest",
+        "ru": "Отдых"
+      },
+      "definition": {
+        "en": "A need for rest or recovery.",
+        "ru": "Потребность в отдыхе или восстановлении."
+      },
+      "facets": [
+        "need"
+      ]
+    },
+    {
+      "code": "support",
+      "list": "predicates",
+      "label": {
+        "en": "Support",
+        "ru": "Поддержка"
+      },
+      "definition": {
+        "en": "A need for support from others.",
+        "ru": "Потребность в поддержке других."
+      },
+      "facets": [
+        "need"
+      ]
+    },
+    {
+      "code": "autonomy",
+      "list": "predicates",
+      "label": {
+        "en": "Autonomy",
+        "ru": "Самостоятельность"
+      },
+      "definition": {
+        "en": "A need to decide and act for oneself.",
+        "ru": "Потребность самому решать и действовать."
+      },
+      "facets": [
+        "need"
+      ]
+    },
+    {
+      "code": "structure",
+      "list": "predicates",
+      "label": {
+        "en": "Structure",
+        "ru": "Структура"
+      },
+      "definition": {
+        "en": "A need for order, routine or clarity.",
+        "ru": "Потребность в порядке, распорядке или ясности."
+      },
+      "facets": [
+        "need"
+      ]
+    },
+    {
+      "code": "connection",
+      "list": "predicates",
+      "label": {
+        "en": "Connection",
+        "ru": "Связь с людьми"
+      },
+      "definition": {
+        "en": "A need for contact with other people.",
+        "ru": "Потребность в контакте с другими людьми."
+      },
+      "facets": [
+        "need"
+      ]
+    },
+    {
+      "code": "principle",
+      "list": "predicates",
+      "label": {
+        "en": "Principle",
+        "ru": "Принцип"
+      },
+      "definition": {
+        "en": "A principle the person lives by.",
+        "ru": "Принцип, которым руководствуется человек."
+      },
+      "facets": [
+        "declared-value"
+      ]
+    },
+    {
+      "code": "priority",
+      "list": "predicates",
+      "label": {
+        "en": "Priority",
+        "ru": "Приоритет"
+      },
+      "definition": {
+        "en": "What the person puts first.",
+        "ru": "Что человек ставит на первое место."
+      },
+      "facets": [
+        "declared-value"
+      ]
+    },
+    {
+      "code": "never",
+      "list": "predicates",
+      "label": {
+        "en": "Never",
+        "ru": "Никогда"
+      },
+      "definition": {
+        "en": "Something the person will never do or accept.",
+        "ru": "То, чего человек никогда не сделает или не примет."
+      },
+      "facets": [
+        "boundary"
+      ]
+    },
+    {
+      "code": "only-if",
+      "list": "predicates",
+      "label": {
+        "en": "Only if",
+        "ru": "Только при условии"
+      },
+      "definition": {
+        "en": "Something acceptable only under a condition.",
+        "ru": "То, что допустимо только при условии."
+      },
+      "facets": [
+        "boundary"
+      ]
+    },
+    {
+      "code": "ask-first",
+      "list": "predicates",
+      "label": {
+        "en": "Ask first",
+        "ru": "Сначала спросить"
+      },
+      "definition": {
+        "en": "Something that needs the person's prior agreement.",
+        "ru": "То, что требует предварительного согласия человека."
+      },
+      "facets": [
+        "boundary"
+      ]
+    },
+    {
+      "code": "time-window",
+      "list": "predicates",
+      "label": {
+        "en": "Time window",
+        "ru": "Временное окно"
+      },
+      "definition": {
+        "en": "Times when contact or work is or is not acceptable.",
+        "ru": "Время, когда контакт или работа допустимы или недопустимы."
+      },
+      "facets": [
+        "boundary"
+      ]
+    },
+    {
+      "code": "worldview",
+      "list": "predicates",
+      "label": {
+        "en": "Worldview",
+        "ru": "Мировоззрение"
+      },
+      "definition": {
+        "en": "A belief about the world.",
+        "ru": "Убеждение о мире."
+      },
+      "facets": [
+        "belief"
+      ]
+    },
+    {
+      "code": "spiritual",
+      "list": "predicates",
+      "label": {
+        "en": "Spiritual",
+        "ru": "Духовное"
+      },
+      "definition": {
+        "en": "A spiritual or religious belief.",
+        "ru": "Духовное или религиозное убеждение."
+      },
+      "facets": [
+        "belief"
+      ]
+    },
+    {
+      "code": "self-belief",
+      "list": "predicates",
+      "label": {
+        "en": "Self-belief",
+        "ru": "Убеждение о себе"
+      },
+      "definition": {
+        "en": "A belief the person holds about themselves.",
+        "ru": "Убеждение человека о самом себе."
+      },
+      "facets": [
+        "belief"
+      ]
+    },
+    {
+      "code": "channel",
+      "list": "predicates",
+      "label": {
+        "en": "Channel",
+        "ru": "Канал"
+      },
+      "definition": {
+        "en": "Preferred communication channel.",
+        "ru": "Предпочтительный канал связи."
+      },
+      "facets": [
+        "preference"
+      ]
+    },
+    {
+      "code": "timing",
+      "list": "predicates",
+      "label": {
+        "en": "Timing",
+        "ru": "Время"
+      },
+      "definition": {
+        "en": "Preferred timing of contact or work.",
+        "ru": "Предпочтительное время для контакта или работы."
+      },
+      "facets": [
+        "preference"
+      ]
+    },
+    {
+      "code": "tone",
+      "list": "predicates",
+      "label": {
+        "en": "Tone",
+        "ru": "Тон"
+      },
+      "definition": {
+        "en": "Preferred tone of communication.",
+        "ru": "Предпочтительный тон общения."
+      },
+      "facets": [
+        "preference"
+      ]
+    },
+    {
+      "code": "detail-level",
+      "list": "predicates",
+      "label": {
+        "en": "Detail level",
+        "ru": "Степень подробности"
+      },
+      "definition": {
+        "en": "Preferred level of detail.",
+        "ru": "Предпочтительная степень подробности."
+      },
+      "facets": [
+        "preference"
+      ]
+    },
+    {
+      "code": "format",
+      "list": "predicates",
+      "label": {
+        "en": "Format",
+        "ru": "Форма"
+      },
+      "definition": {
+        "en": "Preferred format of material.",
+        "ru": "Предпочтительная форма материалов."
+      },
+      "facets": [
+        "preference"
+      ]
+    },
+    {
+      "code": "decision-brief",
+      "list": "predicates",
+      "label": {
+        "en": "Decision brief",
+        "ru": "Сводка для решения"
+      },
+      "definition": {
+        "en": "What the person wants to see before deciding.",
+        "ru": "Что человек хочет увидеть, прежде чем принять решение."
+      },
+      "facets": [
+        "preference"
+      ]
+    },
+    {
+      "code": "pushback",
+      "list": "predicates",
+      "label": {
+        "en": "Pushback",
+        "ru": "Возражения"
+      },
+      "definition": {
+        "en": "How the person wants to be disagreed with.",
+        "ru": "Как человек хочет, чтобы с ним не соглашались."
+      },
+      "facets": [
+        "preference"
+      ]
+    },
+    {
+      "code": "skill",
+      "list": "predicates",
+      "label": {
+        "en": "Skill",
+        "ru": "Навык"
+      },
+      "definition": {
+        "en": "A skill.",
+        "ru": "Навык."
+      },
+      "facets": [
+        "capability"
+      ]
+    },
+    {
+      "code": "language-skill",
+      "list": "predicates",
+      "label": {
+        "en": "Language skill",
+        "ru": "Владение языком"
+      },
+      "definition": {
+        "en": "A language the person can use, and how well.",
+        "ru": "Язык, которым человек владеет, и насколько хорошо."
+      },
+      "facets": [
+        "capability"
+      ]
+    },
+    {
+      "code": "tool-skill",
+      "list": "predicates",
+      "label": {
+        "en": "Tool skill",
+        "ru": "Владение инструментом"
+      },
+      "definition": {
+        "en": "A tool or system the person can use.",
+        "ru": "Инструмент или система, которыми человек умеет пользоваться."
+      },
+      "facets": [
+        "capability"
+      ]
+    },
+    {
+      "code": "time",
+      "list": "predicates",
+      "label": {
+        "en": "Time",
+        "ru": "Время"
+      },
+      "definition": {
+        "en": "Time available or lacking.",
+        "ru": "Время, которым человек располагает или которого не хватает."
+      },
+      "facets": [
+        "resource"
+      ]
+    },
+    {
+      "code": "attention",
+      "list": "predicates",
+      "label": {
+        "en": "Attention",
+        "ru": "Внимание"
+      },
+      "definition": {
+        "en": "Attention available or lacking.",
+        "ru": "Внимание, которым человек располагает или которого не хватает."
+      },
+      "facets": [
+        "resource",
+        "state"
+      ]
+    },
+    {
+      "code": "energy",
+      "list": "predicates",
+      "label": {
+        "en": "Energy",
+        "ru": "Энергия"
+      },
+      "definition": {
+        "en": "Energy available or lacking.",
+        "ru": "Энергия, которой человек располагает или которой не хватает."
+      },
+      "facets": [
+        "resource",
+        "state"
+      ]
+    },
+    {
+      "code": "money",
+      "list": "predicates",
+      "label": {
+        "en": "Money",
+        "ru": "Деньги"
+      },
+      "definition": {
+        "en": "Money available or lacking (category financial).",
+        "ru": "Деньги, которыми человек располагает или которых не хватает (категория financial)."
+      },
+      "facets": [
+        "resource"
+      ]
+    },
+    {
+      "code": "tools",
+      "list": "predicates",
+      "label": {
+        "en": "Tools",
+        "ru": "Инструменты"
+      },
+      "definition": {
+        "en": "Tools or equipment available.",
+        "ru": "Доступные инструменты или оборудование."
+      },
+      "facets": [
+        "resource"
+      ]
+    },
+    {
+      "code": "network",
+      "list": "predicates",
+      "label": {
+        "en": "Network",
+        "ru": "Круг знакомств"
+      },
+      "definition": {
+        "en": "People the person can reach.",
+        "ru": "Люди, к которым человек может обратиться."
+      },
+      "facets": [
+        "resource"
+      ]
+    },
+    {
+      "code": "availability",
+      "list": "predicates",
+      "label": {
+        "en": "Availability",
+        "ru": "Доступность"
+      },
+      "definition": {
+        "en": "Whether and when the person can be reached.",
+        "ru": "Можно ли связаться с человеком и когда."
+      },
+      "facets": [
+        "state"
+      ]
+    },
+    {
+      "code": "load",
+      "list": "predicates",
+      "label": {
+        "en": "Load",
+        "ru": "Нагрузка"
+      },
+      "definition": {
+        "en": "How loaded the person currently is.",
+        "ru": "Насколько человек сейчас загружен."
+      },
+      "facets": [
+        "state"
+      ]
+    },
+    {
+      "code": "location-status",
+      "list": "predicates",
+      "label": {
+        "en": "Location status",
+        "ru": "Статус местонахождения"
+      },
+      "definition": {
+        "en": "A coarse status such as travelling or at home (category location).",
+        "ru": "Обобщённый статус, например «в поездке» (категория location)."
+      },
+      "facets": [
+        "state"
+      ]
+    },
+    {
+      "code": "mood",
+      "list": "predicates",
+      "label": {
+        "en": "Mood",
+        "ru": "Настроение"
+      },
+      "definition": {
+        "en": "Mood as the person states it. Quarantined unless declared by the subject (R-X3).",
+        "ru": "Настроение, как его называет человек. Помещается в карантин, если не заявлено самим человеком (R-X3)."
+      },
+      "facets": [
+        "state"
+      ]
+    },
+    {
+      "code": "emotion",
+      "list": "predicates",
+      "label": {
+        "en": "Emotion",
+        "ru": "Эмоция"
+      },
+      "definition": {
+        "en": "An emotion as the person states it. Quarantined unless declared by the subject (R-X3).",
+        "ru": "Эмоция, как её называет человек. Помещается в карантин, если не заявлена самим человеком (R-X3)."
+      },
+      "facets": [
+        "state"
+      ]
+    },
+    {
+      "code": "stress",
+      "list": "predicates",
+      "label": {
+        "en": "Stress",
+        "ru": "Стресс"
+      },
+      "definition": {
+        "en": "Stress as the person states it. Quarantined unless declared by the subject (R-X3).",
+        "ru": "Стресс, как его называет человек. Помещается в карантин, если не заявлен самим человеком (R-X3)."
+      },
+      "facets": [
+        "state"
+      ]
+    },
+    {
+      "code": "affect",
+      "list": "predicates",
+      "label": {
+        "en": "Affect",
+        "ru": "Аффект"
+      },
+      "definition": {
+        "en": "Affect as the person states it. Quarantined unless declared by the subject (R-X3).",
+        "ru": "Аффект, как его называет человек. Помещается в карантин, если не заявлен самим человеком (R-X3)."
+      },
+      "facets": [
+        "state"
+      ]
+    },
+    {
+      "code": "promise",
+      "list": "predicates",
+      "label": {
+        "en": "Promise",
+        "ru": "Обещание"
+      },
+      "definition": {
+        "en": "A promise made to or by someone.",
+        "ru": "Обещание, данное кому-то или кем-то."
+      },
+      "facets": [
+        "commitment"
+      ]
+    },
+    {
+      "code": "agreement",
+      "list": "predicates",
+      "label": {
+        "en": "Agreement",
+        "ru": "Договорённость"
+      },
+      "definition": {
+        "en": "An agreement with someone.",
+        "ru": "Договорённость с кем-то."
+      },
+      "facets": [
+        "commitment"
+      ]
+    },
+    {
+      "code": "deadline",
+      "list": "predicates",
+      "label": {
+        "en": "Deadline",
+        "ru": "Срок"
+      },
+      "definition": {
+        "en": "A deadline committed to.",
+        "ru": "Принятый на себя срок."
+      },
+      "facets": [
+        "commitment"
+      ]
+    }
+  ]
+}

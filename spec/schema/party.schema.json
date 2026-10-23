@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:ohc:schema:party:0.1.0-draft",
+  "title": "OHC Party",
+  "description": "Anyone other than the subject who asserts, narrates, receives, holds or appears in the context: people, agents, software and organizations. Parts are never Parties (P-1).",
+  "type": "object",
+  "required": [
+    "id",
+    "partyKind",
+    "label"
+  ],
+  "properties": {
+    "id": {
+      "description": "Prefix p- (person), a- (agent), s- (software or system) or o- (organization).",
+      "allOf": [
+        {
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/LocalId"
+        },
+        {
+          "pattern": "^[paso]-"
+        }
+      ]
+    },
+    "partyKind": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/party-kinds"
+    },
+    "label": {
+      "description": "Pseudonymous wherever possible. Examples use role labels only.",
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+    },
+    "role": {
+      "description": "A relationship kind (includes practitioner).",
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/relationship-kinds"
+    },
+    "odeRef": {
+      "description": "The ODE Party, Agent or DigitalEmployee this party explicitly corresponds to. Not authentication or access; a role or working-configuration change does not transfer a grant (ODE binding section 9).",
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/OdeRef"
+    },
+    "uri": {
+      "description": "A DID or service URI.",
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/URI"
+    },
+    "ext": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Extensions"
+    }
+  },
+  "additionalProperties": false
+}

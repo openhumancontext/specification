@@ -1,0 +1,24 @@
+{
+  "description": "A Tombstone that keeps a content field.",
+  "expect": [
+    "S-3",
+    "TB-1"
+  ],
+  "form": "single",
+  "patches": [
+    {
+      "op": "set",
+      "target": "interpretations",
+      "path": "/@in-01",
+      "value": {
+        "kind": "Tombstone",
+        "id": "in-01",
+        "erasedKind": "Interpretation",
+        "erasedAt": "2026-09-07T08:00:00Z",
+        "erasedBy": "subject",
+        "reason": "subject-request",
+        "text": "kept"
+      }
+    }
+  ]
+}

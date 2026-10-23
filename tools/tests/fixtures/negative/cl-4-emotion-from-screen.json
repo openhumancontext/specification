@@ -1,0 +1,74 @@
+{
+  "description": "A stress value grounded in a screen-observation source (R-X4).",
+  "expect": [
+    "CL-4"
+  ],
+  "form": "single",
+  "patches": [
+    {
+      "op": "add",
+      "target": "sources",
+      "path": "",
+      "value": {
+        "id": "src-02",
+        "sourceKind": "screen-observation",
+        "content": {
+          "locator": {
+            "uri": "urn:uuid:3f1b1a52-9a77-4b0c-8a1e-2d3c4b5a6f70"
+          },
+          "sha256": "1111111111111111111111111111111111111111111111111111111111111111",
+          "mediaType": "text/plain"
+        },
+        "authorship": {
+          "author": "s-01"
+        },
+        "maxRelease": "index",
+        "retention": {
+          "eraseOnRequest": true
+        },
+        "origin": "declared",
+        "assertedBy": "subject",
+        "recordedAt": "2026-09-07T08:00:00Z",
+        "synthetic": true
+      }
+    },
+    {
+      "op": "add",
+      "target": "claims",
+      "path": "",
+      "value": {
+        "id": "c-07",
+        "facet": "state",
+        "predicate": "stress",
+        "text": "Stressed during class.",
+        "origin": "observed",
+        "assertedBy": "subject",
+        "recordedAt": "2026-09-07T08:00:00Z",
+        "horizon": "state",
+        "valid": {
+          "until": "2026-09-08"
+        },
+        "sensitivity": "special",
+        "categories": [
+          "mental-health"
+        ],
+        "handling": [
+          "no-infer",
+          "person-only"
+        ],
+        "evidence": [
+          {
+            "span": {
+              "source": "src-02",
+              "selector": {
+                "type": "whole"
+              }
+            },
+            "kind": "observation"
+          }
+        ],
+        "synthetic": true
+      }
+    }
+  ]
+}

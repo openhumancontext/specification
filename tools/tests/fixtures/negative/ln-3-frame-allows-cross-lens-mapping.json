@@ -1,0 +1,16 @@
+{
+  "description": "A symbolic frame that allows population-level mappings.",
+  "expect": [
+    "LN-3"
+  ],
+  "form": "single",
+  "patches": [
+    {
+      "op": "set",
+      "target": "document",
+      "path": "/useLimits/crossLensMapping",
+      "value": "population-level-only"
+    }
+  ],
+  "documentFrom": "spec/lenses/astrology.lens.json"
+}

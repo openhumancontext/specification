@@ -1,0 +1,335 @@
+{
+  "format": "ohc.catalog",
+  "id": "urn:ohc:catalog:relation-codes",
+  "version": "0.1.0",
+  "specVersion": "0.1.0-draft",
+  "title": {
+    "en": "Relation codes",
+    "ru": "Коды связей"
+  },
+  "description": {
+    "en": "Typed links between two records. In endpoints, `content` means any content-record kind and `same-kind` means the kind of `from`. Relations never point at governance records and never make a record reachable (RL-5).",
+    "ru": "Типизированные связи между двумя записями. В endpoints `content` означает любой вид содержательной записи, а `same-kind` — тот же вид, что у `from`. Связи никогда не указывают на записи управления и никогда не делают запись доступной (RL-5)."
+  },
+  "closed": true,
+  "codes": [
+    {
+      "code": "supports",
+      "label": {
+        "en": "Supports",
+        "ru": "Поддерживает"
+      },
+      "definition": {
+        "en": "`from` supports `to`.",
+        "ru": "`from` поддерживает `to`."
+      },
+      "endpoints": [
+        {
+          "from": [
+            "content"
+          ],
+          "to": [
+            "content"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "contradicts",
+      "label": {
+        "en": "Contradicts",
+        "ru": "Противоречит"
+      },
+      "definition": {
+        "en": "`from` speaks against `to`. Lightweight; use a Tension when someone needs to decide.",
+        "ru": "`from` говорит против `to`. Лёгкая связь; если кому-то нужно принять решение, используется напряжение (Tension)."
+      },
+      "endpoints": [
+        {
+          "from": [
+            "content"
+          ],
+          "to": [
+            "content"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "refines",
+      "label": {
+        "en": "Refines",
+        "ru": "Уточняет"
+      },
+      "definition": {
+        "en": "`from` narrows `to` without replacing it.",
+        "ru": "`from` сужает `to`, не заменяя его."
+      },
+      "endpoints": [
+        {
+          "from": [
+            "Claim"
+          ],
+          "to": [
+            "Claim"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "depends-on",
+      "label": {
+        "en": "Depends on",
+        "ru": "Зависит от"
+      },
+      "definition": {
+        "en": "`from` holds only if `to` holds.",
+        "ru": "`from` верно, только если верно `to`."
+      },
+      "endpoints": [
+        {
+          "from": [
+            "Claim"
+          ],
+          "to": [
+            "Claim"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "alternative-to",
+      "label": {
+        "en": "Alternative to",
+        "ru": "Альтернатива"
+      },
+      "definition": {
+        "en": "Competing readings, kept side by side.",
+        "ru": "Конкурирующие прочтения, хранящиеся рядом."
+      },
+      "endpoints": [
+        {
+          "from": [
+            "Interpretation"
+          ],
+          "to": [
+            "Interpretation"
+          ]
+        },
+        {
+          "from": [
+            "ModelView"
+          ],
+          "to": [
+            "ModelView"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "same-occurrence",
+      "label": {
+        "en": "Same occurrence",
+        "ru": "То же событие"
+      },
+      "definition": {
+        "en": "Two Episodes describe one occurrence (for example, recorded by different holders).",
+        "ru": "Два эпизода описывают одно и то же событие (например, записанное разными держателями)."
+      },
+      "endpoints": [
+        {
+          "from": [
+            "Episode"
+          ],
+          "to": [
+            "Episode"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "conditioned-by",
+      "label": {
+        "en": "Conditioned by",
+        "ru": "При условии"
+      },
+      "definition": {
+        "en": "Applies only under the condition `to`.",
+        "ru": "Применимо только при условии `to`."
+      },
+      "endpoints": [
+        {
+          "from": [
+            "Claim",
+            "Practice"
+          ],
+          "to": [
+            "Claim"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "practice-for",
+      "label": {
+        "en": "Practice for",
+        "ru": "Практика для"
+      },
+      "definition": {
+        "en": "The practice serves that goal or situation.",
+        "ru": "Практика служит этой цели или ситуации."
+      },
+      "endpoints": [
+        {
+          "from": [
+            "Practice"
+          ],
+          "to": [
+            "Claim"
+          ],
+          "note": "Claim facets goal, need or state"
+        },
+        {
+          "from": [
+            "Practice"
+          ],
+          "to": [
+            "Pattern"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "translation-of",
+      "label": {
+        "en": "Translation of",
+        "ru": "Перевод"
+      },
+      "definition": {
+        "en": "A language version of a record of the same kind.",
+        "ru": "Языковая версия записи того же вида."
+      },
+      "endpoints": [
+        {
+          "from": [
+            "content"
+          ],
+          "to": [
+            "same-kind"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "competes-for-resource",
+      "label": {
+        "en": "Competes for resource",
+        "ru": "Конкурирует за ресурс"
+      },
+      "definition": {
+        "en": "Both draw on the same resource.",
+        "ru": "Обе записи опираются на один и тот же ресурс."
+      },
+      "endpoints": [
+        {
+          "from": [
+            "Claim"
+          ],
+          "to": [
+            "Claim"
+          ],
+          "note": "Claim facets goal or commitment on both ends"
+        }
+      ]
+    },
+    {
+      "code": "held-by",
+      "label": {
+        "en": "Held by",
+        "ru": "Голос части"
+      },
+      "definition": {
+        "en": "This content is voiced by this part.",
+        "ru": "Это содержание звучит голосом этой части."
+      },
+      "endpoints": [
+        {
+          "from": [
+            "Claim",
+            "Interpretation"
+          ],
+          "to": [
+            "Part"
+          ]
+        }
+      ],
+      "module": "inner-system"
+    },
+    {
+      "code": "protects",
+      "label": {
+        "en": "Protects",
+        "ru": "Защищает"
+      },
+      "definition": {
+        "en": "A part relation: `from` protects `to`.",
+        "ru": "Связь частей: `from` защищает `to`."
+      },
+      "endpoints": [
+        {
+          "from": [
+            "Part"
+          ],
+          "to": [
+            "Part"
+          ]
+        }
+      ],
+      "module": "inner-system"
+    },
+    {
+      "code": "polarized-with",
+      "label": {
+        "en": "Polarized with",
+        "ru": "В противостоянии с"
+      },
+      "definition": {
+        "en": "A part relation: the two parts pull against each other.",
+        "ru": "Связь частей: две части тянут в разные стороны."
+      },
+      "endpoints": [
+        {
+          "from": [
+            "Part"
+          ],
+          "to": [
+            "Part"
+          ]
+        }
+      ],
+      "module": "inner-system"
+    },
+    {
+      "code": "allied-with",
+      "label": {
+        "en": "Allied with",
+        "ru": "В союзе с"
+      },
+      "definition": {
+        "en": "A part relation: the two parts act together.",
+        "ru": "Связь частей: две части действуют вместе."
+      },
+      "endpoints": [
+        {
+          "from": [
+            "Part"
+          ],
+          "to": [
+            "Part"
+          ]
+        }
+      ],
+      "module": "inner-system"
+    }
+  ]
+}

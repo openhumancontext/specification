@@ -1,0 +1,19 @@
+{
+  "query": "stopped-convincing",
+  "context": {
+    "id": "urn:ohc:example:noa:context",
+    "version": "2026-10-09.4"
+  },
+  "interpretations": [
+    {
+      "id": "in-01",
+      "reason": "superseded",
+      "heldDuring": {
+        "from": "2026-06-20",
+        "until": "2026-09-26"
+      },
+      "supersededBy": "in-03"
+    }
+  ],
+  "synthetic": true
+}

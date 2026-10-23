@@ -1,0 +1,27 @@
+{
+  "description": "Import time not in recordedAt (R-T5b).",
+  "expect": [
+    "ENV-3"
+  ],
+  "form": "single",
+  "patches": [
+    {
+      "op": "add",
+      "target": "claims",
+      "path": "",
+      "value": {
+        "id": "c-07",
+        "facet": "interest",
+        "text": "Reads Dutch news.",
+        "origin": "imported",
+        "assertedBy": "subject",
+        "recordedAt": "2026-09-07T08:00:00Z",
+        "importedFrom": {
+          "system": "notes-app",
+          "importedAt": "2026-09-08T08:00:00Z"
+        },
+        "synthetic": true
+      }
+    }
+  ]
+}

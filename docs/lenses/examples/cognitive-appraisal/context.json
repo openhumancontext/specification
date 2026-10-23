@@ -1,0 +1,136 @@
+{
+  "format": "ohc.context",
+  "specVersion": "0.1.0-draft",
+  "id": "urn:ohc:example:tamsin:cognitive-appraisal",
+  "version": "2026-10-02.1",
+  "subject": {"id": "urn:ohc:example:tamsin", "displayName": "Tamsin (fictional)"},
+  "holder": "subject",
+  "lang": "en",
+  "created": "2026-09-20T18:00:00Z",
+  "conformance": {"level": "L1", "modules": ["core", "governance", "lenses", "practices"], "subjectIsAdult": true},
+  "parties": [
+    {"id": "a-01", "partyKind": "agent", "label": "Reflection companion"},
+    {"id": "a-02", "partyKind": "agent", "label": "Work assistant"}
+  ],
+  "policy": {"admission": "subject-only", "resolver": "returnDialog"},
+  "lenses": [
+    {"id": "urn:ohc:lens:cognitive-appraisal", "version": "0.2.0"}
+  ],
+  "synthetic": true,
+  "claims": [
+    {"id": "c-01", "facet": "disposition", "predicate": "self-described-tendency",
+     "text": "When a piece of work stalls, my first explanation is that I am lazy.",
+     "horizon": "foundation", "origin": "declared", "assertedBy": "subject", "recordedAt": "2026-09-20T18:05:00Z",
+     "sensitivity": "special", "categories": ["mental-health"], "handling": ["no-quote-back"], "synthetic": true},
+    {"id": "c-02", "facet": "preference", "predicate": "pushback",
+     "text": "If I call myself lazy, ask what else was going on that week before suggesting anything.",
+     "horizon": "foundation", "origin": "declared", "assertedBy": "subject", "recordedAt": "2026-09-28T10:05:00Z",
+     "synthetic": true},
+    {"id": "c-03", "facet": "state", "predicate": "load",
+     "text": "Late shifts until Friday 3 October; slow on writing tasks.",
+     "horizon": "state", "valid": {"from": "2026-09-28", "until": "2026-10-04"}, "contexts": ["work"],
+     "origin": "declared", "assertedBy": "subject", "recordedAt": "2026-09-28T10:10:00Z", "synthetic": true}
+  ],
+  "sources": [
+    {"id": "src-01", "sourceKind": "journal-entry",
+     "content": {"locator": {"vaultPath": "vault/bd/bd2ef427fdd98e16536b45a3bfcf4a6415820201c1f7277e2eb34d7dc86bfbcb.md"},
+                 "sha256": "bd2ef427fdd98e16536b45a3bfcf4a6415820201c1f7277e2eb34d7dc86bfbcb",
+                 "mediaType": "text/markdown", "size": 231},
+     "capturedAt": "2026-09-24T22:00:00Z", "authorship": {"author": "subject"}, "contemporaneity": "contemporaneous",
+     "maxRelease": "index",
+     "summary": {"text": "Evening note about the stalled grant draft.", "authoredBy": "subject",
+                 "recordedAt": "2026-09-24T22:05:00Z", "method": "subject-written"},
+     "retention": {"eraseOnRequest": true},
+     "origin": "declared", "assertedBy": "subject", "recordedAt": "2026-09-24T22:05:00Z",
+     "sensitivity": "special", "categories": ["mental-health"], "contexts": ["work"], "synthetic": true}
+  ],
+  "episodes": [
+    {"id": "ep-01", "title": "Stalled draft",
+     "occurred": {"start": "2026-09-22", "end": "2026-09-24", "precision": "day"},
+     "accounts": [
+       {"narrator": "subject", "narratedAt": "2026-09-24T22:00:00Z", "addedAt": "2026-09-24T22:05:00Z",
+        "accountKind": "in-the-moment",
+        "happened": "Three evenings in a row I opened the grant draft and closed it after about ten minutes.",
+        "experienced": "Heavy. A familiar voice saying I am just lazy.",
+        "didOrTried": "Tidied the desk and answered emails instead.",
+        "understandingThen": "I am lazy and undisciplined.",
+        "evidence": [{"source": "src-01", "selector": {"type": "whole"}}]}],
+     "selection": {"selectedBy": "subject", "reason": "subject-chose"}, "salience": "medium", "contexts": ["work"],
+     "origin": "declared", "assertedBy": "subject", "recordedAt": "2026-09-24T22:05:00Z",
+     "sensitivity": "special", "categories": ["mental-health"], "synthetic": true}
+  ],
+  "grants": [
+    {"id": "g-01", "recordedAt": "2026-09-25T18:00:00Z", "grantor": "subject", "grantee": "a-01",
+     "purposes": ["self-reflection"],
+     "scope": {"include": [{"lenses": ["urn:ohc:lens:cognitive-appraisal"]},
+                           {"ids": ["c-01", "ep-01"]},
+                           {"facets": ["preference"]}]},
+     "actions": ["read", "suggest"], "mode": "full", "interpretations": "subject-endorsed", "maxSourceTier": "none",
+     "constraints": {"expiresAt": "2027-03-20T18:00:00Z", "storage": "session", "forwarding": false,
+                     "crossContextUse": false, "delegable": false},
+     "basis": {"legal": "explicit-consent"},
+     "expressedBy": {"actor": "subject", "at": "2026-09-25T18:00:00Z", "channel": "holder-ui"},
+     "note": "Read and suggest, for reflection. No inference."},
+    {"id": "g-02", "recordedAt": "2026-09-28T10:20:00Z", "grantor": "subject", "grantee": "a-02",
+     "purposes": ["scheduling"],
+     "scope": {"include": [{"facets": ["state"], "predicates": ["load"]}]},
+     "actions": ["read"], "mode": "rule-only", "interpretations": "none",
+     "constraints": {"expiresAt": "2027-06-30T00:00:00Z", "storage": "session", "forwarding": false,
+                     "crossContextUse": false, "delegable": false},
+     "basis": {"legal": "consent"},
+     "expressedBy": {"actor": "subject", "at": "2026-09-28T10:20:00Z", "channel": "holder-ui"},
+     "note": "Only my current load, so that writing tasks are planned around it."}
+  ],
+  "lensAdoptions": [
+    {"id": "la-01", "lens": {"id": "urn:ohc:lens:cognitive-appraisal", "version": "0.2.0"},
+     "route": "agent-suggested", "suggestedBy": "a-01",
+     "uses": ["speak-in-lens", "interpret"], "interpretationAuthors": ["subject"], "agentInterpretation": "off",
+     "origin": "observed", "assertedBy": "a-01", "recordedAt": "2026-09-25T19:00:00Z",
+     "underGrant": "g-01", "purpose": "self-reflection",
+     "sensitivity": "special", "categories": ["mental-health"], "synthetic": true}
+  ],
+  "proposals": [
+    {"id": "prop-01", "proposer": "a-01", "recordedAt": "2026-09-25T19:00:00Z", "underGrant": "g-01",
+     "purpose": "self-reflection", "items": ["la-01"],
+     "rationale": "You asked for other ways of looking at a stalled task. This perspective is one option; it is not a reading of you.",
+     "expiresAt": "2026-10-09T19:00:00Z", "presentation": {"channel": "agent-dialog", "askedAt": "2026-09-25T18:58:00Z"}}
+  ],
+  "reviews": [
+    {"id": "rv-01", "target": "la-01", "action": "admit", "by": "subject", "recordedAt": "2026-09-25T19:10:00Z"}
+  ],
+  "interpretations": [
+    {"id": "in-01", "about": ["ep-01"], "stance": "lens-reading",
+     "lens": {"id": "urn:ohc:lens:cognitive-appraisal", "version": "0.2.0"}, "adoption": "la-01",
+     "question": "Was I stuck because I did not know which version of the guidelines counted, rather than because I am lazy?",
+     "heldDuring": {"from": "2026-09-26"},
+     "origin": "declared", "assertedBy": "subject", "recordedAt": "2026-09-26T08:00:00Z",
+     "sensitivity": "special", "categories": ["mental-health"], "synthetic": true},
+    {"id": "in-02", "about": ["ep-01"], "stance": "lens-reading",
+     "lens": {"id": "urn:ohc:lens:cognitive-appraisal", "version": "0.2.0"}, "adoption": "la-01",
+     "text": "The stall had ordinary causes: I did not know which version of the guidelines counted, and it was a week of late shifts.",
+     "grounds": [{"ref": "ep-01", "kind": "evidence"},
+                 {"span": {"source": "src-01", "selector": {"type": "whole"}}, "kind": "evidence"}],
+     "alternatives": [{"text": "The structure was still forming; it came together on Saturday without effort.", "kind": "other"},
+                      {"text": "Part of me doubts the project itself.", "kind": "psychological"}],
+     "heldDuring": {"from": "2026-09-28"},
+     "origin": "declared", "assertedBy": "subject", "recordedAt": "2026-09-28T10:00:00Z",
+     "sensitivity": "special", "categories": ["mental-health"], "synthetic": true}
+  ],
+  "practices": [
+    {"id": "pr-01", "name": "Three ordinary causes",
+     "description": "When a task stalls, write three causes that are about the situation, not about my character.",
+     "practiceKind": "writing",
+     "source": {"route": "self-discovered", "lens": "urn:ohc:lens:cognitive-appraisal"},
+     "steps": ["Write the stalled task in one line", "Write three causes about the situation: unclear, too much, not ready yet", "Pick one small step for the cause I can change"],
+     "duration": "PT10M", "limits": "Not to argue myself out of a real doubt; a real doubt gets its own note.",
+     "initialStatus": "in-use", "nonClinical": true,
+     "origin": "declared", "assertedBy": "subject", "recordedAt": "2026-09-28T10:15:00Z",
+     "sensitivity": "special", "categories": ["mental-health"], "handling": ["subject-initiated-only"],
+     "synthetic": true}
+  ],
+  "outcomes": [
+    {"id": "oc-01", "about": {"practice": "pr-01"}, "result": "helped",
+     "origin": "declared", "assertedBy": "subject", "recordedAt": "2026-10-02T21:00:00Z",
+     "note": "Used it on the budget section.", "synthetic": true}
+  ]
+}

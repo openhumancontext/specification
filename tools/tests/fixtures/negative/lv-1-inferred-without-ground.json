@@ -1,0 +1,14 @@
+{
+  "description": "An inferred Claim that cites no ground.",
+  "expect": [
+    "LV-1"
+  ],
+  "form": "single",
+  "patches": [
+    {
+      "op": "remove",
+      "target": "claims",
+      "path": "/@c-05/evidence"
+    }
+  ]
+}

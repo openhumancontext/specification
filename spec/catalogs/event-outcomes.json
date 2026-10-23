@@ -1,0 +1,116 @@
+{
+  "format": "ohc.catalog",
+  "id": "urn:ohc:catalog:event-outcomes",
+  "version": "0.1.0",
+  "specVersion": "0.1.0-draft",
+  "title": {
+    "en": "Event outcomes",
+    "ru": "Исходы событий журнала"
+  },
+  "description": {
+    "en": "The outcome code of an Event.",
+    "ru": "Код исхода события журнала."
+  },
+  "closed": true,
+  "codes": [
+    {
+      "code": "served",
+      "label": {
+        "en": "Served",
+        "ru": "Выдано"
+      },
+      "definition": {
+        "en": "Content was served.",
+        "ru": "Содержимое выдано."
+      }
+    },
+    {
+      "code": "denied",
+      "label": {
+        "en": "Denied",
+        "ru": "Отказано"
+      },
+      "definition": {
+        "en": "The request was denied.",
+        "ru": "В запросе отказано."
+      }
+    },
+    {
+      "code": "asked",
+      "label": {
+        "en": "Asked",
+        "ru": "Спросили"
+      },
+      "definition": {
+        "en": "The person was asked.",
+        "ru": "Человека спросили."
+      }
+    },
+    {
+      "code": "confirmed",
+      "label": {
+        "en": "Confirmed",
+        "ru": "Подтверждено"
+      },
+      "definition": {
+        "en": "The person confirmed.",
+        "ru": "Человек подтвердил."
+      }
+    },
+    {
+      "code": "declined",
+      "label": {
+        "en": "Declined",
+        "ru": "Отклонено"
+      },
+      "definition": {
+        "en": "The person declined.",
+        "ru": "Человек отклонил."
+      }
+    },
+    {
+      "code": "timeout",
+      "label": {
+        "en": "Timeout",
+        "ru": "Истёк срок"
+      },
+      "definition": {
+        "en": "No answer in time; treated as decline.",
+        "ru": "Ответа не было вовремя; считается отказом."
+      }
+    },
+    {
+      "code": "acknowledged",
+      "label": {
+        "en": "Acknowledged",
+        "ru": "Получение подтверждено"
+      },
+      "definition": {
+        "en": "A notice was acknowledged.",
+        "ru": "Получение уведомления подтверждено."
+      }
+    },
+    {
+      "code": "purged",
+      "label": {
+        "en": "Purged",
+        "ru": "Очищено"
+      },
+      "definition": {
+        "en": "The recipient purged the data.",
+        "ru": "Получатель удалил данные."
+      }
+    },
+    {
+      "code": "failed",
+      "label": {
+        "en": "Failed",
+        "ru": "Не удалось"
+      },
+      "definition": {
+        "en": "The operation failed.",
+        "ru": "Операция не удалась."
+      }
+    }
+  ]
+}

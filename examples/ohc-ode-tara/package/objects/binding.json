@@ -1,0 +1,38 @@
+{
+  "schemaVersion": "0.4.0-draft",
+  "kind": "ToolBinding",
+  "layer": "agent",
+  "id": "urn:ode:example:ohc-planner:binding",
+  "version": "0.2.0",
+  "title": "binding",
+  "status": "draft",
+  "provenance": {
+    "origin": "Authored synthetic OHC integration example, adapted from ODE v0.4.0-draft.2 personal-agent; no runtime or consent observed"
+  },
+  "spec": {
+    "toolRef": {
+      "objectId": "urn:ode:example:ohc-planner:tool",
+      "version": "0.2.0"
+    },
+    "controllerRef": {
+      "objectId": "urn:ode:example:party:kofi",
+      "version": "0.2.0"
+    },
+    "environmentRef": {
+      "objectId": "urn:ode:example:ohc-planner:environment",
+      "version": "0.2.0"
+    },
+    "config": {
+      "status": "not configured"
+    },
+    "verification": {
+      "status": "not performed"
+    },
+    "policyRefs": [
+      {
+        "objectId": "urn:ode:example:ohc-planner:read-policy",
+        "version": "0.2.0"
+      }
+    ]
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "format": "ohc.catalog",
+  "id": "urn:ohc:catalog:presentation-channels",
+  "version": "0.1.0",
+  "specVersion": "0.1.0-draft",
+  "title": {
+    "en": "Presentation channels",
+    "ru": "Каналы показа предложений"
+  },
+  "description": {
+    "en": "How a proposal was presented to the person.",
+    "ru": "Как предложение было показано человеку."
+  },
+  "closed": true,
+  "codes": [
+    {
+      "code": "holder-ui",
+      "label": {
+        "en": "Holder interface",
+        "ru": "Интерфейс держателя"
+      },
+      "definition": {
+        "en": "Shown in the holder's interface.",
+        "ru": "Показано в интерфейсе держателя."
+      }
+    },
+    {
+      "code": "agent-dialog",
+      "label": {
+        "en": "Agent dialogue",
+        "ru": "Диалог с агентом"
+      },
+      "definition": {
+        "en": "Shown in a dialogue with the agent.",
+        "ru": "Показано в диалоге с агентом."
+      }
+    },
+    {
+      "code": "message",
+      "label": {
+        "en": "Message",
+        "ru": "Сообщение"
+      },
+      "definition": {
+        "en": "Sent as a message.",
+        "ru": "Отправлено сообщением."
+      }
+    }
+  ]
+}

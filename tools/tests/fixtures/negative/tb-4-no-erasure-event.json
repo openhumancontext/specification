@@ -1,0 +1,22 @@
+{
+  "description": "A Tombstone without a record-erased Event (L2).",
+  "expect": [
+    "TB-4"
+  ],
+  "form": "package",
+  "patches": [
+    {
+      "op": "set",
+      "target": "interpretations",
+      "path": "/@in-01",
+      "value": {
+        "kind": "Tombstone",
+        "id": "in-01",
+        "erasedKind": "Interpretation",
+        "erasedAt": "2026-09-07T08:00:00Z",
+        "erasedBy": "subject",
+        "reason": "subject-request"
+      }
+    }
+  ]
+}

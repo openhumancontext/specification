@@ -1,0 +1,90 @@
+{
+  "format": "ohc.projection",
+  "specVersion": "0.1.0-draft",
+  "id": "prj-0012",
+  "context": {
+    "id": "urn:ohc:example:kofi:context",
+    "version": "2026-10-09.3"
+  },
+  "subjectAlias": "urn:ohc:alias:mej2a2du5ccc4xp4umm4quxgib",
+  "grantee": "a-01",
+  "grant": "g-03",
+  "request": "msg-0512",
+  "purpose": "scheduling",
+  "mode": "rule-only",
+  "generatedAt": "2026-10-09T09:00:00Z",
+  "validUntil": "2026-10-09T21:00:00Z",
+  "nonce": "pbj1wDlDpOrHitFE2A6v6g",
+  "statements": {
+    "claims": [
+      {
+        "id": "c-01",
+        "facet": "boundary",
+        "predicate": "time-window",
+        "text": "No calls on Fridays."
+      },
+      {
+        "id": "c-02",
+        "facet": "preference",
+        "predicate": "format",
+        "text": "Deadlines in writing."
+      },
+      {
+        "id": "c-03",
+        "facet": "state",
+        "predicate": "availability",
+        "text": "Available for short calls Tuesday to Thursday, 10:00 to 12:00, until 17 October."
+      }
+    ]
+  },
+  "derived": {
+    "c-01": {
+      "label": "stated",
+      "freshness": "current",
+      "endorsement": "endorsed",
+      "contested": false,
+      "locked": false,
+      "admission": "active",
+      "computedAt": "2026-10-09T09:00:00Z"
+    },
+    "c-02": {
+      "label": "stated",
+      "freshness": "current",
+      "endorsement": "endorsed",
+      "contested": false,
+      "locked": false,
+      "admission": "active",
+      "computedAt": "2026-10-09T09:00:00Z"
+    },
+    "c-03": {
+      "label": "stated",
+      "freshness": "current",
+      "endorsement": "endorsed",
+      "contested": false,
+      "locked": false,
+      "admission": "active",
+      "computedAt": "2026-10-09T09:00:00Z"
+    }
+  },
+  "absences": [
+    {
+      "selector": {
+        "facets": [
+          "commitment"
+        ]
+      },
+      "code": "not-disclosed"
+    }
+  ],
+  "completeness": "partial",
+  "omissions": "hidden",
+  "obligations": {
+    "storage": "session",
+    "forwarding": false,
+    "crossContextUse": false,
+    "decisionUse": "deny",
+    "delegable": false,
+    "handling": {}
+  },
+  "digest": "sha256:6e295f4eae5557f303bf2916eb360d1cf595aa95c7513459915fea8d3e4b4443"
+}

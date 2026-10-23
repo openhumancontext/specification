@@ -1,0 +1,54 @@
+{
+  "description": "An import block with two standardized score kinds.",
+  "expect": [
+    "INS-1"
+  ],
+  "form": "single",
+  "documentFrom": "spec/instruments/bfi-2.instrument.json",
+  "patches": [
+    {
+      "op": "set",
+      "target": "document",
+      "path": "/import",
+      "value": {
+        "scoredBy": {
+          "partyKind": "organization",
+          "id": "urn:ohc:scorer:test-report",
+          "label": "Report scorer"
+        },
+        "scores": [
+          {
+            "kind": "percentile",
+            "range": [
+              0,
+              100
+            ]
+          },
+          {
+            "kind": "T",
+            "range": [
+              20,
+              80
+            ]
+          }
+        ],
+        "scales": [
+          "big-five/O",
+          "big-five/C",
+          "big-five/E",
+          "big-five/A",
+          "big-five/N"
+        ],
+        "normGroups": [
+          {
+            "id": "test-norms",
+            "label": {
+              "en": "Test norms",
+              "ru": "Тестовые нормы"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

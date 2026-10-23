@@ -1,0 +1,16 @@
+{
+  "description": "A gap in Event seq (and therefore the chain).",
+  "expect": [
+    "EV-1",
+    "EV-2"
+  ],
+  "form": "package",
+  "postPatches": [
+    {
+      "op": "set",
+      "target": "events",
+      "path": "/2/seq",
+      "value": 7
+    }
+  ]
+}

@@ -1,0 +1,379 @@
+{
+  "format": "ohc.catalog",
+  "id": "urn:ohc:catalog:practice",
+  "version": "0.1.0",
+  "specVersion": "0.1.0-draft",
+  "title": {
+    "en": "Practice vocabularies",
+    "ru": "Словари практик"
+  },
+  "description": {
+    "en": "Vocabularies for Practices: what kind of practice, where it came from and its status. Practice kinds accept local `x-` codes.",
+    "ru": "Словари для практик: вид практики, её происхождение и статус. Виды практик допускают локальные коды `x-`."
+  },
+  "closed": false,
+  "lists": [
+    {
+      "name": "kinds",
+      "title": {
+        "en": "Practice kinds",
+        "ru": "Виды практик"
+      },
+      "closed": false,
+      "field": "Practice.practiceKind"
+    },
+    {
+      "name": "routes",
+      "title": {
+        "en": "Practice routes",
+        "ru": "Происхождение практики"
+      },
+      "closed": true,
+      "field": "Practice.source.route"
+    },
+    {
+      "name": "status",
+      "title": {
+        "en": "Practice status (computed)",
+        "ru": "Статус практики (вычисляемый)"
+      },
+      "closed": true,
+      "notes": "Computed from initialStatus and Reviews; never stored."
+    },
+    {
+      "name": "initial-status",
+      "title": {
+        "en": "Initial status",
+        "ru": "Начальный статус"
+      },
+      "closed": true,
+      "field": "Practice.initialStatus"
+    }
+  ],
+  "codes": [
+    {
+      "code": "breathing",
+      "list": "kinds",
+      "label": {
+        "en": "Breathing",
+        "ru": "Дыхание"
+      },
+      "definition": {
+        "en": "Breathing practices.",
+        "ru": "Дыхательные практики."
+      }
+    },
+    {
+      "code": "movement",
+      "list": "kinds",
+      "label": {
+        "en": "Movement",
+        "ru": "Движение"
+      },
+      "definition": {
+        "en": "Walking, exercise and other movement.",
+        "ru": "Ходьба, упражнения и другое движение."
+      }
+    },
+    {
+      "code": "reflection",
+      "list": "kinds",
+      "label": {
+        "en": "Reflection",
+        "ru": "Размышление"
+      },
+      "definition": {
+        "en": "Reflecting on experience.",
+        "ru": "Размышление над опытом."
+      }
+    },
+    {
+      "code": "writing",
+      "list": "kinds",
+      "label": {
+        "en": "Writing",
+        "ru": "Письмо"
+      },
+      "definition": {
+        "en": "Writing things down.",
+        "ru": "Записывание."
+      }
+    },
+    {
+      "code": "conversation",
+      "list": "kinds",
+      "label": {
+        "en": "Conversation",
+        "ru": "Разговор"
+      },
+      "definition": {
+        "en": "Talking with someone.",
+        "ru": "Разговор с кем-то."
+      }
+    },
+    {
+      "code": "rest",
+      "list": "kinds",
+      "label": {
+        "en": "Rest",
+        "ru": "Отдых"
+      },
+      "definition": {
+        "en": "Rest and recovery.",
+        "ru": "Отдых и восстановление."
+      }
+    },
+    {
+      "code": "planning",
+      "list": "kinds",
+      "label": {
+        "en": "Planning",
+        "ru": "Планирование"
+      },
+      "definition": {
+        "en": "Planning and preparation.",
+        "ru": "Планирование и подготовка."
+      }
+    },
+    {
+      "code": "environment",
+      "list": "kinds",
+      "label": {
+        "en": "Environment",
+        "ru": "Обстановка"
+      },
+      "definition": {
+        "en": "Changing the surroundings.",
+        "ru": "Изменение обстановки."
+      }
+    },
+    {
+      "code": "social-contact",
+      "list": "kinds",
+      "label": {
+        "en": "Social contact",
+        "ru": "Общение"
+      },
+      "definition": {
+        "en": "Seeking contact with people.",
+        "ru": "Поиск контакта с людьми."
+      }
+    },
+    {
+      "code": "creative",
+      "list": "kinds",
+      "label": {
+        "en": "Creative",
+        "ru": "Творчество"
+      },
+      "definition": {
+        "en": "Creative activity.",
+        "ru": "Творческое занятие."
+      }
+    },
+    {
+      "code": "contemplative",
+      "list": "kinds",
+      "label": {
+        "en": "Contemplative",
+        "ru": "Созерцание"
+      },
+      "definition": {
+        "en": "Contemplative practice, without naming a tradition.",
+        "ru": "Созерцательная практика без указания традиции."
+      }
+    },
+    {
+      "code": "other",
+      "list": "kinds",
+      "label": {
+        "en": "Other",
+        "ru": "Другое"
+      },
+      "definition": {
+        "en": "Any other practice.",
+        "ru": "Любая другая практика."
+      }
+    },
+    {
+      "code": "self-discovered",
+      "list": "routes",
+      "label": {
+        "en": "Self-discovered",
+        "ru": "Найдено самим человеком"
+      },
+      "definition": {
+        "en": "The person found it themselves.",
+        "ru": "Человек нашёл её сам."
+      }
+    },
+    {
+      "code": "from-lens",
+      "list": "routes",
+      "label": {
+        "en": "From a lens",
+        "ru": "Из линзы"
+      },
+      "definition": {
+        "en": "From a lens toolkit (`templateId`).",
+        "ru": "Из набора инструментов линзы (`templateId`)."
+      }
+    },
+    {
+      "code": "from-practitioner",
+      "list": "routes",
+      "label": {
+        "en": "From a practitioner",
+        "ru": "От специалиста"
+      },
+      "definition": {
+        "en": "Given by a practitioner.",
+        "ru": "Предложено специалистом-практиком."
+      }
+    },
+    {
+      "code": "from-agent",
+      "list": "routes",
+      "label": {
+        "en": "From an agent",
+        "ru": "От агента"
+      },
+      "definition": {
+        "en": "Offered by an agent. Proposed until the subject admits it (PC-1).",
+        "ru": "Предложено агентом. Остаётся предложением, пока человек его не примет (PC-1)."
+      }
+    },
+    {
+      "code": "from-other-person",
+      "list": "routes",
+      "label": {
+        "en": "From another person",
+        "ru": "От другого человека"
+      },
+      "definition": {
+        "en": "Learned from another person.",
+        "ru": "Перенято у другого человека."
+      }
+    },
+    {
+      "code": "from-tradition",
+      "list": "routes",
+      "label": {
+        "en": "From a tradition",
+        "ru": "Из традиции"
+      },
+      "definition": {
+        "en": "From a tradition of practice.",
+        "ru": "Из традиции практики."
+      }
+    },
+    {
+      "code": "imported",
+      "list": "routes",
+      "label": {
+        "en": "Imported",
+        "ru": "Импортировано"
+      },
+      "definition": {
+        "en": "Came in through an import.",
+        "ru": "Поступило через импорт."
+      }
+    },
+    {
+      "code": "candidate",
+      "list": "status",
+      "label": {
+        "en": "Candidate",
+        "ru": "Кандидат"
+      },
+      "definition": {
+        "en": "Not yet tried or adopted.",
+        "ru": "Ещё не испробована и не принята."
+      }
+    },
+    {
+      "code": "in-use",
+      "list": "status",
+      "label": {
+        "en": "In use",
+        "ru": "Используется"
+      },
+      "definition": {
+        "en": "The person uses it.",
+        "ru": "Человек её использует."
+      }
+    },
+    {
+      "code": "paused",
+      "list": "status",
+      "label": {
+        "en": "Paused",
+        "ru": "Приостановлена"
+      },
+      "definition": {
+        "en": "Paused by the person.",
+        "ru": "Приостановлена человеком."
+      }
+    },
+    {
+      "code": "retired",
+      "list": "status",
+      "label": {
+        "en": "Retired",
+        "ru": "Выведена из употребления"
+      },
+      "definition": {
+        "en": "No longer used.",
+        "ru": "Больше не используется."
+      }
+    },
+    {
+      "code": "not-for-me",
+      "list": "status",
+      "label": {
+        "en": "Not for me",
+        "ru": "Не для меня"
+      },
+      "definition": {
+        "en": "The person decided it is not for them.",
+        "ru": "Человек решил, что это не для него."
+      }
+    },
+    {
+      "code": "candidate",
+      "list": "initial-status",
+      "label": {
+        "en": "Candidate",
+        "ru": "Кандидат"
+      },
+      "definition": {
+        "en": "Not yet tried or adopted. The default.",
+        "ru": "Ещё не испробована и не принята. Значение по умолчанию."
+      }
+    },
+    {
+      "code": "in-use",
+      "list": "initial-status",
+      "label": {
+        "en": "In use",
+        "ru": "Используется"
+      },
+      "definition": {
+        "en": "Already in use when recorded.",
+        "ru": "Уже используется на момент записи."
+      }
+    },
+    {
+      "code": "not-for-me",
+      "list": "initial-status",
+      "label": {
+        "en": "Not for me",
+        "ru": "Не для меня"
+      },
+      "definition": {
+        "en": "Recorded as not fitting the person.",
+        "ru": "Записана как неподходящая человеку."
+      }
+    }
+  ]
+}

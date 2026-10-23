@@ -1,0 +1,78 @@
+{
+  "description": "A playbook names a tool an agent may not offer.",
+  "expect": [
+    "PB-1"
+  ],
+  "form": "single",
+  "document": {
+    "format": "ohc.playbook",
+    "specVersion": "0.1.0-draft",
+    "id": "urn:ohc:playbook:big-five-test",
+    "version": "0.1.0",
+    "name": {
+      "en": "Big Five: test ways of working",
+      "ru": "Большая пятёрка: тестовые способы работы"
+    },
+    "lenses": [
+      "urn:ohc:lens:big-five"
+    ],
+    "author": "OHC editors",
+    "sources": [],
+    "licence": "CC-BY-4.0",
+    "situations": [
+      {
+        "id": "look-back-at-an-episode",
+        "when": {
+          "en": "The person brings up something that happened and wants to understand it.",
+          "ru": "Человек вспоминает случившееся и хочет его понять."
+        },
+        "use": {
+          "en": [
+            "Ask what happened, in the person's words.",
+            "Offer the fit check on one tendency the person accepted."
+          ],
+          "ru": [
+            "Спросить, что случилось, словами человека.",
+            "Предложить сверку на одной склонности, которую человек принял."
+          ]
+        },
+        "toolkit": [
+          "big-five.fit-check"
+        ],
+        "results": [
+          "big-five/C"
+        ],
+        "watchFor": {
+          "en": "A score is a dated reading, never a verdict on the episode.",
+          "ru": "Балл — датированное измерение, а не приговор эпизоду."
+        }
+      }
+    ]
+  },
+  "patches": [
+    {
+      "op": "set",
+      "path": "/lenses",
+      "value": [
+        "urn:ohc:lens:ifs"
+      ],
+      "target": "document"
+    },
+    {
+      "op": "set",
+      "path": "/situations/0/toolkit",
+      "value": [
+        "ifs.exile-work"
+      ],
+      "target": "document"
+    },
+    {
+      "op": "set",
+      "path": "/situations/0/results",
+      "value": [
+        "ifs/self"
+      ],
+      "target": "document"
+    }
+  ]
+}

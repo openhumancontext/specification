@@ -1,0 +1,17 @@
+{
+  "format": "digital-employee-lock",
+  "specVersion": "0.4.0-draft",
+  "packageId": "urn:ode:example:ohc-planner:package",
+  "packageVersion": "0.2.0",
+  "files": {
+    "manifest.json": "6722e741cba39ad2112f1aa0666ef22196a8cf351cf3fb09f37172c1c3c1237f",
+    "objects/person.json": "a637ed2b024c7b7fce2f6dcfe7ddccaa12fd5a1cb0d3760a68c3958317d828bf",
+    "objects/dna.json": "300aace1f6b9669311021e3b32fa61803ce7b7de20032e36d99df198afd0191d",
+    "objects/environment.json": "901303e7722fdc48aded510fe2a7e2641f23bf6afa47d97815adb25cf82c69d7",
+    "objects/world.json": "ce05573c5f0fe99d17cb9fc1427061ed5a0956fcc5187ef00097877e8d6869e3",
+    "objects/tool.json": "54b9dfc50c62dae9118b3dbd8a9011606bf963f174c8fbc4567b970e0b31c1ae",
+    "objects/read-policy.json": "5fcd1d04bcb7d26450da83207615cc28b26737ff124879b7ddc34f0bd66b8519",
+    "objects/binding.json": "8ef16979f08c353c25527cec7d886e25489634dc4b02f8c5a02845e1c80515ac",
+    "objects/agent.json": "400d51a87948b4eda84089fc96046d09fc0c0adafb4a1211413bc503c23f0467"
+  }
+}

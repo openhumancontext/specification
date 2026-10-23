@@ -1,0 +1,233 @@
+{
+  "scorer": {
+    "software": "ohc-ipip-scorer",
+    "version": "0.1.0",
+    "method": "mean of keyed items"
+  },
+  "instrument": {
+    "id": "urn:ohc:instrument:ipip-neo-120",
+    "version": "2014",
+    "form": "120"
+  },
+  "administeredAt": "2026-08-14",
+  "scoredAt": "2026-08-14T20:00:00Z",
+  "rawRange": [
+    1,
+    5
+  ],
+  "normGroup": {
+    "id": "ipip-internet-2014",
+    "note": "Internet sample, IPIP-NEO-120 norms (2014)"
+  },
+  "domains": [
+    {
+      "code": "N",
+      "label": "Neuroticism",
+      "raw": 2.4
+    },
+    {
+      "code": "E",
+      "label": "Extraversion",
+      "raw": 2.7
+    },
+    {
+      "code": "O",
+      "label": "Openness",
+      "raw": 4.0
+    },
+    {
+      "code": "A",
+      "label": "Agreeableness",
+      "raw": 3.8
+    },
+    {
+      "code": "C",
+      "label": "Conscientiousness",
+      "raw": 4.1
+    }
+  ],
+  "facets": [
+    {
+      "domain": "N",
+      "code": "anxiety",
+      "label": "Anxiety",
+      "raw": 2.8
+    },
+    {
+      "domain": "N",
+      "code": "anger",
+      "label": "Anger",
+      "raw": 2.0
+    },
+    {
+      "domain": "N",
+      "code": "depression",
+      "label": "Depression",
+      "raw": 1.9
+    },
+    {
+      "domain": "N",
+      "code": "self-consciousness",
+      "label": "Self-Consciousness",
+      "raw": 2.6
+    },
+    {
+      "domain": "N",
+      "code": "immoderation",
+      "label": "Immoderation",
+      "raw": 2.5
+    },
+    {
+      "domain": "N",
+      "code": "vulnerability",
+      "label": "Vulnerability",
+      "raw": 2.6
+    },
+    {
+      "domain": "E",
+      "code": "friendliness",
+      "label": "Friendliness",
+      "raw": 3.1
+    },
+    {
+      "domain": "E",
+      "code": "gregariousness",
+      "label": "Gregariousness",
+      "raw": 2.0
+    },
+    {
+      "domain": "E",
+      "code": "assertiveness",
+      "label": "Assertiveness",
+      "raw": 2.9
+    },
+    {
+      "domain": "E",
+      "code": "activity-level",
+      "label": "Activity Level",
+      "raw": 3.2
+    },
+    {
+      "domain": "E",
+      "code": "excitement-seeking",
+      "label": "Excitement-Seeking",
+      "raw": 2.1
+    },
+    {
+      "domain": "E",
+      "code": "cheerfulness",
+      "label": "Cheerfulness",
+      "raw": 2.9
+    },
+    {
+      "domain": "O",
+      "code": "imagination",
+      "label": "Imagination",
+      "raw": 3.9
+    },
+    {
+      "domain": "O",
+      "code": "artistic-interests",
+      "label": "Artistic Interests",
+      "raw": 4.2
+    },
+    {
+      "domain": "O",
+      "code": "emotionality",
+      "label": "Emotionality",
+      "raw": 3.6
+    },
+    {
+      "domain": "O",
+      "code": "adventurousness",
+      "label": "Adventurousness",
+      "raw": 3.7
+    },
+    {
+      "domain": "O",
+      "code": "intellect",
+      "label": "Intellect",
+      "raw": 4.4
+    },
+    {
+      "domain": "O",
+      "code": "liberalism",
+      "label": "Liberalism",
+      "raw": 4.2
+    },
+    {
+      "domain": "A",
+      "code": "trust",
+      "label": "Trust",
+      "raw": 3.5
+    },
+    {
+      "domain": "A",
+      "code": "morality",
+      "label": "Morality",
+      "raw": 4.2
+    },
+    {
+      "domain": "A",
+      "code": "altruism",
+      "label": "Altruism",
+      "raw": 3.9
+    },
+    {
+      "domain": "A",
+      "code": "cooperation",
+      "label": "Cooperation",
+      "raw": 3.8
+    },
+    {
+      "domain": "A",
+      "code": "modesty",
+      "label": "Modesty",
+      "raw": 3.4
+    },
+    {
+      "domain": "A",
+      "code": "sympathy",
+      "label": "Sympathy",
+      "raw": 4.0
+    },
+    {
+      "domain": "C",
+      "code": "self-efficacy",
+      "label": "Self-Efficacy",
+      "raw": 4.0
+    },
+    {
+      "domain": "C",
+      "code": "orderliness",
+      "label": "Orderliness",
+      "raw": 4.3
+    },
+    {
+      "domain": "C",
+      "code": "dutifulness",
+      "label": "Dutifulness",
+      "raw": 4.2
+    },
+    {
+      "domain": "C",
+      "code": "achievement-striving",
+      "label": "Achievement-Striving",
+      "raw": 4.1
+    },
+    {
+      "domain": "C",
+      "code": "self-discipline",
+      "label": "Self-Discipline",
+      "raw": 3.9
+    },
+    {
+      "domain": "C",
+      "code": "cautiousness",
+      "label": "Cautiousness",
+      "raw": 4.1
+    }
+  ],
+  "synthetic": true,
+  "note": "Synthetic scorer output: domain and facet raw means only. No item text, no item responses, no scoring key."
+}

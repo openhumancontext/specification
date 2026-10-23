@@ -1,0 +1,26 @@
+{
+  "description": "An answer-served Event naming a record the grant does not cover.",
+  "expect": [
+    "EV-7"
+  ],
+  "form": "package",
+  "patches": [
+    {
+      "op": "add",
+      "target": "events",
+      "path": "",
+      "value": {
+        "at": "2026-10-08T13:00:00Z",
+        "eventType": "answer-served",
+        "actor": "holder",
+        "counterparty": "a-01",
+        "grant": "g-01",
+        "purpose": "learning-support",
+        "records": [
+          "c-04"
+        ],
+        "outcome": "served"
+      }
+    }
+  ]
+}

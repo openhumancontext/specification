@@ -1,0 +1,22 @@
+What "Personal agent" may see and do · for personal assistance · until 9 April 2027
+Sees — each result is ticked; untick what you don't want
+ [x] 1. BFI-2 · Big Five (Five-Factor Model) · 5 scales · you said parts fit: Openness, Conscientiousness, Agreeableness, Neuroticism / Negative Emotionality fit; Extraversion does not; "I am quieter in groups than this says."
+       with your words: "When you lay out options, show me the evidence behind each one."
+       ways of working: basic (OHC editors) · change them with the playbooks command
+     [x] Also seen, not about a test: "Give me the decision first, in one paragraph."
+     Your agent may use what it sees in how it works with you. Untick a result to keep it from your agent.
+May do — each is ticked; untick what you don't want
+ [x] a. Offer guesses about you from these results. For example: "Planning review on Friday. You said Openness fits you. A guess: you will feel steadier with one decision and three checked risks. Prepare it that way?" Each is only a guess, with another way to see it; you keep or drop it, and it keeps in its notes only what you kept. Unticked: it makes no guesses about you.
+ [x] b. Weigh results you accepted when it proposes something for you. For example: "Two mornings without meetings for the analysis (weighed: your result, Openness)." It names what it weighed; you say yes or no to each proposal. A result you are not sure about is not weighed until you accept it.
+ [x] c. Keep notes between sessions, until 9 April 2027. Either way it receives what you allow at the start of every session; this is about its own notes on your work together.
+Never, whatever you tick: put your results into anything others use to decide about you (hiring, allocating or evaluating your work, promotion, ranking you against others, credit or insurance); decide anything with a significant effect on you without a person; tailor persuasion or advertising to you; infer your political views; read your emotions at work or in study; sell your data or train models for others. You can share your own report yourself.
+About the tests
+ 1. BFI-2
+    Measured, with independent research behind it.
+    Can help with: self-reflection on typical tendencies; choosing communication preferences you then state.
+    Does not show: what you will do in a given moment; any clinical condition; job fit.
+    Protected like mental health data.
+What your agent will be told you agreed to (written by this program; your agent gave no words of its own): "Which: guesses about how the tendencies in the results you let me see may show in a situation you bring up, read from those results and your words about them. Why: to help you notice your patterns and choose. How: I say each as a guess, with at least one other way to see it; you keep or drop it; I keep in my notes only what you kept, and none is used as a fact about you. When I propose something for you, I may weigh a result you accepted; I name what I weighed, and you say yes or no."
+[ p: show what my agent will receive ]   [ ok: confirm ]
+Untick or tick: a result number, w<number> for your words, a/b/c for what it may do; p preview; ok confirm the whole screen; q quit: ok
+Agreed: g-01, until 9 April 2027.

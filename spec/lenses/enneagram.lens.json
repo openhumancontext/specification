@@ -1,0 +1,297 @@
+{
+  "format": "ohc.lens",
+  "specVersion": "0.1.0-draft",
+  "id": "urn:ohc:lens:enneagram",
+  "version": "0.2.0",
+  "name": {
+    "en": "Enneagram (nine motivational patterns)",
+    "ru": "Эннеаграмма (девять мотивационных паттернов)"
+  },
+  "descriptorStatus": "draft",
+  "kind": "type-categorical",
+  "summary": {
+    "en": "Nine motivational patterns, with wings and instinctual variants, used for personal growth rather than measurement.",
+    "ru": "Девять мотивационных паттернов с «крыльями» и инстинктивными вариантами; используется для личностного роста, а не для измерения."
+  },
+  "constructs": [
+    {
+      "id": "enneagram/type-1",
+      "label": {
+        "en": "Type 1",
+        "ru": "Тип 1"
+      }
+    },
+    {
+      "id": "enneagram/type-2",
+      "label": {
+        "en": "Type 2",
+        "ru": "Тип 2"
+      }
+    },
+    {
+      "id": "enneagram/type-3",
+      "label": {
+        "en": "Type 3",
+        "ru": "Тип 3"
+      }
+    },
+    {
+      "id": "enneagram/type-4",
+      "label": {
+        "en": "Type 4",
+        "ru": "Тип 4"
+      }
+    },
+    {
+      "id": "enneagram/type-5",
+      "label": {
+        "en": "Type 5",
+        "ru": "Тип 5"
+      }
+    },
+    {
+      "id": "enneagram/type-6",
+      "label": {
+        "en": "Type 6",
+        "ru": "Тип 6"
+      }
+    },
+    {
+      "id": "enneagram/type-7",
+      "label": {
+        "en": "Type 7",
+        "ru": "Тип 7"
+      }
+    },
+    {
+      "id": "enneagram/type-8",
+      "label": {
+        "en": "Type 8",
+        "ru": "Тип 8"
+      }
+    },
+    {
+      "id": "enneagram/type-9",
+      "label": {
+        "en": "Type 9",
+        "ru": "Тип 9"
+      }
+    },
+    {
+      "id": "enneagram/wing",
+      "label": {
+        "en": "Wing",
+        "ru": "Крыло"
+      },
+      "description": "A neighbouring type that colours the main type."
+    },
+    {
+      "id": "enneagram/instinctual-variant",
+      "label": {
+        "en": "Instinctual variant",
+        "ru": "Инстинктивный вариант"
+      },
+      "description": "One of the instinctual emphases described by several schools."
+    }
+  ],
+  "mentalModel": {
+    "summary": "Nine patterns describe what a person tends to move towards and away from; recognising one's pattern is used as a starting point for growth.",
+    "assumptions": [
+      "the patterns are descriptions, not categories of people",
+      "school-specific names are vendor labels only",
+      "recognition by the person matters more than any score"
+    ],
+    "stance": "reflective and growth-oriented",
+    "unitOfAnalysis": "recurring motivations, especially under stress",
+    "attendsTo": [
+      "what the person moves towards or away from",
+      "patterns under stress and at ease",
+      "the person's own recognition"
+    ],
+    "howChangeHappens": "Through noticing the pattern in daily life, often over a long time.",
+    "languageGuidance": "Use the person's own wording; speak of patterns, not of fears as facts about the person; avoid clinical words.",
+    "agentPosture": {
+      "do": [
+        "ask which pattern the person recognises",
+        "stay with the person's description"
+      ],
+      "dont": [
+        "type the person",
+        "speak about core fears unless the person brings them",
+        "use school names as generic labels"
+      ]
+    },
+    "exploratoryQuestions": [
+      "Which pattern do you recognise under stress?",
+      "What helps when that pattern is strong?"
+    ],
+    "helperMustNot": [
+      "present type descriptions as facts about the person",
+      "present a type as evidence of fit for a role, task or team"
+    ],
+    "doesNotClaim": [
+      "a measured structure of nine factors",
+      "a diagnosis",
+      "job fit"
+    ],
+    "riskNotes": [
+      "Language about core fears borders on clinical language",
+      "Typing interviews can touch personal history; deeper work belongs with a practitioner"
+    ]
+  },
+  "toolkit": [
+    {
+      "id": "enneagram.recognition",
+      "name": "Pattern recognition",
+      "kind": "exercise",
+      "description": "Read neutral descriptions of the nine patterns and note which ones you recognise, and when.",
+      "facilitation": "self",
+      "requiresPractitioner": false,
+      "agentMayOffer": true,
+      "nonClinical": true,
+      "produces": "AssessmentRecord",
+      "cautions": [
+        "The result is self-identified"
+      ]
+    },
+    {
+      "id": "enneagram.record-instrument-result",
+      "name": "Record an instrument result",
+      "kind": "instrument-use",
+      "description": "Record the scores or type from an instrument such as RHETI® v2.5 as within-person results; never item text or report prose.",
+      "facilitation": "self",
+      "requiresPractitioner": false,
+      "agentMayOffer": false,
+      "nonClinical": true,
+      "produces": "AssessmentRecord",
+      "cautions": [
+        "Scores are within-person, not normative"
+      ]
+    },
+    {
+      "id": "enneagram.typing-interview",
+      "name": "Typing interview",
+      "kind": "dialogue",
+      "description": "A structured conversation with a practitioner who knows the method.",
+      "facilitation": "practitioner",
+      "requiresPractitioner": true,
+      "agentMayOffer": false,
+      "nonClinical": true,
+      "produces": "AssessmentRecord"
+    }
+  ],
+  "representations": [
+    {
+      "id": "enneagram.type-label",
+      "kind": "type-label",
+      "resultType": "type-assignment",
+      "description": "Main type with optional wing and instinctual variant, and the method used (self-identified, instrument or interview)."
+    }
+  ],
+  "instruments": [
+    "urn:ohc:instrument:rheti-2.5"
+  ],
+  "adoption": {
+    "routes": [
+      "self-chosen",
+      "agent-suggested",
+      "inherited-from-practice",
+      "imported"
+    ],
+    "suggestionRequires": [
+      "the person asked for ways of looking at recurring motivations"
+    ],
+    "inheritanceRoles": [
+      "coach",
+      "teacher",
+      "facilitator"
+    ],
+    "practitionerFor": [
+      "enneagram.typing-interview"
+    ]
+  },
+  "evidence": {
+    "measurementTier": "T4",
+    "practiceTier": {
+      "clinicianDelivered": "not-assessed",
+      "selfGuided": "not-assessed",
+      "agentOffered": "not-assessed"
+    },
+    "ontologicalStatus": "theoretical-model",
+    "citations": [
+      {
+        "ref": "doi:10.1002/jclp.23097",
+        "grade": "F",
+        "note": "Hook et al. 2021 (104 independent samples): 'mixed evidence of reliability and validity'; factor analyses typically find fewer than nine factors; little research supports wings"
+      }
+    ],
+    "reviewedAt": "2026-10-09"
+  },
+  "supports": [
+    "self-reflection on recurring motivations",
+    "a shared vocabulary the person chose"
+  ],
+  "doesNotEstablish": [
+    "that nine distinct types exist",
+    "any diagnosis",
+    "job fit"
+  ],
+  "ip": {
+    "conceptStatus": "free-concept",
+    "marks": [
+      {
+        "mark": "RHETI",
+        "owner": "Enneagram Personality Types, Inc. (dba The Enneagram Institute)",
+        "status": "registered",
+        "notice": "RHETI® (US Reg. No. 5584848) is a registered mark of Enneagram Personality Types, Inc. (dba The Enneagram Institute). Enneathought and Enneagram Institute are names it uses; their status is not verified here. All are used only to name its products.",
+        "use": "nominative-only"
+      },
+      {
+        "mark": "Enneathought",
+        "owner": "Enneagram Personality Types, Inc. (dba The Enneagram Institute)",
+        "status": "unverified",
+        "notice": "RHETI® (US Reg. No. 5584848) is a registered mark of Enneagram Personality Types, Inc. (dba The Enneagram Institute). Enneathought and Enneagram Institute are names it uses; their status is not verified here. All are used only to name its products.",
+        "use": "nominative-only"
+      },
+      {
+        "mark": "Enneagram Institute",
+        "owner": "Enneagram Personality Types, Inc. (dba The Enneagram Institute)",
+        "status": "unverified",
+        "notice": "RHETI® (US Reg. No. 5584848) is a registered mark of Enneagram Personality Types, Inc. (dba The Enneagram Institute). Enneathought and Enneagram Institute are names it uses; their status is not verified here. All are used only to name its products.",
+        "use": "nominative-only"
+      }
+    ],
+    "itemsLicence": "The concept is free (Arica Institute v. Palmer, 970 F.2d 1067 (2d Cir. 1992)); instruments such as RHETI® are proprietary",
+    "scoring": "proprietary",
+    "restrictions": [
+      "school-specific type names are vendor labels only, never construct labels",
+      "never store instrument item text or report prose",
+      "RHETI® scores are stored as within-person results (M-5)"
+    ],
+    "registryListing": "ok",
+    "legalReviewNeeded": true
+  },
+  "useLimits": {
+    "crossLensMapping": "population-level-only"
+  },
+  "defaults": {
+    "sensitivity": "special",
+    "categories": [
+      "mental-health"
+    ],
+    "reviewAfter": "on-change"
+  },
+  "mappings": [
+    "urn:ohc:mapping:enneagram--big-five--hook-2021"
+  ],
+  "playbooks": [
+    "urn:ohc:playbook:enneagram-basic"
+  ],
+  "sources": [
+    "Hook et al. 2021",
+    "Arica Institute v. Palmer, 970 F.2d 1067 (2d Cir. 1992)"
+  ],
+  "descriptorAuthors": [
+    "OHC editors"
+  ]
+}

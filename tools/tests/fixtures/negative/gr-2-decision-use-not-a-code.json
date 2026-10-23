@@ -1,0 +1,15 @@
+{
+  "description": "A grant whose decisionUse is not deny or approval-required.",
+  "expect": [
+    "GR-2"
+  ],
+  "form": "single",
+  "patches": [
+    {
+      "op": "set",
+      "target": "grants",
+      "path": "/@g-01/constraints/decisionUse",
+      "value": "allowed"
+    }
+  ]
+}

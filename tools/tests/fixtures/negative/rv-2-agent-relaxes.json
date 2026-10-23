@@ -1,0 +1,25 @@
+{
+  "description": "An agent relaxes the disclosure of its own record (relax is subject-only).",
+  "expect": [
+    "RV-2"
+  ],
+  "form": "single",
+  "patches": [
+    {
+      "op": "add",
+      "target": "reviews",
+      "path": "",
+      "value": {
+        "id": "rv-09",
+        "target": "c-05",
+        "action": "relax",
+        "by": "a-01",
+        "underGrant": "g-01",
+        "disclosure": {
+          "sensitivity": "ordinary"
+        },
+        "recordedAt": "2026-09-08T08:00:00Z"
+      }
+    }
+  ]
+}

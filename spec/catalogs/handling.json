@@ -1,0 +1,129 @@
+{
+  "format": "ohc.catalog",
+  "id": "urn:ohc:catalog:handling",
+  "version": "0.1.0",
+  "specVersion": "0.1.0-draft",
+  "title": {
+    "en": "Handling restrictions",
+    "ru": "Ограничения обращения"
+  },
+  "description": {
+    "en": "Obligations that travel with a record and bind every holder and consumer. The checker enforces handling at projection time; consumers keep it (C-6).",
+    "ru": "Обязательства, которые следуют за записью и связывают каждого держателя и потребителя. Проверяющий инструмент применяет их при построении проекции; потребители их соблюдают (C-6)."
+  },
+  "closed": true,
+  "codes": [
+    {
+      "code": "no-quote",
+      "label": {
+        "en": "No quote",
+        "ru": "Не цитировать"
+      },
+      "definition": {
+        "en": "Never reproduce the record's text or its sources verbatim to anyone but the subject. Paraphrase only.",
+        "ru": "Никогда не воспроизводить дословно текст записи или её источников никому, кроме самого человека. Только пересказ."
+      },
+      "mappings": {
+        "odrl": "ohc:quote (prohibition)"
+      }
+    },
+    {
+      "code": "no-quote-back",
+      "label": {
+        "en": "No quoting back",
+        "ru": "Не предъявлять человеку"
+      },
+      "definition": {
+        "en": "Never present this record, or the profile it belongs to, back to the subject as an argument, authority or proof (for example 'according to your profile…'). Use it as background only; the person's own words in the present conversation take precedence.",
+        "ru": "Никогда не предъявлять эту запись или профиль, к которому она относится, самому человеку как довод, авторитет или доказательство (например, «согласно вашему профилю…»). Использовать её только как фон; собственные слова человека в текущем разговоре имеют приоритет."
+      },
+      "notes": "The direction is the opposite of no-quote: no-quote limits verbatim reproduction to anyone but the subject; no-quote-back limits presenting the record to the subject as a ground. A person-bound agent that holds a deep profile uses it to shape its own conduct, never to argue with the person.",
+      "mappings": {
+        "odrl": "ohc:quoteBack (prohibition)"
+      }
+    },
+    {
+      "code": "no-infer",
+      "label": {
+        "en": "No inference",
+        "ru": "Не делать выводов"
+      },
+      "definition": {
+        "en": "Never use as an input to inference, mapping, pattern finding or model training.",
+        "ru": "Никогда не использовать как исходные данные для выводов, сопоставлений, поиска паттернов или обучения моделей."
+      },
+      "mappings": {
+        "odrl": "ohc:infer (prohibition)"
+      }
+    },
+    {
+      "code": "no-remember",
+      "label": {
+        "en": "No remembering",
+        "ru": "Не запоминать"
+      },
+      "definition": {
+        "en": "A consumer MUST NOT keep it beyond the current use, whatever `storage` says.",
+        "ru": "Потребитель НЕ ДОЛЖЕН хранить это дольше текущего использования, что бы ни говорило `storage`."
+      }
+    },
+    {
+      "code": "no-leverage",
+      "label": {
+        "en": "No leverage",
+        "ru": "Не использовать как рычаг"
+      },
+      "definition": {
+        "en": "Never use it to persuade, pressure, negotiate against or steer the person.",
+        "ru": "Никогда не использовать, чтобы убеждать, давить, вести переговоры против человека или направлять его."
+      },
+      "mappings": {
+        "odrl": "ohc:leverage (prohibition)"
+      }
+    },
+    {
+      "code": "no-forward",
+      "label": {
+        "en": "No forwarding",
+        "ru": "Не передавать"
+      },
+      "definition": {
+        "en": "Never pass it to anyone else, including other agents of the same operator.",
+        "ru": "Никогда не передавать никому другому, включая других агентов того же оператора."
+      }
+    },
+    {
+      "code": "person-only",
+      "label": {
+        "en": "Person only",
+        "ru": "Только для человека"
+      },
+      "definition": {
+        "en": "Never served or used for any grantee, including in answers. Only the subject sees it.",
+        "ru": "Никогда не показывается и не используется ни для какого получателя, в том числе в ответах. Видит только сам человек."
+      }
+    },
+    {
+      "code": "ask-before-use",
+      "label": {
+        "en": "Ask before use",
+        "ru": "Спросить перед использованием"
+      },
+      "definition": {
+        "en": "Every use needs a fresh confirmation from the subject (the step-up channel, without verbatim).",
+        "ru": "Каждое использование требует свежего подтверждения человека (по каналу усиленного подтверждения, без дословного доступа)."
+      }
+    },
+    {
+      "code": "subject-initiated-only",
+      "label": {
+        "en": "Subject-initiated only",
+        "ru": "Только по инициативе человека"
+      },
+      "definition": {
+        "en": "Use only inside an interaction the subject started. Never proactively.",
+        "ru": "Использовать только внутри взаимодействия, начатого самим человеком. Никогда по своей инициативе."
+      }
+    }
+  ]
+}

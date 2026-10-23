@@ -1,0 +1,394 @@
+{
+  "format": "ohc.catalog",
+  "id": "urn:ohc:catalog:adoption",
+  "version": "0.2.0",
+  "specVersion": "0.1.0-draft",
+  "title": {
+    "en": "Lens adoption vocabularies",
+    "ru": "Словари принятия линз"
+  },
+  "description": {
+    "en": "Vocabularies for the person's relation to a lens. No practitioner access is implied by an adoption (LA-2).",
+    "ru": "Словари отношения человека к линзе. Принятие линзы не даёт специалисту никакого доступа (LA-2)."
+  },
+  "closed": true,
+  "lists": [
+    {
+      "name": "routes",
+      "title": {
+        "en": "Adoption routes",
+        "ru": "Пути принятия"
+      },
+      "closed": true,
+      "field": "LensAdoption.route"
+    },
+    {
+      "name": "confidentiality",
+      "title": {
+        "en": "Confidentiality",
+        "ru": "Конфиденциальность"
+      },
+      "closed": true,
+      "field": "LensAdoption.confidentiality"
+    },
+    {
+      "name": "uses",
+      "title": {
+        "en": "Uses",
+        "ru": "Разрешённые использования"
+      },
+      "closed": true,
+      "field": "LensAdoption.uses"
+    },
+    {
+      "name": "agent-interpretation",
+      "title": {
+        "en": "Agent interpretation",
+        "ru": "Интерпретации агента"
+      },
+      "closed": true,
+      "field": "LensAdoption.agentInterpretation"
+    },
+    {
+      "name": "on-end",
+      "title": {
+        "en": "On end of practice",
+        "ru": "По завершении практики"
+      },
+      "closed": true,
+      "field": "LensAdoption.onEnd"
+    },
+    {
+      "name": "practice-roles",
+      "title": {
+        "en": "Practice roles",
+        "ru": "Роли специалистов"
+      },
+      "closed": true,
+      "field": "LensAdoption.practice.role"
+    },
+    {
+      "name": "practice-relationships",
+      "title": {
+        "en": "Practice relationship",
+        "ru": "Состояние отношений со специалистом"
+      },
+      "closed": true,
+      "field": "LensAdoption.practice.relationship"
+    }
+  ],
+  "codes": [
+    {
+      "code": "self-chosen",
+      "list": "routes",
+      "label": {
+        "en": "Self-chosen",
+        "ru": "Выбрана самим человеком"
+      },
+      "definition": {
+        "en": "The person picked the lens.",
+        "ru": "Человек сам выбрал линзу."
+      }
+    },
+    {
+      "code": "agent-suggested",
+      "list": "routes",
+      "label": {
+        "en": "Agent-suggested",
+        "ru": "Предложена агентом"
+      },
+      "definition": {
+        "en": "An agent proposed it and the person accepted. It is proposed until the subject admits it.",
+        "ru": "Агент предложил, человек согласился. Остаётся предложением, пока человек её не примет."
+      }
+    },
+    {
+      "code": "inherited-from-practice",
+      "list": "routes",
+      "label": {
+        "en": "Inherited from practice",
+        "ru": "Унаследована из практики"
+      },
+      "definition": {
+        "en": "Brought from the person's therapy, coaching, teaching or practice, with a `practice` block.",
+        "ru": "Пришла из терапии, коучинга, обучения или практики человека; указывается блок `practice`."
+      }
+    },
+    {
+      "code": "imported",
+      "list": "routes",
+      "label": {
+        "en": "Imported",
+        "ru": "Импортирована"
+      },
+      "definition": {
+        "en": "Created by an importer from an instrument report. Proposed until admitted.",
+        "ru": "Создана импортом из отчёта методики. Остаётся предложением до принятия."
+      }
+    },
+    {
+      "code": "none",
+      "list": "confidentiality",
+      "label": {
+        "en": "None",
+        "ru": "Нет"
+      },
+      "definition": {
+        "en": "No confidentiality beyond the record's own disclosure. The default.",
+        "ru": "Конфиденциальность сверх собственных правил раскрытия записи отсутствует. Значение по умолчанию."
+      }
+    },
+    {
+      "code": "practitioner-scope",
+      "list": "confidentiality",
+      "label": {
+        "en": "Practitioner scope",
+        "ru": "В рамках работы со специалистом"
+      },
+      "definition": {
+        "en": "Material belongs to the work with a practitioner.",
+        "ru": "Материал относится к работе со специалистом-практиком."
+      }
+    },
+    {
+      "code": "therapy-confidential",
+      "list": "confidentiality",
+      "label": {
+        "en": "Therapy-confidential",
+        "ru": "Терапевтическая тайна"
+      },
+      "definition": {
+        "en": "Forces tier `special` and handling `person-only` on the adoption and on every record citing it (LA-4).",
+        "ru": "Принудительно задаёт уровень `special` и ограничение `person-only` для принятия линзы и каждой ссылающейся на него записи (LA-4)."
+      }
+    },
+    {
+      "code": "speak-in-lens",
+      "list": "uses",
+      "label": {
+        "en": "Speak in the lens",
+        "ru": "Говорить языком линзы"
+      },
+      "definition": {
+        "en": "An agent may use the lens's language with the person.",
+        "ru": "Агент может говорить с человеком языком линзы."
+      }
+    },
+    {
+      "code": "offer-practices",
+      "list": "uses",
+      "label": {
+        "en": "Offer practices",
+        "ru": "Предлагать практики"
+      },
+      "definition": {
+        "en": "An agent may offer practices from the lens toolkit.",
+        "ru": "Агент может предлагать практики из набора инструментов линзы."
+      }
+    },
+    {
+      "code": "store-results",
+      "list": "uses",
+      "label": {
+        "en": "Store results",
+        "ru": "Хранить результаты"
+      },
+      "definition": {
+        "en": "Results within the lens may be stored.",
+        "ru": "Результаты в рамках линзы можно хранить."
+      }
+    },
+    {
+      "code": "interpret",
+      "list": "uses",
+      "label": {
+        "en": "Interpret",
+        "ru": "Интерпретировать"
+      },
+      "definition": {
+        "en": "Readings through the lens may be made, by the listed authors.",
+        "ru": "Прочтения через линзу допустимы — указанными авторами."
+      }
+    },
+    {
+      "code": "recall",
+      "list": "uses",
+      "label": {
+        "en": "Use in recall",
+        "ru": "Использовать для возвращения опыта"
+      },
+      "definition": {
+        "en": "The lens may be used when offering back the person's experience.",
+        "ru": "Линзу можно использовать, возвращая человеку его опыт."
+      }
+    },
+    {
+      "code": "off",
+      "list": "agent-interpretation",
+      "label": {
+        "en": "Off",
+        "ru": "Выключено"
+      },
+      "definition": {
+        "en": "No agent readings through this lens while this adoption is active. The default when the member is absent.",
+        "ru": "Пока это принятие действует, агент не пишет прочтений через эту линзу. Значение по умолчанию, когда поля нет."
+      }
+    },
+    {
+      "code": "ask-first",
+      "list": "agent-interpretation",
+      "label": {
+        "en": "Ask first",
+        "ru": "Сначала спросить"
+      },
+      "definition": {
+        "en": "An agent asks the person before each reading (I5).",
+        "ru": "Агент спрашивает человека перед каждым прочтением (I5)."
+      }
+    },
+    {
+      "code": "allowed",
+      "list": "agent-interpretation",
+      "label": {
+        "en": "Allowed",
+        "ru": "Разрешено"
+      },
+      "definition": {
+        "en": "Agents may propose readings through this lens under an `infer` grant that names it (I5).",
+        "ru": "Агенты могут предлагать прочтения через эту линзу по разрешению `infer`, которое её называет (I5)."
+      }
+    },
+    {
+      "code": "ask",
+      "list": "on-end",
+      "label": {
+        "en": "Ask",
+        "ru": "Спросить"
+      },
+      "definition": {
+        "en": "Ask the person; the adoption is paused until they decide. The default.",
+        "ru": "Спросить человека; до его решения принятие линзы приостановлено. Значение по умолчанию."
+      }
+    },
+    {
+      "code": "keep-read-only",
+      "list": "on-end",
+      "label": {
+        "en": "Keep read-only",
+        "ru": "Оставить только для чтения"
+      },
+      "definition": {
+        "en": "Keep the material, read-only.",
+        "ru": "Сохранить материал только для чтения."
+      }
+    },
+    {
+      "code": "archive-person-only",
+      "list": "on-end",
+      "label": {
+        "en": "Archive, person only",
+        "ru": "В архив, только для человека"
+      },
+      "definition": {
+        "en": "Archive the material, visible only to the person.",
+        "ru": "Перенести материал в архив, видимый только человеку."
+      }
+    },
+    {
+      "code": "erase",
+      "list": "on-end",
+      "label": {
+        "en": "Erase",
+        "ru": "Удалить"
+      },
+      "definition": {
+        "en": "Erase the material.",
+        "ru": "Удалить материал."
+      }
+    },
+    {
+      "code": "therapist",
+      "list": "practice-roles",
+      "label": {
+        "en": "Therapist",
+        "ru": "Терапевт"
+      },
+      "definition": {
+        "en": "A therapist.",
+        "ru": "Терапевт."
+      }
+    },
+    {
+      "code": "coach",
+      "list": "practice-roles",
+      "label": {
+        "en": "Coach",
+        "ru": "Коуч"
+      },
+      "definition": {
+        "en": "A coach.",
+        "ru": "Коуч."
+      }
+    },
+    {
+      "code": "teacher",
+      "list": "practice-roles",
+      "label": {
+        "en": "Teacher",
+        "ru": "Преподаватель"
+      },
+      "definition": {
+        "en": "A teacher.",
+        "ru": "Преподаватель."
+      }
+    },
+    {
+      "code": "facilitator",
+      "list": "practice-roles",
+      "label": {
+        "en": "Facilitator",
+        "ru": "Ведущий"
+      },
+      "definition": {
+        "en": "A facilitator.",
+        "ru": "Ведущий группы или процесса."
+      }
+    },
+    {
+      "code": "other",
+      "list": "practice-roles",
+      "label": {
+        "en": "Other",
+        "ru": "Другое"
+      },
+      "definition": {
+        "en": "Another practitioner role.",
+        "ru": "Другая роль специалиста-практика."
+      }
+    },
+    {
+      "code": "active",
+      "list": "practice-relationships",
+      "label": {
+        "en": "Active",
+        "ru": "Продолжается"
+      },
+      "definition": {
+        "en": "The practice relationship is ongoing.",
+        "ru": "Отношения со специалистом продолжаются."
+      }
+    },
+    {
+      "code": "ended",
+      "list": "practice-relationships",
+      "label": {
+        "en": "Ended",
+        "ru": "Завершены"
+      },
+      "definition": {
+        "en": "The practice relationship has ended.",
+        "ru": "Отношения со специалистом завершены."
+      }
+    }
+  ]
+}

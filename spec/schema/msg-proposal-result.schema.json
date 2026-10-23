@@ -1,0 +1,73 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:ohc:schema:msg-proposal-result:0.1.0-draft",
+  "title": "OHC proposal-result message",
+  "description": "EXPERIMENTAL. Holder to agent: sent on storage and again on each decision; only the proposer receives it.",
+  "type": "object",
+  "required": [
+    "format",
+    "specVersion",
+    "id",
+    "from",
+    "to",
+    "at",
+    "proposal",
+    "items",
+    "status"
+  ],
+  "properties": {
+    "format": {
+      "const": "ohc.experimental.proposal-result"
+    },
+    "specVersion": {
+      "$ref": "urn:ohc:schema:message:0.1.0-draft#/properties/specVersion"
+    },
+    "id": {
+      "$ref": "urn:ohc:schema:message:0.1.0-draft#/properties/id"
+    },
+    "from": {
+      "$ref": "urn:ohc:schema:message:0.1.0-draft#/properties/from"
+    },
+    "to": {
+      "$ref": "urn:ohc:schema:message:0.1.0-draft#/properties/to"
+    },
+    "at": {
+      "$ref": "urn:ohc:schema:message:0.1.0-draft#/properties/at"
+    },
+    "inReplyTo": {
+      "$ref": "urn:ohc:schema:message:0.1.0-draft#/properties/inReplyTo"
+    },
+    "proposal": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/LocalId"
+    },
+    "items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "admission"
+        ],
+        "properties": {
+          "id": {
+            "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/LocalId"
+          },
+          "admission": {
+            "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/admission"
+          },
+          "endorsement": {
+            "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/endorsement"
+          },
+          "contested": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "status": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/messages.proposal-result-status"
+    }
+  },
+  "additionalProperties": false
+}

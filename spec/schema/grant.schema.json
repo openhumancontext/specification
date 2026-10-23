@@ -1,0 +1,243 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:ohc:schema:grant:0.1.0-draft",
+  "title": "OHC Grant",
+  "description": "The person's permission (or explicit denial) for one grantee: purposes, records, actions, mode and expiry. Default deny (R-G1). A grant is never authority to act in the world (R-G9). Layer governance; module governance.",
+  "type": "object",
+  "required": [
+    "id",
+    "recordedAt",
+    "grantor",
+    "grantee",
+    "purposes",
+    "scope",
+    "constraints",
+    "basis",
+    "expressedBy"
+  ],
+  "properties": {
+    "kind": {
+      "const": "Grant"
+    },
+    "id": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/LocalId"
+    },
+    "recordedAt": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/DateTime"
+    },
+    "grantor": {
+      "description": "\"subject\", or a steward whose scope includes grant.",
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Actor"
+    },
+    "grantee": {
+      "description": "A Party. Never a Part (R-G13).",
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/LocalId"
+    },
+    "effect": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/grant.effects"
+    },
+    "purposes": {
+      "type": "array",
+      "items": {
+        "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/purposes"
+      },
+      "minItems": 1
+    },
+    "scope": {
+      "type": "object",
+      "required": [
+        "include"
+      ],
+      "properties": {
+        "include": {
+          "type": "array",
+          "items": {
+            "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/GrantSelector"
+          },
+          "minItems": 1
+        },
+        "exclude": {
+          "type": "array",
+          "items": {
+            "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/GrantSelector"
+          },
+          "minItems": 1
+        }
+      },
+      "additionalProperties": false
+    },
+    "actions": {
+      "type": "array",
+      "items": {
+        "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/grant.actions"
+      },
+      "minItems": 1
+    },
+    "mode": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/grant.modes"
+    },
+    "interpretations": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/grant.interpretations"
+    },
+    "maxSourceTier": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/release-tiers"
+    },
+    "constraints": {
+      "type": "object",
+      "description": "Every grant expires (R-G10). The three booleans are const false in 0.1. decisionUse is absent (deny) or approval-required (R-G14).",
+      "required": [
+        "expiresAt",
+        "forwarding",
+        "crossContextUse",
+        "delegable"
+      ],
+      "properties": {
+        "notBefore": {
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/DateTime"
+        },
+        "expiresAt": {
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/DateTime"
+        },
+        "maxUses": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "storage": {
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/grant.storage"
+        },
+        "forwarding": {
+          "const": false
+        },
+        "crossContextUse": {
+          "const": false
+        },
+        "decisionUse": {
+          "description": "What the grantee may decide or propose for the person on the basis of AssessmentRecords, Interpretations and inferred records (R-G14). Absent: deny.",
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/grant.decision-use"
+        },
+        "delegable": {
+          "const": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "stepUp": {
+      "type": "object",
+      "description": "Required when actions include open-verbatim; maxDuration at most PT1H, default PT30M.",
+      "required": [
+        "required",
+        "maxDuration"
+      ],
+      "properties": {
+        "required": {
+          "type": "boolean"
+        },
+        "maxDuration": {
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Duration"
+        }
+      },
+      "additionalProperties": false
+    },
+    "reviewCadence": {
+      "description": "How often the person wants to reconcile this grantee's open proposals in one batch (for example P7D). Counted against the proposal inbox limit (IB-4); never a deadline for the person.",
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Duration"
+    },
+    "renews": {
+      "description": "The earlier Grant this one renews. A renewal is a new grant the person gives; nothing is ever extended automatically (R-G10).",
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/LocalId"
+    },
+    "basis": {
+      "type": "object",
+      "required": [
+        "legal"
+      ],
+      "properties": {
+        "legal": {
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/grant.legal-bases"
+        },
+        "note": {
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+        },
+        "myTermsRef": {
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/URI"
+        }
+      },
+      "additionalProperties": false
+    },
+    "expressedBy": {
+      "type": "object",
+      "description": "How the person expressed it. An agent's statement that the person agreed is never expressedBy.",
+      "required": [
+        "actor",
+        "at",
+        "channel"
+      ],
+      "properties": {
+        "actor": {
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Actor"
+        },
+        "at": {
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/DateTime"
+        },
+        "channel": {
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/grant.channels"
+        },
+        "evidenceRef": {
+          "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/LocalId"
+        }
+      },
+      "additionalProperties": false
+    },
+    "note": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+    }
+  },
+  "additionalProperties": false,
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "effect": {
+            "const": "deny"
+          }
+        },
+        "required": [
+          "effect"
+        ]
+      },
+      "else": {
+        "required": [
+          "actions"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "actions": {
+            "contains": {
+              "const": "open-verbatim"
+            }
+          }
+        },
+        "required": [
+          "actions"
+        ]
+      },
+      "then": {
+        "required": [
+          "stepUp"
+        ],
+        "properties": {
+          "stepUp": {
+            "properties": {
+              "required": {
+                "const": true
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

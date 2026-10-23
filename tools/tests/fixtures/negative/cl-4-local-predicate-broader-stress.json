@@ -1,0 +1,45 @@
+{
+  "description": "A local predicate whose broader code is stress, observed and not quarantined.",
+  "expect": [
+    "CL-4"
+  ],
+  "form": "single",
+  "patches": [
+    {
+      "op": "set",
+      "target": "manifest",
+      "path": "/vocabulary",
+      "value": {
+        "x-ilse:jitters": {
+          "definition": "Feeling jittery before an exam.",
+          "broader": "stress"
+        }
+      }
+    },
+    {
+      "op": "add",
+      "target": "claims",
+      "path": "",
+      "value": {
+        "id": "c-07",
+        "facet": "state",
+        "predicate": "x-ilse:jitters",
+        "text": "Jittery before the exam.",
+        "horizon": "state",
+        "valid": {
+          "until": "2026-09-08"
+        },
+        "evidence": [
+          {
+            "ref": "ep-01",
+            "kind": "observation"
+          }
+        ],
+        "origin": "observed",
+        "assertedBy": "subject",
+        "recordedAt": "2026-09-07T08:00:00Z",
+        "synthetic": true
+      }
+    }
+  ]
+}

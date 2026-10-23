@@ -1,0 +1,141 @@
+{
+  "format": "ohc.playbook",
+  "specVersion": "0.1.0-draft",
+  "id": "urn:ohc:playbook:hexaco-basic",
+  "version": "0.1.0",
+  "name": {
+    "en": "HEXACO: basic ways of working",
+    "ru": "HEXACO: базовые способы работы"
+  },
+  "lenses": [
+    "urn:ohc:lens:hexaco"
+  ],
+  "author": "OHC editors",
+  "sources": [
+    "Ashton & Lee 2007"
+  ],
+  "licence": "Apache-2.0",
+  "situations": [
+    {
+      "id": "plan-week",
+      "when": {
+        "en": "Planning the week ahead.",
+        "ru": "Планирование предстоящей недели."
+      },
+      "use": {
+        "en": [
+          "Ask which outcomes matter most this week, in their words.",
+          "Where they said a tendency fits them, shape the plan with it and say which dimension you used.",
+          "At the end of the week, offer the fit check on one dimension."
+        ],
+        "ru": [
+          "Спросите, какие результаты важнее всего на этой неделе, — словами человека.",
+          "Там, где человек сказал, что склонность ему подходит, стройте план с её учётом и назовите измерение.",
+          "В конце недели предложите проверку соответствия по одному измерению."
+        ]
+      },
+      "toolkit": [
+        "hexaco.fit-check"
+      ],
+      "results": [
+        "hexaco/C",
+        "hexaco/X"
+      ],
+      "watchFor": {
+        "en": "Do not predict how a single day will go from a score.",
+        "ru": "Не предсказывайте по баллу, как пройдёт отдельный день."
+      }
+    },
+    {
+      "id": "choose-between-options",
+      "when": {
+        "en": "Choosing between options.",
+        "ru": "Выбор между вариантами."
+      },
+      "use": {
+        "en": [
+          "Lay out the options with what speaks for each, in their words.",
+          "If they want, ask which option sits best with how they want to treat others, and which with the tendencies they accepted; name the dimension; speak of the work each option asks for, never of their fit for it.",
+          "Leave the choice to them: a tendency is a range, not a rule."
+        ],
+        "ru": [
+          "Разложите варианты и то, что говорит в пользу каждого, — словами человека.",
+          "Если человек хочет, спросите, какой вариант лучше согласуется с тем, как он хочет обходиться с другими, и с принятыми им склонностями; назовите измерение; говорите о работе, которой требует вариант, а не о пригодности человека к нему.",
+          "Оставьте выбор человеку: склонность — это диапазон, а не правило."
+        ]
+      },
+      "toolkit": [],
+      "results": [
+        "hexaco/H",
+        "hexaco/O",
+        "hexaco/C"
+      ],
+      "watchFor": {
+        "en": "Never treat Honesty-Humility as a measure of trustworthiness, and never present a score as evidence of fit for a job or role. Never put their results into what others use to decide about them, such as an application or a case for promotion; they can share their own report.",
+        "ru": "Никогда не считайте честность-скромность мерой надёжности и не выдавайте балл за доказательство пригодности к работе или роли. Не вносите результаты человека в то, чем другие пользуются для решений о нём, — в заявку или обоснование повышения; свой отчёт человек может показать сам."
+      }
+    },
+    {
+      "id": "give-feedback",
+      "when": {
+        "en": "Giving feedback to someone.",
+        "ru": "Обратная связь другому человеку."
+      },
+      "use": {
+        "en": [
+          "Ask what they want the other person to take away.",
+          "Where they recognise one of their own tendencies in how they give feedback, such as patience or directness, ask how they want to use it this time.",
+          "Keep to their own tendencies; say nothing about the other person's."
+        ],
+        "ru": [
+          "Спросите, что человек хочет, чтобы собеседник вынес из разговора.",
+          "Если человек узнаёт свою склонность в том, как он даёт обратную связь, например терпение или прямоту, спросите, как он хочет использовать её на этот раз.",
+          "Говорите только о склонностях самого человека, не о склонностях собеседника."
+        ]
+      },
+      "toolkit": [],
+      "results": [
+        "hexaco/A",
+        "hexaco/X"
+      ],
+      "watchFor": {
+        "en": "Speak of Honesty-Humility only with the person, never about them to anyone else.",
+        "ru": "Говорите о честности-скромности только с самим человеком и никогда — о нём с кем-то другим."
+      }
+    },
+    {
+      "id": "look-back-at-an-episode",
+      "when": {
+        "en": "Looking back at something that happened.",
+        "ru": "Разбор того, что произошло."
+      },
+      "use": {
+        "en": [
+          "Ask what happened, in their words.",
+          "Offer the fit check: does the dimension they accepted show in this and two other recent episodes?",
+          "Note fit or no fit in their words; a no-fit is as useful as a fit."
+        ],
+        "ru": [
+          "Спросите, что произошло, — словами человека.",
+          "Предложите проверку соответствия: проявляется ли принятое измерение в этом и ещё двух недавних эпизодах?",
+          "Запишите «подходит» или «не подходит» словами человека; несовпадение так же полезно, как совпадение."
+        ]
+      },
+      "toolkit": [
+        "hexaco.fit-check"
+      ],
+      "results": [
+        "hexaco/H",
+        "hexaco/E",
+        "hexaco/X",
+        "hexaco/A",
+        "hexaco/C",
+        "hexaco/O"
+      ],
+      "watchFor": {
+        "en": "Do not translate HEXACO scores into Big Five scores; a score is a dated reading, never a verdict.",
+        "ru": "Не переводите баллы HEXACO в баллы Большой пятёрки; балл — датированное измерение, а не приговор."
+      }
+    }
+  ]
+}

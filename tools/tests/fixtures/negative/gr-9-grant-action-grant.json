@@ -1,0 +1,15 @@
+{
+  "description": "A Grant whose actions include grant (re-granting is never delegated through a grant).",
+  "expect": [
+    "GR-9"
+  ],
+  "form": "single",
+  "patches": [
+    {
+      "op": "add",
+      "target": "grants",
+      "path": "/@g-01/actions",
+      "value": "grant"
+    }
+  ]
+}

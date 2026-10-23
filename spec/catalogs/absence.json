@@ -1,0 +1,94 @@
+{
+  "format": "ohc.catalog",
+  "id": "urn:ohc:catalog:absence",
+  "version": "0.1.0",
+  "specVersion": "0.1.0-draft",
+  "title": {
+    "en": "Absence codes",
+    "ru": "Коды отсутствия"
+  },
+  "description": {
+    "en": "The reason for an explicit \"no value\". An absence never becomes zero, false, an average, a default, consent or permission (R-B1).",
+    "ru": "Причина явного «нет значения». Отсутствие никогда не превращается в ноль, «ложь», среднее, значение по умолчанию, согласие или разрешение (R-B1)."
+  },
+  "closed": true,
+  "codes": [
+    {
+      "code": "unknown",
+      "label": {
+        "en": "Unknown",
+        "ru": "Неизвестно"
+      },
+      "definition": {
+        "en": "Nobody knows yet.",
+        "ru": "Пока никто не знает."
+      }
+    },
+    {
+      "code": "not-asked",
+      "label": {
+        "en": "Not asked",
+        "ru": "Не спрашивали"
+      },
+      "definition": {
+        "en": "The person was never asked.",
+        "ru": "Человека об этом не спрашивали."
+      }
+    },
+    {
+      "code": "not-chosen",
+      "label": {
+        "en": "Not chosen",
+        "ru": "Не выбрано"
+      },
+      "definition": {
+        "en": "The person chose not to define this. With `intentional: true`, it is a protected choice (the right not to set a goal).",
+        "ru": "Человек решил это не определять. С `intentional: true` это защищённый выбор (право не ставить цель)."
+      }
+    },
+    {
+      "code": "sources-diverge",
+      "label": {
+        "en": "Sources diverge",
+        "ru": "Источники расходятся"
+      },
+      "definition": {
+        "en": "Sources disagree and the disagreement is not settled. Pair it with a Tension.",
+        "ru": "Источники расходятся, и расхождение не разрешено. Сопровождается напряжением (Tension)."
+      }
+    },
+    {
+      "code": "not-disclosed",
+      "label": {
+        "en": "Not disclosed",
+        "ru": "Не раскрывается"
+      },
+      "definition": {
+        "en": "Exists or may exist, but is not available to this reader. This is the only code a projection uses, and it is used regardless of existence (R-G5).",
+        "ru": "Существует или может существовать, но недоступно этому читателю. Это единственный код, который используется в проекции, и он используется независимо от того, есть ли данные (R-G5)."
+      }
+    },
+    {
+      "code": "not-applicable",
+      "label": {
+        "en": "Not applicable",
+        "ru": "Неприменимо"
+      },
+      "definition": {
+        "en": "Does not apply to this person.",
+        "ru": "К этому человеку не относится."
+      }
+    },
+    {
+      "code": "not-assessed",
+      "label": {
+        "en": "Not assessed",
+        "ru": "Не оценивалось"
+      },
+      "definition": {
+        "en": "No instrument or method has assessed it.",
+        "ru": "Ни одна методика или способ это не оценивали."
+      }
+    }
+  ]
+}

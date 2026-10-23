@@ -1,0 +1,64 @@
+name: Lens descriptor
+description: Propose a new lens descriptor or a change to an existing one (spec/lenses/*.lens.json).
+title: '[Lens] '
+labels: ['lens', 'needs-triage']
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use English. A lens is a way of describing a person, not a verdict about them.
+        Describe the framework by reference; do not paste copyrighted item text, scoring keys or report prose.
+        Use synthetic examples only.
+  - type: input
+    id: lens
+    attributes:
+      label: Lens
+      placeholder: 'urn:ohc:lens:… (new or existing) and version'
+    validations:
+      required: true
+  - type: dropdown
+    id: status
+    attributes:
+      label: Ontological status
+      options:
+        - measured-construct
+        - theoretical-model
+        - practice-frame
+        - symbolic-frame
+        - contemplative-tradition
+        - representation
+        - not sure
+    validations:
+      required: true
+  - type: textarea
+    id: model
+    attributes:
+      label: Mental model and limits
+      description: What the lens attends to, what it does not claim, and how an agent should and should not speak in it.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Sources and evidence grade
+      description: Primary sources with DOI or publisher; say which claims are verified and which are not.
+  - type: textarea
+    id: rights
+    attributes:
+      label: Rights and marks
+      description: Concept status, item licence, scoring licence, registered marks and any restriction on storing items.
+  - type: textarea
+    id: use
+    attributes:
+      label: Adoption, tools and playbooks
+      description: Adoption routes, practitioner-only tools, what the lens supports and does not establish, and ways of using it by situation (a playbook). Permissions are the person's grant, not the descriptor's.
+  - type: textarea
+    id: mappings
+    attributes:
+      label: Mappings to other lenses
+      description: Population-level relations only, with sources. A mapping is never an identity.
+  - type: input
+    id: contributor
+    attributes:
+      label: Contributor
+      description: Person or submitting account; include agent name if applicable.

@@ -1,0 +1,39 @@
+{
+  "format": "ohc.lock",
+  "specVersion": "0.1.0-draft",
+  "context": {
+    "id": "urn:ohc:example:noa:context",
+    "version": "2026-10-09.4"
+  },
+  "algorithm": "sha256",
+  "files": {
+    "context.json": "sha256:7691209567e5928032682d99eb48843620beda362f1baf96ace5cb17b1b63af2",
+    "events.jsonl": "sha256:aa74f2e59617299d733395ef6504b7dd612587c0d699cd19da403a388088a16f",
+    "lenses/cbt@0.2.0.lens.json": "sha256:a874745345edb48d824d35a3ae23cebaa3be8380dc2f6c165abbf1b5baf8a06a",
+    "lenses/ifs@0.2.0.lens.json": "sha256:6a0a5ea1fcc666659a29676679b32b788632dd9967d1ee2bef13bedad7ced09d",
+    "projections/prj-0003.json": "sha256:12658a8796e119e362c08d0e0fe150a8a3f8d37e4b5c3d4fc0f82008e3040382",
+    "projections/prj-0007.json": "sha256:0f49d03e1ab3a70920818665d73944794fdf2df060ffe6cf4d304e94fe726565",
+    "queries/actions-vs-explanations.json": "sha256:cfc79b5cac13bb7331490829e306891f733ced7a2c86b29d01c104680a1d7d1c",
+    "queries/as-understood-at-2026-07-01--ep-04.json": "sha256:f4eaf31f7bbab8c7c897ed0b3bfc11a487887240eca85aca4545c501d2adbe17",
+    "queries/stopped-convincing.json": "sha256:2d38e2e6808bba1c93be5e9356d69dd6a6bf443460620bbb3563b7bfe7f1db4a",
+    "queries/view-changes--ep-04.json": "sha256:ee93500f46973d4d05e79d09054741c75d09d21ecbe13b7a246fe25a254c65dd",
+    "records/claims.jsonl": "sha256:ccb48bb41efc461b2ea3e37c943bca0f2abcff6d6b75545f3781f177f29cba88",
+    "records/episodes.jsonl": "sha256:3bfdcc09d9913875b8def4920850649f7e527723c829e425d421e3be4c36b530",
+    "records/grants.jsonl": "sha256:a6825bff5e6dac7da22654260647671f6b184eb6d3f713ff586f85758ae7162f",
+    "records/health-refs.jsonl": "sha256:2dc4af56b914f63ca57d5a323e1d6149121c8fe5cb9c44f5a7302573f998008a",
+    "records/interpretations.jsonl": "sha256:a9f39adaa6f81d3e14c2388dce0babb1eb75057d99587d0e694e802df7503f31",
+    "records/lens-adoptions.jsonl": "sha256:4fd054cec6c7952dff8df2597f6b9ed345b358c795902a8bb4e6d744e9c01584",
+    "records/model-views.jsonl": "sha256:9f0ebb7aaa08fd286d93d24cdd2bcc007d676a0930a8c01c095694708a4183a8",
+    "records/outcomes.jsonl": "sha256:9412cd33a5603168380f7b993efd9d667138eb14f49a7c7f4b745f9e7653874d",
+    "records/parts.jsonl": "sha256:134baa26ed7496ccd62c08f6afd38d136de8d1aaac71d7fb5a038dca577da963",
+    "records/patterns.jsonl": "sha256:b6f63b395497ef1019858a6db8a8dd726eef053c5462652bc603a454edddfd9c",
+    "records/practices.jsonl": "sha256:e41ea8736f6b9f626a31818cc9f12b604cac2ece4d32791acd453b9057dbb9c3",
+    "records/proposals.jsonl": "sha256:9524acc1c2b1dd06f57e4e3e2f918600b94de43ed2bd84adba6d2556e58aa4aa",
+    "records/recall-cues.jsonl": "sha256:33aa0de4af5e77a0c30762bf1ba564177e92b6f7864005b31b2fe17dae3089a3",
+    "records/relations.jsonl": "sha256:d61bc4849816b89759b4594189be4848487824a5de396b0bf463868bf6f97a2b",
+    "records/reviews.jsonl": "sha256:8089ccf5f0ceee5dc683ab87ca8066efd37fa249cf51b56cf0bd42ee5c88f6f3",
+    "records/sources.jsonl": "sha256:a00c5fcc6171ef5673e73135c165361ee25a7148638babdd00f391bcc4eac3c0",
+    "records/tensions.jsonl": "sha256:915792d70c49e8a0ac4d14d89e848d541bb0ea2808c3e4987dbe5476232de944"
+  },
+  "createdAt": "2026-10-09T09:05:00Z"
+}

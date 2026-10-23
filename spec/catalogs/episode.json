@@ -1,0 +1,283 @@
+{
+  "format": "ohc.catalog",
+  "id": "urn:ohc:catalog:episode",
+  "version": "0.1.0",
+  "specVersion": "0.1.0-draft",
+  "title": {
+    "en": "Episode vocabularies",
+    "ru": "Словари эпизодов"
+  },
+  "description": {
+    "en": "Vocabularies for Episodes and their accounts.",
+    "ru": "Словари для эпизодов и рассказов о них."
+  },
+  "closed": true,
+  "lists": [
+    {
+      "name": "account-kinds",
+      "title": {
+        "en": "Account kinds",
+        "ru": "Виды рассказов"
+      },
+      "closed": true,
+      "field": "Account.accountKind"
+    },
+    {
+      "name": "confirmation",
+      "title": {
+        "en": "External confirmation",
+        "ru": "Внешнее подтверждение"
+      },
+      "closed": true,
+      "field": "Episode.externalConfirmation.status"
+    },
+    {
+      "name": "recall",
+      "title": {
+        "en": "Recall permission",
+        "ru": "Разрешение на возвращение опыта"
+      },
+      "closed": true,
+      "field": "Episode.recall",
+      "notes": "Only the subject sets or changes it, through relax or restrict Reviews."
+    },
+    {
+      "name": "selection-reasons",
+      "title": {
+        "en": "Selection reasons",
+        "ru": "Причины выбора"
+      },
+      "closed": true,
+      "field": "Episode.selection.reason"
+    },
+    {
+      "name": "salience",
+      "title": {
+        "en": "Salience",
+        "ru": "Значимость"
+      },
+      "closed": true,
+      "ordered": true,
+      "field": "Episode.salience",
+      "notes": "Only when assertedBy is the subject."
+    }
+  ],
+  "codes": [
+    {
+      "code": "in-the-moment",
+      "list": "account-kinds",
+      "label": {
+        "en": "In the moment",
+        "ru": "В моменте"
+      },
+      "definition": {
+        "en": "Narrated during or right after the episode.",
+        "ru": "Рассказано во время эпизода или сразу после."
+      }
+    },
+    {
+      "code": "first-narrative",
+      "list": "account-kinds",
+      "label": {
+        "en": "First narrative",
+        "ru": "Первый рассказ"
+      },
+      "definition": {
+        "en": "The first telling, later than the episode.",
+        "ru": "Первый рассказ, позже самого эпизода."
+      }
+    },
+    {
+      "code": "later-reconstruction",
+      "list": "account-kinds",
+      "label": {
+        "en": "Later reconstruction",
+        "ru": "Поздняя реконструкция"
+      },
+      "definition": {
+        "en": "Retold from memory after time has passed.",
+        "ru": "Пересказано по памяти спустя время."
+      }
+    },
+    {
+      "code": "external-record",
+      "list": "account-kinds",
+      "label": {
+        "en": "External record",
+        "ru": "Внешняя запись"
+      },
+      "definition": {
+        "en": "A system or document record (calendar, log).",
+        "ru": "Запись системы или документа (календарь, журнал)."
+      }
+    },
+    {
+      "code": "observer-account",
+      "list": "account-kinds",
+      "label": {
+        "en": "Observer account",
+        "ru": "Рассказ наблюдателя"
+      },
+      "definition": {
+        "en": "Another person's account of what happened.",
+        "ru": "Рассказ другого человека о том, что произошло."
+      }
+    },
+    {
+      "code": "none",
+      "list": "confirmation",
+      "label": {
+        "en": "None",
+        "ru": "Нет"
+      },
+      "definition": {
+        "en": "No external confirmation.",
+        "ru": "Внешнего подтверждения нет."
+      }
+    },
+    {
+      "code": "partial",
+      "list": "confirmation",
+      "label": {
+        "en": "Partial",
+        "ru": "Частичное"
+      },
+      "definition": {
+        "en": "Partly confirmed by external records.",
+        "ru": "Частично подтверждено внешними записями."
+      }
+    },
+    {
+      "code": "confirmed",
+      "list": "confirmation",
+      "label": {
+        "en": "Confirmed",
+        "ru": "Подтверждено"
+      },
+      "definition": {
+        "en": "Confirmed by external records.",
+        "ru": "Подтверждено внешними записями."
+      }
+    },
+    {
+      "code": "not-permitted",
+      "list": "recall",
+      "label": {
+        "en": "Not permitted",
+        "ru": "Не разрешено"
+      },
+      "definition": {
+        "en": "The episode may not be offered back. The default.",
+        "ru": "Эпизод нельзя возвращать человеку. Значение по умолчанию."
+      }
+    },
+    {
+      "code": "ask-each-time",
+      "list": "recall",
+      "label": {
+        "en": "Ask each time",
+        "ru": "Спрашивать каждый раз"
+      },
+      "definition": {
+        "en": "The episode may be offered back after asking the person each time.",
+        "ru": "Эпизод можно возвращать, каждый раз спрашивая человека."
+      }
+    },
+    {
+      "code": "permitted",
+      "list": "recall",
+      "label": {
+        "en": "Permitted",
+        "ru": "Разрешено"
+      },
+      "definition": {
+        "en": "The episode may be offered back under a recall cue.",
+        "ru": "Эпизод можно возвращать по сигналу возвращения опыта."
+      }
+    },
+    {
+      "code": "subject-chose",
+      "list": "selection-reasons",
+      "label": {
+        "en": "The person chose",
+        "ru": "Выбрал сам человек"
+      },
+      "definition": {
+        "en": "The person decided the occurrence is worth recording.",
+        "ru": "Человек сам решил, что событие стоит записать."
+      }
+    },
+    {
+      "code": "agent-suggested",
+      "list": "selection-reasons",
+      "label": {
+        "en": "Agent suggested",
+        "ru": "Предложил агент"
+      },
+      "definition": {
+        "en": "An agent suggested recording it.",
+        "ru": "Записать предложил агент."
+      }
+    },
+    {
+      "code": "practitioner-suggested",
+      "list": "selection-reasons",
+      "label": {
+        "en": "Practitioner suggested",
+        "ru": "Предложил специалист"
+      },
+      "definition": {
+        "en": "A practitioner suggested recording it.",
+        "ru": "Записать предложил специалист-практик."
+      }
+    },
+    {
+      "code": "imported",
+      "list": "selection-reasons",
+      "label": {
+        "en": "Imported",
+        "ru": "Импортировано"
+      },
+      "definition": {
+        "en": "It came in through an import.",
+        "ru": "Поступило через импорт."
+      }
+    },
+    {
+      "code": "low",
+      "list": "salience",
+      "label": {
+        "en": "Low",
+        "ru": "Низкая"
+      },
+      "definition": {
+        "en": "Of low importance to the person.",
+        "ru": "Небольшая значимость для человека."
+      }
+    },
+    {
+      "code": "medium",
+      "list": "salience",
+      "label": {
+        "en": "Medium",
+        "ru": "Средняя"
+      },
+      "definition": {
+        "en": "Of medium importance to the person.",
+        "ru": "Средняя значимость для человека."
+      }
+    },
+    {
+      "code": "high",
+      "list": "salience",
+      "label": {
+        "en": "High",
+        "ru": "Высокая"
+      },
+      "definition": {
+        "en": "Of high importance to the person.",
+        "ru": "Высокая значимость для человека."
+      }
+    }
+  ]
+}

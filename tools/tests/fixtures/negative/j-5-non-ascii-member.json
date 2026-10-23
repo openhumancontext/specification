@@ -1,0 +1,10 @@
+{
+  "description": "A non-ASCII member name.",
+  "expect": [
+    "J-5"
+  ],
+  "form": "single",
+  "raw": {
+    "context.json": "{\"format\": \"ohc.context\", \"specVersion\": \"0.1.0-draft\", \"id\": \"urn:ohc:example:fixture-ilse:context\", \"version\": \"1\", \"subject\": {\"id\": \"urn:ohc:example:fixture-ilse\", \"displayName\": \"Ilse (fictional)\"}, \"synthetic\": true, \"claims\": [], \"ext\": {\"x.y\": {\"größe\": 1}}}\n"
+  }
+}

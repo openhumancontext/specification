@@ -1,0 +1,128 @@
+{
+  "format": "ohc.context",
+  "specVersion": "0.1.0-draft",
+  "id": "urn:ohc:example:orsolya:process-work",
+  "version": "2026-10-01.1",
+  "subject": {"id": "urn:ohc:example:orsolya", "displayName": "Orsolya (fictional)"},
+  "holder": "subject",
+  "lang": "en",
+  "created": "2026-09-05T18:00:00Z",
+  "conformance": {"level": "L1", "modules": ["core", "governance", "lenses", "practices"], "subjectIsAdult": true},
+  "parties": [
+    {"id": "p-01", "partyKind": "person", "label": "Practitioner", "role": "practitioner"},
+    {"id": "a-01", "partyKind": "agent", "label": "Reflection companion"}
+  ],
+  "policy": {"admission": "subject-only", "resolver": "returnDialog"},
+  "lenses": [
+    {"id": "urn:ohc:lens:process-work", "version": "0.2.0"}
+  ],
+  "synthetic": true,
+  "lensAdoptions": [
+    {"id": "la-01", "lens": {"id": "urn:ohc:lens:process-work", "version": "0.2.0"},
+     "route": "inherited-from-practice",
+     "practice": {"role": "therapist", "practitioner": "p-01", "relationship": "active", "since": "2025-11-01",
+                  "releaseRef": "src-01"},
+     "confidentiality": "practitioner-scope", "uses": ["speak-in-lens", "interpret"],
+     "interpretationAuthors": ["subject"], "agentInterpretation": "off", "onEnd": "ask",
+     "origin": "declared", "assertedBy": "subject", "recordedAt": "2026-09-05T18:05:00Z",
+     "sensitivity": "special", "categories": ["mental-health"], "handling": ["no-forward"], "synthetic": true}
+  ],
+  "sources": [
+    {"id": "src-01", "sourceKind": "practitioner-release",
+     "content": {"locator": {"vaultPath": "vault/f8/f80a523bdc2eebff12a5884e805cc272be41e389d56f07d5ec2ff520dca2252e.md"},
+                 "sha256": "f80a523bdc2eebff12a5884e805cc272be41e389d56f07d5ec2ff520dca2252e",
+                 "mediaType": "text/markdown", "size": 174},
+     "capturedAt": "2026-09-05T12:00:00Z", "authorship": {"author": "p-01"}, "inbound": true,
+     "contemporaneity": "contemporaneous", "participants": ["p-01"], "maxRelease": "index",
+     "retention": {"eraseOnRequest": true},
+     "origin": "declared", "assertedBy": "subject", "recordedAt": "2026-09-05T18:00:00Z",
+     "sensitivity": "sensitive", "synthetic": true},
+    {"id": "src-02", "sourceKind": "note",
+     "content": {"locator": {"vaultPath": "vault/2e/2ec43e0965b6a0221313c116fabf00043b1c17679d145430e6e39faa7d935802.md"},
+                 "sha256": "2ec43e0965b6a0221313c116fabf00043b1c17679d145430e6e39faa7d935802",
+                 "mediaType": "text/markdown", "size": 229},
+     "capturedAt": "2026-09-12T20:00:00Z", "authorship": {"author": "subject"}, "contemporaneity": "contemporaneous",
+     "maxRelease": "index",
+     "summary": {"text": "My note after the session about the hand movement.", "authoredBy": "subject",
+                 "recordedAt": "2026-09-12T20:05:00Z", "method": "subject-written"},
+     "retention": {"eraseOnRequest": true},
+     "origin": "declared", "assertedBy": "subject", "recordedAt": "2026-09-12T20:05:00Z",
+     "sensitivity": "special", "categories": ["mental-health"], "synthetic": true},
+    {"id": "src-03", "sourceKind": "practitioner-notes",
+     "content": {"locator": {"vaultPath": "vault/f0/f019f7f2face1e47c00a3739818e5eaf79fe0a06d7d4dec3df3457391bce52cc.md"},
+                 "sha256": "f019f7f2face1e47c00a3739818e5eaf79fe0a06d7d4dec3df3457391bce52cc",
+                 "mediaType": "text/markdown", "size": 214},
+     "capturedAt": "2026-09-13T10:00:00Z", "authorship": {"author": "p-01"}, "inbound": true,
+     "contemporaneity": "contemporaneous", "participants": ["p-01"], "maxRelease": "index",
+     "custody": {"custodian": "p-01", "confidentiality": "therapy", "releaseRef": "src-01"},
+     "retention": {"eraseOnRequest": true},
+     "origin": "declared", "assertedBy": "subject", "recordedAt": "2026-09-13T19:00:00Z",
+     "sensitivity": "special", "categories": ["mental-health"], "synthetic": true}
+  ],
+  "claims": [
+    {"id": "c-01", "facet": "identity", "predicate": "self-description",
+     "text": "I work with a process-oriented therapist. I pay attention to body signals and dreams that do not fit how I usually see myself.",
+     "horizon": "focus", "origin": "declared", "assertedBy": "subject", "recordedAt": "2026-09-05T18:10:00Z",
+     "sensitivity": "special", "categories": ["mental-health"], "synthetic": true},
+    {"id": "c-02", "facet": "boundary", "predicate": "never",
+     "text": "Do not explain my body signals or dreams to me. Ask what I notice.",
+     "horizon": "foundation", "origin": "declared", "assertedBy": "subject", "recordedAt": "2026-09-05T18:12:00Z",
+     "synthetic": true}
+  ],
+  "episodes": [
+    {"id": "ep-01", "title": "Hand movement in the session",
+     "occurred": {"start": "2026-09-12", "precision": "day"}, "participants": ["p-01"],
+     "accounts": [
+       {"narrator": "subject", "narratedAt": "2026-09-12T20:00:00Z", "addedAt": "2026-09-12T20:05:00Z",
+        "accountKind": "in-the-moment",
+        "happened": "While I talked about moving flats, my left hand kept pushing against my knee.",
+        "experienced": "Pressure in the hand; more curious than worried.",
+        "didOrTried": "Let the hand push against a cushion for about a minute.",
+        "understandingThen": "Just restlessness.",
+        "evidence": [{"source": "src-02", "selector": {"type": "whole"}}]}],
+     "selection": {"selectedBy": "subject", "reason": "subject-chose"}, "salience": "medium",
+     "origin": "declared", "assertedBy": "subject", "recordedAt": "2026-09-12T20:05:00Z",
+     "sensitivity": "special", "categories": ["mental-health"], "synthetic": true}
+  ],
+  "interpretations": [
+    {"id": "in-01", "about": ["ep-01"], "stance": "lens-reading",
+     "lens": {"id": "urn:ohc:lens:process-work", "version": "0.2.0"}, "adoption": "la-01",
+     "text": "The pushing hand looks like a less familiar side of me that wants to push back about the move.",
+     "grounds": [{"ref": "ep-01", "kind": "evidence"},
+                 {"span": {"source": "src-03", "selector": {"type": "whole"}}, "kind": "practitioner",
+                  "note": "My practitioner's summary of the same session."}],
+     "alternatives": [{"text": "Two short nights before the session; the hand may just have been tired.", "kind": "physiological"}],
+     "heldDuring": {"from": "2026-09-14"},
+     "origin": "declared", "assertedBy": "subject", "recordedAt": "2026-09-14T08:00:00Z",
+     "sensitivity": "special", "categories": ["mental-health"], "synthetic": true}
+  ],
+  "practices": [
+    {"id": "pr-01", "name": "Hand against the cushion",
+     "description": "When my hand starts pushing in a hard conversation, I let it push against something for a minute and notice what it would say.",
+     "practiceKind": "movement",
+     "source": {"route": "from-practitioner", "lens": "urn:ohc:lens:process-work", "by": "p-01"},
+     "steps": ["Notice the hand", "Let it push against a cushion or a wall for about a minute", "Write one line: what would it say?"],
+     "duration": "PT5M", "limits": "Not in meetings. If it gets too strong, stop and bring it to the next session.",
+     "initialStatus": "in-use", "nonClinical": true,
+     "origin": "declared", "assertedBy": "subject", "recordedAt": "2026-09-14T08:10:00Z",
+     "sensitivity": "special", "categories": ["mental-health"], "handling": ["subject-initiated-only"],
+     "synthetic": true}
+  ],
+  "outcomes": [
+    {"id": "oc-01", "about": {"practice": "pr-01"}, "result": "partly",
+     "origin": "declared", "assertedBy": "subject", "recordedAt": "2026-09-30T19:00:00Z",
+     "note": "Used once before a call with the landlord.", "synthetic": true}
+  ],
+  "grants": [
+    {"id": "g-01", "recordedAt": "2026-10-01T09:00:00Z", "grantor": "subject", "grantee": "a-01",
+     "purposes": ["self-reflection"],
+     "scope": {"include": [{"lenses": ["urn:ohc:lens:process-work"]},
+                           {"ids": ["c-01", "c-02", "ep-01"]}]},
+     "actions": ["read"], "mode": "summary", "interpretations": "subject-endorsed", "maxSourceTier": "none",
+     "constraints": {"expiresAt": "2027-03-29T09:00:00Z", "storage": "session", "forwarding": false,
+                     "crossContextUse": false, "delegable": false},
+     "basis": {"legal": "explicit-consent"},
+     "expressedBy": {"actor": "subject", "at": "2026-10-01T09:00:00Z", "channel": "holder-ui"},
+     "note": "Read-only, for reflection. No readings of its own through this lens."}
+  ]
+}

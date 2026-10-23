@@ -1,0 +1,69 @@
+{
+  "format": "ohc.instrument",
+  "specVersion": "0.1.0-draft",
+  "id": "urn:ohc:instrument:mbti-form-q",
+  "version": "0.1.0",
+  "name": "MBTI® Form Q (Step II)",
+  "lens": "urn:ohc:lens:jungian-type",
+  "publisher": "The Myers-Briggs Company (exclusive publisher of the MBTI® instrument)",
+  "forms": [
+    {
+      "id": "Q",
+      "items": 144,
+      "note": "Contains the complete 93-item Form M; the other 51 items score 20 facets, five per pole pair"
+    }
+  ],
+  "itemsLicence": "Proprietary; the MBTI® instrument may not be reproduced without written permission from the publisher",
+  "scoring": "proprietary",
+  "marks": [
+    {
+      "mark": "MBTI",
+      "owner": "Myers & Briggs Foundation, Inc.",
+      "status": "registered",
+      "notice": "Myers-Briggs Type Indicator, Myers-Briggs and MBTI are trademarks or registered trademarks of the Myers & Briggs Foundation, Inc.; The Myers-Briggs Company is the exclusive publisher of the MBTI® instrument.",
+      "use": "adjective-only"
+    },
+    {
+      "mark": "Myers-Briggs",
+      "owner": "Myers & Briggs Foundation, Inc.",
+      "status": "registered",
+      "notice": "Myers-Briggs Type Indicator, Myers-Briggs and MBTI are trademarks or registered trademarks of the Myers & Briggs Foundation, Inc.; The Myers-Briggs Company is the exclusive publisher of the MBTI® instrument.",
+      "use": "adjective-only"
+    },
+    {
+      "mark": "Myers-Briggs Type Indicator",
+      "owner": "Myers & Briggs Foundation, Inc.",
+      "status": "registered",
+      "notice": "Myers-Briggs Type Indicator, Myers-Briggs and MBTI are trademarks or registered trademarks of the Myers & Briggs Foundation, Inc.; The Myers-Briggs Company is the exclusive publisher of the MBTI® instrument.",
+      "use": "adjective-only"
+    },
+    {
+      "mark": "Step II",
+      "owner": "Myers & Briggs Foundation, Inc.",
+      "status": "unverified",
+      "notice": "Step II™ is a mark of the Myers & Briggs Foundation, Inc.; used only as part of the instrument's name.",
+      "use": "adjective-only"
+    }
+  ],
+  "neverStore": [
+    "item text",
+    "report prose",
+    "scoring key",
+    "raw item responses"
+  ],
+  "registryListing": "ok",
+  "citations": [
+    {
+      "ref": "MBTI® Form M and Form Q practitioner notes (psychometrics.com)",
+      "grade": "F",
+      "note": "Form Q has 144 items including the 93-item Form M; 20 facets"
+    },
+    {
+      "ref": "The Myers-Briggs Company, Trademark Guidelines, guideline 5",
+      "grade": "verify",
+      "note": "Marks only for genuine MBTI® results; revision date to be re-checked"
+    }
+  ],
+  "legalReviewNeeded": true,
+  "reviewedAt": "2026-10-09"
+}

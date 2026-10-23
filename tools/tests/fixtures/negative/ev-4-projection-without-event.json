@@ -1,0 +1,15 @@
+{
+  "description": "A stored projection with no projection-served Event.",
+  "expect": [
+    "EV-4"
+  ],
+  "form": "package",
+  "postPatches": [
+    {
+      "op": "set",
+      "target": "events",
+      "path": "/3/message",
+      "value": "prj-0009"
+    }
+  ]
+}

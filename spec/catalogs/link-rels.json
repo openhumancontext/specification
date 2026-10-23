@@ -1,0 +1,61 @@
+{
+  "format": "ohc.catalog",
+  "id": "urn:ohc:catalog:link-rels",
+  "version": "0.1.0",
+  "specVersion": "0.1.0-draft",
+  "title": {
+    "en": "Subject link relations",
+    "ru": "Виды ссылок субъекта"
+  },
+  "description": {
+    "en": "Relations of `Subject.links`. A link is not access (R-L0). Links are category `identity-linking`.",
+    "ru": "Виды ссылок в `Subject.links`. Ссылка не даёт доступа (R-L0). Ссылки относятся к категории `identity-linking`."
+  },
+  "closed": true,
+  "codes": [
+    {
+      "code": "same-as",
+      "label": {
+        "en": "Same as",
+        "ru": "То же лицо"
+      },
+      "definition": {
+        "en": "Another identifier for the same person.",
+        "ru": "Другой идентификатор того же человека."
+      }
+    },
+    {
+      "code": "account",
+      "label": {
+        "en": "Account",
+        "ru": "Учётная запись"
+      },
+      "definition": {
+        "en": "An account the person holds.",
+        "ru": "Учётная запись человека."
+      }
+    },
+    {
+      "code": "did",
+      "label": {
+        "en": "DID",
+        "ru": "DID"
+      },
+      "definition": {
+        "en": "A decentralized identifier.",
+        "ru": "Децентрализованный идентификатор."
+      }
+    },
+    {
+      "code": "ode-party",
+      "label": {
+        "en": "ODE party",
+        "ru": "Участник ODE"
+      },
+      "definition": {
+        "en": "An ODE Party object; not identity and not access.",
+        "ru": "Объект участника в ODE; не тождество и не доступ."
+      }
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "description": "A ModelView whose hypothesis is a Claim.",
+  "expect": [
+    "MV-1"
+  ],
+  "form": "single",
+  "patches": [
+    {
+      "op": "add",
+      "target": "modelViews",
+      "path": "",
+      "value": {
+        "id": "mv-01",
+        "lens": {
+          "id": "urn:ohc:lens:cbt",
+          "version": "0.1.0"
+        },
+        "scope": {
+          "episodes": [
+            "ep-01"
+          ]
+        },
+        "hypotheses": [
+          "c-01"
+        ],
+        "origin": "declared",
+        "assertedBy": "subject",
+        "recordedAt": "2026-09-07T08:00:00Z",
+        "synthetic": true
+      }
+    }
+  ]
+}

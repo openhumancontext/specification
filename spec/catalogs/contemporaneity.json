@@ -1,0 +1,50 @@
+{
+  "format": "ohc.catalog",
+  "id": "urn:ohc:catalog:contemporaneity",
+  "version": "0.1.0",
+  "specVersion": "0.1.0-draft",
+  "title": {
+    "en": "Contemporaneity",
+    "ru": "Своевременность записи"
+  },
+  "description": {
+    "en": "Whether a Source was created at the time of what it records.",
+    "ru": "Создан ли источник во время того, что он фиксирует."
+  },
+  "closed": true,
+  "codes": [
+    {
+      "code": "contemporaneous",
+      "label": {
+        "en": "Contemporaneous",
+        "ru": "Одновременно с событием"
+      },
+      "definition": {
+        "en": "Created at or near the time of what it records.",
+        "ru": "Создано во время записываемого события или сразу после."
+      }
+    },
+    {
+      "code": "retrospective",
+      "label": {
+        "en": "Retrospective",
+        "ru": "Ретроспективно"
+      },
+      "definition": {
+        "en": "Created later, looking back.",
+        "ru": "Создано позже, задним числом."
+      }
+    },
+    {
+      "code": "unknown",
+      "label": {
+        "en": "Unknown",
+        "ru": "Неизвестно"
+      },
+      "definition": {
+        "en": "Not known. The default.",
+        "ru": "Неизвестно. Значение по умолчанию."
+      }
+    }
+  ]
+}

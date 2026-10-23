@@ -1,0 +1,45 @@
+{
+  "valid": false,
+  "levelDeclared": "L0",
+  "levelMet": "L0",
+  "modules": [
+    "core",
+    "governance",
+    "lenses"
+  ],
+  "errors": [
+    {
+      "rule": "AR-6",
+      "id": "as-01",
+      "path": "context.json#/assessments/0/results",
+      "message": "A type derived from continuous scores stores both the scores and the rule (`generatedBy.method`).",
+      "see": "spec/SPECIFICATION.md §10.6"
+    },
+    {
+      "rule": "AR-6",
+      "id": "as-02",
+      "path": "context.json#/assessments/1/results",
+      "message": "A type derived from continuous scores stores both the scores and the rule (`generatedBy.method`).",
+      "see": "spec/SPECIFICATION.md §10.6"
+    }
+  ],
+  "warnings": [],
+  "defaultsApplied": [
+    "sensitivity",
+    "admission",
+    "endorsement",
+    "epistemic"
+  ],
+  "counts": {
+    "records": 10
+  },
+  "truthVerified": false,
+  "consentVerified": false,
+  "consentAuthenticated": false,
+  "endorsementAuthenticated": false,
+  "behaviorTested": false,
+  "runtimeTested": false,
+  "vaultContentRead": false,
+  "externalLocatorsFollowed": 0,
+  "realPersonData": "not-detectable-by-check"
+}

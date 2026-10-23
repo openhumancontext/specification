@@ -1,0 +1,25 @@
+{
+  "description": "A Proposal listing a record the proposer did not assert.",
+  "expect": [
+    "PR-1"
+  ],
+  "form": "single",
+  "patches": [
+    {
+      "op": "add",
+      "target": "proposals",
+      "path": "",
+      "value": {
+        "id": "prop-02",
+        "proposer": "a-01",
+        "recordedAt": "2026-09-07T08:00:00Z",
+        "underGrant": "g-01",
+        "purpose": "learning-support",
+        "items": [
+          "c-01"
+        ],
+        "rationale": "Re-offering an item."
+      }
+    }
+  ]
+}

@@ -1,0 +1,715 @@
+{
+  "format": "ohc.catalog",
+  "id": "urn:ohc:catalog:lens-descriptor",
+  "version": "0.2.0",
+  "specVersion": "0.1.0-draft",
+  "title": {
+    "en": "Lens descriptor vocabularies",
+    "ru": "Словари описаний линз"
+  },
+  "description": {
+    "en": "Vocabularies used by lens descriptors and instrument records. The IP fields are not legal advice.",
+    "ru": "Словари, используемые в описаниях линз и записях методик. Поля об интеллектуальной собственности не являются юридической консультацией."
+  },
+  "closed": true,
+  "lists": [
+    {
+      "name": "descriptor-status",
+      "title": {
+        "en": "Descriptor status",
+        "ru": "Статус описания"
+      },
+      "closed": true,
+      "field": "Lens.descriptorStatus"
+    },
+    {
+      "name": "toolkit-kinds",
+      "title": {
+        "en": "Toolkit item kinds",
+        "ru": "Виды инструментов"
+      },
+      "closed": true,
+      "field": "Lens.toolkit[].kind"
+    },
+    {
+      "name": "facilitation",
+      "title": {
+        "en": "Facilitation",
+        "ru": "Кто проводит"
+      },
+      "closed": true,
+      "field": "Lens.toolkit[].facilitation"
+    },
+    {
+      "name": "produces",
+      "title": {
+        "en": "Produces",
+        "ru": "Что порождает"
+      },
+      "closed": true,
+      "field": "Lens.toolkit[].produces"
+    },
+    {
+      "name": "representation-kinds",
+      "title": {
+        "en": "Representation kinds",
+        "ru": "Виды представлений"
+      },
+      "closed": true,
+      "field": "Lens.representations[].kind"
+    },
+    {
+      "name": "concept-status",
+      "title": {
+        "en": "Concept status",
+        "ru": "Статус концепции"
+      },
+      "closed": true,
+      "field": "Lens.ip.conceptStatus"
+    },
+    {
+      "name": "mark-status",
+      "title": {
+        "en": "Mark status",
+        "ru": "Статус товарного знака"
+      },
+      "closed": true,
+      "field": "Lens.ip.marks[].status"
+    },
+    {
+      "name": "mark-use",
+      "title": {
+        "en": "Mark use",
+        "ru": "Использование знака"
+      },
+      "closed": true,
+      "field": "Lens.ip.marks[].use"
+    },
+    {
+      "name": "scoring",
+      "title": {
+        "en": "Scoring",
+        "ru": "Подсчёт"
+      },
+      "closed": true,
+      "field": "Lens.ip.scoring"
+    },
+    {
+      "name": "registry-listing",
+      "title": {
+        "en": "Registry listing",
+        "ru": "Перечисление в реестре"
+      },
+      "closed": true,
+      "field": "Lens.ip.registryListing"
+    },
+    {
+      "name": "lineage-consent",
+      "title": {
+        "en": "Lineage consent",
+        "ru": "Согласие держателей традиции"
+      },
+      "closed": true,
+      "field": "Lens.ip.lineageConsent.status"
+    },
+    {
+      "name": "cross-lens-mapping",
+      "title": {
+        "en": "Cross-lens mapping",
+        "ru": "Сопоставления между линзами"
+      },
+      "closed": true,
+      "field": "Lens.useLimits.crossLensMapping"
+    }
+  ],
+  "codes": [
+    {
+      "code": "stub",
+      "list": "descriptor-status",
+      "label": {
+        "en": "Stub",
+        "ru": "Заготовка"
+      },
+      "definition": {
+        "en": "Listed, with an empty toolkit: the catalog gives no mental model or tools for working through it yet.",
+        "ru": "Указана в каталоге, набор инструментов пуст: каталог пока не даёт ни модели, ни инструментов для работы через неё."
+      }
+    },
+    {
+      "code": "draft",
+      "list": "descriptor-status",
+      "label": {
+        "en": "Draft",
+        "ru": "Черновик"
+      },
+      "definition": {
+        "en": "A complete descriptor, not yet reviewed.",
+        "ru": "Полное описание, ещё не прошедшее рассмотрение."
+      }
+    },
+    {
+      "code": "reviewed",
+      "list": "descriptor-status",
+      "label": {
+        "en": "Reviewed",
+        "ru": "Рассмотрено"
+      },
+      "definition": {
+        "en": "A descriptor that has been reviewed.",
+        "ru": "Описание, прошедшее рассмотрение."
+      }
+    },
+    {
+      "code": "exercise",
+      "list": "toolkit-kinds",
+      "label": {
+        "en": "Exercise",
+        "ru": "Упражнение"
+      },
+      "definition": {
+        "en": "An exercise.",
+        "ru": "Упражнение."
+      }
+    },
+    {
+      "code": "worksheet",
+      "list": "toolkit-kinds",
+      "label": {
+        "en": "Worksheet",
+        "ru": "Рабочий лист"
+      },
+      "definition": {
+        "en": "A worksheet the person fills in.",
+        "ru": "Рабочий лист, который заполняет человек."
+      }
+    },
+    {
+      "code": "dialogue",
+      "list": "toolkit-kinds",
+      "label": {
+        "en": "Dialogue",
+        "ru": "Диалог"
+      },
+      "definition": {
+        "en": "A guided dialogue.",
+        "ru": "Направляемый диалог."
+      }
+    },
+    {
+      "code": "observation",
+      "list": "toolkit-kinds",
+      "label": {
+        "en": "Observation",
+        "ru": "Наблюдение"
+      },
+      "definition": {
+        "en": "A way of observing.",
+        "ru": "Способ наблюдения."
+      }
+    },
+    {
+      "code": "instrument-use",
+      "list": "toolkit-kinds",
+      "label": {
+        "en": "Instrument use",
+        "ru": "Применение методики"
+      },
+      "definition": {
+        "en": "Taking a listed instrument.",
+        "ru": "Прохождение указанной методики."
+      }
+    },
+    {
+      "code": "self",
+      "list": "facilitation",
+      "label": {
+        "en": "Self",
+        "ru": "Самостоятельно"
+      },
+      "definition": {
+        "en": "Done by the person alone.",
+        "ru": "Человек выполняет сам."
+      }
+    },
+    {
+      "code": "agent-offered",
+      "list": "facilitation",
+      "label": {
+        "en": "Agent-offered",
+        "ru": "По предложению агента"
+      },
+      "definition": {
+        "en": "Offered by an agent.",
+        "ru": "Предлагается агентом."
+      }
+    },
+    {
+      "code": "practitioner",
+      "list": "facilitation",
+      "label": {
+        "en": "Practitioner",
+        "ru": "Со специалистом"
+      },
+      "definition": {
+        "en": "Led by a practitioner.",
+        "ru": "Проводится специалистом-практиком."
+      }
+    },
+    {
+      "code": "AssessmentRecord",
+      "list": "produces",
+      "label": {
+        "en": "Assessment record",
+        "ru": "Запись оценки"
+      },
+      "definition": {
+        "en": "Produces an AssessmentRecord.",
+        "ru": "Порождает запись оценки."
+      }
+    },
+    {
+      "code": "Interpretation",
+      "list": "produces",
+      "label": {
+        "en": "Interpretation",
+        "ru": "Интерпретация"
+      },
+      "definition": {
+        "en": "Produces an Interpretation.",
+        "ru": "Порождает интерпретацию."
+      }
+    },
+    {
+      "code": "ModelView",
+      "list": "produces",
+      "label": {
+        "en": "Model view",
+        "ru": "Взгляд модели"
+      },
+      "definition": {
+        "en": "Produces a ModelView.",
+        "ru": "Порождает взгляд модели."
+      }
+    },
+    {
+      "code": "Practice",
+      "list": "produces",
+      "label": {
+        "en": "Practice",
+        "ru": "Практика"
+      },
+      "definition": {
+        "en": "Produces a Practice.",
+        "ru": "Порождает практику."
+      }
+    },
+    {
+      "code": "Part",
+      "list": "produces",
+      "label": {
+        "en": "Part",
+        "ru": "Внутренняя часть"
+      },
+      "definition": {
+        "en": "Produces a Part.",
+        "ru": "Порождает внутреннюю часть."
+      }
+    },
+    {
+      "code": "none",
+      "list": "produces",
+      "label": {
+        "en": "Nothing stored",
+        "ru": "Ничего не сохраняется"
+      },
+      "definition": {
+        "en": "Produces no record.",
+        "ru": "Не порождает записей."
+      }
+    },
+    {
+      "code": "score-profile",
+      "list": "representation-kinds",
+      "label": {
+        "en": "Score profile",
+        "ru": "Профиль баллов"
+      },
+      "definition": {
+        "en": "Scores with ranges and norm group.",
+        "ru": "Баллы с диапазонами и нормативной группой."
+      }
+    },
+    {
+      "code": "type-label",
+      "list": "representation-kinds",
+      "label": {
+        "en": "Type label",
+        "ru": "Метка типа"
+      },
+      "definition": {
+        "en": "A type label with clarity.",
+        "ru": "Метка типа с выраженностью."
+      }
+    },
+    {
+      "code": "ranked-list",
+      "list": "representation-kinds",
+      "label": {
+        "en": "Ranked list",
+        "ru": "Ранжированный список"
+      },
+      "definition": {
+        "en": "A ranked list.",
+        "ru": "Ранжированный список."
+      }
+    },
+    {
+      "code": "circumplex",
+      "list": "representation-kinds",
+      "label": {
+        "en": "Circumplex",
+        "ru": "Круговая диаграмма"
+      },
+      "definition": {
+        "en": "A circular chart.",
+        "ru": "Круговая диаграмма."
+      }
+    },
+    {
+      "code": "parts-map",
+      "list": "representation-kinds",
+      "label": {
+        "en": "Parts map",
+        "ru": "Карта частей"
+      },
+      "definition": {
+        "en": "A view over Parts and part relations; never stored as a shape.",
+        "ru": "Вид поверх внутренних частей и связей между ними; никогда не хранится как отдельная структура."
+      }
+    },
+    {
+      "code": "stage",
+      "list": "representation-kinds",
+      "label": {
+        "en": "Stage",
+        "ru": "Стадия"
+      },
+      "definition": {
+        "en": "A stage display.",
+        "ru": "Отображение стадии."
+      }
+    },
+    {
+      "code": "thought-record",
+      "list": "representation-kinds",
+      "label": {
+        "en": "Thought record",
+        "ru": "Запись мыслей"
+      },
+      "definition": {
+        "en": "Columns in the person's words.",
+        "ru": "Столбцы словами человека."
+      }
+    },
+    {
+      "code": "narrative",
+      "list": "representation-kinds",
+      "label": {
+        "en": "Narrative",
+        "ru": "Повествование"
+      },
+      "definition": {
+        "en": "A narrative.",
+        "ru": "Повествование."
+      }
+    },
+    {
+      "code": "chart",
+      "list": "representation-kinds",
+      "label": {
+        "en": "Chart",
+        "ru": "Карта"
+      },
+      "definition": {
+        "en": "A computed chart.",
+        "ru": "Вычисленная карта."
+      }
+    },
+    {
+      "code": "grid",
+      "list": "representation-kinds",
+      "label": {
+        "en": "Grid",
+        "ru": "Сетка"
+      },
+      "definition": {
+        "en": "A grid view over records.",
+        "ru": "Табличный вид поверх записей."
+      }
+    },
+    {
+      "code": "free-concept",
+      "list": "concept-status",
+      "label": {
+        "en": "Free concept",
+        "ru": "Свободная концепция"
+      },
+      "definition": {
+        "en": "The concept may be used freely; marks may still apply.",
+        "ru": "Концепцией можно пользоваться свободно; товарные знаки при этом могут действовать."
+      }
+    },
+    {
+      "code": "proprietary-concept",
+      "list": "concept-status",
+      "label": {
+        "en": "Proprietary concept",
+        "ru": "Проприетарная концепция"
+      },
+      "definition": {
+        "en": "The concept is proprietary.",
+        "ru": "Концепция является чьей-то собственностью."
+      }
+    },
+    {
+      "code": "unclear",
+      "list": "concept-status",
+      "label": {
+        "en": "Unclear",
+        "ru": "Неясно"
+      },
+      "definition": {
+        "en": "The status is unclear.",
+        "ru": "Статус неясен."
+      }
+    },
+    {
+      "code": "registered",
+      "list": "mark-status",
+      "label": {
+        "en": "Registered",
+        "ru": "Зарегистрирован"
+      },
+      "definition": {
+        "en": "A registered mark.",
+        "ru": "Зарегистрированный знак."
+      }
+    },
+    {
+      "code": "pending",
+      "list": "mark-status",
+      "label": {
+        "en": "Pending",
+        "ru": "Заявлен"
+      },
+      "definition": {
+        "en": "An application for registration is pending (including one under opposition).",
+        "ru": "Заявка на регистрацию находится на рассмотрении (в том числе при поданном возражении)."
+      }
+    },
+    {
+      "code": "cancelled",
+      "list": "mark-status",
+      "label": {
+        "en": "Cancelled",
+        "ru": "Аннулирован"
+      },
+      "definition": {
+        "en": "A registration that was cancelled.",
+        "ru": "Регистрация, которая была аннулирована."
+      }
+    },
+    {
+      "code": "abandoned",
+      "list": "mark-status",
+      "label": {
+        "en": "Abandoned",
+        "ru": "Заброшен"
+      },
+      "definition": {
+        "en": "A mark application or registration that was abandoned.",
+        "ru": "Заявка или регистрация знака, от которой отказались."
+      }
+    },
+    {
+      "code": "unverified",
+      "list": "mark-status",
+      "label": {
+        "en": "Unverified",
+        "ru": "Не проверено"
+      },
+      "definition": {
+        "en": "Status not verified.",
+        "ru": "Статус не проверен."
+      }
+    },
+    {
+      "code": "none",
+      "list": "mark-status",
+      "label": {
+        "en": "None",
+        "ru": "Нет"
+      },
+      "definition": {
+        "en": "No mark.",
+        "ru": "Знака нет."
+      }
+    },
+    {
+      "code": "nominative-only",
+      "list": "mark-use",
+      "label": {
+        "en": "Nominative only",
+        "ru": "Только для обозначения"
+      },
+      "definition": {
+        "en": "Use the mark only to refer to the owner's product.",
+        "ru": "Использовать знак только для указания на продукт владельца."
+      }
+    },
+    {
+      "code": "adjective-only",
+      "list": "mark-use",
+      "label": {
+        "en": "Adjective only",
+        "ru": "Только как определение"
+      },
+      "definition": {
+        "en": "Use the mark only as an adjective, for genuine results.",
+        "ru": "Использовать знак только как определение и только для подлинных результатов."
+      }
+    },
+    {
+      "code": "avoid",
+      "list": "mark-use",
+      "label": {
+        "en": "Avoid",
+        "ru": "Избегать"
+      },
+      "definition": {
+        "en": "Do not use the mark.",
+        "ru": "Не использовать знак."
+      }
+    },
+    {
+      "code": "public",
+      "list": "scoring",
+      "label": {
+        "en": "Public",
+        "ru": "Открытый"
+      },
+      "definition": {
+        "en": "The scoring rule is public.",
+        "ru": "Правило подсчёта открыто."
+      }
+    },
+    {
+      "code": "proprietary",
+      "list": "scoring",
+      "label": {
+        "en": "Proprietary",
+        "ru": "Закрытый"
+      },
+      "definition": {
+        "en": "The scoring rule is proprietary.",
+        "ru": "Правило подсчёта закрыто."
+      }
+    },
+    {
+      "code": "none",
+      "list": "scoring",
+      "label": {
+        "en": "None",
+        "ru": "Нет"
+      },
+      "definition": {
+        "en": "There is no scoring.",
+        "ru": "Подсчёта нет."
+      }
+    },
+    {
+      "code": "ok",
+      "list": "registry-listing",
+      "label": {
+        "en": "Listed",
+        "ru": "Можно перечислять"
+      },
+      "definition": {
+        "en": "Constructs may be listed in the registry.",
+        "ru": "Конструкты можно перечислять в реестре."
+      }
+    },
+    {
+      "code": "reference-by-url",
+      "list": "registry-listing",
+      "label": {
+        "en": "Reference by URL",
+        "ru": "Ссылка по адресу"
+      },
+      "definition": {
+        "en": "Constructs are referenced by URL instead of listed.",
+        "ru": "Вместо перечисления конструкты даются ссылкой."
+      }
+    },
+    {
+      "code": "needs-permission",
+      "list": "registry-listing",
+      "label": {
+        "en": "Needs permission",
+        "ru": "Нужно разрешение"
+      },
+      "definition": {
+        "en": "Listing needs the owner's permission.",
+        "ru": "Для перечисления нужно разрешение владельца."
+      }
+    },
+    {
+      "code": "obtained",
+      "list": "lineage-consent",
+      "label": {
+        "en": "Obtained",
+        "ru": "Получено"
+      },
+      "definition": {
+        "en": "Consent of the lineage holders was obtained.",
+        "ru": "Согласие держателей традиции получено."
+      }
+    },
+    {
+      "code": "not-required",
+      "list": "lineage-consent",
+      "label": {
+        "en": "Not required",
+        "ru": "Не требуется"
+      },
+      "definition": {
+        "en": "No lineage consent is required.",
+        "ru": "Согласие держателей традиции не требуется."
+      }
+    },
+    {
+      "code": "population-level-only",
+      "list": "cross-lens-mapping",
+      "label": {
+        "en": "Population level only",
+        "ru": "Только на уровне популяции"
+      },
+      "definition": {
+        "en": "Mappings may be used only as population-level estimates.",
+        "ru": "Сопоставления допустимы только как оценки на уровне популяции."
+      }
+    },
+    {
+      "code": "not-allowed",
+      "list": "cross-lens-mapping",
+      "label": {
+        "en": "Not allowed",
+        "ru": "Не допускается"
+      },
+      "definition": {
+        "en": "No mappings to or from this lens.",
+        "ru": "Никаких сопоставлений с этой линзой."
+      }
+    }
+  ]
+}

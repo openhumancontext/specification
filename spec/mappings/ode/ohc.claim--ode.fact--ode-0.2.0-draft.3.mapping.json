@@ -1,0 +1,27 @@
+{
+  "format": "ohc.mapping",
+  "specVersion": "0.1.0-draft",
+  "id": "urn:ohc:mapping:ohc.claim--ode.fact--ode-0.2.0-draft.3",
+  "version": "0.1.0",
+  "bridgeKind": "ohc-ode",
+  "from": {
+    "standard": "OHC 0.1.0-draft",
+    "concept": "Claim"
+  },
+  "to": {
+    "standard": "ODE 0.2.0-draft",
+    "concept": "Fact",
+    "pin": {
+      "tag": "v0.2.0-draft.3",
+      "commit": "8300a50dd9d84d2a388fd60e3919ee59e7ad5399"
+    }
+  },
+  "relation": "corresponds",
+  "scope": "Binding statement between the two formats (OHC 0.1.0-draft and ODE release 0.2.0-draft.3); never a conversion of a person's data",
+  "notIdentity": true,
+  "chainable": false,
+  "rowStatus": "accepted-with-loss",
+  "lost": "An ODE Fact requires a confidence, which a Claim may lack (a missing confidence is never 0). Origin and endorsement travel only in extensions until a Tier 1 change.",
+  "evidenceGrade": "F",
+  "reviewedAt": "2026-10-09"
+}

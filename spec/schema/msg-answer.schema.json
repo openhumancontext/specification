@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:ohc:schema:msg-answer:0.1.0-draft",
+  "title": "OHC answer message",
+  "description": "EXPERIMENTAL. Holder to agent: an answer composed only from records the grant would serve in full mode. When the holder cannot answer, it returns not-disclosed (no oracle).",
+  "type": "object",
+  "required": [
+    "format",
+    "specVersion",
+    "id",
+    "from",
+    "to",
+    "at"
+  ],
+  "properties": {
+    "format": {
+      "const": "ohc.experimental.answer"
+    },
+    "specVersion": {
+      "$ref": "urn:ohc:schema:message:0.1.0-draft#/properties/specVersion"
+    },
+    "id": {
+      "$ref": "urn:ohc:schema:message:0.1.0-draft#/properties/id"
+    },
+    "from": {
+      "$ref": "urn:ohc:schema:message:0.1.0-draft#/properties/from"
+    },
+    "to": {
+      "$ref": "urn:ohc:schema:message:0.1.0-draft#/properties/to"
+    },
+    "at": {
+      "$ref": "urn:ohc:schema:message:0.1.0-draft#/properties/at"
+    },
+    "inReplyTo": {
+      "$ref": "urn:ohc:schema:message:0.1.0-draft#/properties/inReplyTo"
+    },
+    "answer": {
+      "description": "A value or a text."
+    },
+    "labels": {
+      "type": "array",
+      "items": {
+        "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/labels"
+      }
+    },
+    "code": {
+      "const": "not-disclosed"
+    }
+  },
+  "additionalProperties": false,
+  "allOf": [
+    {
+      "anyOf": [
+        {
+          "required": [
+            "answer",
+            "labels"
+          ]
+        },
+        {
+          "required": [
+            "code"
+          ]
+        }
+      ]
+    }
+  ]
+}

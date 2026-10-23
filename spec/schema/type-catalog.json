@@ -1,0 +1,441 @@
+{
+  "format": "ohc.type-catalog",
+  "id": "urn:ohc:catalog:type-catalog",
+  "version": "0.2.0",
+  "specVersion": "0.1.0-draft",
+  "description": "For every one of the 29 OHC kinds: layer, module, maturity, placement, schema $id, document format, collection name and default package file, id prefixes and default sensitivity tier (null when the tier is computed or does not apply). Layers are never stored on records.",
+  "types": [
+    {
+      "kind": "Context",
+      "layer": "subject",
+      "module": "core",
+      "maturity": "normative-draft",
+      "placement": "document",
+      "schema": "urn:ohc:schema:context:0.1.0-draft",
+      "format": "ohc.context",
+      "collection": null,
+      "file": null,
+      "idPrefixes": [],
+      "defaultTier": null
+    },
+    {
+      "kind": "Subject",
+      "layer": "subject",
+      "module": "core",
+      "maturity": "normative-draft",
+      "placement": "embedded",
+      "schema": "urn:ohc:schema:subject:0.1.0-draft",
+      "format": null,
+      "collection": null,
+      "file": null,
+      "idPrefixes": [],
+      "defaultTier": null
+    },
+    {
+      "kind": "Party",
+      "layer": "subject",
+      "module": "core",
+      "maturity": "normative-draft",
+      "placement": "embedded",
+      "schema": "urn:ohc:schema:party:0.1.0-draft",
+      "format": null,
+      "collection": null,
+      "file": null,
+      "idPrefixes": [
+        "p-",
+        "a-",
+        "s-",
+        "o-"
+      ],
+      "defaultTier": null
+    },
+    {
+      "kind": "Claim",
+      "layer": "assertion",
+      "module": "core",
+      "maturity": "normative-draft",
+      "placement": "record",
+      "schema": "urn:ohc:schema:claim:0.1.0-draft",
+      "format": null,
+      "collection": "claims",
+      "file": "records/claims.jsonl",
+      "idPrefixes": [
+        "c-"
+      ],
+      "defaultTier": "personal"
+    },
+    {
+      "kind": "Relation",
+      "layer": "link",
+      "module": "core",
+      "maturity": "normative-draft",
+      "placement": "record",
+      "schema": "urn:ohc:schema:relation:0.1.0-draft",
+      "format": null,
+      "collection": "relations",
+      "file": "records/relations.jsonl",
+      "idPrefixes": [
+        "r-"
+      ],
+      "defaultTier": null,
+      "defaultTierRule": "maximum of from and to"
+    },
+    {
+      "kind": "Source",
+      "layer": "evidence",
+      "module": "core",
+      "maturity": "normative-draft",
+      "placement": "record",
+      "schema": "urn:ohc:schema:source:0.1.0-draft",
+      "format": null,
+      "collection": "sources",
+      "file": "records/sources.jsonl",
+      "idPrefixes": [
+        "src-"
+      ],
+      "defaultTier": "sensitive"
+    },
+    {
+      "kind": "Episode",
+      "layer": "experience",
+      "module": "core",
+      "maturity": "normative-draft",
+      "placement": "record",
+      "schema": "urn:ohc:schema:episode:0.1.0-draft",
+      "format": null,
+      "collection": "episodes",
+      "file": "records/episodes.jsonl",
+      "idPrefixes": [
+        "ep-"
+      ],
+      "defaultTier": "sensitive"
+    },
+    {
+      "kind": "Interpretation",
+      "layer": "interpretation",
+      "module": "core",
+      "maturity": "normative-draft",
+      "placement": "record",
+      "schema": "urn:ohc:schema:interpretation:0.1.0-draft",
+      "format": null,
+      "collection": "interpretations",
+      "file": "records/interpretations.jsonl",
+      "idPrefixes": [
+        "in-"
+      ],
+      "defaultTier": "sensitive"
+    },
+    {
+      "kind": "Tension",
+      "layer": "interpretation",
+      "module": "core",
+      "maturity": "normative-draft",
+      "placement": "record",
+      "schema": "urn:ohc:schema:tension:0.1.0-draft",
+      "format": null,
+      "collection": "tensions",
+      "file": "records/tensions.jsonl",
+      "idPrefixes": [
+        "t-"
+      ],
+      "defaultTier": null,
+      "defaultTierRule": "maximum over between"
+    },
+    {
+      "kind": "Review",
+      "layer": "governance",
+      "module": "core",
+      "maturity": "normative-draft",
+      "placement": "record",
+      "schema": "urn:ohc:schema:review:0.1.0-draft",
+      "format": null,
+      "collection": "reviews",
+      "file": "records/reviews.jsonl",
+      "idPrefixes": [
+        "rv-"
+      ],
+      "defaultTier": null
+    },
+    {
+      "kind": "Proposal",
+      "layer": "governance",
+      "module": "core",
+      "maturity": "normative-draft",
+      "placement": "record",
+      "schema": "urn:ohc:schema:proposal:0.1.0-draft",
+      "format": null,
+      "collection": "proposals",
+      "file": "records/proposals.jsonl",
+      "idPrefixes": [
+        "prop-"
+      ],
+      "defaultTier": null
+    },
+    {
+      "kind": "Tombstone",
+      "layer": "governance",
+      "module": "core",
+      "maturity": "normative-draft",
+      "placement": "record",
+      "schema": "urn:ohc:schema:tombstone:0.1.0-draft",
+      "format": null,
+      "collection": null,
+      "file": null,
+      "idPrefixes": [],
+      "defaultTier": null,
+      "note": "Replaces an erased record in place, in the erased record's collection (R-S4); keeps the erased id."
+    },
+    {
+      "kind": "Grant",
+      "layer": "governance",
+      "module": "governance",
+      "maturity": "normative-draft",
+      "placement": "record",
+      "schema": "urn:ohc:schema:grant:0.1.0-draft",
+      "format": null,
+      "collection": "grants",
+      "file": "records/grants.jsonl",
+      "idPrefixes": [
+        "g-"
+      ],
+      "defaultTier": null
+    },
+    {
+      "kind": "Event",
+      "layer": "governance",
+      "module": "governance",
+      "maturity": "normative-draft",
+      "placement": "record",
+      "schema": "urn:ohc:schema:event:0.1.0-draft",
+      "format": null,
+      "collection": "events",
+      "file": "events.jsonl",
+      "idPrefixes": [
+        "e-"
+      ],
+      "defaultTier": null
+    },
+    {
+      "kind": "Projection",
+      "layer": "governance",
+      "module": "governance",
+      "maturity": "normative-draft",
+      "placement": "document",
+      "schema": "urn:ohc:schema:projection:0.1.0-draft",
+      "format": "ohc.projection",
+      "collection": null,
+      "file": null,
+      "idPrefixes": [
+        "prj-"
+      ],
+      "defaultTier": null,
+      "note": "Stored under projections/<prj-id>.json in a package."
+    },
+    {
+      "kind": "ContextLock",
+      "layer": "governance",
+      "module": "governance",
+      "maturity": "normative-draft",
+      "placement": "document",
+      "schema": "urn:ohc:schema:lock:0.1.0-draft",
+      "format": "ohc.lock",
+      "collection": null,
+      "file": null,
+      "idPrefixes": [],
+      "defaultTier": null,
+      "note": "Stored as context.lock.json in a package."
+    },
+    {
+      "kind": "Lens",
+      "layer": "registry",
+      "module": "lenses",
+      "maturity": "normative-draft",
+      "placement": "document",
+      "schema": "urn:ohc:schema:lens:0.1.0-draft",
+      "format": "ohc.lens",
+      "collection": null,
+      "file": null,
+      "idPrefixes": [],
+      "defaultTier": null,
+      "note": "Registry document; the shape is normative-draft, catalog entries are experimental."
+    },
+    {
+      "kind": "Instrument",
+      "layer": "registry",
+      "module": "lenses",
+      "maturity": "normative-draft",
+      "placement": "document",
+      "schema": "urn:ohc:schema:instrument:0.1.0-draft",
+      "format": "ohc.instrument",
+      "collection": null,
+      "file": null,
+      "idPrefixes": [],
+      "defaultTier": null,
+      "note": "Registry document; the shape is normative-draft, catalog entries are experimental."
+    },
+    {
+      "kind": "Mapping",
+      "layer": "registry",
+      "module": "lenses",
+      "maturity": "normative-draft",
+      "placement": "document",
+      "schema": "urn:ohc:schema:mapping:0.1.0-draft",
+      "format": "ohc.mapping",
+      "collection": null,
+      "file": null,
+      "idPrefixes": [],
+      "defaultTier": null,
+      "note": "Registry document; the shape is normative-draft, catalog entries are experimental."
+    },
+    {
+      "kind": "Playbook",
+      "layer": "registry",
+      "module": "lenses",
+      "maturity": "normative-draft",
+      "placement": "document",
+      "schema": "urn:ohc:schema:playbook:0.1.0-draft",
+      "format": "ohc.playbook",
+      "collection": null,
+      "file": null,
+      "idPrefixes": [],
+      "defaultTier": null,
+      "note": "Registry document (spec/playbooks/); a local x- playbook travels in the context's lenses/ folder. Guidance, never permission (PB-4)."
+    },
+    {
+      "kind": "LensAdoption",
+      "layer": "assertion",
+      "module": "lenses",
+      "maturity": "normative-draft",
+      "placement": "record",
+      "schema": "urn:ohc:schema:lens-adoption:0.1.0-draft",
+      "format": null,
+      "collection": "lensAdoptions",
+      "file": "records/lens-adoptions.jsonl",
+      "idPrefixes": [
+        "la-"
+      ],
+      "defaultTier": "sensitive"
+    },
+    {
+      "kind": "AssessmentRecord",
+      "layer": "assertion",
+      "module": "lenses",
+      "maturity": "normative-draft",
+      "placement": "record",
+      "schema": "urn:ohc:schema:assessment-record:0.1.0-draft",
+      "format": null,
+      "collection": "assessments",
+      "file": "records/assessments.jsonl",
+      "idPrefixes": [
+        "as-"
+      ],
+      "defaultTier": "special"
+    },
+    {
+      "kind": "ModelView",
+      "layer": "interpretation",
+      "module": "lenses",
+      "maturity": "normative-draft",
+      "placement": "record",
+      "schema": "urn:ohc:schema:model-view:0.1.0-draft",
+      "format": null,
+      "collection": "modelViews",
+      "file": "records/model-views.jsonl",
+      "idPrefixes": [
+        "mv-"
+      ],
+      "defaultTier": "special"
+    },
+    {
+      "kind": "Practice",
+      "layer": "assertion",
+      "module": "practices",
+      "maturity": "normative-draft",
+      "placement": "record",
+      "schema": "urn:ohc:schema:practice:0.1.0-draft",
+      "format": null,
+      "collection": "practices",
+      "file": "records/practices.jsonl",
+      "idPrefixes": [
+        "pr-"
+      ],
+      "defaultTier": "personal"
+    },
+    {
+      "kind": "Outcome",
+      "layer": "outcome",
+      "module": "practices",
+      "maturity": "normative-draft",
+      "placement": "record",
+      "schema": "urn:ohc:schema:outcome:0.1.0-draft",
+      "format": null,
+      "collection": "outcomes",
+      "file": "records/outcomes.jsonl",
+      "idPrefixes": [
+        "oc-"
+      ],
+      "defaultTier": null,
+      "defaultTierRule": "the tier of its about target"
+    },
+    {
+      "kind": "Pattern",
+      "layer": "interpretation",
+      "module": "patterns",
+      "maturity": "experimental",
+      "placement": "record",
+      "schema": "urn:ohc:schema:pattern:0.1.0-draft",
+      "format": null,
+      "collection": "patterns",
+      "file": "records/patterns.jsonl",
+      "idPrefixes": [
+        "pat-"
+      ],
+      "defaultTier": "sensitive"
+    },
+    {
+      "kind": "RecallCue",
+      "layer": "recall",
+      "module": "recall",
+      "maturity": "experimental",
+      "placement": "record",
+      "schema": "urn:ohc:schema:recall-cue:0.1.0-draft",
+      "format": null,
+      "collection": "recallCues",
+      "file": "records/recall-cues.jsonl",
+      "idPrefixes": [
+        "rc-"
+      ],
+      "defaultTier": "sensitive"
+    },
+    {
+      "kind": "Part",
+      "layer": "interpretation",
+      "module": "inner-system",
+      "maturity": "experimental",
+      "placement": "record",
+      "schema": "urn:ohc:schema:part:0.1.0-draft",
+      "format": null,
+      "collection": "parts",
+      "file": "records/parts.jsonl",
+      "idPrefixes": [
+        "part-"
+      ],
+      "defaultTier": "special"
+    },
+    {
+      "kind": "HealthRef",
+      "layer": "assertion",
+      "module": "health-ref",
+      "maturity": "experimental",
+      "placement": "record",
+      "schema": "urn:ohc:schema:health-ref:0.1.0-draft",
+      "format": null,
+      "collection": "healthRefs",
+      "file": "records/health-refs.jsonl",
+      "idPrefixes": [
+        "hr-"
+      ],
+      "defaultTier": "special"
+    }
+  ]
+}

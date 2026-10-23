@@ -1,0 +1,27 @@
+{
+  "description": "An absence together with a value (R-B1).",
+  "expect": [
+    "CL-2"
+  ],
+  "form": "single",
+  "patches": [
+    {
+      "op": "add",
+      "target": "claims",
+      "path": "",
+      "value": {
+        "id": "c-07",
+        "facet": "resource",
+        "predicate": "money",
+        "absence": {
+          "code": "not-disclosed"
+        },
+        "value": 0,
+        "origin": "declared",
+        "assertedBy": "subject",
+        "recordedAt": "2026-09-07T08:00:00Z",
+        "synthetic": true
+      }
+    }
+  ]
+}

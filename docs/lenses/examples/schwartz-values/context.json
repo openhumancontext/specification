@@ -1,0 +1,77 @@
+{
+  "format": "ohc.context",
+  "specVersion": "0.1.0-draft",
+  "id": "urn:ohc:example:odile:context",
+  "version": "2026-10-10.1",
+  "subject": {"id": "urn:ohc:example:odile", "displayName": "Odile (fictional)"},
+  "holder": "subject",
+  "lang": "en",
+  "created": "2026-09-15T08:00:00Z",
+  "conformance": {"level": "L1", "modules": ["core", "governance", "lenses", "practices"], "subjectIsAdult": true},
+  "parties": [
+    {"id": "s-01", "partyKind": "software", "label": "Values questionnaire scorer"},
+    {"id": "a-01", "partyKind": "agent", "label": "Reflection companion"}
+  ],
+  "policy": {"admission": "subject-only", "resolver": "returnDialog"},
+  "lenses": [
+    {"id": "urn:ohc:lens:schwartz-values", "version": "0.2.0", "sha256": "3d794f1201ae2f22a719f0e44644deaa7829626f650700ede0df9c76786f9bb2"}
+  ],
+  "events": [
+    {"id": "e-1", "seq": 1, "at": "2026-09-15T08:00:00Z", "eventType": "import-run", "actor": "subject", "records": ["la-1", "src-1", "as-1"], "salt": "q7Hc2mVd9KxTzR4bWn8sLg", "prev": "sha256:0000000000000000000000000000000000000000000000000000000000000000"}
+  ],
+  "sources": [
+    {"id": "src-1", "sourceKind": "instrument-report", "content": {"locator": {"vaultPath": "vault/66/66fdb027b998d9f5d1ef3b3750aa1fa51515c0a68b47f2d175d31df65f749b3c.json"}, "sha256": "66fdb027b998d9f5d1ef3b3750aa1fa51515c0a68b47f2d175d31df65f749b3c", "mediaType": "application/json"}, "capturedAt": "2026-09-14T20:30:00Z", "authorship": {"author": "s-01"}, "contemporaneity": "contemporaneous", "maxRelease": "index", "retention": {"eraseOnRequest": true}, "origin": "imported", "importedFrom": {"system": "values-scorer", "systemVersion": "1.2.0", "importedAt": "2026-09-15T08:00:00Z", "run": "e-1"}, "formulatedAt": "2026-09-14T20:30:00Z", "assertedBy": "subject", "recordedAt": "2026-09-15T08:00:00Z", "sensitivity": "special", "categories": ["belief", "political"], "synthetic": true}
+  ],
+  "lensAdoptions": [
+    {"id": "la-1", "lens": {"id": "urn:ohc:lens:schwartz-values", "version": "0.2.0"}, "route": "imported", "uses": ["store-results", "speak-in-lens", "interpret", "offer-practices"], "interpretationAuthors": ["subject"], "agentInterpretation": "off", "representationPreference": "schwartz-values.circular-chart", "origin": "derived", "derivedFrom": ["src-1"], "generatedBy": {"software": "values-scorer", "version": "1.2.0", "method": "adopt the lens of the imported instrument"}, "importedFrom": {"system": "values-scorer", "systemVersion": "1.2.0", "importedAt": "2026-09-15T08:00:00Z", "run": "e-1"}, "assertedBy": "subject", "recordedAt": "2026-09-15T08:00:00Z", "sensitivity": "special", "categories": ["belief", "political"], "synthetic": true}
+  ],
+  "assessments": [
+    {"id": "as-1", "lens": {"id": "urn:ohc:lens:schwartz-values", "version": "0.2.0"}, "lensVariant": "19", "instrument": {"id": "urn:ohc:instrument:pvq-rr", "form": "57"}, "mode": "self-report-instrument", "assessedBy": "subject", "administeredAt": {"start": "2026-09-14", "precision": "day"}, "results": [{"type": "values-profile", "scores": [
+      {"construct": "schwartz-values/self-direction-thought", "raw": 5.67, "centered": 1.61},
+      {"construct": "schwartz-values/self-direction-action", "raw": 5.33, "centered": 1.28},
+      {"construct": "schwartz-values/stimulation", "raw": 4, "centered": -0.05},
+      {"construct": "schwartz-values/hedonism", "raw": 4.33, "centered": 0.28},
+      {"construct": "schwartz-values/achievement", "raw": 3.67, "centered": -0.39},
+      {"construct": "schwartz-values/power-dominance", "raw": 2, "centered": -2.05},
+      {"construct": "schwartz-values/power-resources", "raw": 2.33, "centered": -1.72},
+      {"construct": "schwartz-values/face", "raw": 3.33, "centered": -0.72},
+      {"construct": "schwartz-values/security-personal", "raw": 4.67, "centered": 0.61},
+      {"construct": "schwartz-values/security-societal", "raw": 4, "centered": -0.05},
+      {"construct": "schwartz-values/tradition", "raw": 2.67, "centered": -1.39},
+      {"construct": "schwartz-values/conformity-rules", "raw": 3, "centered": -1.05},
+      {"construct": "schwartz-values/conformity-interpersonal", "raw": 3.67, "centered": -0.39},
+      {"construct": "schwartz-values/humility", "raw": 4, "centered": -0.05},
+      {"construct": "schwartz-values/benevolence-caring", "raw": 5.33, "centered": 1.28},
+      {"construct": "schwartz-values/benevolence-dependability", "raw": 5, "centered": 0.95},
+      {"construct": "schwartz-values/universalism-concern", "raw": 4.67, "centered": 0.61},
+      {"construct": "schwartz-values/universalism-nature", "raw": 5, "centered": 0.95},
+      {"construct": "schwartz-values/universalism-tolerance", "raw": 4.33, "centered": 0.28}]}], "validityFlags": [], "source": "src-1", "origin": "derived", "derivedFrom": ["src-1"], "generatedBy": {"software": "values-scorer", "version": "1.2.0", "method": "public PVQ-RR scoring: mean of the three items of each of the 19 values; centred by subtracting the person's mean over all 57 items"}, "importedFrom": {"system": "values-scorer", "systemVersion": "1.2.0", "importedAt": "2026-09-15T08:00:00Z", "run": "e-1"}, "formulatedAt": "2026-09-14T20:30:00Z", "reviewAfter": "P3Y", "assertedBy": "subject", "recordedAt": "2026-09-15T08:00:00Z", "sensitivity": "special", "categories": ["belief", "political"], "handling": ["no-infer", "no-leverage"], "synthetic": true}
+  ],
+  "reviews": [
+    {"id": "rv-1", "target": "la-1", "action": "admit", "by": "subject", "recordedAt": "2026-09-15T20:00:00Z"},
+    {"id": "rv-2", "target": "as-1", "action": "partially-endorse", "by": "subject", "recordedAt": "2026-09-15T20:05:00Z", "endorsedPart": "Self-direction and caring for the people close to me come first. I do not see myself as low on tradition."}
+  ],
+  "claims": [
+    {"id": "c-1", "facet": "declared-value", "predicate": "priority", "text": "Choosing my own way of working matters to me.", "origin": "declared", "assertedBy": "subject", "recordedAt": "2026-09-21T09:00:00Z", "horizon": "foundation", "contexts": ["work"], "sensitivity": "sensitive", "synthetic": true},
+    {"id": "c-2", "facet": "declared-value", "predicate": "priority", "text": "A steady income matters to me; I do not want to count every month.", "origin": "declared", "assertedBy": "subject", "recordedAt": "2026-09-21T09:02:00Z", "horizon": "foundation", "contexts": ["money"], "sensitivity": "sensitive", "synthetic": true}
+  ],
+  "tensions": [
+    {"id": "t-1", "between": ["c-1", "c-2"], "tensionKind": "value-conflict", "whoDecides": "subject", "text": "Freedom in how I work pulls against a steady income.", "origin": "declared", "assertedBy": "subject", "recordedAt": "2026-09-21T09:05:00Z", "sensitivity": "sensitive", "synthetic": true}
+  ],
+  "episodes": [
+    {"id": "ep-1", "occurred": {"start": "2026-09-18", "precision": "day"}, "accounts": [{"narrator": "subject", "narratedAt": "2026-09-18T21:00:00Z", "addedAt": "2026-09-18T21:05:00Z", "accountKind": "in-the-moment", "happened": "I turned down a permanent position in another city and stayed freelance.", "didOrTried": "Called back the same day and asked to stay in touch for project work.", "understandingThen": "The timing is wrong while I am helping my father move to a new flat."}], "selection": {"selectedBy": "subject", "reason": "subject-chose"}, "origin": "declared", "assertedBy": "subject", "recordedAt": "2026-09-18T21:05:00Z", "contexts": ["work", "family"], "sensitivity": "sensitive", "synthetic": true}
+  ],
+  "interpretations": [
+    {"id": "in-1", "about": ["ep-1"], "stance": "lens-reading", "lens": {"id": "urn:ohc:lens:schwartz-values", "version": "0.2.0"}, "text": "Security pulled against self-direction. I chose self-direction; being close to my family tipped it.", "alternatives": [{"text": "The salary offered was below what I earned freelance this year.", "kind": "external"}], "origin": "declared", "assertedBy": "subject", "recordedAt": "2026-09-21T09:10:00Z", "heldDuring": {"from": "2026-09-21"}, "contexts": ["work", "family"], "sensitivity": "special", "categories": ["belief", "political"], "synthetic": true}
+  ],
+  "practices": [
+    {"id": "pr-1", "name": "Name the two values before deciding", "description": "Before a bigger decision, write which two values pull against each other and what I give up with each choice.", "practiceKind": "writing", "source": {"route": "from-lens", "lens": "urn:ohc:lens:schwartz-values", "templateId": "schwartz-values.values-in-tension"}, "steps": ["Write the decision in one line", "Name the two values pulling against each other", "Write what I choose and what I give up"], "duration": "PT15M", "limits": "Not for small daily choices.", "initialStatus": "in-use", "nonClinical": true, "origin": "declared", "assertedBy": "subject", "recordedAt": "2026-09-21T09:20:00Z", "sensitivity": "special", "categories": ["belief", "political"], "synthetic": true}
+  ],
+  "outcomes": [
+    {"id": "oc-1", "about": {"practice": "pr-1"}, "result": "helped", "origin": "declared", "assertedBy": "subject", "recordedAt": "2026-10-06T19:00:00Z", "note": "Used it before answering a second offer; the choice felt clear.", "synthetic": true}
+  ],
+  "grants": [
+    {"id": "g-1", "recordedAt": "2026-09-22T09:00:00Z", "grantor": "subject", "grantee": "a-01", "purposes": ["self-reflection"], "scope": {"include": [{"lenses": ["urn:ohc:lens:schwartz-values"]}, {"ids": ["c-1", "c-2", "t-1", "oc-1"]}]}, "actions": ["read"], "mode": "summary", "interpretations": "subject-endorsed", "constraints": {"expiresAt": "2027-03-20T00:00:00Z", "storage": "session", "forwarding": false, "crossContextUse": false, "delegable": false}, "basis": {"legal": "explicit-consent"}, "expressedBy": {"actor": "subject", "at": "2026-09-22T09:00:00Z", "channel": "holder-ui"}, "note": "For reflection on my own decisions; never to persuade me."}
+  ],
+  "synthetic": true
+}

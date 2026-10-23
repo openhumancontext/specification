@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:ohc:schema:msg-purge-ack:0.1.0-draft",
+  "title": "OHC purge-ack message",
+  "description": "EXPERIMENTAL. Agent to holder: the result of a purge, in reply (inReplyTo) to an erasure or revocation notice. The envelope at is the time of the purge.",
+  "type": "object",
+  "required": [
+    "format",
+    "specVersion",
+    "id",
+    "from",
+    "to",
+    "at",
+    "status"
+  ],
+  "properties": {
+    "format": {
+      "const": "ohc.experimental.purge-ack"
+    },
+    "specVersion": {
+      "$ref": "urn:ohc:schema:message:0.1.0-draft#/properties/specVersion"
+    },
+    "id": {
+      "$ref": "urn:ohc:schema:message:0.1.0-draft#/properties/id"
+    },
+    "from": {
+      "$ref": "urn:ohc:schema:message:0.1.0-draft#/properties/from"
+    },
+    "to": {
+      "$ref": "urn:ohc:schema:message:0.1.0-draft#/properties/to"
+    },
+    "at": {
+      "$ref": "urn:ohc:schema:message:0.1.0-draft#/properties/at"
+    },
+    "inReplyTo": {
+      "$ref": "urn:ohc:schema:message:0.1.0-draft#/properties/inReplyTo"
+    },
+    "status": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/messages.purge-status"
+    }
+  },
+  "additionalProperties": false
+}

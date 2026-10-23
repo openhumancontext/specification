@@ -1,0 +1,73 @@
+{
+  "format": "ohc.catalog",
+  "id": "urn:ohc:catalog:release-tiers",
+  "version": "0.1.0",
+  "specVersion": "0.1.0-draft",
+  "title": {
+    "en": "Release tiers",
+    "ru": "Уровни раскрытия"
+  },
+  "description": {
+    "en": "Ordered tiers of how much of a source a grantee may see; also used for `maxRelease`, `maxSourceTier` and a recall cue's `offer.maxTier`. The subject always has every tier (V-0).",
+    "ru": "Упорядоченные уровни того, сколько из источника может увидеть получатель; используются также в `maxRelease`, `maxSourceTier` и `offer.maxTier` сигнала возвращения опыта. Самому человеку всегда доступны все уровни (V-0)."
+  },
+  "closed": true,
+  "ordered": true,
+  "codes": [
+    {
+      "code": "none",
+      "label": {
+        "en": "None",
+        "ru": "Ничего"
+      },
+      "definition": {
+        "en": "Nothing. References resolve as `not-disclosed`.",
+        "ru": "Ничего. Ссылки разрешаются как `not-disclosed`."
+      }
+    },
+    {
+      "code": "index",
+      "label": {
+        "en": "Index",
+        "ru": "Указатель"
+      },
+      "definition": {
+        "en": "`sourceKind`, `mediaType`, a coarse `capturedAt` (day), `contemporaneity` and authorship role. No `sha256`, no title, no summary. A per-grant HMAC handle is given instead (R-V1).",
+        "ru": "`sourceKind`, `mediaType`, огрублённый `capturedAt` (день), `contemporaneity` и роль автора. Без `sha256`, заголовка и сводки. Вместо этого выдаётся HMAC-дескриптор, свой для каждого разрешения (R-V1)."
+      }
+    },
+    {
+      "code": "summary",
+      "label": {
+        "en": "Summary",
+        "ru": "Сводка"
+      },
+      "definition": {
+        "en": "Index, plus `title` and `summary.text`, with `summary.authoredBy` (\"whose selection\").",
+        "ru": "Указатель, а также `title` и `summary.text` с `summary.authoredBy` («чей отбор»)."
+      }
+    },
+    {
+      "code": "excerpt",
+      "label": {
+        "en": "Excerpt",
+        "ru": "Фрагмент"
+      },
+      "definition": {
+        "en": "Summary, plus the text of the spans cited by served records. Third parties are redacted. Text-quote selectors and a per-grant HMAC of each span are generated at serve time.",
+        "ru": "Сводка, а также текст фрагментов, на которые ссылаются показанные записи. Сведения о третьих лицах скрыты. Селекторы цитат и HMAC каждого фрагмента для данного разрешения создаются в момент выдачи."
+      }
+    },
+    {
+      "code": "verbatim",
+      "label": {
+        "en": "Verbatim",
+        "ru": "Дословно"
+      },
+      "definition": {
+        "en": "The full primary content with redactions applied. Only through step-up.",
+        "ru": "Первичный материал целиком с применёнными скрытиями. Только через усиленное подтверждение."
+      }
+    }
+  ]
+}

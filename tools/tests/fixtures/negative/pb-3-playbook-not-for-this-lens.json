@@ -1,0 +1,59 @@
+{
+  "description": "An adoption picks a playbook written for another lens.",
+  "expect": [
+    "PB-3"
+  ],
+  "form": "single",
+  "patches": [
+    {
+      "op": "set",
+      "target": "manifest",
+      "path": "/playbooks",
+      "value": [
+        {
+          "id": "urn:ohc:playbook:x-coach-a:week-review",
+          "version": "0.1.0",
+          "playbook": {
+            "format": "ohc.playbook",
+            "specVersion": "0.1.0-draft",
+            "id": "urn:ohc:playbook:x-coach-a:week-review",
+            "version": "0.1.0",
+            "name": {
+              "en": "My coach's week review"
+            },
+            "lenses": [
+              "urn:ohc:lens:big-five"
+            ],
+            "author": "My coach",
+            "sources": [],
+            "situations": [
+              {
+                "id": "plan-week",
+                "when": {
+                  "en": "Sunday evening, planning the week."
+                },
+                "use": {
+                  "en": [
+                    "Ask which two outcomes matter most.",
+                    "Offer the fit check on one tendency the person accepted."
+                  ]
+                },
+                "toolkit": [
+                  "big-five.fit-check"
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "op": "set",
+      "target": "lensAdoptions",
+      "path": "/@la-01/playbooks",
+      "value": [
+        "urn:ohc:playbook:x-coach-a:week-review"
+      ]
+    }
+  ]
+}

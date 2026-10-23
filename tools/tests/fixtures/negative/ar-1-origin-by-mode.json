@@ -1,0 +1,44 @@
+{
+  "description": "An instrument score labelled declared.",
+  "expect": [
+    "AR-1"
+  ],
+  "form": "single",
+  "patches": [
+    {
+      "op": "add",
+      "target": "assessments",
+      "path": "",
+      "value": {
+        "id": "as-01",
+        "lens": {
+          "id": "urn:ohc:lens:big-five",
+          "version": "0.1.0"
+        },
+        "instrument": {
+          "id": "urn:ohc:instrument:ipip-neo-120"
+        },
+        "mode": "self-report-instrument",
+        "administeredAt": {
+          "start": "2026-09-01",
+          "precision": "day"
+        },
+        "results": [
+          {
+            "type": "dimension-score",
+            "construct": "big-five/C",
+            "raw": 3.9,
+            "rawRange": [
+              1,
+              5
+            ]
+          }
+        ],
+        "origin": "declared",
+        "assertedBy": "subject",
+        "recordedAt": "2026-09-07T08:00:00Z",
+        "synthetic": true
+      }
+    }
+  ]
+}

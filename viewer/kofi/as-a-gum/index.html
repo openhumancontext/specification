@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<link rel="canonical" href="./">
+<link rel="alternate" hreflang="en" href="./">
+<title>View as GUM - example viewer</title>
+<style>
+:root{--ink:#172235;--muted:#546174;--line:#d5deea;--paper:#fff;--wash:#f1f5fb;--night:#102544;--accent:#a3305c;--accent-ink:#7d2346;--accent-wash:#fbeaf0;--ode:#234cec;--ode-wash:#edf1ff;--evidence:#186453;--evidence-wash:#eaf5f0;--reading:#714296;--reading-wash:#f3eef9;--focus:#b96000;--radius:5px;color-scheme:light dark;font-family:Arial,Helvetica,sans-serif;color:var(--ink);background:var(--paper);font-size:16px;line-height:1.6}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--ink:#e6edf6;--muted:#a9b6c8;--line:#33465f;--paper:#111c2b;--wash:#18263a;--night:#0b1422;--accent:#f39abb;--accent-ink:#f8c3d6;--accent-wash:#3a1f2c;--ode:#9dbffc;--ode-wash:#1b2c4a;--evidence:#7fd1b5;--evidence-wash:#11302a;--reading:#cfb0ea;--reading-wash:#2a2140;--focus:#ffb35c}}
+:root[data-theme="dark"]{--ink:#e6edf6;--muted:#a9b6c8;--line:#33465f;--paper:#111c2b;--wash:#18263a;--night:#0b1422;--accent:#f39abb;--accent-ink:#f8c3d6;--accent-wash:#3a1f2c;--ode:#9dbffc;--ode-wash:#1b2c4a;--evidence:#7fd1b5;--evidence-wash:#11302a;--reading:#cfb0ea;--reading-wash:#2a2140;--focus:#ffb35c}
+body{margin:0;background:var(--paper);color:var(--ink)}
+::selection{background:var(--accent-wash);color:var(--ink)}
+a{color:var(--accent-ink);text-underline-offset:4px}
+a:focus-visible,button:focus-visible,summary:focus-visible,[tabindex]:focus-visible{outline:3px solid var(--focus);outline-offset:4px}
+*{box-sizing:border-box}
+html{scroll-padding-top:100px}
+.wrap{max-width:1240px;margin:0 auto;padding:0 36px}
+.top{position:sticky;top:0;z-index:2;background:var(--paper);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;flex-wrap:wrap;gap:12px 24px;align-items:center;justify-content:space-between;min-height:64px}
+.brand{font-weight:700;text-decoration:none;color:var(--ink)}
+.home{font-size:14px}
+.controls{display:flex;flex-wrap:wrap;gap:12px;align-items:center;min-width:0}
+.controls input{font:inherit;padding:6px 10px;border:1px solid var(--line);border-radius:var(--radius);background:var(--paper);color:var(--ink);max-width:220px;min-width:0;flex:1 1 140px}
+.controls button{font:inherit;padding:6px 12px;border:1px solid var(--line);border-radius:var(--radius);background:var(--wash);color:var(--ink);cursor:pointer}
+main{padding-block:32px 64px}
+h1{font-size:clamp(36px,4.8vw,63px);font-weight:500;line-height:1.1;letter-spacing:-.02em;margin:8px 0 16px}
+h2{font-size:clamp(24px,2.6vw,34px);font-weight:600;line-height:1.2;margin:56px 0 16px;padding-top:16px;border-top:1px solid var(--line)}
+h3{font-size:19px;margin:24px 0 8px}
+.kicker{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.055em;color:var(--accent-ink)}
+.lead{font-size:19px;line-height:1.65;max-width:760px}
+.small,.meta{font-size:14px;color:var(--muted)}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:8px 24px;margin:16px 0;padding:16px;background:var(--wash);border-radius:8px}
+.facts div{min-width:0;overflow-wrap:anywhere}
+.badge{display:inline-block;padding:2px 10px;border-radius:999px;border:1px solid var(--evidence);color:var(--evidence);background:var(--evidence-wash);font-size:14px;font-weight:700}
+.badge.bad{border-color:var(--accent);color:var(--accent-ink);background:var(--accent-wash)}
+.label{display:inline-block;white-space:nowrap;font-size:13px;font-weight:700;padding:0 8px;border-radius:999px;border:1px solid var(--line);background:var(--wash);color:var(--ink)}
+.label.l-disputed,.label.l-not-accepted{border-color:var(--accent);color:var(--accent-ink);background:var(--accent-wash)}
+.label.l-stated,.label.l-confirmed,.label.l-attested,.label.l-observed{border-color:var(--evidence);color:var(--evidence);background:var(--evidence-wash)}
+.label.l-hypothesis,.label.l-frame,.label.l-partly-confirmed{border-color:var(--reading);color:var(--reading);background:var(--reading-wash)}
+.table-wrap{overflow-x:auto;max-width:100%}
+.table-wrap table{min-width:640px}
+table{border-collapse:collapse;width:100%;font-size:15px}
+th,td{text-align:left;vertical-align:top;padding:8px 10px;border-bottom:1px solid var(--line);overflow-wrap:break-word;word-break:normal}
+th{background:var(--wash);font-weight:700}
+ul.records{list-style:none;padding:0;margin:0}
+ul.records>li{padding:12px 0;border-bottom:1px solid var(--line)}
+details>summary{cursor:pointer;color:var(--accent-ink)}
+details dl{display:grid;grid-template-columns:minmax(120px,max-content) 1fr;gap:4px 16px;margin:8px 0 0;font-size:14px}
+details dt{color:var(--muted)}
+details dd{margin:0;overflow-wrap:anywhere}
+.chips{display:flex;flex-direction:column;gap:6px}
+.chip{display:block;font-size:14px;line-height:1.4;text-decoration:none;padding:6px 8px;border:1px solid var(--line);border-radius:8px;background:var(--paper);color:var(--ink)}
+.accounts{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin-top:8px}
+.account{border:1px solid var(--line);border-radius:8px;padding:12px;background:var(--wash);min-width:0;overflow-wrap:anywhere}
+.account p{margin:6px 0}
+.timeline{display:flex;flex-direction:column;gap:14px}
+.track{position:relative;height:12px;background:var(--wash);border:1px solid var(--line);border-radius:999px;overflow:hidden}
+.bar{position:absolute;top:0;bottom:0;background:var(--reading);border-radius:999px}
+.bar.subject{background:var(--accent)}
+.bar.agent{background:var(--ode)}
+.axis{display:flex;justify-content:space-between;font-size:13px;color:var(--muted)}
+.served{border-left:4px solid var(--accent);padding-left:12px}
+.note{padding:12px 16px;border-left:4px solid var(--evidence);background:var(--evidence-wash);border-radius:var(--radius)}
+footer{border-top:1px solid var(--line);padding-block:24px 48px;font-size:14px;color:var(--muted)}
+@media (max-width:1000px){.wrap{padding:0 24px}}
+@media (max-width:760px){.wrap{padding:0 20px}}
+@media (max-width:440px){.wrap{padding:0 16px}details dl{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap"><a class="brand" href="../../index.html">Open Human Context &middot; example viewer</a><span class="controls" id="controls" hidden><label class="small" for="filter">Filter</label><input id="filter" type="search" autocomplete="off"><button id="theme" type="button">Theme</button></span></div></header>
+<main class="wrap" id="main">
+<p class="kicker">View as grantee</p><h1>View as GUM</h1>
+<p class="lead">Exactly what the evaluation algorithm (SPECIFICATION.md §12.3) serves to GUM (a-gum) under its grant at 2026-10-09T09:00:00Z. Nothing else exists for this grantee: there are no placeholders for what is withheld, and no counts.</p>
+<p><a href="../index.html">Back to the subject view</a></p>
+<section aria-labelledby="g-g-04"><h2 id="g-g-04">Grant g-04</h2>
+<div class="facts"><div><span class="meta">purpose</span><br>gum-export</div><div><span class="meta">mode</span><br>full</div><div><span class="meta">generated</span><br>2026-10-09T09:00:00Z</div><div><span class="meta">valid until</span><br>2027-03-29T09:05:00Z</div><div><span class="meta">subject alias</span><br>urn:ohc:alias:ss3wdkebrpbogu2kjfzqvj65tb</div></div>
+<h3>Statements</h3><ul class="records served">
+<li data-filter data-id="c-05c897e9-864b-5898-aa5f-8c2c79a94e02"><span class="label l-confirmed">✓ confirmed</span> <strong>Kofi avoids scheduling calls on Fridays.</strong> <span class="meta">Claim &middot; c-05c897e9-864b-5898-aa5f-8c2c79a94e02 &middot; facet other</span></li>
+<li data-filter data-id="c-bfbe912b-bd33-5fc4-bc28-b710f5b92482"><span class="label l-confirmed">✓ confirmed</span> <strong>Kofi prefers delivery deadlines confirmed in writing.</strong> <span class="meta">Claim &middot; c-bfbe912b-bd33-5fc4-bc28-b710f5b92482 &middot; facet other</span></li>
+<li data-filter data-id="c-01"><span class="label l-stated">✓ stated</span> <strong>No calls on Fridays.</strong> <span class="meta">Claim &middot; c-01 &middot; facet boundary, predicate time-window, horizon foundation</span></li>
+<li data-filter data-id="c-02"><span class="label l-stated">✓ stated</span> <strong>Deadlines in writing.</strong> <span class="meta">Claim &middot; c-02 &middot; facet preference, predicate format, horizon focus</span></li>
+<li data-filter data-id="c-dc0be4c1-47df-586e-a0fd-c263432e14c5"><span class="label l-confirmed">✓ confirmed</span> <strong>Kofi works late only on the evening before a delivery.</strong> <span class="meta">Claim &middot; c-dc0be4c1-47df-586e-a0fd-c263432e14c5 &middot; facet other</span></li>
+<li data-filter data-id="c-03"><span class="label l-stated">✓ stated</span> <strong>Available for short calls Tuesday to Thursday, 10:00 to 12:00, until 17 October.</strong> <span class="meta">Claim &middot; c-03 &middot; facet state, predicate availability, horizon state</span></li>
+</ul>
+<p class="small">Parties named in what is served: GUM.</p>
+</section>
+</main>
+<footer class="wrap"><p>All people in these examples are fictional. Generated by <code>tools/render_viewer.py</code>; nothing here is a real person&#39;s data.</p><p>Copyright 2026 Taras Pustovoy and contributors. Licensed under <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache-2.0</a>.</p></footer>
+<script>(function(){var c=document.getElementById('controls');if(!c)return;c.hidden=false;document.getElementById('theme').addEventListener('click',function(){var r=document.documentElement;var t=r.getAttribute('data-theme');var dark=t?t==='dark':window.matchMedia('(prefers-color-scheme: dark)').matches;r.setAttribute('data-theme',dark?'light':'dark');});var f=document.getElementById('filter');f.addEventListener('input',function(){var q=f.value.toLowerCase();var els=document.querySelectorAll('[data-filter]');for(var i=0;i<els.length;i++){els[i].hidden=!!q&&els[i].textContent.toLowerCase().indexOf(q)<0;}});})();</script>
+</body>
+</html>

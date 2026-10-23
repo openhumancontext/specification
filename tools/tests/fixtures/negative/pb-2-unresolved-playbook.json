@@ -1,0 +1,43 @@
+{
+  "description": "A lens descriptor lists a playbook that does not resolve.",
+  "expect": [
+    "PB-2"
+  ],
+  "form": "single",
+  "document": {
+    "format": "ohc.lens",
+    "specVersion": "0.1.0-draft",
+    "id": "urn:ohc:lens:x-coach-a:three-rooms",
+    "version": "0.1.0",
+    "name": {
+      "en": "Three rooms (my coach's model)",
+      "ru": "Три комнаты (модель моего коуча)"
+    },
+    "descriptorStatus": "stub",
+    "kind": "author-framework",
+    "summary": {
+      "en": "Work, rest and repair as three rooms.",
+      "ru": "Работа, отдых и восстановление как три комнаты."
+    },
+    "mentalModel": {
+      "summary": "Balance between three rooms matters more than any single habit.",
+      "attendsTo": [
+        "which room a week was spent in"
+      ],
+      "agentPosture": {
+        "do": [
+          "ask which room the person is in"
+        ],
+        "dont": [
+          "diagnose an imbalance"
+        ]
+      },
+      "helperMustNot": [
+        "present the model as a theory of the person"
+      ]
+    },
+    "playbooks": [
+      "urn:ohc:playbook:x-coach-a:missing"
+    ]
+  }
+}

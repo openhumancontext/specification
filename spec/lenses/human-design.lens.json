@@ -1,0 +1,213 @@
+{
+  "format": "ohc.lens",
+  "specVersion": "0.1.0-draft",
+  "id": "urn:ohc:lens:human-design",
+  "version": "0.2.0",
+  "name": {
+    "en": "Human Design (as a self-description frame)",
+    "ru": "Дизайн человека (как рамка самоописания)"
+  },
+  "descriptorStatus": "draft",
+  "kind": "self-description-frame",
+  "summary": {
+    "en": "A symbolic system some people use for self-description. In OHC it makes no claim to empirical validity, and its results are frame-relative.",
+    "ru": "Символическая система, которой некоторые люди пользуются для самоописания. В OHC она не претендует на эмпирическую обоснованность, а её результаты относятся только к этой рамке."
+  },
+  "constructs": [
+    {
+      "id": "human-design/type",
+      "label": {
+        "en": "Type (frame attribute)",
+        "ru": "Тип (атрибут рамки)"
+      }
+    },
+    {
+      "id": "human-design/authority",
+      "label": {
+        "en": "Authority (frame attribute)",
+        "ru": "Авторитет (атрибут рамки)"
+      }
+    },
+    {
+      "id": "human-design/profile",
+      "label": {
+        "en": "Profile (frame attribute)",
+        "ru": "Профиль (атрибут рамки)"
+      }
+    },
+    {
+      "id": "human-design/centres",
+      "label": {
+        "en": "Centres (frame attribute)",
+        "ru": "Центры (атрибут рамки)"
+      }
+    }
+  ],
+  "mentalModel": {
+    "assumptions": [
+      "the frame is meaningful to the person who chose it",
+      "the frame makes no empirical claim in OHC",
+      "every result is frame-relative"
+    ],
+    "stance": "symbolic and person-chosen",
+    "howChangeHappens": "Not addressed by OHC; the person decides how the frame is used.",
+    "agentPosture": {
+      "do": [
+        "use the person's own words"
+      ],
+      "dont": [
+        "treat frame attributes as facts about the person",
+        "present a frame attribute, or anything read from it, as an empirical trait or a prediction"
+      ]
+    },
+    "doesNotClaim": [
+      "empirical validity",
+      "predictions about the person",
+      "anything about compatibility with other people"
+    ],
+    "summary": "A chart computed from birth data offers a symbolic system the person may use for self-description.",
+    "unitOfAnalysis": "the person's own use of the system's terms",
+    "attendsTo": [
+      "how the person uses the system's terms",
+      "what it helps the person put into words"
+    ],
+    "languageGuidance": "Use the system's terms only as the person's chosen language; use the generic name only; never present it as fact or prediction.",
+    "exploratoryQuestions": [
+      "How does this language help you describe your experience?"
+    ],
+    "helperMustNot": [
+      "map chart attributes to any empirical construct"
+    ],
+    "riskNotes": [
+      "Birth date, time and place identify a person",
+      "Frames tied to spiritual practice may reveal beliefs"
+    ]
+  },
+  "toolkit": [
+    {
+      "id": "human-design.chart",
+      "name": "Chart from birth data",
+      "kind": "instrument-use",
+      "description": "A chart computed from birth data, with the engine and its version recorded.",
+      "facilitation": "self",
+      "requiresPractitioner": false,
+      "agentMayOffer": true,
+      "nonClinical": true,
+      "produces": "AssessmentRecord",
+      "cautions": [
+        "Birth data is category birth-data",
+        "Results are frame-relative"
+      ]
+    }
+  ],
+  "representations": [
+    {
+      "id": "human-design.chart",
+      "kind": "chart",
+      "resultType": "frame-attributes",
+      "description": "Type, authority, profile and centres as frame attributes, with the engine and version used."
+    }
+  ],
+  "instruments": [],
+  "adoption": {
+    "routes": [
+      "self-chosen",
+      "imported",
+      "inherited-from-practice",
+      "agent-suggested"
+    ],
+    "suggestionRequires": [
+      "the person brought up the frame themselves"
+    ],
+    "inheritanceRoles": [
+      "other"
+    ]
+  },
+  "evidence": {
+    "measurementTier": "T5",
+    "practiceTier": {
+      "clinicianDelivered": "not-assessed",
+      "selfGuided": "not-assessed",
+      "agentOffered": "not-assessed"
+    },
+    "ontologicalStatus": "symbolic-frame",
+    "citations": [
+      {
+        "ref": "Court of Florence, judgment of 3 June 2020",
+        "grade": "F2",
+        "note": "IP: no copyright in the system itself"
+      },
+      {
+        "ref": "USPTO registration No. 7724676",
+        "grade": "F",
+        "note": "IP: 'MYBODYGRAPH HUMAN DESIGN' registered 11 Mar 2025; owner Jovian Archive Media Pte. Ltd."
+      },
+      {
+        "ref": "USPTO serials 97642294 and 98217560",
+        "grade": "F",
+        "note": "IP: both applications for 'THE HUMAN DESIGN SYSTEM' were abandoned"
+      }
+    ],
+    "reviewedAt": "2026-10-09",
+    "notes": "No empirical study is relied on; the frame makes no empirical claim in OHC. The citations above concern IP only."
+  },
+  "supports": [
+    "self-description in a symbolic language the person chose"
+  ],
+  "doesNotEstablish": [
+    "any trait, state or behaviour of the person",
+    "predictions",
+    "compatibility with other people"
+  ],
+  "ip": {
+    "conceptStatus": "free-concept",
+    "marks": [
+      {
+        "mark": "MYBODYGRAPH HUMAN DESIGN",
+        "owner": "Jovian Archive Media Pte. Ltd.",
+        "status": "registered",
+        "notice": "US Reg. No. 7724676 (11 Mar 2025). Not used by OHC.",
+        "use": "avoid"
+      },
+      {
+        "mark": "THE HUMAN DESIGN SYSTEM",
+        "owner": "Jovian Archive Media Pte. Ltd.",
+        "status": "abandoned",
+        "notice": "US serials 97642294 and 98217560, both abandoned.",
+        "use": "avoid"
+      }
+    ],
+    "itemsLicence": "not applicable",
+    "scoring": "public",
+    "restrictions": [
+      "use the generic term only; never the registered composite mark",
+      "inputs are category birth-data",
+      "every result is frame-relative"
+    ],
+    "registryListing": "ok",
+    "legalReviewNeeded": true
+  },
+  "useLimits": {
+    "crossLensMapping": "not-allowed"
+  },
+  "defaults": {
+    "sensitivity": "special",
+    "categories": [
+      "birth-data"
+    ],
+    "reviewAfter": "on-change"
+  },
+  "mappings": [
+    "urn:ohc:mapping:human-design--any"
+  ],
+  "playbooks": [
+    "urn:ohc:playbook:human-design-basic"
+  ],
+  "sources": [
+    "Court of Florence, 3 June 2020",
+    "USPTO records 7724676, 97642294, 98217560"
+  ],
+  "descriptorAuthors": [
+    "OHC editors"
+  ]
+}

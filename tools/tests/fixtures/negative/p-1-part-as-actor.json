@@ -1,0 +1,18 @@
+{
+  "description": "A Part named as an interpretation author of a lens adoption (R-P2).",
+  "expect": [
+    "P-1"
+  ],
+  "form": "single",
+  "patches": [
+    {
+      "op": "set",
+      "target": "lensAdoptions",
+      "path": "/@la-01/interpretationAuthors",
+      "value": [
+        "subject",
+        "part-01"
+      ]
+    }
+  ]
+}

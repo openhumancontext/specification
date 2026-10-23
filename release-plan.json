@@ -1,0 +1,68 @@
+{
+  "format": "ohc.release-plan/1",
+  "releaseVersion": "0.1.0-draft.3",
+  "specVersion": "0.1.0-draft",
+  "rightsHolder": "Taras Pustovoy and contributors",
+  "include": [
+    ".github/**",
+    ".gitignore",
+    "AGENTS.md",
+    "CHANGELOG.md",
+    "CONTRIBUTING.md",
+    "CONTRIBUTORS.md",
+    "LICENSE",
+    "LICENSE-DOCS",
+    "LICENSING.md",
+    "NOTICE",
+    "README.md",
+    "STATUS.md",
+    "docs/**",
+    "examples/**",
+    "release-plan.json",
+    "spec/**",
+    "tools/**",
+    "viewer/**"
+  ],
+  "exclude": [
+    "internal/**",
+    ".git/**",
+    "**/__pycache__/**",
+    "**/*.pyc",
+    "dist/**",
+    "**/.DS_Store",
+    ".release-denylist.json"
+  ],
+  "licensing": {
+    "default": "Apache-2.0",
+    "rules": [
+      {"glob": "README.md", "license": "CC-BY-4.0"},
+      {"glob": "STATUS.md", "license": "CC-BY-4.0"},
+      {"glob": "CONTRIBUTING.md", "license": "CC-BY-4.0"},
+      {"glob": "CHANGELOG.md", "license": "CC-BY-4.0"},
+      {"glob": "LICENSING.md", "license": "CC-BY-4.0"},
+      {"glob": "CONTRIBUTORS.md", "license": "CC-BY-4.0"},
+      {"glob": "AGENTS.md", "license": "CC-BY-4.0"},
+      {"glob": "spec/COMPOSITION.md", "license": "CC-BY-4.0"},
+      {"glob": "spec/glossary.json", "license": "CC-BY-4.0"},
+      {"glob": "docs/**", "license": "CC-BY-4.0"}
+    ]
+  },
+  "licenseSources": {
+    "Apache-2.0": "LICENSE",
+    "CC-BY-4.0": "LICENSE-DOCS"
+  },
+  "licenseStatus": "approved-by-owner",
+  "binaryAssets": [],
+  "checks": [
+    "tools/check.py --release",
+    "unittest",
+    "tools/check_ode_example.py --ode-root ODE_CHECKOUT"
+  ],
+  "verificationSources": [
+    "tools/build_release_manifest.py",
+    "tools/check.py",
+    "tools/check_all.py",
+    "tools/check_ode_example.py"
+  ],
+  "publication": "public draft: https://github.com/openhumancontext/specification"
+}

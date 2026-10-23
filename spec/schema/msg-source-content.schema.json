@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:ohc:schema:msg-source-content:0.1.0-draft",
+  "title": "OHC source-content message",
+  "description": "EXPERIMENTAL. Holder to agent: verbatim content with redactions, after step-up. Never stored and never forwarded.",
+  "type": "object",
+  "required": [
+    "format",
+    "specVersion",
+    "id",
+    "from",
+    "to",
+    "at",
+    "source",
+    "tier",
+    "content",
+    "storage",
+    "validUntil"
+  ],
+  "properties": {
+    "format": {
+      "const": "ohc.experimental.source-content"
+    },
+    "specVersion": {
+      "$ref": "urn:ohc:schema:message:0.1.0-draft#/properties/specVersion"
+    },
+    "id": {
+      "$ref": "urn:ohc:schema:message:0.1.0-draft#/properties/id"
+    },
+    "from": {
+      "$ref": "urn:ohc:schema:message:0.1.0-draft#/properties/from"
+    },
+    "to": {
+      "$ref": "urn:ohc:schema:message:0.1.0-draft#/properties/to"
+    },
+    "at": {
+      "$ref": "urn:ohc:schema:message:0.1.0-draft#/properties/at"
+    },
+    "inReplyTo": {
+      "$ref": "urn:ohc:schema:message:0.1.0-draft#/properties/inReplyTo"
+    },
+    "source": {
+      "description": "The source, by handle.",
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Handle"
+    },
+    "tier": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/release-tiers"
+    },
+    "content": {
+      "description": "The released content, with redactions applied.",
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/Text"
+    },
+    "storage": {
+      "const": "none"
+    },
+    "forwarding": {
+      "const": false
+    },
+    "validUntil": {
+      "$ref": "urn:ohc:schema:common:0.1.0-draft#/$defs/DateTime"
+    }
+  },
+  "additionalProperties": false
+}

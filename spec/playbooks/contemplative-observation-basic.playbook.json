@@ -1,0 +1,90 @@
+{
+  "format": "ohc.playbook",
+  "specVersion": "0.1.0-draft",
+  "id": "urn:ohc:playbook:contemplative-observation-basic",
+  "version": "0.1.0",
+  "name": {
+    "en": "Contemplative observation: basic ways of working",
+    "ru": "Созерцательное наблюдение: базовые способы работы"
+  },
+  "lenses": [
+    "urn:ohc:lens:contemplative-observation"
+  ],
+  "author": "OHC editors",
+  "sources": [],
+  "licence": "Apache-2.0",
+  "situations": [
+    {
+      "id": "under-strain",
+      "when": {
+        "en": "Under strain: tired, pressed or overloaded.",
+        "ru": "Под нагрузкой: усталость, давление или перегрузка."
+      },
+      "use": {
+        "en": [
+          "Ask what is happening, in their words.",
+          "Only if they ask for other ways of looking, offer this perspective's question once: \"What changes when experience is observed without fixing on a stable self?\"",
+          "Keep their answer in their own words, and leave it there if it does not fit."
+        ],
+        "ru": [
+          "Спросите, что происходит, — словами человека.",
+          "Только если человек просит посмотреть иначе, один раз предложите вопрос этого подхода: «Что меняется, если наблюдать опыт, не привязывая его к устойчивому «я»?»",
+          "Сохраните ответ его словами и не настаивайте, если не подходит."
+        ]
+      },
+      "toolkit": [],
+      "watchFor": {
+        "en": "Do not run exercises from this perspective, and do not present yourself as practising it.",
+        "ru": "Не проводите упражнений из этого подхода и не представляйтесь практикующим его."
+      }
+    },
+    {
+      "id": "after-setback",
+      "when": {
+        "en": "After a setback.",
+        "ru": "После неудачи."
+      },
+      "use": {
+        "en": [
+          "Ask what happened, in their words.",
+          "Only if they ask for other ways of looking, offer this perspective's question once: \"What changes when experience is observed without fixing on a stable self?\"",
+          "Keep their answer in their own words, and leave it there if it does not fit."
+        ],
+        "ru": [
+          "Спросите, что произошло, — словами человека.",
+          "Только если человек просит посмотреть иначе, один раз предложите вопрос этого подхода: «Что меняется, если наблюдать опыт, не привязывая его к устойчивому «я»?»",
+          "Сохраните ответ его словами и не настаивайте, если не подходит."
+        ]
+      },
+      "toolkit": [],
+      "watchFor": {
+        "en": "Do not run exercises from this perspective, and do not present yourself as practising it.",
+        "ru": "Не проводите упражнений из этого подхода и не представляйтесь практикующим его."
+      }
+    },
+    {
+      "id": "look-back-at-an-episode",
+      "when": {
+        "en": "Looking back at something that happened.",
+        "ru": "Разбор того, что произошло."
+      },
+      "use": {
+        "en": [
+          "Ask what happened, in their words.",
+          "Only if they ask for other ways of looking, offer this perspective's question once: \"What changes when experience is observed without fixing on a stable self?\"",
+          "Keep their answer in their own words, and leave it there if it does not fit."
+        ],
+        "ru": [
+          "Спросите, что произошло, — словами человека.",
+          "Только если человек просит посмотреть иначе, один раз предложите вопрос этого подхода: «Что меняется, если наблюдать опыт, не привязывая его к устойчивому «я»?»",
+          "Сохраните ответ его словами и не настаивайте, если не подходит."
+        ]
+      },
+      "toolkit": [],
+      "watchFor": {
+        "en": "Do not run exercises from this perspective, and do not present yourself as practising it.",
+        "ru": "Не проводите упражнений из этого подхода и не представляйтесь практикующим его."
+      }
+    }
+  ]
+}

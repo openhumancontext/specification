@@ -1,0 +1,1216 @@
+{
+  "format": "ohc.catalog",
+  "id": "urn:ohc:catalog:reference-targets",
+  "version": "0.1.0",
+  "specVersion": "0.1.0-draft",
+  "title": {
+    "en": "Allowed reference targets",
+    "ru": "Допустимые цели ссылок"
+  },
+  "description": {
+    "en": "The allowed-reference matrix (RF-1): for every reference field of a content record, the record kinds it may point at. A tombstoned target is always allowed (TB-2). Party references are governed by TP-1/TP-2 and CL-6; supersedes stays within one kind (R-V2); Relation endpoints follow the relation codes (RL-2). A reference field not listed here may not point at any record.",
+    "ru": "Матрица допустимых ссылок (RF-1): для каждого поля-ссылки содержательной записи — виды записей, на которые оно может указывать. Цель-надгробие допустима всегда (TB-2). Ссылки на участников регулируются TP-1/TP-2 и CL-6; supersedes остаётся в пределах одного вида (R-V2); концы Relation следуют кодам отношений (RL-2). Поле-ссылка, не перечисленное здесь, не может указывать ни на какую запись."
+  },
+  "closed": true,
+  "generatesEnum": false,
+  "codes": [
+    {
+      "code": "Claim.evidence.ref",
+      "label": {
+        "en": "Claim · evidence.ref",
+        "ru": "Claim · evidence.ref"
+      },
+      "definition": {
+        "en": "Evidence grounds by reference of a Claim may point only at: Source, Episode, Claim, AssessmentRecord.",
+        "ru": "Поле «основания evidence по ссылке» записи Claim может ссылаться только на: Source, Episode, Claim, AssessmentRecord."
+      },
+      "endpoints": [
+        {
+          "from": [
+            "Claim"
+          ],
+          "to": [
+            "Source",
+            "Episode",
+            "Claim",
+            "AssessmentRecord"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "Claim.evidence.span",
+      "label": {
+        "en": "Claim · evidence.span",
+        "ru": "Claim · evidence.span"
+      },
+      "definition": {
+        "en": "Evidence spans of a Claim may point only at: Source.",
+        "ru": "Поле «фрагменты evidence» записи Claim может ссылаться только на: Source."
+      },
+      "endpoints": [
+        {
+          "from": [
+            "Claim"
+          ],
+          "to": [
+            "Source"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "Claim.derivedFrom",
+      "label": {
+        "en": "Claim · derivedFrom",
+        "ru": "Claim · derivedFrom"
+      },
+      "definition": {
+        "en": "DerivedFrom of a Claim may point only at: Claim, AssessmentRecord, Source.",
+        "ru": "Поле «derivedFrom» записи Claim может ссылаться только на: Claim, AssessmentRecord, Source."
+      },
+      "endpoints": [
+        {
+          "from": [
+            "Claim"
+          ],
+          "to": [
+            "Claim",
+            "AssessmentRecord",
+            "Source"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "Claim.valueAddress.source",
+      "label": {
+        "en": "Claim · valueAddress.source",
+        "ru": "Claim · valueAddress.source"
+      },
+      "definition": {
+        "en": "The live value's Source of a Claim may point only at: Source.",
+        "ru": "Поле «источник живого значения» записи Claim может ссылаться только на: Source."
+      },
+      "endpoints": [
+        {
+          "from": [
+            "Claim"
+          ],
+          "to": [
+            "Source"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "Source.derivedFrom",
+      "label": {
+        "en": "Source · derivedFrom",
+        "ru": "Source · derivedFrom"
+      },
+      "definition": {
+        "en": "DerivedFrom of a Source may point only at: Source.",
+        "ru": "Поле «derivedFrom» записи Source может ссылаться только на: Source."
+      },
+      "endpoints": [
+        {
+          "from": [
+            "Source"
+          ],
+          "to": [
+            "Source"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "Episode.derivedFrom",
+      "label": {
+        "en": "Episode · derivedFrom",
+        "ru": "Episode · derivedFrom"
+      },
+      "definition": {
+        "en": "DerivedFrom of a Episode may point only at: Source, Episode.",
+        "ru": "Поле «derivedFrom» записи Episode может ссылаться только на: Source, Episode."
+      },
+      "endpoints": [
+        {
+          "from": [
+            "Episode"
+          ],
+          "to": [
+            "Source",
+            "Episode"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "Relation.derivedFrom",
+      "label": {
+        "en": "Relation · derivedFrom",
+        "ru": "Relation · derivedFrom"
+      },
+      "definition": {
+        "en": "DerivedFrom of a Relation may point only at: Source, Episode, Claim.",
+        "ru": "Поле «derivedFrom» записи Relation может ссылаться только на: Source, Episode, Claim."
+      },
+      "endpoints": [
+        {
+          "from": [
+            "Relation"
+          ],
+          "to": [
+            "Source",
+            "Episode",
+            "Claim"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "HealthRef.derivedFrom",
+      "label": {
+        "en": "HealthRef · derivedFrom",
+        "ru": "HealthRef · derivedFrom"
+      },
+      "definition": {
+        "en": "DerivedFrom of a HealthRef may point only at: Source, Claim.",
+        "ru": "Поле «derivedFrom» записи HealthRef может ссылаться только на: Source, Claim."
+      },
+      "endpoints": [
+        {
+          "from": [
+            "HealthRef"
+          ],
+          "to": [
+            "Source",
+            "Claim"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "Practice.derivedFrom",
+      "label": {
+        "en": "Practice · derivedFrom",
+        "ru": "Practice · derivedFrom"
+      },
+      "definition": {
+        "en": "DerivedFrom of a Practice may point only at: Source, Episode, Claim, LensAdoption, Outcome.",
+        "ru": "Поле «derivedFrom» записи Practice может ссылаться только на: Source, Episode, Claim, LensAdoption, Outcome."
+      },
+      "endpoints": [
+        {
+          "from": [
+            "Practice"
+          ],
+          "to": [
+            "Source",
+            "Episode",
+            "Claim",
+            "LensAdoption",
+            "Outcome"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "Interpretation.derivedFrom",
+      "label": {
+        "en": "Interpretation · derivedFrom",
+        "ru": "Interpretation · derivedFrom"
+      },
+      "definition": {
+        "en": "DerivedFrom of a Interpretation may point only at: Source, Episode, Claim, Pattern, AssessmentRecord, Interpretation.",
+        "ru": "Поле «derivedFrom» записи Interpretation может ссылаться только на: Source, Episode, Claim, Pattern, AssessmentRecord, Interpretation."
+      },
+      "endpoints": [
+        {
+          "from": [
+            "Interpretation"
+          ],
+          "to": [
+            "Source",
+            "Episode",
+            "Claim",
+            "Pattern",
+            "AssessmentRecord",
+            "Interpretation"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "Tension.derivedFrom",
+      "label": {
+        "en": "Tension · derivedFrom",
+        "ru": "Tension · derivedFrom"
+      },
+      "definition": {
+        "en": "DerivedFrom of a Tension may point only at: Source, Episode, Claim, Interpretation, AssessmentRecord.",
+        "ru": "Поле «derivedFrom» записи Tension может ссылаться только на: Source, Episode, Claim, Interpretation, AssessmentRecord."
+      },
+      "endpoints": [
+        {
+          "from": [
+            "Tension"
+          ],
+          "to": [
+            "Source",
+            "Episode",
+            "Claim",
+            "Interpretation",
+            "AssessmentRecord"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ModelView.derivedFrom",
+      "label": {
+        "en": "ModelView · derivedFrom",
+        "ru": "ModelView · derivedFrom"
+      },
+      "definition": {
+        "en": "DerivedFrom of a ModelView may point only at: Source, Episode, Claim, Pattern, AssessmentRecord, Interpretation.",
+        "ru": "Поле «derivedFrom» записи ModelView может ссылаться только на: Source, Episode, Claim, Pattern, AssessmentRecord, Interpretation."
+      },
+      "endpoints": [
+        {
+          "from": [
+            "ModelView"
+          ],
+          "to": [
+            "Source",
+            "Episode",
+            "Claim",
+            "Pattern",
+            "AssessmentRecord",
+            "Interpretation"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "Pattern.derivedFrom",
+      "label": {
+        "en": "Pattern · derivedFrom",
+        "ru": "Pattern · derivedFrom"
+      },
+      "definition": {
+        "en": "DerivedFrom of a Pattern may point only at: Source, Episode, Claim, AssessmentRecord.",
+        "ru": "Поле «derivedFrom» записи Pattern может ссылаться только на: Source, Episode, Claim, AssessmentRecord."
+      },
+      "endpoints": [
+        {
+          "from": [
+            "Pattern"
+          ],
+          "to": [
+            "Source",
+            "Episode",
+            "Claim",
+            "AssessmentRecord"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "Part.derivedFrom",
+      "label": {
+        "en": "Part · derivedFrom",
+        "ru": "Part · derivedFrom"
+      },
+      "definition": {
+        "en": "DerivedFrom of a Part may point only at: Source, Episode, Interpretation.",
+        "ru": "Поле «derivedFrom» записи Part может ссылаться только на: Source, Episode, Interpretation."
+      },
+      "endpoints": [
+        {
+          "from": [
+            "Part"
+          ],
+          "to": [
+            "Source",
+            "Episode",
+            "Interpretation"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "Outcome.derivedFrom",
+      "label": {
+        "en": "Outcome · derivedFrom",
+        "ru": "Outcome · derivedFrom"
+      },
+      "definition": {
+        "en": "DerivedFrom of a Outcome may point only at: Source, Episode, Practice, RecallCue.",
+        "ru": "Поле «derivedFrom» записи Outcome может ссылаться только на: Source, Episode, Practice, RecallCue."
+      },
+      "endpoints": [
+        {
+          "from": [
+            "Outcome"
+          ],
+          "to": [
+            "Source",
+            "Episode",
+            "Practice",
+            "RecallCue"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "RecallCue.derivedFrom",
+      "label": {
+        "en": "RecallCue · derivedFrom",
+        "ru": "RecallCue · derivedFrom"
+      },
+      "definition": {
+        "en": "DerivedFrom of a RecallCue may point only at: Source, Episode, Claim, Practice, Outcome, Pattern, Interpretation.",
+        "ru": "Поле «derivedFrom» записи RecallCue может ссылаться только на: Source, Episode, Claim, Practice, Outcome, Pattern, Interpretation."
+      },
+      "endpoints": [
+        {
+          "from": [
+            "RecallCue"
+          ],
+          "to": [
+            "Source",
+            "Episode",
+            "Claim",
+            "Practice",
+            "Outcome",
+            "Pattern",
+            "Interpretation"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "Source.custody.releaseRef",
+      "label": {
+        "en": "Source · custody.releaseRef",
+        "ru": "Source · custody.releaseRef"
+      },
+      "definition": {
+        "en": "The practitioner's release of a Source may point only at: Source.",
+        "ru": "Поле «разрешение практика» записи Source может ссылаться только на: Source."
+      },
+      "endpoints": [
+        {
+          "from": [
+            "Source"
+          ],
+          "to": [
+            "Source"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "Episode.accounts.evidence",
+      "label": {
+        "en": "Episode · accounts.evidence",
+        "ru": "Episode · accounts.evidence"
+      },
+      "definition": {
+        "en": "Account evidence spans of a Episode may point only at: Source.",
+        "ru": "Поле «фрагменты-свидетельства рассказов» записи Episode может ссылаться только на: Source."
+      },
+      "endpoints": [
+        {
+          "from": [
+            "Episode"
+          ],
+          "to": [
+            "Source"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "Episode.externalConfirmation.basis",
+      "label": {
+        "en": "Episode · externalConfirmation.basis",
+        "ru": "Episode · externalConfirmation.basis"
+      },
+      "definition": {
+        "en": "External confirmation basis of a Episode may point only at: Source.",
+        "ru": "Поле «основание внешнего подтверждения» записи Episode может ссылаться только на: Source."
+      },
+      "endpoints": [
+        {
+          "from": [
+            "Episode"
+          ],
+          "to": [
+            "Source"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "Interpretation.about",
+      "label": {
+        "en": "Interpretation · about",
+        "ru": "Interpretation · about"
+      },
+      "definition": {
+        "en": "What is read of a Interpretation may point only at: Episode, Claim, Pattern, AssessmentRecord.",
+        "ru": "Поле «что прочитывается» записи Interpretation может ссылаться только на: Episode, Claim, Pattern, AssessmentRecord."
+      },
+      "endpoints": [
+        {
+          "from": [
+            "Interpretation"
+          ],
+          "to": [
+            "Episode",
+            "Claim",
+            "Pattern",
+            "AssessmentRecord"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "Interpretation.about.span",
+      "label": {
+        "en": "Interpretation · about.span",
+        "ru": "Interpretation · about.span"
+      },
+      "definition": {
+        "en": "Spans that are read of a Interpretation may point only at: Source.",
+        "ru": "Поле «прочитываемые фрагменты» записи Interpretation может ссылаться только на: Source."
+      },
+      "endpoints": [
+        {
+          "from": [
+            "Interpretation"
+          ],
+          "to": [
+            "Source"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "Interpretation.grounds.ref",
+      "label": {
+        "en": "Interpretation · grounds.ref",
+        "ru": "Interpretation · grounds.ref"
+      },
+      "definition": {
+        "en": "Grounds by reference of a Interpretation may point only at: Source, Episode, Claim, AssessmentRecord, Pattern.",
+        "ru": "Поле «основания по ссылке» записи Interpretation может ссылаться только на: Source, Episode, Claim, AssessmentRecord, Pattern."
+      },
+      "endpoints": [
+        {
+          "from": [
+            "Interpretation"
+          ],
+          "to": [
+            "Source",
+            "Episode",
+            "Claim",
+            "AssessmentRecord",
+            "Pattern"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "Interpretation.grounds.span",
+      "label": {
+        "en": "Interpretation · grounds.span",
+        "ru": "Interpretation · grounds.span"
+      },
+      "definition": {
+        "en": "Ground spans of a Interpretation may point only at: Source.",
+        "ru": "Поле «фрагменты-основания» записи Interpretation может ссылаться только на: Source."
+      },
+      "endpoints": [
+        {
+          "from": [
+            "Interpretation"
+          ],
+          "to": [
+            "Source"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "Interpretation.counterEvidence.ref",
+      "label": {
+        "en": "Interpretation · counterEvidence.ref",
+        "ru": "Interpretation · counterEvidence.ref"
+      },
+      "definition": {
+        "en": "Counter-evidence by reference of a Interpretation may point only at: Source, Episode, Claim, AssessmentRecord, Pattern.",
+        "ru": "Поле «контрсвидетельства по ссылке» записи Interpretation может ссылаться только на: Source, Episode, Claim, AssessmentRecord, Pattern."
+      },
+      "endpoints": [
+        {
+          "from": [
+            "Interpretation"
+          ],
+          "to": [
+            "Source",
+            "Episode",
+            "Claim",
+            "AssessmentRecord",
+            "Pattern"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "Interpretation.counterEvidence.span",
+      "label": {
+        "en": "Interpretation · counterEvidence.span",
+        "ru": "Interpretation · counterEvidence.span"
+      },
+      "definition": {
+        "en": "Counter-evidence spans of a Interpretation may point only at: Source.",
+        "ru": "Поле «фрагменты-контрсвидетельства» записи Interpretation может ссылаться только на: Source."
+      },
+      "endpoints": [
+        {
+          "from": [
+            "Interpretation"
+          ],
+          "to": [
+            "Source"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "Interpretation.adoption",
+      "label": {
+        "en": "Interpretation · adoption",
+        "ru": "Interpretation · adoption"
+      },
+      "definition": {
+        "en": "The lens adoption of a Interpretation may point only at: LensAdoption.",
+        "ru": "Поле «принятие линзы» записи Interpretation может ссылаться только на: LensAdoption."
+      },
+      "endpoints": [
+        {
+          "from": [
+            "Interpretation"
+          ],
+          "to": [
+            "LensAdoption"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "Tension.between",
+      "label": {
+        "en": "Tension · between",
+        "ru": "Tension · between"
+      },
+      "definition": {
+        "en": "The members of the conflict of a Tension may point only at: Claim, Interpretation, AssessmentRecord, Source.",
+        "ru": "Поле «стороны противоречия» записи Tension может ссылаться только на: Claim, Interpretation, AssessmentRecord, Source."
+      },
+      "endpoints": [
+        {
+          "from": [
+            "Tension"
+          ],
+          "to": [
+            "Claim",
+            "Interpretation",
+            "AssessmentRecord",
+            "Source"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "LensAdoption.practice.releaseRef",
+      "label": {
+        "en": "LensAdoption · practice.releaseRef",
+        "ru": "LensAdoption · practice.releaseRef"
+      },
+      "definition": {
+        "en": "The practitioner's release of a LensAdoption may point only at: Source.",
+        "ru": "Поле «разрешение практика» записи LensAdoption может ссылаться только на: Source."
+      },
+      "endpoints": [
+        {
+          "from": [
+            "LensAdoption"
+          ],
+          "to": [
+            "Source"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "LensAdoption.derivedFrom",
+      "label": {
+        "en": "LensAdoption · derivedFrom",
+        "ru": "LensAdoption · derivedFrom"
+      },
+      "definition": {
+        "en": "DerivedFrom (imported adoptions) of a LensAdoption may point only at: Source, AssessmentRecord, Episode.",
+        "ru": "Поле «derivedFrom (импортированные принятия)» записи LensAdoption может ссылаться только на: Source, AssessmentRecord, Episode."
+      },
+      "endpoints": [
+        {
+          "from": [
+            "LensAdoption"
+          ],
+          "to": [
+            "Source",
+            "AssessmentRecord",
+            "Episode"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "AssessmentRecord.source",
+      "label": {
+        "en": "AssessmentRecord · source",
+        "ru": "AssessmentRecord · source"
+      },
+      "definition": {
+        "en": "The original report of a AssessmentRecord may point only at: Source.",
+        "ru": "Поле «исходный отчёт» записи AssessmentRecord может ссылаться только на: Source."
+      },
+      "endpoints": [
+        {
+          "from": [
+            "AssessmentRecord"
+          ],
+          "to": [
+            "Source"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "AssessmentRecord.derivedFrom",
+      "label": {
+        "en": "AssessmentRecord · derivedFrom",
+        "ru": "AssessmentRecord · derivedFrom"
+      },
+      "definition": {
+        "en": "DerivedFrom of a AssessmentRecord may point only at: Source, Claim, AssessmentRecord, Episode.",
+        "ru": "Поле «derivedFrom» записи AssessmentRecord может ссылаться только на: Source, Claim, AssessmentRecord, Episode."
+      },
+      "endpoints": [
+        {
+          "from": [
+            "AssessmentRecord"
+          ],
+          "to": [
+            "Source",
+            "Claim",
+            "AssessmentRecord",
+            "Episode"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ModelView.hypotheses",
+      "label": {
+        "en": "ModelView · hypotheses",
+        "ru": "ModelView · hypotheses"
+      },
+      "definition": {
+        "en": "The hypotheses of a ModelView may point only at: Interpretation.",
+        "ru": "Поле «гипотезы» записи ModelView может ссылаться только на: Interpretation."
+      },
+      "endpoints": [
+        {
+          "from": [
+            "ModelView"
+          ],
+          "to": [
+            "Interpretation"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ModelView.scope.episodes",
+      "label": {
+        "en": "ModelView · scope.episodes",
+        "ru": "ModelView · scope.episodes"
+      },
+      "definition": {
+        "en": "Scoped episodes of a ModelView may point only at: Episode.",
+        "ru": "Поле «эпизоды в охвате» записи ModelView может ссылаться только на: Episode."
+      },
+      "endpoints": [
+        {
+          "from": [
+            "ModelView"
+          ],
+          "to": [
+            "Episode"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ModelView.scope.sources",
+      "label": {
+        "en": "ModelView · scope.sources",
+        "ru": "ModelView · scope.sources"
+      },
+      "definition": {
+        "en": "Scoped sources of a ModelView may point only at: Source.",
+        "ru": "Поле «источники в охвате» записи ModelView может ссылаться только на: Source."
+      },
+      "endpoints": [
+        {
+          "from": [
+            "ModelView"
+          ],
+          "to": [
+            "Source"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ModelView.grounds.ref",
+      "label": {
+        "en": "ModelView · grounds.ref",
+        "ru": "ModelView · grounds.ref"
+      },
+      "definition": {
+        "en": "Grounds by reference of a ModelView may point only at: Source, Episode, Claim, AssessmentRecord, Pattern.",
+        "ru": "Поле «основания по ссылке» записи ModelView может ссылаться только на: Source, Episode, Claim, AssessmentRecord, Pattern."
+      },
+      "endpoints": [
+        {
+          "from": [
+            "ModelView"
+          ],
+          "to": [
+            "Source",
+            "Episode",
+            "Claim",
+            "AssessmentRecord",
+            "Pattern"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ModelView.grounds.span",
+      "label": {
+        "en": "ModelView · grounds.span",
+        "ru": "ModelView · grounds.span"
+      },
+      "definition": {
+        "en": "Ground spans of a ModelView may point only at: Source.",
+        "ru": "Поле «фрагменты-основания» записи ModelView может ссылаться только на: Source."
+      },
+      "endpoints": [
+        {
+          "from": [
+            "ModelView"
+          ],
+          "to": [
+            "Source"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ModelView.alternatives",
+      "label": {
+        "en": "ModelView · alternatives",
+        "ru": "ModelView · alternatives"
+      },
+      "definition": {
+        "en": "Alternative model views of a ModelView may point only at: ModelView.",
+        "ru": "Поле «альтернативные модельные взгляды» записи ModelView может ссылаться только на: ModelView."
+      },
+      "endpoints": [
+        {
+          "from": [
+            "ModelView"
+          ],
+          "to": [
+            "ModelView"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ModelView.adoption",
+      "label": {
+        "en": "ModelView · adoption",
+        "ru": "ModelView · adoption"
+      },
+      "definition": {
+        "en": "The lens adoption of a ModelView may point only at: LensAdoption.",
+        "ru": "Поле «принятие линзы» записи ModelView может ссылаться только на: LensAdoption."
+      },
+      "endpoints": [
+        {
+          "from": [
+            "ModelView"
+          ],
+          "to": [
+            "LensAdoption"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "Pattern.episodes",
+      "label": {
+        "en": "Pattern · episodes",
+        "ru": "Pattern · episodes"
+      },
+      "definition": {
+        "en": "The recurring episodes of a Pattern may point only at: Episode.",
+        "ru": "Поле «повторяющиеся эпизоды» записи Pattern может ссылаться только на: Episode."
+      },
+      "endpoints": [
+        {
+          "from": [
+            "Pattern"
+          ],
+          "to": [
+            "Episode"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "Pattern.grounds.ref",
+      "label": {
+        "en": "Pattern · grounds.ref",
+        "ru": "Pattern · grounds.ref"
+      },
+      "definition": {
+        "en": "Grounds by reference of a Pattern may point only at: Source, Episode, Claim, AssessmentRecord, Pattern.",
+        "ru": "Поле «основания по ссылке» записи Pattern может ссылаться только на: Source, Episode, Claim, AssessmentRecord, Pattern."
+      },
+      "endpoints": [
+        {
+          "from": [
+            "Pattern"
+          ],
+          "to": [
+            "Source",
+            "Episode",
+            "Claim",
+            "AssessmentRecord",
+            "Pattern"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "Pattern.grounds.span",
+      "label": {
+        "en": "Pattern · grounds.span",
+        "ru": "Pattern · grounds.span"
+      },
+      "definition": {
+        "en": "Ground spans of a Pattern may point only at: Source.",
+        "ru": "Поле «фрагменты-основания» записи Pattern может ссылаться только на: Source."
+      },
+      "endpoints": [
+        {
+          "from": [
+            "Pattern"
+          ],
+          "to": [
+            "Source"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "Pattern.counterEvidence.ref",
+      "label": {
+        "en": "Pattern · counterEvidence.ref",
+        "ru": "Pattern · counterEvidence.ref"
+      },
+      "definition": {
+        "en": "Counter-evidence by reference of a Pattern may point only at: Source, Episode, Claim, AssessmentRecord, Pattern.",
+        "ru": "Поле «контрсвидетельства по ссылке» записи Pattern может ссылаться только на: Source, Episode, Claim, AssessmentRecord, Pattern."
+      },
+      "endpoints": [
+        {
+          "from": [
+            "Pattern"
+          ],
+          "to": [
+            "Source",
+            "Episode",
+            "Claim",
+            "AssessmentRecord",
+            "Pattern"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "Pattern.counterEvidence.span",
+      "label": {
+        "en": "Pattern · counterEvidence.span",
+        "ru": "Pattern · counterEvidence.span"
+      },
+      "definition": {
+        "en": "Counter-evidence spans of a Pattern may point only at: Source.",
+        "ru": "Поле «фрагменты-контрсвидетельства» записи Pattern может ссылаться только на: Source."
+      },
+      "endpoints": [
+        {
+          "from": [
+            "Pattern"
+          ],
+          "to": [
+            "Source"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "Pattern.adoption",
+      "label": {
+        "en": "Pattern · adoption",
+        "ru": "Pattern · adoption"
+      },
+      "definition": {
+        "en": "The lens adoption of a Pattern may point only at: LensAdoption.",
+        "ru": "Поле «принятие линзы» записи Pattern может ссылаться только на: LensAdoption."
+      },
+      "endpoints": [
+        {
+          "from": [
+            "Pattern"
+          ],
+          "to": [
+            "LensAdoption"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "Part.adoption",
+      "label": {
+        "en": "Part · adoption",
+        "ru": "Part · adoption"
+      },
+      "definition": {
+        "en": "The lens adoption of a Part may point only at: LensAdoption.",
+        "ru": "Поле «принятие линзы» записи Part может ссылаться только на: LensAdoption."
+      },
+      "endpoints": [
+        {
+          "from": [
+            "Part"
+          ],
+          "to": [
+            "LensAdoption"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "Outcome.about.practice",
+      "label": {
+        "en": "Outcome · about.practice",
+        "ru": "Outcome · about.practice"
+      },
+      "definition": {
+        "en": "The practice of a Outcome may point only at: Practice.",
+        "ru": "Поле «практика» записи Outcome может ссылаться только на: Practice."
+      },
+      "endpoints": [
+        {
+          "from": [
+            "Outcome"
+          ],
+          "to": [
+            "Practice"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "Outcome.about.recallCue",
+      "label": {
+        "en": "Outcome · about.recallCue",
+        "ru": "Outcome · about.recallCue"
+      },
+      "definition": {
+        "en": "The recall cue of a Outcome may point only at: RecallCue.",
+        "ru": "Поле «подсказка-напоминание» записи Outcome может ссылаться только на: RecallCue."
+      },
+      "endpoints": [
+        {
+          "from": [
+            "Outcome"
+          ],
+          "to": [
+            "RecallCue"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "Outcome.about.proposal",
+      "label": {
+        "en": "Outcome · about.proposal",
+        "ru": "Outcome · about.proposal"
+      },
+      "definition": {
+        "en": "The proposal of a Outcome may point only at: Proposal.",
+        "ru": "Поле «предложение» записи Outcome может ссылаться только на: Proposal."
+      },
+      "endpoints": [
+        {
+          "from": [
+            "Outcome"
+          ],
+          "to": [
+            "Proposal"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "Outcome.about.interpretation",
+      "label": {
+        "en": "Outcome · about.interpretation",
+        "ru": "Outcome · about.interpretation"
+      },
+      "definition": {
+        "en": "The interpretation of a Outcome may point only at: Interpretation.",
+        "ru": "Поле «интерпретация» записи Outcome может ссылаться только на: Interpretation."
+      },
+      "endpoints": [
+        {
+          "from": [
+            "Outcome"
+          ],
+          "to": [
+            "Interpretation"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "Outcome.about.modelView",
+      "label": {
+        "en": "Outcome · about.modelView",
+        "ru": "Outcome · about.modelView"
+      },
+      "definition": {
+        "en": "The model view of a Outcome may point only at: ModelView.",
+        "ru": "Поле «модельный взгляд» записи Outcome может ссылаться только на: ModelView."
+      },
+      "endpoints": [
+        {
+          "from": [
+            "Outcome"
+          ],
+          "to": [
+            "ModelView"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "Outcome.episode",
+      "label": {
+        "en": "Outcome · episode",
+        "ru": "Outcome · episode"
+      },
+      "definition": {
+        "en": "Where it happened of a Outcome may point only at: Episode.",
+        "ru": "Поле «где это произошло» записи Outcome может ссылаться только на: Episode."
+      },
+      "endpoints": [
+        {
+          "from": [
+            "Outcome"
+          ],
+          "to": [
+            "Episode"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "Outcome.delivery.presented",
+      "label": {
+        "en": "Outcome · delivery.presented",
+        "ru": "Outcome · delivery.presented"
+      },
+      "definition": {
+        "en": "What was presented of a Outcome may point only at: Practice, Episode, Interpretation, Claim, Pattern, ModelView, AssessmentRecord.",
+        "ru": "Поле «что было показано» записи Outcome может ссылаться только на: Practice, Episode, Interpretation, Claim, Pattern, ModelView, AssessmentRecord."
+      },
+      "endpoints": [
+        {
+          "from": [
+            "Outcome"
+          ],
+          "to": [
+            "Practice",
+            "Episode",
+            "Interpretation",
+            "Claim",
+            "Pattern",
+            "ModelView",
+            "AssessmentRecord"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "RecallCue.offer.targets",
+      "label": {
+        "en": "RecallCue · offer.targets",
+        "ru": "RecallCue · offer.targets"
+      },
+      "definition": {
+        "en": "What the cue offers back of a RecallCue may point only at: Practice, Episode, Interpretation, Claim, Pattern, ModelView, AssessmentRecord, Part.",
+        "ru": "Поле «что подсказка возвращает» записи RecallCue может ссылаться только на: Practice, Episode, Interpretation, Claim, Pattern, ModelView, AssessmentRecord, Part."
+      },
+      "endpoints": [
+        {
+          "from": [
+            "RecallCue"
+          ],
+          "to": [
+            "Practice",
+            "Episode",
+            "Interpretation",
+            "Claim",
+            "Pattern",
+            "ModelView",
+            "AssessmentRecord",
+            "Part"
+          ]
+        }
+      ]
+    }
+  ]
+}

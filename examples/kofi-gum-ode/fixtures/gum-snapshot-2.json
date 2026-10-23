@@ -1,0 +1,163 @@
+{
+  "gumVersion": "0.1.11",
+  "snapshotTakenAt": "2026-10-05T10:00:00Z",
+  "synthetic": true,
+  "note": "Synthetic GUM tables. GUM has no subject column; the person is named only in the importer configuration.",
+  "observations": [
+    {
+      "id": 1,
+      "observer_name": "Screen",
+      "content": "Kofi has a German legal contract open in a translation editor. The glossary panel lists about forty new legal terms.",
+      "content_type": "input_text",
+      "created_at": "2026-09-15T10:12:00Z",
+      "updated_at": "2026-09-15T10:12:00Z"
+    },
+    {
+      "id": 2,
+      "observer_name": "Screen",
+      "content": "Kofi writes a reply declining a video call on Friday and proposes Tuesday morning instead.",
+      "content_type": "input_text",
+      "created_at": "2026-09-19T09:05:00Z",
+      "updated_at": "2026-09-19T09:05:00Z"
+    },
+    {
+      "id": 3,
+      "observer_name": "Calendar",
+      "content": "Calendar for the week: no meetings on Friday; three two-hour focus blocks on Monday, Wednesday and Thursday.",
+      "content_type": "input_text",
+      "created_at": "2026-09-19T07:00:00Z",
+      "updated_at": "2026-09-19T07:00:00Z"
+    },
+    {
+      "id": 4,
+      "observer_name": "Screen",
+      "content": "Kofi edits the translation file between 22:00 and 01:30 on two consecutive nights before a delivery.",
+      "content_type": "input_text",
+      "created_at": "2026-09-23T01:40:00Z",
+      "updated_at": "2026-09-23T01:40:00Z"
+    },
+    {
+      "id": 5,
+      "observer_name": "Screen",
+      "content": "In a chat reply, Kofi asks for the delivery deadline to be confirmed in writing.",
+      "content_type": "input_text",
+      "created_at": "2026-09-24T11:20:00Z",
+      "updated_at": "2026-09-24T11:20:00Z"
+    },
+    {
+      "id": 6,
+      "observer_name": "Calendar",
+      "content": "A review call is moved from Friday to Monday.",
+      "content_type": "input_text",
+      "created_at": "2026-09-26T08:00:00Z",
+      "updated_at": "2026-09-26T08:00:00Z"
+    },
+    {
+      "id": 7,
+      "observer_name": "Screen",
+      "content": "In a chat, Kofi writes that this deadline week is very stressful.",
+      "content_type": "input_text",
+      "created_at": "2026-10-02T23:10:00Z",
+      "updated_at": "2026-10-02T23:10:00Z"
+    },
+    {
+      "id": 8,
+      "observer_name": "Screen",
+      "content": "Kofi edits the translation file until 23:30 on the evening before a delivery; there is no late work on the other evenings of the week.",
+      "content_type": "input_text",
+      "created_at": "2026-10-03T23:40:00Z",
+      "updated_at": "2026-10-03T23:40:00Z"
+    }
+  ],
+  "propositions": [
+    {
+      "id": 1,
+      "text": "Kofi avoids scheduling calls on Fridays.",
+      "reasoning": "Kofi declined a Friday video call and keeps Fridays free of meetings; a Friday call was moved to Monday.",
+      "confidence": 8,
+      "decay": 7,
+      "created_at": "2026-09-26T08:05:00Z",
+      "updated_at": "2026-09-26T08:05:00Z",
+      "revision_group": "3f1c9a2e5b7d4c8e9a0b1c2d3e4f5a6b",
+      "version": 1
+    },
+    {
+      "id": 2,
+      "text": "Kofi prefers delivery deadlines confirmed in writing.",
+      "reasoning": "Kofi asked in a chat for the delivery deadline to be confirmed in writing.",
+      "confidence": 7,
+      "decay": 6,
+      "created_at": "2026-09-24T11:25:00Z",
+      "updated_at": "2026-09-24T11:25:00Z",
+      "revision_group": "8b2d4f6a1c3e5b7d9f0a2c4e6b8d0f1a",
+      "version": 1
+    },
+    {
+      "id": 5,
+      "text": "Kofi plans his week around long focus blocks.",
+      "reasoning": "The calendar shows three two-hour focus blocks.",
+      "confidence": null,
+      "decay": null,
+      "created_at": "2026-09-19T07:05:00Z",
+      "updated_at": "2026-09-19T07:05:00Z",
+      "revision_group": "e0a2c4b6d8f0a2c4e6b8d0f2a4c6e8b0",
+      "version": 1
+    },
+    {
+      "id": 6,
+      "text": "Kofi works late only on the evening before a delivery.",
+      "reasoning": "Late work appears only on the evening before a delivery; other evenings show no work.",
+      "confidence": 7,
+      "decay": 5,
+      "created_at": "2026-10-03T23:45:00Z",
+      "updated_at": "2026-10-03T23:45:00Z",
+      "revision_group": "c4e6a8b0d2f4a6c8e0b2d4f6a8c0e2b4",
+      "version": 1
+    },
+    {
+      "id": 7,
+      "text": "Kofi is under heavy stress in deadline weeks.",
+      "reasoning": "Kofi wrote in a chat that a deadline week was very stressful.",
+      "confidence": 6,
+      "decay": 3,
+      "created_at": "2026-10-02T23:15:00Z",
+      "updated_at": "2026-10-02T23:15:00Z",
+      "revision_group": "9a1b2c3d4e5f60718293a4b5c6d7e8f9",
+      "version": 1
+    }
+  ],
+  "observation_proposition": [
+    {
+      "observation_id": 2,
+      "proposition_id": 1
+    },
+    {
+      "observation_id": 3,
+      "proposition_id": 1
+    },
+    {
+      "observation_id": 6,
+      "proposition_id": 1
+    },
+    {
+      "observation_id": 5,
+      "proposition_id": 2
+    },
+    {
+      "observation_id": 3,
+      "proposition_id": 5
+    },
+    {
+      "observation_id": 4,
+      "proposition_id": 6
+    },
+    {
+      "observation_id": 8,
+      "proposition_id": 6
+    },
+    {
+      "observation_id": 7,
+      "proposition_id": 7
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "description": "A context that declares a conformance level without attesting that the subject is an adult.",
+  "expect": [
+    "R-C4"
+  ],
+  "form": "single",
+  "patches": [
+    {
+      "op": "remove",
+      "target": "manifest",
+      "path": "/conformance/subjectIsAdult"
+    }
+  ]
+}

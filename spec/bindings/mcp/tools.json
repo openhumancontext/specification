@@ -1,0 +1,522 @@
+{
+  "binding": "binding.mcp",
+  "maturity": "experimental",
+  "specVersion": "0.1.0-draft",
+  "description": "MCP tool declarations for an OHC holder: one tool compatible with GUM's MCP server and eight native tools that carry the exchange messages. Input schemas are JSON Schema 2020-12. Behaviour is defined in spec/bindings/MCP.md and spec/EXCHANGE.md.",
+  "mcpProtocolRevision": {
+    "value": "2025-11-25",
+    "evidenceGrade": "verify"
+  },
+  "tools": [
+    {
+      "name": "get_user_context",
+      "title": "Get user context (GUM-compatible)",
+      "description": "Returns at most 3 active, non-special Claims served under the caller's grant (purpose assist-personal or gum-export), ranked by lexical relevance to the query, in GUM's text format. Returns an empty string when the caller has no Party or no given grant.",
+      "signature": "get_user_context(query: str = \"\", start_hh_mm_ago: str | None = None, end_hh_mm_ago: str | None = None) -> str",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string",
+            "default": "",
+            "description": "Search terms; empty means no lexical filter."
+          },
+          "start_hh_mm_ago": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "default": null,
+            "pattern": "^[0-9]{1,4}:[0-5][0-9]$",
+            "description": "Start of the time window, as hours:minutes before now."
+          },
+          "end_hh_mm_ago": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "default": null,
+            "pattern": "^[0-9]{1,4}:[0-5][0-9]$",
+            "description": "End of the time window, as hours:minutes before now."
+          }
+        },
+        "required": [],
+        "additionalProperties": false
+      },
+      "output": {
+        "type": "text",
+        "maxItems": 3,
+        "itemFormat": [
+          "• <text>",
+          "  Reasoning: <rationale or \"Declared by the person.\">",
+          "  Confidence: <raw 1-10 if from GUM, else round(value*10) or \"n/a\">",
+          "  Relevance Score: <0.00-1.00>",
+          "  Supporting Observations: <excerpt texts if the grant has cite-excerpt, else \"[withheld]\">"
+        ],
+        "empty": ""
+      }
+    },
+    {
+      "name": "ohc_get_projection",
+      "title": "Get a projection",
+      "description": "Requests a Projection under a grant for one purpose. Returns the Projection document or a denial.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "grant": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,63}$",
+            "description": "The id of a Grant whose grantee is the caller."
+          },
+          "purpose": {
+            "type": "string",
+            "description": "Exactly one purpose code from spec/catalogs/purposes.json (R-G7)."
+          },
+          "select": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "minProperties": 1,
+              "description": "A GrantSelector: AND across fields, OR within a field. A selector with only all: true is the wildcard.",
+              "properties": {
+                "all": {
+                  "const": true
+                },
+                "kinds": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  },
+                  "minItems": 1
+                },
+                "facets": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  },
+                  "minItems": 1
+                },
+                "predicates": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  },
+                  "minItems": 1
+                },
+                "horizons": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  },
+                  "minItems": 1
+                },
+                "contexts": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  },
+                  "minItems": 1
+                },
+                "categories": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  },
+                  "minItems": 1
+                },
+                "tiers": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  },
+                  "minItems": 1
+                },
+                "lenses": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  },
+                  "minItems": 1
+                },
+                "ids": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,63}$"
+                  },
+                  "minItems": 1
+                }
+              }
+            },
+            "minItems": 1
+          },
+          "mode": {
+            "enum": [
+              "full",
+              "summary",
+              "rule-only",
+              "answer-only"
+            ]
+          },
+          "as_of": {
+            "type": "string",
+            "format": "date-time",
+            "description": "As-known-at time."
+          },
+          "without_interpretations": {
+            "type": "boolean",
+            "default": false
+          }
+        },
+        "required": [
+          "grant",
+          "purpose",
+          "select"
+        ],
+        "additionalProperties": false
+      },
+      "message": "request"
+    },
+    {
+      "name": "ohc_answer",
+      "title": "Ask a question",
+      "description": "Asks one question answered only from records the grant would serve in full mode. Needs the action answer. Returns an answer or not-disclosed.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "grant": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,63}$",
+            "description": "The id of a Grant whose grantee is the caller."
+          },
+          "purpose": {
+            "type": "string",
+            "description": "Exactly one purpose code from spec/catalogs/purposes.json (R-G7)."
+          },
+          "question": {
+            "oneOf": [
+              {
+                "type": "string",
+                "minLength": 1
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "facet": {
+                    "type": "string"
+                  },
+                  "predicate": {
+                    "type": "string"
+                  },
+                  "kind": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "facet"
+                ],
+                "additionalProperties": false
+              }
+            ]
+          },
+          "answer_form": {
+            "enum": [
+              "boolean",
+              "choice",
+              "text",
+              "time-window"
+            ]
+          },
+          "choices": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "minItems": 2
+          }
+        },
+        "required": [
+          "grant",
+          "purpose",
+          "question",
+          "answer_form"
+        ],
+        "additionalProperties": false
+      },
+      "message": "answer-request"
+    },
+    {
+      "name": "ohc_propose",
+      "title": "Propose records",
+      "description": "Proposes records (and requests on existing records). Needs suggest, and infer for inferred items; otherwise nothing is stored and a denial is returned.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "grant": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,63}$",
+            "description": "The id of a Grant whose grantee is the caller."
+          },
+          "purpose": {
+            "type": "string",
+            "description": "Exactly one purpose code from spec/catalogs/purposes.json (R-G7)."
+          },
+          "items": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            },
+            "description": "Full records of their kinds."
+          },
+          "rationale": {
+            "type": "string",
+            "minLength": 1,
+            "description": "Shown to the person."
+          },
+          "requests": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "target": {
+                  "type": "string",
+                  "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,63}$"
+                },
+                "action": {
+                  "enum": [
+                    "retract",
+                    "mark-not-current",
+                    "reassess"
+                  ]
+                },
+                "epistemic": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "target",
+                "action"
+              ],
+              "additionalProperties": false
+            }
+          }
+        },
+        "required": [
+          "grant",
+          "purpose",
+          "items",
+          "rationale"
+        ],
+        "additionalProperties": false
+      },
+      "message": "proposal"
+    },
+    {
+      "name": "ohc_give_feedback",
+      "title": "Give feedback",
+      "description": "Sends an outcome, a usage note or a correction request about one record. Needs suggest. Outcomes from agents are stored as proposed estimates.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "grant": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,63}$",
+            "description": "The id of a Grant whose grantee is the caller."
+          },
+          "purpose": {
+            "type": "string",
+            "description": "Exactly one purpose code from spec/catalogs/purposes.json (R-G7)."
+          },
+          "about": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,63}$"
+          },
+          "feedback_kind": {
+            "enum": [
+              "outcome",
+              "usage-note",
+              "correction-request"
+            ]
+          },
+          "outcome": {
+            "type": "object",
+            "description": "An Outcome record."
+          }
+        },
+        "required": [
+          "grant",
+          "purpose",
+          "about",
+          "feedback_kind"
+        ],
+        "additionalProperties": false
+      },
+      "message": "feedback"
+    },
+    {
+      "name": "ohc_request_source_access",
+      "title": "Request source access",
+      "description": "Asks for verbatim access to source spans. The holder asks the person out-of-band; silence within PT10M is a decline.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "grant": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,63}$",
+            "description": "The id of a Grant whose grantee is the caller."
+          },
+          "purpose": {
+            "type": "string",
+            "description": "Exactly one purpose code from spec/catalogs/purposes.json (R-G7)."
+          },
+          "targets": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "oneOf": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "source": {
+                      "type": "string",
+                      "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,63}$"
+                    },
+                    "selector": {
+                      "type": "object"
+                    }
+                  },
+                  "required": [
+                    "source"
+                  ],
+                  "additionalProperties": false
+                },
+                {
+                  "type": "string",
+                  "pattern": "^hmac:",
+                  "description": "A per-grant handle."
+                }
+              ]
+            }
+          },
+          "why": {
+            "type": "string",
+            "minLength": 1,
+            "description": "Shown to the person verbatim."
+          },
+          "duration": {
+            "type": "string",
+            "pattern": "^PT([1-9]|[1-5][0-9])M$|^PT1H$|^PT60M$",
+            "description": "Requested duration, at most PT1H."
+          },
+          "audience": {
+            "enum": [
+              "subject-only",
+              "grantee"
+            ],
+            "default": "subject-only"
+          }
+        },
+        "required": [
+          "grant",
+          "purpose",
+          "targets",
+          "why",
+          "duration"
+        ],
+        "additionalProperties": false
+      },
+      "message": "source-access-request"
+    },
+    {
+      "name": "ohc_open_source",
+      "title": "Open a source",
+      "description": "Returns source-content (redacted, storage none) after the person confirmed the step-up.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "grant": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,63}$",
+            "description": "The id of a Grant whose grantee is the caller."
+          },
+          "handle": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "grant",
+          "handle"
+        ],
+        "additionalProperties": false
+      },
+      "message": "source-content"
+    },
+    {
+      "name": "ohc_report_use",
+      "title": "Report use",
+      "description": "Reports which served records informed what, optionally naming an ODE Decision.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "grant": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,63}$",
+            "description": "The id of a Grant whose grantee is the caller."
+          },
+          "purpose": {
+            "type": "string",
+            "description": "Exactly one purpose code from spec/catalogs/purposes.json (R-G7)."
+          },
+          "projection": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,63}$"
+          },
+          "used_records": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,63}$"
+            }
+          },
+          "decision_ref": {
+            "type": "object",
+            "properties": {
+              "objectId": {
+                "type": "string"
+              },
+              "version": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "objectId",
+              "version"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "required": [
+          "grant",
+          "purpose",
+          "projection",
+          "used_records"
+        ],
+        "additionalProperties": false
+      },
+      "message": "use-report"
+    },
+    {
+      "name": "ohc_list_my_grants",
+      "title": "List my grants",
+      "description": "Returns the caller's own grants only.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {},
+        "required": [],
+        "additionalProperties": false
+      }
+    }
+  ]
+}

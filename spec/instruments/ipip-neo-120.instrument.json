@@ -1,0 +1,31 @@
+{
+  "format": "ohc.instrument",
+  "specVersion": "0.1.0-draft",
+  "id": "urn:ohc:instrument:ipip-neo-120",
+  "version": "0.1.0",
+  "name": "IPIP-NEO-120",
+  "lens": "urn:ohc:lens:big-five",
+  "publisher": "International Personality Item Pool (public domain)",
+  "forms": [
+    {
+      "id": "120",
+      "items": 120,
+      "scale": "5-point Likert; 4 items per facet; 30 facets"
+    }
+  ],
+  "itemsLicence": "IPIP items are public domain, usable for any purpose, commercial or non-commercial",
+  "scoring": "public",
+  "neverStore": [
+    "raw item responses outside the person's own test data"
+  ],
+  "registryListing": "ok",
+  "citations": [
+    {
+      "ref": "doi:10.1016/j.jrp.2014.05.003",
+      "grade": "F",
+      "note": "Johnson 2014; facet alpha .63-.88; N = 619,150"
+    }
+  ],
+  "legalReviewNeeded": true,
+  "reviewedAt": "2026-10-09"
+}

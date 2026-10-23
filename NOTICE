@@ -1,0 +1,13 @@
+Open Human Context
+Copyright 2026 Taras Pustovoy and contributors
+
+Normative specification, schemas, catalogs, synthetic examples, viewer and reference tools: Apache-2.0.
+Explanatory documentation and glossary: CC BY 4.0; see LICENSING.md.
+Official license texts are reproduced unchanged from the Apache Software Foundation and Creative Commons.
+
+The synthetic package in examples/ohc-ode-tara/package is adapted from the Open Digital Employee
+personal-agent example at commit 2de920485fb2665eaf7298ac65452a4a79412a9a.
+Open Digital Employee: Copyright 2026 Taras Pustovoy and contributors; Apache-2.0.
+Source: https://github.com/opendigitalemployee/specification
+
+With contributions from people, AI collaborators, and other forms of non-human agency.

@@ -1,0 +1,137 @@
+{
+  "format": "ohc.playbook",
+  "specVersion": "0.1.0-draft",
+  "id": "urn:ohc:playbook:jungian-type-basic",
+  "version": "0.1.0",
+  "name": {
+    "en": "Psychological type: basic ways of working",
+    "ru": "Психологический тип: базовые способы работы"
+  },
+  "lenses": [
+    "urn:ohc:lens:jungian-type"
+  ],
+  "author": "OHC editors",
+  "sources": [
+    "McCrae & Costa 1989",
+    "The Myers-Briggs Company, Trademark Guidelines"
+  ],
+  "licence": "Apache-2.0",
+  "situations": [
+    {
+      "id": "hard-conversation",
+      "when": {
+        "en": "Preparing a hard conversation.",
+        "ru": "Подготовка к трудному разговору."
+      },
+      "use": {
+        "en": [
+          "Ask what they want from the conversation.",
+          "If they recognised a preference, for example deciding by logic or by values, ask how it may shape what they say first.",
+          "Ask when the other pole shows for them, and whether it could help here."
+        ],
+        "ru": [
+          "Спросите, чего человек хочет от разговора.",
+          "Если человек узнал у себя предпочтение, например решать по логике или по ценностям, спросите, как оно может повлиять на то, что он скажет первым.",
+          "Спросите, когда у него проявляется противоположный полюс и может ли он помочь здесь."
+        ]
+      },
+      "toolkit": [],
+      "results": [
+        "jungian-type/TF",
+        "jungian-type/EI"
+      ],
+      "watchFor": {
+        "en": "Do not type the other person, and do not assign a type to anyone.",
+        "ru": "Не определяйте тип собеседника и никому не приписывайте тип."
+      }
+    },
+    {
+      "id": "give-feedback",
+      "when": {
+        "en": "Giving feedback to someone.",
+        "ru": "Обратная связь другому человеку."
+      },
+      "use": {
+        "en": [
+          "Ask what the feedback is about.",
+          "Where they recognised a preference, ask whether they want to start with details or with the overall picture, with logic or with values.",
+          "Leave the choice of how to say it to them."
+        ],
+        "ru": [
+          "Спросите, о чём будет обратная связь.",
+          "Если человек узнал у себя предпочтение, спросите, хочет ли он начать с деталей или с общей картины, с логики или с ценностей.",
+          "Оставьте выбор того, как это сказать, человеку."
+        ]
+      },
+      "toolkit": [],
+      "results": [
+        "jungian-type/TF",
+        "jungian-type/SN"
+      ],
+      "watchFor": {
+        "en": "Never present a type as evidence of fit for a role, task or team.",
+        "ru": "Никогда не выдавайте тип за доказательство пригодности к роли, задаче или команде."
+      }
+    },
+    {
+      "id": "plan-week",
+      "when": {
+        "en": "Planning the week ahead.",
+        "ru": "Планирование предстоящей недели."
+      },
+      "use": {
+        "en": [
+          "Ask what the week holds.",
+          "Where they recognised a preference for planning ahead or for keeping options open, shape the plan with it and say so.",
+          "Where they recognised a preference for time with people or time alone, ask where each should go in the week."
+        ],
+        "ru": [
+          "Спросите, что ждёт на этой неделе.",
+          "Если человек узнал у себя предпочтение планировать заранее или оставлять варианты открытыми, стройте план с его учётом и скажите об этом.",
+          "Если человек узнал у себя предпочтение времени с людьми или времени в одиночестве, спросите, где в неделе нужно то и другое."
+        ]
+      },
+      "toolkit": [],
+      "results": [
+        "jungian-type/JP",
+        "jungian-type/EI"
+      ],
+      "watchFor": {
+        "en": "Do not explain behaviour away by type.",
+        "ru": "Не объясняйте поведение типом."
+      }
+    },
+    {
+      "id": "look-back-at-an-episode",
+      "when": {
+        "en": "Looking back at something that happened.",
+        "ru": "Разбор того, что произошло."
+      },
+      "use": {
+        "en": [
+          "Ask what happened, in their words.",
+          "Offer the best-fit question: which pole describes how they acted here, and where did the other pole show?",
+          "Note where neither description fits."
+        ],
+        "ru": [
+          "Спросите, что произошло, — словами человека.",
+          "Предложите вопрос о лучшем соответствии: какой полюс описывает, как человек действовал здесь, и где проявился другой?",
+          "Отметьте, где не подходит ни одно описание."
+        ]
+      },
+      "toolkit": [
+        "jungian-type.best-fit"
+      ],
+      "results": [
+        "jungian-type/EI",
+        "jungian-type/SN",
+        "jungian-type/TF",
+        "jungian-type/JP"
+      ],
+      "watchFor": {
+        "en": "A type is not a box: preferences are dimensions, and the other pole shows in some situations.",
+        "ru": "Тип — не ячейка: предпочтения — это измерения, и противоположный полюс в каких-то ситуациях проявляется."
+      }
+    }
+  ]
+}

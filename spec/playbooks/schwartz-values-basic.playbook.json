@@ -1,0 +1,135 @@
+{
+  "format": "ohc.playbook",
+  "specVersion": "0.1.0-draft",
+  "id": "urn:ohc:playbook:schwartz-values-basic",
+  "version": "0.1.0",
+  "name": {
+    "en": "Schwartz values: basic ways of working",
+    "ru": "Ценности по Шварцу: базовые способы работы"
+  },
+  "lenses": [
+    "urn:ohc:lens:schwartz-values"
+  ],
+  "author": "OHC editors",
+  "sources": [
+    "Schwartz et al. 2012",
+    "PMC9131418"
+  ],
+  "licence": "Apache-2.0",
+  "situations": [
+    {
+      "id": "choose-between-options",
+      "when": {
+        "en": "Choosing between options.",
+        "ru": "Выбор между вариантами."
+      },
+      "use": {
+        "en": [
+          "Lay out the options, in their words.",
+          "Offer values in tension: which two values pull against each other here?",
+          "If they accepted their value profile, show which values each option serves, and name them.",
+          "Leave the choice to them."
+        ],
+        "ru": [
+          "Разложите варианты словами человека.",
+          "Предложите упражнение «ценности в напряжении»: какие две ценности здесь тянут в разные стороны?",
+          "Если человек принял свой профиль ценностей, покажите, каким ценностям служит каждый вариант, и назовите их.",
+          "Оставьте выбор человеку."
+        ]
+      },
+      "toolkit": [
+        "schwartz-values.values-in-tension"
+      ],
+      "results": [
+        "schwartz-values/self-transcendence",
+        "schwartz-values/conservation",
+        "schwartz-values/self-enhancement",
+        "schwartz-values/openness-to-change"
+      ],
+      "watchFor": {
+        "en": "Keep the measured profile and the values they declare apart.",
+        "ru": "Не смешивайте измеренный профиль и ценности, которые человек заявляет сам."
+      }
+    },
+    {
+      "id": "plan-week",
+      "when": {
+        "en": "Planning the week ahead.",
+        "ru": "Планирование предстоящей недели."
+      },
+      "use": {
+        "en": [
+          "Ask what matters most to them this week.",
+          "Where they accepted a value as theirs, ask where in the week it gets room.",
+          "Name one place where two of their values may pull against each other, and ask how they want to handle it."
+        ],
+        "ru": [
+          "Спросите, что для человека важнее всего на этой неделе.",
+          "Там, где человек признал ценность своей, спросите, где ей найдётся место в неделе.",
+          "Назовите одно место, где две его ценности могут тянуть в разные стороны, и спросите, как он хочет с этим поступить."
+        ]
+      },
+      "toolkit": [],
+      "results": [
+        "schwartz-values/self-transcendence",
+        "schwartz-values/conservation",
+        "schwartz-values/self-enhancement",
+        "schwartz-values/openness-to-change"
+      ],
+      "watchFor": {
+        "en": "Do not compare their values with other people's.",
+        "ru": "Не сравнивайте ценности человека с чужими."
+      }
+    },
+    {
+      "id": "hard-conversation",
+      "when": {
+        "en": "Preparing a hard conversation.",
+        "ru": "Подготовка к трудному разговору."
+      },
+      "use": {
+        "en": [
+          "Ask what is at stake for them.",
+          "Ask which value they would not give up in this conversation.",
+          "Help them say it in their own words, without claiming what the other person values."
+        ],
+        "ru": [
+          "Спросите, что для человека поставлено на карту.",
+          "Спросите, от какой ценности он не откажется в этом разговоре.",
+          "Помогите сказать это его словами, не утверждая, что ценит собеседник."
+        ]
+      },
+      "toolkit": [],
+      "watchFor": {
+        "en": "Do not infer political or religious views, theirs or anyone's.",
+        "ru": "Не выводите политические или религиозные взгляды — ни человека, ни чьи-либо ещё."
+      }
+    },
+    {
+      "id": "after-setback",
+      "when": {
+        "en": "After a setback.",
+        "ru": "После неудачи."
+      },
+      "use": {
+        "en": [
+          "Ask what happened, in their words.",
+          "Offer values in tension: which values pulled against each other, and what did they choose?",
+          "Ask whether they would choose the same now."
+        ],
+        "ru": [
+          "Спросите, что произошло, — словами человека.",
+          "Предложите упражнение «ценности в напряжении»: какие ценности тянули в разные стороны и что человек выбрал?",
+          "Спросите, выбрал бы он то же самое сейчас."
+        ]
+      },
+      "toolkit": [
+        "schwartz-values.values-in-tension"
+      ],
+      "watchFor": {
+        "en": "Do not judge which values are right.",
+        "ru": "Не оценивайте, какие ценности правильные."
+      }
+    }
+  ]
+}

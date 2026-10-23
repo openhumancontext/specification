@@ -1,0 +1,94 @@
+{
+  "format": "ohc.context",
+  "specVersion": "0.1.0-draft",
+  "id": "urn:ohc:example:kofi:context",
+  "version": "2026-10-09.3",
+  "subject": {
+    "id": "urn:ohc:example:kofi",
+    "displayName": "Kofi (fictional)",
+    "links": [
+      {
+        "rel": "ode-party",
+        "uri": "urn:ode:example:party:kofi",
+        "odeRef": {
+          "objectId": "urn:ode:example:party:kofi",
+          "version": "0.2.0"
+        }
+      }
+    ],
+    "aliases": [
+      {
+        "grantee": "a-01",
+        "alias": "urn:ohc:alias:mej2a2du5ccc4xp4umm4quxgib",
+        "createdAt": "2026-10-09T09:00:00Z"
+      }
+    ]
+  },
+  "holder": "subject",
+  "lang": "en",
+  "created": "2026-09-28T10:05:00Z",
+  "conformance": {
+    "level": "L2",
+    "modules": [
+      "core",
+      "governance",
+      "lenses",
+      "binding.gum",
+      "binding.ode"
+    ],
+    "subjectIsAdult": true
+  },
+  "parties": [
+    {
+      "id": "a-gum",
+      "partyKind": "agent",
+      "label": "GUM"
+    },
+    {
+      "id": "s-gum-1",
+      "partyKind": "software",
+      "label": "Screen"
+    },
+    {
+      "id": "s-gum-2",
+      "partyKind": "software",
+      "label": "Calendar"
+    },
+    {
+      "id": "s-01",
+      "partyKind": "software",
+      "label": "Assessment scorer"
+    },
+    {
+      "id": "a-01",
+      "partyKind": "agent",
+      "label": "Planner",
+      "odeRef": {
+        "objectId": "urn:ode:example:employee:planner",
+        "version": "0.2.0"
+      }
+    }
+  ],
+  "policy": {
+    "admission": "subject-only",
+    "resolver": "returnDialog"
+  },
+  "lenses": [
+    {
+      "id": "urn:ohc:lens:big-five",
+      "version": "0.2.0",
+      "sha256": "6af97400e92c87df43cdb7aa7d7406c0a6688c4f819d456182559bd4d41b0a4d"
+    }
+  ],
+  "collections": {
+    "claims": "records/claims.jsonl",
+    "sources": "records/sources.jsonl",
+    "reviews": "records/reviews.jsonl",
+    "proposals": "records/proposals.jsonl",
+    "grants": "records/grants.jsonl",
+    "events": "events.jsonl",
+    "lensAdoptions": "records/lens-adoptions.jsonl",
+    "assessments": "records/assessments.jsonl"
+  },
+  "synthetic": true
+}

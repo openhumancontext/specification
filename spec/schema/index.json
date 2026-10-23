@@ -1,0 +1,418 @@
+{
+  "format": "ohc.schema-index",
+  "specVersion": "0.1.0-draft",
+  "description": "Every OHC schema with its $id and its path relative to this file. Tools build their schema registry from this index. Records are matched by kind, documents and messages by format.",
+  "schemas": [
+    {
+      "name": "common",
+      "id": "urn:ohc:schema:common:0.1.0-draft",
+      "path": "common.schema.json",
+      "module": "core",
+      "maturity": "normative-draft"
+    },
+    {
+      "name": "context",
+      "id": "urn:ohc:schema:context:0.1.0-draft",
+      "path": "context.schema.json",
+      "kind": "Context",
+      "module": "core",
+      "maturity": "normative-draft",
+      "format": "ohc.context"
+    },
+    {
+      "name": "subject",
+      "id": "urn:ohc:schema:subject:0.1.0-draft",
+      "path": "subject.schema.json",
+      "kind": "Subject",
+      "module": "core",
+      "maturity": "normative-draft"
+    },
+    {
+      "name": "party",
+      "id": "urn:ohc:schema:party:0.1.0-draft",
+      "path": "party.schema.json",
+      "kind": "Party",
+      "module": "core",
+      "maturity": "normative-draft"
+    },
+    {
+      "name": "claim",
+      "id": "urn:ohc:schema:claim:0.1.0-draft",
+      "path": "claim.schema.json",
+      "kind": "Claim",
+      "module": "core",
+      "maturity": "normative-draft"
+    },
+    {
+      "name": "relation",
+      "id": "urn:ohc:schema:relation:0.1.0-draft",
+      "path": "relation.schema.json",
+      "kind": "Relation",
+      "module": "core",
+      "maturity": "normative-draft"
+    },
+    {
+      "name": "source",
+      "id": "urn:ohc:schema:source:0.1.0-draft",
+      "path": "source.schema.json",
+      "kind": "Source",
+      "module": "core",
+      "maturity": "normative-draft"
+    },
+    {
+      "name": "episode",
+      "id": "urn:ohc:schema:episode:0.1.0-draft",
+      "path": "episode.schema.json",
+      "kind": "Episode",
+      "module": "core",
+      "maturity": "normative-draft"
+    },
+    {
+      "name": "interpretation",
+      "id": "urn:ohc:schema:interpretation:0.1.0-draft",
+      "path": "interpretation.schema.json",
+      "kind": "Interpretation",
+      "module": "core",
+      "maturity": "normative-draft"
+    },
+    {
+      "name": "tension",
+      "id": "urn:ohc:schema:tension:0.1.0-draft",
+      "path": "tension.schema.json",
+      "kind": "Tension",
+      "module": "core",
+      "maturity": "normative-draft"
+    },
+    {
+      "name": "review",
+      "id": "urn:ohc:schema:review:0.1.0-draft",
+      "path": "review.schema.json",
+      "kind": "Review",
+      "module": "core",
+      "maturity": "normative-draft"
+    },
+    {
+      "name": "proposal",
+      "id": "urn:ohc:schema:proposal:0.1.0-draft",
+      "path": "proposal.schema.json",
+      "kind": "Proposal",
+      "module": "core",
+      "maturity": "normative-draft"
+    },
+    {
+      "name": "tombstone",
+      "id": "urn:ohc:schema:tombstone:0.1.0-draft",
+      "path": "tombstone.schema.json",
+      "kind": "Tombstone",
+      "module": "core",
+      "maturity": "normative-draft"
+    },
+    {
+      "name": "grant",
+      "id": "urn:ohc:schema:grant:0.1.0-draft",
+      "path": "grant.schema.json",
+      "kind": "Grant",
+      "module": "governance",
+      "maturity": "normative-draft"
+    },
+    {
+      "name": "event",
+      "id": "urn:ohc:schema:event:0.1.0-draft",
+      "path": "event.schema.json",
+      "kind": "Event",
+      "module": "governance",
+      "maturity": "normative-draft"
+    },
+    {
+      "name": "projection",
+      "id": "urn:ohc:schema:projection:0.1.0-draft",
+      "path": "projection.schema.json",
+      "kind": "Projection",
+      "module": "governance",
+      "maturity": "normative-draft",
+      "format": "ohc.projection"
+    },
+    {
+      "name": "lock",
+      "id": "urn:ohc:schema:lock:0.1.0-draft",
+      "path": "lock.schema.json",
+      "kind": "ContextLock",
+      "module": "governance",
+      "maturity": "normative-draft",
+      "format": "ohc.lock"
+    },
+    {
+      "name": "lens",
+      "id": "urn:ohc:schema:lens:0.1.0-draft",
+      "path": "lens.schema.json",
+      "kind": "Lens",
+      "module": "lenses",
+      "maturity": "normative-draft",
+      "format": "ohc.lens"
+    },
+    {
+      "name": "instrument",
+      "id": "urn:ohc:schema:instrument:0.1.0-draft",
+      "path": "instrument.schema.json",
+      "kind": "Instrument",
+      "module": "lenses",
+      "maturity": "normative-draft",
+      "format": "ohc.instrument"
+    },
+    {
+      "name": "mapping",
+      "id": "urn:ohc:schema:mapping:0.1.0-draft",
+      "path": "mapping.schema.json",
+      "kind": "Mapping",
+      "module": "lenses",
+      "maturity": "normative-draft",
+      "format": "ohc.mapping"
+    },
+    {
+      "name": "playbook",
+      "id": "urn:ohc:schema:playbook:0.1.0-draft",
+      "path": "playbook.schema.json",
+      "kind": "Playbook",
+      "module": "lenses",
+      "maturity": "normative-draft",
+      "format": "ohc.playbook"
+    },
+    {
+      "name": "lens-adoption",
+      "id": "urn:ohc:schema:lens-adoption:0.1.0-draft",
+      "path": "lens-adoption.schema.json",
+      "kind": "LensAdoption",
+      "module": "lenses",
+      "maturity": "normative-draft"
+    },
+    {
+      "name": "assessment-record",
+      "id": "urn:ohc:schema:assessment-record:0.1.0-draft",
+      "path": "assessment-record.schema.json",
+      "kind": "AssessmentRecord",
+      "module": "lenses",
+      "maturity": "normative-draft"
+    },
+    {
+      "name": "model-view",
+      "id": "urn:ohc:schema:model-view:0.1.0-draft",
+      "path": "model-view.schema.json",
+      "kind": "ModelView",
+      "module": "lenses",
+      "maturity": "normative-draft"
+    },
+    {
+      "name": "practice",
+      "id": "urn:ohc:schema:practice:0.1.0-draft",
+      "path": "practice.schema.json",
+      "kind": "Practice",
+      "module": "practices",
+      "maturity": "normative-draft"
+    },
+    {
+      "name": "outcome",
+      "id": "urn:ohc:schema:outcome:0.1.0-draft",
+      "path": "outcome.schema.json",
+      "kind": "Outcome",
+      "module": "practices",
+      "maturity": "normative-draft"
+    },
+    {
+      "name": "pattern",
+      "id": "urn:ohc:schema:pattern:0.1.0-draft",
+      "path": "pattern.schema.json",
+      "kind": "Pattern",
+      "module": "patterns",
+      "maturity": "experimental"
+    },
+    {
+      "name": "recall-cue",
+      "id": "urn:ohc:schema:recall-cue:0.1.0-draft",
+      "path": "recall-cue.schema.json",
+      "kind": "RecallCue",
+      "module": "recall",
+      "maturity": "experimental"
+    },
+    {
+      "name": "part",
+      "id": "urn:ohc:schema:part:0.1.0-draft",
+      "path": "part.schema.json",
+      "kind": "Part",
+      "module": "inner-system",
+      "maturity": "experimental"
+    },
+    {
+      "name": "health-ref",
+      "id": "urn:ohc:schema:health-ref:0.1.0-draft",
+      "path": "health-ref.schema.json",
+      "kind": "HealthRef",
+      "module": "health-ref",
+      "maturity": "experimental"
+    },
+    {
+      "name": "message",
+      "id": "urn:ohc:schema:message:0.1.0-draft",
+      "path": "message.schema.json",
+      "module": "exchange",
+      "maturity": "experimental"
+    },
+    {
+      "name": "msg-grant-request",
+      "id": "urn:ohc:schema:msg-grant-request:0.1.0-draft",
+      "path": "msg-grant-request.schema.json",
+      "module": "exchange",
+      "maturity": "experimental",
+      "format": "ohc.experimental.grant-request"
+    },
+    {
+      "name": "msg-grant-notice",
+      "id": "urn:ohc:schema:msg-grant-notice:0.1.0-draft",
+      "path": "msg-grant-notice.schema.json",
+      "module": "exchange",
+      "maturity": "experimental",
+      "format": "ohc.experimental.grant-notice"
+    },
+    {
+      "name": "msg-request",
+      "id": "urn:ohc:schema:msg-request:0.1.0-draft",
+      "path": "msg-request.schema.json",
+      "module": "exchange",
+      "maturity": "experimental",
+      "format": "ohc.experimental.request"
+    },
+    {
+      "name": "msg-answer-request",
+      "id": "urn:ohc:schema:msg-answer-request:0.1.0-draft",
+      "path": "msg-answer-request.schema.json",
+      "module": "exchange",
+      "maturity": "experimental",
+      "format": "ohc.experimental.answer-request"
+    },
+    {
+      "name": "msg-answer",
+      "id": "urn:ohc:schema:msg-answer:0.1.0-draft",
+      "path": "msg-answer.schema.json",
+      "module": "exchange",
+      "maturity": "experimental",
+      "format": "ohc.experimental.answer"
+    },
+    {
+      "name": "msg-proposal",
+      "id": "urn:ohc:schema:msg-proposal:0.1.0-draft",
+      "path": "msg-proposal.schema.json",
+      "module": "exchange",
+      "maturity": "experimental",
+      "format": "ohc.experimental.proposal"
+    },
+    {
+      "name": "msg-proposal-result",
+      "id": "urn:ohc:schema:msg-proposal-result:0.1.0-draft",
+      "path": "msg-proposal-result.schema.json",
+      "module": "exchange",
+      "maturity": "experimental",
+      "format": "ohc.experimental.proposal-result"
+    },
+    {
+      "name": "msg-feedback",
+      "id": "urn:ohc:schema:msg-feedback:0.1.0-draft",
+      "path": "msg-feedback.schema.json",
+      "module": "exchange",
+      "maturity": "experimental",
+      "format": "ohc.experimental.feedback"
+    },
+    {
+      "name": "msg-source-access-request",
+      "id": "urn:ohc:schema:msg-source-access-request:0.1.0-draft",
+      "path": "msg-source-access-request.schema.json",
+      "module": "exchange",
+      "maturity": "experimental",
+      "format": "ohc.experimental.source-access-request"
+    },
+    {
+      "name": "msg-source-content",
+      "id": "urn:ohc:schema:msg-source-content:0.1.0-draft",
+      "path": "msg-source-content.schema.json",
+      "module": "exchange",
+      "maturity": "experimental",
+      "format": "ohc.experimental.source-content"
+    },
+    {
+      "name": "msg-use-report",
+      "id": "urn:ohc:schema:msg-use-report:0.1.0-draft",
+      "path": "msg-use-report.schema.json",
+      "module": "exchange",
+      "maturity": "experimental",
+      "format": "ohc.experimental.use-report"
+    },
+    {
+      "name": "msg-revocation-notice",
+      "id": "urn:ohc:schema:msg-revocation-notice:0.1.0-draft",
+      "path": "msg-revocation-notice.schema.json",
+      "module": "exchange",
+      "maturity": "experimental",
+      "format": "ohc.experimental.revocation-notice"
+    },
+    {
+      "name": "msg-erasure-notice",
+      "id": "urn:ohc:schema:msg-erasure-notice:0.1.0-draft",
+      "path": "msg-erasure-notice.schema.json",
+      "module": "exchange",
+      "maturity": "experimental",
+      "format": "ohc.experimental.erasure-notice"
+    },
+    {
+      "name": "msg-purge-ack",
+      "id": "urn:ohc:schema:msg-purge-ack:0.1.0-draft",
+      "path": "msg-purge-ack.schema.json",
+      "module": "exchange",
+      "maturity": "experimental",
+      "format": "ohc.experimental.purge-ack"
+    },
+    {
+      "name": "msg-denial",
+      "id": "urn:ohc:schema:msg-denial:0.1.0-draft",
+      "path": "msg-denial.schema.json",
+      "module": "exchange",
+      "maturity": "experimental",
+      "format": "ohc.experimental.denial"
+    },
+    {
+      "name": "catalog",
+      "id": "urn:ohc:schema:catalog:0.1.0-draft",
+      "path": "catalog.schema.json",
+      "format": "ohc.catalog"
+    },
+    {
+      "name": "glossary",
+      "id": "urn:ohc:schema:glossary:0.1.0-draft",
+      "path": "glossary.schema.json",
+      "format": "ohc.glossary"
+    },
+    {
+      "name": "release-plan",
+      "id": "urn:ohc:schema:release-plan:0.1.0-draft",
+      "path": "release-plan.schema.json",
+      "format": "ohc.release-plan/1"
+    },
+    {
+      "name": "release-manifest",
+      "id": "urn:ohc:schema:release-manifest:0.1.0-draft",
+      "path": "release-manifest.schema.json",
+      "format": "ohc.public-export/1"
+    },
+    {
+      "name": "ode-binding",
+      "id": "urn:ohc:schema:ode-binding:0.1.0-draft",
+      "path": "ode-binding.schema.json",
+      "module": "binding.ode",
+      "maturity": "normative-draft",
+      "extension": "ohc.binding"
+    }
+  ],
+  "data": [
+    {
+      "id": "urn:ohc:catalog:type-catalog",
+      "path": "type-catalog.json"
+    }
+  ]
+}

@@ -1,0 +1,184 @@
+[
+  {
+    "format": "ohc.mapping",
+    "specVersion": "0.1.0-draft",
+    "id": "urn:ohc:mapping:ohc.subject--gumo.subject--gumo-2005",
+    "version": "0.1.0",
+    "bridgeKind": "ohc-standard",
+    "from": {
+      "standard": "OHC 0.1.0-draft",
+      "concept": "Subject"
+    },
+    "to": {
+      "standard": "GUMO (Heckmann et al., UM 2005; Ubiquitous User Modeling, 2006)",
+      "concept": "mainpart box: subject"
+    },
+    "relation": "corresponds",
+    "scope": "Informative crosswalk between formats; never a conversion of a person's data without the person's grant",
+    "notIdentity": true,
+    "chainable": false,
+    "rowStatus": "accepted",
+    "evidenceGrade": "F",
+    "reviewedAt": "2026-10-09"
+  },
+  {
+    "format": "ohc.mapping",
+    "specVersion": "0.1.0-draft",
+    "id": "urn:ohc:mapping:ohc.facet-predicate--gumo.auxiliary-predicate--gumo-2005",
+    "version": "0.1.0",
+    "bridgeKind": "ohc-standard",
+    "from": {
+      "standard": "OHC 0.1.0-draft",
+      "concept": "Claim facet + predicate"
+    },
+    "to": {
+      "standard": "GUMO (Heckmann et al., UM 2005; Ubiquitous User Modeling, 2006)",
+      "concept": "mainpart box: auxiliary + predicate"
+    },
+    "relation": "corresponds",
+    "scope": "Informative crosswalk between formats; never a conversion of a person's data without the person's grant",
+    "notIdentity": true,
+    "chainable": false,
+    "rowStatus": "accepted-with-loss",
+    "lost": "GUMO predicates come from open ontologies; OHC facets are a closed list with optional predicates.",
+    "evidenceGrade": "F",
+    "reviewedAt": "2026-10-09"
+  },
+  {
+    "format": "ohc.mapping",
+    "specVersion": "0.1.0-draft",
+    "id": "urn:ohc:mapping:ohc.text-value--gumo.range-object--gumo-2005",
+    "version": "0.1.0",
+    "bridgeKind": "ohc-standard",
+    "from": {
+      "standard": "OHC 0.1.0-draft",
+      "concept": "Claim text / value"
+    },
+    "to": {
+      "standard": "GUMO (Heckmann et al., UM 2005; Ubiquitous User Modeling, 2006)",
+      "concept": "mainpart box: range + object"
+    },
+    "relation": "corresponds",
+    "scope": "Informative crosswalk between formats; never a conversion of a person's data without the person's grant",
+    "notIdentity": true,
+    "chainable": false,
+    "rowStatus": "accepted-with-loss",
+    "lost": "OHC claims are text first; a typed value with a range is optional.",
+    "evidenceGrade": "F",
+    "reviewedAt": "2026-10-09"
+  },
+  {
+    "format": "ohc.mapping",
+    "specVersion": "0.1.0-draft",
+    "id": "urn:ohc:mapping:ohc.provenance--gumo.explanation--gumo-2005",
+    "version": "0.1.0",
+    "bridgeKind": "ohc-standard",
+    "from": {
+      "standard": "OHC 0.1.0-draft",
+      "concept": "origin + assertedBy + evidence (+ confidence, generatedBy)"
+    },
+    "to": {
+      "standard": "GUMO (Heckmann et al., UM 2005; Ubiquitous User Modeling, 2006)",
+      "concept": "explanation box (source, creator, method, evidence, confidence)"
+    },
+    "relation": "corresponds",
+    "scope": "Informative crosswalk between formats; never a conversion of a person's data without the person's grant",
+    "notIdentity": true,
+    "chainable": false,
+    "rowStatus": "accepted",
+    "evidenceGrade": "F",
+    "reviewedAt": "2026-10-09"
+  },
+  {
+    "format": "ohc.mapping",
+    "specVersion": "0.1.0-draft",
+    "id": "urn:ohc:mapping:ohc.time--gumo.situation-time--gumo-2005",
+    "version": "0.1.0",
+    "bridgeKind": "ohc-standard",
+    "from": {
+      "standard": "OHC 0.1.0-draft",
+      "concept": "valid + recordedAt"
+    },
+    "to": {
+      "standard": "GUMO (Heckmann et al., UM 2005; Ubiquitous User Modeling, 2006)",
+      "concept": "situation box (start, end, durability, location, position)"
+    },
+    "relation": "corresponds",
+    "scope": "Informative crosswalk between formats; never a conversion of a person's data without the person's grant",
+    "notIdentity": true,
+    "chainable": false,
+    "rowStatus": "accepted-with-loss",
+    "lost": "Location and position are not carried. GUMO durability per dimension corresponds only loosely to OHC horizons and freshness.",
+    "evidenceGrade": "F",
+    "reviewedAt": "2026-10-09"
+  },
+  {
+    "format": "ohc.mapping",
+    "specVersion": "0.1.0-draft",
+    "id": "urn:ohc:mapping:ohc.grant--gumo.privacy--gumo-2005",
+    "version": "0.1.0",
+    "bridgeKind": "ohc-standard",
+    "from": {
+      "standard": "OHC 0.1.0-draft",
+      "concept": "Grant (grantor, grantee and audience, purposes, expiresAt)"
+    },
+    "to": {
+      "standard": "GUMO (Heckmann et al., UM 2005; Ubiquitous User Modeling, 2006)",
+      "concept": "privacy box (key, owner, access, purpose, retention)"
+    },
+    "relation": "corresponds",
+    "scope": "Informative crosswalk between formats; never a conversion of a person's data without the person's grant",
+    "notIdentity": true,
+    "chainable": false,
+    "rowStatus": "accepted-with-loss",
+    "lost": "owner → grantor; access → audience and grantee; purpose → purposes; retention → expiresAt. GUMO privacy values are qualitative, so OHC's typed scope, actions and step-up have no GUMO counterpart; key is not carried.",
+    "evidenceGrade": "F",
+    "reviewedAt": "2026-10-09"
+  },
+  {
+    "format": "ohc.mapping",
+    "specVersion": "0.1.0-draft",
+    "id": "urn:ohc:mapping:ohc.id-supersedes--gumo.administration--gumo-2005",
+    "version": "0.1.0",
+    "bridgeKind": "ohc-standard",
+    "from": {
+      "standard": "OHC 0.1.0-draft",
+      "concept": "record id / supersedes"
+    },
+    "to": {
+      "standard": "GUMO (Heckmann et al., UM 2005; Ubiquitous User Modeling, 2006)",
+      "concept": "administration box (id, unique, replaces, group)"
+    },
+    "relation": "corresponds",
+    "scope": "Informative crosswalk between formats; never a conversion of a person's data without the person's grant",
+    "notIdentity": true,
+    "chainable": false,
+    "rowStatus": "accepted-with-loss",
+    "lost": "id → id and replaces → supersedes; unique and group have no OHC counterpart.",
+    "evidenceGrade": "F",
+    "reviewedAt": "2026-10-09"
+  },
+  {
+    "format": "ohc.mapping",
+    "specVersion": "0.1.0-draft",
+    "id": "urn:ohc:mapping:ohc.resolvers--gumo.resolvers--gumo-2005",
+    "version": "0.1.0",
+    "bridgeKind": "ohc-standard",
+    "from": {
+      "standard": "OHC 0.1.0-draft",
+      "concept": "resolvers returnDialog / mostPersonal / mostRecent / returnNone"
+    },
+    "to": {
+      "standard": "GUMO (Heckmann et al., UM 2005; Ubiquitous User Modeling, 2006)",
+      "concept": "conflict resolvers returnDialog / mostPersonal / mostRecent / returnNone (Heckmann 2006, §6.3.3, situation retrieval)"
+    },
+    "relation": "corresponds",
+    "scope": "Informative crosswalk between formats; never a conversion of a person's data without the person's grant",
+    "notIdentity": true,
+    "chainable": false,
+    "rowStatus": "accepted-with-loss",
+    "lost": "GUMO's other resolvers (mostNamed, mostConfident, mostSpecific, the add- resolvers, returnAll, returnRandom) are not kept.",
+    "evidenceGrade": "F",
+    "reviewedAt": "2026-10-09"
+  }
+]

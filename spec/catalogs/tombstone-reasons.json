@@ -1,0 +1,72 @@
+{
+  "format": "ohc.catalog",
+  "id": "urn:ohc:catalog:tombstone-reasons",
+  "version": "0.1.0",
+  "specVersion": "0.1.0-draft",
+  "title": {
+    "en": "Tombstone reasons",
+    "ru": "Причины удаления"
+  },
+  "description": {
+    "en": "Why a record was erased. A Tombstone carries no content (TB-1).",
+    "ru": "Почему запись удалена. Метка удаления не содержит никакого содержания (TB-1)."
+  },
+  "closed": true,
+  "codes": [
+    {
+      "code": "subject-request",
+      "label": {
+        "en": "The person's request",
+        "ru": "По просьбе человека"
+      },
+      "definition": {
+        "en": "Erased at the person's request.",
+        "ru": "Удалено по просьбе человека."
+      }
+    },
+    {
+      "code": "retention-expired",
+      "label": {
+        "en": "Retention expired",
+        "ru": "Истёк срок хранения"
+      },
+      "definition": {
+        "en": "The retention period ended.",
+        "ru": "Истёк срок хранения."
+      }
+    },
+    {
+      "code": "consent-withdrawn",
+      "label": {
+        "en": "Consent withdrawn",
+        "ru": "Согласие отозвано"
+      },
+      "definition": {
+        "en": "The consent the record rested on was withdrawn.",
+        "ru": "Отозвано согласие, на котором основывалась запись."
+      }
+    },
+    {
+      "code": "legal",
+      "label": {
+        "en": "Legal",
+        "ru": "Правовые основания"
+      },
+      "definition": {
+        "en": "Erased for a legal reason.",
+        "ru": "Удалено по правовой причине."
+      }
+    },
+    {
+      "code": "holder-error",
+      "label": {
+        "en": "Holder error",
+        "ru": "Ошибка держателя"
+      },
+      "definition": {
+        "en": "Written in error by the holder.",
+        "ru": "Записано держателем по ошибке."
+      }
+    }
+  ]
+}

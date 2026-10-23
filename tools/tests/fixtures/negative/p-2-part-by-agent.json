@@ -1,0 +1,26 @@
+{
+  "description": "A Part authored by an agent.",
+  "expect": [
+    "P-2"
+  ],
+  "form": "single",
+  "patches": [
+    {
+      "op": "add",
+      "target": "parts",
+      "path": "",
+      "value": {
+        "id": "part-02",
+        "name": "The critic",
+        "origin": "inferred",
+        "assertedBy": "a-01",
+        "recordedBy": "subject",
+        "recordedAt": "2026-09-07T08:00:00Z",
+        "derivedFrom": [
+          "ep-01"
+        ],
+        "synthetic": true
+      }
+    }
+  ]
+}

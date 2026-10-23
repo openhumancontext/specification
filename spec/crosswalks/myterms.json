@@ -1,0 +1,26 @@
+[
+  {
+    "format": "ohc.mapping",
+    "specVersion": "0.1.0-draft",
+    "id": "urn:ohc:mapping:ohc.grant-basis-myterms--ieee7012.agreement--ieee-7012-2025",
+    "version": "0.1.0",
+    "bridgeKind": "ohc-standard",
+    "from": {
+      "standard": "OHC 0.1.0-draft",
+      "concept": "Grant basis.myTermsRef"
+    },
+    "to": {
+      "standard": "IEEE 7012-2025 (machine-readable personal privacy terms)",
+      "concept": "agreement identifier"
+    },
+    "relation": "corresponds",
+    "scope": "Informative crosswalk between formats; never a conversion of a person's data without the person's grant",
+    "notIdentity": true,
+    "chainable": false,
+    "rowStatus": "accepted-with-loss",
+    "lost": "OHC stores only a reference to the agreement; the terms themselves are not interpreted.",
+    "reopenWhen": "The normative text of IEEE 7012-2025 is read.",
+    "evidenceGrade": "verify",
+    "reviewedAt": "2026-10-09"
+  }
+]

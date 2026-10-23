@@ -1,0 +1,61 @@
+{
+  "format": "ohc.catalog",
+  "id": "urn:ohc:catalog:admission",
+  "version": "0.2.0",
+  "specVersion": "0.1.0-draft",
+  "title": {
+    "en": "Admission",
+    "ru": "Принятие в контекст"
+  },
+  "description": {
+    "en": "Whether a record is part of the active context. Computed by replaying Reviews. Admission is the sixth status axis, independent of the person's stance.",
+    "ru": "Входит ли запись в действующий контекст. Вычисляется воспроизведением решений (Review). Принятие — шестая ось статуса, независимая от позиции человека."
+  },
+  "closed": true,
+  "codes": [
+    {
+      "code": "proposed",
+      "label": {
+        "en": "Proposed",
+        "ru": "Предложено"
+      },
+      "definition": {
+        "en": "Written by someone other than the subject and not yet decided. Served only to the subject and to the proposer.",
+        "ru": "Записано не самим человеком, решение ещё не принято. Показывается только человеку и автору предложения."
+      }
+    },
+    {
+      "code": "active",
+      "label": {
+        "en": "Active",
+        "ru": "Действует"
+      },
+      "definition": {
+        "en": "Admitted, or written by the subject.",
+        "ru": "Принято в контекст или записано самим человеком."
+      }
+    },
+    {
+      "code": "declined",
+      "label": {
+        "en": "Declined",
+        "ru": "Не принято"
+      },
+      "definition": {
+        "en": "Not admitted, including proposals that expired. Silence is not acceptance.",
+        "ru": "Не принято в контекст, в том числе предложения с истёкшим сроком. Молчание — не согласие."
+      }
+    },
+    {
+      "code": "retracted",
+      "label": {
+        "en": "Retracted",
+        "ru": "Отозвано"
+      },
+      "definition": {
+        "en": "Withdrawn by the asserter or the subject. Terminal.",
+        "ru": "Отозвано автором записи или самим человеком. Окончательно."
+      }
+    }
+  ]
+}

@@ -1,0 +1,346 @@
+{
+  "format": "ohc.catalog",
+  "id": "urn:ohc:catalog:messages",
+  "version": "0.1.0",
+  "specVersion": "0.1.0-draft",
+  "title": {
+    "en": "Exchange message vocabularies",
+    "ru": "Словари сообщений обмена"
+  },
+  "description": {
+    "en": "Vocabularies of the experimental exchange messages (module `exchange`). Transport, authentication and signatures are out of scope.",
+    "ru": "Словари экспериментальных сообщений обмена (модуль `exchange`). Транспорт, аутентификация и подписи — вне рамок стандарта."
+  },
+  "closed": true,
+  "lists": [
+    {
+      "name": "grant-notice-status",
+      "title": {
+        "en": "Grant notice status",
+        "ru": "Статус уведомления о разрешении"
+      },
+      "closed": true,
+      "field": "grant-notice.status"
+    },
+    {
+      "name": "answer-forms",
+      "title": {
+        "en": "Answer forms",
+        "ru": "Формы ответа"
+      },
+      "closed": true,
+      "field": "answer-request.answerForm"
+    },
+    {
+      "name": "proposal-result-status",
+      "title": {
+        "en": "Proposal result status",
+        "ru": "Статус результата предложения"
+      },
+      "closed": true,
+      "field": "proposal-result.status"
+    },
+    {
+      "name": "feedback-kinds",
+      "title": {
+        "en": "Feedback kinds",
+        "ru": "Виды обратной связи"
+      },
+      "closed": true,
+      "field": "feedback.feedbackKind"
+    },
+    {
+      "name": "revocation-status",
+      "title": {
+        "en": "Revocation status",
+        "ru": "Статус отзыва"
+      },
+      "closed": true,
+      "field": "revocation-notice.status"
+    },
+    {
+      "name": "purge-status",
+      "title": {
+        "en": "Purge status",
+        "ru": "Статус очистки"
+      },
+      "closed": true,
+      "field": "purge-ack.status"
+    },
+    {
+      "name": "access-audiences",
+      "title": {
+        "en": "Access audiences",
+        "ru": "Круг доступа"
+      },
+      "closed": true,
+      "field": "source-access-request.audience"
+    }
+  ],
+  "codes": [
+    {
+      "code": "given",
+      "list": "grant-notice-status",
+      "label": {
+        "en": "Given",
+        "ru": "Дано"
+      },
+      "definition": {
+        "en": "The person gave the grant.",
+        "ru": "Человек выдал разрешение."
+      }
+    },
+    {
+      "code": "refused",
+      "list": "grant-notice-status",
+      "label": {
+        "en": "Refused",
+        "ru": "Отказано"
+      },
+      "definition": {
+        "en": "The person refused, or did not answer within 7 days.",
+        "ru": "Человек отказал или не ответил в течение 7 дней."
+      }
+    },
+    {
+      "code": "deferred",
+      "list": "grant-notice-status",
+      "label": {
+        "en": "Deferred",
+        "ru": "Отложено"
+      },
+      "definition": {
+        "en": "The person deferred the decision.",
+        "ru": "Человек отложил решение."
+      }
+    },
+    {
+      "code": "boolean",
+      "list": "answer-forms",
+      "label": {
+        "en": "Yes or no",
+        "ru": "Да или нет"
+      },
+      "definition": {
+        "en": "A yes-or-no answer.",
+        "ru": "Ответ «да» или «нет»."
+      }
+    },
+    {
+      "code": "choice",
+      "list": "answer-forms",
+      "label": {
+        "en": "Choice",
+        "ru": "Выбор"
+      },
+      "definition": {
+        "en": "One of the offered choices.",
+        "ru": "Один из предложенных вариантов."
+      }
+    },
+    {
+      "code": "text",
+      "list": "answer-forms",
+      "label": {
+        "en": "Text",
+        "ru": "Текст"
+      },
+      "definition": {
+        "en": "A short text.",
+        "ru": "Короткий текст."
+      }
+    },
+    {
+      "code": "time-window",
+      "list": "answer-forms",
+      "label": {
+        "en": "Time window",
+        "ru": "Временное окно"
+      },
+      "definition": {
+        "en": "A time window.",
+        "ru": "Временное окно."
+      }
+    },
+    {
+      "code": "stored",
+      "list": "proposal-result-status",
+      "label": {
+        "en": "Stored",
+        "ru": "Сохранено"
+      },
+      "definition": {
+        "en": "The proposal was stored; its items are proposed.",
+        "ru": "Предложение сохранено; его пункты имеют статус «предложено»."
+      }
+    },
+    {
+      "code": "refused",
+      "list": "proposal-result-status",
+      "label": {
+        "en": "Refused",
+        "ru": "Отвергнуто"
+      },
+      "definition": {
+        "en": "The proposal was refused and nothing was stored.",
+        "ru": "Предложение отвергнуто, ничего не сохранено."
+      }
+    },
+    {
+      "code": "decided",
+      "list": "proposal-result-status",
+      "label": {
+        "en": "Decided",
+        "ru": "Решено"
+      },
+      "definition": {
+        "en": "The person decided on one or more items.",
+        "ru": "Человек принял решение по одному или нескольким пунктам."
+      }
+    },
+    {
+      "code": "expired",
+      "list": "proposal-result-status",
+      "label": {
+        "en": "Expired",
+        "ru": "Истекло"
+      },
+      "definition": {
+        "en": "Undecided items expired and are computed declined.",
+        "ru": "Срок нерешённых пунктов истёк, они считаются непринятыми."
+      }
+    },
+    {
+      "code": "outcome",
+      "list": "feedback-kinds",
+      "label": {
+        "en": "Outcome",
+        "ru": "Исход"
+      },
+      "definition": {
+        "en": "An Outcome record, stored as the agent's estimate.",
+        "ru": "Запись исхода, сохраняемая как оценка агента."
+      }
+    },
+    {
+      "code": "usage-note",
+      "list": "feedback-kinds",
+      "label": {
+        "en": "Usage note",
+        "ru": "Заметка об использовании"
+      },
+      "definition": {
+        "en": "A note on how something was used.",
+        "ru": "Заметка о том, как что-то использовалось."
+      }
+    },
+    {
+      "code": "correction-request",
+      "list": "feedback-kinds",
+      "label": {
+        "en": "Correction request",
+        "ru": "Просьба об исправлении"
+      },
+      "definition": {
+        "en": "A request to correct a record; becomes Proposal requests.",
+        "ru": "Просьба исправить запись; становится запросами в предложении."
+      }
+    },
+    {
+      "code": "withdrawn",
+      "list": "revocation-status",
+      "label": {
+        "en": "Withdrawn",
+        "ru": "Отозвано"
+      },
+      "definition": {
+        "en": "The person withdrew the grant.",
+        "ru": "Человек отозвал разрешение."
+      }
+    },
+    {
+      "code": "revoked",
+      "list": "revocation-status",
+      "label": {
+        "en": "Revoked",
+        "ru": "Аннулировано"
+      },
+      "definition": {
+        "en": "The holder revoked the grant.",
+        "ru": "Держатель аннулировал разрешение."
+      }
+    },
+    {
+      "code": "expired",
+      "list": "revocation-status",
+      "label": {
+        "en": "Expired",
+        "ru": "Истекло"
+      },
+      "definition": {
+        "en": "The grant expired.",
+        "ru": "Срок разрешения истёк."
+      }
+    },
+    {
+      "code": "purged",
+      "list": "purge-status",
+      "label": {
+        "en": "Purged",
+        "ru": "Очищено"
+      },
+      "definition": {
+        "en": "The recipient purged the data.",
+        "ru": "Получатель удалил данные."
+      }
+    },
+    {
+      "code": "not-held",
+      "list": "purge-status",
+      "label": {
+        "en": "Not held",
+        "ru": "Не хранилось"
+      },
+      "definition": {
+        "en": "The recipient did not hold the data.",
+        "ru": "Получатель не хранил эти данные."
+      }
+    },
+    {
+      "code": "failed",
+      "list": "purge-status",
+      "label": {
+        "en": "Failed",
+        "ru": "Не удалось"
+      },
+      "definition": {
+        "en": "The purge failed.",
+        "ru": "Очистка не удалась."
+      }
+    },
+    {
+      "code": "subject-only",
+      "list": "access-audiences",
+      "label": {
+        "en": "The person only",
+        "ru": "Только человек"
+      },
+      "definition": {
+        "en": "Quoted content is shown only to the person. The default.",
+        "ru": "Цитируемое содержимое показывается только самому человеку. Значение по умолчанию."
+      }
+    },
+    {
+      "code": "grantee",
+      "list": "access-audiences",
+      "label": {
+        "en": "The grantee",
+        "ru": "Получатель"
+      },
+      "definition": {
+        "en": "Quoted content may be shown to the grantee.",
+        "ru": "Цитируемое содержимое может видеть получатель."
+      }
+    }
+  ]
+}

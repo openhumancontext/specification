@@ -1,0 +1,50 @@
+{
+  "format": "ohc.catalog",
+  "id": "urn:ohc:catalog:on-expiry",
+  "version": "0.1.0",
+  "specVersion": "0.1.0-draft",
+  "title": {
+    "en": "Behaviour on expiry",
+    "ru": "Поведение при устаревании"
+  },
+  "description": {
+    "en": "What a consumer does when a Claim's freshness is `expired` (R-T6).",
+    "ru": "Что делает потребитель, когда свежесть утверждения — `expired` (R-T6)."
+  },
+  "closed": true,
+  "codes": [
+    {
+      "code": "treat-as-unknown",
+      "label": {
+        "en": "Treat as unknown",
+        "ru": "Считать неизвестным"
+      },
+      "definition": {
+        "en": "The default. Expired content is treated as unknown.",
+        "ru": "Значение по умолчанию. Устаревшее содержание считается неизвестным."
+      }
+    },
+    {
+      "code": "ask",
+      "label": {
+        "en": "Ask",
+        "ru": "Спросить"
+      },
+      "definition": {
+        "en": "Ask the person.",
+        "ru": "Спросить человека."
+      }
+    },
+    {
+      "code": "refresh-source",
+      "label": {
+        "en": "Refresh from source",
+        "ru": "Обновить из источника"
+      },
+      "definition": {
+        "en": "Re-read the `valueAddress` or the Source.",
+        "ru": "Заново прочитать значение по `valueAddress` или из источника."
+      }
+    }
+  ]
+}

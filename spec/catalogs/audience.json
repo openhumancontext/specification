@@ -1,0 +1,39 @@
+{
+  "format": "ohc.catalog",
+  "id": "urn:ohc:catalog:audience",
+  "version": "0.1.0",
+  "specVersion": "0.1.0-draft",
+  "title": {
+    "en": "Audience",
+    "ru": "Круг получателей"
+  },
+  "description": {
+    "en": "Who may be served a record under a matching grant. Never-to-anyone-else is the handling code `person-only`.",
+    "ru": "Кому можно показывать запись при подходящем разрешении. «Никому, кроме человека» выражается ограничением обращения `person-only`."
+  },
+  "closed": true,
+  "codes": [
+    {
+      "code": "grantees",
+      "label": {
+        "en": "Grantees",
+        "ru": "Получатели разрешений"
+      },
+      "definition": {
+        "en": "Served to any grantee whose selector reaches the record. Default for ordinary and personal records.",
+        "ru": "Показывается любому получателю, чей селектор охватывает запись. По умолчанию для обычных и личных записей."
+      }
+    },
+    {
+      "code": "named",
+      "label": {
+        "en": "Named only",
+        "ru": "Только по имени"
+      },
+      "definition": {
+        "en": "Served only to selectors that name the record (R-G3). Default for sensitive and special records.",
+        "ru": "Показывается только по селекторам, которые явно называют запись (R-G3). По умолчанию для чувствительных и особых записей."
+      }
+    }
+  ]
+}

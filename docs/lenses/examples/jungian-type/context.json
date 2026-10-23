@@ -1,0 +1,118 @@
+{
+  "format": "ohc.context",
+  "specVersion": "0.1.0-draft",
+  "id": "urn:ohc:example:ilari:jungian-type",
+  "version": "2026-05-10.1",
+  "subject": {"id": "urn:ohc:example:ilari", "displayName": "Ilari (fictional)"},
+  "holder": "subject",
+  "lang": "en",
+  "created": "2026-04-20T18:00:00Z",
+  "conformance": {"level": "L0", "modules": ["core", "governance", "lenses"], "subjectIsAdult": true},
+  "parties": [
+    {"id": "p-01", "partyKind": "person", "label": "Workshop facilitator", "role": "practitioner"},
+    {"id": "a-01", "partyKind": "agent", "label": "Reflection companion"}
+  ],
+  "policy": {"admission": "subject-only", "resolver": "returnDialog"},
+  "lenses": [
+    {"id": "urn:ohc:lens:jungian-type", "version": "0.2.0", "sha256": "d6c8bd4a50aae2a7b7aba9372ddc3c042fa5fc5a77b8f147b8a12898c3804d69"}
+  ],
+  "synthetic": true,
+  "lensAdoptions": [
+    {"id": "la-01", "lens": {"id": "urn:ohc:lens:jungian-type", "version": "0.2.0"}, "route": "inherited-from-practice",
+     "practice": {"role": "facilitator", "practitioner": "p-01", "relationship": "ended", "since": "2026-04-18", "releaseRef": "src-02"},
+     "confidentiality": "practitioner-scope", "onEnd": "keep-read-only",
+     "uses": ["speak-in-lens", "store-results", "interpret"],
+     "interpretationAuthors": ["subject"], "agentInterpretation": "off",
+     "representationPreference": "jungian-type.type-label",
+     "origin": "declared", "assertedBy": "subject", "recordedAt": "2026-04-20T18:00:00Z",
+     "sensitivity": "special", "categories": ["mental-health"], "synthetic": true}
+  ],
+  "sources": [
+    {"id": "src-02", "sourceKind": "practitioner-release",
+     "content": {"locator": {"vaultPath": "vault/cd/cd7c35baaea6c4149af45f1cd8e3279f15289d079fd444b0e871dcab108d37d0.md"},
+                 "sha256": "cd7c35baaea6c4149af45f1cd8e3279f15289d079fd444b0e871dcab108d37d0",
+                 "mediaType": "text/markdown", "size": 224},
+     "capturedAt": "2026-04-18T16:00:00Z", "authorship": {"author": "p-01"}, "inbound": true,
+     "contemporaneity": "contemporaneous", "participants": ["p-01"], "maxRelease": "index",
+     "retention": {"eraseOnRequest": true},
+     "origin": "declared", "assertedBy": "subject", "recordedAt": "2026-04-20T17:55:00Z",
+     "sensitivity": "sensitive", "synthetic": true},
+    {"id": "src-01", "sourceKind": "instrument-report",
+     "content": {"locator": {"vaultPath": "vault/6f/6f5960410d0549d75304f8dc6d613a02b0747008f95b9c10c95a059e80c5e0c4.json"},
+                 "sha256": "6f5960410d0549d75304f8dc6d613a02b0747008f95b9c10c95a059e80c5e0c4",
+                 "mediaType": "application/json", "size": 476},
+     "capturedAt": "2026-04-18T16:00:00Z", "authorship": {"author": "p-01"}, "inbound": true,
+     "contemporaneity": "contemporaneous", "participants": ["p-01"], "maxRelease": "index",
+     "retention": {"eraseOnRequest": true},
+     "origin": "declared", "assertedBy": "subject", "recordedAt": "2026-04-20T18:05:00Z",
+     "sensitivity": "special", "categories": ["mental-health"], "handling": ["no-quote"], "synthetic": true}
+  ],
+  "assessments": [
+    {"id": "as-01", "lens": {"id": "urn:ohc:lens:jungian-type", "version": "0.2.0"},
+     "instrument": {"id": "urn:ohc:instrument:mbti-form-m", "form": "M"},
+     "mode": "vendor-report-import", "assessedBy": "subject",
+     "administeredAt": {"start": "2026-04-18", "precision": "day"},
+     "results": [
+       {"type": "type-assignment", "construct": "jungian-type/EI", "label": "Extraversion", "clarity": "slight", "method": "instrument"},
+       {"type": "type-assignment", "construct": "jungian-type/SN", "label": "Intuition", "clarity": "clear", "method": "instrument"},
+       {"type": "type-assignment", "construct": "jungian-type/TF", "label": "Feeling", "clarity": "moderate", "method": "instrument"},
+       {"type": "type-assignment", "construct": "jungian-type/JP", "label": "Perceiving", "clarity": "moderate", "method": "instrument"}],
+     "validityFlags": ["vendor-algorithm-undisclosed"],
+     "source": "src-01",
+     "trademarkNotice": "Myers-Briggs Type Indicator, Myers-Briggs and MBTI are trademarks or registered trademarks of the Myers & Briggs Foundation, Inc.; The Myers-Briggs Company is the exclusive publisher of the MBTI® instrument.",
+     "origin": "imported",
+     "importedFrom": {"system": "MBTI® Form M report handed over at a career workshop", "importedAt": "2026-04-20T18:10:00Z"},
+     "assertedBy": "subject", "recordedAt": "2026-04-20T18:10:00Z",
+     "sensitivity": "special", "categories": ["mental-health"], "synthetic": true},
+    {"id": "as-02", "lens": {"id": "urn:ohc:lens:jungian-type", "version": "0.2.0"},
+     "mode": "self-identified", "assessedBy": "subject",
+     "administeredAt": {"start": "2026-04-25", "precision": "day"},
+     "results": [
+       {"type": "type-assignment", "construct": "jungian-type/EI", "label": "Introversion", "method": "best-fit"},
+       {"type": "type-assignment", "construct": "jungian-type/SN", "label": "Intuition", "method": "best-fit"},
+       {"type": "type-assignment", "construct": "jungian-type/TF", "label": "Feeling", "method": "best-fit"},
+       {"type": "type-assignment", "construct": "jungian-type/JP", "label": "Perceiving", "method": "best-fit"}],
+     "validityFlags": ["self-identified-only"],
+     "origin": "declared", "assertedBy": "subject", "recordedAt": "2026-04-25T20:00:00Z",
+     "sensitivity": "special", "categories": ["mental-health"], "synthetic": true}
+  ],
+  "tensions": [
+    {"id": "t-01", "between": ["as-01", "as-02"], "tensionKind": "source-divergence", "whoDecides": "subject",
+     "text": "The report shows a slight preference for Extraversion; my best fit is Introversion.",
+     "origin": "declared", "assertedBy": "subject", "recordedAt": "2026-04-25T20:05:00Z",
+     "sensitivity": "special", "categories": ["mental-health"], "synthetic": true}
+  ],
+  "claims": [
+    {"id": "c-01", "facet": "disposition", "predicate": "self-described-tendency",
+     "text": "In the four-letter vocabulary my best fit is INFP: I recharge alone, and I host people I know well.",
+     "horizon": "foundation", "evidence": [{"ref": "as-02", "kind": "instrument"}],
+     "origin": "declared", "assertedBy": "subject", "recordedAt": "2026-04-25T20:10:00Z",
+     "sensitivity": "special", "categories": ["mental-health"], "synthetic": true}
+  ],
+  "episodes": [
+    {"id": "ep-01", "title": "Hosting a birthday", "occurred": {"start": "2026-05-02", "precision": "day"},
+     "accounts": [{"narrator": "subject", "narratedAt": "2026-05-02T23:30:00Z", "addedAt": "2026-05-02T23:30:00Z",
+                   "accountKind": "in-the-moment", "happened": "Hosted a birthday dinner for eight old friends and stayed up talking until late.",
+                   "understandingThen": "I like hosting when I know everyone."}],
+     "contexts": ["friends"], "origin": "declared", "assertedBy": "subject", "recordedAt": "2026-05-02T23:30:00Z", "synthetic": true}
+  ],
+  "interpretations": [
+    {"id": "in-01", "about": ["as-02", "ep-01"], "stance": "lens-reading",
+     "lens": {"id": "urn:ohc:lens:jungian-type", "version": "0.2.0"},
+     "text": "The other pole shows when I host people I know well; with strangers it does not.",
+     "facets": ["disposition"],
+     "origin": "declared", "assertedBy": "subject", "recordedAt": "2026-05-03T10:00:00Z",
+     "sensitivity": "special", "categories": ["mental-health"], "synthetic": true}
+  ],
+  "grants": [
+    {"id": "g-01", "recordedAt": "2026-05-10T09:00:00Z", "grantor": "subject", "grantee": "a-01",
+     "purposes": ["self-reflection"],
+     "scope": {"include": [{"ids": ["as-02", "c-01", "in-01"]}]},
+     "actions": ["read"], "mode": "summary", "interpretations": "subject-endorsed",
+     "constraints": {"expiresAt": "2026-11-01T00:00:00Z", "storage": "session", "forwarding": false,
+                     "crossContextUse": false, "delegable": false},
+     "basis": {"legal": "explicit-consent"},
+     "expressedBy": {"actor": "subject", "at": "2026-05-10T09:00:00Z", "channel": "holder-ui"},
+     "note": "My best-fit type and my own words only; the genuine report stays with me."}
+  ]
+}

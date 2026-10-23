@@ -1,0 +1,159 @@
+[
+  {
+    "format": "ohc.mapping",
+    "specVersion": "0.1.0-draft",
+    "id": "urn:ohc:mapping:ohc.claim--hcp.preference--loyal-context-router",
+    "version": "0.1.0",
+    "bridgeKind": "ohc-standard",
+    "from": {
+      "standard": "OHC 0.1.0-draft",
+      "concept": "Claim"
+    },
+    "to": {
+      "standard": "Human Context Protocol reference code (Loyal Agents context-router)",
+      "concept": "Preference",
+      "pin": {
+        "commit": "7328ceea63a784577594d52af18062be8b583855"
+      }
+    },
+    "relation": "corresponds",
+    "scope": "Informative crosswalk between formats; never a conversion of a person's data without the person's grant",
+    "notIdentity": true,
+    "chainable": false,
+    "rowStatus": "accepted-with-loss",
+    "lost": "A preference is a slug-to-value entry; a Claim adds a facet, text, validity time, lineage and disclosure fields.",
+    "evidenceGrade": "F",
+    "reviewedAt": "2026-10-09"
+  },
+  {
+    "format": "ohc.mapping",
+    "specVersion": "0.1.0-draft",
+    "id": "urn:ohc:mapping:ohc.admission-endorsement--hcp.preference-status--loyal-context-router",
+    "version": "0.1.0",
+    "bridgeKind": "ohc-standard",
+    "from": {
+      "standard": "OHC 0.1.0-draft",
+      "concept": "admission active / proposed; endorsement rejected"
+    },
+    "to": {
+      "standard": "Human Context Protocol reference code (Loyal Agents context-router)",
+      "concept": "Preference.status ACTIVE / SUGGESTED / REJECTED",
+      "pin": {
+        "commit": "7328ceea63a784577594d52af18062be8b583855"
+      }
+    },
+    "relation": "corresponds",
+    "scope": "Informative crosswalk between formats; never a conversion of a person's data without the person's grant",
+    "notIdentity": true,
+    "chainable": false,
+    "rowStatus": "accepted-with-loss",
+    "lost": "OHC keeps admission and endorsement apart and adds the contested and locked flags; the router has one status.",
+    "evidenceGrade": "F",
+    "reviewedAt": "2026-10-09"
+  },
+  {
+    "format": "ohc.mapping",
+    "specVersion": "0.1.0-draft",
+    "id": "urn:ohc:mapping:ohc.origin--hcp.preference-source-type--loyal-context-router",
+    "version": "0.1.0",
+    "bridgeKind": "ohc-standard",
+    "from": {
+      "standard": "OHC 0.1.0-draft",
+      "concept": "origin declared / inferred / imported / observed"
+    },
+    "to": {
+      "standard": "Human Context Protocol reference code (Loyal Agents context-router)",
+      "concept": "Preference.sourceType USER / INFERRED / IMPORTED / SYSTEM",
+      "pin": {
+        "commit": "7328ceea63a784577594d52af18062be8b583855"
+      }
+    },
+    "relation": "corresponds",
+    "scope": "Informative crosswalk between formats; never a conversion of a person's data without the person's grant",
+    "notIdentity": true,
+    "chainable": false,
+    "rowStatus": "accepted-with-loss",
+    "lost": "SYSTEM maps to observed; OHC's derived and attested have no router counterpart.",
+    "evidenceGrade": "F",
+    "reviewedAt": "2026-10-09"
+  },
+  {
+    "format": "ohc.mapping",
+    "specVersion": "0.1.0-draft",
+    "id": "urn:ohc:mapping:ohc.grant--hcp.permission-grant--loyal-context-router",
+    "version": "0.1.0",
+    "bridgeKind": "ohc-standard",
+    "from": {
+      "standard": "OHC 0.1.0-draft",
+      "concept": "Grant"
+    },
+    "to": {
+      "standard": "Human Context Protocol reference code (Loyal Agents context-router)",
+      "concept": "PermissionGrant",
+      "pin": {
+        "commit": "7328ceea63a784577594d52af18062be8b583855"
+      }
+    },
+    "relation": "corresponds",
+    "scope": "Informative crosswalk between formats; never a conversion of a person's data without the person's grant",
+    "notIdentity": true,
+    "chainable": false,
+    "rowStatus": "accepted-with-loss",
+    "lost": "Slug-glob targets map to selectors only approximately; a Grant also carries purposes, expiry, mode and legal basis.",
+    "evidenceGrade": "F",
+    "reviewedAt": "2026-10-09"
+  },
+  {
+    "format": "ohc.mapping",
+    "specVersion": "0.1.0-draft",
+    "id": "urn:ohc:mapping:ohc.grant-actions--hcp.permission-actions--loyal-context-router",
+    "version": "0.1.0",
+    "bridgeKind": "ohc-standard",
+    "from": {
+      "standard": "OHC 0.1.0-draft",
+      "concept": "actions read / suggest / write, plus a separate infer"
+    },
+    "to": {
+      "standard": "Human Context Protocol reference code (Loyal Agents context-router)",
+      "concept": "PermissionGrant.action READ / SUGGEST / WRITE",
+      "pin": {
+        "commit": "7328ceea63a784577594d52af18062be8b583855"
+      }
+    },
+    "relation": "corresponds",
+    "scope": "Informative crosswalk between formats; never a conversion of a person's data without the person's grant",
+    "notIdentity": true,
+    "chainable": false,
+    "rowStatus": "accepted-with-loss",
+    "lost": "The same ladder, plus infer, which write never implies. The default is flipped: with no matching grant, OHC denies.",
+    "forbiddenUse": "Never carry over the router's implicit allow when no grant matches.",
+    "evidenceGrade": "F",
+    "reviewedAt": "2026-10-09"
+  },
+  {
+    "format": "ohc.mapping",
+    "specVersion": "0.1.0-draft",
+    "id": "urn:ohc:mapping:ohc.event-projection-served--hcp.mcp-access-event--loyal-context-router",
+    "version": "0.1.0",
+    "bridgeKind": "ohc-standard",
+    "from": {
+      "standard": "OHC 0.1.0-draft",
+      "concept": "Event projection-served"
+    },
+    "to": {
+      "standard": "Human Context Protocol reference code (Loyal Agents context-router)",
+      "concept": "McpAccessEvent",
+      "pin": {
+        "commit": "7328ceea63a784577594d52af18062be8b583855"
+      }
+    },
+    "relation": "corresponds",
+    "scope": "Informative crosswalk between formats; never a conversion of a person's data without the person's grant",
+    "notIdentity": true,
+    "chainable": false,
+    "rowStatus": "accepted-with-loss",
+    "lost": "OHC Events hold ids, codes and times only; operation names and latency are not kept.",
+    "evidenceGrade": "F",
+    "reviewedAt": "2026-10-09"
+  }
+]
